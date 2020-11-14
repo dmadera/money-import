@@ -1,12 +1,14 @@
 using System.Collections.Generic;
+
 using SkladData;
 using Schemas;
 
 namespace MoneyDataObjects {
 
     class MoneyDataZasoba {
-        private List<S5DataZasoba> _s5DataZasobas = new List<S5DataZasoba>();
-        public void Add(SkladDataFileKarty kar) {
+        public static List<S5DataZasoba> GetData(SkladDataFile kar) {
+            var data = new List<S5DataZasoba>();
+
             foreach (SkladDataObj obj in kar.Data) {
                 var d = obj.Items;
 
@@ -18,8 +20,10 @@ namespace MoneyDataObjects {
                     HistorickaCena = d["NakupCena"].GetDecimal()
                 };
 
-                _s5DataZasobas.Add(zasoba);
+                data.Add(zasoba);
             }
+
+            return data;
         }
     }
 }

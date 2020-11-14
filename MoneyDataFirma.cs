@@ -1,12 +1,14 @@
 using System.Collections.Generic;
+
 using SkladData;
 using Schemas;
 
 namespace MoneyDataObjects {
 
     class MoneyDataFirma {
-        private List<S5DataFirma> _s5DataFirms = new List<S5DataFirma>();
-        public void Add(SkladDataFileOdb odb) {
+        public static List<S5DataFirma> GetData(SkladDataFileOdb odb) {
+            var data = new List<S5DataFirma>();
+
             foreach (SkladDataObj obj in odb.Data) {
                 var d = obj.Items;
 
@@ -17,7 +19,7 @@ namespace MoneyDataObjects {
                         SplatnostPohledavek = d["Splatnost"].GetNum()
                     },
                     Sleva = new S5DataFirmaSleva() {
-                        Sleva = d["Rabat0"].GetDecimalNegative(),
+                        Sleva = d["RabatO"].GetDecimalNegative(),
                     },
                     ICO = d["Ico"].GetNum(),
                     DIC = obj.GetDic(),
@@ -90,11 +92,15 @@ namespace MoneyDataObjects {
                     OdlisnaAdresaProvozovny = !isPrijemce ? "True" : "False"
                 };
 
-                _s5DataFirms.Add(firma);
+                data.Add(firma);
             }
+
+            return data;
         }
 
-        public void Add(SkladDataFileDod dod) {
+        public static List<S5DataFirma> GetData(SkladDataFileDod dod) {
+            var data = new List<S5DataFirma>();
+
             foreach (SkladDataObj obj in dod.Data) {
                 var d = obj.Items;
 
@@ -156,8 +162,10 @@ namespace MoneyDataObjects {
                         NazevStatu = "Česká republika"
                     }
                 };
-                _s5DataFirms.Add(firma);
+                data.Add(firma);
             }
+
+            return data;
         }
     }
 }

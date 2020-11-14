@@ -1,12 +1,15 @@
 using System.Collections.Generic;
+
 using SkladData;
 using Schemas;
 
 namespace MoneyDataObjects {
 
     class MoneyDataArtikl {
-        private List<S5DataArtikl> _s5DataArtikls = new List<S5DataArtikl>();
-        public void Add(SkladDataFileKarty kar) {
+
+        public static List<S5DataArtikl> GetData(SkladDataFile kar) {
+            var data = new List<S5DataArtikl>();
+
             foreach (SkladDataObj obj in kar.Data) {
                 var d = obj.Items;
 
@@ -72,8 +75,10 @@ namespace MoneyDataObjects {
 
                 };
 
-                _s5DataArtikls.Add(artikl);
+                data.Add(artikl);
             }
+
+            return data;
         }
     }
 }

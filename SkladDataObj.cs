@@ -18,7 +18,7 @@ namespace SkladData {
         }
 
         public string Get5Note() {
-            return String.Format("{1}\n{2}\n{3}\n{4}\n{5}",
+            return String.Format("{0}\n{1}\n{2}\n{3}\n{4}",
                 _items["Poznamka1"].GetText(), _items["Poznamka2"].GetText(), _items["Poznamka3"].GetText(),
                 _items["Poznamka4"].GetText(), _items["Poznamka5"].GetText());
         }

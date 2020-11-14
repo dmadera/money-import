@@ -1,34 +1,36 @@
 using System.Collections.Generic;
+
 using SkladData;
 using Schemas;
 
 namespace MoneyDataObjects {
 
     class MoneyDataKategorie {
-        private List<S5DataKategorieArtiklu> _s5DataKats = new List<S5DataKategorieArtiklu>();
-        public void Add(SkladDataFileKod kat, SkladDataFilePodKod sub) {
+        public static List<S5DataKategorieArtiklu> GetData(SkladDataFile kat) {
+            var data = new List<S5DataKategorieArtiklu>();
             foreach (SkladDataObj obj in kat.Data) {
                 var d = obj.Items;
+                string kod, nazev, parent = null;
+
+                if (!d.ContainsKey("PodKodZbozi")) {
+                    kod = d["KodZbozi"].GetNum();
+                    nazev = d["NazevKodu"].GetText();
+                } else {
+                    kod = d["KodZbozi"].GetNum() + d["PodKodZbozi"].GetNum();
+                    nazev = d["NazevPOdKodu"].GetText();
+                    parent = d["KodZbozi"].GetNum();
+                }
 
                 var kategorie = new S5DataKategorieArtiklu() {
-                    Kod = d["KodZbozi"].GetNum(),
-                    Nazev = d["NazevKodu"].GetText(),
+                    Kod = kod,
+                    Nazev = nazev,
+                    ParentObject_ID = parent
                 };
 
-                _s5DataKats.Add(kategorie);
+                data.Add(kategorie);
             }
 
-            foreach (SkladDataObj obj in sub.Data) {
-                var d = obj.Items;
-
-                var kategorie = new S5DataKategorieArtiklu() {
-                    Kod = d["KodZbozi"].GetNum() + d["PodKodZbozi"].GetNum(),
-                    Nazev = d["NazevKodu"].GetText(),
-                    ParentObject_ID = d["KodZbozi"].GetNum()
-                };
-
-                _s5DataKats.Add(kategorie);
-            }
+            return data;
         }
     }
 }
