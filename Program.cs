@@ -2,53 +2,12 @@
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using System;
+using System.Text;
 using Schemas;
+using SkladData;
 
-namespace sklad_data_parser {
-
-    static class Str {
-        static public bool IsValidEmail(string email) {
-            try {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            } catch {
-                return false;
-            }
-        }
-
-        static public string NumsOnly(string input) {
-            return Regex.Replace(input, @"[^0-9]+", "");
-        }
-
-        static public string[] ParseEmaily(string input) {
-            var split = input.Replace(",", ";").Split(";");
-            var emaily = new string[2];
-            emaily[0] = IsValidEmail(split[0]) ? split[0] : "";
-            emaily[1] = split.Length == 2 && IsValidEmail(split[1]) ? split[1] : "";
-            return emaily;
-        }
-
-        static public string TrueFalse(string input) {
-            var r = new Regex(@"^[1aAY]");
-            return r.IsMatch(input) ? "True" : "False";
-        }
-
-        static public string AlfaOnly(string input) {
-            return Regex.Replace(input, @"[^0-9a-zA-Z]+", "");
-        }
-
-        static public string RemMultiSpaces(string input) {
-            return Regex.Replace(input, @"\s{2,}", " ");
-        }
-
-        static public string Text(string input) {
-            return RemMultiSpaces(input.Trim());
-        }
-
-        static public string Decimal(string input) {
-            return input.Replace(".", ",");
-        }
-    }
+namespace MoneyData {
 
     static class S5DataIDs {
         public static Dictionary<string, string> FirmaTypSpojeni = new Dictionary<string, string>() {
@@ -83,30 +42,27 @@ namespace sklad_data_parser {
     class Program {
 
         static void Main(string[] args) {
-            string souborOdb = @"/home/dmadera/projects/sklad-data-parser/assets/headODB";
-            string souborDod = @"/home/dmadera/projects/sklad-data-parser/assets/headDOD";
-            string souborKarty = @"/home/dmadera/projects/sklad-data-parser/assets/headKARTY";
+            string souborOdb = @"/home/dmadera/projects/sklad-moneys4-convertor/datasource/headODB";
+            string souborDod = @"/home/dmadera/projects/sklad-moneys4-convertor/datasource/headDOD";
+            string souborKarty = @"/home/dmadera/projects/sklad-moneys4-convertor/datasource/headKARTY";
 
-            var odberatele = SKLOdberatel.NactiSoubor(souborOdb);
-            var dodavatele = SKLDodavatel.NactiSoubor(souborDod);
+            string[] lines = System.IO.File.ReadAllLines(souborOdb,
+                CodePagesEncodingProvider.Instance.GetEncoding("Windows-1250"));
 
-            var data = new S5Data() {
-                FirmaList = MONFirma.ConvertToS5Data(odberatele, dodavatele),
-                ArtiklList = null,
-                ZasobaList = new S5DataZasoba[] {
-                    new S5DataZasoba() {
-                        Artikl = new S5DataZasobaArtikl() {
+            var odb = new SkladDataFileOdb(lines);
 
-                        }
-                    }
-                }
-            };
+            lines = System.IO.File.ReadAllLines(souborDod,
+                CodePagesEncodingProvider.Instance.GetEncoding("Windows-1250"));
+            var dod = new SkladDataFileDod(lines);
 
+            lines = System.IO.File.ReadAllLines(souborKarty,
+                CodePagesEncodingProvider.Instance.GetEncoding("Windows-1250"));
+            var karty = new SkladDataFileKarty(lines);
 
-            var serializer = new XmlSerializer(typeof(S5Data));
-            using (var stream = new StreamWriter("/home/dmadera/downloads/output.xml")) {
-                serializer.Serialize(stream, data);
-            }
+            // var serializer = new XmlSerializer(typeof(S5Data));
+            // using (var stream = new StreamWriter("/home/dmadera/downloads/output.xml")) {
+            //     serializer.Serialize(stream, data);
+            // }
         }
     }
 }
