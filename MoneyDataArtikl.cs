@@ -7,7 +7,9 @@ namespace MoneyDataObjects {
 
     class MoneyDataArtikl {
 
-        public static List<S5DataArtikl> GetData(SkladDataFile kar) {
+        public static List<S5DataArtikl> GetData(SkladDataFile kar,
+                List<S5DataKategorieArtiklu> kategorie) {
+
             var data = new List<S5DataArtikl>();
 
             foreach (SkladDataObj obj in kar.Data) {
@@ -61,19 +63,14 @@ namespace MoneyDataObjects {
                         HlavniDodavatel = new S5DataArtiklDodavateleHlavniDodavatel() {
                             NazevFirmy = d["NazevDodavatele"].GetText(),
                         }
-                    },
-                    Kategorie = d["KodZbozi"] + "|" + d["PodKodZbozi"],
-
+                    }
                 };
 
-                var zasoba = new S5DataZasoba() {
-                    Sklad_ID = "HL",
-                    SkladovaPozice_ID = d["Pozice"].GetAlfaNum(),
-                    Artikl_ID = kar.GetID(d["CisloKarty"].GetNum()),
-                    Kod = kar.GetID(d["CisloKarty"].GetNum()),
-                    HistorickaCena = d["NakupCena"].GetDecimal(),
-
-                };
+                artikl.Kategorie = string.Format(
+                    "{0}|{1}",
+                    kategorie.Find(k => { return k.Kod == d["KodZbozi"].GetNum(); }).ID,
+                    kategorie.Find(k => { return k.Kod == d["KodZbozi"].GetNum() + d["PodKodZbozi"].GetNum(); }).ID
+                );
 
                 data.Add(artikl);
             }

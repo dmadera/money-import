@@ -12,8 +12,18 @@ namespace MoneyDataObjects {
             foreach (SkladDataObj obj in odb.Data) {
                 var d = obj.Items;
 
+                group grp = null;
+                string kodOdb = d["CisloOdberatele"].GetNum();
+                string kod = "AD" + kodOdb;
+                if (d["NahradniPlneni"].GetBoolean() == "True") {
+                    grp = new group() { Kod = "NP" };
+                } else if (d["NazevOdberatele"].GetText().StartsWith("\\")) {
+                    grp = new group() { Kod = "OST" };
+                    kod = "OAD" + kodOdb;
+                }
+
                 var firma = new S5DataFirma() {
-                    Kod = odb.GetID(d["CisloOdberatele"].GetNum()),
+                    Kod = kod,
                     Nazev = d["NazevOdberatele"].GetText() + " " + d["NazevOdberatele2"].GetText(),
                     Pohledavky = new S5DataFirmaPohledavky() {
                         SplatnostPohledavek = d["Splatnost"].GetNum()
@@ -24,24 +34,25 @@ namespace MoneyDataObjects {
                     ICO = d["Ico"].GetNum(),
                     DIC = obj.GetDic(),
                     Poznamka = obj.Get5Note(),
-                    Group = d["NahradniPlneni"].GetBoolean() == "True" ? new group() {
-                        Kod = "NP"
-                    } : null,
+                    Group = grp,
                     ReportSDPH_UserData = d["SDani"].GetBoolean()
                 };
 
                 firma.Osoby = new S5DataFirmaOsoby() {
                     HlavniOsoba = !d["Zastoupeny"].IsEmpty() ? new S5DataFirmaOsobyHlavniOsoba() {
-                        Jmeno = d["Zastoupeny"].GetText()
+                        Prijmeni = d["Zastoupeny"].GetText()
                     } : null,
-                    SeznamOsob = !d["Prebirajici"].IsEmpty() ? new S5DataFirmaOsobySeznamOsob() {
+                    SeznamOsob = new S5DataFirmaOsobySeznamOsob() {
                         Osoba = new S5DataFirmaOsobySeznamOsobOsoba[] {
-                            new S5DataFirmaOsobySeznamOsobOsoba() {
-                                Jmeno = d["Prebirajici"].GetText(),
+                            !d["Zastoupeny"].IsEmpty() ? new S5DataFirmaOsobySeznamOsobOsoba() {
+                                Prijmeni = d["Zastoupeny"].GetText(),
+                            } : null,
+                            !d["Prebirajici"].IsEmpty() ? new S5DataFirmaOsobySeznamOsobOsoba() {
+                                Prijmeni = d["Prebirajici"].GetText(),
                                 Funkce = "Přebírající"
-                            }
+                            } : null
                         }
-                    } : null
+                    }
                 };
 
                 var emails = obj.ParseEmails("Mail");
@@ -49,9 +60,9 @@ namespace MoneyDataObjects {
 
                 firma.SeznamSpojeni = new S5DataFirmaSeznamSpojeni() {
                     Spojeni = new S5DataFirmaSeznamSpojeniSpojeni[] {
-                        d["Telefon"].IsEmpty() ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                        !d["Telefon"].IsEmpty() ? new S5DataFirmaSeznamSpojeniSpojeni() {
                             TypSpojeni_ID = "Tel",
-                            SpojeniCislo = d["Telefon"].GetAlfaNum(),
+                            SpojeniCislo = d["Telefon"].GetText(),
                         } : null,
                         emails[0] != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
                             TypSpojeni_ID = "E-mail",
@@ -114,16 +125,19 @@ namespace MoneyDataObjects {
 
                 firma.Osoby = new S5DataFirmaOsoby() {
                     HlavniOsoba = !d["Zastoupeny"].IsEmpty() ? new S5DataFirmaOsobyHlavniOsoba() {
-                        Jmeno = d["Zastoupeny"].GetText()
+                        Prijmeni = d["Zastoupeny"].GetText()
                     } : null,
-                    SeznamOsob = !d["ZastoupenyOZ"].IsEmpty() ? new S5DataFirmaOsobySeznamOsob() {
+                    SeznamOsob = new S5DataFirmaOsobySeznamOsob() {
                         Osoba = new S5DataFirmaOsobySeznamOsobOsoba[] {
-                            new S5DataFirmaOsobySeznamOsobOsoba() {
+                            !d["Zastoupeny"].IsEmpty() ? new S5DataFirmaOsobySeznamOsobOsoba() {
+                                Prijmeni = d["Zastoupeny"].GetText()
+                            } : null,
+                            !d["ZastoupenyOZ"].IsEmpty() ? new S5DataFirmaOsobySeznamOsobOsoba() {
                                 Prijmeni = d["ZastoupenyOZ"].GetText(),
                                 Funkce = "OZ"
-                            }
+                            } : null
                         }
-                    } : null
+                    }
                 };
 
                 var emails = obj.ParseEmails("Mail");
@@ -131,17 +145,17 @@ namespace MoneyDataObjects {
 
                 firma.SeznamSpojeni = new S5DataFirmaSeznamSpojeni() {
                     Spojeni = new S5DataFirmaSeznamSpojeniSpojeni[] {
-                        d["Telefon"].GetAlfaNum() != "" ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                        !d["Telefon"].IsEmpty() ? new S5DataFirmaSeznamSpojeniSpojeni() {
                             TypSpojeni_ID = "Tel",
-                            SpojeniCislo = d["Telefon"].GetAlfaNum(),
+                            SpojeniCislo = d["Telefon"].GetText(),
                         } : null,
                         emails[0] != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
                             TypSpojeni_ID = "E-mail",
-                            SpojeniCislo = emailsOZ[0],
+                            SpojeniCislo = emails[0],
                         } : null,
                         emails[1] != null  ? new S5DataFirmaSeznamSpojeniSpojeni() {
                             TypSpojeni_ID = "E-mail",
-                            SpojeniCislo = emailsOZ[1],
+                            SpojeniCislo = emails[1],
                         } : null,
                         emailsOZ[0] != null  ? new S5DataFirmaSeznamSpojeniSpojeni() {
                             TypSpojeni_ID = "E-mailOZ",

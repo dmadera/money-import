@@ -45,7 +45,7 @@ namespace MainProgram {
 
 
             var serializer = new XmlSerializer(typeof(S5Data));
-            using (var stream = new StreamWriter("/home/dmadera/downloads/output.xml")) {
+            using (var stream = new StreamWriter("/home/dmadera/downloads/ZaklDat.xml")) {
                 serializer.Serialize(stream, data.GetS5Data());
             }
         }

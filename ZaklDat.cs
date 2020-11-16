@@ -20359,7 +20359,7 @@ namespace Schemas {
         
         private group groupField;
         
-        private string jmenoField;
+        private string prijmeniField;
         
         private string objectNameField;
         
@@ -20385,12 +20385,12 @@ namespace Schemas {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Jmeno {
+        public string Prijmeni {
             get {
-                return this.jmenoField;
+                return this.prijmeniField;
             }
             set {
-                this.jmenoField = value;
+                this.prijmeniField = value;
             }
         }
         
@@ -22688,7 +22688,7 @@ namespace Schemas {
         
         private group groupField;
         
-        private string jmenoField;
+        private string prijmeniField;
         
         private string objectNameField;
         
@@ -22714,12 +22714,12 @@ namespace Schemas {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Jmeno {
+        public string Prijmeni {
             get {
-                return this.jmenoField;
+                return this.prijmeniField;
             }
             set {
-                this.jmenoField = value;
+                this.prijmeniField = value;
             }
         }
         
@@ -26322,7 +26322,7 @@ namespace Schemas {
         
         private group groupField;
         
-        private string jmenoField;
+        private string prijmeniField;
         
         private string objectNameField;
         
@@ -26348,12 +26348,12 @@ namespace Schemas {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Jmeno {
+        public string Prijmeni {
             get {
-                return this.jmenoField;
+                return this.prijmeniField;
             }
             set {
-                this.jmenoField = value;
+                this.prijmeniField = value;
             }
         }
         
@@ -26854,8 +26854,6 @@ namespace Schemas {
         
         private string parentObject_IDField;
         
-        private S5DataKategorieArtikluParametry parametryField;
-        
         private string objectNameField;
         
         private string objectTypeField;
@@ -26897,372 +26895,6 @@ namespace Schemas {
             }
             set {
                 this.parentObject_IDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataKategorieArtikluParametry Parametry {
-            get {
-                return this.parametryField;
-            }
-            set {
-                this.parametryField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataKategorieArtikluParametry {
-        
-        private S5DataKategorieArtikluParametryKategorieArtikluHodnotaParametru[] kategorieArtikluHodnotaParametruField;
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        public S5DataKategorieArtikluParametry() {
-            this.objectNameField = "KategorieArtikluHodnotaParametru";
-            this.objectTypeField = "List";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("KategorieArtikluHodnotaParametru", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataKategorieArtikluParametryKategorieArtikluHodnotaParametru[] KategorieArtikluHodnotaParametru {
-            get {
-                return this.kategorieArtikluHodnotaParametruField;
-            }
-            set {
-                this.kategorieArtikluHodnotaParametruField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataKategorieArtikluParametryKategorieArtikluHodnotaParametru {
-        
-        private string hodnota_IDField;
-        
-        private string parametr_IDField;
-        
-        private System.DateTime platnostDoField;
-        
-        private bool platnostDoFieldSpecified;
-        
-        private System.DateTime platnostOdField;
-        
-        private bool platnostOdFieldSpecified;
-        
-        private string poradiField;
-        
-        private string textovaHodnotaField;
-        
-        private S5DataKategorieArtikluParametryKategorieArtikluHodnotaParametruHodnota hodnotaField;
-        
-        private S5DataKategorieArtikluParametryKategorieArtikluHodnotaParametruParametr parametrField;
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataKategorieArtikluParametryKategorieArtikluHodnotaParametru() {
-            this.objectNameField = "KategorieArtikluHodnotaParametru";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Hodnota_ID {
-            get {
-                return this.hodnota_IDField;
-            }
-            set {
-                this.hodnota_IDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Parametr_ID {
-            get {
-                return this.parametr_IDField;
-            }
-            set {
-                this.parametr_IDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public System.DateTime PlatnostDo {
-            get {
-                return this.platnostDoField;
-            }
-            set {
-                this.platnostDoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool PlatnostDoSpecified {
-            get {
-                return this.platnostDoFieldSpecified;
-            }
-            set {
-                this.platnostDoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public System.DateTime PlatnostOd {
-            get {
-                return this.platnostOdField;
-            }
-            set {
-                this.platnostOdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool PlatnostOdSpecified {
-            get {
-                return this.platnostOdFieldSpecified;
-            }
-            set {
-                this.platnostOdFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Poradi {
-            get {
-                return this.poradiField;
-            }
-            set {
-                this.poradiField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string TextovaHodnota {
-            get {
-                return this.textovaHodnotaField;
-            }
-            set {
-                this.textovaHodnotaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataKategorieArtikluParametryKategorieArtikluHodnotaParametruHodnota Hodnota {
-            get {
-                return this.hodnotaField;
-            }
-            set {
-                this.hodnotaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataKategorieArtikluParametryKategorieArtikluHodnotaParametruParametr Parametr {
-            get {
-                return this.parametrField;
-            }
-            set {
-                this.parametrField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataKategorieArtikluParametryKategorieArtikluHodnotaParametruHodnota {
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataKategorieArtikluParametryKategorieArtikluHodnotaParametruHodnota() {
-            this.objectNameField = "HodnotaParametru";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataKategorieArtikluParametryKategorieArtikluHodnotaParametruParametr {
-        
-        private group groupField;
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataKategorieArtikluParametryKategorieArtikluHodnotaParametruParametr() {
-            this.objectNameField = "ParametrArtiklu";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public group Group {
-            get {
-                return this.groupField;
-            }
-            set {
-                this.groupField = value;
             }
         }
         

@@ -9,7 +9,7 @@ namespace SkladData {
         }
 
         public override string GetID(string id) {
-            return "ART" + id;
+            return "ART0" + id;
         }
 
         public override bool IsValidHeaderLine(string line) {
@@ -17,7 +17,7 @@ namespace SkladData {
             return r.IsMatch(line);
         }
         public override bool IsValidDataLine(string line) {
-            Regex r = new Regex(@"^\s{5}\p{N}{5}\s{5}");
+            Regex r = new Regex(@"^\s{3}\p{N}{4}\s{4}");
             return r.IsMatch(line);
         }
     }

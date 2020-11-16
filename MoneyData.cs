@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 using Schemas;
@@ -13,13 +14,31 @@ namespace MoneyDataObjects {
 
         private S5Data data = new S5Data();
 
-        public MoneyData() { }
+        private Predicate<S5DataArtikl> _filterArtikl = delegate (S5DataArtikl a) {
+            return !a.Nazev.StartsWith("||");
+        };
+
+        private Predicate<S5DataFirma> _filterFirma = delegate (S5DataFirma a) {
+            return true;
+        };
+
+        private Predicate<S5DataKategorieArtiklu> _filterKategorie = delegate (S5DataKategorieArtiklu a) {
+            return true;
+        };
+
+        private Predicate<S5DataZasoba> _filterZasoby = delegate (S5DataZasoba a) {
+            return true;
+        };
+
+        public MoneyData() {
+
+        }
 
         public S5Data GetS5Data() {
-            data.ArtiklList = _artikly.ToArray();
-            data.FirmaList = _firmy.ToArray();
-            data.KategorieArtikluList = _kategorie.ToArray();
-            data.ZasobaList = _zasoby.ToArray();
+            data.ArtiklList = _artikly.FindAll(_filterArtikl).ToArray();
+            data.FirmaList = _firmy.FindAll(_filterFirma).ToArray();
+            data.KategorieArtikluList = _kategorie.FindAll(_filterKategorie).ToArray();
+            data.ZasobaList = _zasoby.FindAll(_filterZasoby).ToArray();
 
             return data;
         }
@@ -35,19 +54,19 @@ namespace MoneyDataObjects {
                 return;
             }
 
-            if (file is SkladDataFileKarty) {
-                _artikly.AddRange(MoneyDataArtikl.GetData(file));
-                _zasoby.AddRange(MoneyDataZasoba.GetData(file));
-                return;
-            }
-
             if (file is SkladDataFileKod) {
                 _kategorie.AddRange(MoneyDataKategorie.GetData(file));
                 return;
             }
 
             if (file is SkladDataFilePodKod) {
-                _kategorie.AddRange(MoneyDataKategorie.GetData(file));
+                _kategorie.AddRange(MoneyDataKategorie.GetData(file, _kategorie));
+                return;
+            }
+
+            if (file is SkladDataFileKarty) {
+                _artikly.AddRange(MoneyDataArtikl.GetData(file, _kategorie));
+                _zasoby.AddRange(MoneyDataZasoba.GetData(file));
                 return;
             }
         }

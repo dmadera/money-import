@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 using SkladData;
@@ -6,9 +7,11 @@ using Schemas;
 namespace MoneyDataObjects {
 
     class MoneyDataKategorie {
-        public static List<S5DataKategorieArtiklu> GetData(SkladDataFile kat) {
+        public static List<S5DataKategorieArtiklu> GetData(SkladDataFile file,
+                List<S5DataKategorieArtiklu> kategorie = null) {
+
             var data = new List<S5DataKategorieArtiklu>();
-            foreach (SkladDataObj obj in kat.Data) {
+            foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
                 string kod, nazev, parent = null;
 
@@ -18,16 +21,18 @@ namespace MoneyDataObjects {
                 } else {
                     kod = d["KodZbozi"].GetNum() + d["PodKodZbozi"].GetNum();
                     nazev = d["NazevPOdKodu"].GetText();
-                    parent = d["KodZbozi"].GetNum();
+                    parent = kategorie.Find((a) => { return a.Kod == d["KodZbozi"].GetNum(); }).ID;
                 }
 
-                var kategorie = new S5DataKategorieArtiklu() {
+                var kat = new S5DataKategorieArtiklu() {
+                    ID = Guid.NewGuid().ToString(),
                     Kod = kod,
                     Nazev = nazev,
-                    ParentObject_ID = parent
+                    ParentObject_ID = parent,
+
                 };
 
-                data.Add(kategorie);
+                data.Add(kat);
             }
 
             return data;
