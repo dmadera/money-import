@@ -8,7 +8,7 @@ namespace SkladData {
         public SkladDataFileKod(string[] lines) : base(lines) {
         }
 
-        public override string GetID(string id) {
+        public static string GetID(string id) {
             return id;
         }
 

@@ -5363,7 +5363,7 @@ namespace Schemas {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataArtiklDodavateleHlavniDodavatel {
         
-        private string nazevFirmyField;
+        private string firma_IDField;
         
         private string objectNameField;
         
@@ -5378,12 +5378,12 @@ namespace Schemas {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string NazevFirmy {
+        public string Firma_ID {
             get {
-                return this.nazevFirmyField;
+                return this.firma_IDField;
             }
             set {
-                this.nazevFirmyField = value;
+                this.firma_IDField = value;
             }
         }
         
@@ -15608,8 +15608,6 @@ namespace Schemas {
         
         private string kraj_IDField;
         
-        private string kupniSmlouva_UserDataField;
-        
         private string logo_IDField;
         
         private string mena_IDField;
@@ -16265,17 +16263,6 @@ namespace Schemas {
             }
             set {
                 this.kraj_IDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string KupniSmlouva_UserData {
-            get {
-                return this.kupniSmlouva_UserDataField;
-            }
-            set {
-                this.kupniSmlouva_UserDataField = value;
             }
         }
         
@@ -28474,6 +28461,8 @@ namespace Schemas {
         
         private group groupField;
         
+        private string kodField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -28493,6 +28482,17 @@ namespace Schemas {
             }
             set {
                 this.groupField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
             }
         }
         

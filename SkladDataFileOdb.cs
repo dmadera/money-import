@@ -8,10 +8,6 @@ namespace SkladData {
         public SkladDataFileOdb(string[] lines) : base(lines) {
         }
 
-        public override string GetID(string id) {
-            return "AD" + "ODB" + id;
-        }
-
         public override bool IsValidHeaderLine(string line) {
             Regex r = new Regex(@"^");
             return r.IsMatch(line);

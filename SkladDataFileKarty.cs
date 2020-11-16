@@ -8,7 +8,7 @@ namespace SkladData {
         public SkladDataFileKarty(string[] lines) : base(lines) {
         }
 
-        public override string GetID(string id) {
+        public static string GetID(string id) {
             return "ART0" + id;
         }
 

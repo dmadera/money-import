@@ -61,6 +61,22 @@ namespace MoneyDataObjects {
 
             if (file is SkladDataFilePodKod) {
                 _kategorie.AddRange(MoneyDataKategorie.GetData(file, _kategorie));
+
+                string guid = Guid.NewGuid().ToString();
+                string guid1 = Guid.NewGuid().ToString();
+                _kategorie.AddRange(new S5DataKategorieArtiklu[]{
+                    new S5DataKategorieArtiklu() {
+                        ID = guid,
+                        Kod = "0000",
+                        Nazev = "Nezařazené"
+                    },
+                    new S5DataKategorieArtiklu() {
+                        ID = guid1,
+                        Kod = "00000000",
+                        Nazev = "Nezařazené",
+                        ParentObject_ID = guid
+                    }
+                });
                 return;
             }
 

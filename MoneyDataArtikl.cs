@@ -7,6 +7,10 @@ namespace MoneyDataObjects {
 
     class MoneyDataArtikl {
 
+        public static string GetID(string id) {
+            return "ART0" + id;
+        }
+
         public static List<S5DataArtikl> GetData(SkladDataFile kar,
                 List<S5DataKategorieArtiklu> kategorie) {
 
@@ -16,15 +20,18 @@ namespace MoneyDataObjects {
                 var d = obj.Items;
 
                 var artikl = new S5DataArtikl() {
-                    Kod = kar.GetID(d["CisloKarty"].GetNum()),
+                    Kod = GetID(d["CisloKarty"].GetNum()),
                     Nazev = d["NazevZbozi"].GetText(),
                     Poznamka = d["NazevZbozi2"].GetText(),
-                    HlavniJednotka_ID = d["MernaJednotka"].GetAlfaNum(),
+                    HlavniJednotka_ID = d["MernaJednotka"].GetAlfaNum().ToLower(),
+                    Group = new group() {
+                        Kod = "ART"
+                    },
                     Jednotky = new S5DataArtiklJednotky() {
                         SeznamJednotek = new S5DataArtiklJednotkySeznamJednotek() {
                             ArtiklJednotka = new S5DataArtiklJednotkySeznamJednotekArtiklJednotka[] {
                             d["VKart"].GetNum() != "0" ? new S5DataArtiklJednotkySeznamJednotekArtiklJednotka() {
-                                Kod = "kart",
+                                Kod = "kar",
                                 VychoziMnozstvi = d["VKart"].GetNum()
                             } : null,
                             d["VFol"].GetNum() != "0" ? new S5DataArtiklJednotkySeznamJednotekArtiklJednotka() {
@@ -58,18 +65,34 @@ namespace MoneyDataObjects {
                                 }
                             }
                         }
-                    },
-                    Dodavatele = new S5DataArtiklDodavatele() {
-                        HlavniDodavatel = new S5DataArtiklDodavateleHlavniDodavatel() {
-                            NazevFirmy = d["NazevDodavatele"].GetText(),
-                        }
                     }
                 };
+
+                artikl.Dodavatele = d["CisloDodavatele"].GetNum() != "00000" ? new S5DataArtiklDodavatele() {
+                    HlavniDodavatel = new S5DataArtiklDodavateleHlavniDodavatel() {
+                        Firma_ID = MoneyDataFirma.GetDodID(d["CisloDodavatele"].GetNum()),
+                    },
+                    SeznamDodavatelu = new S5DataArtiklDodavateleSeznamDodavatelu() {
+                        ArtiklDodavatel = new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatel[] {
+                            new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatel() {
+                                Firma_ID = MoneyDataFirma.GetDodID(d["CisloDodavatele"].GetNum()),
+                                DodavatelskeOznaceni = new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatelDodavatelskeOznaceni() {
+                                    Kod = d["DodCislo"].GetAlfaNum(),
+                                    Nazev = d["DodCislo"].GetText()
+                                },
+                                PosledniCena = d["NakupCena"].GetDecimal(),
+                                Firma = new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatelFirma() {
+                                    Kod = MoneyDataFirma.GetDodID(d["CisloDodavatele"].GetNum())
+                                }
+                            }
+                        }
+                    }
+                } : null;
 
                 artikl.Kategorie = string.Format(
                     "{0}|{1}",
                     kategorie.Find(k => { return k.Kod == d["KodZbozi"].GetNum(); }).ID,
-                    kategorie.Find(k => { return k.Kod == d["KodZbozi"].GetNum() + d["PodKodZbozi"].GetNum(); }).ID
+                    kategorie.Find(k => { return k.Kod == (d["KodZbozi"].GetNum() + d["PodKodZbozi"].GetNum()); }).ID
                 );
 
                 data.Add(artikl);

@@ -54,6 +54,7 @@ namespace SkladData {
             _columnSizes = new List<int>();
             _headerItems = new List<string>();
 
+            line += " A";
             for (int i = 1; i < line.Length; i++) {
                 c = line[i];
                 ++columnSize;
@@ -83,7 +84,11 @@ namespace SkladData {
             for (int i = 0; i < _columnSizes.Count; i++) {
                 int columnSize = _columnSizes[i];
                 string header = _headerItems[i];
-                item = line.Substring(startIndex, columnSize);
+                if (i + 1 == _columnSizes.Count) {
+                    item = line.Substring(startIndex);
+                } else {
+                    item = line.Substring(startIndex, columnSize);
+                }
                 obj.AddItem(header, item);
                 startIndex += columnSize;
             }
@@ -93,8 +98,5 @@ namespace SkladData {
         public abstract bool IsValidHeaderLine(string line);
 
         public abstract bool IsValidDataLine(string line);
-
-        public abstract string GetID(string ID);
-
     }
 }

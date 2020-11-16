@@ -10,11 +10,12 @@ namespace MainProgram {
     class Program {
 
         static void Main(string[] args) {
-            string souborOdb = @"/home/dmadera/projects/sklad-moneys4-convertor/datasource/headODB";
-            string souborDod = @"/home/dmadera/projects/sklad-moneys4-convertor/datasource/headDOD";
-            string souborKarty = @"/home/dmadera/projects/sklad-moneys4-convertor/datasource/headKARTY";
-            string souborKod = @"/home/dmadera/projects/sklad-moneys4-convertor/datasource/KOD";
-            string souborPodKod = @"/home/dmadera/projects/sklad-moneys4-convertor/datasource/PODKOD";
+            string datasourceDir = @"/home/dmadera/projects/sklad-moneys4-convertor/datasource/";
+            string souborOdb = datasourceDir + "headODB";
+            string souborDod = datasourceDir + "headDOD";
+            string souborKarty = datasourceDir + "headKARTY";
+            string souborKod = datasourceDir + "KOD";
+            string souborPodKod = datasourceDir + "PODKOD";
 
             MoneyData data = new MoneyData();
 
@@ -28,13 +29,8 @@ namespace MainProgram {
 
             data.Add(new SkladDataFileDod(lines));
 
-            lines = System.IO.File.ReadAllLines(souborKarty,
-                CodePagesEncodingProvider.Instance.GetEncoding("Windows-1250"));
-
-            data.Add(new SkladDataFileKarty(lines));
-
             lines = System.IO.File.ReadAllLines(souborKod,
-                CodePagesEncodingProvider.Instance.GetEncoding("Windows-1250"));
+              CodePagesEncodingProvider.Instance.GetEncoding("Windows-1250"));
 
             data.Add(new SkladDataFileKod(lines));
 
@@ -43,9 +39,13 @@ namespace MainProgram {
 
             data.Add(new SkladDataFilePodKod(lines));
 
+            lines = System.IO.File.ReadAllLines(souborKarty,
+                CodePagesEncodingProvider.Instance.GetEncoding("Windows-1250"));
+
+            data.Add(new SkladDataFileKarty(lines));
 
             var serializer = new XmlSerializer(typeof(S5Data));
-            using (var stream = new StreamWriter("/home/dmadera/downloads/ZaklDat.xml")) {
+            using (var stream = new StreamWriter(datasourceDir + "ZaklDat.xml")) {
                 serializer.Serialize(stream, data.GetS5Data());
             }
         }
