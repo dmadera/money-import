@@ -1,53 +1,28 @@
 ﻿using System.Text;
-using System.Xml.Serialization;
-using System.IO;
 
-using Schemas;
-using SkladData;
-using MoneyDataObjects;
+using S5DataObj;
 
 namespace MainProgram {
     class Program {
 
         static void Main(string[] args) {
-            string datasourceDir = @"/home/dmadera/projects/sklad-moneys4-convertor/datasource/";
-            string souborOdb = datasourceDir + "headODB";
-            string souborDod = datasourceDir + "headDOD";
-            string souborKarty = datasourceDir + "headKARTY";
-            string souborKod = datasourceDir + "KOD";
-            string souborPodKod = datasourceDir + "PODKOD";
+            string outputDir = @"/home/dmadera/projects/sklad-moneys4-convertor/output/";
+            string inputDir = @"/home/dmadera/projects/sklad-moneys4-convertor/input/";
+            string souborOdb = inputDir + "headODB";
+            string souborDod = inputDir + "headDOD";
+            string souborKarty = inputDir + "headKARTY";
+            string souborKod = inputDir + "KOD";
+            string souborPodKod = inputDir + "PODKOD";
 
-            MoneyData data = new MoneyData();
+            var enc = CodePagesEncodingProvider.Instance.GetEncoding("Windows-1250");
+            S5Adresar adresar = new S5Adresar(souborOdb, souborDod, enc);
+            adresar.serialize(outputDir + typeof(S5Adresar).Name + ".xml");
 
-            string[] lines = System.IO.File.ReadAllLines(souborOdb,
-                CodePagesEncodingProvider.Instance.GetEncoding("Windows-1250"));
+            S5Katalog katalog = new S5Katalog(souborKarty, souborKod, souborPodKod, enc);
+            adresar.serialize(outputDir + typeof(S5Katalog).Name + ".xml");
 
-            data.Add(new SkladDataFileOdb(lines));
-
-            lines = System.IO.File.ReadAllLines(souborDod,
-                CodePagesEncodingProvider.Instance.GetEncoding("Windows-1250"));
-
-            data.Add(new SkladDataFileDod(lines));
-
-            lines = System.IO.File.ReadAllLines(souborKod,
-              CodePagesEncodingProvider.Instance.GetEncoding("Windows-1250"));
-
-            data.Add(new SkladDataFileKod(lines));
-
-            lines = System.IO.File.ReadAllLines(souborPodKod,
-                CodePagesEncodingProvider.Instance.GetEncoding("Windows-1250"));
-
-            data.Add(new SkladDataFilePodKod(lines));
-
-            lines = System.IO.File.ReadAllLines(souborKarty,
-                CodePagesEncodingProvider.Instance.GetEncoding("Windows-1250"));
-
-            data.Add(new SkladDataFileKarty(lines));
-
-            var serializer = new XmlSerializer(typeof(S5Data));
-            using (var stream = new StreamWriter(datasourceDir + "ZaklDat.xml")) {
-                serializer.Serialize(stream, data.GetS5Data());
-            }
+            S5Zasoby zasoby = new S5Zasoby(souborKarty, enc);
+            adresar.serialize(outputDir + typeof(S5Zasoby).Name + ".xml");
         }
     }
 }

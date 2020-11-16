@@ -1,12 +1,20 @@
+using System;
 using System.Collections.Generic;
+using System.Text;
+using System.IO;
+using System.Xml.Serialization;
 
+using SKDAdresar;
 using SkladData;
-using Schemas;
 
-namespace MoneyDataObjects {
+namespace S5DataObj {
+    class S5Adresar {
 
-    class MoneyDataFirma {
+        private List<S5DataFirma> _data = new List<S5DataFirma>();
 
+        private Predicate<S5DataFirma> _filter = delegate (S5DataFirma a) {
+            return true;
+        };
 
         public static string GetOdbID(string id) {
             return "ADR" + id;
@@ -20,10 +28,28 @@ namespace MoneyDataObjects {
             return "ADR2" + id.Substring(1);
         }
 
-        public static List<S5DataFirma> GetData(SkladDataFileOdb odb) {
-            var data = new List<S5DataFirma>();
+        public S5Adresar(string odbFile, string dodFile, Encoding encoding) {
+            var lines = System.IO.File.ReadAllLines(odbFile, encoding);
+            convert(new SkladDataFileOdb(lines));
+            lines = System.IO.File.ReadAllLines(dodFile, encoding);
+            convert(new SkladDataFileDod(lines));
+        }
 
-            foreach (SkladDataObj obj in odb.Data) {
+        public S5Data GetS5Data() {
+            return new S5Data() {
+                FirmaList = _data.FindAll(_filter).ToArray()
+            };
+        }
+
+        public void serialize(string output) {
+            var serializer = new XmlSerializer(typeof(S5Data));
+            using (var stream = new StreamWriter(output)) {
+                serializer.Serialize(stream, GetS5Data());
+            }
+        }
+
+        private void convert(SkladDataFileOdb file) {
+            foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
 
                 group grp = null;
@@ -121,16 +147,12 @@ namespace MoneyDataObjects {
                     OdlisnaAdresaProvozovny = !isPrijemce ? "True" : "False"
                 };
 
-                data.Add(firma);
+                _data.Add(firma);
             }
-
-            return data;
         }
 
-        public static List<S5DataFirma> GetData(SkladDataFileDod dod) {
-            var data = new List<S5DataFirma>();
-
-            foreach (SkladDataObj obj in dod.Data) {
+        private void convert(SkladDataFileDod file) {
+            foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
 
                 var firma = new S5DataFirma() {
@@ -196,10 +218,9 @@ namespace MoneyDataObjects {
                         NazevStatu = "Česká republika"
                     }
                 };
-                data.Add(firma);
+                _data.Add(firma);
             }
 
-            return data;
         }
     }
 }
