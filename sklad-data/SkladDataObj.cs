@@ -3,11 +3,9 @@ using System.Collections.Generic;
 
 namespace SkladData {
     class SkladDataObj {
-        private Dictionary<string, SkladDataItem> _items;
+        private Dictionary<string, SkladDataItem> _items = new Dictionary<string, SkladDataItem>();
 
-        public SkladDataObj() {
-            _items = new Dictionary<string, SkladDataItem>();
-        }
+        public SkladDataObj() { }
 
         public Dictionary<string, SkladDataItem> Items {
             get => _items;

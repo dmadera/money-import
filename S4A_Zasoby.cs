@@ -4,11 +4,11 @@ using System.Text;
 using System.IO;
 using System.Xml.Serialization;
 
-using SKDZasoby;
+using SA_Zasoby;
 using SkladData;
 
-namespace S5DataObj {
-    class S5Zasoby {
+namespace S4DataObjs {
+    class S4A_Zasoby {
 
         private List<S5DataZasoba> _data = new List<S5DataZasoba>();
 
@@ -20,7 +20,7 @@ namespace S5DataObj {
             return "ART0" + id;
         }
 
-        public S5Zasoby(string kartyFile, Encoding encoding) {
+        public S4A_Zasoby(string kartyFile, Encoding encoding) {
             var lines = System.IO.File.ReadAllLines(kartyFile, encoding);
             convert(new SkladDataFileKarty(lines));
         }
@@ -52,9 +52,9 @@ namespace S5DataObj {
                     //     Nazev = d["Pozice"].GetAlfaNum()
                     // },
                     Artikl = new S5DataZasobaArtikl() {
-                        Kod = S5Katalog.GetID(d["CisloKarty"].GetNum())
+                        Kod = S4A_Katalog.GetID(d["CisloKarty"].GetNum())
                     },
-                    Kod = S5Katalog.GetID(d["CisloKarty"].GetNum()),
+                    Kod = S4A_Katalog.GetID(d["CisloKarty"].GetNum()),
                     HistorickaCena = d["NakupCena"].GetDecimal()
                 };
 

@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-using S5DataObj;
+using S4DataObjs;
 
 namespace MainProgram {
     class Program {
@@ -15,14 +15,15 @@ namespace MainProgram {
             string souborPodKod = inputDir + "PODKOD";
 
             var enc = CodePagesEncodingProvider.Instance.GetEncoding("Windows-1250");
-            S5Adresar adresar = new S5Adresar(souborOdb, souborDod, enc);
-            adresar.serialize(outputDir + typeof(S5Adresar).Name + ".xml");
+            S4A_Adresar adresar = new S4A_Adresar(souborOdb, souborDod, enc);
+            adresar.serialize(outputDir + typeof(S4A_Adresar).Name + ".xml");
 
-            S5Katalog katalog = new S5Katalog(souborKarty, souborKod, souborPodKod, enc);
-            katalog.serialize(outputDir + typeof(S5Katalog).Name + ".xml");
+            S4A_Katalog katalog = new S4A_Katalog(souborKarty, souborKod, souborPodKod, enc);
+            katalog.serialize(outputDir + typeof(S4A_Katalog).Name + ".xml");
 
-            S5Zasoby zasoby = new S5Zasoby(souborKarty, enc);
-            zasoby.serialize(outputDir + typeof(S5Zasoby).Name + ".xml");
+            S4A_Zasoby zasoby = new S4A_Zasoby(souborKarty, enc);
+            zasoby.serialize(outputDir + typeof(S4A_Zasoby).Name + ".xml");
+
         }
     }
 }

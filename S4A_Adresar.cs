@@ -4,11 +4,11 @@ using System.Text;
 using System.IO;
 using System.Xml.Serialization;
 
-using SKDAdresar;
+using SA_Adresar;
 using SkladData;
 
-namespace S5DataObj {
-    class S5Adresar {
+namespace S4DataObjs {
+    class S4A_Adresar {
 
         private List<S5DataFirma> _data = new List<S5DataFirma>();
 
@@ -28,7 +28,7 @@ namespace S5DataObj {
             return "ADR2" + id.Substring(1);
         }
 
-        public S5Adresar(string odbFile, string dodFile, Encoding encoding) {
+        public S4A_Adresar(string odbFile, string dodFile, Encoding encoding) {
             var lines = System.IO.File.ReadAllLines(odbFile, encoding);
             convert(new SkladDataFileOdb(lines));
             lines = System.IO.File.ReadAllLines(dodFile, encoding);

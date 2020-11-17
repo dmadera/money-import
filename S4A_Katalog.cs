@@ -4,11 +4,11 @@ using System.Text;
 using System.IO;
 using System.Xml.Serialization;
 
-using SKDKatalog;
+using SA_Katalog;
 using SkladData;
 
-namespace S5DataObj {
-    class S5Katalog {
+namespace S4DataObjs {
+    class S4A_Katalog {
         private List<S5DataArtikl> _data = new List<S5DataArtikl>();
 
         private List<S5DataKategorieArtiklu> _cats = new List<S5DataKategorieArtiklu>();
@@ -25,7 +25,7 @@ namespace S5DataObj {
             return "ART0" + id;
         }
 
-        public S5Katalog(string kartyFile, string kodFile, string podKodFile, Encoding encoding) {
+        public S4A_Katalog(string kartyFile, string kodFile, string podKodFile, Encoding encoding) {
             var lines = System.IO.File.ReadAllLines(kodFile, encoding);
             convert(new SkladDataFileKod(lines));
             lines = System.IO.File.ReadAllLines(podKodFile, encoding);
@@ -137,19 +137,19 @@ namespace S5DataObj {
 
                 artikl.Dodavatele = d["CisloDodavatele"].GetNum() != "00000" ? new S5DataArtiklDodavatele() {
                     HlavniDodavatel = new S5DataArtiklDodavateleHlavniDodavatel() {
-                        Firma_ID = S5Adresar.GetDodID(d["CisloDodavatele"].GetNum()),
+                        Firma_ID = S4A_Adresar.GetDodID(d["CisloDodavatele"].GetNum()),
                     },
                     SeznamDodavatelu = new S5DataArtiklDodavateleSeznamDodavatelu() {
                         ArtiklDodavatel = new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatel[] {
                                 new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatel() {
-                                    Firma_ID = S5Adresar.GetDodID(d["CisloDodavatele"].GetNum()),
+                                    Firma_ID = S4A_Adresar.GetDodID(d["CisloDodavatele"].GetNum()),
                                     DodavatelskeOznaceni = new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatelDodavatelskeOznaceni() {
                                         Kod = d["DodCislo"].GetAlfaNum(),
                                         Nazev = d["DodCislo"].GetText()
                                     },
                                     PosledniCena = d["NakupCena"].GetDecimal(),
                                     Firma = new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatelFirma() {
-                                        Kod = S5Adresar.GetDodID(d["CisloDodavatele"].GetNum())
+                                        Kod = S4A_Adresar.GetDodID(d["CisloDodavatele"].GetNum())
                                     }
                                 }
                             }

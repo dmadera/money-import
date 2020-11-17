@@ -3,7 +3,7 @@
     "tasks": [
         {
             "label": "xsdbuild",
-            "command": "for n in xsd/*.xsd; do xsd ${n} /c /n:$(basename ${n} .xsd); done",
+            "command": "for n in xsd/*.xsd; do xsd ${n} /c /n:$(basename ${n} .xsd) /o:xsd-gen ; done",
             "type": "shell",
             "args": [],
         },
