@@ -162,6 +162,10 @@ namespace S5DataObj {
                     _cats.Find(k => { return k.Kod == (d["KodZbozi"].GetNum() + d["PodKodZbozi"].GetNum()); }).ID
                 );
 
+                artikl.SmazatOstatniDodavatele = "True";
+                artikl.SmazatOstatniJednotky = "True";
+                artikl.SmazatOstatniSazbyDPH = "True";
+
                 _data.Add(artikl);
             }
         }

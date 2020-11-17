@@ -2228,8 +2228,6 @@ namespace SKDZasoby {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataZasobaSkladovaPozice {
         
-        private string kodField;
-        
         private string objectNameField;
         
         private string objectTypeField;
@@ -2239,17 +2237,6 @@ namespace SKDZasoby {
         public S5DataZasobaSkladovaPozice() {
             this.objectNameField = "SkladovaPozice";
             this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
-            get {
-                return this.kodField;
-            }
-            set {
-                this.kodField = value;
-            }
         }
         
         /// <remarks/>

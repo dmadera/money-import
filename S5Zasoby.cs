@@ -43,17 +43,19 @@ namespace S5DataObj {
                 var d = obj.Items;
 
                 var zasoba = new S5DataZasoba() {
-                    Sklad_ID = "HL",
                     Sklad = new S5DataZasobaSklad() {
                         Kod = "HL"
                     },
-                    SkladovaPozice_ID = d["Pozice"].GetAlfaNum(),
-                    Artikl_ID = S5Katalog.GetID(d["CisloKarty"].GetNum()),
+                    // SkladovaPozice = new S5DataZasobaSkladovaPozice() {
+                    //     Kod = d["Pozice"].GetAlfaNum(),
+                    //     Sklad_ID = "HL",
+                    //     Nazev = d["Pozice"].GetAlfaNum()
+                    // },
+                    Artikl = new S5DataZasobaArtikl() {
+                        Kod = S5Katalog.GetID(d["CisloKarty"].GetNum())
+                    },
                     Kod = S5Katalog.GetID(d["CisloKarty"].GetNum()),
-                    HistorickaCena = d["NakupCena"].GetDecimal(),
-                    Group = new group() {
-                        Kod = "HL"
-                    }
+                    HistorickaCena = d["NakupCena"].GetDecimal()
                 };
 
                 _data.Add(zasoba);

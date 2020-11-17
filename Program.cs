@@ -19,10 +19,10 @@ namespace MainProgram {
             adresar.serialize(outputDir + typeof(S5Adresar).Name + ".xml");
 
             S5Katalog katalog = new S5Katalog(souborKarty, souborKod, souborPodKod, enc);
-            adresar.serialize(outputDir + typeof(S5Katalog).Name + ".xml");
+            katalog.serialize(outputDir + typeof(S5Katalog).Name + ".xml");
 
             S5Zasoby zasoby = new S5Zasoby(souborKarty, enc);
-            adresar.serialize(outputDir + typeof(S5Zasoby).Name + ".xml");
+            zasoby.serialize(outputDir + typeof(S5Zasoby).Name + ".xml");
         }
     }
 }
