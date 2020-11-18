@@ -3736,6 +3736,8 @@ namespace SK_Prijem {
         
         private group groupField;
         
+        private string kodField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -3755,6 +3757,17 @@ namespace SK_Prijem {
             }
             set {
                 this.groupField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
             }
         }
         
@@ -4152,6 +4165,8 @@ namespace SK_Prijem {
         
         private group groupField;
         
+        private string kodField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -4171,6 +4186,17 @@ namespace SK_Prijem {
             }
             set {
                 this.groupField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
             }
         }
         
@@ -4516,6 +4542,8 @@ namespace SK_Prijem {
         
         private group groupField;
         
+        private string kodField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -4535,6 +4563,17 @@ namespace SK_Prijem {
             }
             set {
                 this.groupField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
             }
         }
         
@@ -6408,6 +6447,8 @@ namespace SK_Prijem {
         
         private group groupField;
         
+        private string kodField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -6427,6 +6468,17 @@ namespace SK_Prijem {
             }
             set {
                 this.groupField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
             }
         }
         
@@ -8325,6 +8377,8 @@ namespace SK_Prijem {
         
         private group groupField;
         
+        private string kodField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -8344,6 +8398,17 @@ namespace SK_Prijem {
             }
             set {
                 this.groupField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
             }
         }
         
@@ -11099,6 +11164,8 @@ namespace SK_Prijem {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoAdresneBlokaceBlokaceZasobDetailPolozky {
         
+        private string detailZasoby_IDField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -11108,6 +11175,17 @@ namespace SK_Prijem {
         public S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoAdresneBlokaceBlokaceZasobDetailPolozky() {
             this.objectNameField = "ObchodniPolozkaDetail";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string DetailZasoby_ID {
+            get {
+                return this.detailZasoby_IDField;
+            }
+            set {
+                this.detailZasoby_IDField = value;
+            }
         }
         
         /// <remarks/>
@@ -11152,6 +11230,8 @@ namespace SK_Prijem {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoAdresneBlokaceBlokaceZasobDetailZasoby {
         
+        private string zasoba_IDField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -11161,6 +11241,17 @@ namespace SK_Prijem {
         public S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoAdresneBlokaceBlokaceZasobDetailZasoby() {
             this.objectNameField = "ZasobaDetail";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Zasoba_ID {
+            get {
+                return this.zasoba_IDField;
+            }
+            set {
+                this.zasoba_IDField = value;
+            }
         }
         
         /// <remarks/>
@@ -11258,6 +11349,8 @@ namespace SK_Prijem {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoAdresneBlokaceBlokaceZasobPolozka {
         
+        private string obsahPolozky_IDField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -11267,6 +11360,17 @@ namespace SK_Prijem {
         public S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoAdresneBlokaceBlokaceZasobPolozka() {
             this.objectNameField = "PolozkaDokladu";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string ObsahPolozky_ID {
+            get {
+                return this.obsahPolozky_IDField;
+            }
+            set {
+                this.obsahPolozky_IDField = value;
+            }
         }
         
         /// <remarks/>
@@ -11538,6 +11642,8 @@ namespace SK_Prijem {
         
         private group groupField;
         
+        private string kodField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -11557,6 +11663,17 @@ namespace SK_Prijem {
             }
             set {
                 this.groupField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
             }
         }
         
@@ -11814,6 +11931,8 @@ namespace SK_Prijem {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoDruhPolozky {
         
+        private string kodField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -11823,6 +11942,17 @@ namespace SK_Prijem {
         public S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoDruhPolozky() {
             this.objectNameField = "DruhPolozky";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
+            }
         }
         
         /// <remarks/>
@@ -11869,6 +11999,8 @@ namespace SK_Prijem {
         
         private group groupField;
         
+        private string kodField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -11888,6 +12020,17 @@ namespace SK_Prijem {
             }
             set {
                 this.groupField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
             }
         }
         
@@ -13168,6 +13311,8 @@ namespace SK_Prijem {
         
         private group groupField;
         
+        private string kodField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -13187,6 +13332,17 @@ namespace SK_Prijem {
             }
             set {
                 this.groupField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
             }
         }
         
@@ -13444,6 +13600,8 @@ namespace SK_Prijem {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoUcetniZapisyUcetniZapisPolozka {
         
+        private string obsahPolozky_IDField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -13453,6 +13611,17 @@ namespace SK_Prijem {
         public S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoUcetniZapisyUcetniZapisPolozka() {
             this.objectNameField = "PolozkaDokladu";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string ObsahPolozky_ID {
+            get {
+                return this.obsahPolozky_IDField;
+            }
+            set {
+                this.obsahPolozky_IDField = value;
+            }
         }
         
         /// <remarks/>
@@ -14251,6 +14420,8 @@ namespace SK_Prijem {
         
         private group groupField;
         
+        private string kodField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -14270,6 +14441,17 @@ namespace SK_Prijem {
             }
             set {
                 this.groupField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
             }
         }
         
@@ -14317,6 +14499,8 @@ namespace SK_Prijem {
         
         private group groupField;
         
+        private string kodField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -14336,6 +14520,17 @@ namespace SK_Prijem {
             }
             set {
                 this.groupField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
             }
         }
         
@@ -14383,6 +14578,8 @@ namespace SK_Prijem {
         
         private group groupField;
         
+        private string kodField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -14402,6 +14599,17 @@ namespace SK_Prijem {
             }
             set {
                 this.groupField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
             }
         }
         

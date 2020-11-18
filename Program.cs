@@ -6,13 +6,17 @@ namespace MainProgram {
     class Program {
 
         static void Main(string[] args) {
+            // for n in input/complete/*; do head -n 10 ${n} > input/$(basename ${n}) ; done
+            // cp input/complete/KOD input/complete/PODKOD input/ ;
             string outputDir = @"/home/dmadera/projects/sklad-moneys4-convertor/output/";
             string inputDir = @"/home/dmadera/projects/sklad-moneys4-convertor/input/";
-            string souborOdb = inputDir + "headODB";
-            string souborDod = inputDir + "headDOD";
-            string souborKarty = inputDir + "headKARTY";
+            string souborOdb = inputDir + "ODB";
+            string souborDod = inputDir + "DOD";
+            string souborKarty = inputDir + "KARTY";
             string souborKod = inputDir + "KOD";
             string souborPodKod = inputDir + "PODKOD";
+            string cpohypp = inputDir + "CPOHYBP";
+            string pohypp = inputDir + "POHYBP";
 
             var enc = CodePagesEncodingProvider.Instance.GetEncoding("Windows-1250");
             S4A_Adresar adresar = new S4A_Adresar(souborOdb, souborDod, enc);
@@ -23,6 +27,9 @@ namespace MainProgram {
 
             S4A_Zasoby zasoby = new S4A_Zasoby(souborKarty, enc);
             zasoby.serialize(outputDir + typeof(S4A_Zasoby).Name + ".xml");
+
+            S4K_Prijem prijemky = new S4K_Prijem(cpohypp, pohypp, enc);
+            prijemky.serialize(outputDir + typeof(S4K_Prijem).Name + ".xml");
 
         }
     }

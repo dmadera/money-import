@@ -52,6 +52,24 @@ namespace SkladData {
             return v.StartsWith("-") ? v.Substring(1) : "-" + v;
         }
 
+        public DateTime GetDate() {
+            Regex r = new Regex(@"(\d{2}).(\d{2}).(\d{2})", RegexOptions.IgnoreCase);
+            Match m = r.Match(value);
+            if (m.Groups.Count == 4) {
+                return new DateTime(
+                    int.Parse("20" + m.Groups[3].Value),
+                    int.Parse(m.Groups[2].Value),
+                    int.Parse(m.Groups[1].Value));
+            }
+
+            throw new InvalidCastException("Není validní formát datumu: " + value);
+        }
+
+        public float GetFloat() {
+            var v = GetDecimal().Replace(",", ".");
+            return float.Parse(v);
+        }
+
         static public bool IsValidEmail(string email) {
             try {
                 var addr = new System.Net.Mail.MailAddress(email);
