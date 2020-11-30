@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 using SkladData;
 
 namespace S4DataObjs {
-    abstract class S4K_Obj<T, T1> {
+    abstract class S4_Generic<T, T1> {
 
         protected List<T> _data = new List<T>();
 

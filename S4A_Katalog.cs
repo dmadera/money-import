@@ -94,6 +94,7 @@ namespace S4DataObjs {
 
                 var artikl = new S5DataArtikl() {
                     Kod = GetID(d["CisloKarty"].GetNum()),
+                    Katalog = GetID(d["CisloKarty"].GetNum()),
                     Nazev = d["NazevZbozi"].GetText(),
                     Poznamka = d["NazevZbozi2"].GetText(),
                     HlavniJednotka_ID = d["MernaJednotka"].GetAlfaNum().ToLower(),

@@ -1,0 +1,41 @@
+#!/bin/bash
+DATA='<!--ADDED BY SCRIPT-->
+    <xs:element name="ObsahPolozky" minOccurs="0">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="Artikl" minOccurs="0">
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="Kod" type="string_60" />
+                            <xs:element name="Group" type="group" minOccurs="0" />
+                        </xs:all>
+                        <xs:attribute name="ObjectName" fixed="Artikl" />
+                        <xs:attribute name="ObjectType" fixed="Object" />
+                        <xs:attribute name="ID" type="guid" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Sklad" minOccurs="0">
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="Kod" type="string_60" />
+                        </xs:all>
+                        <xs:attribute name="ObjectName" fixed="Sklad" />
+                        <xs:attribute name="ObjectType" fixed="Object" />
+                        <xs:attribute name="ID" type="guid" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+            <xs:attribute name="ObjectName" fixed="ObsahPolozky" />
+            <xs:attribute name="ObjectType" fixed="Object" />
+            <xs:attribute name="ID" type="guid" />
+            <xs:attribute name="GENERATEZASOBA" type="string_60" />
+        </xs:complexType>
+    </xs:element>
+<!--ADDED BY SCRIPT END-->'
+
+ESCAPED=`echo "${DATA}" | sed -r ':a;N;$!ba;s|\n|\\\|g' | sed 's|/|\\\/|g'`
+
+for n in xsd/*.xsd; do 
+    sed -i -r "s/^.+ObsahPolozky_ID.+$/${ESCAPED}/mg" ${n} ;
+    xsd ${n} /c /n:$(basename ${n} .xsd) /o:xsd-gen ;
+done

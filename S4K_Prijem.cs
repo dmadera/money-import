@@ -1,14 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.IO;
-using System.Xml.Serialization;
 
 using SK_Prijem;
 using SkladData;
 
 namespace S4DataObjs {
-    class S4K_Prijem : S4K_Obj<S5DataDodaciListPrijaty, S5Data> {
+    class S4K_Prijem : S4_Generic<S5DataDodaciListPrijaty, S5Data> {
 
         public static string GetID(string id) {
             return "DP" + id;
@@ -29,8 +27,9 @@ namespace S4DataObjs {
         private void convert(SkladDataFilePohybP headers, SkladDataFilePohybP rows) {
             string columnId = "CisloPrijemky";
             string id = "";
+            int cisloPolozky = 0;
             SkladDataObj header;
-            S5DataDodaciListPrijaty dl = null;
+            S5DataDodaciListPrijaty doklad = null;
             float price;
             List<S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijateho> polozky = null;
 
@@ -38,22 +37,26 @@ namespace S4DataObjs {
                 var d = obj.Items;
                 if (id != d[columnId].GetNum()) {
                     id = d[columnId].GetNum();
+                    cisloPolozky = 0;
 
-                    if (dl != null && polozky != null) {
-                        dl.Polozky.PolozkaDodacihoListuPrijateho = polozky.ToArray();
-                        _data.Add(dl);
+                    if (doklad != null && polozky != null) {
+                        doklad.Polozky.PolozkaDodacihoListuPrijateho = polozky.ToArray();
+                        _data.Add(doklad);
                     }
 
                     header = find(headers.Data.ToArray(), columnId, d[columnId].GetNum());
 
-                    dl = new S5DataDodaciListPrijaty();
-                    dl.StareCisloPrijemky_UserData = d[columnId].GetNum();
-                    dl.CasSkladovehoPohybu = header.Items["DatumVydeje"].GetDate();
-                    dl.DatumVystaveni = header.Items["DatumVydeje"].GetDate();
-                    dl.PrijemceFaktury = new S5DataDodaciListPrijatyPrijemceFaktury() {
+                    doklad = new S5DataDodaciListPrijaty();
+                    doklad.ParovaciSymbol = d[columnId].GetNum();
+                    doklad.Group = new group() { Kod = "IMPORT" };
+                    doklad.DatumSkladovehoPohybu = header.Items["DatumVydeje"].GetDate();
+                    doklad.DatumVystaveni = header.Items["DatumVydeje"].GetDate();
+                    doklad.DatumSchvaleni = header.Items["DatumVydeje"].GetDate();
+                    doklad.DatumZauctovani = header.Items["DatumVydeje"].GetDate();
+                    doklad.PrijemceFaktury = new S5DataDodaciListPrijatyPrijemceFaktury() {
                         Kod = S4A_Adresar.GetDodID(header.Items["CisloDodavatele"].GetNum())
                     };
-                    dl.Adresa = new S5DataDodaciListPrijatyAdresa() {
+                    doklad.Adresa = new S5DataDodaciListPrijatyAdresa() {
                         Firma = new S5DataDodaciListPrijatyAdresaFirma() {
                             Kod = S4A_Adresar.GetDodID(header.Items["CisloDodavatele"].GetNum())
                         }
@@ -61,15 +64,17 @@ namespace S4DataObjs {
                     price = header.Items["Celkem0"].GetFloat()
                             + header.Items["Celkem5"].GetFloat()
                             + header.Items["Celkem23"].GetFloat();
-                    dl.CelkovaCastka = price.ToString("0.00").Replace(".", ",");
-                    dl.UcetMD_ID = "FP006";
-                    dl.Polozky = new S5DataDodaciListPrijatyPolozky();
+                    doklad.CelkovaCastka = price.ToString("0.00").Replace(".", ",");
+                    doklad.ZapornyPohyb = "False";
+                    doklad.Polozky = new S5DataDodaciListPrijatyPolozky();
+                    doklad.TypDokladu = new enum_TypDokladu() {
+                        EnumValueName = enum_TypDokladuEnumValueName.Prijaty
+                    };
                     polozky = new List<S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijateho>();
                 }
 
                 polozky.Add(
                     new S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijateho() {
-                        ID = Guid.NewGuid().ToString(),
                         Mnozstvi = d["Prijato"].GetNum(),
                         Nazev = d["NazevZbozi"].GetText(),
                         Jednotka = d["MernaJednotka"].GetAlfaNum().ToLower(),
@@ -77,25 +82,37 @@ namespace S4DataObjs {
                             Sazba = d["SazbaD"].GetNum()
                         },
                         JednCena = d["NakupCena"].GetDecimal(),
-                        DruhPolozky = new S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoDruhPolozky() {
-                            Kod = "ZBO"
-                        },
                         TypPolozky = new enum_TypPolozkyDokladu() {
                             EnumValueName = enum_TypPolozkyDokladuEnumValueName.Prijata
                         },
-                        // ParentObject_ID = S4A_Katalog.GetID(d["CisloKarty"].GetNum()),
-                        FormatPolozky = new enum_FormatPolozek() {
-                            EnumValueName = enum_FormatPolozekEnumValueName.Normalni
+                        TypCeny = new enum_TypCeny() {
+                            EnumValueName = enum_TypCenyEnumValueName.BezDane
                         },
-                        // Katalog = S4A_Katalog.GetID(d["CisloKarty"].GetNum()),            
-
+                        // Katalog = S4A_Katalog.GetID(d["CisloKarty"].GetNum()),
+                        TypObsahu = new enum_TypObsahuPolozky() {
+                            Value = enum_TypObsahuPolozky_value.Item1
+                        },
+                        ObsahPolozky = new S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoObsahPolozky() {
+                            GENERATEZASOBA = "1",
+                            Artikl = new S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoObsahPolozkyArtikl() {
+                                Kod = S4A_Katalog.GetID(d["CisloKarty"].GetNum()),
+                                Group = new group() {
+                                    Kod = "ART"
+                                }
+                            },
+                            Sklad = new S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoObsahPolozkySklad() {
+                                Kod = "HL"
+                            }
+                        },
+                        CisloPolozky = cisloPolozky.ToString()
                     }
 
                 );
+                cisloPolozky++;
             }
 
-            dl.Polozky.PolozkaDodacihoListuPrijateho = polozky.ToArray();
-            _data.Add(dl);
+            doklad.Polozky.PolozkaDodacihoListuPrijateho = polozky.ToArray();
+            _data.Add(doklad);
         }
     }
 }
