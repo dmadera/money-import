@@ -1437,7 +1437,7 @@ namespace SA_Zasoby {
         
         private group groupField;
         
-        private string kodField;
+        private string katalogField;
         
         private string objectNameField;
         
@@ -1463,12 +1463,12 @@ namespace SA_Zasoby {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
+        public string Katalog {
             get {
-                return this.kodField;
+                return this.katalogField;
             }
             set {
-                this.kodField = value;
+                this.katalogField = value;
             }
         }
         

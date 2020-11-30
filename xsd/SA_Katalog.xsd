@@ -31,11 +31,11 @@
                     <xs:element name="HlavniJednotka_ID" type="emptiable_guid" minOccurs="0" />
                     <xs:element name="Hmostnost_ID" type="guid" />
                     <xs:element name="IntrastatNeslucovat" type="emptiable_bool" minOccurs="0" />
-                    <xs:element name="Katalog" type="emptiable_string_60" minOccurs="0" />
+                    <xs:element name="Katalog" type="string_60" />
                     <xs:element name="KatalogCislo" type="emptiable_integer" minOccurs="0" />
                     <xs:element name="Kategorie" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="KategorieEEZ_ID" type="guid" />
-                    <xs:element name="Kod" type="string_60" />
+                    <xs:element name="Kod" type="emptiable_string_60" minOccurs="0" />
                     <xs:element name="KodCislo" type="emptiable_integer" minOccurs="0" />
                     <xs:element name="KombinovanaNomenklatura_ID" type="guid" />
                     <xs:element name="KrajPuvodu_ID" type="guid" />
@@ -527,7 +527,7 @@
                             <xs:complexType>
                               <xs:all>
                                 <xs:element name="Group" type="group" minOccurs="0" />
-                                <xs:element name="Kod" type="string_60" />
+                                <xs:element name="Katalog" type="string_60" />
                               </xs:all>
                               <xs:attribute name="ObjectName" fixed="Artikl" />
                               <xs:attribute name="ObjectType" fixed="Object" />
@@ -1079,7 +1079,7 @@
                                   <xs:complexType>
                                     <xs:all>
                                       <xs:element name="Group" type="group" minOccurs="0" />
-                                      <xs:element name="Kod" type="string_60" />
+                                      <xs:element name="Katalog" type="string_60" />
                                     </xs:all>
                                     <xs:attribute name="ObjectName" fixed="Artikl" />
                                     <xs:attribute name="ObjectType" fixed="Object" />
@@ -1090,7 +1090,7 @@
                                   <xs:complexType>
                                     <xs:all>
                                       <xs:element name="Group" type="group" minOccurs="0" />
-                                      <xs:element name="Kod" type="string_60" />
+                                      <xs:element name="Katalog" type="string_60" />
                                     </xs:all>
                                     <xs:attribute name="ObjectName" fixed="Artikl" />
                                     <xs:attribute name="ObjectType" fixed="Object" />
@@ -1101,7 +1101,7 @@
                                   <xs:complexType>
                                     <xs:all>
                                       <xs:element name="Group" type="group" minOccurs="0" />
-                                      <xs:element name="Kod" type="string_60" />
+                                      <xs:element name="Katalog" type="string_60" />
                                     </xs:all>
                                     <xs:attribute name="ObjectName" fixed="Artikl" />
                                     <xs:attribute name="ObjectType" fixed="Object" />
@@ -1249,7 +1249,7 @@
                                   <xs:complexType>
                                     <xs:all>
                                       <xs:element name="Group" type="group" minOccurs="0" />
-                                      <xs:element name="Kod" type="string_60" />
+                                      <xs:element name="Katalog" type="string_60" />
                                     </xs:all>
                                     <xs:attribute name="ObjectName" fixed="Artikl" />
                                     <xs:attribute name="ObjectType" fixed="Object" />
@@ -1300,7 +1300,7 @@
                                   <xs:complexType>
                                     <xs:all>
                                       <xs:element name="Group" type="group" minOccurs="0" />
-                                      <xs:element name="Kod" type="string_60" />
+                                      <xs:element name="Katalog" type="string_60" />
                                     </xs:all>
                                     <xs:attribute name="ObjectName" fixed="Artikl" />
                                     <xs:attribute name="ObjectType" fixed="Object" />
@@ -1311,7 +1311,7 @@
                                   <xs:complexType>
                                     <xs:all>
                                       <xs:element name="Group" type="group" minOccurs="0" />
-                                      <xs:element name="Kod" type="string_60" />
+                                      <xs:element name="Katalog" type="string_60" />
                                     </xs:all>
                                     <xs:attribute name="ObjectName" fixed="Artikl" />
                                     <xs:attribute name="ObjectType" fixed="Object" />
@@ -1401,7 +1401,7 @@
                                   <xs:complexType>
                                     <xs:all>
                                       <xs:element name="Group" type="group" minOccurs="0" />
-                                      <xs:element name="Kod" type="string_60" />
+                                      <xs:element name="Katalog" type="string_60" />
                                     </xs:all>
                                     <xs:attribute name="ObjectName" fixed="Artikl" />
                                     <xs:attribute name="ObjectType" fixed="Object" />
@@ -1412,7 +1412,7 @@
                                   <xs:complexType>
                                     <xs:all>
                                       <xs:element name="Group" type="group" minOccurs="0" />
-                                      <xs:element name="Kod" type="string_60" />
+                                      <xs:element name="Katalog" type="string_60" />
                                     </xs:all>
                                     <xs:attribute name="ObjectName" fixed="Artikl" />
                                     <xs:attribute name="ObjectType" fixed="Object" />

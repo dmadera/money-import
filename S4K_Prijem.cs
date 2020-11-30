@@ -9,7 +9,7 @@ namespace S4DataObjs {
     class S4K_Prijem : S4_Generic<S5DataDodaciListPrijaty, S5Data> {
 
         public static string GetID(string id) {
-            return "DP" + id;
+            return "PRIJEM" + id;
         }
 
         public S4K_Prijem(string cpohybpFile, string pohybpFile, Encoding encoding) {
@@ -47,7 +47,7 @@ namespace S4DataObjs {
                     header = find(headers.Data.ToArray(), columnId, d[columnId].GetNum());
 
                     doklad = new S5DataDodaciListPrijaty();
-                    doklad.ParovaciSymbol = d[columnId].GetNum();
+                    doklad.ParovaciSymbol = GetID(d[columnId].GetNum());
                     doklad.Group = new group() { Kod = "IMPORT" };
                     doklad.DatumSkladovehoPohybu = header.Items["DatumVydeje"].GetDate();
                     doklad.DatumVystaveni = header.Items["DatumVydeje"].GetDate();
@@ -77,7 +77,6 @@ namespace S4DataObjs {
                     new S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijateho() {
                         Mnozstvi = d["Prijato"].GetNum(),
                         Nazev = d["NazevZbozi"].GetText(),
-                        Jednotka = d["MernaJednotka"].GetAlfaNum().ToLower(),
                         DPH = new S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoDPH() {
                             Sazba = d["SazbaD"].GetNum()
                         },
@@ -88,14 +87,13 @@ namespace S4DataObjs {
                         TypCeny = new enum_TypCeny() {
                             EnumValueName = enum_TypCenyEnumValueName.BezDane
                         },
-                        // Katalog = S4A_Katalog.GetID(d["CisloKarty"].GetNum()),
                         TypObsahu = new enum_TypObsahuPolozky() {
                             Value = enum_TypObsahuPolozky_value.Item1
                         },
                         ObsahPolozky = new S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoObsahPolozky() {
                             GENERATEZASOBA = "1",
                             Artikl = new S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoObsahPolozkyArtikl() {
-                                Kod = S4A_Katalog.GetID(d["CisloKarty"].GetNum()),
+                                Katalog = S4A_Katalog.GetID(d["CisloKarty"].GetNum()),
                                 Group = new group() {
                                     Kod = "ART"
                                 }

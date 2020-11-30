@@ -56,7 +56,7 @@
                       <xs:complexType>
                         <xs:all>
                           <xs:element name="Group" type="group" minOccurs="0" />
-                          <xs:element name="Kod" type="string_60" />
+                          <xs:element name="Katalog" type="string_60" />
                         </xs:all>
                         <xs:attribute name="ObjectName" fixed="Artikl" />
                         <xs:attribute name="ObjectType" fixed="Object" />

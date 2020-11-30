@@ -17,7 +17,7 @@ namespace S4DataObjs {
         };
 
         public static string GetID(string id) {
-            return "ART0" + id;
+            return "ZAS" + id;
         }
 
         public S4A_Zasoby(string kartyFile, Encoding encoding) {
@@ -46,15 +46,10 @@ namespace S4DataObjs {
                     Sklad = new S5DataZasobaSklad() {
                         Kod = "HL"
                     },
-                    // SkladovaPozice = new S5DataZasobaSkladovaPozice() {
-                    //     Kod = d["Pozice"].GetAlfaNum(),
-                    //     Sklad_ID = "HL",
-                    //     Nazev = d["Pozice"].GetAlfaNum()
-                    // },
                     Artikl = new S5DataZasobaArtikl() {
-                        Kod = S4A_Katalog.GetID(d["CisloKarty"].GetNum())
+                        Katalog = S4A_Katalog.GetID(d["CisloKarty"].GetNum())
                     },
-                    Kod = S4A_Katalog.GetID(d["CisloKarty"].GetNum()),
+                    Kod = GetID(d["CisloKarty"].GetNum()),
                     HistorickaCena = d["NakupCena"].GetDecimal()
                 };
 

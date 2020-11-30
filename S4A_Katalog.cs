@@ -22,7 +22,7 @@ namespace S4DataObjs {
         };
 
         public static string GetID(string id) {
-            return "ART0" + id;
+            return "KARTY" + id;
         }
 
         public S4A_Katalog(string kartyFile, string kodFile, string podKodFile, Encoding encoding) {
@@ -93,7 +93,6 @@ namespace S4DataObjs {
                 var d = obj.Items;
 
                 var artikl = new S5DataArtikl() {
-                    Kod = GetID(d["CisloKarty"].GetNum()),
                     Katalog = GetID(d["CisloKarty"].GetNum()),
                     Nazev = d["NazevZbozi"].GetText(),
                     Poznamka = d["NazevZbozi2"].GetText(),
