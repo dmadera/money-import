@@ -101,6 +101,7 @@ namespace S4DataObjs {
                 var pol = new S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijateho();
                 pol.CisloPolozky = (++cisloPolozky).ToString();
                 pol.Mnozstvi = data["Prijato"].GetNum();
+                pol.Nazev = data["NazevZbozi"].GetText();
                 pol.JednotkovaPorizovaciCena = data["NakupCena"].GetDecimal();
                 pol.DPH = new S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoDPH() { Sazba = data["SazbaD"].GetNum() };
                 pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };

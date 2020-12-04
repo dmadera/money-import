@@ -61,6 +61,7 @@ namespace S4DataObjs {
                 var pol = new S5DataObjednavkaVydanaPolozkyPolozkaObjednavkyVydane();
                 pol.CisloPolozky = (++cisloPolozky).ToString();
                 pol.Mnozstvi = data["Vydano"].GetNum();
+                pol.Nazev = data["NazevZbozi"].GetText();
                 pol.JednCena = data["NakupCena"].GetDecimal();
                 pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };
                 pol.ObsahPolozky = new S5DataObjednavkaVydanaPolozkyPolozkaObjednavkyVydaneObsahPolozky() {
