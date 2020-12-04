@@ -1,18 +1,20 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Serialization;
+using System.IO;
 
 using SL_Faktury;
 using SkladData;
 
 namespace S4DataObjs {
-    class S4L_Faktury : S4_Generic<S5DataFakturaVydana, S5Data> {
+    class S4L_ProdejVyd : S4_Generic<S5DataFakturaVydana, S5Data> {
 
         public static string GetID(string id) {
-            return "FA" + id;
+            return "PRODEJ" + id;
         }
 
-        public S4L_Faktury(string cpohybpFile, string pohybpFile, Encoding encoding) {
+        public S4L_ProdejVyd(string cpohybpFile, string pohybpFile, Encoding encoding) {
             var lines = System.IO.File.ReadAllLines(cpohybpFile, encoding);
             var lines1 = System.IO.File.ReadAllLines(pohybpFile, encoding);
             convert(new SkladDataFile(lines), new SkladDataFile(lines1));
@@ -26,17 +28,17 @@ namespace S4DataObjs {
 
         private void convert(SkladDataFile headers, SkladDataFile rows) {
             string id = "";
-            int result = 0;
+            // int result = 0;
 
             foreach (var header in headers.Data) {
                 var data = header.Items;
                 var doc = new S5DataFakturaVydana();
                 id = GetID(data["CisloVydejky"].GetNum());
-                doc.Nazev = "Faktura vyd. č." + data["CisloVydejky"].GetNum();
+                doc.Nazev = "Prodejka č." + data["CisloVydejky"].GetNum();
                 doc.Jmeno = id;
                 doc.Group = new group() { Kod = "IMPORT" };
                 doc.DatumSkladovehoPohybu = doc.DatumZauctovani = doc.DatumSchvaleni = doc.DatumVystaveni = data["DatumVydeje"].GetDate();
-                doc.DatumSplatnosti = data["DatumVydeje"].GetDate().AddDays(int.TryParse(data["Splatnost"].GetNum(), out result) ? int.Parse(data["Splatnost"].GetNum()) : 0);
+                // doc.DatumSplatnosti = data["DatumVydeje"].GetDate().AddDays(int.TryParse(data["Splatnost"].GetNum(), out result) ? int.Parse(data["Splatnost"].GetNum()) : 0);
                 doc.Poznamka = data["Upozorneni"].GetText() + Environment.NewLine + Environment.NewLine + header.ToString();
                 doc.ZapornyPohyb = "False";
                 doc.Polozky = new S5DataFakturaVydanaPolozky();
@@ -44,7 +46,7 @@ namespace S4DataObjs {
                 doc.PrijemceFaktury = new S5DataFakturaVydanaPrijemceFaktury() { Kod = S4A_Adresar.GetOdbID(data["CisloOdberatele"].GetNum()) };
                 doc.Adresa = new S5DataFakturaVydanaAdresa() { Firma = new S5DataFakturaVydanaAdresaFirma() { Kod = S4A_Adresar.GetOdbID(data["CisloOdberatele"].GetNum()) } };
                 // doc.PuvodniDoklad = data["CisloZakazky"].GetNum() != "00000" ? data["CisloZakazky"].GetNum() : "";
-                if (data["DatUhrady"].GetNum() != "0") doc.DatumUhrady = data["DatUhrady"].GetDate();
+                // if (data["DatUhrady"].GetNum() != "0") doc.DatumUhrady = data["DatUhrady"].GetDate();
                 _data.Add(doc);
             }
 
@@ -93,6 +95,18 @@ namespace S4DataObjs {
             found.Polozky = new S5DataFakturaVydanaPolozky() {
                 PolozkaFakturyVydane = items.ToArray()
             };
+        }
+
+        public override void serialize(string output) {
+            var serializer = new XmlSerializer(typeof(S5Data));
+            using (var stream = new StreamWriter(output)) {
+                serializer.Serialize(stream, GetS5Data());
+            }
+
+            string text = File.ReadAllText(output);
+            text = text.Replace("FakturaVydana", "ProdejkaVydana");
+            text = text.Replace("FakturyVydane", "ProdejkyVydane");
+            File.WriteAllText(output, text);
         }
     }
 }

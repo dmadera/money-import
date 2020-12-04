@@ -17,7 +17,7 @@ namespace S4DataObjs {
 
         public abstract T1 GetS5Data();
 
-        public void serialize(string output) {
+        public virtual void serialize(string output) {
             var serializer = new XmlSerializer(typeof(T1));
             using (var stream = new StreamWriter(output)) {
                 serializer.Serialize(stream, GetS5Data());

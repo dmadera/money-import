@@ -22,7 +22,7 @@ namespace S4DataObjs {
 
         public S4A_Zasoby(string kartyFile, Encoding encoding) {
             var lines = System.IO.File.ReadAllLines(kartyFile, encoding);
-            convert(new SkladDataFileKarty(lines));
+            convert(new SkladDataFile(lines));
         }
 
         public S5Data GetS5Data() {
@@ -38,7 +38,7 @@ namespace S4DataObjs {
             }
         }
 
-        private void convert(SkladDataFileKarty file) {
+        private void convert(SkladDataFile file) {
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
 

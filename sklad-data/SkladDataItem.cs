@@ -1,5 +1,6 @@
 using System;
 using System.Text.RegularExpressions;
+using System.ComponentModel.DataAnnotations;
 
 namespace SkladData {
     class SkladDataItem {
@@ -53,16 +54,7 @@ namespace SkladData {
         }
 
         public DateTime GetDate() {
-            Regex r = new Regex(@"(\d{2}).(\d{2}).(\d{2})", RegexOptions.IgnoreCase);
-            Match m = r.Match(value);
-            if (m.Groups.Count == 4) {
-                return new DateTime(
-                    int.Parse("20" + m.Groups[3].Value),
-                    int.Parse(m.Groups[2].Value),
-                    int.Parse(m.Groups[1].Value));
-            }
-
-            throw new InvalidCastException("Není validní formát datumu: " + value);
+            return DateTime.UnixEpoch.AddDays(double.Parse(value) - 719163);
         }
 
         public float GetFloat() {
@@ -70,14 +62,7 @@ namespace SkladData {
             return float.Parse(v);
         }
 
-        static public bool IsValidEmail(string email) {
-            try {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            } catch {
-                return false;
-            }
-        }
+        public static bool IsValidEmail(string address) => address != null && new EmailAddressAttribute().IsValid(address);
 
     }
 }

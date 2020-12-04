@@ -13,7 +13,7 @@ namespace S4DataObjs {
         private List<S5DataFirma> _data = new List<S5DataFirma>();
 
         private Predicate<S5DataFirma> _filter = delegate (S5DataFirma a) {
-            return true;
+            return !a.Nazev.StartsWith("||19") && !a.Nazev.StartsWith("||18") && !a.Nazev.StartsWith("||17");
         };
 
         public static string GetOdbID(string id) {
@@ -30,9 +30,9 @@ namespace S4DataObjs {
 
         public S4A_Adresar(string odbFile, string dodFile, Encoding encoding) {
             var lines = System.IO.File.ReadAllLines(odbFile, encoding);
-            convert(new SkladDataFileOdb(lines));
+            convertOdb(new SkladDataFile(lines));
             lines = System.IO.File.ReadAllLines(dodFile, encoding);
-            convert(new SkladDataFileDod(lines));
+            convertDod(new SkladDataFile(lines));
         }
 
         public S5Data GetS5Data() {
@@ -48,7 +48,7 @@ namespace S4DataObjs {
             }
         }
 
-        private void convert(SkladDataFileOdb file) {
+        private void convertOdb(SkladDataFile file) {
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
 
@@ -62,9 +62,10 @@ namespace S4DataObjs {
                     kod = GetOdbOstID(kodOdb);
                 }
 
+                var nazev = d["NazevOdberatele"].GetText() + " " + d["NazevOdberatele2"].GetText();
                 var firma = new S5DataFirma() {
                     Kod = kod,
-                    Nazev = d["NazevOdberatele"].GetText() + " " + d["NazevOdberatele2"].GetText(),
+                    Nazev = nazev,
                     Pohledavky = new S5DataFirmaPohledavky() {
                         SplatnostPohledavek = d["Splatnost"].GetNum()
                     },
@@ -132,6 +133,7 @@ namespace S4DataObjs {
 
                 firma.Adresy = new S5DataFirmaAdresy() {
                     ObchodniAdresa = new S5DataFirmaAdresyObchodniAdresa() {
+                        Nazev = nazev,
                         Ulice = d["Ulice"].GetText(),
                         KodPsc = d["Psc"].GetNum(),
                         Misto = d["Mesto"].GetText(),
@@ -151,13 +153,14 @@ namespace S4DataObjs {
             }
         }
 
-        private void convert(SkladDataFileDod file) {
+        private void convertDod(SkladDataFile file) {
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
 
+                var nazev = d["NazevDodavatele"].GetText() + " " + d["NazevDodavatele2"].GetText();
                 var firma = new S5DataFirma() {
                     Kod = GetDodID(d["CisloDodavatele"].GetNum()),
-                    Nazev = d["NazevDodavatele"].GetText() + " " + d["NazevDodavatele2"].GetText(),
+                    Nazev = nazev,
                     ICO = d["Ico"].GetNum(),
                     DIC = obj.GetDic(),
                     Poznamka = obj.Get5Note()
@@ -212,6 +215,7 @@ namespace S4DataObjs {
 
                 firma.Adresy = new S5DataFirmaAdresy() {
                     ObchodniAdresa = new S5DataFirmaAdresyObchodniAdresa() {
+                        Nazev = nazev,
                         Ulice = d["Ulice"].GetText(),
                         KodPsc = d["Psc"].GetNum(),
                         Misto = d["Mesto"].GetText(),

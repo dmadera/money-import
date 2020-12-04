@@ -34,5 +34,17 @@ namespace SkladData {
             emaily[1] = split.Length == 2 && SkladDataItem.IsValidEmail(split[1]) ? split[1] : null;
             return emaily;
         }
+
+        public override string ToString() {
+            string output = "Zdroj:" + Environment.NewLine;
+            int counter = 0;
+            foreach (KeyValuePair<string, SkladDataItem> entry in _items) {
+                output += string.Format("{0}:{1},", entry.Key, entry.Value.GetRaw());
+                if (++counter % 3 == 0) {
+                    output += Environment.NewLine;
+                }
+            }
+            return output.Substring(0, output.Length - 2);
+        }
     }
 }

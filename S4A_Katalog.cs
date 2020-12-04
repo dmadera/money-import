@@ -14,7 +14,7 @@ namespace S4DataObjs {
         private List<S5DataKategorieArtiklu> _cats = new List<S5DataKategorieArtiklu>();
 
         private Predicate<S5DataArtikl> _filter = delegate (S5DataArtikl a) {
-            return true;
+            return !a.Nazev.StartsWith("||19") && !a.Nazev.StartsWith("||18") && !a.Nazev.StartsWith("||17");
         };
 
         private Predicate<S5DataKategorieArtiklu> _filterCats = delegate (S5DataKategorieArtiklu a) {
@@ -27,11 +27,11 @@ namespace S4DataObjs {
 
         public S4A_Katalog(string kartyFile, string kodFile, string podKodFile, Encoding encoding) {
             var lines = System.IO.File.ReadAllLines(kodFile, encoding);
-            convert(new SkladDataFileKod(lines));
+            convertKod(new SkladDataFile(lines));
             lines = System.IO.File.ReadAllLines(podKodFile, encoding);
-            convert(new SkladDataFilePodKod(lines));
+            convertPodKod(new SkladDataFile(lines));
             lines = System.IO.File.ReadAllLines(kartyFile, encoding);
-            convert(new SkladDataFileKarty(lines));
+            convertKarty(new SkladDataFile(lines));
         }
 
         public S5Data GetS5Data() {
@@ -48,7 +48,7 @@ namespace S4DataObjs {
             }
         }
 
-        private void convert(SkladDataFileKod file) {
+        private void convertKod(SkladDataFile file) {
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
                 var cat = new S5DataKategorieArtiklu() {
@@ -76,7 +76,7 @@ namespace S4DataObjs {
                     });
         }
 
-        private void convert(SkladDataFilePodKod file) {
+        private void convertPodKod(SkladDataFile file) {
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
                 var cat = new S5DataKategorieArtiklu() {
@@ -88,9 +88,17 @@ namespace S4DataObjs {
             }
         }
 
-        private void convert(SkladDataFileKarty file) {
+        private void convertKarty(SkladDataFile file) {
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
+
+                var sazbaDPH = new enum_DruhSazbyDPH() {
+                    EnumValueName = d["SazbaD"].GetNum() == "21" ?
+                        enum_DruhSazbyDPHEnumValueName.Zakladni :
+                        (d["SazbaD"].GetNum() == "15" ?
+                            enum_DruhSazbyDPHEnumValueName.Snizena :
+                            enum_DruhSazbyDPHEnumValueName.Nulova)
+                };
 
                 var artikl = new S5DataArtikl() {
                     Katalog = GetID(d["CisloKarty"].GetNum()),
@@ -123,13 +131,8 @@ namespace S4DataObjs {
                     SazbyDPH = new S5DataArtiklSazbyDPH() {
                         ArtiklDPH = new S5DataArtiklSazbyDPHArtiklDPH[] {
                                 new S5DataArtiklSazbyDPHArtiklDPH() {
-                                    SazbaVstup = new enum_DruhSazbyDPH() {
-                                        EnumValueName = d["SazbaD"].GetNum() == "21" ?
-                                            enum_DruhSazbyDPHEnumValueName.Zakladni :
-                                            (d["SazbaD"].GetNum() == "15" ?
-                                                enum_DruhSazbyDPHEnumValueName.Snizena :
-                                                enum_DruhSazbyDPHEnumValueName.Nulova)
-                                    }
+                                    SazbaVstup = sazbaDPH,
+                                    SazbaVystup = sazbaDPH
                                 }
                             }
                     }
@@ -156,11 +159,16 @@ namespace S4DataObjs {
                     }
                 } : null;
 
-                artikl.Kategorie = string.Format(
-                    "{0}|{1}",
-                    _cats.Find(k => { return k.Kod == d["KodZbozi"].GetNum(); }).ID,
-                    _cats.Find(k => { return k.Kod == (d["KodZbozi"].GetNum() + d["PodKodZbozi"].GetNum()); }).ID
-                );
+                var kod = _cats.Find(k => { return k.Kod == d["KodZbozi"].GetNum(); });
+                var podkod = _cats.Find(k => { return k.Kod == (d["KodZbozi"].GetNum() + d["PodKodZbozi"].GetNum()); });
+
+                if (kod != null && podkod != null) {
+                    artikl.Kategorie = string.Format(
+                        "{0}|{1}",
+                        kod.ID,
+                        podkod.ID
+                    );
+                }
 
                 artikl.SmazatOstatniDodavatele = "True";
                 artikl.SmazatOstatniJednotky = "True";

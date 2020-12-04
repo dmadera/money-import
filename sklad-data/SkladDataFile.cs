@@ -1,102 +1,38 @@
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
 
 namespace SkladData {
-    abstract class SkladDataFile {
-        private List<int> _columnSizes = new List<int>();
-        private List<string> _headerItems = new List<string>();
-
+    class SkladDataFile {
         private List<SkladDataObj> _data = new List<SkladDataObj>();
-
-        private string[] _lines;
-
         public SkladDataFile(string[] lines) {
-            _lines = lines;
-            foreach (string line in _lines) {
-                if (IsValidHeaderLine(line)) {
-                    parseHeaderLine(line);
-                    break;
+            string header = "";
+            int dataStartIndex = 0;
+
+            foreach (string line in lines) {
+                dataStartIndex++;
+
+                if (dataStartIndex == 1) continue;
+
+                if (line.StartsWith("--DATA--")) break;
+
+                header += line;
+            }
+
+            var data = lines[dataStartIndex..lines.Length];
+            var splitHeader = header.Split(";");
+
+            foreach (string line in data) {
+                var splitData = Regex.Split(line, @"\$;");
+                var obj = new SkladDataObj();
+                for (int i = 0; i < splitData.Length; i++) {
+                    obj.AddItem(splitHeader[i], splitData[i]);
                 }
+                _data.Add(obj);
             }
-
-            if (_columnSizes.Count == _headerItems.Count && _columnSizes.Count == 0) {
-                throw new System.Exception("Nebyl nalezen řádek HEADER!");
-            }
-
-            foreach (string line in _lines) {
-                if (IsValidDataLine(line)) {
-                    _data.Add(parseDataLine(line));
-                }
-            }
-        }
-
-        public string[] Lines {
-            get => _lines;
-        }
-
-        public List<int> ColumnSizes {
-            get => _columnSizes;
-        }
-
-        public List<string> HeaderItems {
-            get => _headerItems;
         }
 
         public List<SkladDataObj> Data {
             get => _data;
         }
-
-        private void parseHeaderLine(string line) {
-            bool prevSpace = false;
-            char c;
-            string item = "";
-            int columnSize = 1;
-
-            _columnSizes = new List<int>();
-            _headerItems = new List<string>();
-
-            line += " A";
-            for (int i = 1; i < line.Length; i++) {
-                c = line[i];
-                ++columnSize;
-                if (char.IsWhiteSpace(c)) {
-                    if (!prevSpace) {
-                        _headerItems.Add(item);
-                    }
-                    prevSpace = true;
-                } else {
-                    if (prevSpace) {
-                        _columnSizes.Add(columnSize - 2);
-                        columnSize = 2;
-                        item = "" + c;
-                    } else {
-                        item += c;
-                    }
-                    prevSpace = false;
-                }
-            }
-        }
-
-        private SkladDataObj parseDataLine(string line) {
-            int startIndex = 0;
-            string item = "";
-
-            var obj = new SkladDataObj();
-            for (int i = 0; i < _columnSizes.Count; i++) {
-                int columnSize = _columnSizes[i];
-                string header = _headerItems[i];
-                if (i + 1 == _columnSizes.Count) {
-                    item = line.Substring(startIndex);
-                } else {
-                    item = line.Substring(startIndex, columnSize);
-                }
-                obj.AddItem(header, item);
-                startIndex += columnSize;
-            }
-            return obj;
-        }
-
-        public abstract bool IsValidHeaderLine(string line);
-
-        public abstract bool IsValidDataLine(string line);
     }
 }
