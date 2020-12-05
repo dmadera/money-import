@@ -103,6 +103,7 @@ namespace S4DataObjs {
                 pol.Mnozstvi = data["Prijato"].GetNum();
                 pol.Nazev = data["NazevZbozi"].GetText();
                 pol.JednotkovaPorizovaciCena = data["NakupCena"].GetDecimal();
+                if (pol.Mnozstvi.StartsWith("-")) pol.JednotkovaPorizovaciCena = "0";
                 pol.DPH = new S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoDPH() { Sazba = data["SazbaD"].GetNum() };
                 pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };
                 pol.ObsahPolozky = new S5DataDodaciListPrijatyPolozkyPolozkaDodacihoListuPrijatehoObsahPolozky() {
