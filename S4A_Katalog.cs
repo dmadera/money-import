@@ -14,7 +14,7 @@ namespace S4DataObjs {
         private List<S5DataKategorieArtiklu> _cats = new List<S5DataKategorieArtiklu>();
 
         private Predicate<S5DataArtikl> _filter = delegate (S5DataArtikl a) {
-            return !a.Nazev.StartsWith("||19") && !a.Nazev.StartsWith("||18") && !a.Nazev.StartsWith("||17");
+            return true;
         };
 
         private Predicate<S5DataKategorieArtiklu> _filterCats = delegate (S5DataKategorieArtiklu a) {

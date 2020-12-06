@@ -13,7 +13,7 @@ namespace S4DataObjs {
         private List<S5DataFirma> _data = new List<S5DataFirma>();
 
         private Predicate<S5DataFirma> _filter = delegate (S5DataFirma a) {
-            return !a.Nazev.StartsWith("||19") && !a.Nazev.StartsWith("||18") && !a.Nazev.StartsWith("||17");
+            return !a.Nazev.StartsWith("||18") && !a.Nazev.StartsWith("||17");
         };
 
         public static string GetOdbID(string id) {

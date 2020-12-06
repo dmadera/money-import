@@ -13,7 +13,7 @@ namespace S4DataObjs {
         private List<S5DataZasoba> _data = new List<S5DataZasoba>();
 
         private Predicate<S5DataZasoba> _filter = delegate (S5DataZasoba a) {
-            return !a.Nazev.StartsWith("||19") && !a.Nazev.StartsWith("||18") && !a.Nazev.StartsWith("||17");
+            return true;
         };
 
         public static string GetID(string id) {
@@ -44,6 +44,11 @@ namespace S4DataObjs {
 
                 var zasoba = new S5DataZasoba() {
                     Nazev = d["NazevZbozi"].GetText(),
+                    NastaveniZasoby = new S5DataZasobaNastaveniZasoby() {
+                        VydejDoMinusu = new enum_VydejDoMinusu() {
+                            EnumValueName = enum_VydejDoMinusuEnumValueName.Nekontrolovat
+                        }
+                    },
                     Sklad = new S5DataZasobaSklad() {
                         Kod = "HL"
                     },
