@@ -9,8 +9,8 @@ namespace MainProgram {
         static void Main(string[] args) {
             // for n in input/complete/*; do head -n 10 ${n} > input/$(basename ${n}) ; done && cp input/complete/KOD.TXT input/complete/PODKOD.TXT input/complete/SKUP.TXT input/
             string outputDir = @"/home/dmadera/projects/sklad-moneys4-convertor/output/";
-            // string inputDir = @"/home/dmadera/projects/sklad-moneys4-convertor/input/complete/";
-            string inputDir = @"/home/dmadera/projects/sklad-moneys4-convertor/input/";
+            string inputDir = @"/home/dmadera/projects/sklad-moneys4-convertor/input/complete/";
+            // string inputDir = @"/home/dmadera/projects/sklad-moneys4-convertor/input/";
             string souborOdb = inputDir + "ODB" + ".TXT";
             string souborDod = inputDir + "DOD" + ".TXT";
             string souborKarty = inputDir + "KARTY" + ".TXT";
@@ -29,6 +29,8 @@ namespace MainProgram {
             string cpohybn = inputDir + "CPOHYBN" + ".TXT";
             string pohybn = inputDir + "POHYBN" + ".TXT";
             string kartyinv = inputDir + "KARTYINV" + ".TXT";
+
+            S4_IDs.Deserialize(outputDir + "S_IDs.xml");
 
             var enc = CodePagesEncodingProvider.Instance.GetEncoding("Windows-1250");
             S4A_Adresar adresar = new S4A_Adresar(souborOdb, souborDod, enc);

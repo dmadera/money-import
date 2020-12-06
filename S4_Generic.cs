@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.IO;
 using System.Xml.Serialization;
 
@@ -22,18 +21,6 @@ namespace S4DataObjs {
             using (var stream = new StreamWriter(output)) {
                 serializer.Serialize(stream, GetS5Data());
             }
-        }
-
-        protected SkladDataObj find(SkladDataObj[] data, string column, string value) {
-            foreach (SkladDataObj obj in data) {
-                if (obj.Items[column].GetAlfaNum() == value) {
-                    return obj;
-                }
-            }
-            throw new InvalidDataException(string.Format(
-                "Nebyla nalezena hodnota {0} ve sloupci {1}",
-                value, column
-            ));
         }
     }
 }

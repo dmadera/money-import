@@ -3,21 +3,8 @@ DATA='<!--ADDED BY SCRIPT-->
     <xs:element name="ObsahPolozky" minOccurs="0">
         <xs:complexType>
             <xs:all>
-                <xs:element name="Artikl" minOccurs="0">
-                    <xs:complexType>
-                        <xs:all>
-                            <xs:element name="Katalog" type="string_60" />
-                            <xs:element name="Group" type="group" minOccurs="0" />
-                        </xs:all>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="Sklad" minOccurs="0">
-                    <xs:complexType>
-                        <xs:all>
-                            <xs:element name="Kod" type="string_60" />
-                        </xs:all>
-                    </xs:complexType>
-                </xs:element>
+                <xs:element name="Artikl_ID" minOccurs="0" />
+                <xs:element name="Sklad_ID" minOccurs="0" />
             </xs:all>
             <xs:attribute name="GENERATEZASOBA" type="string_60" />
         </xs:complexType>

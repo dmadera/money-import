@@ -3735,8 +3735,6 @@ namespace SB_SklDokl {
         
         private group groupField;
         
-        private string kodField;
-        
         private string objectNameField;
         
         private string objectTypeField;
@@ -3756,17 +3754,6 @@ namespace SB_SklDokl {
             }
             set {
                 this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
-            get {
-                return this.kodField;
-            }
-            set {
-                this.kodField = value;
             }
         }
         
@@ -4164,8 +4151,6 @@ namespace SB_SklDokl {
         
         private group groupField;
         
-        private string kodField;
-        
         private string objectNameField;
         
         private string objectTypeField;
@@ -4185,17 +4170,6 @@ namespace SB_SklDokl {
             }
             set {
                 this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
-            get {
-                return this.kodField;
-            }
-            set {
-                this.kodField = value;
             }
         }
         
@@ -4541,8 +4515,6 @@ namespace SB_SklDokl {
         
         private group groupField;
         
-        private string kodField;
-        
         private string objectNameField;
         
         private string objectTypeField;
@@ -4562,17 +4534,6 @@ namespace SB_SklDokl {
             }
             set {
                 this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
-            get {
-                return this.kodField;
-            }
-            set {
-                this.kodField = value;
             }
         }
         
@@ -6446,8 +6407,6 @@ namespace SB_SklDokl {
         
         private group groupField;
         
-        private string kodField;
-        
         private string objectNameField;
         
         private string objectTypeField;
@@ -6467,17 +6426,6 @@ namespace SB_SklDokl {
             }
             set {
                 this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
-            get {
-                return this.kodField;
-            }
-            set {
-                this.kodField = value;
             }
         }
         
@@ -8215,8 +8163,6 @@ namespace SB_SklDokl {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataSkladovyDokladDruhPohybu {
         
-        private string kodField;
-        
         private string objectNameField;
         
         private string objectTypeField;
@@ -8226,17 +8172,6 @@ namespace SB_SklDokl {
         public S5DataSkladovyDokladDruhPohybu() {
             this.objectNameField = "DruhPohybuZasoby";
             this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
-            get {
-                return this.kodField;
-            }
-            set {
-                this.kodField = value;
-            }
         }
         
         /// <remarks/>
@@ -8283,8 +8218,6 @@ namespace SB_SklDokl {
         
         private group groupField;
         
-        private string kodField;
-        
         private string objectNameField;
         
         private string objectTypeField;
@@ -8304,17 +8237,6 @@ namespace SB_SklDokl {
             }
             set {
                 this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
-            get {
-                return this.kodField;
-            }
-            set {
-                this.kodField = value;
             }
         }
         
@@ -8991,7 +8913,7 @@ namespace SB_SklDokl {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string CisloPolozky {
             get {
                 return this.cisloPolozkyField;
@@ -9758,31 +9680,31 @@ namespace SB_SklDokl {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuObsahPolozky {
         
-        private S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuObsahPolozkyArtikl artiklField;
+        private object artikl_IDField;
         
-        private S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuObsahPolozkySklad skladField;
+        private object sklad_IDField;
         
         private string gENERATEZASOBAField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuObsahPolozkyArtikl Artikl {
+        public object Artikl_ID {
             get {
-                return this.artiklField;
+                return this.artikl_IDField;
             }
             set {
-                this.artiklField = value;
+                this.artikl_IDField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuObsahPolozkySklad Sklad {
+        public object Sklad_ID {
             get {
-                return this.skladField;
+                return this.sklad_IDField;
             }
             set {
-                this.skladField = value;
+                this.sklad_IDField = value;
             }
         }
         
@@ -9794,63 +9716,6 @@ namespace SB_SklDokl {
             }
             set {
                 this.gENERATEZASOBAField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuObsahPolozkyArtikl {
-        
-        private string katalogField;
-        
-        private group groupField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Katalog {
-            get {
-                return this.katalogField;
-            }
-            set {
-                this.katalogField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public group Group {
-            get {
-                return this.groupField;
-            }
-            set {
-                this.groupField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuObsahPolozkySklad {
-        
-        private string kodField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
-            get {
-                return this.kodField;
-            }
-            set {
-                this.kodField = value;
             }
         }
     }
@@ -11785,8 +11650,6 @@ namespace SB_SklDokl {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuDruhPohybu {
         
-        private string kodField;
-        
         private string objectNameField;
         
         private string objectTypeField;
@@ -11796,17 +11659,6 @@ namespace SB_SklDokl {
         public S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuDruhPohybu() {
             this.objectNameField = "DruhPohybuZasoby";
             this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
-            get {
-                return this.kodField;
-            }
-            set {
-                this.kodField = value;
-            }
         }
         
         /// <remarks/>
@@ -11906,8 +11758,6 @@ namespace SB_SklDokl {
         
         private group groupField;
         
-        private string kodField;
-        
         private string objectNameField;
         
         private string objectTypeField;
@@ -11927,17 +11777,6 @@ namespace SB_SklDokl {
             }
             set {
                 this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
-            get {
-                return this.kodField;
-            }
-            set {
-                this.kodField = value;
             }
         }
         
@@ -13165,8 +13004,6 @@ namespace SB_SklDokl {
         
         private group groupField;
         
-        private string kodField;
-        
         private string objectNameField;
         
         private string objectTypeField;
@@ -13186,17 +13023,6 @@ namespace SB_SklDokl {
             }
             set {
                 this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
-            get {
-                return this.kodField;
-            }
-            set {
-                this.kodField = value;
             }
         }
         
@@ -14261,8 +14087,6 @@ namespace SB_SklDokl {
         
         private group groupField;
         
-        private string kodField;
-        
         private string objectNameField;
         
         private string objectTypeField;
@@ -14282,17 +14106,6 @@ namespace SB_SklDokl {
             }
             set {
                 this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
-            get {
-                return this.kodField;
-            }
-            set {
-                this.kodField = value;
             }
         }
         
@@ -14340,8 +14153,6 @@ namespace SB_SklDokl {
         
         private group groupField;
         
-        private string kodField;
-        
         private string objectNameField;
         
         private string objectTypeField;
@@ -14361,17 +14172,6 @@ namespace SB_SklDokl {
             }
             set {
                 this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
-            get {
-                return this.kodField;
-            }
-            set {
-                this.kodField = value;
             }
         }
         
@@ -14419,8 +14219,6 @@ namespace SB_SklDokl {
         
         private group groupField;
         
-        private string kodField;
-        
         private string objectNameField;
         
         private string objectTypeField;
@@ -14440,17 +14238,6 @@ namespace SB_SklDokl {
             }
             set {
                 this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
-            get {
-                return this.kodField;
-            }
-            set {
-                this.kodField = value;
             }
         }
         
@@ -15013,8 +14800,6 @@ namespace SB_SklDokl {
         
         private group groupField;
         
-        private string kodField;
-        
         private string objectNameField;
         
         private string objectTypeField;
@@ -15034,17 +14819,6 @@ namespace SB_SklDokl {
             }
             set {
                 this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
-            get {
-                return this.kodField;
-            }
-            set {
-                this.kodField = value;
             }
         }
         

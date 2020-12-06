@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="S5Data">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ArtiklList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Artikl" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Group" type="group" minOccurs="0" />
+                    <xs:element name="Katalog" type="emptiable_string_60" />
+                  </xs:sequence>
+                  <xs:attribute name="ObjectName" fixed="Artikl" use="required" />
+                  <xs:attribute name="ObjectType" fixed="Object" use="required" />
+                  <xs:attribute name="ID" type="guid" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FirmaList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Firma" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Group" type="group" minOccurs="0" />
+                    <xs:element name="Kod" type="emptiable_string_20" />
+                  </xs:sequence>
+                  <xs:attribute name="ObjectName" fixed="Firma" use="required" />
+                  <xs:attribute name="ObjectType" fixed="Object" use="required" />
+                  <xs:attribute name="ID" type="guid" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SazbaDPHList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SazbaDPH" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Sazba" type="emptiable_decimal_2" />
+                  </xs:sequence>
+                  <xs:attribute name="ObjectName" fixed="SazbaDPH" use="required" />
+                  <xs:attribute name="ObjectType" fixed="Object" use="required" />
+                  <xs:attribute name="ID" type="guid" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SkladList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Sklad" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Group" type="group" minOccurs="0" />
+                    <xs:element name="Kod" type="emptiable_string_10" />
+                  </xs:sequence>
+                  <xs:attribute name="ObjectName" fixed="Sklad" use="required" />
+                  <xs:attribute name="ObjectType" fixed="Object" use="required" />
+                  <xs:attribute name="ID" type="guid" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="decimal_2">
+    <xs:restriction base="xs:decimal">
+      <xs:fractionDigits value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_decimal_2">
+    <xs:union memberTypes="decimal_2 empty" />
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_string_10">
+    <xs:union memberTypes="string_10 empty" />
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_string_20">
+    <xs:union memberTypes="string_20 empty" />
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_string_60">
+    <xs:union memberTypes="string_60 empty" />
+  </xs:simpleType>
+  <xs:simpleType name="empty">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="group">
+    <xs:attribute name="ID" type="guid" use="required" />
+    <xs:attribute name="Kod" type="string_20" />
+  </xs:complexType>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-f0-9]{8}(-[a-f0-9]{4}){3}-[a-f0-9]{12}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_10">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="10" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_20">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="20" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_60">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="60" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
