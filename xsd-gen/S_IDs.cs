@@ -25,11 +25,25 @@ namespace S_IDs {
         
         private S5DataArtikl[] artiklListField;
         
+        private S5DataCenik[] cenikListField;
+        
+        private S5DataDruhArtiklu[] druhArtikluListField;
+        
         private S5DataFirma[] firmaListField;
+        
+        private S5DataFunkceOsoby[] funkceOsobyListField;
+        
+        private S5DataJednotka[] jednotkaListField;
         
         private S5DataSazbaDPH[] sazbaDPHListField;
         
         private S5DataSklad[] skladListField;
+        
+        private S5DataStat[] statListField;
+        
+        private S5DataTypSpojeni[] typSpojeniListField;
+        
+        private S5DataZpusobPlatby[] zpusobPlatbyListField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -45,6 +59,30 @@ namespace S_IDs {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Cenik", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public S5DataCenik[] CenikList {
+            get {
+                return this.cenikListField;
+            }
+            set {
+                this.cenikListField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("DruhArtiklu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public S5DataDruhArtiklu[] DruhArtikluList {
+            get {
+                return this.druhArtikluListField;
+            }
+            set {
+                this.druhArtikluListField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Firma", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
         public S5DataFirma[] FirmaList {
             get {
@@ -52,6 +90,30 @@ namespace S_IDs {
             }
             set {
                 this.firmaListField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("FunkceOsoby", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public S5DataFunkceOsoby[] FunkceOsobyList {
+            get {
+                return this.funkceOsobyListField;
+            }
+            set {
+                this.funkceOsobyListField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Jednotka", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public S5DataJednotka[] JednotkaList {
+            get {
+                return this.jednotkaListField;
+            }
+            set {
+                this.jednotkaListField = value;
             }
         }
         
@@ -76,6 +138,42 @@ namespace S_IDs {
             }
             set {
                 this.skladListField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Stat", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public S5DataStat[] StatList {
+            get {
+                return this.statListField;
+            }
+            set {
+                this.statListField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("TypSpojeni", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public S5DataTypSpojeni[] TypSpojeniList {
+            get {
+                return this.typSpojeniListField;
+            }
+            set {
+                this.typSpojeniListField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("ZpusobPlatby", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public S5DataZpusobPlatby[] ZpusobPlatbyList {
+            get {
+                return this.zpusobPlatbyListField;
+            }
+            set {
+                this.zpusobPlatbyListField = value;
             }
         }
     }
@@ -199,6 +297,151 @@ namespace S_IDs {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class S5DataCenik {
+        
+        private group groupField;
+        
+        private string kodField;
+        
+        private string objectNameField;
+        
+        private string objectTypeField;
+        
+        private string idField;
+        
+        public S5DataCenik() {
+            this.objectNameField = "Cenik";
+            this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public group Group {
+            get {
+                return this.groupField;
+            }
+            set {
+                this.groupField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ObjectName {
+            get {
+                return this.objectNameField;
+            }
+            set {
+                this.objectNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ObjectType {
+            get {
+                return this.objectTypeField;
+            }
+            set {
+                this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class S5DataDruhArtiklu {
+        
+        private string kodField;
+        
+        private string objectNameField;
+        
+        private string objectTypeField;
+        
+        private string idField;
+        
+        public S5DataDruhArtiklu() {
+            this.objectNameField = "DruhArtiklu";
+            this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ObjectName {
+            get {
+                return this.objectNameField;
+            }
+            set {
+                this.objectNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ObjectType {
+            get {
+                return this.objectTypeField;
+            }
+            set {
+                this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataFirma {
         
         private group groupField;
@@ -213,6 +456,151 @@ namespace S_IDs {
         
         public S5DataFirma() {
             this.objectNameField = "Firma";
+            this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public group Group {
+            get {
+                return this.groupField;
+            }
+            set {
+                this.groupField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ObjectName {
+            get {
+                return this.objectNameField;
+            }
+            set {
+                this.objectNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ObjectType {
+            get {
+                return this.objectTypeField;
+            }
+            set {
+                this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class S5DataFunkceOsoby {
+        
+        private string codeField;
+        
+        private string objectNameField;
+        
+        private string objectTypeField;
+        
+        private string idField;
+        
+        public S5DataFunkceOsoby() {
+            this.objectNameField = "FunkceOsoby";
+            this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Code {
+            get {
+                return this.codeField;
+            }
+            set {
+                this.codeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ObjectName {
+            get {
+                return this.objectNameField;
+            }
+            set {
+                this.objectNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ObjectType {
+            get {
+                return this.objectTypeField;
+            }
+            set {
+                this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class S5DataJednotka {
+        
+        private group groupField;
+        
+        private string kodField;
+        
+        private string objectNameField;
+        
+        private string objectTypeField;
+        
+        private string idField;
+        
+        public S5DataJednotka() {
+            this.objectNameField = "Jednotka";
             this.objectTypeField = "Object";
         }
         
@@ -370,6 +758,204 @@ namespace S_IDs {
             set {
                 this.groupField = value;
             }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ObjectName {
+            get {
+                return this.objectNameField;
+            }
+            set {
+                this.objectNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ObjectType {
+            get {
+                return this.objectTypeField;
+            }
+            set {
+                this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class S5DataStat {
+        
+        private string kodField;
+        
+        private string objectNameField;
+        
+        private string objectTypeField;
+        
+        private string idField;
+        
+        public S5DataStat() {
+            this.objectNameField = "Stat";
+            this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ObjectName {
+            get {
+                return this.objectNameField;
+            }
+            set {
+                this.objectNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ObjectType {
+            get {
+                return this.objectTypeField;
+            }
+            set {
+                this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class S5DataTypSpojeni {
+        
+        private string kodField;
+        
+        private string objectNameField;
+        
+        private string objectTypeField;
+        
+        private string idField;
+        
+        public S5DataTypSpojeni() {
+            this.objectNameField = "TypSpojeni";
+            this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ObjectName {
+            get {
+                return this.objectNameField;
+            }
+            set {
+                this.objectNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ObjectType {
+            get {
+                return this.objectTypeField;
+            }
+            set {
+                this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class S5DataZpusobPlatby {
+        
+        private string kodField;
+        
+        private string objectNameField;
+        
+        private string objectTypeField;
+        
+        private string idField;
+        
+        public S5DataZpusobPlatby() {
+            this.objectNameField = "ZpusobPlatby";
+            this.objectTypeField = "Object";
         }
         
         /// <remarks/>

@@ -1,31 +1,35 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 using SO_Nabidky;
 using SkladData;
 
 namespace S4DataObjs {
-    class S4O_Nabidky : S4_Generic<S5DataNabidkaVydana, S5Data> {
+    class S4O_Nabidky : S4_Generic<S5Data> {
+
+        private List<S5DataNabidkaVydana> _nabidky = new List<S5DataNabidkaVydana>();
 
         public static string GetID(string id) {
             return "NAB" + id;
         }
 
-        public S4O_Nabidky(string cpohybpFile, string pohybpFile, Encoding encoding) {
-            var lines = System.IO.File.ReadAllLines(cpohybpFile, encoding);
-            var lines1 = System.IO.File.ReadAllLines(pohybpFile, encoding);
-            convert(new SkladDataFile(lines), new SkladDataFile(lines1));
+        public S4O_Nabidky(string dir, Encoding enc) {
+            convert(
+                new SkladDataFile(dir, SFile.CPOHYBN, enc),
+                new SkladDataFile(dir, SFile.POHYBN, enc)
+            );
         }
 
         public override S5Data GetS5Data() {
             return new S5Data() {
-                NabidkaVydanaList = _data.FindAll(_filter).ToArray()
+                NabidkaVydanaList = _nabidky.ToArray()
             };
         }
 
         private void convert(SkladDataFile headers, SkladDataFile rows) {
-            string id = "";
+            string id = "", firmaID;
 
             foreach (var header in headers.Data) {
                 var data = header.Items;
@@ -40,18 +44,18 @@ namespace S4DataObjs {
                 doc.ZapornyPohyb = "False";
                 doc.Polozky = new S5DataNabidkaVydanaPolozky();
                 doc.ZiskZaDoklad = data["Zisk"].GetDecimal();
-                doc.PrijemceFaktury = new S5DataNabidkaVydanaPrijemceFaktury() { Kod = S4A_Adresar.GetOdbID(data["CisloOdberatele"].GetNum()) };
-                doc.Adresa = new S5DataNabidkaVydanaAdresa() { Firma = new S5DataNabidkaVydanaAdresaFirma() { Kod = S4A_Adresar.GetOdbID(data["CisloOdberatele"].GetNum()) } };
+                firmaID = S4_IDs.GetFirmaID(S4A_Adresar.GetOdbID(header.Items["CisloOdberatele"].GetNum()));
+                doc.Firma_ID = doc.FakturacniAdresaFirma_ID = doc.PrijemceFaktury_ID = firmaID;
                 doc.Vyrizeno = "True";
-                _data.Add(doc);
+                _nabidky.Add(doc);
             }
 
             int cisloPolozky = 0;
-            string prevId = "";
+            string prevId = "", artiklID, skladID, katalog;
             var polozky = new List<S5DataNabidkaVydanaPolozkyPolozkaNabidkyVydane>();
             foreach (var row in rows.Data) {
                 var data = row.Items;
-                id = GetID(data["CisloVydejky"].GetNum());
+                katalog = id = GetID(data["CisloVydejky"].GetNum());
 
                 if (prevId != id) {
                     if (prevId != "") {
@@ -62,6 +66,11 @@ namespace S4DataObjs {
                     prevId = id;
                 }
 
+                artiklID = S4_IDs.GetArtiklID(katalog);
+                skladID = S4_IDs.GetSkladID("HL");
+
+                if (artiklID == null) continue;
+
                 var pol = new S5DataNabidkaVydanaPolozkyPolozkaNabidkyVydane();
                 pol.CisloPolozky = (++cisloPolozky).ToString();
                 pol.Mnozstvi = data["Vydano"].GetNum();
@@ -70,11 +79,8 @@ namespace S4DataObjs {
                 pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };
                 pol.DPH = new S5DataNabidkaVydanaPolozkyPolozkaNabidkyVydaneDPH() { Sazba = data["SazbaD"].GetNum() };
                 pol.ObsahPolozky = new S5DataNabidkaVydanaPolozkyPolozkaNabidkyVydaneObsahPolozky() {
-                    Artikl = new S5DataNabidkaVydanaPolozkyPolozkaNabidkyVydaneObsahPolozkyArtikl() {
-                        Katalog = S4A_Katalog.GetID(data["CisloKarty"].GetNum()),
-                        Group = new group() { Kod = "ART" }
-                    },
-                    Sklad = new S5DataNabidkaVydanaPolozkyPolozkaNabidkyVydaneObsahPolozkySklad() { Kod = "HL" }
+                    Artikl_ID = artiklID,
+                    Sklad_ID = skladID,
                 };
                 polozky.Add(pol);
             }
@@ -83,7 +89,7 @@ namespace S4DataObjs {
         }
 
         private void addRows(List<S5DataNabidkaVydanaPolozkyPolozkaNabidkyVydane> items, string id) {
-            var found = _data.Find(delegate (S5DataNabidkaVydana doc) {
+            var found = _nabidky.Find(delegate (S5DataNabidkaVydana doc) {
                 return doc.Jmeno == id;
             });
             if (found == null) {

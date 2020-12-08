@@ -1,26 +1,30 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 using SK_ObjVyd;
 using SkladData;
 
 namespace S4DataObjs {
-    class S4K_ObjVyd : S4_Generic<S5DataObjednavkaVydana, S5Data> {
+    class S4K_ObjVyd : S4_Generic<S5Data> {
+
+        private List<S5DataObjednavkaVydana> _objednavky = new List<S5DataObjednavkaVydana>();
 
         public static string GetID(string id) {
             return "OBJ" + id;
         }
 
-        public S4K_ObjVyd(string cpohybpFile, string pohybpFile, Encoding encoding) {
-            var lines = System.IO.File.ReadAllLines(cpohybpFile, encoding);
-            var lines1 = System.IO.File.ReadAllLines(pohybpFile, encoding);
-            convert(new SkladDataFile(lines), new SkladDataFile(lines1));
+        public S4K_ObjVyd(string dir, Encoding enc) {
+            convert(
+                new SkladDataFile(dir, SFile.CPOHYBOB, enc),
+                new SkladDataFile(dir, SFile.POHYBOB, enc)
+            );
         }
 
         public override S5Data GetS5Data() {
             return new S5Data() {
-                ObjednavkaVydanaList = _data.FindAll(_filter).ToArray()
+                ObjednavkaVydanaList = _objednavky.ToArray()
             };
         }
 
@@ -35,19 +39,19 @@ namespace S4DataObjs {
                 doc.Group = new group() { Kod = "IMPORT" };
                 doc.DatumZauctovani = doc.DatumSchvaleni = doc.DatumVystaveni = data["DatumVydeje"].GetDate();
                 doc.Poznamka = data["Upozorneni"].GetText() + Environment.NewLine + Environment.NewLine + header.ToString();
-                doc.PrijemceFaktury = new S5DataObjednavkaVydanaPrijemceFaktury() { Kod = S4A_Adresar.GetDodID(header.Items["CisloDodavatele"].GetNum()) };
-                doc.Adresa = new S5DataObjednavkaVydanaAdresa() { Firma = new S5DataObjednavkaVydanaAdresaFirma() { Kod = S4A_Adresar.GetDodID(header.Items["CisloDodavatele"].GetNum()) } };
+                string firmaID = S4_IDs.GetFirmaID(S4A_Adresar.GetDodID(header.Items["CisloDodavatele"].GetNum()));
+                doc.Firma_ID = doc.FakturacniAdresaFirma_ID = doc.PrijemceFaktury_ID = firmaID;
                 doc.ZapornyPohyb = "False";
                 doc.Polozky = new S5DataObjednavkaVydanaPolozky();
-                _data.Add(doc);
+                _objednavky.Add(doc);
             }
 
             int cisloPolozky = 0;
-            string prevId = "";
+            string prevId = "", artiklID, skladID, katalog;
             List<S5DataObjednavkaVydanaPolozkyPolozkaObjednavkyVydane> polozky = null;
             foreach (var row in rows.Data) {
                 var data = row.Items;
-                id = GetID(data["CisloVydejky"].GetNum());
+                katalog = id = GetID(data["CisloVydejky"].GetNum());
 
                 if (prevId != id) {
                     if (prevId != "") {
@@ -58,6 +62,11 @@ namespace S4DataObjs {
                     prevId = id;
                 }
 
+                artiklID = S4_IDs.GetArtiklID(katalog);
+                skladID = S4_IDs.GetSkladID("HL");
+
+                if (artiklID == null) continue;
+
                 var pol = new S5DataObjednavkaVydanaPolozkyPolozkaObjednavkyVydane();
                 pol.CisloPolozky = (++cisloPolozky).ToString();
                 pol.Mnozstvi = data["Vydano"].GetNum();
@@ -65,15 +74,8 @@ namespace S4DataObjs {
                 pol.JednCena = data["NakupCena"].GetDecimal();
                 pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };
                 pol.ObsahPolozky = new S5DataObjednavkaVydanaPolozkyPolozkaObjednavkyVydaneObsahPolozky() {
-                    Artikl = new S5DataObjednavkaVydanaPolozkyPolozkaObjednavkyVydaneObsahPolozkyArtikl() {
-                        Katalog = S4A_Katalog.GetID(data["CisloKarty"].GetNum()),
-                        Group = new group() {
-                            Kod = "ART"
-                        }
-                    },
-                    Sklad = new S5DataObjednavkaVydanaPolozkyPolozkaObjednavkyVydaneObsahPolozkySklad() {
-                        Kod = "HL"
-                    }
+                    Artikl_ID = artiklID,
+                    Sklad_ID = skladID,
                 };
                 polozky.Add(pol);
             }
@@ -81,7 +83,7 @@ namespace S4DataObjs {
         }
 
         private void addRows(List<S5DataObjednavkaVydanaPolozkyPolozkaObjednavkyVydane> items, string id) {
-            var found = _data.Find(delegate (S5DataObjednavkaVydana doc) {
+            var found = _objednavky.Find(delegate (S5DataObjednavkaVydana doc) {
                 return doc.Jmeno == id;
             });
             if (found == null) {

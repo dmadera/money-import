@@ -7,38 +7,48 @@ using SB_SklDokl;
 using SkladData;
 
 namespace S4DataObjs {
-    class S4B_SklDokl : S4_Generic<S5DataSkladovyDoklad, S5Data> {
 
-        public static string GetID(string id) {
-            return "PRIJEM" + id;
+    class SkladovyDoklad {
+        public static string GetID(SFile soubor, string cislo) {
+            switch (soubor) {
+                case SFile.CPOHYBV: return "FA" + cislo;
+                case SFile.CPOHYBOV: return "OV" + cislo;
+                case SFile.CPOHYBVP: return "VP" + cislo;
+                case SFile.CPOHYBP: return "PR" + cislo;
+                default: return cislo;
+            };
         }
 
-        public static string GetID_V(string id) {
-            return "FA" + id;
+        public static string GetPopis(SFile soubor, string cislo) {
+            switch (soubor) {
+                case SFile.CPOHYBV: return "Faktura vyd. č. " + cislo;
+                case SFile.CPOHYBOV: return "Ostatní výdej č. " + cislo;
+                case SFile.CPOHYBVP: return "Prodejka č. " + cislo;
+                case SFile.CPOHYBP: return "Příjemka č. " + cislo;
+                default: return cislo;
+            };
         }
+    }
 
-        public static string GetID_OV(string id) {
-            return "OSTV" + id;
-        }
+    class S4B_SklDokl : S4_Generic<S5Data> {
 
-        public static string GetID_VP(string id) {
-            return "PRODEJ" + id;
-        }
+        private List<S5DataSkladovyDoklad> _doklady = new List<S5DataSkladovyDoklad>();
 
-
-        public S4B_SklDokl(string kartyinvFile, string cpohybp, string pohybp, string cpohybv, string pohybv, string cpohybov, string pohybov, string cpohybvp, string pohybvp, Encoding encoding) {
-            convertKartyInv(new SkladDataFile(System.IO.File.ReadAllLines(kartyinvFile, encoding)));
-            convertPohybP(new SkladDataFile(File.ReadAllLines(cpohybp, encoding)), new SkladDataFile(File.ReadAllLines(pohybp, encoding)));
-            convertPohybV("V", new SkladDataFile(File.ReadAllLines(cpohybv, encoding)), new SkladDataFile(File.ReadAllLines(pohybv, encoding)));
-            convertPohybV("OV", new SkladDataFile(File.ReadAllLines(cpohybov, encoding)), new SkladDataFile(File.ReadAllLines(pohybov, encoding)));
-            convertPohybV("VP", new SkladDataFile(File.ReadAllLines(cpohybvp, encoding)), new SkladDataFile(File.ReadAllLines(pohybvp, encoding)));
+        public S4B_SklDokl(string dir, Encoding enc) {
+            convertKartyInv(new SkladDataFile(dir, SFile.KARTYINV, enc));
+            convertPohybP(new SkladDataFile(dir, SFile.CPOHYBP, enc), new SkladDataFile(dir, SFile.POHYBP, enc));
+            convertPohybV(new SkladDataFile(dir, SFile.CPOHYBV, enc), new SkladDataFile(dir, SFile.POHYBV, enc));
+            convertPohybV(new SkladDataFile(dir, SFile.CPOHYBOV, enc), new SkladDataFile(dir, SFile.POHYBOV, enc));
+            convertPohybV(new SkladDataFile(dir, SFile.CPOHYBVP, enc), new SkladDataFile(dir, SFile.POHYBVP, enc));
         }
 
         public override S5Data GetS5Data() {
             return new S5Data() {
-                SkladovyDokladList = _data.FindAll(_filter).ToArray()
+                SkladovyDokladList = _doklady.ToArray(),
             };
         }
+
+
 
         private void convertKartyInv(SkladDataFile karty) {
             var firstDay = new DateTime(DateTime.Now.Year, 1, 1);
@@ -49,9 +59,7 @@ namespace S4DataObjs {
             doc.Group = new group() { Kod = "IMPORT" };
             doc.DatumSkladovehoPohybu = doc.DatumZauctovani = doc.DatumSchvaleni = doc.DatumVystaveni = firstDay;
             doc.Vyrizeno = "True";
-            doc.TypDokladu = new enum_TypDokladu() {
-                EnumValueName = enum_TypDokladuEnumValueName.Prijaty
-            };
+            doc.TypDokladu = new enum_TypDokladu() { Value = enum_TypDokladu_value.Item1 };
 
             int cisloPolozky = 0;
             var polozky = new List<S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu>();
@@ -72,6 +80,7 @@ namespace S4DataObjs {
                 pol.ObsahPolozky = new S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuObsahPolozky() {
                     Artikl_ID = artiklID,
                     Sklad_ID = skladID,
+                    GENERATEZASOBA = "1"
                 };
                 polozky.Add(pol);
             }
@@ -80,7 +89,7 @@ namespace S4DataObjs {
                 PolozkaSkladovehoDokladu = polozky.ToArray()
             };
 
-            _data.Add(doc);
+            _doklady.Add(doc);
         }
 
         private void convertPohybP(SkladDataFile headers, SkladDataFile rows) {
@@ -88,8 +97,8 @@ namespace S4DataObjs {
             foreach (var header in headers.Data) {
                 var data = header.Items;
                 var doc = new S5DataSkladovyDoklad();
-                id = GetID(data["CisloPrijemky"].GetNum());
-                doc.Nazev = "Příjemka č." + data["CisloPrijemky"].GetNum();
+                id = SkladovyDoklad.GetID(headers.Soubor, data["CisloPrijemky"].GetNum());
+                doc.Nazev = SkladovyDoklad.GetPopis(headers.Soubor, data["CisloPrijemky"].GetNum());
                 doc.ParovaciSymbol = id;
                 doc.Group = new group() { Kod = "IMPORT" };
                 doc.DatumSkladovehoPohybu = doc.DatumZauctovani = doc.DatumSchvaleni = doc.DatumVystaveni = data["DatumVydeje"].GetDate();
@@ -98,10 +107,8 @@ namespace S4DataObjs {
                 doc.Firma_ID = doc.FakturacniAdresaFirma_ID = doc.PrijemceFaktury_ID = firmaID;
                 doc.Vyrizeno = "True";
                 doc.Polozky = new S5DataSkladovyDokladPolozky();
-                doc.TypDokladu = new enum_TypDokladu() {
-                    EnumValueName = enum_TypDokladuEnumValueName.Prijaty,
-                };
-                _data.Add(doc);
+                doc.TypDokladu = new enum_TypDokladu() { Value = enum_TypDokladu_value.Item1 };
+                _doklady.Add(doc);
             }
 
             int cisloPolozky = 0;
@@ -110,7 +117,8 @@ namespace S4DataObjs {
             List<S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu> polozky = null;
             foreach (var row in rows.Data) {
                 var data = row.Items;
-                katalog = id = GetID(data["CisloPrijemky"].GetNum());
+                id = SkladovyDoklad.GetID(headers.Soubor, data["CisloPrijemky"].GetNum());
+                katalog = S4A_Katalog.GetID(data["CisloKarty"].GetNum());
 
                 if (prevId != id) {
                     if (prevId != "") {
@@ -137,6 +145,7 @@ namespace S4DataObjs {
                 pol.ObsahPolozky = new S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuObsahPolozky() {
                     Artikl_ID = artiklID,
                     Sklad_ID = skladID,
+                    GENERATEZASOBA = "1"
                 };
                 polozky.Add(pol);
             }
@@ -144,21 +153,14 @@ namespace S4DataObjs {
             addRows(polozky, id);
         }
 
-        private void convertPohybV(string type, SkladDataFile headers, SkladDataFile rows) {
+        private void convertPohybV(SkladDataFile headers, SkladDataFile rows) {
             string id = "";
 
             foreach (var header in headers.Data) {
                 var data = header.Items;
                 var doc = new S5DataSkladovyDoklad();
-                id = GetID_V(data["CisloVydejky"].GetNum());
-                doc.Nazev = "Faktura vyd. č." + data["CisloVydejky"].GetNum();
-                if (type == "OV") {
-                    id = GetID_OV(data["CisloVydejky"].GetNum());
-                    doc.Nazev = "Ostatní výdej č." + data["CisloVydejky"].GetNum();
-                } else if (type == "VP") {
-                    id = GetID_VP(data["CisloVydejky"].GetNum());
-                    doc.Nazev = "Prodejka č." + data["CisloVydejky"].GetNum();
-                }
+                id = SkladovyDoklad.GetID(headers.Soubor, data["CisloVydejky"].GetNum());
+                doc.Nazev = SkladovyDoklad.GetPopis(headers.Soubor, id);
                 doc.ParovaciSymbol = id;
                 doc.Group = new group() { Kod = "IMPORT" };
                 doc.DatumSkladovehoPohybu = doc.DatumZauctovani = doc.DatumSchvaleni = doc.DatumVystaveni = data["DatumVydeje"].GetDate();
@@ -167,10 +169,8 @@ namespace S4DataObjs {
                 doc.ZiskZaDoklad = data["Zisk"].GetDecimal();
                 string firmaID = S4_IDs.GetFirmaID(S4A_Adresar.GetOdbID(header.Items["CisloOdberatele"].GetNum()));
                 doc.Firma_ID = doc.FakturacniAdresaFirma_ID = doc.PrijemceFaktury_ID = firmaID;
-                doc.TypDokladu = new enum_TypDokladu() {
-                    EnumValueName = enum_TypDokladuEnumValueName.Vydany,
-                };
-                _data.Add(doc);
+                doc.TypDokladu = new enum_TypDokladu() { Value = enum_TypDokladu_value.Item2 };
+                _doklady.Add(doc);
             }
 
             int cisloPolozky = 0;
@@ -178,12 +178,8 @@ namespace S4DataObjs {
             var polozky = new List<S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu>();
             foreach (var row in rows.Data) {
                 var data = row.Items;
-                katalog = id = GetID_V(data["CisloVydejky"].GetNum());
-                if (type == "OV") {
-                    id = GetID_OV(data["CisloVydejky"].GetNum());
-                } else if (type == "VP") {
-                    id = GetID_VP(data["CisloVydejky"].GetNum());
-                }
+                id = SkladovyDoklad.GetID(headers.Soubor, data["CisloVydejky"].GetNum());
+                katalog = S4A_Katalog.GetID(data["CisloKarty"].GetNum());
 
                 if (prevId != id) {
                     if (prevId != "") {
@@ -209,6 +205,7 @@ namespace S4DataObjs {
                 pol.ObsahPolozky = new S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuObsahPolozky() {
                     Artikl_ID = artiklID,
                     Sklad_ID = skladID,
+                    GENERATEZASOBA = "1"
                 };
                 polozky.Add(pol);
             }
@@ -218,7 +215,7 @@ namespace S4DataObjs {
 
 
         private void addRows(List<S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu> items, string id) {
-            var found = _data.Find(delegate (S5DataSkladovyDoklad doc) {
+            var found = _doklady.Find(delegate (S5DataSkladovyDoklad doc) {
                 return doc.ParovaciSymbol == id;
             });
             if (found == null) {

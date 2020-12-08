@@ -234,7 +234,7 @@
                                       <xs:element name="ArtiklJednotka" minOccurs="0">
                                         <xs:complexType>
                                           <xs:all>
-                                            <xs:element name="Kod" type="string_10" />
+                                            <xs:element name="Jednotka_ID" type="guid" />
                                           </xs:all>
                                           <xs:attribute name="ObjectName" fixed="ArtiklJednotka" />
                                           <xs:attribute name="ObjectType" fixed="Object" />
@@ -336,7 +336,7 @@
                           <xs:element name="DoplnkovaJednotka" minOccurs="0">
                             <xs:complexType>
                               <xs:all>
-                                <xs:element name="Kod" type="string_10" />
+                                <xs:element name="Jednotka_ID" type="guid" />
                               </xs:all>
                               <xs:attribute name="ObjectName" fixed="ArtiklJednotka" />
                               <xs:attribute name="ObjectType" fixed="Object" />
@@ -346,7 +346,7 @@
                           <xs:element name="HlavniJednotka" minOccurs="0">
                             <xs:complexType>
                               <xs:all>
-                                <xs:element name="Kod" type="string_10" />
+                                <xs:element name="Jednotka_ID" type="guid" />
                               </xs:all>
                               <xs:attribute name="ObjectName" fixed="ArtiklJednotka" />
                               <xs:attribute name="ObjectType" fixed="Object" />
@@ -356,7 +356,7 @@
                           <xs:element name="NakupniJednotka" minOccurs="0">
                             <xs:complexType>
                               <xs:all>
-                                <xs:element name="Kod" type="string_10" />
+                                <xs:element name="Jednotka_ID" type="guid" />
                               </xs:all>
                               <xs:attribute name="ObjectName" fixed="ArtiklJednotka" />
                               <xs:attribute name="ObjectType" fixed="Object" />
@@ -366,7 +366,7 @@
                           <xs:element name="ProdejniJednotka" minOccurs="0">
                             <xs:complexType>
                               <xs:all>
-                                <xs:element name="Kod" type="string_10" />
+                                <xs:element name="Jednotka_ID" type="guid" />
                               </xs:all>
                               <xs:attribute name="ObjectName" fixed="ArtiklJednotka" />
                               <xs:attribute name="ObjectType" fixed="Object" />
@@ -383,7 +383,7 @@
                                       <xs:element name="DruhBaleni_ID" type="guid" />
                                       <xs:element name="DruhObalu_ID" type="guid" />
                                       <xs:element name="Jednotka_ID" type="guid" />
-                                      <xs:element name="Kod" type="string_10" />
+                                      <xs:element name="Kod" type="emptiable_string_10" minOccurs="0" />
                                       <xs:element name="KodProTisk_ID" type="guid" />
                                       <xs:element name="MaterialObalu_ID" type="guid" />
                                       <xs:element name="Mnozstvi" type="emptiable_decimal_4" minOccurs="0" />
@@ -499,7 +499,7 @@
                                       <xs:element name="ParentJednotka" minOccurs="0">
                                         <xs:complexType>
                                           <xs:all>
-                                            <xs:element name="Kod" type="string_10" />
+                                            <xs:element name="Jednotka_ID" type="guid" />
                                           </xs:all>
                                           <xs:attribute name="ObjectName" fixed="ArtiklJednotka" />
                                           <xs:attribute name="ObjectType" fixed="Object" />
@@ -584,7 +584,7 @@
                                       <xs:element name="ArtiklJednotka" minOccurs="0">
                                         <xs:complexType>
                                           <xs:all>
-                                            <xs:element name="Kod" type="string_10" />
+                                            <xs:element name="Jednotka_ID" type="guid" />
                                           </xs:all>
                                           <xs:attribute name="ObjectName" fixed="ArtiklJednotka" />
                                           <xs:attribute name="ObjectType" fixed="Object" />
@@ -930,7 +930,7 @@
                                 <xs:element name="Jednotka" minOccurs="0">
                                   <xs:complexType>
                                     <xs:all>
-                                      <xs:element name="Kod" type="string_10" />
+                                      <xs:element name="Jednotka_ID" type="guid" />
                                     </xs:all>
                                     <xs:attribute name="ObjectName" fixed="ArtiklJednotka" />
                                     <xs:attribute name="ObjectType" fixed="Object" />
@@ -1587,6 +1587,9 @@
   </xs:simpleType>
   <xs:simpleType name="emptiable_integer">
     <xs:union memberTypes="xs:integer empty" />
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_string_10">
+    <xs:union memberTypes="string_10 empty" />
   </xs:simpleType>
   <xs:simpleType name="emptiable_string_100">
     <xs:union memberTypes="string_100 empty" />

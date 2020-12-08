@@ -4675,7 +4675,7 @@ namespace SA_Katalog {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatelArtiklJednotka {
         
-        private string kodField;
+        private string jednotka_IDField;
         
         private string objectNameField;
         
@@ -4690,12 +4690,12 @@ namespace SA_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
+        public string Jednotka_ID {
             get {
-                return this.kodField;
+                return this.jednotka_IDField;
             }
             set {
-                this.kodField = value;
+                this.jednotka_IDField = value;
             }
         }
         
@@ -5280,7 +5280,7 @@ namespace SA_Katalog {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataArtiklJednotkyDoplnkovaJednotka {
         
-        private string kodField;
+        private string jednotka_IDField;
         
         private string objectNameField;
         
@@ -5295,12 +5295,12 @@ namespace SA_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
+        public string Jednotka_ID {
             get {
-                return this.kodField;
+                return this.jednotka_IDField;
             }
             set {
-                this.kodField = value;
+                this.jednotka_IDField = value;
             }
         }
         
@@ -5346,7 +5346,7 @@ namespace SA_Katalog {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataArtiklJednotkyHlavniJednotka {
         
-        private string kodField;
+        private string jednotka_IDField;
         
         private string objectNameField;
         
@@ -5361,12 +5361,12 @@ namespace SA_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
+        public string Jednotka_ID {
             get {
-                return this.kodField;
+                return this.jednotka_IDField;
             }
             set {
-                this.kodField = value;
+                this.jednotka_IDField = value;
             }
         }
         
@@ -5412,7 +5412,7 @@ namespace SA_Katalog {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataArtiklJednotkyNakupniJednotka {
         
-        private string kodField;
+        private string jednotka_IDField;
         
         private string objectNameField;
         
@@ -5427,12 +5427,12 @@ namespace SA_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
+        public string Jednotka_ID {
             get {
-                return this.kodField;
+                return this.jednotka_IDField;
             }
             set {
-                this.kodField = value;
+                this.jednotka_IDField = value;
             }
         }
         
@@ -5478,7 +5478,7 @@ namespace SA_Katalog {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataArtiklJednotkyProdejniJednotka {
         
-        private string kodField;
+        private string jednotka_IDField;
         
         private string objectNameField;
         
@@ -5493,12 +5493,12 @@ namespace SA_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
+        public string Jednotka_ID {
             get {
-                return this.kodField;
+                return this.jednotka_IDField;
             }
             set {
-                this.kodField = value;
+                this.jednotka_IDField = value;
             }
         }
         
@@ -6767,7 +6767,7 @@ namespace SA_Katalog {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataArtiklJednotkySeznamJednotekArtiklJednotkaParentJednotka {
         
-        private string kodField;
+        private string jednotka_IDField;
         
         private string objectNameField;
         
@@ -6782,12 +6782,12 @@ namespace SA_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
+        public string Jednotka_ID {
             get {
-                return this.kodField;
+                return this.jednotka_IDField;
             }
             set {
-                this.kodField = value;
+                this.jednotka_IDField = value;
             }
         }
         
@@ -7427,7 +7427,7 @@ namespace SA_Katalog {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataArtiklOdberateleSeznamOdberateluArtiklOdberatelArtiklJednotka {
         
-        private string kodField;
+        private string jednotka_IDField;
         
         private string objectNameField;
         
@@ -7442,12 +7442,12 @@ namespace SA_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
+        public string Jednotka_ID {
             get {
-                return this.kodField;
+                return this.jednotka_IDField;
             }
             set {
-                this.kodField = value;
+                this.jednotka_IDField = value;
             }
         }
         
@@ -9951,7 +9951,7 @@ namespace SA_Katalog {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataArtiklIdentifikaceArtiklIdentifikaceJednotka {
         
-        private string kodField;
+        private string jednotka_IDField;
         
         private string objectNameField;
         
@@ -9966,12 +9966,12 @@ namespace SA_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
+        public string Jednotka_ID {
             get {
-                return this.kodField;
+                return this.jednotka_IDField;
             }
             set {
-                this.kodField = value;
+                this.jednotka_IDField = value;
             }
         }
         

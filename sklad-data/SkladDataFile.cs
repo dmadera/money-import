@@ -1,12 +1,32 @@
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using System.Text;
+using System.IO;
 
 namespace SkladData {
+    enum SFile {
+        CENY, CPOHYBOV, CPOHYBZ, KOD, POHYBOB, POHYBV, CPOHYBP, DOD, ODB, POHYBOV, POHYBZ,
+        CPOHYBN, CPOHYBVP, KARTYINV, PODKOD, POHYBP, SEKY,
+        CPOHYBOB, CPOHYBV, KARTY, POHYBN, POHYBVP, SKUP
+    }
+
     class SkladDataFile {
         private List<SkladDataObj> _data = new List<SkladDataObj>();
-        public SkladDataFile(string[] lines) {
+
+        private SFile _soubor;
+
+        public SFile Soubor {
+            get {
+                return _soubor;
+            }
+        }
+
+        public SkladDataFile(string dir, SFile file, Encoding enc) {
+            _soubor = file;
             string header = "";
             int dataStartIndex = 0;
+            var fileName = dir + _soubor.ToString() + ".TXT";
+            var lines = File.ReadAllLines(fileName, enc);
 
             foreach (string line in lines) {
                 dataStartIndex++;

@@ -13,7 +13,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/sklad-data-parser.csproj",
+                "${workspaceFolder}/moneys4-import.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -25,7 +25,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/sklad-data-parser.csproj",
+                "${workspaceFolder}/moneys4-import.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -38,7 +38,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/sklad-data-parser.csproj",
+                "${workspaceFolder}/moneys4-import.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],

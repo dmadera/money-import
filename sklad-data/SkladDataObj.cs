@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
 
 namespace SkladData {
@@ -16,9 +17,11 @@ namespace SkladData {
         }
 
         public string Get5Note() {
-            return String.Format("{0}\n{1}\n{2}\n{3}\n{4}",
+            string output = String.Format("{0}\n{1}\n{2}\n{3}\n{4}",
                 _items["Poznamka1"].GetText(), _items["Poznamka2"].GetText(), _items["Poznamka3"].GetText(),
                 _items["Poznamka4"].GetText(), _items["Poznamka5"].GetText());
+            var r = new Regex(@"^\s*(\n|\r|\r\n)");
+            return r.Replace(output, "");
         }
 
         public string GetDic() {

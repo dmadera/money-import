@@ -30,30 +30,30 @@
                     <xs:element name="DatumVystaveni" type="dateTime_DateMin" minOccurs="0" />
                     <xs:element name="DatumZauctovani" type="dateTime_DateMin" minOccurs="0" />
                     <xs:element name="DIC" type="emptiable_string_20" minOccurs="0" />
-                    <xs:element name="DodaciAdresaFirma_ID" type="emptiable_guid" minOccurs="0" />
+                    <xs:element name="DodaciAdresaFirma_ID" type="guid" />
                     <xs:element name="DodaciPodminky_ID" type="guid" />
                     <xs:element name="DodaciPodminkyIncoterms_ID" type="guid" />
                     <xs:element name="DomaciMena_ID" type="guid" />
                     <xs:element name="DruhDokladu_ID" type="guid" />
                     <xs:element name="DruhDopravy_ID" type="guid" />
-                    <xs:element name="FakturacniAdresaFirma_ID" type="emptiable_guid" minOccurs="0" />
+                    <xs:element name="FakturacniAdresaFirma_ID" type="guid" />
                     <xs:element name="Faze" type="enum_FazeDokladu" minOccurs="0" />
-                    <xs:element name="Firma_ID" type="emptiable_guid" minOccurs="0" />
+                    <xs:element name="Firma_ID" type="guid" />
                     <xs:element name="IC" type="emptiable_string_20" minOccurs="0" />
                     <xs:element name="ICDPH" type="emptiable_string_20" minOccurs="0" />
                     <xs:element name="IDKrajPuvodu_ID" type="guid" />
                     <xs:element name="IDPovahaTransakce_ID" type="emptiable_guid" minOccurs="0" />
-                    <xs:element name="Jmeno" type="emptiable_string_100" minOccurs="0" />
-                    <xs:element name="KonecnyPrijemce_ID" type="emptiable_guid" minOccurs="0" />
+                    <xs:element name="Jmeno" type="string_100" />
+                    <xs:element name="KonecnyPrijemce_ID" type="guid" />
                     <xs:element name="KorekceEditovatDomaciMenuBezPrepoctu" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="Mena_ID" type="guid" />
-                    <xs:element name="MojeFirma_ID" type="emptiable_guid" minOccurs="0" />
+                    <xs:element name="MojeFirma_ID" type="guid" />
                     <xs:element name="MojeFirmaBanka_ID" type="guid" />
                     <xs:element name="MojeFirmaBankovniSpojeni_ID" type="guid" />
                     <xs:element name="MojeFirmaFirma_ID" type="emptiable_guid" minOccurs="0" />
                     <xs:element name="MojeFirmaKontaktniOsoba_ID" type="guid" />
                     <xs:element name="MojeFirmaStat_ID" type="guid" />
-                    <xs:element name="Nazev" type="string_200" />
+                    <xs:element name="Nazev" type="emptiable_string_200" minOccurs="0" />
                     <xs:element name="Obchodnik_ID" type="guid" />
                     <xs:element name="Odkaz" type="emptiable_string_20" minOccurs="0" />
                     <xs:element name="Osoba_ID" type="guid" />
@@ -63,7 +63,7 @@
                     <xs:element name="PocetPolozek" type="emptiable_integer" minOccurs="0" />
                     <xs:element name="PovahaTransakce_ID" type="guid" />
                     <xs:element name="Poznamka" type="emptiable_string_unbounded" minOccurs="0" />
-                    <xs:element name="PrijemceFaktury_ID" type="emptiable_guid" minOccurs="0" />
+                    <xs:element name="PrijemceFaktury_ID" type="guid" />
                     <xs:element name="PriznakVyrizeno" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="ProcentniZisk" type="emptiable_decimal_2" minOccurs="0" />
                     <xs:element name="RegistraceDPH_ID" type="guid" />
@@ -118,7 +118,6 @@
                             <xs:complexType>
                               <xs:all>
                                 <xs:element name="Group" type="group" minOccurs="0" />
-                                <xs:element name="Kod" type="string_20" />
                               </xs:all>
                               <xs:attribute name="ObjectName" fixed="Firma" />
                               <xs:attribute name="ObjectType" fixed="Object" />
@@ -167,7 +166,6 @@
                             <xs:complexType>
                               <xs:all>
                                 <xs:element name="Group" type="group" minOccurs="0" />
-                                <xs:element name="Kod" type="string_20" />
                               </xs:all>
                               <xs:attribute name="ObjectName" fixed="Firma" />
                               <xs:attribute name="ObjectType" fixed="Object" />
@@ -214,7 +212,6 @@
                             <xs:complexType>
                               <xs:all>
                                 <xs:element name="Group" type="group" minOccurs="0" />
-                                <xs:element name="Kod" type="string_20" />
                               </xs:all>
                               <xs:attribute name="ObjectName" fixed="Firma" />
                               <xs:attribute name="ObjectType" fixed="Object" />
@@ -446,7 +443,6 @@
                             <xs:complexType>
                               <xs:all>
                                 <xs:element name="Group" type="group" minOccurs="0" />
-                                <xs:element name="Kod" type="string_20" />
                               </xs:all>
                               <xs:attribute name="ObjectName" fixed="Firma" />
                               <xs:attribute name="ObjectType" fixed="Object" />
@@ -673,7 +669,6 @@
                       <xs:complexType>
                         <xs:all>
                           <xs:element name="Group" type="group" minOccurs="0" />
-                          <xs:element name="Kod" type="string_20" />
                         </xs:all>
                         <xs:attribute name="ObjectName" fixed="Firma" />
                         <xs:attribute name="ObjectType" fixed="Object" />
@@ -741,7 +736,7 @@
                                 <xs:element name="MnozstviZbyva" type="emptiable_decimal_2" minOccurs="0" />
                                 <xs:element name="Nazev" type="emptiable_string_100" minOccurs="0" />
                                 <xs:element name="NepodlehatSleveDokladu" type="emptiable_bool" minOccurs="0" />
-<!--ADDED BY SCRIPT-->    <xs:element name="ObsahPolozky" minOccurs="0">        <xs:complexType>            <xs:all>                <xs:element name="Artikl" minOccurs="0">                    <xs:complexType>                        <xs:all>                            <xs:element name="Katalog" type="string_60" />                            <xs:element name="Group" type="group" minOccurs="0" />                        </xs:all>                    </xs:complexType>                </xs:element>                <xs:element name="Sklad" minOccurs="0">                    <xs:complexType>                        <xs:all>                            <xs:element name="Kod" type="string_60" />                        </xs:all>                    </xs:complexType>                </xs:element>            </xs:all>            <xs:attribute name="GENERATEZASOBA" type="string_60" />        </xs:complexType>    </xs:element><!--ADDED BY SCRIPT END-->
+<!--ADDED BY SCRIPT-->    <xs:element name="ObsahPolozky" minOccurs="0">        <xs:complexType>            <xs:all>                <xs:element name="Artikl_ID" minOccurs="0" />                <xs:element name="Sklad_ID" minOccurs="0" />            </xs:all>            <xs:attribute name="GENERATEZASOBA" type="string_60" />        </xs:complexType>    </xs:element><!--ADDED BY SCRIPT END-->
                                 <xs:element name="ParentObject_ID" type="emptiable_guid" minOccurs="0" />
                                 <xs:element name="Poradi" type="emptiable_integer" minOccurs="0" />
                                 <xs:element name="PovahaTransakce_ID" type="guid" />
@@ -964,7 +959,6 @@
                       <xs:complexType>
                         <xs:all>
                           <xs:element name="Group" type="group" minOccurs="0" />
-                          <xs:element name="Kod" type="string_20" />
                         </xs:all>
                         <xs:attribute name="ObjectName" fixed="Firma" />
                         <xs:attribute name="ObjectType" fixed="Object" />
