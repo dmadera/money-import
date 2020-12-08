@@ -15,5 +15,5 @@ ESCAPED=`echo "${DATA}" | sed -r ':a;N;$!ba;s|\n|\\\|g' | sed 's|/|\\\/|g'`
 
 for n in xsd/*.xsd; do 
     sed -i -r "s/^.+ObsahPolozky_ID.+$/${ESCAPED}/mg" ${n} ;
-    xsd ${n} /c /n:$(basename ${n} .xsd) /o:xsd-gen ;
+    xsd ${n} /c /n:$(basename ${n} .xsd) /o:xsd-classes ;
 done

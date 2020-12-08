@@ -25,7 +25,7 @@ namespace SkladData {
             _soubor = file;
             string header = "";
             int dataStartIndex = 0;
-            var fileName = dir + _soubor.ToString() + ".TXT";
+            var fileName = Path.Combine(dir, _soubor.ToString() + ".TXT");
             var lines = File.ReadAllLines(fileName, enc);
 
             foreach (string line in lines) {

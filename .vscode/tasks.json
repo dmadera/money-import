@@ -2,8 +2,17 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "xsdbuild",
-            "command": "xsd/generate-cs",
+            "label": "publishexe",
+            "command": "cp ${workspaceFolder}/bin/Debug/netcoreapp3.1/win-x64/publish/moneys4-import.exe ${workspaceFolder}/bin/",
+            "type": "shell",
+            "args": [],
+            "dependsOn": [
+                "publish"
+            ]
+        },
+        {
+            "label": "buildxsd",
+            "command": "${workspaceFolder}/xsd/generate-cs",
             "type": "shell",
             "args": [],
         },
@@ -27,9 +36,11 @@
                 "publish",
                 "${workspaceFolder}/moneys4-import.csproj",
                 "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "/consoleloggerparameters:NoSummary",
+                "--runtime", "win-x64",
+                "/p:PublishSingleFile=true"
             ],
-            "problemMatcher": "$msCompile"
+            "problemMatcher": "$msCompile",
         },
         {
             "label": "watch",

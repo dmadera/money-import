@@ -600,7 +600,7 @@
                                     <xs:all>
                                       <xs:element name="CelkovaCena" type="emptiable_decimal_2" minOccurs="0" />
                                       <xs:element name="JednotkaCena" type="emptiable_decimal_4" minOccurs="0" />
-                                      <xs:element name="Mnozstvi" type="emptiable_decimal_4" minOccurs="0" />
+                                      <xs:element name="Mnozstvi" type="emptiable_decimal_2" minOccurs="0" />
                                       <xs:element name="PocetJednotek" type="emptiable_decimal_2" minOccurs="0" />
                                     </xs:all>
                                   </xs:complexType>
@@ -610,7 +610,7 @@
                                     <xs:all>
                                       <xs:element name="CelkovaCena" type="emptiable_decimal_2" minOccurs="0" />
                                       <xs:element name="JednotkaCena" type="emptiable_decimal_4" minOccurs="0" />
-                                      <xs:element name="Mnozstvi" type="emptiable_decimal_4" minOccurs="0" />
+                                      <xs:element name="Mnozstvi" type="emptiable_decimal_2" minOccurs="0" />
                                       <xs:element name="PocetJednotek" type="emptiable_decimal_2" minOccurs="0" />
                                     </xs:all>
                                   </xs:complexType>
@@ -620,7 +620,7 @@
                                     <xs:all>
                                       <xs:element name="CelkovaCena" type="emptiable_decimal_2" minOccurs="0" />
                                       <xs:element name="JednotkaCena" type="emptiable_decimal_4" minOccurs="0" />
-                                      <xs:element name="Mnozstvi" type="emptiable_decimal_4" minOccurs="0" />
+                                      <xs:element name="Mnozstvi" type="emptiable_decimal_2" minOccurs="0" />
                                       <xs:element name="PocetJednotek" type="emptiable_decimal_2" minOccurs="0" />
                                     </xs:all>
                                   </xs:complexType>
@@ -630,7 +630,7 @@
                                     <xs:all>
                                       <xs:element name="CelkovaCena" type="emptiable_decimal_2" minOccurs="0" />
                                       <xs:element name="JednotkaCena" type="emptiable_decimal_4" minOccurs="0" />
-                                      <xs:element name="Mnozstvi" type="emptiable_decimal_4" minOccurs="0" />
+                                      <xs:element name="Mnozstvi" type="emptiable_decimal_2" minOccurs="0" />
                                       <xs:element name="PocetJednotek" type="emptiable_decimal_2" minOccurs="0" />
                                     </xs:all>
                                   </xs:complexType>
@@ -640,7 +640,7 @@
                                     <xs:all>
                                       <xs:element name="CelkovaCena" type="emptiable_decimal_2" minOccurs="0" />
                                       <xs:element name="JednotkaCena" type="emptiable_decimal_4" minOccurs="0" />
-                                      <xs:element name="Mnozstvi" type="emptiable_decimal_4" minOccurs="0" />
+                                      <xs:element name="Mnozstvi" type="emptiable_decimal_2" minOccurs="0" />
                                       <xs:element name="PocetJednotek" type="emptiable_decimal_2" minOccurs="0" />
                                     </xs:all>
                                   </xs:complexType>

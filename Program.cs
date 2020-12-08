@@ -1,37 +1,81 @@
 ﻿using System;
 using System.Text;
+using System.IO;
 
 using S4DataObjs;
 
 namespace MainProgram {
     class Program {
 
-        static void Main(string[] args) {
-            string outputDir = @"/home/dmadera/projects/sklad-moneys4-convertor/output/";
-            string inputDir = @"/home/dmadera/projects/sklad-moneys4-convertor/input/complete/";
+        static int Main(string[] args) {
+            Console.WriteLine("{0:yyyy-MM-dd_HH-mm-ss-fff}", DateTime.Now);
 
-            S4_IDs.Deserialize(outputDir + "S_IDs.xml");
+            if (args.Length != 2) {
+                Console.WriteLine("Chyba vstupních argumentů. Povolený počet: 2.");
+                return 1;
+            }
+
+            string inputDir = args[0];
+            string outputDir = args[1];
+
+            if (!Directory.Exists(inputDir)) {
+                Console.WriteLine("Vstupní adresář neexistuje.");
+                return 1;
+            }
+
+            if (!Directory.Exists(outputDir)) {
+                Console.WriteLine("Výstupní adresář neexistuje.");
+                return 1;
+            }
+
+            var fileIDs = Path.Combine(outputDir, "S_IDs.xml");
+            if (!File.Exists(fileIDs)) {
+                Console.WriteLine("Proveďte export S_ID z programu Money. Chybí soubor: " + fileIDs);
+                return 2;
+            }
+
+            S4_IDs.Deserialize(fileIDs);
 
             var enc = CodePagesEncodingProvider.Instance.GetEncoding("Windows-1250");
 
+            var outputFile = Path.Combine(outputDir, typeof(S4A_Adresar).Name + ".xml");
+            Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
             S4A_Adresar adresar = new S4A_Adresar(inputDir, enc);
-            adresar.serialize(outputDir + typeof(S4A_Adresar).Name + ".xml");
+            adresar.serialize(outputFile);
 
+            outputFile = Path.Combine(outputDir, typeof(S4A_Katalog).Name + ".xml");
+            Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
             S4A_Katalog katalog = new S4A_Katalog(inputDir, enc);
-            katalog.serialize(outputDir + typeof(S4A_Katalog).Name + ".xml");
+            katalog.serialize(outputFile);
 
+            outputFile = Path.Combine(outputDir, typeof(S4B_Ceny).Name + ".xml");
+            Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
             S4B_Ceny ceny = new S4B_Ceny(inputDir, enc);
-            ceny.serialize(outputDir + typeof(S4B_Ceny).Name + ".xml");
+            ceny.serialize(outputFile);
 
+            outputFile = Path.Combine(outputDir, typeof(S4K_ObjVyd).Name + ".xml");
+            Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
             S4K_ObjVyd objednavky = new S4K_ObjVyd(inputDir, enc);
-            objednavky.serialize(outputDir + typeof(S4K_ObjVyd).Name + ".xml");
+            objednavky.serialize(outputFile);
 
+            outputFile = Path.Combine(outputDir, typeof(S4O_Nabidky).Name + ".xml");
+            Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
             S4O_Nabidky nabidky = new S4O_Nabidky(inputDir, enc);
-            nabidky.serialize(outputDir + typeof(S4O_Nabidky).Name + ".xml");
+            nabidky.serialize(outputFile);
 
+            outputFile = Path.Combine(outputDir, typeof(S4B_SklDokl).Name + ".xml");
+            Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
             S4B_SklDokl docs = new S4B_SklDokl(inputDir, enc);
-            docs.serialize(outputDir + typeof(S4B_SklDokl).Name + ".xml");
+            docs.serialize(outputFile);
 
+            return 0;
+        }
+
+        private static bool PromptConfirmation(string confirmText) {
+            Console.Write(confirmText + " [y/n] : ");
+            ConsoleKey response = Console.ReadKey(false).Key;
+            Console.WriteLine();
+            return (response == ConsoleKey.Y);
         }
     }
 }

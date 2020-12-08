@@ -1,7 +1,0 @@
-#!/bin/bash
-
-for n in input/complete/*; do 
-    head -n 10 ${n} > input/$(basename ${n}) ; 
-done;
-
-cp input/complete/KOD.TXT input/complete/PODKOD.TXT input/complete/SKUP.TXT input/
