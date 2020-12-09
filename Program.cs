@@ -53,14 +53,14 @@ namespace MainProgram {
             S4B_Ceny ceny = new S4B_Ceny(inputDir, enc);
             ceny.serialize(outputFile);
 
-            outputFile = Path.Combine(outputDir, typeof(S4K_ObjVyd).Name + ".xml");
+            outputFile = Path.Combine(outputDir, typeof(S4C_ObjVyd).Name + ".xml");
             Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
-            S4K_ObjVyd objednavky = new S4K_ObjVyd(inputDir, enc);
+            S4C_ObjVyd objednavky = new S4C_ObjVyd(inputDir, enc);
             objednavky.serialize(outputFile);
 
-            outputFile = Path.Combine(outputDir, typeof(S4O_Nabidky).Name + ".xml");
+            outputFile = Path.Combine(outputDir, typeof(S4C_Nabidky).Name + ".xml");
             Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
-            S4O_Nabidky nabidky = new S4O_Nabidky(inputDir, enc);
+            S4C_Nabidky nabidky = new S4C_Nabidky(inputDir, enc);
             nabidky.serialize(outputFile);
 
             outputFile = Path.Combine(outputDir, typeof(S4B_SklDokl).Name + ".xml");

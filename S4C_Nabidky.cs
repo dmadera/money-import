@@ -7,7 +7,7 @@ using SC_Nabidky;
 using SkladData;
 
 namespace S4DataObjs {
-    class S4O_Nabidky : S4_Generic<S5Data> {
+    class S4C_Nabidky : S4_Generic<S5Data> {
 
         private List<S5DataNabidkaVydana> _nabidky = new List<S5DataNabidkaVydana>();
 
@@ -15,7 +15,7 @@ namespace S4DataObjs {
             return "NAB" + id;
         }
 
-        public S4O_Nabidky(string dir, Encoding enc) {
+        public S4C_Nabidky(string dir, Encoding enc) {
             convert(
                 new SkladDataFile(dir, SFile.CPOHYBN, enc),
                 new SkladDataFile(dir, SFile.POHYBN, enc)

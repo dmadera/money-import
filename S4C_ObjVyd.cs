@@ -7,7 +7,7 @@ using SC_ObjVyd;
 using SkladData;
 
 namespace S4DataObjs {
-    class S4K_ObjVyd : S4_Generic<S5Data> {
+    class S4C_ObjVyd : S4_Generic<S5Data> {
 
         private List<S5DataObjednavkaVydana> _objednavky = new List<S5DataObjednavkaVydana>();
 
@@ -15,7 +15,7 @@ namespace S4DataObjs {
             return "OBJ" + id;
         }
 
-        public S4K_ObjVyd(string dir, Encoding enc) {
+        public S4C_ObjVyd(string dir, Encoding enc) {
             convert(
                 new SkladDataFile(dir, SFile.CPOHYBOB, enc),
                 new SkladDataFile(dir, SFile.POHYBOB, enc)
