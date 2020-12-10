@@ -45,18 +45,18 @@ namespace MainProgram {
 
             string outputFile;
 
-            if (!S4_IDs.IsReadyForDocs()) {
-                outputFile = Path.Combine(outputDir, typeof(S4A_Adresar).Name + ".xml");
-                Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
-                S4A_Adresar adresar = new S4A_Adresar(inputDir, enc);
-                adresar.serialize(outputFile);
 
-                outputFile = Path.Combine(outputDir, typeof(S4A_Katalog).Name + ".xml");
-                Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
-                S4A_Katalog katalog = new S4A_Katalog(inputDir, enc);
-                katalog.serialize(outputFile);
+            outputFile = Path.Combine(outputDir, typeof(S4A_Adresar).Name + ".xml");
+            Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
+            S4A_Adresar adresar = new S4A_Adresar(inputDir, enc);
+            adresar.serialize(outputFile);
 
-            } else {
+            outputFile = Path.Combine(outputDir, typeof(S4A_Katalog).Name + ".xml");
+            Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
+            S4A_Katalog katalog = new S4A_Katalog(inputDir, enc);
+            katalog.serialize(outputFile);
+
+            if (S4_IDs.IsReadyForDocs()) {
                 outputFile = Path.Combine(outputDir, typeof(S4B_Ceny).Name + ".xml");
                 Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
                 S4B_Ceny ceny = new S4B_Ceny(inputDir, enc);
