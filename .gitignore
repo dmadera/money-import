@@ -31,5 +31,4 @@ msbuild.wrn
 # Visual Studio 2015
 .vs/
 
-output/
-input/
+z-assets/

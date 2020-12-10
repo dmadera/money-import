@@ -36,37 +36,47 @@ namespace MainProgram {
 
             S4_IDs.Deserialize(fileIDs);
 
+            var files = Directory.GetFiles(outputDir, "S4*.xml");
+            foreach (var f in files) {
+                File.Delete(f);
+            }
+
             var enc = CodePagesEncodingProvider.Instance.GetEncoding("Windows-1250");
 
-            var outputFile = Path.Combine(outputDir, typeof(S4A_Adresar).Name + ".xml");
-            Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
-            S4A_Adresar adresar = new S4A_Adresar(inputDir, enc);
-            adresar.serialize(outputFile);
+            string outputFile;
 
-            outputFile = Path.Combine(outputDir, typeof(S4A_Katalog).Name + ".xml");
-            Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
-            S4A_Katalog katalog = new S4A_Katalog(inputDir, enc);
-            katalog.serialize(outputFile);
+            if (!S4_IDs.IsReadyForDocs()) {
+                outputFile = Path.Combine(outputDir, typeof(S4A_Adresar).Name + ".xml");
+                Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
+                S4A_Adresar adresar = new S4A_Adresar(inputDir, enc);
+                adresar.serialize(outputFile);
 
-            outputFile = Path.Combine(outputDir, typeof(S4B_Ceny).Name + ".xml");
-            Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
-            S4B_Ceny ceny = new S4B_Ceny(inputDir, enc);
-            ceny.serialize(outputFile);
+                outputFile = Path.Combine(outputDir, typeof(S4A_Katalog).Name + ".xml");
+                Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
+                S4A_Katalog katalog = new S4A_Katalog(inputDir, enc);
+                katalog.serialize(outputFile);
 
-            outputFile = Path.Combine(outputDir, typeof(S4C_ObjVyd).Name + ".xml");
-            Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
-            S4C_ObjVyd objednavky = new S4C_ObjVyd(inputDir, enc);
-            objednavky.serialize(outputFile);
+            } else {
+                outputFile = Path.Combine(outputDir, typeof(S4B_Ceny).Name + ".xml");
+                Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
+                S4B_Ceny ceny = new S4B_Ceny(inputDir, enc);
+                ceny.serialize(outputFile);
 
-            outputFile = Path.Combine(outputDir, typeof(S4C_Nabidky).Name + ".xml");
-            Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
-            S4C_Nabidky nabidky = new S4C_Nabidky(inputDir, enc);
-            nabidky.serialize(outputFile);
+                outputFile = Path.Combine(outputDir, typeof(S4C_ObjVyd).Name + ".xml");
+                Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
+                S4C_ObjVyd objednavky = new S4C_ObjVyd(inputDir, enc);
+                objednavky.serialize(outputFile);
 
-            outputFile = Path.Combine(outputDir, typeof(S4B_SklDokl).Name + ".xml");
-            Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
-            S4B_SklDokl docs = new S4B_SklDokl(inputDir, enc);
-            docs.serialize(outputFile);
+                outputFile = Path.Combine(outputDir, typeof(S4C_Nabidky).Name + ".xml");
+                Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
+                S4C_Nabidky nabidky = new S4C_Nabidky(inputDir, enc);
+                nabidky.serialize(outputFile);
+
+                outputFile = Path.Combine(outputDir, typeof(S4B_SklDokl).Name + ".xml");
+                Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
+                S4B_SklDokl docs = new S4B_SklDokl(inputDir, enc);
+                docs.serialize(outputFile);
+            }
 
             return 0;
         }

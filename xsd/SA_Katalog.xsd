@@ -20,6 +20,7 @@
                     <xs:element name="DodaciPodminkyOdeslani_ID" type="guid" />
                     <xs:element name="DodaciPodminkyPrijeti_ID" type="guid" />
                     <xs:element name="DoplnkovaJednotka_ID" type="emptiable_guid" minOccurs="0" />
+                    <xs:element name="Doprodej_UserData" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="DruhArtiklu_ID" type="guid" />
                     <xs:element name="DruhBaleni_ID" type="guid" />
                     <xs:element name="DruhDopravyOdeslani_ID" type="guid" />

@@ -103,6 +103,39 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="KategorieArtikluList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="KategorieArtiklu" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Kod" type="emptiable_string_10" />
+                  </xs:sequence>
+                  <xs:attribute name="ObjectName" fixed="KategorieArtiklu" use="required" />
+                  <xs:attribute name="ObjectType" fixed="Object" use="required" />
+                  <xs:attribute name="ID" type="guid" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProduktovyKlicList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProduktovyKlic" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Group" type="group" minOccurs="0" />
+                    <xs:element name="Kod" type="emptiable_string_10" />
+                  </xs:sequence>
+                  <xs:attribute name="ObjectName" fixed="ProduktovyKlic" use="required" />
+                  <xs:attribute name="ObjectType" fixed="Object" use="required" />
+                  <xs:attribute name="ID" type="guid" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="SazbaDPHList">
           <xs:complexType>
             <xs:sequence>

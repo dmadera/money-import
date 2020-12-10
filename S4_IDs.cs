@@ -16,6 +16,13 @@ namespace S4DataObjs {
             }
         }
 
+        public static bool IsReadyForDocs() {
+            if (_data.ArtiklList.Length <= 1) { return false; }
+            if (_data.FirmaList.Length <= 1) { return false; }
+
+            return true;
+        }
+
         public static string GetArtiklID(string katalog) {
             if (_data == null) throw new Exception("First call Deserialize method.");
 
@@ -130,6 +137,30 @@ namespace S4DataObjs {
             foreach (S5DataDruhArtiklu druhZbozi in _data.DruhArtikluList) {
                 if (druhZbozi.Kod == kod) {
                     return druhZbozi.ID;
+                }
+            }
+
+            return null;
+        }
+
+        public static string GetProduktovyKlicID(string kod) {
+            if (_data == null) throw new Exception("First call Deserialize method.");
+
+            foreach (S5DataProduktovyKlic produktovyKlic in _data.ProduktovyKlicList) {
+                if (produktovyKlic.Kod == kod) {
+                    return produktovyKlic.ID;
+                }
+            }
+
+            return null;
+        }
+
+        public static string GetKategorieArtikluID(string kod) {
+            if (_data == null) throw new Exception("First call Deserialize method.");
+
+            foreach (S5DataKategorieArtiklu kategorieArtiklu in _data.KategorieArtikluList) {
+                if (kategorieArtiklu.Kod == kod) {
+                    return kategorieArtiklu.ID;
                 }
             }
 

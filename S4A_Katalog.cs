@@ -29,38 +29,58 @@ namespace S4DataObjs {
         }
 
         private void convertKod(SkladDataFile file) {
+            string kategorie, podkategorie, kategorieID, podkategorieID;
+
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
+                kategorie = d["KodZbozi"].GetNum();
+                kategorieID = S4_IDs.GetKategorieArtikluID(kategorie);
+                if (kategorieID == null) kategorieID = Guid.NewGuid().ToString();
+
                 var cat = new S5DataKategorieArtiklu() {
-                    ID = Guid.NewGuid().ToString(),
-                    Kod = d["KodZbozi"].GetNum(),
+                    ID = kategorieID,
+                    Kod = kategorie,
                     Nazev = d["NazevKodu"].GetText(),
                 };
                 _kategorie.Add(cat);
             }
 
-            string guid = Guid.NewGuid().ToString();
+            kategorie = "0000";
+            kategorieID = S4_IDs.GetKategorieArtikluID(kategorie);
+            if (kategorieID == null) kategorieID = Guid.NewGuid().ToString();
+
+            podkategorie = "00000000";
+            podkategorieID = S4_IDs.GetKategorieArtikluID(podkategorie);
+            if (podkategorieID == null) podkategorieID = Guid.NewGuid().ToString();
+
             _kategorie.AddRange(new S5DataKategorieArtiklu[]{
                 new S5DataKategorieArtiklu() {
-                    ID = guid,
-                    Kod = "0000",
+                    ID = kategorieID,
+                    Kod = kategorie,
                     Nazev = "Nezařazené"
                 },
                 new S5DataKategorieArtiklu() {
-                    ID = Guid.NewGuid().ToString(),
-                    Kod = "00000000",
+                    ID = podkategorieID,
+                    Kod = podkategorie,
                     Nazev = "Nezařazené",
-                    ParentObject_ID = guid
+                    ParentObject_ID = kategorieID
                 }
             });
         }
 
         private void convertPodKod(SkladDataFile file) {
+            string podkategorie, podkategorieID;
+
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
+
+                podkategorie = d["KodZbozi"].GetNum() + d["PodKodZbozi"].GetNum();
+                podkategorieID = S4_IDs.GetKategorieArtikluID(podkategorie);
+                if (podkategorieID == null) podkategorieID = Guid.NewGuid().ToString();
+
                 var cat = new S5DataKategorieArtiklu() {
-                    ID = Guid.NewGuid().ToString(),
-                    Kod = d["KodZbozi"].GetNum() + d["PodKodZbozi"].GetNum(),
+                    ID = podkategorieID,
+                    Kod = podkategorie,
                     Nazev = d["NazevPOdKodu"].GetText(),
                     ParentObject_ID = _kategorie.Find((a) => { return a.Kod == d["KodZbozi"].GetNum(); }).ID
                 };
@@ -80,7 +100,8 @@ namespace S4DataObjs {
                             enum_DruhSazbyDPH_value.Item2)
                 };
 
-                var jednotkaID = S4_IDs.GetJednotkaID(d["MernaJednotka"].GetAlfaNum().ToLower());
+                var mernaJednotka = SkladDataItem.RemoveDiacritics(d["MernaJednotka"].GetNoSpaces().ToLower());
+                var jednotkaID = S4_IDs.GetJednotkaID(mernaJednotka);
 
                 var artikl = new S5DataArtikl() {
                     Katalog = GetID(d["CisloKarty"].GetNum()),
@@ -88,7 +109,19 @@ namespace S4DataObjs {
                     Poznamka = d["NazevZbozi2"].GetText() + obj.ToString(),
                     Group = new group() { Kod = "ART" },
                     PosledniCena = d["NakupCena"].GetDecimal(),
-                    Jednotky = new S5DataArtiklJednotky() {
+                    DruhArtiklu_ID = S4_IDs.GetDruhZboziID("ZBO"),
+                    SazbyDPH = new S5DataArtiklSazbyDPH() {
+                        ArtiklDPH = new S5DataArtiklSazbyDPHArtiklDPH[] {
+                            new S5DataArtiklSazbyDPHArtiklDPH() {
+                                SazbaVstup = sazbaDPH,
+                                SazbaVystup = sazbaDPH
+                            }
+                        }
+                    }
+                };
+
+                if (jednotkaID != "") {
+                    artikl.Jednotky = new S5DataArtiklJednotky() {
                         HlavniJednotka = new S5DataArtiklJednotkyHlavniJednotka() {
                             Jednotka_ID = jednotkaID,
                         },
@@ -100,53 +133,60 @@ namespace S4DataObjs {
                         },
                         SeznamJednotek = new S5DataArtiklJednotkySeznamJednotek() {
                             ArtiklJednotka = new S5DataArtiklJednotkySeznamJednotekArtiklJednotka[] {
-                                new S5DataArtiklJednotkySeznamJednotekArtiklJednotka() {
-                                    Mnozstvi = "1",
-                                    VychoziMnozstvi = "1",
-                                    Jednotka_ID = jednotkaID,
-                                    Kod = d["MernaJednotka"].GetAlfaNum().ToLower(),
-                                    NedelitelneMnozstvi = d["MinFol"].GetBoolean() == "True" ? d["VFol"].GetNum() : null
-                                },
-                                d["VFol"].GetNum() != "0" ? new S5DataArtiklJednotkySeznamJednotekArtiklJednotka() {
-                                    Mnozstvi = "1",
-                                    VychoziMnozstvi = d["VFol"].GetNum(),
-                                    Jednotka_ID = S4_IDs.GetJednotkaID("fol"),
-                                    Kod = "fol",
-                                    ParentJednotka = new S5DataArtiklJednotkySeznamJednotekArtiklJednotkaParentJednotka() {
-                                        Jednotka_ID = jednotkaID
-                                    }
-                                } : null,
-                                d["VKart"].GetNum() != "0" ? new S5DataArtiklJednotkySeznamJednotekArtiklJednotka() {
-                                    Mnozstvi = "1",
-                                    VychoziMnozstvi = d["VKart"].GetNum(),
-                                    Jednotka_ID = S4_IDs.GetJednotkaID("kar"),
-                                    Kod = "kar",
-                                    ParentJednotka = new S5DataArtiklJednotkySeznamJednotekArtiklJednotkaParentJednotka() {
-                                        Jednotka_ID = jednotkaID
+                                    new S5DataArtiklJednotkySeznamJednotekArtiklJednotka() {
+                                        Mnozstvi = "1",
+                                        VychoziMnozstvi = "1",
+                                        Jednotka_ID = jednotkaID,
+                                        Kod = mernaJednotka,
+                                        NedelitelneMnozstvi = d["MinFol"].GetBoolean() == "True" ? d["VFol"].GetNum() : null
                                     },
-                                } : null,
-                                d["VPal"].GetNum() != "0" ? new S5DataArtiklJednotkySeznamJednotekArtiklJednotka() {
-                                    Mnozstvi = "1",
-                                    VychoziMnozstvi = d["VPal"].GetNum(),
-                                    Kod = "pal",
-                                    Jednotka_ID = S4_IDs.GetJednotkaID("pal"),
-                                    ParentJednotka = new S5DataArtiklJednotkySeznamJednotekArtiklJednotkaParentJednotka() {
-                                        Jednotka_ID = jednotkaID
-                                    }
-                                } : null,
-                            }
+                                    d["VFol"].GetNum() != "0" ? new S5DataArtiklJednotkySeznamJednotekArtiklJednotka() {
+                                        Mnozstvi = "1",
+                                        VychoziMnozstvi = d["VFol"].GetNum(),
+                                        Jednotka_ID = S4_IDs.GetJednotkaID("fol"),
+                                        Kod = "fol",
+                                        ParentJednotka = new S5DataArtiklJednotkySeznamJednotekArtiklJednotkaParentJednotka() {
+                                            Jednotka_ID = jednotkaID
+                                        }
+                                    } : null,
+                                    d["VKart"].GetNum() != "0" ? new S5DataArtiklJednotkySeznamJednotekArtiklJednotka() {
+                                        Mnozstvi = "1",
+                                        VychoziMnozstvi = d["VKart"].GetNum(),
+                                        Jednotka_ID = S4_IDs.GetJednotkaID("kar"),
+                                        Kod = "kar",
+                                        ParentJednotka = new S5DataArtiklJednotkySeznamJednotekArtiklJednotkaParentJednotka() {
+                                            Jednotka_ID = jednotkaID
+                                        },
+                                    } : null,
+                                    d["VPal"].GetNum() != "0" ? new S5DataArtiklJednotkySeznamJednotekArtiklJednotka() {
+                                        Mnozstvi = "1",
+                                        VychoziMnozstvi = d["VPal"].GetNum(),
+                                        Kod = "pal",
+                                        Jednotka_ID = S4_IDs.GetJednotkaID("pal"),
+                                        ParentJednotka = new S5DataArtiklJednotkySeznamJednotekArtiklJednotkaParentJednotka() {
+                                            Jednotka_ID = jednotkaID
+                                        }
+                                    } : null,
+                                }
                         }
-                    },
-                    DruhArtiklu_ID = S4_IDs.GetDruhZboziID("ZBO"),
-                    SazbyDPH = new S5DataArtiklSazbyDPH() {
-                        ArtiklDPH = new S5DataArtiklSazbyDPHArtiklDPH[] {
-                            new S5DataArtiklSazbyDPHArtiklDPH() {
-                                SazbaVstup = sazbaDPH,
-                                SazbaVystup = sazbaDPH
-                            }
+                    };
+                }
+
+                var priznak = d["Priznak"].GetNoSpaces().ToUpper();
+                if (priznak != "") {
+                    var priznakID = S4_IDs.GetProduktovyKlicID(priznak);
+                    // prenesena danova povinnost
+                    // if (priznak == "P") {
+                    // }
+
+                    artikl.ProduktoveKlice = new S5DataArtiklProduktoveKlice() {
+                        ArtiklProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlic[] {
+                            priznakID != "" ? new S5DataArtiklProduktoveKliceArtiklProduktovyKlic() {
+                                ProduktovyKlic_ID = priznakID
+                            } : null
                         }
-                    }
-                };
+                    };
+                }
 
                 artikl.Dodavatele = d["CisloDodavatele"].GetNum() != "00000" ? new S5DataArtiklDodavatele() {
                     SeznamDodavatelu = new S5DataArtiklDodavateleSeznamDodavatelu() {
@@ -180,6 +220,7 @@ namespace S4DataObjs {
                 artikl.SmazatOstatniDodavatele = "True";
                 artikl.SmazatOstatniJednotky = "True";
                 artikl.SmazatOstatniSazbyDPH = "True";
+                artikl.SmazatOstatniProduktoveKlice = "True";
 
                 _artikly.Add(artikl);
             }

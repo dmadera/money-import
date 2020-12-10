@@ -82,6 +82,8 @@ namespace SA_Katalog {
         
         private string doplnkovaJednotka_IDField;
         
+        private string doprodej_UserDataField;
+        
         private string druhArtiklu_IDField;
         
         private string druhBaleni_IDField;
@@ -493,6 +495,17 @@ namespace SA_Katalog {
             }
             set {
                 this.doplnkovaJednotka_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Doprodej_UserData {
+            get {
+                return this.doprodej_UserDataField;
+            }
+            set {
+                this.doprodej_UserDataField = value;
             }
         }
         

@@ -3,7 +3,7 @@
     "tasks": [
         {
             "label": "publishexe",
-            "command": "cp ${workspaceFolder}/bin/Debug/netcoreapp3.1/win-x64/publish/moneys4-import.exe ${workspaceFolder}/bin/",
+            "command": "cp ${workspaceFolder}/bin/Debug/netcoreapp3.1/win-x64/publish/moneys4-import.exe ${workspaceFolder}/../moneys4-import/ && cp ${workspaceFolder}/bin/Debug/netcoreapp3.1/win-x64/publish/moneys4-import.exe ${workspaceFolder}/z-assets/",
             "type": "shell",
             "args": [],
             "dependsOn": [
