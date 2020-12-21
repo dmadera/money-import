@@ -45,27 +45,27 @@ namespace S4DataObjs {
                 _kategorie.Add(cat);
             }
 
-            kategorie = "0000";
-            kategorieID = S4_IDs.GetKategorieArtikluID(kategorie);
-            if (kategorieID == null) kategorieID = Guid.NewGuid().ToString();
+            // kategorie = "0000";
+            // kategorieID = S4_IDs.GetKategorieArtikluID(kategorie);
+            // if (kategorieID == null) kategorieID = Guid.NewGuid().ToString();
 
-            podkategorie = "00000000";
-            podkategorieID = S4_IDs.GetKategorieArtikluID(podkategorie);
-            if (podkategorieID == null) podkategorieID = Guid.NewGuid().ToString();
+            // podkategorie = "00000000";
+            // podkategorieID = S4_IDs.GetKategorieArtikluID(podkategorie);
+            // if (podkategorieID == null) podkategorieID = Guid.NewGuid().ToString();
 
-            _kategorie.AddRange(new S5DataKategorieArtiklu[]{
-                new S5DataKategorieArtiklu() {
-                    ID = kategorieID,
-                    Kod = kategorie,
-                    Nazev = "Nezařazené"
-                },
-                new S5DataKategorieArtiklu() {
-                    ID = podkategorieID,
-                    Kod = podkategorie,
-                    Nazev = "Nezařazené",
-                    ParentObject_ID = kategorieID
-                }
-            });
+            // _kategorie.AddRange(new S5DataKategorieArtiklu[]{
+            //     new S5DataKategorieArtiklu() {
+            //         ID = kategorieID,
+            //         Kod = kategorie,
+            //         Nazev = "Nezařazené"
+            //     },
+            //     new S5DataKategorieArtiklu() {
+            //         ID = podkategorieID,
+            //         Kod = podkategorie,
+            //         Nazev = "Nezařazené",
+            //         ParentObject_ID = kategorieID
+            //     }
+            // });
         }
 
         private void convertPodKod(SkladDataFile file) {
@@ -174,18 +174,23 @@ namespace S4DataObjs {
 
                 var priznak = d["Priznak"].GetNoSpaces().ToUpper();
                 if (priznak != "") {
-                    var priznakID = S4_IDs.GetProduktovyKlicID(priznak);
+                    var priznakEnum = new enum_PriznakZbozi_UserEnumEnumValueName();
+                    switch(priznak) {
+                        case "A" : priznakEnum = enum_PriznakZbozi_UserEnumEnumValueName.Akce; break;
+                        case "S" : priznakEnum = enum_PriznakZbozi_UserEnumEnumValueName.Sleva; break;
+                        case "N" : priznakEnum = enum_PriznakZbozi_UserEnumEnumValueName.Novinka; break;
+                        default: priznakEnum = enum_PriznakZbozi_UserEnumEnumValueName.Prazdne; break;
+                    }
+
+                    artikl.PriznakZbozi_UserData = new enum_PriznakZbozi_UserEnum() {
+                        EnumValueName = priznakEnum
+                    };
                     // prenesena danova povinnost
                     // if (priznak == "P") {
                     // }
-
-                    artikl.ProduktoveKlice = new S5DataArtiklProduktoveKlice() {
-                        ArtiklProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlic[] {
-                            priznakID != "" ? new S5DataArtiklProduktoveKliceArtiklProduktovyKlic() {
-                                ProduktovyKlic_ID = priznakID
-                            } : null
-                        }
-                    };
+                    if(priznak == "D") artikl.Doprodej_UserData = "True";
+                    if(priznak == "O") artikl.NaObjednavku_UserData = "True";
+                    if(priznak == "X") artikl.Nedostupne_UserData = "True";
                 }
 
                 artikl.Dodavatele = d["CisloDodavatele"].GetNum() != "00000" ? new S5DataArtiklDodavatele() {

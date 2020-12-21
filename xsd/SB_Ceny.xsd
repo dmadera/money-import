@@ -600,7 +600,7 @@
                                     <xs:all>
                                       <xs:element name="CelkovaCena" type="emptiable_decimal_2" minOccurs="0" />
                                       <xs:element name="JednotkaCena" type="emptiable_decimal_4" minOccurs="0" />
-                                      <xs:element name="Mnozstvi" type="emptiable_decimal_2" minOccurs="0" />
+                                      <xs:element name="Mnozstvi" type="emptiable_decimal_4" minOccurs="0" />
                                       <xs:element name="PocetJednotek" type="emptiable_decimal_2" minOccurs="0" />
                                     </xs:all>
                                   </xs:complexType>
@@ -610,7 +610,7 @@
                                     <xs:all>
                                       <xs:element name="CelkovaCena" type="emptiable_decimal_2" minOccurs="0" />
                                       <xs:element name="JednotkaCena" type="emptiable_decimal_4" minOccurs="0" />
-                                      <xs:element name="Mnozstvi" type="emptiable_decimal_2" minOccurs="0" />
+                                      <xs:element name="Mnozstvi" type="emptiable_decimal_4" minOccurs="0" />
                                       <xs:element name="PocetJednotek" type="emptiable_decimal_2" minOccurs="0" />
                                     </xs:all>
                                   </xs:complexType>
@@ -620,7 +620,7 @@
                                     <xs:all>
                                       <xs:element name="CelkovaCena" type="emptiable_decimal_2" minOccurs="0" />
                                       <xs:element name="JednotkaCena" type="emptiable_decimal_4" minOccurs="0" />
-                                      <xs:element name="Mnozstvi" type="emptiable_decimal_2" minOccurs="0" />
+                                      <xs:element name="Mnozstvi" type="emptiable_decimal_4" minOccurs="0" />
                                       <xs:element name="PocetJednotek" type="emptiable_decimal_2" minOccurs="0" />
                                     </xs:all>
                                   </xs:complexType>
@@ -630,7 +630,7 @@
                                     <xs:all>
                                       <xs:element name="CelkovaCena" type="emptiable_decimal_2" minOccurs="0" />
                                       <xs:element name="JednotkaCena" type="emptiable_decimal_4" minOccurs="0" />
-                                      <xs:element name="Mnozstvi" type="emptiable_decimal_2" minOccurs="0" />
+                                      <xs:element name="Mnozstvi" type="emptiable_decimal_4" minOccurs="0" />
                                       <xs:element name="PocetJednotek" type="emptiable_decimal_2" minOccurs="0" />
                                     </xs:all>
                                   </xs:complexType>
@@ -640,7 +640,7 @@
                                     <xs:all>
                                       <xs:element name="CelkovaCena" type="emptiable_decimal_2" minOccurs="0" />
                                       <xs:element name="JednotkaCena" type="emptiable_decimal_4" minOccurs="0" />
-                                      <xs:element name="Mnozstvi" type="emptiable_decimal_2" minOccurs="0" />
+                                      <xs:element name="Mnozstvi" type="emptiable_decimal_4" minOccurs="0" />
                                       <xs:element name="PocetJednotek" type="emptiable_decimal_2" minOccurs="0" />
                                     </xs:all>
                                   </xs:complexType>
@@ -686,6 +686,1224 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="FirmaList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Firma" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="Group" type="group" minOccurs="0" />
+                    <xs:element name="CinnostUkoncena" type="emptiable_bool" minOccurs="0" />
+                    <xs:element name="CiselnaRada_ID" type="guid" />
+                    <xs:element name="CisloS3" type="emptiable_integer" minOccurs="0" />
+                    <xs:element name="CisloZRady" type="emptiable_integer" minOccurs="0" />
+                    <xs:element name="DatovaSchrankaSpojeni_ID" type="guid" />
+                    <xs:element name="DatumKontolyDIC" type="dateTime_DateMin" minOccurs="0" />
+                    <xs:element name="DatumKontrolyDleIC" type="dateTime_DateMin" minOccurs="0" />
+                    <xs:element name="DatumPosledniKontrolyPlatceDPH" type="dateTime_DateTimeMin" minOccurs="0" />
+                    <xs:element name="DatumPosty" type="dateTime_DateMin" minOccurs="0" />
+                    <xs:element name="DatumUkonceniCinnosti" type="dateTime_DateMin" minOccurs="0" />
+                    <xs:element name="DIC" type="emptiable_string_20" minOccurs="0" />
+                    <xs:element name="EkoKomKlient" type="emptiable_bool" minOccurs="0" />
+                    <xs:element name="EmailSpojeni_ID" type="guid" />
+                    <xs:element name="EvidovatNahradniPlneni" type="emptiable_bool" minOccurs="0" />
+                    <xs:element name="FaktPsc_ID" type="guid" />
+                    <xs:element name="FaktStat_ID" type="guid" />
+                    <xs:element name="FaxSpojeni_ID" type="guid" />
+                    <xs:element name="FyzickaOsoba" type="emptiable_bool" minOccurs="0" />
+                    <xs:element name="GLN" type="emptiable_string_15" minOccurs="0" />
+                    <xs:element name="GpsLat" type="emptiable_decimal_6" minOccurs="0" />
+                    <xs:element name="GpsLong" type="emptiable_decimal_6" minOccurs="0" />
+                    <xs:element name="HlavniOsoba_ID" type="guid" />
+                    <xs:element name="HlavniUcet_ID" type="guid" />
+                    <xs:element name="ICDPH" type="emptiable_string_20" minOccurs="0" />
+                    <xs:element name="ICO" type="emptiable_string_20" minOccurs="0" />
+                    <xs:element name="IncotermsDodavatelskePodminky_ID" type="guid" />
+                    <xs:element name="IncotermsOdberatelskePodminky_ID" type="guid" />
+                    <xs:element name="InsolvenciRejstrik_ID" type="guid" />
+                    <xs:element name="ISIRCasSynchronizace" type="dateTime_DateTimeMin" minOccurs="0" />
+                    <xs:element name="ISIRChyba" type="emptiable_string_50" minOccurs="0" />
+                    <xs:element name="ISIRPocetSpisu" type="emptiable_integer" minOccurs="0" />
+                    <xs:element name="ISIRPocetSpisuSeZmenou" type="emptiable_integer" minOccurs="0" />
+                    <xs:element name="ISIRPosledniKontrola" type="dateTime_DateTimeMin" minOccurs="0" />
+                    <xs:element name="ISIRRelevanceVysledku" type="emptiable_integer" minOccurs="0" />
+                    <xs:element name="Kod" type="emptiable_string_20" minOccurs="0" />
+                    <xs:element name="KodDanovehoUradu" type="emptiable_string_4" minOccurs="0" />
+                    <xs:element name="Kraj_ID" type="guid" />
+                    <xs:element name="Logo_ID" type="guid" />
+                    <xs:element name="Mena_ID" type="guid" />
+                    <xs:element name="MojeFirmabankovniSpojeni_ID" type="guid" />
+                    <xs:element name="NadrazenaFirma_ID" type="emptiable_guid" minOccurs="0" />
+                    <xs:element name="Nazev" type="emptiable_string_200" minOccurs="0" />
+                    <xs:element name="NekontrolovatLimitRPDP" type="emptiable_bool" minOccurs="0" />
+                    <xs:element name="ObchPsc_ID" type="guid" />
+                    <xs:element name="ObchStat_ID" type="guid" />
+                    <xs:element name="PlatceDPH" type="emptiable_bool" minOccurs="0" />
+                    <xs:element name="PomerneUplatnovaniDPH" type="emptiable_bool" minOccurs="0" />
+                    <xs:element name="PosilatPostu" type="emptiable_bool" minOccurs="0" />
+                    <xs:element name="PosledniCisloOsoby" type="emptiable_integer" minOccurs="0" />
+                    <xs:element name="PosledniStavZHistorieRegistru_ID" type="guid" />
+                    <xs:element name="Poznamka" type="emptiable_string_unbounded" minOccurs="0" />
+                    <xs:element name="PrenestNazev" type="emptiable_bool" minOccurs="0" />
+                    <xs:element name="PrimarniUcetPohledavky_ID" type="guid" />
+                    <xs:element name="PrimarniUcetPoskytnutaZaloha_ID" type="guid" />
+                    <xs:element name="PrimarniUcetPrijataZaloha_ID" type="guid" />
+                    <xs:element name="PrimarniUcetZavazky_ID" type="guid" />
+                    <xs:element name="ProvPsc_ID" type="guid" />
+                    <xs:element name="ProvStat_ID" type="guid" />
+                    <xs:element name="Region_ID" type="guid" />
+                    <xs:element name="ReklamacePocetDniProVyrizeni" type="emptiable_integer" minOccurs="0" />
+                    <xs:element name="ReportSDPH_UserData" type="emptiable_bool" minOccurs="0" />
+                    <xs:element name="RocniLimitNahradnihoPlneni" type="emptiable_decimal_2" minOccurs="0" />
+                    <xs:element name="ServisPocetDniProVyrizeni" type="emptiable_integer" minOccurs="0" />
+                    <xs:element name="SpecifickySymbol" type="emptiable_string_50" minOccurs="0" />
+                    <xs:element name="StavOvereniISIR" type="emptiable_integer" minOccurs="0" />
+                    <xs:element name="StavPlatceDPHComputed" type="emptiable_integer" minOccurs="0" />
+                    <xs:element name="StavPlatceDPHVracenyWS_Stav" type="emptiable_integer" minOccurs="0" />
+                    <xs:element name="TelefonSpojeni1_ID" type="guid" />
+                    <xs:element name="TelefonSpojeni2_ID" type="guid" />
+                    <xs:element name="TelefonSpojeni3_ID" type="guid" />
+                    <xs:element name="TelefonSpojeni4_ID" type="guid" />
+                    <xs:element name="UctyNactenyZRegistruDPH" type="emptiable_bool" minOccurs="0" />
+                    <xs:element name="VariabilniSymbol" type="emptiable_string_10" minOccurs="0" />
+                    <xs:element name="WWWSpojeni_ID" type="guid" />
+                    <xs:element name="ZmenaPomernehoUplatnovaniDPH" type="dateTime_DateMin" minOccurs="0" />
+                    <xs:element name="Zprava" type="emptiable_string_unbounded" minOccurs="0" />
+                    <xs:element name="ZpusobDopravy_ID" type="guid" />
+                    <xs:element name="ZpusobPlatby_ID" type="guid" />
+                    <xs:element name="Adresy" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="OdlisnaAdresaProvozovny" type="emptiable_bool" minOccurs="0" />
+                          <xs:element name="OdlisnaFakturacniAdresa" type="emptiable_bool" minOccurs="0" />
+                          <xs:element name="FakturacniAdresa" minOccurs="0">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="KodPsc" type="emptiable_string_10" minOccurs="0" />
+                                <xs:element name="Misto" type="emptiable_string_100" minOccurs="0" />
+                                <xs:element name="Nazev" type="emptiable_string_200" minOccurs="0" />
+                                <xs:element name="NazevStatu" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="Ulice" type="emptiable_string_100" minOccurs="0" />
+                                <xs:element name="Psc" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:attribute name="ObjectName" fixed="PSC" />
+                                    <xs:attribute name="ObjectType" fixed="Object" />
+                                    <xs:attribute name="ID" type="guid" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Stat" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:attribute name="ObjectName" fixed="Stat" />
+                                    <xs:attribute name="ObjectType" fixed="Object" />
+                                    <xs:attribute name="ID" type="guid" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:all>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ObchodniAdresa" minOccurs="0">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="KodPsc" type="emptiable_string_10" minOccurs="0" />
+                                <xs:element name="Misto" type="emptiable_string_100" minOccurs="0" />
+                                <xs:element name="Nazev" type="emptiable_string_200" minOccurs="0" />
+                                <xs:element name="NazevStatu" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="Ulice" type="emptiable_string_100" minOccurs="0" />
+                                <xs:element name="Psc" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:attribute name="ObjectName" fixed="PSC" />
+                                    <xs:attribute name="ObjectType" fixed="Object" />
+                                    <xs:attribute name="ID" type="guid" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Stat" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:attribute name="ObjectName" fixed="Stat" />
+                                    <xs:attribute name="ObjectType" fixed="Object" />
+                                    <xs:attribute name="ID" type="guid" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:all>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Provozovna" minOccurs="0">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="KodPsc" type="emptiable_string_10" minOccurs="0" />
+                                <xs:element name="Misto" type="emptiable_string_100" minOccurs="0" />
+                                <xs:element name="Nazev" type="emptiable_string_200" minOccurs="0" />
+                                <xs:element name="NazevStatu" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="Ulice" type="emptiable_string_100" minOccurs="0" />
+                                <xs:element name="Psc" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:attribute name="ObjectName" fixed="PSC" />
+                                    <xs:attribute name="ObjectType" fixed="Object" />
+                                    <xs:attribute name="ID" type="guid" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Stat" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:attribute name="ObjectName" fixed="Stat" />
+                                    <xs:attribute name="ObjectType" fixed="Object" />
+                                    <xs:attribute name="ID" type="guid" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:all>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:all>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FirmaCRM" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="SeznamCZNACE" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="FirmaCZNACE" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:all>
+                                      <xs:element name="CZNACE_ID" type="guid" />
+                                      <xs:element name="Main" type="emptiable_bool" minOccurs="0" />
+                                      <xs:element name="SortIndex" type="emptiable_integer" minOccurs="0" />
+                                      <xs:element name="CZNACE" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:attribute name="ObjectName" fixed="CZNACE" />
+                                          <xs:attribute name="ObjectType" fixed="Object" />
+                                          <xs:attribute name="ID" type="guid" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:all>
+                                    <xs:attribute name="ObjectName" fixed="FirmaCZNACE" />
+                                    <xs:attribute name="ObjectType" fixed="Object" />
+                                    <xs:attribute name="ID" type="guid" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="ObjectName" fixed="FirmaCZNACE" />
+                              <xs:attribute name="ObjectType" fixed="List" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="SeznamKategorii" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="FirmaKategorieCRM" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:all>
+                                      <xs:element name="KategorieCRM_ID" type="guid" />
+                                      <xs:element name="KategorieCRM" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:attribute name="ObjectName" fixed="KategorieCRM" />
+                                          <xs:attribute name="ObjectType" fixed="Object" />
+                                          <xs:attribute name="ID" type="guid" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:all>
+                                    <xs:attribute name="ObjectName" fixed="FirmaKategorieCRM" />
+                                    <xs:attribute name="ObjectType" fixed="Object" />
+                                    <xs:attribute name="ID" type="guid" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="ObjectName" fixed="FirmaKategorieCRM" />
+                              <xs:attribute name="ObjectType" fixed="List" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:all>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Kontakty" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="Email" type="emptiable_string_50" minOccurs="0" />
+                          <xs:element name="Spojeni" type="emptiable_string_unbounded" minOccurs="0" />
+                          <xs:element name="WWW" type="emptiable_string_50" minOccurs="0" />
+                          <xs:element name="DatovaSchranka" minOccurs="0">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="DatovaSchrankaID" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="DatovaSchrankaNazev" type="emptiable_string_255" minOccurs="0" />
+                              </xs:all>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Fax" minOccurs="0">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="Cislo" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="Klapka" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="MistniCislo" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="Predvolba" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="PredvolbaStat" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="StatID" type="emptiable_guid" minOccurs="0" />
+                              </xs:all>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Telefon1" minOccurs="0">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="Cislo" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="Klapka" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="MistniCislo" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="Predvolba" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="PredvolbaStat" type="emptiable_string_10" minOccurs="0" />
+                                <xs:element name="StatID" type="emptiable_guid" minOccurs="0" />
+                                <xs:element name="Typ" type="enum_TypKontaktu" minOccurs="0" />
+                              </xs:all>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Telefon2" minOccurs="0">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="Cislo" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="Klapka" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="MistniCislo" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="Predvolba" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="PredvolbaStat" type="emptiable_string_10" minOccurs="0" />
+                                <xs:element name="StatID" type="emptiable_guid" minOccurs="0" />
+                                <xs:element name="Typ" type="enum_TypKontaktu" minOccurs="0" />
+                              </xs:all>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Telefon3" minOccurs="0">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="Cislo" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="Klapka" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="MistniCislo" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="Predvolba" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="PredvolbaStat" type="emptiable_string_10" minOccurs="0" />
+                                <xs:element name="StatID" type="emptiable_guid" minOccurs="0" />
+                                <xs:element name="Typ" type="enum_TypKontaktu" minOccurs="0" />
+                              </xs:all>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Telefon4" minOccurs="0">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="Cislo" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="Klapka" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="MistniCislo" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="Predvolba" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="PredvolbaStat" type="emptiable_string_10" minOccurs="0" />
+                                <xs:element name="StatID" type="emptiable_guid" minOccurs="0" />
+                                <xs:element name="Typ" type="enum_TypKontaktu" minOccurs="0" />
+                              </xs:all>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="DatovaSchrankaSpojeni" minOccurs="0">
+                            <xs:complexType>
+                              <xs:attribute name="ObjectName" fixed="Spojeni" />
+                              <xs:attribute name="ObjectType" fixed="Object" />
+                              <xs:attribute name="ID" type="guid" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="EmailSpojeni" minOccurs="0">
+                            <xs:complexType>
+                              <xs:attribute name="ObjectName" fixed="Spojeni" />
+                              <xs:attribute name="ObjectType" fixed="Object" />
+                              <xs:attribute name="ID" type="guid" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="FaxSpojeni" minOccurs="0">
+                            <xs:complexType>
+                              <xs:attribute name="ObjectName" fixed="Spojeni" />
+                              <xs:attribute name="ObjectType" fixed="Object" />
+                              <xs:attribute name="ID" type="guid" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="TelefonSpojeni1" minOccurs="0">
+                            <xs:complexType>
+                              <xs:attribute name="ObjectName" fixed="Spojeni" />
+                              <xs:attribute name="ObjectType" fixed="Object" />
+                              <xs:attribute name="ID" type="guid" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="TelefonSpojeni2" minOccurs="0">
+                            <xs:complexType>
+                              <xs:attribute name="ObjectName" fixed="Spojeni" />
+                              <xs:attribute name="ObjectType" fixed="Object" />
+                              <xs:attribute name="ID" type="guid" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="TelefonSpojeni3" minOccurs="0">
+                            <xs:complexType>
+                              <xs:attribute name="ObjectName" fixed="Spojeni" />
+                              <xs:attribute name="ObjectType" fixed="Object" />
+                              <xs:attribute name="ID" type="guid" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="TelefonSpojeni4" minOccurs="0">
+                            <xs:complexType>
+                              <xs:attribute name="ObjectName" fixed="Spojeni" />
+                              <xs:attribute name="ObjectType" fixed="Object" />
+                              <xs:attribute name="ID" type="guid" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="WWWSpojeni" minOccurs="0">
+                            <xs:complexType>
+                              <xs:attribute name="ObjectName" fixed="Spojeni" />
+                              <xs:attribute name="ObjectType" fixed="Object" />
+                              <xs:attribute name="ID" type="guid" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:all>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Kredit" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="Kredit" type="emptiable_decimal_2" minOccurs="0" />
+                          <xs:element name="PouzivatKredit" type="emptiable_bool" minOccurs="0" />
+                          <xs:element name="VcetnePodrizenych" type="emptiable_bool" minOccurs="0" />
+                        </xs:all>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="NadrazenaFirma" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="PrevzitBankovniSpojeni" type="emptiable_bool" minOccurs="0" />
+                          <xs:element name="PrevzitObchodniPodminky" type="emptiable_bool" minOccurs="0" />
+                          <xs:element name="PrevzitObchodniUdaje" type="emptiable_bool" minOccurs="0" />
+                          <xs:element name="Firma" minOccurs="0">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="Group" type="group" minOccurs="0" />
+                              </xs:all>
+                              <xs:attribute name="ObjectName" fixed="Firma" />
+                              <xs:attribute name="ObjectType" fixed="Object" />
+                              <xs:attribute name="ID" type="guid" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:all>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ObchodniPodminky" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="DistributorLihu" type="emptiable_bool" minOccurs="0" />
+                          <xs:element name="RegistracniCisloDistributoraLihu" type="emptiable_string_10" minOccurs="0" />
+                          <xs:element name="ZpusobVyberuCeny" type="enum_ZpusobVyberuCeny" minOccurs="0" />
+                          <xs:element name="SeznamCeniku" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="FirmaCenik" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:all>
+                                      <xs:element name="Cenik_ID" type="emptiable_guid" minOccurs="0" />
+                                      <xs:element name="Firma_ID" type="emptiable_guid" minOccurs="0" />
+                                      <xs:element name="Poradi" type="emptiable_integer" minOccurs="0" />
+                                      <xs:element name="Cenik" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:all>
+                                            <xs:element name="Group" type="group" minOccurs="0" />
+                                            <xs:element name="Kod" type="string_10" />
+                                          </xs:all>
+                                          <xs:attribute name="ObjectName" fixed="Cenik" />
+                                          <xs:attribute name="ObjectType" fixed="Object" />
+                                          <xs:attribute name="ID" type="guid" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:all>
+                                    <xs:attribute name="ObjectName" fixed="FirmaCenik" />
+                                    <xs:attribute name="ObjectType" fixed="Object" />
+                                    <xs:attribute name="ID" type="guid" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="ObjectName" fixed="FirmaCenik" />
+                              <xs:attribute name="ObjectType" fixed="List" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="SeznamHladin" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="FirmaCenovaHladina" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:all>
+                                      <xs:element name="CenovaHladina_ID" type="guid" />
+                                      <xs:element name="Firma_ID" type="emptiable_guid" minOccurs="0" />
+                                      <xs:element name="Poradi" type="emptiable_integer" minOccurs="0" />
+                                      <xs:element name="CenovaHladina" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:all>
+                                            <xs:element name="Group" type="group" minOccurs="0" />
+                                          </xs:all>
+                                          <xs:attribute name="ObjectName" fixed="CenovaHladina" />
+                                          <xs:attribute name="ObjectType" fixed="Object" />
+                                          <xs:attribute name="ID" type="guid" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:all>
+                                    <xs:attribute name="ObjectName" fixed="FirmaCenovaHladina" />
+                                    <xs:attribute name="ObjectType" fixed="Object" />
+                                    <xs:attribute name="ID" type="guid" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="ObjectName" fixed="FirmaCenovaHladina" />
+                              <xs:attribute name="ObjectType" fixed="List" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:all>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Osoby" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="UvadetNaDokladech" type="emptiable_bool" minOccurs="0" />
+                          <xs:element name="HlavniOsoba" minOccurs="0">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="Group" type="group" minOccurs="0" />
+                              </xs:all>
+                              <xs:attribute name="ObjectName" fixed="Osoba" />
+                              <xs:attribute name="ObjectType" fixed="Object" />
+                              <xs:attribute name="ID" type="guid" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="SeznamOsob" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Osoba" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:all>
+                                      <xs:element name="Group" type="group" minOccurs="0" />
+                                      <xs:element name="AdresaPsc_ID" type="guid" />
+                                      <xs:element name="AdresaStat_ID" type="guid" />
+                                      <xs:element name="CisloOsoby" type="emptiable_integer" minOccurs="0" />
+                                      <xs:element name="CisloS3" type="emptiable_string_50" minOccurs="0" />
+                                      <xs:element name="DatumNarozeni" type="dateTime_DateMin" minOccurs="0" />
+                                      <xs:element name="DatumPosty" type="dateTime_DateMin" minOccurs="0" />
+                                      <xs:element name="EmailSpojeni_ID" type="guid" />
+                                      <xs:element name="FaxSpojeni_ID" type="guid" />
+                                      <xs:element name="Funkce" type="emptiable_string_50" minOccurs="0" />
+                                      <xs:element name="FunkceOsoby_ID" type="guid" />
+                                      <xs:element name="Jmeno" type="emptiable_string_50" minOccurs="0" />
+                                      <xs:element name="Kod" type="emptiable_string_20" minOccurs="0" />
+                                      <xs:element name="KrestniJmeno" type="emptiable_string_50" minOccurs="0" />
+                                      <xs:element name="Nazev" type="emptiable_string_100" minOccurs="0" />
+                                      <xs:element name="Osloveni" type="emptiable_string_10" minOccurs="0" />
+                                      <xs:element name="OsloveniProEmail" type="emptiable_string_unbounded" minOccurs="0" />
+                                      <xs:element name="Pohlavi" type="enum_Pohlavi" minOccurs="0" />
+                                      <xs:element name="PosilatPostu" type="emptiable_bool" minOccurs="0" />
+                                      <xs:element name="Poznamka" type="emptiable_string_unbounded" minOccurs="0" />
+                                      <xs:element name="Prijmeni" type="emptiable_string_50" minOccurs="0" />
+                                      <xs:element name="TelefonSpojeni1_ID" type="guid" />
+                                      <xs:element name="TelefonSpojeni2_ID" type="guid" />
+                                      <xs:element name="TelefonSpojeni3_ID" type="guid" />
+                                      <xs:element name="TelefonSpojeni4_ID" type="guid" />
+                                      <xs:element name="TitulPred" type="emptiable_string_20" minOccurs="0" />
+                                      <xs:element name="TitulPred_ID" type="emptiable_guid" minOccurs="0" />
+                                      <xs:element name="TitulZa" type="emptiable_string_20" minOccurs="0" />
+                                      <xs:element name="TitulZa_ID" type="emptiable_guid" minOccurs="0" />
+                                      <xs:element name="Adresa" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:all>
+                                            <xs:element name="KodPsc" type="emptiable_string_10" minOccurs="0" />
+                                            <xs:element name="Misto" type="emptiable_string_100" minOccurs="0" />
+                                            <xs:element name="Nazev" type="emptiable_string_200" minOccurs="0" />
+                                            <xs:element name="NazevStatu" type="emptiable_string_50" minOccurs="0" />
+                                            <xs:element name="Ulice" type="emptiable_string_100" minOccurs="0" />
+                                            <xs:element name="Psc" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:attribute name="ObjectName" fixed="PSC" />
+                                                <xs:attribute name="ObjectType" fixed="Object" />
+                                                <xs:attribute name="ID" type="guid" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Stat" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:attribute name="ObjectName" fixed="Stat" />
+                                                <xs:attribute name="ObjectType" fixed="Object" />
+                                                <xs:attribute name="ID" type="guid" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:all>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="Kontakty" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:all>
+                                            <xs:element name="Email" type="emptiable_string_50" minOccurs="0" />
+                                            <xs:element name="Spojeni" type="emptiable_string_50" minOccurs="0" />
+                                            <xs:element name="Fax" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:all>
+                                                  <xs:element name="Cislo" type="emptiable_string_50" minOccurs="0" />
+                                                  <xs:element name="Klapka" type="emptiable_string_50" minOccurs="0" />
+                                                  <xs:element name="MistniCislo" type="emptiable_string_50" minOccurs="0" />
+                                                  <xs:element name="Predvolba" type="emptiable_string_50" minOccurs="0" />
+                                                  <xs:element name="PredvolbaStat" type="emptiable_string_50" minOccurs="0" />
+                                                  <xs:element name="StatID" type="emptiable_guid" minOccurs="0" />
+                                                </xs:all>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Telefon1" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:all>
+                                                  <xs:element name="Cislo" type="emptiable_string_50" minOccurs="0" />
+                                                  <xs:element name="Klapka" type="emptiable_string_10" minOccurs="0" />
+                                                  <xs:element name="MistniCislo" type="emptiable_string_20" minOccurs="0" />
+                                                  <xs:element name="Predvolba" type="emptiable_string_10" minOccurs="0" />
+                                                  <xs:element name="PredvolbaStat" type="emptiable_string_10" minOccurs="0" />
+                                                  <xs:element name="StatID" type="emptiable_guid" minOccurs="0" />
+                                                  <xs:element name="Typ" type="enum_TypKontaktu" minOccurs="0" />
+                                                </xs:all>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Telefon2" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:all>
+                                                  <xs:element name="Cislo" type="emptiable_string_50" minOccurs="0" />
+                                                  <xs:element name="Klapka" type="emptiable_string_10" minOccurs="0" />
+                                                  <xs:element name="MistniCislo" type="emptiable_string_20" minOccurs="0" />
+                                                  <xs:element name="Predvolba" type="emptiable_string_10" minOccurs="0" />
+                                                  <xs:element name="PredvolbaStat" type="emptiable_string_10" minOccurs="0" />
+                                                  <xs:element name="StatID" type="emptiable_guid" minOccurs="0" />
+                                                  <xs:element name="Typ" type="enum_TypKontaktu" minOccurs="0" />
+                                                </xs:all>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Telefon3" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:all>
+                                                  <xs:element name="Cislo" type="emptiable_string_50" minOccurs="0" />
+                                                  <xs:element name="Klapka" type="emptiable_string_10" minOccurs="0" />
+                                                  <xs:element name="MistniCislo" type="emptiable_string_20" minOccurs="0" />
+                                                  <xs:element name="Predvolba" type="emptiable_string_10" minOccurs="0" />
+                                                  <xs:element name="PredvolbaStat" type="emptiable_string_10" minOccurs="0" />
+                                                  <xs:element name="StatID" type="emptiable_guid" minOccurs="0" />
+                                                  <xs:element name="Typ" type="enum_TypKontaktu" minOccurs="0" />
+                                                </xs:all>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Telefon4" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:all>
+                                                  <xs:element name="Cislo" type="emptiable_string_50" minOccurs="0" />
+                                                  <xs:element name="Klapka" type="emptiable_string_10" minOccurs="0" />
+                                                  <xs:element name="MistniCislo" type="emptiable_string_20" minOccurs="0" />
+                                                  <xs:element name="Predvolba" type="emptiable_string_10" minOccurs="0" />
+                                                  <xs:element name="PredvolbaStat" type="emptiable_string_10" minOccurs="0" />
+                                                  <xs:element name="StatID" type="emptiable_guid" minOccurs="0" />
+                                                  <xs:element name="Typ" type="enum_TypKontaktu" minOccurs="0" />
+                                                </xs:all>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="EmailSpojeni" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:attribute name="ObjectName" fixed="Spojeni" />
+                                                <xs:attribute name="ObjectType" fixed="Object" />
+                                                <xs:attribute name="ID" type="guid" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="FaxSpojeni" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:attribute name="ObjectName" fixed="Spojeni" />
+                                                <xs:attribute name="ObjectType" fixed="Object" />
+                                                <xs:attribute name="ID" type="guid" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="TelefonSpojeni1" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:attribute name="ObjectName" fixed="Spojeni" />
+                                                <xs:attribute name="ObjectType" fixed="Object" />
+                                                <xs:attribute name="ID" type="guid" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="TelefonSpojeni2" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:attribute name="ObjectName" fixed="Spojeni" />
+                                                <xs:attribute name="ObjectType" fixed="Object" />
+                                                <xs:attribute name="ID" type="guid" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="TelefonSpojeni3" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:attribute name="ObjectName" fixed="Spojeni" />
+                                                <xs:attribute name="ObjectType" fixed="Object" />
+                                                <xs:attribute name="ID" type="guid" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="TelefonSpojeni4" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:attribute name="ObjectName" fixed="Spojeni" />
+                                                <xs:attribute name="ObjectType" fixed="Object" />
+                                                <xs:attribute name="ID" type="guid" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:all>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="AdresniKlice" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="OsobaAdresniKlic" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:all>
+                                                  <xs:element name="AdresniKlic_ID" type="guid" />
+                                                  <xs:element name="AdresniKlic" minOccurs="0">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="ObjectName" fixed="AdresniKlic" />
+                                                      <xs:attribute name="ObjectType" fixed="Object" />
+                                                      <xs:attribute name="ID" type="guid" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:all>
+                                                <xs:attribute name="ObjectName" fixed="OsobaAdresniKlic" />
+                                                <xs:attribute name="ObjectType" fixed="Object" />
+                                                <xs:attribute name="ID" type="guid" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="ObjectName" fixed="OsobaAdresniKlic" />
+                                          <xs:attribute name="ObjectType" fixed="List" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="FunkceOsoby" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:attribute name="ObjectName" fixed="FunkceOsoby" />
+                                          <xs:attribute name="ObjectType" fixed="Object" />
+                                          <xs:attribute name="ID" type="guid" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="Pratele" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="OsobaPratele" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:all>
+                                                  <xs:element name="Pritel_ID" type="guid" />
+                                                  <xs:element name="VzajmenyVztah" type="emptiable_string_50" minOccurs="0" />
+                                                  <xs:element name="Pritel" minOccurs="0">
+                                                    <xs:complexType>
+                                                      <xs:all>
+                                                        <xs:element name="Group" type="group" minOccurs="0" />
+                                                      </xs:all>
+                                                      <xs:attribute name="ObjectName" fixed="Osoba" />
+                                                      <xs:attribute name="ObjectType" fixed="Object" />
+                                                      <xs:attribute name="ID" type="guid" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:all>
+                                                <xs:attribute name="ObjectName" fixed="OsobaPratele" />
+                                                <xs:attribute name="ObjectType" fixed="Object" />
+                                                <xs:attribute name="ID" type="guid" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="ObjectName" fixed="OsobaPratele" />
+                                          <xs:attribute name="ObjectType" fixed="List" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:all>
+                                    <xs:attribute name="ObjectName" fixed="Osoba" />
+                                    <xs:attribute name="ObjectType" fixed="Object" />
+                                    <xs:attribute name="ID" type="guid" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="ObjectName" fixed="Osoba" />
+                              <xs:attribute name="ObjectType" fixed="List" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:all>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Pohledavky" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="SplatnostPohledavek" type="emptiable_integer" minOccurs="0" />
+                          <xs:element name="VlastniSplatnostPohledavek" type="emptiable_bool" minOccurs="0" />
+                        </xs:all>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Sleva" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="Sleva" type="emptiable_decimal_2" minOccurs="0" />
+                          <xs:element name="VlastniSleva" type="emptiable_bool" minOccurs="0" />
+                        </xs:all>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Ucty" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="HlavniUcet" minOccurs="0">
+                            <xs:complexType>
+                              <xs:attribute name="ObjectName" fixed="BankovniSpojeni" />
+                              <xs:attribute name="ObjectType" fixed="Object" />
+                              <xs:attribute name="ID" type="guid" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="SeznamUctu" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="BankovniSpojeni" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:all>
+                                      <xs:element name="Banka_ID" type="guid" />
+                                      <xs:element name="CisloUctu" type="emptiable_string_50" minOccurs="0" />
+                                      <xs:element name="DatumPosledniKontrolyUctuWS" type="dateTime_DateTimeMin" minOccurs="0" />
+                                      <xs:element name="IBAN" type="emptiable_string_34" minOccurs="0" />
+                                      <xs:element name="Popis" type="emptiable_string_200" minOccurs="0" />
+                                      <xs:element name="PosledniOvereniZHistorie_ID" type="guid" />
+                                      <xs:element name="Poznamka" type="emptiable_string_unbounded" minOccurs="0" />
+                                      <xs:element name="SpecSymbol" type="emptiable_string_10" minOccurs="0" />
+                                      <xs:element name="StavUctuPlatceDPHComputed" type="emptiable_integer" minOccurs="0" />
+                                      <xs:element name="StavUctuPlatceDPHVracenyWS_Stav" type="emptiable_integer" minOccurs="0" />
+                                      <xs:element name="SWIFTText" type="emptiable_string_11" minOccurs="0" />
+                                      <xs:element name="ZahranicniBankaPSC_ID" type="guid" />
+                                      <xs:element name="ZahranicniBankaStat_ID" type="guid" />
+                                      <xs:element name="ZahranicniBankaText" type="emptiable_string_250" minOccurs="0" />
+                                      <xs:element name="ZahranicniUcet" type="emptiable_bool" minOccurs="0" />
+                                      <xs:element name="ZahranicniBanka" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:all>
+                                            <xs:element name="Misto" type="emptiable_string_100" minOccurs="0" />
+                                            <xs:element name="PSCText" type="emptiable_string_10" minOccurs="0" />
+                                            <xs:element name="StatNazevText" type="emptiable_string_100" minOccurs="0" />
+                                            <xs:element name="StatText" type="emptiable_string_50" minOccurs="0" />
+                                            <xs:element name="Ulice" type="emptiable_string_100" minOccurs="0" />
+                                            <xs:element name="PSC" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:attribute name="ObjectName" fixed="PSC" />
+                                                <xs:attribute name="ObjectType" fixed="Object" />
+                                                <xs:attribute name="ID" type="guid" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Stat" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:attribute name="ObjectName" fixed="Stat" />
+                                                <xs:attribute name="ObjectType" fixed="Object" />
+                                                <xs:attribute name="ID" type="guid" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:all>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="Banka" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:all>
+                                            <xs:element name="Group" type="group" minOccurs="0" />
+                                          </xs:all>
+                                          <xs:attribute name="ObjectName" fixed="Banka" />
+                                          <xs:attribute name="ObjectType" fixed="Object" />
+                                          <xs:attribute name="ID" type="guid" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="HistorieOvereniUctuVRegistu" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="BankovniSpojeniRegistrPlatcuDphCZ" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:all>
+                                                  <xs:element name="CisloUctuPlatceDPH" type="emptiable_string_50" minOccurs="0" />
+                                                  <xs:element name="DatumKontrolyUctuPlatceDPH" type="dateTime_DateTimeMin" minOccurs="0" />
+                                                  <xs:element name="DatumZverejneniUctuPlatceDPH" type="dateTime_DateTimeMin" minOccurs="0" />
+                                                  <xs:element name="DatumZverejneniUctuPlatceDPHUkonceno" type="dateTime_DateTimeMin" minOccurs="0" />
+                                                  <xs:element name="StavUctuPlatcuDPHVracenyWS_Id" type="guid" />
+                                                  <xs:element name="TypUctuPlatceDPH" type="enum_TypUctuPlatceDPHRegisterCZ" minOccurs="0" />
+                                                  <xs:element name="StavUctuPlatcuDPHVracenyWS" minOccurs="0">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="ObjectName" fixed="StavBankovnihoUctuPlatceDPH" />
+                                                      <xs:attribute name="ObjectType" fixed="Object" />
+                                                      <xs:attribute name="ID" type="guid" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:all>
+                                                <xs:attribute name="ObjectName" fixed="BankovniSpojeniRegistrPlatcuDphCZ" />
+                                                <xs:attribute name="ObjectType" fixed="Object" />
+                                                <xs:attribute name="ID" type="guid" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="ObjectName" fixed="BankovniSpojeniRegistrPlatcuDphCZ" />
+                                          <xs:attribute name="ObjectType" fixed="List" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="PosledniOvereniZHistorie" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:attribute name="ObjectName" fixed="BankovniSpojeniRegistrPlatcuDphCZ" />
+                                          <xs:attribute name="ObjectType" fixed="Object" />
+                                          <xs:attribute name="ID" type="guid" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:all>
+                                    <xs:attribute name="ObjectName" fixed="BankovniSpojeni" />
+                                    <xs:attribute name="ObjectType" fixed="Object" />
+                                    <xs:attribute name="ID" type="guid" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="ObjectName" fixed="BankovniSpojeni" />
+                              <xs:attribute name="ObjectType" fixed="List" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:all>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Zavazky" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="SplatnostZavazku" type="emptiable_integer" minOccurs="0" />
+                          <xs:element name="VlastniSplatnostZavazku" type="emptiable_bool" minOccurs="0" />
+                        </xs:all>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="AdresniKlice" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="FirmaAdresniKlic" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="AdresniKlic_ID" type="guid" />
+                                <xs:element name="AutoRow_ID" type="emptiable_integer" minOccurs="0" />
+                                <xs:element name="Firma_ID" type="emptiable_guid" minOccurs="0" />
+                                <xs:element name="AdresniKlic" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:attribute name="ObjectName" fixed="AdresniKlic" />
+                                    <xs:attribute name="ObjectType" fixed="Object" />
+                                    <xs:attribute name="ID" type="guid" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:all>
+                              <xs:attribute name="ObjectName" fixed="FirmaAdresniKlic" />
+                              <xs:attribute name="ObjectType" fixed="Object" />
+                              <xs:attribute name="ID" type="guid" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="ObjectName" fixed="FirmaAdresniKlic" />
+                        <xs:attribute name="ObjectType" fixed="List" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Aktivity" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Aktivita" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="Group" type="group" minOccurs="0" />
+                              </xs:all>
+                              <xs:attribute name="ObjectName" fixed="Aktivita" />
+                              <xs:attribute name="ObjectType" fixed="Object" />
+                              <xs:attribute name="ID" type="guid" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="ObjectName" fixed="Aktivita" />
+                        <xs:attribute name="ObjectType" fixed="List" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Cinnosti" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="FirmaCinnost" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="Cinnost_ID" type="guid" />
+                                <xs:element name="Firma_ID" type="emptiable_guid" minOccurs="0" />
+                                <xs:element name="Poradi" type="emptiable_integer" minOccurs="0" />
+                                <xs:element name="Cinnost" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:attribute name="ObjectName" fixed="Cinnost" />
+                                    <xs:attribute name="ObjectType" fixed="Object" />
+                                    <xs:attribute name="ID" type="guid" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:all>
+                              <xs:attribute name="ObjectName" fixed="FirmaCinnost" />
+                              <xs:attribute name="ObjectType" fixed="Object" />
+                              <xs:attribute name="ID" type="guid" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="ObjectName" fixed="FirmaCinnost" />
+                        <xs:attribute name="ObjectType" fixed="List" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="CiselnaRada" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="Group" type="group" minOccurs="0" />
+                        </xs:all>
+                        <xs:attribute name="ObjectName" fixed="CiselnaRada" />
+                        <xs:attribute name="ObjectType" fixed="Object" />
+                        <xs:attribute name="ID" type="guid" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="HistorieOvereniFirmyVRegistru" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="FirmaRegistrPlatcuDPH" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="DatumKontrolyPlatceDPH" type="dateTime_DateTimeMin" minOccurs="0" />
+                                <xs:element name="DatumZverejneniZmenyStavuPlatceDPH" type="dateTime_DateTimeMax" minOccurs="0" />
+                                <xs:element name="DIC" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="RegistrPlatcuDPH" type="enum_RegistrPlatcuDPH" minOccurs="0" />
+                                <xs:element name="StavPlatceDPHVracenyWS_ID" type="guid" />
+                                <xs:element name="UnikatniCisloKonzultace" type="emptiable_string_unbounded" minOccurs="0" />
+                                <xs:element name="StavPlatceDPHVracenyWS" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:attribute name="ObjectName" fixed="StavFirmyVRegistruDPH" />
+                                    <xs:attribute name="ObjectType" fixed="Object" />
+                                    <xs:attribute name="ID" type="guid" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:all>
+                              <xs:attribute name="ObjectName" fixed="FirmaRegistrPlatcuDPH" />
+                              <xs:attribute name="ObjectType" fixed="Object" />
+                              <xs:attribute name="ID" type="guid" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="ObjectName" fixed="FirmaRegistrPlatcuDPH" />
+                        <xs:attribute name="ObjectType" fixed="List" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="IncotermsDodavatelskePodminky" minOccurs="0">
+                      <xs:complexType>
+                        <xs:attribute name="ObjectName" fixed="DodaciPodminkyIncoterms" />
+                        <xs:attribute name="ObjectType" fixed="Object" />
+                        <xs:attribute name="ID" type="guid" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="IncotermsOdberatelskePodminky" minOccurs="0">
+                      <xs:complexType>
+                        <xs:attribute name="ObjectName" fixed="DodaciPodminkyIncoterms" />
+                        <xs:attribute name="ObjectType" fixed="Object" />
+                        <xs:attribute name="ID" type="guid" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="InsolvencniRejstrik" minOccurs="0">
+                      <xs:complexType>
+                        <xs:attribute name="ObjectName" fixed="StavFirmyISIR" />
+                        <xs:attribute name="ObjectType" fixed="Object" />
+                        <xs:attribute name="ID" type="guid" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="InsolvencniSpisyFirmy" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="FirmaInsolvencniSpis" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="Adresa" type="emptiable_string_unbounded" minOccurs="0" />
+                                <xs:element name="BcVec" type="emptiable_integer" minOccurs="0" />
+                                <xs:element name="CisloPopisne" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="CisloSenatu" type="emptiable_integer" minOccurs="0" />
+                                <xs:element name="CisloSpisu" type="emptiable_string_unbounded" minOccurs="0" />
+                                <xs:element name="DalsiDluznikVRizeni" type="emptiable_bool" minOccurs="0" />
+                                <xs:element name="DatumNarozeni" type="dateTime_DateMin" minOccurs="0" />
+                                <xs:element name="DruhAdresy" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="DruhStavKonkursu" type="emptiable_string_unbounded" minOccurs="0" />
+                                <xs:element name="DruhVeci" type="emptiable_string_200" minOccurs="0" />
+                                <xs:element name="IC" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="Jmeno" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="JmenoNazev" type="emptiable_string_unbounded" minOccurs="0" />
+                                <xs:element name="Mesto" type="emptiable_string_unbounded" minOccurs="0" />
+                                <xs:element name="NazevOrganizace" type="emptiable_string_unbounded" minOccurs="0" />
+                                <xs:element name="NazevOsoby" type="emptiable_string_300" minOccurs="0" />
+                                <xs:element name="Okres" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="PSC" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="RC" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="Rocnik" type="emptiable_integer" minOccurs="0" />
+                                <xs:element name="TitulPred" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="TitulZa" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="Ulice" type="emptiable_string_unbounded" minOccurs="0" />
+                                <xs:element name="UrlDetailRizeni" type="emptiable_string_unbounded" minOccurs="0" />
+                                <xs:element name="Zeme" type="emptiable_string_unbounded" minOccurs="0" />
+                              </xs:all>
+                              <xs:attribute name="ObjectName" fixed="FirmaInsolvencniSpis" />
+                              <xs:attribute name="ObjectType" fixed="Object" />
+                              <xs:attribute name="ID" type="guid" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="ObjectName" fixed="FirmaInsolvencniSpis" />
+                        <xs:attribute name="ObjectType" fixed="List" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Kraj" minOccurs="0">
+                      <xs:complexType>
+                        <xs:attribute name="ObjectName" fixed="Kraj" />
+                        <xs:attribute name="ObjectType" fixed="Object" />
+                        <xs:attribute name="ID" type="guid" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Logo" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="Group" type="group" minOccurs="0" />
+                        </xs:all>
+                        <xs:attribute name="ObjectName" fixed="Attachment" />
+                        <xs:attribute name="ObjectType" fixed="Object" />
+                        <xs:attribute name="ID" type="guid" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Mena" minOccurs="0">
+                      <xs:complexType>
+                        <xs:attribute name="ObjectName" fixed="Mena" />
+                        <xs:attribute name="ObjectType" fixed="Object" />
+                        <xs:attribute name="ID" type="guid" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="MojeFirmaBankovniSpojeni" minOccurs="0">
+                      <xs:complexType>
+                        <xs:attribute name="ObjectName" fixed="BankovniSpojeni" />
+                        <xs:attribute name="ObjectType" fixed="Object" />
+                        <xs:attribute name="ID" type="guid" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="PosledniStavZHistorieRegistru" minOccurs="0">
+                      <xs:complexType>
+                        <xs:attribute name="ObjectName" fixed="FirmaRegistrPlatcuDPH" />
+                        <xs:attribute name="ObjectType" fixed="Object" />
+                        <xs:attribute name="ID" type="guid" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="PrimarniUcetPohledavky" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="Group" type="group" minOccurs="0" />
+                        </xs:all>
+                        <xs:attribute name="ObjectName" fixed="Ucet" />
+                        <xs:attribute name="ObjectType" fixed="Object" />
+                        <xs:attribute name="ID" type="guid" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="PrimarniUcetPoskytnutaZaloha" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="Group" type="group" minOccurs="0" />
+                        </xs:all>
+                        <xs:attribute name="ObjectName" fixed="Ucet" />
+                        <xs:attribute name="ObjectType" fixed="Object" />
+                        <xs:attribute name="ID" type="guid" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="PrimarniUcetPrijataZaloha" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="Group" type="group" minOccurs="0" />
+                        </xs:all>
+                        <xs:attribute name="ObjectName" fixed="Ucet" />
+                        <xs:attribute name="ObjectType" fixed="Object" />
+                        <xs:attribute name="ID" type="guid" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="PrimarniUcetZavazky" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="Group" type="group" minOccurs="0" />
+                        </xs:all>
+                        <xs:attribute name="ObjectName" fixed="Ucet" />
+                        <xs:attribute name="ObjectType" fixed="Object" />
+                        <xs:attribute name="ID" type="guid" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Region" minOccurs="0">
+                      <xs:complexType>
+                        <xs:attribute name="ObjectName" fixed="Region" />
+                        <xs:attribute name="ObjectType" fixed="Object" />
+                        <xs:attribute name="ID" type="guid" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SeznamSpojeni" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Spojeni" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="AutoRow_ID" type="emptiable_integer" minOccurs="0" />
+                                <xs:element name="Osoba_ID" type="guid" />
+                                <xs:element name="OsobaVychozi" type="emptiable_bool" minOccurs="0" />
+                                <xs:element name="Popis" type="emptiable_string_200" minOccurs="0" />
+                                <xs:element name="Poradi" type="emptiable_integer" minOccurs="0" />
+                                <xs:element name="SpojeniCislo" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="SpojeniKlapka" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="SpojeniMistniPredvolba" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="Stat_ID" type="guid" />
+                                <xs:element name="TypSpojeni_ID" type="guid" />
+                                <xs:element name="Vychozi" type="emptiable_bool" minOccurs="0" />
+                                <xs:element name="Osoba" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:all>
+                                      <xs:element name="Group" type="group" minOccurs="0" />
+                                    </xs:all>
+                                    <xs:attribute name="ObjectName" fixed="Osoba" />
+                                    <xs:attribute name="ObjectType" fixed="Object" />
+                                    <xs:attribute name="ID" type="guid" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Stat" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:attribute name="ObjectName" fixed="Stat" />
+                                    <xs:attribute name="ObjectType" fixed="Object" />
+                                    <xs:attribute name="ID" type="guid" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="TypSpojeni" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:attribute name="ObjectName" fixed="TypSpojeni" />
+                                    <xs:attribute name="ObjectType" fixed="Object" />
+                                    <xs:attribute name="ID" type="guid" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:all>
+                              <xs:attribute name="ObjectName" fixed="Spojeni" />
+                              <xs:attribute name="ObjectType" fixed="Object" />
+                              <xs:attribute name="ID" type="guid" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="ObjectName" fixed="Spojeni" />
+                        <xs:attribute name="ObjectType" fixed="List" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Zakazky" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Zakazka" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="Group" type="group" minOccurs="0" />
+                              </xs:all>
+                              <xs:attribute name="ObjectName" fixed="Zakazka" />
+                              <xs:attribute name="ObjectType" fixed="Object" />
+                              <xs:attribute name="ID" type="guid" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="ObjectName" fixed="Zakazka" />
+                        <xs:attribute name="ObjectType" fixed="List" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ZpusobDopravy" minOccurs="0">
+                      <xs:complexType>
+                        <xs:attribute name="ObjectName" fixed="ZpusobDopravy" />
+                        <xs:attribute name="ObjectType" fixed="Object" />
+                        <xs:attribute name="ID" type="guid" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ZpusobPlatby" minOccurs="0">
+                      <xs:complexType>
+                        <xs:attribute name="ObjectName" fixed="ZpusobPlatby" />
+                        <xs:attribute name="ObjectType" fixed="Object" />
+                        <xs:attribute name="ID" type="guid" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:all>
+                  <xs:attribute name="ObjectName" fixed="Firma" />
+                  <xs:attribute name="ObjectType" fixed="Object" />
+                  <xs:attribute name="ID" type="guid" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:all>
     </xs:complexType>
   </xs:element>
@@ -709,6 +1927,20 @@
       <xs:maxInclusive value="9998-12-31T00:00:00" />
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="dateTime_DateTimeMax">
+    <xs:restriction base="xs:dateTime">
+      <xs:pattern value="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}" />
+      <xs:minInclusive value="1753-01-01T00:00:00" />
+      <xs:maxInclusive value="9998-12-31T00:00:00" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="dateTime_DateTimeMin">
+    <xs:restriction base="xs:dateTime">
+      <xs:pattern value="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}" />
+      <xs:minInclusive value="1753-01-01T00:00:00" />
+      <xs:maxInclusive value="9998-12-31T00:00:00" />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:simpleType name="decimal_2">
     <xs:restriction base="xs:decimal">
       <xs:fractionDigits value="2" />
@@ -717,6 +1949,11 @@
   <xs:simpleType name="decimal_4">
     <xs:restriction base="xs:decimal">
       <xs:fractionDigits value="4" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="decimal_6">
+    <xs:restriction base="xs:decimal">
+      <xs:fractionDigits value="6" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="emptiable_bool">
@@ -728,14 +1965,47 @@
   <xs:simpleType name="emptiable_decimal_4">
     <xs:union memberTypes="decimal_4 empty" />
   </xs:simpleType>
+  <xs:simpleType name="emptiable_decimal_6">
+    <xs:union memberTypes="decimal_6 empty" />
+  </xs:simpleType>
   <xs:simpleType name="emptiable_guid">
     <xs:union memberTypes="guid empty" />
   </xs:simpleType>
   <xs:simpleType name="emptiable_integer">
     <xs:union memberTypes="xs:integer empty" />
   </xs:simpleType>
+  <xs:simpleType name="emptiable_string_10">
+    <xs:union memberTypes="string_10 empty" />
+  </xs:simpleType>
   <xs:simpleType name="emptiable_string_100">
     <xs:union memberTypes="string_100 empty" />
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_string_11">
+    <xs:union memberTypes="string_11 empty" />
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_string_15">
+    <xs:union memberTypes="string_15 empty" />
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_string_20">
+    <xs:union memberTypes="string_20 empty" />
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_string_200">
+    <xs:union memberTypes="string_200 empty" />
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_string_250">
+    <xs:union memberTypes="string_250 empty" />
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_string_255">
+    <xs:union memberTypes="string_255 empty" />
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_string_300">
+    <xs:union memberTypes="string_300 empty" />
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_string_34">
+    <xs:union memberTypes="string_34 empty" />
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_string_4">
+    <xs:union memberTypes="string_4 empty" />
   </xs:simpleType>
   <xs:simpleType name="emptiable_string_50">
     <xs:union memberTypes="string_50 empty" />
@@ -827,6 +2097,28 @@
       <xs:enumeration value="2" />
     </xs:restriction>
   </xs:simpleType>
+  <xs:complexType name="enum_Pohlavi">
+    <xs:simpleContent>
+      <xs:extension base="enum_Pohlavi_value">
+        <xs:attribute name="EnumValueName">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Nerozliseno" />
+              <xs:enumeration value="Muz" />
+              <xs:enumeration value="Zena" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="enum_Pohlavi_value">
+    <xs:restriction base="xs:integer">
+      <xs:enumeration value="0" />
+      <xs:enumeration value="1" />
+      <xs:enumeration value="2" />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:complexType name="enum_PridaniPolozkySDetailem">
     <xs:simpleContent>
       <xs:extension base="enum_PridaniPolozkySDetailem_value">
@@ -843,6 +2135,28 @@
     </xs:simpleContent>
   </xs:complexType>
   <xs:simpleType name="enum_PridaniPolozkySDetailem_value">
+    <xs:restriction base="xs:integer">
+      <xs:enumeration value="0" />
+      <xs:enumeration value="1" />
+      <xs:enumeration value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="enum_RegistrPlatcuDPH">
+    <xs:simpleContent>
+      <xs:extension base="enum_RegistrPlatcuDPH_value">
+        <xs:attribute name="EnumValueName">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="RegistrPlatcuDphCZ" />
+              <xs:enumeration value="CSWRegistrPlatcuDphSk" />
+              <xs:enumeration value="DatabazeVies" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="enum_RegistrPlatcuDPH_value">
     <xs:restriction base="xs:integer">
       <xs:enumeration value="0" />
       <xs:enumeration value="1" />
@@ -913,6 +2227,30 @@
       <xs:enumeration value="1" />
     </xs:restriction>
   </xs:simpleType>
+  <xs:complexType name="enum_TypKontaktu">
+    <xs:simpleContent>
+      <xs:extension base="enum_TypKontaktu_value">
+        <xs:attribute name="EnumValueName">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Telefon" />
+              <xs:enumeration value="Mobil" />
+              <xs:enumeration value="Fax" />
+              <xs:enumeration value="GSMBrana" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="enum_TypKontaktu_value">
+    <xs:restriction base="xs:integer">
+      <xs:enumeration value="0" />
+      <xs:enumeration value="1" />
+      <xs:enumeration value="2" />
+      <xs:enumeration value="3" />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:complexType name="enum_TypKontroly">
     <xs:simpleContent>
       <xs:extension base="enum_TypKontroly_value">
@@ -950,6 +2288,26 @@
     </xs:simpleContent>
   </xs:complexType>
   <xs:simpleType name="enum_TypUctu_value">
+    <xs:restriction base="xs:integer">
+      <xs:enumeration value="0" />
+      <xs:enumeration value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="enum_TypUctuPlatceDPHRegisterCZ">
+    <xs:simpleContent>
+      <xs:extension base="enum_TypUctuPlatceDPHRegisterCZ_value">
+        <xs:attribute name="EnumValueName">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="StandardniUcet" />
+              <xs:enumeration value="Nestandardni" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="enum_TypUctuPlatceDPHRegisterCZ_value">
     <xs:restriction base="xs:integer">
       <xs:enumeration value="0" />
       <xs:enumeration value="1" />
@@ -1095,6 +2453,30 @@
       <xs:enumeration value="1" />
     </xs:restriction>
   </xs:simpleType>
+  <xs:complexType name="enum_ZpusobVyberuCeny">
+    <xs:simpleContent>
+      <xs:extension base="enum_ZpusobVyberuCeny_value">
+        <xs:attribute name="EnumValueName">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="NejnizsiCena" />
+              <xs:enumeration value="NejvyssiCena" />
+              <xs:enumeration value="PodlePoradi" />
+              <xs:enumeration value="Vyberem" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="enum_ZpusobVyberuCeny_value">
+    <xs:restriction base="xs:integer">
+      <xs:enumeration value="0" />
+      <xs:enumeration value="1" />
+      <xs:enumeration value="2" />
+      <xs:enumeration value="3" />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:complexType name="enum_ZpusobVypoctuBudouciCeny">
     <xs:simpleContent>
       <xs:extension base="enum_ZpusobVypoctuBudouciCeny_value">
@@ -1166,10 +2548,58 @@
       <xs:maxLength value="100" />
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="string_11">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="11" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_15">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="15" />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:simpleType name="string_20">
     <xs:restriction base="xs:string">
       <xs:minLength value="1" />
       <xs:maxLength value="20" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_200">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="200" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_250">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="250" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_255">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="255" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_300">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="300" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_34">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="34" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_4">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="4" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="string_50">

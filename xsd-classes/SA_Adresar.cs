@@ -4943,6 +4943,8 @@ namespace SA_Adresar {
         
         private group groupField;
         
+        private string kodField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -4962,6 +4964,17 @@ namespace SA_Adresar {
             }
             set {
                 this.groupField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
             }
         }
         

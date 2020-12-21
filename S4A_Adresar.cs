@@ -63,7 +63,7 @@ namespace S4DataObjs {
                         VlastniSplatnostPohledavek = "True"
                     },
                     Sleva = new S5DataFirmaSleva() {
-                        Sleva = d["RabatO"].GetDecimalNegative(),
+                        Sleva = d["RabatO"].GetDecimal(),
                         VlastniSleva = "True"
                     },
                     ICO = d["Ico"].GetNum(),
@@ -77,7 +77,7 @@ namespace S4DataObjs {
 
                 var emails = obj.ParseEmails("Mail");
                 var emailsFA = obj.ParseEmails("MailFA");
-
+                
                 firma.Osoby = new S5DataFirmaOsoby() {
                     HlavniOsoba = !d["Zastoupeny"].IsEmpty() ? new S5DataFirmaOsobyHlavniOsoba() {
                         Prijmeni = d["Zastoupeny"].GetText()

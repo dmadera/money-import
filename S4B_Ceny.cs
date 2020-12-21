@@ -13,6 +13,7 @@ namespace S4DataObjs {
         private List<S5DataCenik> _ceniky = new List<S5DataCenik>();
         private List<S5DataPolozkaCeniku> _ceny = new List<S5DataPolozkaCeniku>();
         private List<S5DataZasoba> _zasoby = new List<S5DataZasoba>();
+        private List<S5DataFirma> _firmy = new List<S5DataFirma>();
 
         public string GetID(string cislo) {
             return "SK" + cislo;
@@ -22,12 +23,14 @@ namespace S4DataObjs {
             convertZaklCeny(new SkladDataFile(dir, SFile.KARTY, enc));
             convertCeniky(new SkladDataFile(dir, SFile.SKUP, enc));
             convertCeny(new SkladDataFile(dir, SFile.CENY, enc));
+            convertOdbCeniky(new SkladDataFile(dir, SFile.ODB, enc));
             convertZasoby(new SkladDataFile(dir, SFile.KARTY, enc));
         }
 
         public override S5Data GetS5Data() {
             return new S5Data() {
                 CenikList = _ceniky.ToArray(),
+                FirmaList = _firmy.ToArray(),
                 PolozkaCenikuList = _ceny.ToArray(),
                 ZasobaList = _zasoby.ToArray()
             };
@@ -40,7 +43,7 @@ namespace S4DataObjs {
                 var d = karta.Items;
                 var k = new S5DataPolozkaCeniku();
                 k.Cenik = new S5DataPolozkaCenikuCenik() { Kod = "ZAKL" };
-                k.Kod = "ZAKL_" + S4A_Katalog.GetID(d["CisloKarty"].GetNum());
+                k.Nazev = k.Kod = "ZAKL_" + S4A_Katalog.GetID(d["CisloKarty"].GetNum());
                 k.Artikl_ID = S4_IDs.GetArtiklID(S4A_Katalog.GetID(d["CisloKarty"].GetNum()));
                 k.Sklad_ID = skladID;
                 k.ZmenaVProcentech = "True";
@@ -70,6 +73,30 @@ namespace S4DataObjs {
                 _ceniky.Add(cenik);
             }
         }
+        private void convertOdbCeniky(SkladDataFile firmy) {
+            foreach (var f in firmy.Data) {
+                var data = f.Items;
+                if(data["CisloSkup"].GetNum() == "0000") continue;
+
+                var firma = new S5DataFirma();
+                var firmaID = S4_IDs.GetFirmaID(S4A_Adresar.GetOdbID(data["CisloOdberatele"].GetNum()));
+                firma.ID = firmaID;
+                firma.ObchodniPodminky = new S5DataFirmaObchodniPodminky() {
+                    SeznamCeniku = new S5DataFirmaObchodniPodminkySeznamCeniku() {
+                        FirmaCenik = new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik[] {
+                            new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
+                                Poradi = "0",
+                                Firma_ID = firmaID,
+                                Cenik = new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenikCenik() {
+                                    Kod = GetID(data["CisloSkup"].GetNum())
+                                }
+                            }
+                        }
+                    }
+                };
+                _firmy.Add(firma);
+            }
+        }
 
         private void convertCeny(SkladDataFile ceny) {
             var skladID = S4_IDs.GetSkladID("HL");
@@ -77,8 +104,10 @@ namespace S4DataObjs {
             foreach (var cena in ceny.Data) {
                 var d = cena.Items;
                 var c = new S5DataPolozkaCeniku();
-                c.Cenik = new S5DataPolozkaCenikuCenik() { Kod = GetID(d["CisloSkup"].GetNum()) };
-                c.Kod = GetID(d["CisloSkup"].GetNum()) + "_" + S4A_Katalog.GetID(d["CisloKarty"].GetNum());
+                c.Cenik = new S5DataPolozkaCenikuCenik() { 
+                    Kod = GetID(d["CisloSkup"].GetNum()) 
+                };
+                c.Nazev = c.Kod = GetID(d["CisloSkup"].GetNum()) + "_" + S4A_Katalog.GetID(d["CisloKarty"].GetNum());
                 c.Artikl_ID = S4_IDs.GetArtiklID(S4A_Katalog.GetID(d["CisloKarty"].GetNum()));
                 c.Sklad_ID = skladID;
                 c.Cena = d["SpecCena"].GetDecimal();
