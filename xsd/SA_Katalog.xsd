@@ -1150,11 +1150,12 @@
                             <xs:complexType>
                               <xs:all>
                                 <xs:element name="Group" type="group" minOccurs="0" />
-                                <xs:element name="ProduktovyKlic_ID" type="guid" />
+                                <xs:element name="ProduktovyKlic_ID" type="emptiable_guid" minOccurs="0" />
                                 <xs:element name="ProduktovyKlic" minOccurs="0">
                                   <xs:complexType>
                                     <xs:all>
                                       <xs:element name="Group" type="group" minOccurs="0" />
+                                      <xs:element name="Kod" type="string_10" />
                                     </xs:all>
                                     <xs:attribute name="ObjectName" fixed="ProduktovyKlic" />
                                     <xs:attribute name="ObjectType" fixed="Object" />

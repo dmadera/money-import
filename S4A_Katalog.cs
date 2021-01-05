@@ -29,7 +29,7 @@ namespace S4DataObjs {
         }
 
         private void convertKod(SkladDataFile file) {
-            string kategorie, podkategorie, kategorieID, podkategorieID;
+            string kategorie, kategorieID;
 
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
@@ -44,28 +44,6 @@ namespace S4DataObjs {
                 };
                 _kategorie.Add(cat);
             }
-
-            // kategorie = "0000";
-            // kategorieID = S4_IDs.GetKategorieArtikluID(kategorie);
-            // if (kategorieID == null) kategorieID = Guid.NewGuid().ToString();
-
-            // podkategorie = "00000000";
-            // podkategorieID = S4_IDs.GetKategorieArtikluID(podkategorie);
-            // if (podkategorieID == null) podkategorieID = Guid.NewGuid().ToString();
-
-            // _kategorie.AddRange(new S5DataKategorieArtiklu[]{
-            //     new S5DataKategorieArtiklu() {
-            //         ID = kategorieID,
-            //         Kod = kategorie,
-            //         Nazev = "Nezařazené"
-            //     },
-            //     new S5DataKategorieArtiklu() {
-            //         ID = podkategorieID,
-            //         Kod = podkategorie,
-            //         Nazev = "Nezařazené",
-            //         ParentObject_ID = kategorieID
-            //     }
-            // });
         }
 
         private void convertPodKod(SkladDataFile file) {
@@ -107,9 +85,10 @@ namespace S4DataObjs {
                     Katalog = GetID(d["CisloKarty"].GetNum()),
                     Nazev = d["NazevZbozi"].GetText(),
                     Poznamka = d["NazevZbozi2"].GetText() + obj.ToString(),
-                    Group = new group() { Kod = "ART" },
+                    // Group = new group() { Kod = "Nezařazené" },
                     PosledniCena = d["NakupCena"].GetDecimal(),
                     DruhArtiklu_ID = S4_IDs.GetDruhZboziID("ZBO"),
+                    PLU = d["Pozice"].GetAlfaNum().ToUpper(), 
                     SazbyDPH = new S5DataArtiklSazbyDPH() {
                         ArtiklDPH = new S5DataArtiklSazbyDPHArtiklDPH[] {
                             new S5DataArtiklSazbyDPHArtiklDPH() {
@@ -172,26 +151,18 @@ namespace S4DataObjs {
                     };
                 }
 
-                var priznak = d["Priznak"].GetNoSpaces().ToUpper();
-                if (priznak != "") {
-                    var priznakEnum = new enum_PriznakZbozi_UserEnumEnumValueName();
-                    switch(priznak) {
-                        case "A" : priznakEnum = enum_PriznakZbozi_UserEnumEnumValueName.Akce; break;
-                        case "S" : priznakEnum = enum_PriznakZbozi_UserEnumEnumValueName.Sleva; break;
-                        case "N" : priznakEnum = enum_PriznakZbozi_UserEnumEnumValueName.Novinka; break;
-                        default: priznakEnum = enum_PriznakZbozi_UserEnumEnumValueName.Prazdne; break;
-                    }
-
-                    artikl.PriznakZbozi_UserData = new enum_PriznakZbozi_UserEnum() {
-                        EnumValueName = priznakEnum
-                    };
-                    // prenesena danova povinnost
-                    // if (priznak == "P") {
-                    // }
-                    if(priznak == "D") artikl.Doprodej_UserData = "True";
-                    if(priznak == "O") artikl.NaObjednavku_UserData = "True";
-                    if(priznak == "X") artikl.Nedostupne_UserData = "True";
-                }
+                // var priznak = d["Priznak"].GetNoSpaces().ToUpper();
+                // var priznakID = S4_IDs.GetProduktovyKlicID(priznak);
+                // artikl.ProduktoveKlice = priznakID != "" ? new S5DataArtiklProduktoveKlice() {
+                //     ArtiklProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlic[] {
+                //         new S5DataArtiklProduktoveKliceArtiklProduktovyKlic() {                        
+                //             ProduktovyKlic_ID = priznakID,
+                //             ProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlicProduktovyKlic() {
+                //                 ID = priznakID
+                //             }
+                //         }
+                //     }
+                // } : null;
 
                 artikl.Dodavatele = d["CisloDodavatele"].GetNum() != "00000" ? new S5DataArtiklDodavatele() {
                     SeznamDodavatelu = new S5DataArtiklDodavateleSeznamDodavatelu() {

@@ -1,0 +1,11 @@
+LOW=ON
+WINKEY=OFF
+WINDOW=50
+COLORS =	#000000		#000080		#008f00		#009c9c		#8a0000		#8f008f		#9a4d00		#9f9f9f		#434343		#3e3ebb			#329732			#48dada			#ca4343			#cf44cf			#A9A938			#ececec
+              
+MOUSE=ON
+USEDRVS=ON
+rem !!! Nechat TITLE na hodnotě "sklad vDos+", jinak nepůjde tečka !!!
+TITLE=sklad vDos+
+ICON=forklift.ico
+FRAME=OFF

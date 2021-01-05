@@ -31,4 +31,7 @@ msbuild.wrn
 # Visual Studio 2015
 .vs/
 
-z-assets/
+z-assets/input/*
+z-assets/output/*
+z-assets/sklad-export/input/*
+z-assets/sklad-export/output/*
