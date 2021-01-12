@@ -1,0 +1,41 @@
+Založení nového skladu
+    Kód: HL, Název: Hlavní
+    Výdej do mínusu: Nekontrolovat (pro import)
+    Typ zdroje přebírání: Katalog, Skupina katalogu: Artikly (ART)
+
+Nastavení skupin seznamů
+1. Vytvořit skupiny objektu Jednotka
+    Kód: _, Název: logistické
+
+2. Vytvořit skupiny objektu Firma
+    Kód: NP, Název: Náhradní plnění, Převzít nastavení z nadřazené úrovně: true
+    Kód: OST, Název: Ostatní odběratelé, Obchod/Způsob dopravy: Osobní odběr, Obchod/Způsob platby: Hotově
+
+3. Vytvořit skupiny objektu Artikl
+    Kód: Nezařazení, Není určena pro ukládání záznamů: true
+    Kód: ART, Název: Artikly, Druh položky katalogu: ZBO
+
+4. Vytvořit skupiny objektu Skladové doklady
+    Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: true
+
+5. Vytvořit skupiny objektu Nabídky vydané
+    Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: true
+
+6. Vytvořit skupiny objektu Objednávky vydané
+    Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: true
+
+Nastavení uživatelských sloupců
+
+Průvodce nastavení programu
+    Ceníky/Kontrolovat minimální zisk při prodeji: true
+    Ceníky/Minimální procentuální zisk: 3,00
+    Ceníky/Automatické přidání nové položky katalogu: Přidat automaticky
+    Ceníky/Zobrazit kartu ceníkové ceny: false
+
+    Sklady/Výchozí sklad agendy: Hlavní
+    Sklady/Automatické přidání nové položky katalogu do skladové zásoby: Přidat automaticky
+    Sklady/Zobrazit kartu skladové zásoby: false
+    Sklady/Metoda vedení skladů: Metoda B
+
+Ostatní
+    Smazat Typy spojení - Skype, GSM brána, IM

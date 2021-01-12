@@ -151,18 +151,26 @@ namespace S4DataObjs {
                     };
                 }
 
-                // var priznak = d["Priznak"].GetNoSpaces().ToUpper();
-                // var priznakID = S4_IDs.GetProduktovyKlicID(priznak);
-                // artikl.ProduktoveKlice = priznakID != "" ? new S5DataArtiklProduktoveKlice() {
-                //     ArtiklProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlic[] {
-                //         new S5DataArtiklProduktoveKliceArtiklProduktovyKlic() {                        
-                //             ProduktovyKlic_ID = priznakID,
-                //             ProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlicProduktovyKlic() {
-                //                 ID = priznakID
-                //             }
-                //         }
-                //     }
-                // } : null;
+                var priznak = d["Priznak"].GetNoSpaces().ToUpper();
+                var priznakID = S4_IDs.GetProduktovyKlicID(priznak);
+
+                if(priznak != "P") {
+                    artikl.ProduktoveKlice = priznakID != "" ? new S5DataArtiklProduktoveKlice() {
+                        ArtiklProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlic[] {
+                            new S5DataArtiklProduktoveKliceArtiklProduktovyKlic() {                        
+                                ProduktovyKlic_ID = priznakID,
+                                ProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlicProduktovyKlic() {
+                                    ID = priznakID
+                                }
+                            }
+                        }
+                    } : null;
+                } else {
+                    //přenesená daňová povinnost
+                    // artikl.PreneseniDane = new S5DataArtiklPreneseniDane() {
+
+                    // }
+                }
 
                 artikl.Dodavatele = d["CisloDodavatele"].GetNum() != "00000" ? new S5DataArtiklDodavatele() {
                     SeznamDodavatelu = new S5DataArtiklDodavateleSeznamDodavatelu() {

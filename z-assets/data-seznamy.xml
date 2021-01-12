@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<S5Data>
+  <DruhArtikluList>
+    <DruhArtiklu>
+      <Kod>MAT</Kod>
+      <Nazev>materiál</Nazev>
+      <Poznamka />
+    </DruhArtiklu>
+    <DruhArtiklu>
+      <Kod>OBA</Kod>
+      <Nazev>obaly</Nazev>
+      <Poznamka />
+    </DruhArtiklu>
+    <DruhArtiklu>
+      <Kod>POL</Kod>
+      <Nazev>polotovar vlastní výroby</Nazev>
+      <Poznamka />
+    </DruhArtiklu>
+    <DruhArtiklu>
+      <Kod>POP</Kod>
+      <Nazev>poplatky</Nazev>
+      <Poznamka />
+    </DruhArtiklu>
+    <DruhArtiklu>
+      <Kod>SLU</Kod>
+      <Nazev>služba</Nazev>
+      <Poznamka />
+    </DruhArtiklu>
+    <DruhArtiklu>
+      <Kod>VYR</Kod>
+      <Nazev>vlastní výrobek</Nazev>
+      <Poznamka />
+    </DruhArtiklu>
+    <DruhArtiklu>
+      <Kod>ZBO</Kod>
+      <Nazev>zboží</Nazev>
+      <Poznamka />
+    </DruhArtiklu>
+  </DruhArtikluList>
+  <FunkceOsobyList>
+    <FunkceOsoby>
+      <Code>NÁK</Code>
+      <Name>Nákupčí</Name>
+      <Note />
+    </FunkceOsoby>
+    <FunkceOsoby>
+      <Code>OZ</Code>
+      <Name>Obchodní zástupce</Name>
+      <Note />
+    </FunkceOsoby>
+    <FunkceOsoby>
+      <Code>PŘE</Code>
+      <Name>Přebírající</Name>
+      <Note />
+    </FunkceOsoby>
+    <FunkceOsoby>
+      <Code>ŘED</Code>
+      <Name>Ředitel</Name>
+      <Note />
+    </FunkceOsoby>
+  </FunkceOsobyList>
+  <JednotkaList>
+    <Jednotka>
+      <Group Kod="_" />
+      <DesMisto>0</DesMisto>
+      <Kod>bal</Kod>
+      <Nazev>balení</Nazev>
+      <Poznamka />
+      <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
+    </Jednotka>
+    <Jednotka>
+      <Group Kod="_" />
+      <DesMisto>0</DesMisto>
+      <Kod>box</Kod>
+      <Nazev>box</Nazev>
+      <Poznamka />
+      <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
+    </Jednotka>
+    <Jednotka>
+      <Group Kod="_" />
+      <DesMisto>0</DesMisto>
+      <Kod>duo</Kod>
+      <Nazev>duo</Nazev>
+      <Poznamka />
+      <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
+    </Jednotka>
+    <Jednotka>
+      <Group Kod="_" />
+      <DesMisto>0</DesMisto>
+      <Kod>fol</Kod>
+      <Nazev>folie</Nazev>
+      <Poznamka />
+      <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
+    </Jednotka>
+    <Jednotka>
+      <Group Kod="_" />
+      <DesMisto>0</DesMisto>
+      <Kod>kan</Kod>
+      <Nazev>kanystr</Nazev>
+      <Poznamka />
+      <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
+    </Jednotka>
+    <Jednotka>
+      <Group Kod="_" />
+      <DesMisto>0</DesMisto>
+      <Kod>kar</Kod>
+      <Nazev>karton</Nazev>
+      <Poznamka />
+      <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
+    </Jednotka>
+    <Jednotka>
+      <Group Kod="_" />
+      <DesMisto>0</DesMisto>
+      <Kod>kra</Kod>
+      <Nazev>krabice</Nazev>
+      <Poznamka />
+      <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
+    </Jednotka>
+    <Jednotka>
+      <Group Kod="_" />
+      <DesMisto>0</DesMisto>
+      <Kod>ks</Kod>
+      <Nazev>kus</Nazev>
+      <Poznamka />
+      <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
+    </Jednotka>
+    <Jednotka>
+      <Group Kod="_" />
+      <DesMisto>0</DesMisto>
+      <Kod>pal</Kod>
+      <Nazev>paleta</Nazev>
+      <Poznamka />
+      <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
+    </Jednotka>
+    <Jednotka>
+      <Group Kod="_" />
+      <DesMisto>0</DesMisto>
+      <Kod>par</Kod>
+      <Nazev>pár</Nazev>
+      <Poznamka />
+      <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
+    </Jednotka>
+    <Jednotka>
+      <Group Kod="_" />
+      <DesMisto>0</DesMisto>
+      <Kod>pyt</Kod>
+      <Nazev>pytel</Nazev>
+      <Poznamka />
+      <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
+    </Jednotka>
+    <Jednotka>
+      <Group Kod="_" />
+      <DesMisto>0</DesMisto>
+      <Kod>rol</Kod>
+      <Nazev>role</Nazev>
+      <Poznamka />
+      <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
+    </Jednotka>
+    <Jednotka>
+      <Group Kod="_" />
+      <DesMisto>0</DesMisto>
+      <Kod>sad</Kod>
+      <Nazev>sada</Nazev>
+      <Poznamka />
+      <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
+    </Jednotka>
+    <Jednotka>
+      <Group Kod="_" />
+      <DesMisto>0</DesMisto>
+      <Kod>sud</Kod>
+      <Nazev>sud</Nazev>
+      <Poznamka />
+      <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
+    </Jednotka>
+    <Jednotka>
+      <Group Kod="_" />
+      <DesMisto>0</DesMisto>
+      <Kod>tyc</Kod>
+      <Nazev>tyč</Nazev>
+      <Poznamka />
+      <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
+    </Jednotka>
+  </JednotkaList>
+  <ProduktovyKlicList>
+    <ProduktovyKlic>
+      <Kod>A</Kod>
+      <Nazev>Akce</Nazev>
+      <Poznamka />
+    </ProduktovyKlic>
+  </ProduktovyKlicList>
+  <ProduktovyKlicList>
+    <ProduktovyKlic>
+      <Kod>S</Kod>
+      <Nazev>Sleva</Nazev>
+      <Poznamka />
+    </ProduktovyKlic>
+  </ProduktovyKlicList>
+  <ProduktovyKlicList>
+    <ProduktovyKlic>
+      <Kod>N</Kod>
+      <Nazev>Novinka</Nazev>
+      <Poznamka />
+    </ProduktovyKlic>
+  </ProduktovyKlicList>
+  <ProduktovyKlicList>
+    <ProduktovyKlic>
+      <Kod>D</Kod>
+      <Nazev>Doprodej</Nazev>
+      <Poznamka />
+    </ProduktovyKlic>
+  </ProduktovyKlicList>
+  <ProduktovyKlicList>
+    <ProduktovyKlic>
+      <Kod>O</Kod>
+      <Nazev>Na objednávku</Nazev>
+      <Poznamka />
+    </ProduktovyKlic>
+  </ProduktovyKlicList>
+  <ProduktovyKlicList>
+    <ProduktovyKlic>
+      <Kod>X</Kod>
+      <Nazev>Nedostupné</Nazev>
+      <Poznamka />
+    </ProduktovyKlic>
+  </ProduktovyKlicList>
+  <ProduktovyKlicList>
+    <ProduktovyKlic>
+      <Kod>0</Kod>
+      <Nazev>Neznámý</Nazev>
+      <Poznamka />
+    </ProduktovyKlic>
+  </ProduktovyKlicList>
+  <TypSpojeniList>
+    <TypSpojeni>
+      <DruhSpojeni EnumValueName="DatovaSchranka">4</DruhSpojeni>
+      <IsUser>False</IsUser>
+      <Kod>DS</Kod>
+      <Nazev>Datová schránka</Nazev>
+      <Poznamka />
+    </TypSpojeni>
+    <TypSpojeni>
+      <DruhSpojeni EnumValueName="Email">2</DruhSpojeni>
+      <IsUser>False</IsUser>
+      <Kod>E-mail</Kod>
+      <Nazev>E-mail</Nazev>
+      <Poznamka />
+    </TypSpojeni>
+    <TypSpojeni>
+      <DruhSpojeni EnumValueName="Email">2</DruhSpojeni>
+      <IsUser>True</IsUser>
+      <Kod>E-mailFA</Kod>
+      <Nazev>E-mail fakturační</Nazev>
+      <Poznamka />
+    </TypSpojeni>
+    <TypSpojeni>
+      <DruhSpojeni EnumValueName="Fax">1</DruhSpojeni>
+      <IsUser>False</IsUser>
+      <Kod>Fax</Kod>
+      <Nazev>Fax</Nazev>
+      <Poznamka />
+    </TypSpojeni>
+    <TypSpojeni>
+      <DruhSpojeni EnumValueName="Telefon">0</DruhSpojeni>
+      <IsUser>False</IsUser>
+      <Kod>GSM</Kod>
+      <Nazev>GSM brána</Nazev>
+      <Poznamka />
+    </TypSpojeni>
+    <TypSpojeni>
+      <DruhSpojeni EnumValueName="Telefon">0</DruhSpojeni>
+      <IsUser>False</IsUser>
+      <Kod>Mob</Kod>
+      <Nazev>Mobil</Nazev>
+      <Poznamka />
+    </TypSpojeni>
+    <TypSpojeni>
+      <DruhSpojeni EnumValueName="Telefon">0</DruhSpojeni>
+      <IsUser>False</IsUser>
+      <Kod>Tel</Kod>
+      <Nazev>Telefon</Nazev>
+      <Poznamka />
+    </TypSpojeni>
+    <TypSpojeni>
+      <DruhSpojeni EnumValueName="WWW">3</DruhSpojeni>
+      <IsUser>False</IsUser>
+      <Kod>WWW</Kod>
+      <Nazev>WWW</Nazev>
+      <Poznamka />
+    </TypSpojeni>
+  </TypSpojeniList>
+  <ZpusobPlatbyList>
+    <ZpusobPlatby>
+      <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
+      <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
+      <Kod>B</Kod>
+      <Nazev>Bankovním převodem</Nazev>
+      <Poznamka />
+    </ZpusobPlatby>
+    <ZpusobPlatby>
+      <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
+      <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
+      <Kod>D</Kod>
+      <Nazev>Dobírkou</Nazev>
+      <Poznamka />
+    </ZpusobPlatby>
+    <ZpusobPlatby>
+      <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
+      <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
+      <Kod>H</Kod>
+      <Nazev>Hotově</Nazev>
+      <Poznamka />
+    </ZpusobPlatby>
+    <ZpusobPlatby>
+      <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
+      <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
+      <Kod>I</Kod>
+      <Nazev>Inkasem</Nazev>
+      <Poznamka />
+    </ZpusobPlatby>
+    <ZpusobPlatby>
+      <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
+      <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
+      <Kod>P</Kod>
+      <Nazev>Platební kartou</Nazev>
+      <Poznamka />
+    </ZpusobPlatby>
+    <ZpusobPlatby>
+      <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
+      <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
+      <Kod>S</Kod>
+      <Nazev>Poštovní složenkou</Nazev>
+      <Poznamka />
+    </ZpusobPlatby>
+    <ZpusobPlatby>
+      <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
+      <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
+      <Kod>Z</Kod>
+      <Nazev>Zápočtem</Nazev>
+      <Poznamka />
+    </ZpusobPlatby>
+  </ZpusobPlatbyList>
+</S5Data>
