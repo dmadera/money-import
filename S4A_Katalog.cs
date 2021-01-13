@@ -12,7 +12,7 @@ namespace S4DataObjs {
         private List<S5DataKategorieArtiklu> _kategorie = new List<S5DataKategorieArtiklu>();
 
         public static string GetID(string id) {
-            return "KARTY" + id;
+            return "ART0" + id;
         }
 
         public S4A_Katalog(string dir, Encoding enc) {
@@ -82,10 +82,10 @@ namespace S4DataObjs {
                 var jednotkaID = S4_IDs.GetJednotkaID(mernaJednotka);
 
                 var artikl = new S5DataArtikl() {
-                    Katalog = GetID(d["CisloKarty"].GetNum()),
+                    Kod = GetID(d["CisloKarty"].GetNum()),
                     Nazev = d["NazevZbozi"].GetText(),
                     Poznamka = d["NazevZbozi2"].GetText() + obj.ToString(),
-                    // Group = new group() { Kod = "Nezařazené" },
+                    Group = new group() { Kod = "ART" },
                     PosledniCena = d["NakupCena"].GetDecimal(),
                     DruhArtiklu_ID = S4_IDs.GetDruhZboziID("ZBO"),
                     PLU = d["Pozice"].GetAlfaNum().ToUpper(), 
@@ -102,12 +102,6 @@ namespace S4DataObjs {
                 if (jednotkaID != "") {
                     artikl.Jednotky = new S5DataArtiklJednotky() {
                         HlavniJednotka = new S5DataArtiklJednotkyHlavniJednotka() {
-                            Jednotka_ID = jednotkaID,
-                        },
-                        NakupniJednotka = new S5DataArtiklJednotkyNakupniJednotka() {
-                            Jednotka_ID = jednotkaID,
-                        },
-                        ProdejniJednotka = new S5DataArtiklJednotkyProdejniJednotka() {
                             Jednotka_ID = jednotkaID,
                         },
                         SeznamJednotek = new S5DataArtiklJednotkySeznamJednotek() {
@@ -155,7 +149,7 @@ namespace S4DataObjs {
                 var priznakID = S4_IDs.GetProduktovyKlicID(priznak);
 
                 if(priznak != "P") {
-                    artikl.ProduktoveKlice = priznakID != "" ? new S5DataArtiklProduktoveKlice() {
+                    artikl.ProduktoveKlice = priznakID != null ? new S5DataArtiklProduktoveKlice() {
                         ArtiklProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlic[] {
                             new S5DataArtiklProduktoveKliceArtiklProduktovyKlic() {                        
                                 ProduktovyKlic_ID = priznakID,
@@ -166,13 +160,16 @@ namespace S4DataObjs {
                         }
                     } : null;
                 } else {
-                    //přenesená daňová povinnost
-                    // artikl.PreneseniDane = new S5DataArtiklPreneseniDane() {
-
-                    // }
+                    // zbozi uvedene v priloze c. 5 - odpad a srot od roku 2012 (HADR 10kg)
+                    artikl.PreneseniDane = new S5DataArtiklPreneseniDane() {
+                        Kod = "5"
+                    };
                 }
 
                 artikl.Dodavatele = d["CisloDodavatele"].GetNum() != "00000" ? new S5DataArtiklDodavatele() {
+                    HlavniDodavatel = new S5DataArtiklDodavateleHlavniDodavatel() {
+                        
+                    },
                     SeznamDodavatelu = new S5DataArtiklDodavateleSeznamDodavatelu() {
                         ArtiklDodavatel = new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatel[] {
                                 new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatel() {

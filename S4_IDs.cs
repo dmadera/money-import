@@ -23,11 +23,11 @@ namespace S4DataObjs {
             return true;
         }
 
-        public static string GetArtiklID(string katalog) {
+        public static string GetArtiklID(string kod) {
             if (_data == null) throw new Exception("First call Deserialize method.");
 
             foreach (S5DataArtikl artikl in _data.ArtiklList) {
-                if (artikl.Katalog == katalog) {
+                if (artikl.Kod == kod) {
                     return artikl.ID;
                 }
             }

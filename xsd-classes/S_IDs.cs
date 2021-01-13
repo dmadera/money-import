@@ -216,7 +216,7 @@ namespace S_IDs {
         
         private group groupField;
         
-        private string katalogField;
+        private string kodField;
         
         private string objectNameField;
         
@@ -242,12 +242,12 @@ namespace S_IDs {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Katalog {
+        public string Kod {
             get {
-                return this.katalogField;
+                return this.kodField;
             }
             set {
-                this.katalogField = value;
+                this.kodField = value;
             }
         }
         

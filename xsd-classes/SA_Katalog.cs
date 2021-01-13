@@ -4278,8 +4278,6 @@ namespace SA_Katalog {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataArtiklDodavateleHlavniDodavatel {
         
-        private string firma_IDField;
-        
         private string objectNameField;
         
         private string objectTypeField;
@@ -4289,17 +4287,6 @@ namespace SA_Katalog {
         public S5DataArtiklDodavateleHlavniDodavatel() {
             this.objectNameField = "ArtiklDodavatel";
             this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Firma_ID {
-            get {
-                return this.firma_IDField;
-            }
-            set {
-                this.firma_IDField = value;
-            }
         }
         
         /// <remarks/>
@@ -6997,7 +6984,7 @@ namespace SA_Katalog {
         
         private group groupField;
         
-        private string katalogField;
+        private string kodField;
         
         private string objectNameField;
         
@@ -7023,12 +7010,12 @@ namespace SA_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Katalog {
+        public string Kod {
             get {
-                return this.katalogField;
+                return this.kodField;
             }
             set {
-                this.katalogField = value;
+                this.kodField = value;
             }
         }
         
@@ -10922,6 +10909,8 @@ namespace SA_Katalog {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataArtiklPreneseniDane {
         
+        private string kodField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -10931,6 +10920,17 @@ namespace SA_Katalog {
         public S5DataArtiklPreneseniDane() {
             this.objectNameField = "PreneseniDanovePovinnosti";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
+            }
         }
         
         /// <remarks/>
@@ -11382,7 +11382,7 @@ namespace SA_Katalog {
         
         private group groupField;
         
-        private string katalogField;
+        private string kodField;
         
         private string objectNameField;
         
@@ -11408,12 +11408,12 @@ namespace SA_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Katalog {
+        public string Kod {
             get {
-                return this.katalogField;
+                return this.kodField;
             }
             set {
-                this.katalogField = value;
+                this.kodField = value;
             }
         }
         
@@ -11461,7 +11461,7 @@ namespace SA_Katalog {
         
         private group groupField;
         
-        private string katalogField;
+        private string kodField;
         
         private string objectNameField;
         
@@ -11487,12 +11487,12 @@ namespace SA_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Katalog {
+        public string Kod {
             get {
-                return this.katalogField;
+                return this.kodField;
             }
             set {
-                this.katalogField = value;
+                this.kodField = value;
             }
         }
         
@@ -11540,7 +11540,7 @@ namespace SA_Katalog {
         
         private group groupField;
         
-        private string katalogField;
+        private string kodField;
         
         private string objectNameField;
         
@@ -11566,12 +11566,12 @@ namespace SA_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Katalog {
+        public string Kod {
             get {
-                return this.katalogField;
+                return this.kodField;
             }
             set {
-                this.katalogField = value;
+                this.kodField = value;
             }
         }
         
@@ -11896,8 +11896,6 @@ namespace SA_Katalog {
         
         private group groupField;
         
-        private string kodField;
-        
         private string objectNameField;
         
         private string objectTypeField;
@@ -11917,17 +11915,6 @@ namespace SA_Katalog {
             }
             set {
                 this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
-            get {
-                return this.kodField;
-            }
-            set {
-                this.kodField = value;
             }
         }
         
@@ -12726,7 +12713,7 @@ namespace SA_Katalog {
         
         private group groupField;
         
-        private string katalogField;
+        private string kodField;
         
         private string objectNameField;
         
@@ -12752,12 +12739,12 @@ namespace SA_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Katalog {
+        public string Kod {
             get {
-                return this.katalogField;
+                return this.kodField;
             }
             set {
-                this.katalogField = value;
+                this.kodField = value;
             }
         }
         
@@ -13198,7 +13185,7 @@ namespace SA_Katalog {
         
         private group groupField;
         
-        private string katalogField;
+        private string kodField;
         
         private string objectNameField;
         
@@ -13224,12 +13211,12 @@ namespace SA_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Katalog {
+        public string Kod {
             get {
-                return this.katalogField;
+                return this.kodField;
             }
             set {
-                this.katalogField = value;
+                this.kodField = value;
             }
         }
         
@@ -13277,7 +13264,7 @@ namespace SA_Katalog {
         
         private group groupField;
         
-        private string katalogField;
+        private string kodField;
         
         private string objectNameField;
         
@@ -13303,12 +13290,12 @@ namespace SA_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Katalog {
+        public string Kod {
             get {
-                return this.katalogField;
+                return this.kodField;
             }
             set {
-                this.katalogField = value;
+                this.kodField = value;
             }
         }
         
@@ -14040,7 +14027,7 @@ namespace SA_Katalog {
         
         private group groupField;
         
-        private string katalogField;
+        private string kodField;
         
         private string objectNameField;
         
@@ -14066,12 +14053,12 @@ namespace SA_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Katalog {
+        public string Kod {
             get {
-                return this.katalogField;
+                return this.kodField;
             }
             set {
-                this.katalogField = value;
+                this.kodField = value;
             }
         }
         
@@ -14119,7 +14106,7 @@ namespace SA_Katalog {
         
         private group groupField;
         
-        private string katalogField;
+        private string kodField;
         
         private string objectNameField;
         
@@ -14145,12 +14132,12 @@ namespace SA_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Katalog {
+        public string Kod {
             get {
-                return this.katalogField;
+                return this.kodField;
             }
             set {
-                this.katalogField = value;
+                this.kodField = value;
             }
         }
         

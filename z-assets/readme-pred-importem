@@ -3,6 +3,12 @@ Založení nového skladu
     Výdej do mínusu: Nekontrolovat (pro import)
     Typ zdroje přebírání: Katalog, Skupina katalogu: Artikly (ART)
 
+Založení nového ceníku
+    Kód: ZAKL, Název: Základní
+    Typ výchozí ceny: Nákupní, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -10%
+    Typ zdroje přebírání: Katalog, Skupina katalogu: ART
+    Nastavit jako výchozí: ANO
+
 Nastavení skupin seznamů
 1. Vytvořit skupiny objektu Jednotka
     Kód: _, Název: logistické

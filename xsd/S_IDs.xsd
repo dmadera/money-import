@@ -10,7 +10,7 @@
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="Group" type="group" minOccurs="0" />
-                    <xs:element name="Katalog" type="emptiable_string_60" />
+                    <xs:element name="Kod" type="emptiable_string_60" />
                   </xs:sequence>
                   <xs:attribute name="ObjectName" fixed="Artikl" use="required" />
                   <xs:attribute name="ObjectType" fixed="Object" use="required" />
