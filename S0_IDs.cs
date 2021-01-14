@@ -2,10 +2,10 @@ using System;
 using System.IO;
 using System.Xml.Serialization;
 
-using S_IDs;
+using S0_IDs;
 
-namespace S4DataObjs {
-    static class S4_IDs {
+namespace SDataObjs {
+    static class S0_IDs {
         private static S5Data _data;
 
         public static void Deserialize(string input) {

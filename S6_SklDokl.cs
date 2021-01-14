@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
-using SB_SklDokl;
+using S6_SklDokl;
 using SkladData;
 
-namespace S4DataObjs {
-
+namespace SDataObjs {
     class SkladovyDoklad {
         public static string GetID(SFile soubor, string cislo) {
             switch (soubor) {
@@ -30,11 +29,11 @@ namespace S4DataObjs {
         }
     }
 
-    class S4B_SklDokl : S4_Generic<S5Data> {
+    class S6_SklDokl : S0_Generic<S5Data> {
 
         private List<S5DataSkladovyDoklad> _doklady = new List<S5DataSkladovyDoklad>();
 
-        public S4B_SklDokl(string dir, Encoding enc) {
+        public S6_SklDokl(string dir, Encoding enc) {
             convertKartyInv(new SkladDataFile(dir, SFile.KARTYINV, enc));
             convertPohybP(new SkladDataFile(dir, SFile.CPOHYBP, enc), new SkladDataFile(dir, SFile.POHYBP, enc));
             convertPohybV(new SkladDataFile(dir, SFile.CPOHYBV, enc), new SkladDataFile(dir, SFile.POHYBV, enc));
@@ -58,6 +57,7 @@ namespace S4DataObjs {
             doc.ParovaciSymbol = "00000";
             doc.Group = new group() { Kod = "IMPORT" };
             doc.DatumSkladovehoPohybu = doc.DatumZauctovani = doc.DatumSchvaleni = doc.DatumVystaveni = firstDay;
+            doc.DatumSkladovehoPohybuSpecified = doc.DatumZauctovaniSpecified = doc.DatumSchvaleniSpecified = doc.DatumVystaveniSpecified = true;
             doc.Vyrizeno = "True";
             doc.TypDokladu = new enum_TypDokladu() { Value = enum_TypDokladu_value.Item1 };
 
@@ -67,9 +67,9 @@ namespace S4DataObjs {
             foreach (var row in karty.Data) {
                 var data = row.Items;
 
-                katalog = S4A_Katalog.GetID(data["CisloKarty"].GetNum());
-                artiklID = S4_IDs.GetArtiklID(katalog);
-                skladID = S4_IDs.GetSkladID("HL");
+                katalog = S3_Katalog.GetID(data["CisloKarty"].GetNum());
+                artiklID = S0_IDs.GetArtiklID(katalog);
+                skladID = S0_IDs.GetSkladID("HL");
 
                 if (artiklID == null) continue;
 
@@ -98,12 +98,13 @@ namespace S4DataObjs {
                 var data = header.Items;
                 var doc = new S5DataSkladovyDoklad();
                 id = SkladovyDoklad.GetID(headers.Soubor, data["CisloPrijemky"].GetNum());
-                doc.Nazev = SkladovyDoklad.GetPopis(headers.Soubor, data["CisloPrijemky"].GetNum());
+                doc.Nazev = SkladovyDoklad.GetPopis(headers.Soubor, id);
                 doc.ParovaciSymbol = id;
                 doc.Group = new group() { Kod = "IMPORT" };
                 doc.DatumSkladovehoPohybu = doc.DatumZauctovani = doc.DatumSchvaleni = doc.DatumVystaveni = data["DatumVydeje"].GetDate();
+                doc.DatumSkladovehoPohybuSpecified = doc.DatumZauctovaniSpecified = doc.DatumSchvaleniSpecified = doc.DatumVystaveniSpecified = true;
                 doc.Poznamka = data["Upozorneni"].GetText();
-                string firmaID = S4_IDs.GetFirmaID(S4A_Adresar.GetDodID(header.Items["CisloDodavatele"].GetNum()));
+                string firmaID = S0_IDs.GetFirmaID(S3_Adresar.GetDodID(header.Items["CisloDodavatele"].GetNum()));
                 doc.Firma_ID = doc.FakturacniAdresaFirma_ID = doc.PrijemceFaktury_ID = firmaID;
                 doc.Vyrizeno = "True";
                 doc.Polozky = new S5DataSkladovyDokladPolozky();
@@ -118,7 +119,7 @@ namespace S4DataObjs {
             foreach (var row in rows.Data) {
                 var data = row.Items;
                 id = SkladovyDoklad.GetID(headers.Soubor, data["CisloPrijemky"].GetNum());
-                katalog = S4A_Katalog.GetID(data["CisloKarty"].GetNum());
+                katalog = S3_Katalog.GetID(data["CisloKarty"].GetNum());
 
                 if (prevId != id) {
                     if (prevId != "") {
@@ -129,8 +130,8 @@ namespace S4DataObjs {
                     prevId = id;
                 }
 
-                artiklID = S4_IDs.GetArtiklID(katalog);
-                skladID = S4_IDs.GetSkladID("HL");
+                artiklID = S0_IDs.GetArtiklID(katalog);
+                skladID = S0_IDs.GetSkladID("HL");
 
                 if (artiklID == null) continue;
 
@@ -140,7 +141,7 @@ namespace S4DataObjs {
                 pol.Nazev = data["NazevZbozi"].GetText();
                 pol.JednotkovaPorizovaciCena = data["NakupCena"].GetDecimal();
                 if (pol.Mnozstvi.StartsWith("-")) pol.JednotkovaPorizovaciCena = "0";
-                pol.SazbaDPH_ID = S4_IDs.GetSazbaDPHID(data["SazbaD"].GetNum());
+                pol.SazbaDPH_ID = S0_IDs.GetSazbaDPHID(data["SazbaD"].GetNum());
                 pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };
                 pol.ObsahPolozky = new S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuObsahPolozky() {
                     Artikl_ID = artiklID,
@@ -164,10 +165,11 @@ namespace S4DataObjs {
                 doc.ParovaciSymbol = id;
                 doc.Group = new group() { Kod = "IMPORT" };
                 doc.DatumSkladovehoPohybu = doc.DatumZauctovani = doc.DatumSchvaleni = doc.DatumVystaveni = data["DatumVydeje"].GetDate();
+                doc.DatumSkladovehoPohybuSpecified = doc.DatumZauctovaniSpecified = doc.DatumSchvaleniSpecified = doc.DatumVystaveniSpecified = true;
                 doc.Poznamka = data["Upozorneni"].GetText();
                 doc.Polozky = new S5DataSkladovyDokladPolozky();
                 doc.ZiskZaDoklad = data["Zisk"].GetDecimal();
-                string firmaID = S4_IDs.GetFirmaID(S4A_Adresar.GetOdbID(header.Items["CisloOdberatele"].GetNum()));
+                string firmaID = S0_IDs.GetFirmaID(S3_Adresar.GetOdbID(header.Items["CisloOdberatele"].GetNum()));
                 doc.Firma_ID = doc.FakturacniAdresaFirma_ID = doc.PrijemceFaktury_ID = firmaID;
                 doc.TypDokladu = new enum_TypDokladu() { Value = enum_TypDokladu_value.Item2 };
                 _doklady.Add(doc);
@@ -179,7 +181,7 @@ namespace S4DataObjs {
             foreach (var row in rows.Data) {
                 var data = row.Items;
                 id = SkladovyDoklad.GetID(headers.Soubor, data["CisloVydejky"].GetNum());
-                katalog = S4A_Katalog.GetID(data["CisloKarty"].GetNum());
+                katalog = S3_Katalog.GetID(data["CisloKarty"].GetNum());
 
                 if (prevId != id) {
                     if (prevId != "") {
@@ -190,8 +192,8 @@ namespace S4DataObjs {
                     prevId = id;
                 }
 
-                artiklID = S4_IDs.GetArtiklID(katalog);
-                skladID = S4_IDs.GetSkladID("HL");
+                artiklID = S0_IDs.GetArtiklID(katalog);
+                skladID = S0_IDs.GetSkladID("HL");
 
                 if (artiklID == null) continue;
 
@@ -201,7 +203,7 @@ namespace S4DataObjs {
                 pol.Nazev = data["NazevZbozi"].GetText();
                 pol.JednCena = data["ProdCena"].GetDecimal();
                 pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };
-                pol.SazbaDPH_ID = S4_IDs.GetSazbaDPHID(data["SazbaD"].GetNum());
+                pol.SazbaDPH_ID = S0_IDs.GetSazbaDPHID(data["SazbaD"].GetNum());
                 pol.ObsahPolozky = new S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuObsahPolozky() {
                     Artikl_ID = artiklID,
                     Sklad_ID = skladID,

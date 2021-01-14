@@ -1,0 +1,66 @@
+Nastavení skupin seznamů
+1. Vytvořit skupiny objektu Jednotka
+    Kód: _, Název: logistické
+
+2. Vytvořit skupiny objektu Firma
+    Kód: NP, Název: Náhradní plnění, Převzít nastavení z nadřazené úrovně: true
+    Kód: OST, Název: Ostatní odběratelé, Převzít nastavení z nadřazené úrovně: false, Obchod/Způsob dopravy: Osobní odběr, Obchod/Způsob platby: Hotově
+
+3. Vytvořit skupiny objektu Artikl
+    Kód: Nezařazené, Není určena pro ukládání záznamů: true
+    Kód: ART, Název: Artikly, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu
+
+4. Vytvořit skupiny objektu Příjemky a výdejky
+    Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: true
+
+5. Vytvořit skupiny objektu Nabídky vydané
+    Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: true
+
+6. Vytvořit skupiny objektu Objednávky přijaté
+    Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: true
+
+7. Vytvořit skupiny objektu Objednávky vydané
+    Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: true
+
+8. Vytvořit skupiny objektu Faktury vydené
+    Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: false, Zaokrouhlení celkové částky: 0,01 Matematicky
+
+Založení nového skladu
+    Kód: HL, Název: Hlavní
+    Výdej do mínusu: Nekontrolovat (pro import)
+    Typ zdroje přebírání: Katalog, Skupina katalogu: Artikly (ART)
+
+Založení nového ceníku
+    Kód: ZAKL, Název: Základní
+    Typ výchozí ceny: Nákupní, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -10%
+    Typ zdroje přebírání: Katalog, Skupina katalogu: ART
+    Nastavit jako výchozí: ANO
+
+Nastavení uživatelských sloupců
+
+Průvodce nastavení programu
+    Vzhled aplikace/Každý sudý řádek...: 255; 255; 255
+    Vzhled aplikace/Každý sudý řádek...: 245; 245; 245
+    Vzhled aplikace/Zobrazit horizontální posuvník: false
+
+    Nastavení agendy/Evidovat náhradní plnění: true
+    Nastavení agendy/Roční limit náhradního plnění: 1200000
+
+    Zakladní údaje o firmě/Spisová značka: Společnost je zapsána v Obchodním rejstříku vedeném Krajským soudem v Ústí nad Labem, oddíl C, vložka 2701.
+    Základní údaje o firmě/Logo: vybrat soubor
+
+    Ceníky/Kontrolovat minimální zisk při prodeji: true
+    Ceníky/Minimální procentuální zisk: 3,00
+    Ceníky/Automatické přidání nové položky katalogu: Přidat automaticky
+    Ceníky/Zobrazit kartu ceníkové ceny: false
+
+    Sklady/Výchozí sklad agendy: Hlavní
+    Sklady/Automatické přidání nové položky katalogu do skladové zásoby: Přidat automaticky
+    Sklady/Zobrazit kartu skladové zásoby: false
+    Sklady/Metoda vedení skladů: Metoda B
+
+Doplnění informace o firmě
+    tel, gsm, email, www, vybrat hlavní kontakt, bankovní spojení
+
+Ostatní
+    Smazat Typy spojení - Skype, IM

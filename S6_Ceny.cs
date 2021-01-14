@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
-using SB_Ceny;
+using S6_Ceny;
 using SkladData;
 
-namespace S4DataObjs {
+namespace SDataObjs {
 
-    class S4B_Ceny : S4_Generic<S5Data> {
+    class S6_Ceny : S0_Generic<S5Data> {
 
         private List<S5DataCenik> _ceniky = new List<S5DataCenik>();
         private List<S5DataPolozkaCeniku> _ceny = new List<S5DataPolozkaCeniku>();
@@ -19,7 +19,7 @@ namespace S4DataObjs {
             return "SK" + cislo;
         }
 
-        public S4B_Ceny(string dir, Encoding enc) {
+        public S6_Ceny(string dir, Encoding enc) {
             convertZaklCeny(new SkladDataFile(dir, SFile.KARTY, enc));
             convertCeniky(new SkladDataFile(dir, SFile.SKUP, enc));
             convertCeny(new SkladDataFile(dir, SFile.CENY, enc));
@@ -37,14 +37,14 @@ namespace S4DataObjs {
         }
 
         private void convertZaklCeny(SkladDataFile karty) {
-            var skladID = S4_IDs.GetSkladID("HL");
+            var skladID = S0_IDs.GetSkladID("HL");
 
             foreach (var karta in karty.Data) {
                 var d = karta.Items;
                 var k = new S5DataPolozkaCeniku();
                 k.Cenik = new S5DataPolozkaCenikuCenik() { Kod = "ZAKL" };
-                k.Nazev = k.Kod = "ZAKL_" + S4A_Katalog.GetID(d["CisloKarty"].GetNum());
-                k.Artikl_ID = S4_IDs.GetArtiklID(S4A_Katalog.GetID(d["CisloKarty"].GetNum()));
+                k.Nazev = k.Kod = "ZAKL_" + S3_Katalog.GetID(d["CisloKarty"].GetNum());
+                k.Artikl_ID = S0_IDs.GetArtiklID(S3_Katalog.GetID(d["CisloKarty"].GetNum()));
                 k.Sklad_ID = skladID;
                 k.ZmenaVProcentech = "True";
                 k.CanGetDataFromGroup = "False";
@@ -60,7 +60,7 @@ namespace S4DataObjs {
         }
 
         private void convertCeniky(SkladDataFile skupiny) {
-            var skladID = S4_IDs.GetSkladID("HL");
+            var skladID = S0_IDs.GetSkladID("HL");
 
             foreach (var skupina in skupiny.Data) {
                 var data = skupina.Items;
@@ -79,7 +79,7 @@ namespace S4DataObjs {
                 if(data["CisloSkup"].GetNum() == "0000") continue;
 
                 var firma = new S5DataFirma();
-                var firmaID = S4_IDs.GetFirmaID(S4A_Adresar.GetOdbID(data["CisloOdberatele"].GetNum()));
+                var firmaID = S0_IDs.GetFirmaID(S3_Adresar.GetOdbID(data["CisloOdberatele"].GetNum()));
                 firma.ID = firmaID;
                 firma.ObchodniPodminky = new S5DataFirmaObchodniPodminky() {
                     SeznamCeniku = new S5DataFirmaObchodniPodminkySeznamCeniku() {
@@ -99,7 +99,7 @@ namespace S4DataObjs {
         }
 
         private void convertCeny(SkladDataFile ceny) {
-            var skladID = S4_IDs.GetSkladID("HL");
+            var skladID = S0_IDs.GetSkladID("HL");
 
             foreach (var cena in ceny.Data) {
                 var d = cena.Items;
@@ -107,8 +107,8 @@ namespace S4DataObjs {
                 c.Cenik = new S5DataPolozkaCenikuCenik() { 
                     Kod = GetID(d["CisloSkup"].GetNum()) 
                 };
-                c.Nazev = c.Kod = GetID(d["CisloSkup"].GetNum()) + "_" + S4A_Katalog.GetID(d["CisloKarty"].GetNum());
-                c.Artikl_ID = S4_IDs.GetArtiklID(S4A_Katalog.GetID(d["CisloKarty"].GetNum()));
+                c.Nazev = c.Kod = GetID(d["CisloSkup"].GetNum()) + "_" + S3_Katalog.GetID(d["CisloKarty"].GetNum());
+                c.Artikl_ID = S0_IDs.GetArtiklID(S3_Katalog.GetID(d["CisloKarty"].GetNum()));
                 c.Sklad_ID = skladID;
                 c.Cena = d["SpecCena"].GetDecimal();
                 c.CanGetDataFromGroup = "False";
@@ -124,14 +124,14 @@ namespace S4DataObjs {
 
         private void convertZasoby(SkladDataFile file) {
 
-            var skladID = S4_IDs.GetSkladID("HL");
+            var skladID = S0_IDs.GetSkladID("HL");
             string artiklID, katalog;
 
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
 
-                katalog = S4A_Katalog.GetID(d["CisloKarty"].GetNum());
-                artiklID = S4_IDs.GetArtiklID(katalog);
+                katalog = S3_Katalog.GetID(d["CisloKarty"].GetNum());
+                artiklID = S0_IDs.GetArtiklID(katalog);
 
                 var zasoba = new S5DataZasoba() {
                     Kod = katalog,

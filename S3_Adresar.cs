@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
-using SA_Adresar;
+using S3_Adresar;
 using SkladData;
 
-namespace S4DataObjs {
-    class S4A_Adresar : S4_Generic<S5Data> {
+namespace SDataObjs {
+    class S3_Adresar : S0_Generic<S5Data> {
 
         private List<S5DataFirma> _firmy = new List<S5DataFirma>();
 
@@ -23,7 +23,7 @@ namespace S4DataObjs {
             return "ADR2" + id.Substring(1);
         }
 
-        public S4A_Adresar(string dir, Encoding enc) {
+        public S3_Adresar(string dir, Encoding enc) {
             convertOdb(new SkladDataFile(dir, SFile.ODB, enc));
             convertDod(new SkladDataFile(dir, SFile.DOD, enc));
         }
@@ -35,7 +35,7 @@ namespace S4DataObjs {
         }
 
         private void convertOdb(SkladDataFile file) {
-            var statID = S4_IDs.GetStatID("CZ");
+            var statID = S0_IDs.GetStatID("CZ");
 
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
@@ -68,10 +68,11 @@ namespace S4DataObjs {
                     },
                     ICO = d["Ico"].GetNum(),
                     DIC = obj.GetDic(),
-                    Poznamka = obj.Get5Note() + obj.ToString(),
+                    // Poznamka = obj.Get5Note() + obj.ToString(),
+                    Poznamka = obj.Get5Note(),
                     Group = grp,
                     ReportSDPH_UserData = d["SDani"].GetBoolean(),
-                    ZpusobPlatby_ID = S4_IDs.GetZpusobPlatbyID(zpusobPlatbyKod),
+                    ZpusobPlatby_ID = S0_IDs.GetZpusobPlatbyID(zpusobPlatbyKod),
                 };
 
 
@@ -88,12 +89,12 @@ namespace S4DataObjs {
                                 Nazev = d["Zastoupeny"].GetText(),
                                 Prijmeni = d["Zastoupeny"].GetText(),
                                 EmailSpojeni_ID = emails[0],
-                                FunkceOsoby_ID = S4_IDs.GetFunkceOsobyID("JED")
+                                FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("JED")
                             } : null,
                             !d["Prebirajici"].IsEmpty() ? new S5DataFirmaOsobySeznamOsobOsoba() {
                                 Nazev = d["Prebirajici"].GetText(),
                                 Prijmeni = d["Prebirajici"].GetText(),
-                                FunkceOsoby_ID = S4_IDs.GetFunkceOsobyID("PŘE")
+                                FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("PŘE")
                             } : null
                         }
                     }
@@ -102,23 +103,23 @@ namespace S4DataObjs {
                 firma.SeznamSpojeni = new S5DataFirmaSeznamSpojeni() {
                     Spojeni = new S5DataFirmaSeznamSpojeniSpojeni[] {
                         !d["Telefon"].IsEmpty() ? new S5DataFirmaSeznamSpojeniSpojeni() {
-                            TypSpojeni_ID = S4_IDs.GetTypSpojeniID("Tel"),
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Tel"),
                             SpojeniCislo = d["Telefon"].GetText(),
                         } : null,
                         emails[0] != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
-                            TypSpojeni_ID = S4_IDs.GetTypSpojeniID("E-mail"),
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mail"),
                             SpojeniCislo = emails[0],
                         } : null,
                         emails[1] != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
-                            TypSpojeni_ID = S4_IDs.GetTypSpojeniID("E-mail"),
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mail"),
                             SpojeniCislo = emails[1],
                         } : null,
                         emailsFA[0] != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
-                            TypSpojeni_ID = S4_IDs.GetTypSpojeniID("E-mailFA"),
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mailFA"),
                             SpojeniCislo = emailsFA[0],
                         } : null,
                         emailsFA[1] != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
-                            TypSpojeni_ID = S4_IDs.GetTypSpojeniID("E-mailFA"),
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mailFA"),
                             SpojeniCislo = emailsFA[1],
                         } : null
                     }
@@ -149,7 +150,7 @@ namespace S4DataObjs {
         }
 
         private void convertDod(SkladDataFile file) {
-            var statID = S4_IDs.GetStatID("CZ");
+            var statID = S0_IDs.GetStatID("CZ");
 
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
@@ -169,23 +170,23 @@ namespace S4DataObjs {
                 firma.SeznamSpojeni = new S5DataFirmaSeznamSpojeni() {
                     Spojeni = new S5DataFirmaSeznamSpojeniSpojeni[] {
                         !d["Telefon"].IsEmpty() ? new S5DataFirmaSeznamSpojeniSpojeni() {
-                            TypSpojeni_ID = S4_IDs.GetTypSpojeniID("Tel"),
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Tel"),
                             SpojeniCislo = d["Telefon"].GetText(),
                         } : null,
                         emails[0] != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
-                            TypSpojeni_ID = S4_IDs.GetTypSpojeniID("E-mail"),
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mail"),
                             SpojeniCislo = emails[0],
                         } : null,
                         emails[1] != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
-                            TypSpojeni_ID = S4_IDs.GetTypSpojeniID("E-mail"),
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mail"),
                             SpojeniCislo = emails[1],
                         } : null,
                         emailsOZ[0] != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
-                            TypSpojeni_ID = S4_IDs.GetTypSpojeniID("E-mail"),
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mail"),
                             SpojeniCislo = emailsOZ[0],
                         } : null,
                         emailsOZ[1] != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
-                            TypSpojeni_ID = S4_IDs.GetTypSpojeniID("E-mail"),
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mail"),
                             SpojeniCislo = emailsOZ[1],
                         } : null
                     }
@@ -201,12 +202,12 @@ namespace S4DataObjs {
                             !d["Zastoupeny"].IsEmpty() ? new S5DataFirmaOsobySeznamOsobOsoba() {
                                 Nazev = d["Zastoupeny"].GetText(),
                                 Prijmeni = d["Zastoupeny"].GetText(),
-                                FunkceOsoby_ID = S4_IDs.GetFunkceOsobyID("JED")
+                                FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("JED")
                             } : null,
                             !d["ZastoupenyOZ"].IsEmpty() && d["Zastoupeny"].GetText() != d["ZastoupenyOZ"].GetText() ? new S5DataFirmaOsobySeznamOsobOsoba() {
                                 Nazev = d["ZastoupenyOZ"].GetText(),
                                 Prijmeni = d["ZastoupenyOZ"].GetText(),
-                                FunkceOsoby_ID = S4_IDs.GetFunkceOsobyID("OZ")
+                                FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("OZ")
                             } : null
                         }
                     }

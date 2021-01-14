@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="S5Data">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="DruhArtikluList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DruhArtiklu" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="Kod" type="string_10" />
+                    <xs:element name="Nazev" type="emptiable_string_50" minOccurs="0" />
+                    <xs:element name="Poznamka" type="emptiable_string_unbounded" minOccurs="0" />
+                  </xs:all>
+                  <xs:attribute name="ObjectName" fixed="DruhArtiklu" />
+                  <xs:attribute name="ObjectType" fixed="Object" />
+                  <xs:attribute name="ID" type="guid" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FunkceOsobyList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FunkceOsoby" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="Code" type="string_50" />
+                    <xs:element name="Name" type="emptiable_string_50" minOccurs="0" />
+                    <xs:element name="Note" type="emptiable_string_unbounded" minOccurs="0" />
+                  </xs:all>
+                  <xs:attribute name="ObjectName" fixed="FunkceOsoby" />
+                  <xs:attribute name="ObjectType" fixed="Object" />
+                  <xs:attribute name="ID" type="guid" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="JednotkaList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Jednotka" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="Group" type="group" minOccurs="0" />
+                    <xs:element name="DesMisto" type="emptiable_integer" minOccurs="0" />
+                    <xs:element name="Kod" type="string_10" />
+                    <xs:element name="Nazev" type="emptiable_string_50" minOccurs="0" />
+                    <xs:element name="Poznamka" type="emptiable_string_unbounded" minOccurs="0" />
+                    <xs:element name="TypJednotky" type="enum_TypJednotky" minOccurs="0" />
+                  </xs:all>
+                  <xs:attribute name="ObjectName" fixed="Jednotka" />
+                  <xs:attribute name="ObjectType" fixed="Object" />
+                  <xs:attribute name="ID" type="guid" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProduktovyKlicList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProduktovyKlic" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="Group" type="group" minOccurs="0" />
+                    <xs:element name="Kod" type="string_10" />
+                    <xs:element name="Nazev" type="emptiable_string_50" minOccurs="0" />
+                    <xs:element name="Poznamka" type="emptiable_string_unbounded" minOccurs="0" />
+                  </xs:all>
+                  <xs:attribute name="ObjectName" fixed="ProduktovyKlic" />
+                  <xs:attribute name="ObjectType" fixed="Object" />
+                  <xs:attribute name="ID" type="guid" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TypSpojeniList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TypSpojeni" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="DruhSpojeni" type="enum_DruhSpojeni" minOccurs="0" />
+                    <xs:element name="IsUser" type="emptiable_bool" minOccurs="0" />
+                    <xs:element name="Kod" type="string_10" />
+                    <xs:element name="Nazev" type="emptiable_string_50" minOccurs="0" />
+                    <xs:element name="Poznamka" type="emptiable_string_unbounded" minOccurs="0" />
+                  </xs:all>
+                  <xs:attribute name="ObjectName" fixed="TypSpojeni" />
+                  <xs:attribute name="ObjectType" fixed="Object" />
+                  <xs:attribute name="ID" type="guid" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ZpusobPlatbyList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ZpusobPlatby" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="EETEvidovatTrzbu" type="emptiable_bool" minOccurs="0" />
+                    <xs:element name="EkasaEvidovatTrzbu" type="emptiable_bool" minOccurs="0" />
+                    <xs:element name="Kod" type="string_10" />
+                    <xs:element name="Nazev" type="emptiable_string_50" minOccurs="0" />
+                    <xs:element name="Poznamka" type="emptiable_string_unbounded" minOccurs="0" />
+                  </xs:all>
+                  <xs:attribute name="ObjectName" fixed="ZpusobPlatby" />
+                  <xs:attribute name="ObjectType" fixed="Object" />
+                  <xs:attribute name="ID" type="guid" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="bool">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="True" />
+      <xs:enumeration value="False" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_bool">
+    <xs:union memberTypes="bool empty" />
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_integer">
+    <xs:union memberTypes="xs:integer empty" />
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_string_50">
+    <xs:union memberTypes="string_50 empty" />
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_string_unbounded">
+    <xs:union memberTypes="string_unbounded empty" />
+  </xs:simpleType>
+  <xs:simpleType name="empty">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="enum_DruhSpojeni">
+    <xs:simpleContent>
+      <xs:extension base="enum_DruhSpojeni_value">
+        <xs:attribute name="EnumValueName">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Telefon" />
+              <xs:enumeration value="Fax" />
+              <xs:enumeration value="Email" />
+              <xs:enumeration value="WWW" />
+              <xs:enumeration value="DatovaSchranka" />
+              <xs:enumeration value="Ostatni" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="enum_DruhSpojeni_value">
+    <xs:restriction base="xs:integer">
+      <xs:enumeration value="0" />
+      <xs:enumeration value="1" />
+      <xs:enumeration value="2" />
+      <xs:enumeration value="3" />
+      <xs:enumeration value="4" />
+      <xs:enumeration value="5" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="enum_TypJednotky">
+    <xs:simpleContent>
+      <xs:extension base="enum_TypJednotky_value">
+        <xs:attribute name="EnumValueName">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Nespecifikovano" />
+              <xs:enumeration value="JednotkaCasu" />
+              <xs:enumeration value="Mena" />
+              <xs:enumeration value="FyziJednotka" />
+              <xs:enumeration value="LogiJednotka" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="enum_TypJednotky_value">
+    <xs:restriction base="xs:integer">
+      <xs:enumeration value="0" />
+      <xs:enumeration value="1" />
+      <xs:enumeration value="2" />
+      <xs:enumeration value="3" />
+      <xs:enumeration value="4" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="group">
+    <xs:attribute name="ID" type="guid" use="required" />
+    <xs:attribute name="Kod" type="string_20" />
+  </xs:complexType>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-f0-9]{8}(-[a-f0-9]{4}){3}-[a-f0-9]{12}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_10">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="10" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_20">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="20" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_50">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="50" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_unbounded">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

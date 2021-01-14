@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-using SA_Katalog;
+using S3_Katalog;
 using SkladData;
 
-namespace S4DataObjs {
-    class S4A_Katalog : S4_Generic<S5Data> {
+namespace SDataObjs {
+    class S3_Katalog : S0_Generic<S5Data> {
         private List<S5DataArtikl> _artikly = new List<S5DataArtikl>();
 
         private List<S5DataKategorieArtiklu> _kategorie = new List<S5DataKategorieArtiklu>();
@@ -15,7 +15,7 @@ namespace S4DataObjs {
             return "ART0" + id;
         }
 
-        public S4A_Katalog(string dir, Encoding enc) {
+        public S3_Katalog(string dir, Encoding enc) {
             convertKod(new SkladDataFile(dir, SFile.KOD, enc));
             convertPodKod(new SkladDataFile(dir, SFile.PODKOD, enc));
             convertKarty(new SkladDataFile(dir, SFile.KARTY, enc));
@@ -34,7 +34,7 @@ namespace S4DataObjs {
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
                 kategorie = d["KodZbozi"].GetNum();
-                kategorieID = S4_IDs.GetKategorieArtikluID(kategorie);
+                kategorieID = S0_IDs.GetKategorieArtikluID(kategorie);
                 if (kategorieID == null) kategorieID = Guid.NewGuid().ToString();
 
                 var cat = new S5DataKategorieArtiklu() {
@@ -53,7 +53,7 @@ namespace S4DataObjs {
                 var d = obj.Items;
 
                 podkategorie = d["KodZbozi"].GetNum() + d["PodKodZbozi"].GetNum();
-                podkategorieID = S4_IDs.GetKategorieArtikluID(podkategorie);
+                podkategorieID = S0_IDs.GetKategorieArtikluID(podkategorie);
                 if (podkategorieID == null) podkategorieID = Guid.NewGuid().ToString();
 
                 var cat = new S5DataKategorieArtiklu() {
@@ -79,15 +79,16 @@ namespace S4DataObjs {
                 };
 
                 var mernaJednotka = SkladDataItem.RemoveDiacritics(d["MernaJednotka"].GetNoSpaces().ToLower());
-                var jednotkaID = S4_IDs.GetJednotkaID(mernaJednotka);
+                var jednotkaID = S0_IDs.GetJednotkaID(mernaJednotka);
 
                 var artikl = new S5DataArtikl() {
                     Kod = GetID(d["CisloKarty"].GetNum()),
-                    Nazev = d["NazevZbozi"].GetText(),
-                    Poznamka = d["NazevZbozi2"].GetText() + obj.ToString(),
+                    Nazev = d["NazevZbozi"].GetText() + " " + d["NazevZbozi2"].GetText(),
+                    // Poznamka = obj.ToString(),
+                    Poznamka = "",
                     Group = new group() { Kod = "ART" },
                     PosledniCena = d["NakupCena"].GetDecimal(),
-                    DruhArtiklu_ID = S4_IDs.GetDruhZboziID("ZBO"),
+                    DruhArtiklu_ID = S0_IDs.GetDruhZboziID("ZBO"),
                     PLU = d["Pozice"].GetAlfaNum().ToUpper(), 
                     SazbyDPH = new S5DataArtiklSazbyDPH() {
                         ArtiklDPH = new S5DataArtiklSazbyDPHArtiklDPH[] {
@@ -116,7 +117,7 @@ namespace S4DataObjs {
                                     d["VFol"].GetNum() != "0" ? new S5DataArtiklJednotkySeznamJednotekArtiklJednotka() {
                                         Mnozstvi = "1",
                                         VychoziMnozstvi = d["VFol"].GetNum(),
-                                        Jednotka_ID = S4_IDs.GetJednotkaID("fol"),
+                                        Jednotka_ID = S0_IDs.GetJednotkaID("fol"),
                                         Kod = "fol",
                                         ParentJednotka = new S5DataArtiklJednotkySeznamJednotekArtiklJednotkaParentJednotka() {
                                             Jednotka_ID = jednotkaID
@@ -125,7 +126,7 @@ namespace S4DataObjs {
                                     d["VKart"].GetNum() != "0" ? new S5DataArtiklJednotkySeznamJednotekArtiklJednotka() {
                                         Mnozstvi = "1",
                                         VychoziMnozstvi = d["VKart"].GetNum(),
-                                        Jednotka_ID = S4_IDs.GetJednotkaID("kar"),
+                                        Jednotka_ID = S0_IDs.GetJednotkaID("kar"),
                                         Kod = "kar",
                                         ParentJednotka = new S5DataArtiklJednotkySeznamJednotekArtiklJednotkaParentJednotka() {
                                             Jednotka_ID = jednotkaID
@@ -135,7 +136,7 @@ namespace S4DataObjs {
                                         Mnozstvi = "1",
                                         VychoziMnozstvi = d["VPal"].GetNum(),
                                         Kod = "pal",
-                                        Jednotka_ID = S4_IDs.GetJednotkaID("pal"),
+                                        Jednotka_ID = S0_IDs.GetJednotkaID("pal"),
                                         ParentJednotka = new S5DataArtiklJednotkySeznamJednotekArtiklJednotkaParentJednotka() {
                                             Jednotka_ID = jednotkaID
                                         }
@@ -146,7 +147,7 @@ namespace S4DataObjs {
                 }
 
                 var priznak = d["Priznak"].GetNoSpaces().ToUpper();
-                var priznakID = S4_IDs.GetProduktovyKlicID(priznak);
+                var priznakID = S0_IDs.GetProduktovyKlicID(priznak);
 
                 if(priznak != "P") {
                     artikl.ProduktoveKlice = priznakID != null ? new S5DataArtiklProduktoveKlice() {
@@ -179,9 +180,9 @@ namespace S4DataObjs {
                                     },
                                     PosledniCena = d["NakupCena"].GetDecimal(),
                                     Firma = new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatelFirma() {
-                                        Kod = S4A_Adresar.GetDodID(d["CisloDodavatele"].GetNum())
+                                        Kod = S3_Adresar.GetDodID(d["CisloDodavatele"].GetNum())
                                     },
-                                    Firma_ID = S4A_Adresar.GetDodID(d["CisloDodavatele"].GetNum())
+                                    Firma_ID = S3_Adresar.GetDodID(d["CisloDodavatele"].GetNum())
                                 }
                             }
                     }
