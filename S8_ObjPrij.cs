@@ -11,15 +11,16 @@ namespace SDataObjs {
 
         private List<S5DataObjednavkaPrijata> _objednavky = new List<S5DataObjednavkaPrijata>();
 
-        public static string GetID(string id) {
-            return "OBJ" + id;
+        public new static string GetID(string id) {
+            return "OP" + id;
+        }
+
+        public new static string GetNazev(string id) {
+            return "Zakázka " + id;
         }
 
         public S8_ObjPrij(string dir, Encoding enc) {
-            convert(
-                new SkladDataFile(dir, SFile.CPOHYBZ, enc),
-                new SkladDataFile(dir, SFile.POHYBZ, enc)
-            );
+            convertZ(new SkladDataFile(dir, SFile.CPOHYBZ, enc), new SkladDataFile(dir, SFile.POHYBZ, enc));
         }
 
         public override S5Data GetS5Data() {
@@ -28,21 +29,25 @@ namespace SDataObjs {
             };
         }
 
-        private void convert(SkladDataFile headers, SkladDataFile rows) {
+        private void convertZ(SkladDataFile headers, SkladDataFile rows) {
             string id = "";
             foreach (var header in headers.Data) {
                 var data = header.Items;
                 var doc = new S5DataObjednavkaPrijata();
-                id = GetID(data["CisloVydejky"].GetNum());
-                doc.Nazev = "Objednávka přij. č." + data["CisloVydejky"].GetNum();
-                doc.Jmeno = id;
+                doc.Jmeno = doc.CisloDokladu = id = GetID(data["CisloVydejky"].GetNum());
+                doc.Nazev = GetNazev(data["CisloVydejky"].GetNum());
                 doc.Group = new group() { Kod = "IMPORT" };
-                doc.DatumSchvaleni = doc.DatumVystaveni = data["DatumVydeje"].GetDate();
-                doc.DatumSchvaleniSpecified = doc.DatumVystaveniSpecified = true;
-                doc.Poznamka = data["Upozorneni"].GetText() + Environment.NewLine + Environment.NewLine + header.ToString();
-                string firmaID = S0_IDs.GetFirmaID(S3_Adresar.GetDodID(header.Items["CisloOdberatele"].GetNum()));
-                doc.Firma_ID = doc.FakturacniAdresaFirma_ID = doc.PrijemceFaktury_ID = firmaID;
-                doc.ZapornyPohyb = "False";
+                doc.PlatnostOd = doc.DatumSchvaleni = doc.DatumVystaveni = data["DatumVydeje"].GetDate();
+                doc.PlatnostDo = data["DatumVydeje"].GetDate().AddDays(20);
+                doc.PlatnostDoSpecified = doc.PlatnostOdSpecified = doc.DatumSchvaleniSpecified = doc.DatumVystaveniSpecified = true;
+                doc.Poznamka = data["Upozorneni"].GetText() + Env.XMLNewLine + Env.XMLNewLine + header.ToString();
+                doc.Firma_ID = doc.FakturacniAdresaFirma_ID = doc.PrijemceFaktury_ID = S0_IDs.GetFirmaID(S3_Adresar.GetDodID(header.Items["CisloOdberatele"].GetNum()));
+                doc.ProcentniZisk = header.GetProcentniZisk();     
+                if(data["CisloFaktury"].GetNum() == "") {
+                    doc.DatumVyrizeni = data["DatumVydeje"].GetDate();
+                    doc.DatumVyrizeniSpecified = true;
+                    doc.Vyrizeno = "True";
+                }
                 doc.Polozky = new S5DataObjednavkaPrijataPolozky();
                 _objednavky.Add(doc);
             }
@@ -52,7 +57,8 @@ namespace SDataObjs {
             List<S5DataObjednavkaPrijataPolozkyPolozkaObjednavkyPrijate> polozky = null;
             foreach (var row in rows.Data) {
                 var data = row.Items;
-                katalog = id = GetID(data["CisloVydejky"].GetNum());
+                id = GetID(data["CisloVydejky"].GetNum());
+                katalog = S3_Katalog.GetID(data["CisloKarty"].GetNum());
 
                 if (prevId != id) {
                     if (prevId != "") {
@@ -72,8 +78,10 @@ namespace SDataObjs {
                 pol.CisloPolozky = (++cisloPolozky).ToString();
                 pol.Mnozstvi = data["Vydano"].GetNum();
                 pol.Nazev = data["NazevZbozi"].GetText();
-                pol.JednCena = data["NakupCena"].GetDecimal();
+                pol.JednCena = data["ProdCena"].GetDecimal();
                 pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };
+                pol.SazbaDPH_ID = S0_IDs.GetSazbaDPHID(data["SazbaD"].GetNum());
+                pol.Vyrizeno = "True";
                 pol.ObsahPolozky = new S5DataObjednavkaPrijataPolozkyPolozkaObjednavkyPrijateObsahPolozky() {
                     Artikl_ID = artiklID,
                     Sklad_ID = skladID,

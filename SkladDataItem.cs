@@ -61,7 +61,9 @@ namespace SkladData {
         }
 
         public DateTime GetDate() {
-            return DateTime.UnixEpoch.AddDays(double.Parse(value) - 719163);
+            double val = double.Parse(value);
+            if(val <= 719163) return new DateTime(); 
+            return DateTime.UnixEpoch.AddDays(val - 719163);
         }
 
         public float GetFloat() {

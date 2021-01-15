@@ -29,6 +29,18 @@ namespace SkladData {
                 _items["Dic1"].GetAlfaNum() + _items["Dic2"].GetAlfaNum() : null;
         }
 
+        public string GetCelkem() {
+            float celkem = _items["Celkem0"].GetFloat() + _items["Celkem5"].GetFloat() + _items["Celkem23"].GetFloat();
+            return celkem.ToString().Replace(".", ",");
+        }
+
+        public string GetProcentniZisk() {
+            float celkem = _items["Celkem0"].GetFloat() + _items["Celkem5"].GetFloat() + _items["Celkem23"].GetFloat();
+            float ziskZaDoklad = _items["Zisk"].GetFloat();
+            float procentniZisk = 100/celkem*ziskZaDoklad;
+            return procentniZisk.ToString().Replace(".", ",");
+        }
+
         public string[] ParseEmails(string key) {
             var input = _items[key].GetNoSpaces();
             var split = input.Replace(",", ";").Split(";");

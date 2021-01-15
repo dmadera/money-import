@@ -1,3 +1,9 @@
+Nastavení číselných řada
+    PROD_VYD, prefix: PV
+    PROD_PRI, prefix: PP
+    POKL_PRI, prefix: HP
+    POKL_VYD, prefix: HV
+
 Nastavení skupin seznamů
 1. Vytvořit skupiny objektu Jednotka
     Kód: _, Název: logistické
@@ -10,11 +16,12 @@ Nastavení skupin seznamů
     Kód: Nezařazené, Není určena pro ukládání záznamů: true
     Kód: ART, Název: Artikly, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu
 
-4. Vytvořit skupiny objektu Příjemky a výdejky
+4. Vytvořit skupiny objektu Prodejky vydané
     Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: true
 
 5. Vytvořit skupiny objektu Nabídky vydané
     Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: true
+    Kód: Nezařazeno, Nastavit dobu platnosti: 20
 
 6. Vytvořit skupiny objektu Objednávky přijaté
     Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: true
@@ -24,6 +31,9 @@ Nastavení skupin seznamů
 
 8. Vytvořit skupiny objektu Faktury vydené
     Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: false, Zaokrouhlení celkové částky: 0,01 Matematicky
+
+9. Vytvořit skupiny objektu Dodací listy přijaté
+    Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: true
 
 Založení nového skladu
     Kód: HL, Název: Hlavní

@@ -2,3 +2,5 @@ Tvorba výdeje
     - vše tvořit nejdříve z objednávky
     -  
 
+
+awk 'BEGIN { FS = "\$;" } ; { print $24 }' ./z-assets/input/complete/CPOHYBV.TXT |  sort | uniq

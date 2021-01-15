@@ -2,6 +2,10 @@ using System.IO;
 using System.Xml.Serialization;
 
 namespace SDataObjs {
+    static class Env {
+        public static string XMLNewLine = "&#13;";
+    }
+
     abstract class S0_Generic<T> {
         public abstract T GetS5Data();
 
@@ -10,6 +14,14 @@ namespace SDataObjs {
             using (var stream = new StreamWriter(output)) {
                 serializer.Serialize(stream, GetS5Data());
             }
+        }
+
+        public static string GetID(string id) {
+            return id;
+        }
+
+        public static string GetNazev(string id) {
+            return "Nespecifikovaný doklad č. " + id;
         }
     }
 }

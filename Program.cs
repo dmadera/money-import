@@ -95,6 +95,16 @@ namespace MainProgram {
                 Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
                 SDataObjs.S7_Faktury faktury = new SDataObjs.S7_Faktury(inputDir, enc);
                 faktury.serialize(outputFile);
+
+                outputFile = Path.Combine(outputDir, typeof(SDataObjs.S7_Prodej).Name + ".xml");
+                Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
+                SDataObjs.S7_Prodej prodejky = new SDataObjs.S7_Prodej(inputDir, enc);
+                prodejky.serialize(outputFile);
+
+                outputFile = Path.Combine(outputDir, typeof(SDataObjs.S7_DlPrij).Name + ".xml");
+                Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
+                SDataObjs.S7_DlPrij dlprij = new SDataObjs.S7_DlPrij(inputDir, enc);
+                dlprij.serialize(outputFile);
             }
 
             return 0;

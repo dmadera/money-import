@@ -11,8 +11,11 @@ namespace SDataObjs {
 
         private List<S5DataObjednavkaVydana> _objednavky = new List<S5DataObjednavkaVydana>();
 
-        public static string GetID(string id) {
-            return "OBJ" + id;
+        public new static string GetID(string id) {
+            return "OV" + id;
+        }
+        public new static string GetNazev(string id) {
+            return "Objednávka vydaná " + id;
         }
 
         public S8_ObjVyd(string dir, Encoding enc) {
@@ -33,10 +36,8 @@ namespace SDataObjs {
             foreach (var header in headers.Data) {
                 var data = header.Items;
                 var doc = new S5DataObjednavkaVydana();
-                id = GetID(data["CisloVydejky"].GetNum());
-                doc.Nazev = "Objednávka vyd. č." + data["CisloVydejky"].GetNum();
-                doc.Jmeno = id;
-                doc.Group = new group() { Kod = "IMPORT" };
+                doc.Jmeno = id = GetID(data["CisloVydejky"].GetNum());
+                doc.Nazev = GetNazev(data["CisloVydejky"].GetNum());
                 doc.DatumSchvaleni = doc.DatumVystaveni = data["DatumVydeje"].GetDate();
                 doc.DatumSchvaleniSpecified = doc.DatumVystaveniSpecified = true;
                 doc.Poznamka = data["Upozorneni"].GetText() + Environment.NewLine + Environment.NewLine + header.ToString();
@@ -74,6 +75,8 @@ namespace SDataObjs {
                 pol.Nazev = data["NazevZbozi"].GetText();
                 pol.JednCena = data["NakupCena"].GetDecimal();
                 pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };
+                pol.SazbaDPH_ID = S0_IDs.GetSazbaDPHID(data["SazbaD"].GetNum());
+                pol.Vyrizeno = "True";
                 pol.ObsahPolozky = new S5DataObjednavkaVydanaPolozkyPolozkaObjednavkyVydaneObsahPolozky() {
                     Artikl_ID = artiklID,
                     Sklad_ID = skladID,

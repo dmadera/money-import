@@ -11,8 +11,12 @@ namespace SDataObjs {
 
         private List<S5DataKategorieArtiklu> _kategorie = new List<S5DataKategorieArtiklu>();
 
-        public static string GetID(string id) {
+        public new static string GetID(string id) {
             return "ART0" + id;
+        }
+
+        public new static string GetNazev(string id) {
+            return "Skladová karta " + id;
         }
 
         public S3_Katalog(string dir, Encoding enc) {

@@ -11,8 +11,11 @@ namespace SDataObjs {
 
         private List<S5DataNabidkaVydana> _nabidky = new List<S5DataNabidkaVydana>();
 
-        public static string GetID(string id) {
-            return "NAB" + id;
+        public new static string GetID(string id) {
+            return "S_NV" + id;
+        }
+        public new static string GetNazev(string id) {
+            return "Nabídka ze SKLADU" + id;
         }
 
         public S8_Nabidky(string dir, Encoding enc) {
@@ -34,17 +37,14 @@ namespace SDataObjs {
             foreach (var header in headers.Data) {
                 var data = header.Items;
                 var doc = new S5DataNabidkaVydana();
-                id = GetID(data["CisloVydejky"].GetNum());
-                doc.Nazev = "Nabídka č." + data["CisloVydejky"].GetNum();
-                doc.Jmeno = id;
-                doc.Group = new group() { Kod = "IMPORT" };
+                doc.CisloDokladu = id = GetID(data["CisloVydejky"].GetNum());
+                doc.Nazev = GetNazev(data["CisloVydejky"].GetNum());
                 doc.PlatnostOd = doc.DatumVystaveni = doc.DatumSchvaleni = data["DatumVydeje"].GetDate();
-                doc.PlatnostDo = data["DatumVydeje"].GetDate().AddDays(30);
-                doc.PlatnostOdSpecified = doc.PlatnostDoSpecified = doc.DatumVystaveniSpecified = doc.DatumSchvaleniSpecified = true;
+                doc.DatumVyrizeni = doc.PlatnostDo = data["DatumVydeje"].GetDate().AddDays(30);
+                doc.DatumVyrizeniSpecified = doc.PlatnostOdSpecified = doc.PlatnostDoSpecified = doc.DatumVystaveniSpecified = doc.DatumSchvaleniSpecified = true;
                 doc.Poznamka = data["Upozorneni"].GetText() + Environment.NewLine + Environment.NewLine + header.ToString();
-                doc.ZapornyPohyb = "False";
                 doc.Polozky = new S5DataNabidkaVydanaPolozky();
-                doc.ZiskZaDoklad = data["Zisk"].GetDecimal();
+                doc.ProcentniZisk = header.GetProcentniZisk();
                 firmaID = S0_IDs.GetFirmaID(S3_Adresar.GetOdbID(header.Items["CisloOdberatele"].GetNum()));
                 doc.Firma_ID = doc.FakturacniAdresaFirma_ID = doc.PrijemceFaktury_ID = firmaID;
                 doc.Vyrizeno = "True";
@@ -56,7 +56,8 @@ namespace SDataObjs {
             var polozky = new List<S5DataNabidkaVydanaPolozkyPolozkaNabidkyVydane>();
             foreach (var row in rows.Data) {
                 var data = row.Items;
-                katalog = id = GetID(data["CisloVydejky"].GetNum());
+                id = GetID(data["CisloVydejky"].GetNum());
+                katalog = S3_Katalog.GetID(data["CisloKarty"].GetNum());
 
                 if (prevId != id) {
                     if (prevId != "") {
@@ -77,21 +78,22 @@ namespace SDataObjs {
                 pol.Mnozstvi = data["Vydano"].GetNum();
                 pol.Nazev = data["NazevZbozi"].GetText();
                 pol.JednCena = data["ProdCena"].GetDecimal();
-                pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };
-                pol.DPH = new S5DataNabidkaVydanaPolozkyPolozkaNabidkyVydaneDPH() { Sazba = data["SazbaD"].GetNum() };
+                pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };    
+                pol.SazbaDPH_ID = S0_IDs.GetSazbaDPHID(data["SazbaD"].GetNum());
+                pol.PriznakVyrizeno = "True";
+                // pol.Vyrizeno = "True";
                 pol.ObsahPolozky = new S5DataNabidkaVydanaPolozkyPolozkaNabidkyVydaneObsahPolozky() {
                     Artikl_ID = artiklID,
                     Sklad_ID = skladID,
                 };
                 polozky.Add(pol);
             }
-
             addRows(polozky, id);
         }
 
         private void addRows(List<S5DataNabidkaVydanaPolozkyPolozkaNabidkyVydane> items, string id) {
             var found = _nabidky.Find(delegate (S5DataNabidkaVydana doc) {
-                return doc.Jmeno == id;
+                return doc.CisloDokladu == id;
             });
             if (found == null) {
                 throw new ArgumentException(string.Format("Nebyla nalezena hlavička k dokladu {0} v {1}.", id, this.GetType().Name));
