@@ -54,7 +54,6 @@ namespace MainProgram {
 
             string outputFile;
 
-
             outputFile = Path.Combine(outputDir, typeof(SDataObjs.S3_Adresar).Name + ".xml");
             Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
             SDataObjs.S3_Adresar adresar = new SDataObjs.S3_Adresar(inputDir, enc);
@@ -71,40 +70,10 @@ namespace MainProgram {
                 SDataObjs.S6_Ceny ceny = new SDataObjs.S6_Ceny(inputDir, enc);
                 ceny.serialize(outputFile);
 
-                outputFile = Path.Combine(outputDir, typeof(SDataObjs.S8_ObjVyd).Name + ".xml");
-                Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
-                SDataObjs.S8_ObjVyd objednavky = new SDataObjs.S8_ObjVyd(inputDir, enc);
-                objednavky.serialize(outputFile);
-
-                outputFile = Path.Combine(outputDir, typeof(SDataObjs.S8_ObjPrij).Name + ".xml");
-                Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
-                SDataObjs.S8_ObjPrij objednavky1 = new SDataObjs.S8_ObjPrij(inputDir, enc);
-                objednavky1.serialize(outputFile);
-
-                outputFile = Path.Combine(outputDir, typeof(SDataObjs.S8_Nabidky).Name + ".xml");
-                Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
-                SDataObjs.S8_Nabidky nabidky = new SDataObjs.S8_Nabidky(inputDir, enc);
-                nabidky.serialize(outputFile);
-
                 outputFile = Path.Combine(outputDir, typeof(SDataObjs.S6_SklDokl).Name + ".xml");
                 Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
                 SDataObjs.S6_SklDokl docs = new SDataObjs.S6_SklDokl(inputDir, enc);
                 docs.serialize(outputFile);
-
-                outputFile = Path.Combine(outputDir, typeof(SDataObjs.S7_Faktury).Name + ".xml");
-                Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
-                SDataObjs.S7_Faktury faktury = new SDataObjs.S7_Faktury(inputDir, enc);
-                faktury.serialize(outputFile);
-
-                outputFile = Path.Combine(outputDir, typeof(SDataObjs.S7_Prodej).Name + ".xml");
-                Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
-                SDataObjs.S7_Prodej prodejky = new SDataObjs.S7_Prodej(inputDir, enc);
-                prodejky.serialize(outputFile);
-
-                outputFile = Path.Combine(outputDir, typeof(SDataObjs.S7_DlPrij).Name + ".xml");
-                Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
-                SDataObjs.S7_DlPrij dlprij = new SDataObjs.S7_DlPrij(inputDir, enc);
-                dlprij.serialize(outputFile);
             }
 
             return 0;

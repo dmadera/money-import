@@ -11,11 +11,11 @@ namespace SDataObjs {
 
         private List<S5DataKategorieArtiklu> _kategorie = new List<S5DataKategorieArtiklu>();
 
-        public new static string GetID(string id) {
+        public static string GetID(string id) {
             return "ART0" + id;
         }
 
-        public new static string GetNazev(string id) {
+        public static string GetNazev(string id) {
             return "Skladová karta " + id;
         }
 

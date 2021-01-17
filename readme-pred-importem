@@ -16,25 +16,6 @@ Nastavení skupin seznamů
     Kód: Nezařazené, Není určena pro ukládání záznamů: true
     Kód: ART, Název: Artikly, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu
 
-4. Vytvořit skupiny objektu Prodejky vydané
-    Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: true
-
-5. Vytvořit skupiny objektu Nabídky vydané
-    Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: true
-    Kód: Nezařazeno, Nastavit dobu platnosti: 20
-
-6. Vytvořit skupiny objektu Objednávky přijaté
-    Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: true
-
-7. Vytvořit skupiny objektu Objednávky vydané
-    Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: true
-
-8. Vytvořit skupiny objektu Faktury vydené
-    Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: false, Zaokrouhlení celkové částky: 0,01 Matematicky
-
-9. Vytvořit skupiny objektu Dodací listy přijaté
-    Kód: IMPORT, Název: Importované, Převzít nastavení z nadřazené úrovně: true
-
 Založení nového skladu
     Kód: HL, Název: Hlavní
     Výdej do mínusu: Nekontrolovat (pro import)
@@ -69,7 +50,7 @@ Průvodce nastavení programu
     Sklady/Zobrazit kartu skladové zásoby: false
     Sklady/Metoda vedení skladů: Metoda B
 
-Doplnění informace o firmě
+Doplnění informace o firmě jednotky
     tel, gsm, email, www, vybrat hlavní kontakt, bankovní spojení
 
 Ostatní

@@ -15,11 +15,11 @@ namespace SDataObjs {
         private List<S5DataZasoba> _zasoby = new List<S5DataZasoba>();
         private List<S5DataFirma> _firmy = new List<S5DataFirma>();
 
-        public new static string GetID(string id) {
+        public static string GetID(string id) {
             return "CENY" + id;
         }
 
-        public new static string GetNazev(string id) {
+        public static string GetNazev(string id) {
             return "Ceník " + id;
         }
 

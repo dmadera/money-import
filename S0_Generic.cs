@@ -15,13 +15,5 @@ namespace SDataObjs {
                 serializer.Serialize(stream, GetS5Data());
             }
         }
-
-        public static string GetID(string id) {
-            return id;
-        }
-
-        public static string GetNazev(string id) {
-            return "Nespecifikovaný doklad č. " + id;
-        }
     }
 }
