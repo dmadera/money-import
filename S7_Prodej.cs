@@ -9,7 +9,7 @@ using SkladData;
 namespace SDataObjs {
      class S7_Prodej : S0_Generic<S5Data> {
         public new static string GetID(string id) {
-            return "S_PV" + id;
+            return "sPR" + id;
         }
         public new static string GetNazev(string id) {
             return "Prodejka ze SKLADU " + id;

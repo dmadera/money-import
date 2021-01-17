@@ -12,14 +12,14 @@ namespace SDataObjs {
         private List<S5DataObjednavkaPrijata> _objednavky = new List<S5DataObjednavkaPrijata>();
 
         public new static string GetID(string id) {
-            return "S_OPZ" + id;
+            return "sZA" + id;
         }
 
         public static string GetID(string id, SFile f) {
             switch(f) {
-                case SFile.CPOHYBV: return "S_OPF" + id;
-                case SFile.CPOHYBVP: return "S_OPP" + id;
-                case SFile.CPOHYBOV: return "S_OPO" + id;     
+                case SFile.CPOHYBV: return "sFA" + id;
+                case SFile.CPOHYBVP: return "sPR" + id;
+                case SFile.CPOHYBOV: return "sOB" + id;     
             }
             return GetID(id);
         }

@@ -12,7 +12,7 @@ namespace SDataObjs {
         private List<S5DataObjednavkaVydana> _objednavky = new List<S5DataObjednavkaVydana>();
 
         public new static string GetID(string id) {
-            return "OV" + id;
+            return "sOB" + id;
         }
         public new static string GetNazev(string id) {
             return "Objednávka vydaná " + id;

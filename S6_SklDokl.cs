@@ -22,10 +22,10 @@ namespace SDataObjs {
         }
 
         public new static string GetID(string id) {
-            return "S_SV" + id;
+            return "sOV" + id;
         }
         public new static string GetNazev(string id) {
-            return "Výdejka ze SKLADU " + id;
+            return "Ostatní výdejka ze SKLADU " + id;
         }      
 
         private void convertPohybV(SkladDataFile headers, SkladDataFile rows) {

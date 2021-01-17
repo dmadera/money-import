@@ -24,7 +24,7 @@ namespace SDataObjs {
         }
 
         public new static string GetID(string id) {
-            return "S_DP" + id;
+            return "sPR" + id;
         }
         public new static string GetNazev(string id) {
             return "Příjemka ze SKLADU " + id;

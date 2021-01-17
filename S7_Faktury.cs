@@ -9,7 +9,7 @@ using SkladData;
 namespace SDataObjs {
      class S7_Faktury : S0_Generic<S5Data> {
         public new static string GetID(string id) {
-            return "S_FV" + id;
+            return "sFA" + id;
         }
         public new static string GetNazev(string id) {
             return "Faktura ze SKLADU " + id;

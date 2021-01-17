@@ -1,4 +1,7 @@
 zalohuj zmeny v systemu
+kdyz neni cislo FA v zakazce, neni vyfakturovano, importovat jen nefakturovane, ostatní jsou ve FA
+
+
 
 zkontroluj přiřazené ceníky k firmám
 nahrát slevu
