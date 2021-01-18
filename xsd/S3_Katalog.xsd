@@ -20,7 +20,6 @@
                     <xs:element name="DodaciPodminkyOdeslani_ID" type="guid" />
                     <xs:element name="DodaciPodminkyPrijeti_ID" type="guid" />
                     <xs:element name="DoplnkovaJednotka_ID" type="emptiable_guid" minOccurs="0" />
-                    <xs:element name="Doprodej_UserData" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="DruhArtiklu_ID" type="guid" />
                     <xs:element name="DruhBaleni_ID" type="guid" />
                     <xs:element name="DruhDopravyOdeslani_ID" type="guid" />
@@ -45,9 +44,7 @@
                     <xs:element name="MnozstviVDoplnkove" type="emptiable_decimal_4" minOccurs="0" />
                     <xs:element name="NadrazenyArtikl_ID" type="emptiable_guid" minOccurs="0" />
                     <xs:element name="NakupniJednotka_ID" type="emptiable_guid" minOccurs="0" />
-                    <xs:element name="NaObjednavku_UserData" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="Nazev" type="emptiable_string_100" minOccurs="0" />
-                    <xs:element name="Nedostupne_UserData" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="NepodlehaDPH" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="NepodlehatSleveDokladu" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="NoveVygenerovanaVarianta" type="emptiable_bool" minOccurs="0" />
@@ -80,7 +77,6 @@
                     <xs:element name="PripojitParametryKObchJmenu" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="PripojitParametryKPopisu" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="PripojitParametryKVariante" type="emptiable_bool" minOccurs="0" />
-                    <xs:element name="PriznakZbozi_UserData" type="enum_PriznakZbozi_UserEnum" minOccurs="0" />
                     <xs:element name="ProdejniJednotka_ID" type="emptiable_guid" minOccurs="0" />
                     <xs:element name="PuvodemMajetek" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="RadaCarovyKod_ID" type="guid" />
@@ -90,6 +86,7 @@
                     <xs:element name="RadaPLU_ID" type="guid" />
                     <xs:element name="RETELA" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="Sirka_ID" type="guid" />
+                    <xs:element name="SkladovaPozice_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="SKP_ID" type="guid" />
                     <xs:element name="SmazatOstatniCinnosti" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="SmazatOstatniDodavatele" type="emptiable_bool" minOccurs="0" />
@@ -1707,30 +1704,6 @@
       <xs:enumeration value="0" />
       <xs:enumeration value="1" />
       <xs:enumeration value="2" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="enum_PriznakZbozi_UserEnum">
-    <xs:simpleContent>
-      <xs:extension base="enum_PriznakZbozi_UserEnum_value">
-        <xs:attribute name="EnumValueName">
-          <xs:simpleType>
-            <xs:restriction base="xs:string">
-              <xs:enumeration value="Akce" />
-              <xs:enumeration value="Sleva" />
-              <xs:enumeration value="Novinka" />
-              <xs:enumeration value="Prazdne" />
-            </xs:restriction>
-          </xs:simpleType>
-        </xs:attribute>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-  <xs:simpleType name="enum_PriznakZbozi_UserEnum_value">
-    <xs:restriction base="xs:integer">
-      <xs:enumeration value="0" />
-      <xs:enumeration value="1" />
-      <xs:enumeration value="2" />
-      <xs:enumeration value="3" />
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="enum_PuvodObalu">

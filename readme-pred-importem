@@ -22,10 +22,14 @@ Založení nového skladu
     Typ zdroje přebírání: Katalog, Skupina katalogu: Artikly (ART)
 
 Založení nového ceníku
-    Kód: ZAKL, Název: Základní
+    Kód: ZAKLADNI, Název: Základní
     Typ výchozí ceny: Nákupní, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -10%
     Typ zdroje přebírání: Katalog, Skupina katalogu: ART
     Nastavit jako výchozí: ANO
+    Poznamka: ZAKLADNI
+
+Založení nové pokladny
+    
 
 Nastavení uživatelských sloupců
 

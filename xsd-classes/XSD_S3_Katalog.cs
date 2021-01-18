@@ -82,8 +82,6 @@ namespace S3_Katalog {
         
         private string doplnkovaJednotka_IDField;
         
-        private string doprodej_UserDataField;
-        
         private string druhArtiklu_IDField;
         
         private string druhBaleni_IDField;
@@ -132,11 +130,7 @@ namespace S3_Katalog {
         
         private string nakupniJednotka_IDField;
         
-        private string naObjednavku_UserDataField;
-        
         private string nazevField;
-        
-        private string nedostupne_UserDataField;
         
         private string nepodlehaDPHField;
         
@@ -204,8 +198,6 @@ namespace S3_Katalog {
         
         private string pripojitParametryKVarianteField;
         
-        private enum_PriznakZbozi_UserEnum priznakZbozi_UserDataField;
-        
         private string prodejniJednotka_IDField;
         
         private string puvodemMajetekField;
@@ -223,6 +215,8 @@ namespace S3_Katalog {
         private string rETELAField;
         
         private string sirka_IDField;
+        
+        private string skladovaPozice_UserDataField;
         
         private string sKP_IDField;
         
@@ -506,17 +500,6 @@ namespace S3_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Doprodej_UserData {
-            get {
-                return this.doprodej_UserDataField;
-            }
-            set {
-                this.doprodej_UserDataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string DruhArtiklu_ID {
             get {
                 return this.druhArtiklu_IDField;
@@ -781,34 +764,12 @@ namespace S3_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string NaObjednavku_UserData {
-            get {
-                return this.naObjednavku_UserDataField;
-            }
-            set {
-                this.naObjednavku_UserDataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string Nazev {
             get {
                 return this.nazevField;
             }
             set {
                 this.nazevField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Nedostupne_UserData {
-            get {
-                return this.nedostupne_UserDataField;
-            }
-            set {
-                this.nedostupne_UserDataField = value;
             }
         }
         
@@ -1177,17 +1138,6 @@ namespace S3_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public enum_PriznakZbozi_UserEnum PriznakZbozi_UserData {
-            get {
-                return this.priznakZbozi_UserDataField;
-            }
-            set {
-                this.priznakZbozi_UserDataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string ProdejniJednotka_ID {
             get {
                 return this.prodejniJednotka_IDField;
@@ -1282,6 +1232,17 @@ namespace S3_Katalog {
             }
             set {
                 this.sirka_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string SkladovaPozice_UserData {
+            get {
+                return this.skladovaPozice_UserDataField;
+            }
+            set {
+                this.skladovaPozice_UserDataField = value;
             }
         }
         
@@ -3492,94 +3453,6 @@ namespace S3_Katalog {
         /// <remarks/>
         [System.Xml.Serialization.XmlEnumAttribute("6")]
         Item6,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class enum_PriznakZbozi_UserEnum {
-        
-        private enum_PriznakZbozi_UserEnumEnumValueName enumValueNameField;
-        
-        private bool enumValueNameFieldSpecified;
-        
-        private enum_PriznakZbozi_UserEnum_value valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public enum_PriznakZbozi_UserEnumEnumValueName EnumValueName {
-            get {
-                return this.enumValueNameField;
-            }
-            set {
-                this.enumValueNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool EnumValueNameSpecified {
-            get {
-                return this.enumValueNameFieldSpecified;
-            }
-            set {
-                this.enumValueNameFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public enum_PriznakZbozi_UserEnum_value Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public enum enum_PriznakZbozi_UserEnumEnumValueName {
-        
-        /// <remarks/>
-        Akce,
-        
-        /// <remarks/>
-        Sleva,
-        
-        /// <remarks/>
-        Novinka,
-        
-        /// <remarks/>
-        Prazdne,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    public enum enum_PriznakZbozi_UserEnum_value {
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("0")]
-        Item0,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("1")]
-        Item1,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("2")]
-        Item2,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("3")]
-        Item3,
     }
     
     /// <remarks/>

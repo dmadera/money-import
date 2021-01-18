@@ -2500,7 +2500,7 @@ namespace S6_Ceny {
         
         private group groupField;
         
-        private string kodField;
+        private string poznamkaField;
         
         private string objectNameField;
         
@@ -2526,12 +2526,12 @@ namespace S6_Ceny {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
+        public string Poznamka {
             get {
-                return this.kodField;
+                return this.poznamkaField;
             }
             set {
-                this.kodField = value;
+                this.poznamkaField = value;
             }
         }
         
@@ -7479,7 +7479,7 @@ namespace S6_Ceny {
         
         private group groupField;
         
-        private string kodField;
+        private string poznamkaField;
         
         private string objectNameField;
         
@@ -7505,12 +7505,12 @@ namespace S6_Ceny {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
+        public string Poznamka {
             get {
-                return this.kodField;
+                return this.poznamkaField;
             }
             set {
-                this.kodField = value;
+                this.poznamkaField = value;
             }
         }
         
@@ -14707,7 +14707,7 @@ namespace S6_Ceny {
         
         private group groupField;
         
-        private string kodField;
+        private string poznamkaField;
         
         private string objectNameField;
         
@@ -14733,12 +14733,12 @@ namespace S6_Ceny {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
+        public string Poznamka {
             get {
-                return this.kodField;
+                return this.poznamkaField;
             }
             set {
-                this.kodField = value;
+                this.poznamkaField = value;
             }
         }
         
@@ -15085,7 +15085,7 @@ namespace S6_Ceny {
         
         private group groupField;
         
-        private string kodField;
+        private string poznamkaField;
         
         private string objectNameField;
         
@@ -15111,12 +15111,12 @@ namespace S6_Ceny {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
+        public string Poznamka {
             get {
-                return this.kodField;
+                return this.poznamkaField;
             }
             set {
-                this.kodField = value;
+                this.poznamkaField = value;
             }
         }
         
@@ -15870,7 +15870,7 @@ namespace S6_Ceny {
         
         private group groupField;
         
-        private string kodField;
+        private string poznamkaField;
         
         private string objectNameField;
         
@@ -15896,12 +15896,12 @@ namespace S6_Ceny {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kod {
+        public string Poznamka {
             get {
-                return this.kodField;
+                return this.poznamkaField;
             }
             set {
-                this.kodField = value;
+                this.poznamkaField = value;
             }
         }
         

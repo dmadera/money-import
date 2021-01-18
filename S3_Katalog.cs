@@ -88,12 +88,10 @@ namespace SDataObjs {
                 var artikl = new S5DataArtikl() {
                     Kod = GetID(d["CisloKarty"].GetNum()),
                     Nazev = d["NazevZbozi"].GetText() + " " + d["NazevZbozi2"].GetText(),
-                    // Poznamka = obj.ToString(),
-                    Poznamka = "",
                     Group = new group() { Kod = "ART" },
                     PosledniCena = d["NakupCena"].GetDecimal(),
                     DruhArtiklu_ID = S0_IDs.GetDruhZboziID("ZBO"),
-                    PLU = d["Pozice"].GetAlfaNum().ToUpper(), 
+                    SkladovaPozice_UserData = d["Pozice"].GetAlfaNum().ToUpper(), 
                     SazbyDPH = new S5DataArtiklSazbyDPH() {
                         ArtiklDPH = new S5DataArtiklSazbyDPHArtiklDPH[] {
                             new S5DataArtiklSazbyDPHArtiklDPH() {

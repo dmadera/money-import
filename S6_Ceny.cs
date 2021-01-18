@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.Text.RegularExpressions;
 
 using S6_Ceny;
 using SkladData;
@@ -15,12 +16,10 @@ namespace SDataObjs {
         private List<S5DataZasoba> _zasoby = new List<S5DataZasoba>();
         private List<S5DataFirma> _firmy = new List<S5DataFirma>();
 
-        public static string GetID(string id) {
-            return "CENY" + id;
-        }
-
-        public static string GetNazev(string id) {
-            return "Ceník " + id;
+        public static string GetKod(string nazev) {
+            var alfanum = Regex.Replace(SkladDataItem.RemoveDiacritics(nazev), @"[^0-9a-zA-Z]+", "").ToUpper();
+            if(alfanum.Length > 8) return alfanum.Substring(0, 8);
+            return alfanum;
         }
 
         public S6_Ceny(string dir, Encoding enc) {
@@ -46,8 +45,8 @@ namespace SDataObjs {
             foreach (var karta in karty.Data) {
                 var d = karta.Items;
                 var k = new S5DataPolozkaCeniku();
-                k.Cenik = new S5DataPolozkaCenikuCenik() { Kod = "ZAKL" };
-                k.Nazev = k.Kod = "ZAKL_" + S3_Katalog.GetID(d["CisloKarty"].GetNum());
+                k.Cenik = new S5DataPolozkaCenikuCenik() { Poznamka = "ZAKLADNI" };
+                k.Kod = "0000" + d["CisloKarty"].GetNum();
                 k.Artikl_ID = S0_IDs.GetArtiklID(S3_Katalog.GetID(d["CisloKarty"].GetNum()));
                 k.Sklad_ID = skladID;
                 k.ZmenaVProcentech = "True";
@@ -69,10 +68,10 @@ namespace SDataObjs {
             foreach (var skupina in skupiny.Data) {
                 var data = skupina.Items;
                 var cenik = new S5DataCenik();
-                cenik.Kod = GetID(data["CisloSkup"].GetNum());
-                cenik.Nazev = data["NazevSkup"].GetText();
-                if (cenik.Nazev == "") cenik.Nazev = "Neznámý";
-                cenik.Poznamka = data["MinRabatC"].GetDecimal();
+                string cenikNazev = data["NazevSkup"].GetText() != "" ? data["NazevSkup"].GetText() : "Neznámý";
+                cenik.Kod = GetKod(cenikNazev);
+                cenik.Nazev = cenikNazev;
+                cenik.Poznamka = data["CisloSkup"].GetNum();
                 cenik.VychoziSklad_ID = skladID;
                 _ceniky.Add(cenik);
             }
@@ -92,7 +91,7 @@ namespace SDataObjs {
                                 Poradi = "0",
                                 Firma_ID = firmaID,
                                 Cenik = new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenikCenik() {
-                                    Kod = GetID(data["CisloSkup"].GetNum())
+                                    Poznamka = data["CisloSkup"].GetNum()
                                 }
                             }
                         }
@@ -109,9 +108,9 @@ namespace SDataObjs {
                 var d = cena.Items;
                 var c = new S5DataPolozkaCeniku();
                 c.Cenik = new S5DataPolozkaCenikuCenik() { 
-                    Kod = GetID(d["CisloSkup"].GetNum()) 
+                    Poznamka = d["CisloSkup"].GetNum()
                 };
-                c.Nazev = c.Kod = GetID(d["CisloSkup"].GetNum()) + "_" + S3_Katalog.GetID(d["CisloKarty"].GetNum());
+                c.Kod = d["CisloSkup"].GetNum() + d["CisloKarty"].GetNum();
                 c.Artikl_ID = S0_IDs.GetArtiklID(S3_Katalog.GetID(d["CisloKarty"].GetNum()));
                 c.Sklad_ID = skladID;
                 c.Cena = d["SpecCena"].GetDecimal();
