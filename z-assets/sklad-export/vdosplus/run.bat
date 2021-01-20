@@ -1,2 +1,2 @@
-C:\Export\fand\fand
+X:\sklad-export\fand\fand
 exit /b

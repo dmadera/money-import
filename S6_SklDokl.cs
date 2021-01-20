@@ -67,7 +67,7 @@ namespace SDataObjs {
                 doc.ParovaciSymbol = GetID(data["CisloVydejky"].GetNum(), headers.Soubor);
                 doc.DatumSkladovehoPohybu = doc.DatumZauctovani = doc.DatumSchvaleni = doc.DatumVystaveni = data["DatumVydeje"].GetDate();
                 doc.DatumSkladovehoPohybuSpecified = doc.DatumZauctovaniSpecified = doc.DatumSchvaleniSpecified = doc.DatumVystaveniSpecified = true;
-                doc.Poznamka = data["Upozorneni"].GetText() + Env.XMLNewLine + header.ToString();
+                doc.Poznamka = data["Upozorneni"].GetText() + Environment.NewLine + Environment.NewLine + header.ToString();
                 doc.Polozky = new S5DataSkladovyDokladPolozky();
                 doc.ProcentniZisk = header.GetProcentniZisk();
                 string firmaID = S0_IDs.GetFirmaID(S3_Adresar.GetOdbID(header.Items["CisloOdberatele"].GetNum()));
@@ -167,7 +167,7 @@ namespace SDataObjs {
                 doc.ParovaciSymbol = GetID(data["CisloPrijemky"].GetNum(), headers.Soubor);
                 doc.DatumSkladovehoPohybu = doc.DatumZauctovani = doc.DatumSchvaleni = doc.DatumVystaveni = data["DatumVydeje"].GetDate();
                 doc.DatumSkladovehoPohybuSpecified = doc.DatumZauctovaniSpecified = doc.DatumSchvaleniSpecified = doc.DatumVystaveniSpecified = true;
-                doc.Poznamka = data["Upozorneni"].GetText() + Env.XMLNewLine + header.ToString();
+                doc.Poznamka = data["Upozorneni"].GetText() + Environment.NewLine + Environment.NewLine + header.ToString();
                 string firmaID = S0_IDs.GetFirmaID(S3_Adresar.GetDodID(header.Items["CisloDodavatele"].GetNum()));
                 doc.Firma_ID = doc.FakturacniAdresaFirma_ID = doc.PrijemceFaktury_ID = firmaID;
                 doc.Vyrizeno = "True";

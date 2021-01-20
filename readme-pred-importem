@@ -3,32 +3,58 @@ Nastavení číselných řada
     PROD_PRI, prefix: PP
     POKL_PRI, prefix: HP
     POKL_VYD, prefix: HV
+    SEK_VYD, název: Šeky vydané, prefix: SEK, Max. počet cifer: 5, Úhrady zálohových faktur: zrušit vazbu
+    FAK_VYD_S, název: Výdeje na šek, prefix: FS
 
 Nastavení skupin seznamů
-1. Vytvořit skupiny objektu Jednotka
+Vytvořit skupiny objektu Jednotka
     Kód: _, Název: logistické
 
-2. Vytvořit skupiny objektu Firma
+Firma
     Kód: NP, Název: Náhradní plnění, Převzít nastavení z nadřazené úrovně: true
-    Kód: OST, Název: Ostatní odběratelé, Převzít nastavení z nadřazené úrovně: false, Obchod/Způsob dopravy: Osobní odběr, Obchod/Způsob platby: Hotově
+    Kód: OST, Název: Ostatní odběratelé, Převzít nastavení z nadřazené úrovně: false, Obchod/Způsob dopravy: Osobní odběr, 
+        Obchod/Způsob platby: Hotově, Použít kredit: ANO, Hodnota: 0,00
+    Kód: ZRUŠ, Název: Zrušené, Převzít nastavení z nadřazené úrovně: true
+    Kód: Nezařazené, Použít kredit: ANO, Hodnota: 0,00
 
-3. Vytvořit skupiny objektu Artikl
+Artikl
     Kód: Nezařazené, Není určena pro ukládání záznamů: true
     Kód: ART, Název: Artikly, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu
 
-Založení nového skladu
+Pokladní doklady - skupy
+    Kód: SEKY, Název: Šeky, Pokladna: POKLSEK, Vnutit nastavneí podřízeným: ANO, Pokladna: CZK_SEK, Typ ceny: Pouze základ, Sazba DPH: Nulová,
+        Podrobnosti/Příjmový doklad/Číselná řada: SEK, Podrobnosti/Příjmový doklad/Číselná řada: SEK
+    Kód: POKL_SEK, Název: Pokladní doklady ŠEK, Vnutit nastavneí podřízeným: ANO, Pokladna: CZK_SEK, Typ ceny: Pouze základ, Sazba DPH: Nulová, 
+        Podrobnosti/Příjmový doklad/Číselná řada: POKD_SEK, Podrobnosti/Příjmový doklad/Číselná řada: POKD_SEK
+
+Pokladna
+    Kód: CZK, Název: Účetní pokladna
+    Kód: CZK_PRO, Název: Prodejní pokladna, Primární účet: 211100
+    Kód: CZK_SEK, Název: Prodejní pokladna při odběru na šek, Primární účet: 999999, Kurz: 0100
+    Kód: SEK_INT, Název: Interní evidence šeků, Primární účet: 999999
+
+Účtový rozvrh
+    Účet: 999999, Název: Evidence šeků, Druh účtu: Výsledkový, Typ účtu: Nákladový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO, Technický: ANO
+
+Předkontace
+    Kód: SEKY, Členění DPH: _Ř000U P, Název: Šeky
+        Přidat Cena za nulovou sazbu, MD: 999999, DAL: 999999, Hlavní položka: ANO, Přednostně: ANO
+
+Faktura
+    Kód: FASEKY, Název: Výdeje na šek, Členění DPH: _Ř000U P, Sazba: Nulová
+    Předkontace zaokrouhlení: SD005, Skupina pokladních dokladů: Šeky, Skupina ceninových pokladních dokladů: Šeky, Doprava: osobní odběr, Způsob platby: Hotově
+
+Sklad
     Kód: HL, Název: Hlavní
     Výdej do mínusu: Nekontrolovat (pro import)
     Typ zdroje přebírání: Katalog, Skupina katalogu: Artikly (ART)
 
-Založení nového ceníku
+Ceník
     Kód: ZAKLADNI, Název: Základní
     Typ výchozí ceny: Nákupní, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -10%
     Typ zdroje přebírání: Katalog, Skupina katalogu: ART
     Nastavit jako výchozí: ANO
     Poznamka: ZAKLADNI
-
-Založení nové pokladny
     
 
 Nastavení uživatelských sloupců

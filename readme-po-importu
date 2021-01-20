@@ -3,3 +3,5 @@ Bude se muset založit nový sklad s vlastností nepovolit výdej do mínusu a p
 Skrýt nepotřebné jednotky pro agendu - aplikovat filtr pouze na jednotky logistické.
 Označit všechny artikly - menu - Hromadné operace - Hromadné operace s dodavatelem - Aktualizace hlavního dodavatele podle posledních příjmů
 Nastavit v Seznamu Typ spojení "GSM brána" na "GSM".
+Skrýt Pokladnu, Kód: SEK_INT pro všechny role kromě administrátora
+Omezit editaci a přidávání šeku pouze na Manažera

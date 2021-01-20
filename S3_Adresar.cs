@@ -15,10 +15,6 @@ namespace SDataObjs {
             return "ADR" + id;
         }
 
-        public static string GetOdbOstID(string id) {
-            return "ADO" + id;
-        }
-
         public static string GetDodID(string id) {
             return "ADR2" + id.Substring(1);
         }
@@ -47,7 +43,8 @@ namespace SDataObjs {
                     grp = new group() { Kod = "NP" };
                 } else if (d["NazevOdberatele"].GetText().StartsWith("\\")) {
                     grp = new group() { Kod = "OST" };
-                    kod = GetOdbOstID(kodOdb);
+                } else if(d["NazevOdberatele"].GetText().StartsWith("||")) {
+                    grp = new group() { Kod = "ZRUŠ" };
                 }
 
                 var nazev = (d["NazevOdberatele"].GetText() + " " + d["NazevOdberatele2"].GetText()).Trim();
@@ -63,18 +60,19 @@ namespace SDataObjs {
                         VlastniSplatnostPohledavek = "True"
                     },
                     Sleva = new S5DataFirmaSleva() {
-                        Sleva = d["RabatO"].GetDecimal(),
+                        Sleva = d["RabatO"].GetDecimalNegative(),
                         VlastniSleva = "True"
                     },
                     ICO = d["Ico"].GetNum(),
                     DIC = obj.GetDic(),
-                    // Poznamka = obj.Get5Note() + obj.ToString(),
-                    Poznamka = obj.Get5Note(),
+                    Poznamka = obj.Get5Note() + Environment.NewLine + Environment.NewLine + obj.ToString(),
                     Group = grp,
                     ReportSDPH_UserData = d["SDani"].GetBoolean(),
                     ZpusobPlatby_ID = S0_IDs.GetZpusobPlatbyID(zpusobPlatbyKod),
                 };
 
+                firma.PlatceDPH = firma.DIC == null ? "False" : "True"; 
+                firma.EvidovatNahradniPlneni = d["NahradniPlneni"].GetBoolean();
 
                 var emails = obj.ParseEmails("Mail");
                 var emailsFA = obj.ParseEmails("MailFA");
