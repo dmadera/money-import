@@ -17,6 +17,7 @@
                     <xs:element name="DatovaSchrankaSpojeni_ID" type="emptiable_guid" minOccurs="0" />
                     <xs:element name="DatumKontolyDIC" type="dateTime_DateMin" minOccurs="0" />
                     <xs:element name="DatumKontrolyDleIC" type="dateTime_DateMin" minOccurs="0" />
+                    <xs:element name="DatumPorizeni_UserData" type="dateTime_DateMin" minOccurs="0" />
                     <xs:element name="DatumPosledniKontrolyPlatceDPH" type="dateTime_DateTimeMin" minOccurs="0" />
                     <xs:element name="DatumPosty" type="dateTime_DateMin" minOccurs="0" />
                     <xs:element name="DatumUkonceniCinnosti" type="dateTime_DateMin" minOccurs="0" />
@@ -61,6 +62,7 @@
                     <xs:element name="PosledniCisloOsoby" type="emptiable_integer" minOccurs="0" />
                     <xs:element name="PosledniStavZHistorieRegistru_ID" type="guid" />
                     <xs:element name="Poznamka" type="emptiable_string_unbounded" minOccurs="0" />
+                    <xs:element name="PoznamkaInterni_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="PrenestNazev" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="PrimarniUcetPohledavky_ID" type="guid" />
                     <xs:element name="PrimarniUcetPoskytnutaZaloha_ID" type="guid" />
@@ -70,9 +72,9 @@
                     <xs:element name="ProvStat_ID" type="guid" />
                     <xs:element name="Region_ID" type="guid" />
                     <xs:element name="ReklamacePocetDniProVyrizeni" type="emptiable_integer" minOccurs="0" />
-                    <xs:element name="ReportSDPH_UserData" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="RocniLimitNahradnihoPlneni" type="emptiable_decimal_2" minOccurs="0" />
                     <xs:element name="ServisPocetDniProVyrizeni" type="emptiable_integer" minOccurs="0" />
+                    <xs:element name="SlevaUvadena_UserData" type="emptiable_decimal_2" minOccurs="0" />
                     <xs:element name="SpecifickySymbol" type="emptiable_string_50" minOccurs="0" />
                     <xs:element name="StavOvereniISIR" type="emptiable_integer" minOccurs="0" />
                     <xs:element name="StavPlatceDPHComputed" type="emptiable_integer" minOccurs="0" />
@@ -198,7 +200,7 @@
                                 </xs:element>
                               </xs:sequence>
                               <xs:attribute name="ObjectName" fixed="FirmaCZNACE" />
-                              <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                             </xs:complexType>
                           </xs:element>
                           <xs:element name="SeznamKategorii" minOccurs="0">
@@ -223,7 +225,7 @@
                                 </xs:element>
                               </xs:sequence>
                               <xs:attribute name="ObjectName" fixed="FirmaKategorieCRM" />
-                              <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                             </xs:complexType>
                           </xs:element>
                         </xs:all>
@@ -310,7 +312,7 @@
                           <xs:element name="DatovaSchrankaSpojeni" minOccurs="0">
                             <xs:complexType>
                               <xs:all>
-                                <xs:element name="SpojeniCislo" type="string_50" />
+                                <xs:element name="Kod_UserData" type="string_unbounded" />
                               </xs:all>
                               <xs:attribute name="ObjectName" fixed="Spojeni" />
                               <xs:attribute name="ObjectType" fixed="Object" />
@@ -320,7 +322,7 @@
                           <xs:element name="EmailSpojeni" minOccurs="0">
                             <xs:complexType>
                               <xs:all>
-                                <xs:element name="SpojeniCislo" type="string_50" />
+                                <xs:element name="Kod_UserData" type="string_unbounded" />
                               </xs:all>
                               <xs:attribute name="ObjectName" fixed="Spojeni" />
                               <xs:attribute name="ObjectType" fixed="Object" />
@@ -330,7 +332,7 @@
                           <xs:element name="FaxSpojeni" minOccurs="0">
                             <xs:complexType>
                               <xs:all>
-                                <xs:element name="SpojeniCislo" type="string_50" />
+                                <xs:element name="Kod_UserData" type="string_unbounded" />
                               </xs:all>
                               <xs:attribute name="ObjectName" fixed="Spojeni" />
                               <xs:attribute name="ObjectType" fixed="Object" />
@@ -340,7 +342,7 @@
                           <xs:element name="TelefonSpojeni1" minOccurs="0">
                             <xs:complexType>
                               <xs:all>
-                                <xs:element name="SpojeniCislo" type="string_50" />
+                                <xs:element name="Kod_UserData" type="string_unbounded" />
                               </xs:all>
                               <xs:attribute name="ObjectName" fixed="Spojeni" />
                               <xs:attribute name="ObjectType" fixed="Object" />
@@ -350,7 +352,7 @@
                           <xs:element name="TelefonSpojeni2" minOccurs="0">
                             <xs:complexType>
                               <xs:all>
-                                <xs:element name="SpojeniCislo" type="string_50" />
+                                <xs:element name="Kod_UserData" type="string_unbounded" />
                               </xs:all>
                               <xs:attribute name="ObjectName" fixed="Spojeni" />
                               <xs:attribute name="ObjectType" fixed="Object" />
@@ -360,7 +362,7 @@
                           <xs:element name="TelefonSpojeni3" minOccurs="0">
                             <xs:complexType>
                               <xs:all>
-                                <xs:element name="SpojeniCislo" type="string_50" />
+                                <xs:element name="Kod_UserData" type="string_unbounded" />
                               </xs:all>
                               <xs:attribute name="ObjectName" fixed="Spojeni" />
                               <xs:attribute name="ObjectType" fixed="Object" />
@@ -370,7 +372,7 @@
                           <xs:element name="TelefonSpojeni4" minOccurs="0">
                             <xs:complexType>
                               <xs:all>
-                                <xs:element name="SpojeniCislo" type="string_50" />
+                                <xs:element name="Kod_UserData" type="string_unbounded" />
                               </xs:all>
                               <xs:attribute name="ObjectName" fixed="Spojeni" />
                               <xs:attribute name="ObjectType" fixed="Object" />
@@ -380,7 +382,7 @@
                           <xs:element name="WWWSpojeni" minOccurs="0">
                             <xs:complexType>
                               <xs:all>
-                                <xs:element name="SpojeniCislo" type="string_50" />
+                                <xs:element name="Kod_UserData" type="string_unbounded" />
                               </xs:all>
                               <xs:attribute name="ObjectName" fixed="Spojeni" />
                               <xs:attribute name="ObjectType" fixed="Object" />
@@ -452,7 +454,7 @@
                                 </xs:element>
                               </xs:sequence>
                               <xs:attribute name="ObjectName" fixed="FirmaCenik" />
-                              <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                             </xs:complexType>
                           </xs:element>
                           <xs:element name="SeznamHladin" minOccurs="0">
@@ -482,7 +484,7 @@
                                 </xs:element>
                               </xs:sequence>
                               <xs:attribute name="ObjectName" fixed="FirmaCenovaHladina" />
-                              <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                             </xs:complexType>
                           </xs:element>
                         </xs:all>
@@ -496,7 +498,7 @@
                             <xs:complexType>
                               <xs:all>
                                 <xs:element name="Group" type="group" minOccurs="0" />
-                                <xs:element name="Prijmeni" type="string_50" />
+                                <xs:element name="Kod" type="string_20" />
                               </xs:all>
                               <xs:attribute name="ObjectName" fixed="Osoba" />
                               <xs:attribute name="ObjectType" fixed="Object" />
@@ -521,7 +523,7 @@
                                       <xs:element name="Funkce" type="emptiable_string_50" minOccurs="0" />
                                       <xs:element name="FunkceOsoby_ID" type="emptiable_guid" minOccurs="0" />
                                       <xs:element name="Jmeno" type="emptiable_string_50" minOccurs="0" />
-                                      <xs:element name="Kod" type="emptiable_string_20" minOccurs="0" />
+                                      <xs:element name="Kod" type="string_20" />
                                       <xs:element name="KrestniJmeno" type="emptiable_string_50" minOccurs="0" />
                                       <xs:element name="Nazev" type="emptiable_string_100" minOccurs="0" />
                                       <xs:element name="Osloveni" type="emptiable_string_10" minOccurs="0" />
@@ -529,7 +531,7 @@
                                       <xs:element name="Pohlavi" type="enum_Pohlavi" minOccurs="0" />
                                       <xs:element name="PosilatPostu" type="emptiable_bool" minOccurs="0" />
                                       <xs:element name="Poznamka" type="emptiable_string_unbounded" minOccurs="0" />
-                                      <xs:element name="Prijmeni" type="string_50" />
+                                      <xs:element name="Prijmeni" type="emptiable_string_50" minOccurs="0" />
                                       <xs:element name="TelefonSpojeni1_ID" type="emptiable_guid" minOccurs="0" />
                                       <xs:element name="TelefonSpojeni2_ID" type="emptiable_guid" minOccurs="0" />
                                       <xs:element name="TelefonSpojeni3_ID" type="emptiable_guid" minOccurs="0" />
@@ -635,7 +637,7 @@
                                             <xs:element name="EmailSpojeni" minOccurs="0">
                                               <xs:complexType>
                                                 <xs:all>
-                                                  <xs:element name="SpojeniCislo" type="string_50" />
+                                                  <xs:element name="Kod_UserData" type="string_unbounded" />
                                                 </xs:all>
                                                 <xs:attribute name="ObjectName" fixed="Spojeni" />
                                                 <xs:attribute name="ObjectType" fixed="Object" />
@@ -645,7 +647,7 @@
                                             <xs:element name="FaxSpojeni" minOccurs="0">
                                               <xs:complexType>
                                                 <xs:all>
-                                                  <xs:element name="SpojeniCislo" type="string_50" />
+                                                  <xs:element name="Kod_UserData" type="string_unbounded" />
                                                 </xs:all>
                                                 <xs:attribute name="ObjectName" fixed="Spojeni" />
                                                 <xs:attribute name="ObjectType" fixed="Object" />
@@ -655,7 +657,7 @@
                                             <xs:element name="TelefonSpojeni1" minOccurs="0">
                                               <xs:complexType>
                                                 <xs:all>
-                                                  <xs:element name="SpojeniCislo" type="string_50" />
+                                                  <xs:element name="Kod_UserData" type="string_unbounded" />
                                                 </xs:all>
                                                 <xs:attribute name="ObjectName" fixed="Spojeni" />
                                                 <xs:attribute name="ObjectType" fixed="Object" />
@@ -665,7 +667,7 @@
                                             <xs:element name="TelefonSpojeni2" minOccurs="0">
                                               <xs:complexType>
                                                 <xs:all>
-                                                  <xs:element name="SpojeniCislo" type="string_50" />
+                                                  <xs:element name="Kod_UserData" type="string_unbounded" />
                                                 </xs:all>
                                                 <xs:attribute name="ObjectName" fixed="Spojeni" />
                                                 <xs:attribute name="ObjectType" fixed="Object" />
@@ -675,7 +677,7 @@
                                             <xs:element name="TelefonSpojeni3" minOccurs="0">
                                               <xs:complexType>
                                                 <xs:all>
-                                                  <xs:element name="SpojeniCislo" type="string_50" />
+                                                  <xs:element name="Kod_UserData" type="string_unbounded" />
                                                 </xs:all>
                                                 <xs:attribute name="ObjectName" fixed="Spojeni" />
                                                 <xs:attribute name="ObjectType" fixed="Object" />
@@ -685,7 +687,7 @@
                                             <xs:element name="TelefonSpojeni4" minOccurs="0">
                                               <xs:complexType>
                                                 <xs:all>
-                                                  <xs:element name="SpojeniCislo" type="string_50" />
+                                                  <xs:element name="Kod_UserData" type="string_unbounded" />
                                                 </xs:all>
                                                 <xs:attribute name="ObjectName" fixed="Spojeni" />
                                                 <xs:attribute name="ObjectType" fixed="Object" />
@@ -717,7 +719,7 @@
                                             </xs:element>
                                           </xs:sequence>
                                           <xs:attribute name="ObjectName" fixed="OsobaAdresniKlic" />
-                                          <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                                         </xs:complexType>
                                       </xs:element>
                                       <xs:element name="FunkceOsoby" minOccurs="0">
@@ -742,7 +744,7 @@
                                                     <xs:complexType>
                                                       <xs:all>
                                                         <xs:element name="Group" type="group" minOccurs="0" />
-                                                        <xs:element name="Prijmeni" type="string_50" />
+                                                        <xs:element name="Kod" type="string_20" />
                                                       </xs:all>
                                                       <xs:attribute name="ObjectName" fixed="Osoba" />
                                                       <xs:attribute name="ObjectType" fixed="Object" />
@@ -757,7 +759,7 @@
                                             </xs:element>
                                           </xs:sequence>
                                           <xs:attribute name="ObjectName" fixed="OsobaPratele" />
-                                          <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                                         </xs:complexType>
                                       </xs:element>
                                     </xs:all>
@@ -768,7 +770,7 @@
                                 </xs:element>
                               </xs:sequence>
                               <xs:attribute name="ObjectName" fixed="Osoba" />
-                              <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                             </xs:complexType>
                           </xs:element>
                         </xs:all>
@@ -883,7 +885,7 @@
                                             </xs:element>
                                           </xs:sequence>
                                           <xs:attribute name="ObjectName" fixed="BankovniSpojeniRegistrPlatcuDphCZ" />
-                                          <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                                         </xs:complexType>
                                       </xs:element>
                                       <xs:element name="PosledniOvereniZHistorie" minOccurs="0">
@@ -901,7 +903,7 @@
                                 </xs:element>
                               </xs:sequence>
                               <xs:attribute name="ObjectName" fixed="BankovniSpojeni" />
-                              <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                             </xs:complexType>
                           </xs:element>
                         </xs:all>
@@ -939,7 +941,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="FirmaAdresniKlic" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="Aktivity" minOccurs="0">
@@ -957,7 +959,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="Aktivita" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="Cinnosti" minOccurs="0">
@@ -984,7 +986,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="FirmaCinnost" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="CiselnaRada" minOccurs="0">
@@ -1024,7 +1026,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="FirmaRegistrPlatcuDPH" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="IncotermsDodavatelskePodminky" minOccurs="0">
@@ -1087,7 +1089,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="FirmaInsolvencniSpis" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="Kraj" minOccurs="0">
@@ -1182,11 +1184,12 @@
                             <xs:complexType>
                               <xs:all>
                                 <xs:element name="AutoRow_ID" type="emptiable_integer" minOccurs="0" />
+                                <xs:element name="Kod_UserData" type="string_unbounded" />
                                 <xs:element name="Osoba_ID" type="emptiable_guid" minOccurs="0" />
                                 <xs:element name="OsobaVychozi" type="emptiable_bool" minOccurs="0" />
                                 <xs:element name="Popis" type="emptiable_string_200" minOccurs="0" />
                                 <xs:element name="Poradi" type="emptiable_integer" minOccurs="0" />
-                                <xs:element name="SpojeniCislo" type="string_50" />
+                                <xs:element name="SpojeniCislo" type="emptiable_string_50" minOccurs="0" />
                                 <xs:element name="SpojeniKlapka" type="emptiable_string_50" minOccurs="0" />
                                 <xs:element name="SpojeniMistniPredvolba" type="emptiable_string_50" minOccurs="0" />
                                 <xs:element name="Stat_ID" type="guid" />
@@ -1196,7 +1199,7 @@
                                   <xs:complexType>
                                     <xs:all>
                                       <xs:element name="Group" type="group" minOccurs="0" />
-                                      <xs:element name="Prijmeni" type="string_50" />
+                                      <xs:element name="Kod" type="string_20" />
                                     </xs:all>
                                     <xs:attribute name="ObjectName" fixed="Osoba" />
                                     <xs:attribute name="ObjectType" fixed="Object" />
@@ -1225,7 +1228,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="Spojeni" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="Zakazky" minOccurs="0">
@@ -1243,7 +1246,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="Zakazka" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="ZpusobDopravy" minOccurs="0">

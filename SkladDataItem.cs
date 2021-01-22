@@ -25,6 +25,11 @@ namespace SkladData {
             return r.IsMatch(value) ? "True" : "False";
         }
 
+        public string GetBooleanNegative() {
+            var r = new Regex(@"^[1aAYT]");
+            return r.IsMatch(value) ? "False" : "True";
+        }
+
         public string GetAlfaNum() {
             return Regex.Replace(value, @"[^0-9a-zA-Z]+", "");
 

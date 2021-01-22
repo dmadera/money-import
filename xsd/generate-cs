@@ -1,83 +1,11 @@
 #!/bin/bash
-DATA='<!--ADDED BY SCRIPT-->
-        <xs:all>
-            <xs:element name="Polozky" minOccurs="0">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="PolozkaProdejkyVydane" minOccurs="0" maxOccurs="unbounded">
-                            <xs:complexType>
-                                <xs:all>
-                                    <xs:element name="CisloPolozky" type="xs:integer" />
-                                    <xs:element name="TypObsahu" type="enum_TypObsahuPolozky" minOccurs="0" />
-                                    <xs:element name="JednCena" type="emptiable_decimal_2" minOccurs="0" />
-                                    <xs:element name="JednCenaBezDPH" type="emptiable_decimal_2" minOccurs="0" />
-                                    <xs:element name="JednCenaBezDPHCM" type="emptiable_decimal_2" minOccurs="0" />
-                                    <xs:element name="JednCenaCM" type="emptiable_decimal_2" minOccurs="0" />
-                                    <xs:element name="Jednotka" type="emptiable_string_10" minOccurs="0" />
-                                    <xs:element name="Vyrizeno" type="emptiable_string_10" minOccurs="0" />
-                                    <xs:element name="Mnozstvi" type="emptiable_decimal_2" minOccurs="0" />
-                                    <xs:element name="Nazev" type="emptiable_string_100" minOccurs="0" />
-                                    <xs:element name="ObsahPolozky" minOccurs="0">
-                                        <xs:complexType>
-                                            <xs:all>
-                                                <xs:element name="Artikl_ID" minOccurs="0" />
-                                                <xs:element name="Sklad_ID" minOccurs="0" />
-                                            </xs:all>
-                                        </xs:complexType>
-                                    </xs:element>
-                                    <xs:element name="SazbaDPH_ID" type="guid" />
-                                </xs:all>
-                                <xs:attribute name="ObjectName" fixed="PolozkaProdejkyVydane" />
-                                <xs:attribute name="ObjectType" fixed="Object" />
-                                <xs:attribute name="ID" type="guid" />
-                            </xs:complexType>
-                        </xs:element>
-                    </xs:sequence>
-                    <xs:attribute name="ObjectName" fixed="PolozkaProdejkyVydane" />
-                    <xs:attribute name="ObjectType" fixed="List" />
-                </xs:complexType>
-            </xs:element>
-<!--ADDED BY SCRIPT END-->'
+DATA='<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->'
 
 ESCAPED=`echo "${DATA}" | sed -r ':a;N;$!ba;s|\n|\\\|g' | sed 's|/|\\\/|g'`
-if ! grep -Fxq "PolozkaProdejkyVydane" xsd/S7_Prodej.xsd
-then
-    sed -i -e "/^\s*<xs:element name=\"ProdejkaVydana\" minOccurs=\"0\" maxOccurs=\"unbounded\">\s*$/ {
-        N; /\n\s*<xs:complexType>\s*$/ {
-            N; s/\n\s*<xs:all>\s*$/${ESCAPED}/
-        }
-    }" xsd/S7_Prodej.xsd ;
-fi
 
-DATA='<!--ADDED BY SCRIPT-->
-    <xs:complexType name="enum_TypObsahuPolozky">
-    <xs:simpleContent>
-      <xs:extension base="enum_TypObsahuPolozky_value">
-        <xs:attribute name="EnumValueName">
-          <xs:simpleType>
-            <xs:restriction base="xs:string">
-              <xs:enumeration value="BezObsahu" />
-              <xs:enumeration value="SObsahem" />
-            </xs:restriction>
-          </xs:simpleType>
-        </xs:attribute>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-  <xs:simpleType name="enum_TypObsahuPolozky_value">
-    <xs:restriction base="xs:integer">
-      <xs:enumeration value="0" />
-      <xs:enumeration value="1" />
-    </xs:restriction>
-  </xs:simpleType>
-</xs:schema>
-<!--ADDED BY SCRIPT END-->'
-
-ESCAPED=`echo "${DATA}" | sed -r ':a;N;$!ba;s|\n|\\\|g' | sed 's|/|\\\/|g'`
-if ! grep -Fxq "enum_TypObsahuPolozky_value" xsd/S7_Prodej.xsd
-then
-    sed -i -r "s/^.*<\/xs:schema>.*$/${ESCAPED}/mg" xsd/S7_Prodej.xsd ;
-fi
+for n in xsd/*.xsd; do 
+    sed -i "s/^\s*<xs:attribute name=\"ObjectType\" fixed=\"List\" \\/>/${ESCAPED}/g" ${n} ;
+done
 
 DATA='<!--ADDED BY SCRIPT-->
     <xs:element name="ObsahPolozky" minOccurs="0">
@@ -98,3 +26,4 @@ for n in xsd/*.xsd; do
     xsd ${n} /c /o:xsd-classes /n:$(basename ${n} .xsd) ;
     mv xsd-classes/$(basename ${n} .xsd).cs xsd-classes/XSD_$(basename ${n} .xsd).cs ;
 done
+

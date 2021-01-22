@@ -43,82 +43,119 @@ namespace SDataObjs {
                     grp = new group() { Kod = "NP" };
                 } else if (d["NazevOdberatele"].GetText().StartsWith("\\")) {
                     grp = new group() { Kod = "OST" };
-                } else if(d["NazevOdberatele"].GetText().StartsWith("||")) {
+                } else if (d["NazevOdberatele"].GetText().StartsWith("||")) {
                     grp = new group() { Kod = "ZRUŠ" };
                 }
 
-                var nazev = (d["NazevOdberatele"].GetText() + " " + d["NazevOdberatele2"].GetText()).Trim();
                 var zpusobPlatbyKod = "H";
                 if (d["KupniSmlouva"].GetBoolean() == "True") zpusobPlatbyKod = "F";
                 if (d["SumFa"].GetBoolean() == "True") zpusobPlatbyKod = "SF";
 
                 var firma = new S5DataFirma() {
+                    Group = grp,
                     Kod = kod,
-                    Nazev = nazev,
-                    Pohledavky = new S5DataFirmaPohledavky() {
-                        SplatnostPohledavek = d["Splatnost"].GetNum(),
-                        VlastniSplatnostPohledavek = "True"
-                    },
+                    Nazev = SkladDataObj.GetNazev(d["NazevOdberatele"], d["NazevOdberatele2"]),
+                    ICO = obj.GetIco(),
+                    DIC = obj.GetDic(),
                     Sleva = new S5DataFirmaSleva() {
-                        Sleva = d["RabatO"].GetDecimalNegative(),
+                        Sleva = d["RabatO"].GetDecimal(),
                         VlastniSleva = "True"
                     },
-                    ICO = d["Ico"].GetNum(),
-                    DIC = obj.GetDic(),
-                    Poznamka = obj.Get5Note() + Environment.NewLine + Environment.NewLine + obj.ToString(),
-                    Group = grp,
-                    ReportSDPH_UserData = d["SDani"].GetBoolean(),
-                    ZpusobPlatby_ID = S0_IDs.GetZpusobPlatbyID(zpusobPlatbyKod),
+                    SlevaUvadena_UserData = d["RabatO"].GetDecimal(),
+                    Poznamka = obj.GetF3Note(),
+                    PoznamkaInterni_UserData = obj.GetL2Note(),                    
+                    ZpusobPlatby_ID = S0_IDs.GetZpusobPlatbyID(zpusobPlatbyKod)
                 };
 
-                firma.PlatceDPH = firma.DIC == null ? "False" : "True"; 
+                firma.Pohledavky = new S5DataFirmaPohledavky() {
+                    SplatnostPohledavek = d["Splatnost"].GetNum(),
+                    VlastniSplatnostPohledavek = d["Splatnost"].GetFloat() == 0 ? "False" : "True"
+                };
+                firma.PlatceDPH = firma.DIC == null ? "False" : "True";
                 firma.EvidovatNahradniPlneni = d["NahradniPlneni"].GetBoolean();
 
-                var emails = obj.ParseEmails("Mail");
-                var emailsFA = obj.ParseEmails("MailFA");
-                
+                // v programu Odber FA: A/N, Money: Pouzivat kredit: true + Kredit: 0 = nepovolí prodej na FA
+                firma.Kredit = new S5DataFirmaKredit() {
+                    Kredit = "0",
+                    PouzivatKredit = d["KupniSmlouva"].GetBooleanNegative()
+                };
+
+                firma.AdresniKlice = new S5DataFirmaAdresniKlice() {
+                    DeleteItems = "1",
+                    FirmaAdresniKlic = new S5DataFirmaAdresniKliceFirmaAdresniKlic[] {
+                        d["SDani"].GetAlfaNum().ToUpper() == "A" ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
+                            AdresniKlic_ID = S0_IDs.GetAdresniKlicID("SDPH")
+                        } : null,
+                        d["SDani"].GetAlfaNum().ToUpper() == "X" ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
+                            AdresniKlic_ID = S0_IDs.GetAdresniKlicID("BEZCEN")
+                        } : null,
+                        d["DavatSek"].GetAlfaNum().ToUpper() == "N" ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
+                            AdresniKlic_ID = S0_IDs.GetAdresniKlicID("ZAKSEK")
+                        } : null,
+                        d["Odesilat"].GetAlfaNum().ToUpper() == "A" ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
+                            AdresniKlic_ID = S0_IDs.GetAdresniKlicID("ODESFA")
+                        } : null
+                    }
+                };
+
+                var tels = SkladDataObj.GetTelefony(d["Telefon"]);
+                var emails = SkladDataObj.GetEmaily(d["Mail"]);
+                var emailsFA = SkladDataObj.GetEmaily(d["MailFA"]);
+
                 firma.Osoby = new S5DataFirmaOsoby() {
-                    HlavniOsoba = !d["Zastoupeny"].IsEmpty() ? new S5DataFirmaOsobyHlavniOsoba() {
-                        Prijmeni = d["Zastoupeny"].GetText()
-                    } : null,
                     SeznamOsob = new S5DataFirmaOsobySeznamOsob() {
+                        DeleteItems = "1",
                         Osoba = new S5DataFirmaOsobySeznamOsobOsoba[] {
                             !d["Zastoupeny"].IsEmpty() ? new S5DataFirmaOsobySeznamOsobOsoba() {
                                 Nazev = d["Zastoupeny"].GetText(),
                                 Prijmeni = d["Zastoupeny"].GetText(),
-                                EmailSpojeni_ID = emails[0],
-                                FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("JED")
+                                FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("ZAS"),
+                                Kod = S7_OsSpoj.GetKodZastoupeny(kod)
                             } : null,
                             !d["Prebirajici"].IsEmpty() ? new S5DataFirmaOsobySeznamOsobOsoba() {
                                 Nazev = d["Prebirajici"].GetText(),
                                 Prijmeni = d["Prebirajici"].GetText(),
-                                FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("PŘE")
+                                FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("PRE"),
+                                Kod = S7_OsSpoj.GetKodPrebirajici(kod)
                             } : null
                         }
                     }
                 };
 
                 firma.SeznamSpojeni = new S5DataFirmaSeznamSpojeni() {
+                    DeleteItems = "1",
                     Spojeni = new S5DataFirmaSeznamSpojeniSpojeni[] {
-                        !d["Telefon"].IsEmpty() ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                        tels.Item1 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Tel"),
-                            SpojeniCislo = d["Telefon"].GetText(),
+                            SpojeniCislo = tels.Item1,
+                            Kod_UserData = S7_OsSpoj.GetKodTelefon(kod),
                         } : null,
-                        emails[0] != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                        tels.Item2 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Tel"),
+                            SpojeniCislo = tels.Item2,
+                            Kod_UserData = S7_OsSpoj.GetKodTelefonFA(kod)
+                        } : null,
+                        emails.Item1 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mail"),
-                            SpojeniCislo = emails[0],
+                            SpojeniCislo = emails.Item1,
+                            Kod_UserData = S7_OsSpoj.GetKodEmail1(kod),
                         } : null,
-                        emails[1] != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                        emails.Item2 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mail"),
-                            SpojeniCislo = emails[1],
+                            SpojeniCislo = emails.Item2,
+                            Kod_UserData = S7_OsSpoj.GetKodEmail2(kod)
                         } : null,
-                        emailsFA[0] != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                        emailsFA.Item1 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mailFA"),
-                            SpojeniCislo = emailsFA[0],
+                            SpojeniCislo = emailsFA.Item1,
+                            Kod_UserData = S7_OsSpoj.GetKodEmailFA1(kod),
+                            Popis = "fakturace"
                         } : null,
-                        emailsFA[1] != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                        emailsFA.Item2 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mailFA"),
-                            SpojeniCislo = emailsFA[1],
+                            SpojeniCislo = emailsFA.Item2,
+                            Kod_UserData = S7_OsSpoj.GetKodEmailFA2(kod),
+                            Popis = "fakturace"
                         } : null
                     }
                 };
@@ -127,14 +164,14 @@ namespace SDataObjs {
 
                 firma.Adresy = new S5DataFirmaAdresy() {
                     ObchodniAdresa = new S5DataFirmaAdresyObchodniAdresa() {
-                        Nazev = nazev,
+                        Nazev = SkladDataObj.GetNazev(d["NazevOdberatele"], d["NazevOdberatele2"]),
                         Ulice = d["Ulice"].GetText(),
                         KodPsc = d["Psc"].GetNum(),
                         Misto = d["Mesto"].GetText(),
                         Stat = new S5DataFirmaAdresyObchodniAdresaStat() { ID = statID }
                     },
                     Provozovna = isPrijemce ? new S5DataFirmaAdresyProvozovna() {
-                        Nazev = (d["NazevPrijemce"].GetText() + " " + d["NazevPrijemce2"].GetText()).Trim(),
+                        Nazev = SkladDataObj.GetNazev(d["NazevPrijemce"], d["NazevPrijemce2"]),
                         Ulice = d["UlicePrijemce"].GetText(),
                         KodPsc = d["PscPrijemce"].GetNum(),
                         Misto = d["MestoPrijemce"].GetText(),
@@ -152,68 +189,79 @@ namespace SDataObjs {
 
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
+                var kod = GetDodID(d["CisloDodavatele"].GetNum());
 
-                var nazev = (d["NazevDodavatele"].GetText() + " " + d["NazevDodavatele2"].GetText()).Trim();
                 var firma = new S5DataFirma() {
-                    Kod = GetDodID(d["CisloDodavatele"].GetNum()),
-                    Nazev = nazev,
-                    ICO = d["Ico"].GetNum(),
+                    Kod = kod,
+                    Nazev = SkladDataObj.GetNazev(d["NazevDodavatele"], d["NazevDodavatele2"]),
+                    ICO = obj.GetIco(),
                     DIC = obj.GetDic(),
-                    Poznamka = obj.Get5Note() + obj.ToString(),
+                    Poznamka = obj.GetF3Note() + Environment.NewLine + obj.GetL2Note()
                 };
 
-                var emails = obj.ParseEmails("Mail");
-                var emailsOZ = obj.ParseEmails("MailOZ");
-
-                firma.SeznamSpojeni = new S5DataFirmaSeznamSpojeni() {
-                    Spojeni = new S5DataFirmaSeznamSpojeniSpojeni[] {
-                        !d["Telefon"].IsEmpty() ? new S5DataFirmaSeznamSpojeniSpojeni() {
-                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Tel"),
-                            SpojeniCislo = d["Telefon"].GetText(),
-                        } : null,
-                        emails[0] != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
-                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mail"),
-                            SpojeniCislo = emails[0],
-                        } : null,
-                        emails[1] != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
-                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mail"),
-                            SpojeniCislo = emails[1],
-                        } : null,
-                        emailsOZ[0] != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
-                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mail"),
-                            SpojeniCislo = emailsOZ[0],
-                        } : null,
-                        emailsOZ[1] != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
-                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mail"),
-                            SpojeniCislo = emailsOZ[1],
-                        } : null
-                    }
-                };
+                var tels = SkladDataObj.GetTelefony(d["Telefon"]);
+                var emails = SkladDataObj.GetEmaily(d["Mail"]);
+                var emailsOZ = SkladDataObj.GetEmaily(d["MailOZ"]);
 
                 firma.Osoby = new S5DataFirmaOsoby() {
-                    HlavniOsoba = !d["Zastoupeny"].IsEmpty() ? new S5DataFirmaOsobyHlavniOsoba() {
-                        Prijmeni = d["Zastoupeny"].GetText(),
-
-                    } : null,
                     SeznamOsob = new S5DataFirmaOsobySeznamOsob() {
+                    DeleteItems = "1",
                         Osoba = new S5DataFirmaOsobySeznamOsobOsoba[] {
                             !d["Zastoupeny"].IsEmpty() ? new S5DataFirmaOsobySeznamOsobOsoba() {
                                 Nazev = d["Zastoupeny"].GetText(),
                                 Prijmeni = d["Zastoupeny"].GetText(),
-                                FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("JED")
+                                FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("ZAS"),
+                                Kod = S7_OsSpoj.GetKodZastoupeny(kod)
                             } : null,
                             !d["ZastoupenyOZ"].IsEmpty() && d["Zastoupeny"].GetText() != d["ZastoupenyOZ"].GetText() ? new S5DataFirmaOsobySeznamOsobOsoba() {
                                 Nazev = d["ZastoupenyOZ"].GetText(),
                                 Prijmeni = d["ZastoupenyOZ"].GetText(),
-                                FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("OZ")
+                                FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("OZ"),
+                                Kod = S7_OsSpoj.GetKodZastoupenyOZ(kod)
                             } : null
                         }
                     }
                 };
 
+                firma.SeznamSpojeni = new S5DataFirmaSeznamSpojeni() {
+                    DeleteItems = "1",
+                    Spojeni = new S5DataFirmaSeznamSpojeniSpojeni[] {
+                        tels.Item1 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Tel"),
+                            SpojeniCislo = tels.Item1,
+                            Kod_UserData = S7_OsSpoj.GetKodTelefon(kod)                        
+                        } : null,
+                        tels.Item2 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Tel"),
+                            SpojeniCislo = tels.Item2,
+                            Kod_UserData = S7_OsSpoj.GetKodTelefonFA(kod)
+                        } : null,
+                        emails.Item1 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mail"),
+                            SpojeniCislo = emails.Item1,
+                            Kod_UserData = S7_OsSpoj.GetKodEmail1(kod)
+                        } : null,
+                        emails.Item2 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mail"),
+                            SpojeniCislo = emails.Item2,
+                            Kod_UserData = S7_OsSpoj.GetKodEmail2(kod)
+                        } : null,
+                        emailsOZ.Item1 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mail"),
+                            SpojeniCislo = emailsOZ.Item1,
+                            Kod_UserData = S7_OsSpoj.GetKodEmailFA1(kod)
+                        } : null,
+                        emailsOZ.Item2 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mail"),
+                            SpojeniCislo = emailsOZ.Item2,
+                            Kod_UserData = S7_OsSpoj.GetKodEmailFA2(kod)
+                        } : null
+                    }
+                };
+
                 firma.Adresy = new S5DataFirmaAdresy() {
                     ObchodniAdresa = new S5DataFirmaAdresyObchodniAdresa() {
-                        Nazev = nazev,
+                        Nazev = SkladDataObj.GetNazev(d["NazevDodavatele"], d["NazevDodavatele2"]),
                         Ulice = d["Ulice"].GetText(),
                         KodPsc = d["Psc"].GetNum(),
                         Misto = d["Mesto"].GetText(),

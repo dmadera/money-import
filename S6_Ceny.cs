@@ -86,6 +86,7 @@ namespace SDataObjs {
                 firma.ID = firmaID;
                 firma.ObchodniPodminky = new S5DataFirmaObchodniPodminky() {
                     SeznamCeniku = new S5DataFirmaObchodniPodminkySeznamCeniku() {
+                        DeleteItems = "1",
                         FirmaCenik = new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik[] {
                             new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
                                 Poradi = "0",

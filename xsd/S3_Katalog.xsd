@@ -282,7 +282,7 @@
                                 </xs:element>
                               </xs:sequence>
                               <xs:attribute name="ObjectName" fixed="ArtiklDodavatel" />
-                              <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                             </xs:complexType>
                           </xs:element>
                         </xs:all>
@@ -435,7 +435,7 @@
                                                         </xs:element>
                                                       </xs:sequence>
                                                       <xs:attribute name="ObjectName" fixed="PrirazeniObalu" />
-                                                      <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                                                     </xs:complexType>
                                                   </xs:element>
                                                   <xs:element name="SlozenyObal" minOccurs="0">
@@ -453,7 +453,7 @@
                                             </xs:element>
                                           </xs:sequence>
                                           <xs:attribute name="ObjectName" fixed="ArtiklBaleni" />
-                                          <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                                         </xs:complexType>
                                       </xs:element>
                                       <xs:element name="DruhBaleni" minOccurs="0">
@@ -512,7 +512,7 @@
                                 </xs:element>
                               </xs:sequence>
                               <xs:attribute name="ObjectName" fixed="ArtiklJednotka" />
-                              <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                             </xs:complexType>
                           </xs:element>
                         </xs:all>
@@ -632,7 +632,7 @@
                                 </xs:element>
                               </xs:sequence>
                               <xs:attribute name="ObjectName" fixed="ArtiklOdberatel" />
-                              <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                             </xs:complexType>
                           </xs:element>
                         </xs:all>
@@ -703,7 +703,7 @@
                                 </xs:element>
                               </xs:sequence>
                               <xs:attribute name="ObjectName" fixed="ArtiklRozmer" />
-                              <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                             </xs:complexType>
                           </xs:element>
                           <xs:element name="Sirka" minOccurs="0">
@@ -812,7 +812,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="ArtiklElektronickyObchod" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="Attachment" minOccurs="0">
@@ -848,7 +848,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="ArtiklCinnost" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="DodaciPodminkyOdeslani" minOccurs="0">
@@ -943,7 +943,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="ArtiklIdentifikace" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="KategorieEEZ" minOccurs="0">
@@ -1018,7 +1018,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="ArtiklHodnotaParametru" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="PosledniMena" minOccurs="0">
@@ -1137,7 +1137,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="ArtiklPrislusenstvi" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="ProduktoveKlice" minOccurs="0">
@@ -1166,7 +1166,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="ArtiklProduktovyKlic" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="SazbyDPH" minOccurs="0">
@@ -1219,7 +1219,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="ArtiklDPH" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="Serie" minOccurs="0">
@@ -1234,7 +1234,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="ArtiklSerie" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="SeznamAlternativ" minOccurs="0">
@@ -1265,7 +1265,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="ArtiklAlternativa" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="SKP" minOccurs="0">
@@ -1347,7 +1347,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="ArtiklSlozeni" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="StatistickyZnak" minOccurs="0">
@@ -1448,7 +1448,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="ArtiklZavady" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="ZvlastniPohyb" minOccurs="0">
@@ -1513,7 +1513,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="KategorieArtikluHodnotaParametru" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                   </xs:all>

@@ -628,7 +628,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="DetailniRozpisDPH" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="DokladInfo" minOccurs="0">
@@ -650,7 +650,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="DokladInfo" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="DomaciMena" minOccurs="0">
@@ -708,7 +708,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="VazbaRozpousteniNakladu" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="Obchodnik" minOccurs="0">
@@ -998,7 +998,7 @@
                                       </xs:element>
                                     </xs:sequence>
                                     <xs:attribute name="ObjectName" fixed="BlokaceZasob" />
-                                    <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                                   </xs:complexType>
                                 </xs:element>
                                 <xs:element name="AkcePolozky" minOccurs="0">
@@ -1085,7 +1085,7 @@
                                       </xs:element>
                                     </xs:sequence>
                                     <xs:attribute name="ObjectName" fixed="PohybKonta" />
-                                    <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                                   </xs:complexType>
                                 </xs:element>
                                 <xs:element name="UcetniZapisy" minOccurs="0">
@@ -1245,7 +1245,7 @@
                                       </xs:element>
                                     </xs:sequence>
                                     <xs:attribute name="ObjectName" fixed="UcetniZapis" />
-                                    <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                                   </xs:complexType>
                                 </xs:element>
                                 <xs:element name="Vzor" minOccurs="0">
@@ -1276,7 +1276,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="PolozkaSkladovehoDokladu" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="Poplatky" minOccurs="0">
@@ -1307,7 +1307,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="PoplatekZaDoklad" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="Predkontace" minOccurs="0">
@@ -1395,7 +1395,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="SazbaDPHNaDoklade" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="Schvalil" minOccurs="0">
@@ -1461,7 +1461,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="UcetniZapis" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="VazbyObjektu" minOccurs="0">
@@ -1487,7 +1487,7 @@
                           </xs:element>
                         </xs:sequence>
                         <xs:attribute name="ObjectName" fixed="VazbaObjektu" />
-                        <xs:attribute name="ObjectType" fixed="List" />
+<!--ADDED BY SCRIPT--><xs:attribute name="ObjectType" fixed="List" /><xs:attribute name="DeleteItems" type="guid" /><!--ADDED BY SCRIPT END-->
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="Zakazka" minOccurs="0">

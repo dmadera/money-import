@@ -166,5 +166,40 @@ namespace SDataObjs {
 
             return null;
         }
+
+        public static string GetOsobaID(string kod) {
+            if (_data == null) throw new Exception("First call Deserialize method.");
+
+            foreach (S5DataOsoba osoba in _data.OsobaList) {
+                if (osoba.Kod == kod) {
+                    return osoba.ID;
+                }
+            }
+
+            return null;
+        }
+
+        public static string GetSpojeniID(string kod) {
+            if (_data == null) throw new Exception("First call Deserialize method.");
+
+            foreach (S5DataSpojeni spojeni in _data.SpojeniList) {
+                if (spojeni.Kod_UserData == kod) {
+                    return spojeni.ID;
+                }
+            }
+
+            return null;
+        }
+        public static string GetAdresniKlicID(string kod) {
+            if (_data == null) throw new Exception("First call Deserialize method.");
+
+            foreach (S5DataAdresniKlic adresniKlic in _data.AdresniKlicList) {
+                if (adresniKlic.Kod == kod) {
+                    return adresniKlic.ID;
+                }
+            }
+
+            return null;
+        }
     }
 }

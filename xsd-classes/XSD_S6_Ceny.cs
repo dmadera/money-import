@@ -3165,6 +3165,10 @@ namespace S6_Ceny {
         
         private bool datumKontrolyDleICFieldSpecified;
         
+        private System.DateTime datumPorizeni_UserDataField;
+        
+        private bool datumPorizeni_UserDataFieldSpecified;
+        
         private System.DateTime datumPosledniKontrolyPlatceDPHField;
         
         private bool datumPosledniKontrolyPlatceDPHFieldSpecified;
@@ -3263,6 +3267,8 @@ namespace S6_Ceny {
         
         private string poznamkaField;
         
+        private string poznamkaInterni_UserDataField;
+        
         private string prenestNazevField;
         
         private string primarniUcetPohledavky_IDField;
@@ -3281,11 +3287,11 @@ namespace S6_Ceny {
         
         private string reklamacePocetDniProVyrizeniField;
         
-        private string reportSDPH_UserDataField;
-        
         private string rocniLimitNahradnihoPlneniField;
         
         private string servisPocetDniProVyrizeniField;
+        
+        private string slevaUvadena_UserDataField;
         
         private string specifickySymbolField;
         
@@ -3505,6 +3511,28 @@ namespace S6_Ceny {
             }
             set {
                 this.datumKontrolyDleICFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public System.DateTime DatumPorizeni_UserData {
+            get {
+                return this.datumPorizeni_UserDataField;
+            }
+            set {
+                this.datumPorizeni_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool DatumPorizeni_UserDataSpecified {
+            get {
+                return this.datumPorizeni_UserDataFieldSpecified;
+            }
+            set {
+                this.datumPorizeni_UserDataFieldSpecified = value;
             }
         }
         
@@ -4049,6 +4077,17 @@ namespace S6_Ceny {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string PoznamkaInterni_UserData {
+            get {
+                return this.poznamkaInterni_UserDataField;
+            }
+            set {
+                this.poznamkaInterni_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string PrenestNazev {
             get {
                 return this.prenestNazevField;
@@ -4148,17 +4187,6 @@ namespace S6_Ceny {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string ReportSDPH_UserData {
-            get {
-                return this.reportSDPH_UserDataField;
-            }
-            set {
-                this.reportSDPH_UserDataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string RocniLimitNahradnihoPlneni {
             get {
                 return this.rocniLimitNahradnihoPlneniField;
@@ -4176,6 +4204,17 @@ namespace S6_Ceny {
             }
             set {
                 this.servisPocetDniProVyrizeniField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string SlevaUvadena_UserData {
+            get {
+                return this.slevaUvadena_UserDataField;
+            }
+            set {
+                this.slevaUvadena_UserDataField = value;
             }
         }
         
@@ -5504,6 +5543,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataFirmaFirmaCRMSeznamCZNACE() {
             this.objectNameField = "FirmaCZNACE";
             this.objectTypeField = "List";
@@ -5539,6 +5580,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -5715,6 +5767,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataFirmaFirmaCRMSeznamKategorii() {
             this.objectNameField = "FirmaKategorieCRM";
             this.objectTypeField = "List";
@@ -5750,6 +5804,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -7325,6 +7390,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataFirmaObchodniPodminkySeznamCeniku() {
             this.objectNameField = "FirmaCenik";
             this.objectTypeField = "List";
@@ -7360,6 +7427,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -7562,6 +7640,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataFirmaObchodniPodminkySeznamHladin() {
             this.objectNameField = "FirmaCenovaHladina";
             this.objectTypeField = "List";
@@ -7597,6 +7677,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -7900,6 +7991,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataFirmaOsobySeznamOsob() {
             this.objectNameField = "Osoba";
             this.objectTypeField = "List";
@@ -7935,6 +8028,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -9663,6 +9767,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataFirmaOsobySeznamOsobOsobaAdresniKlice() {
             this.objectNameField = "OsobaAdresniKlic";
             this.objectTypeField = "List";
@@ -9698,6 +9804,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -9901,6 +10018,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataFirmaOsobySeznamOsobOsobaPratele() {
             this.objectNameField = "OsobaPratele";
             this.objectTypeField = "List";
@@ -9936,6 +10055,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -10270,6 +10400,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataFirmaUctySeznamUctu() {
             this.objectNameField = "BankovniSpojeni";
             this.objectTypeField = "List";
@@ -10305,6 +10437,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -10908,6 +11051,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataFirmaUctySeznamUctuBankovniSpojeniHistorieOvereniUctuVRegistu() {
             this.objectNameField = "BankovniSpojeniRegistrPlatcuDphCZ";
             this.objectTypeField = "List";
@@ -10943,6 +11088,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -11285,6 +11441,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataFirmaAdresniKlice() {
             this.objectNameField = "FirmaAdresniKlic";
             this.objectTypeField = "List";
@@ -11320,6 +11478,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -11496,6 +11665,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataFirmaAktivity() {
             this.objectNameField = "Aktivita";
             this.objectTypeField = "List";
@@ -11531,6 +11702,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -11615,6 +11797,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataFirmaCinnosti() {
             this.objectNameField = "FirmaCinnost";
             this.objectTypeField = "List";
@@ -11650,6 +11834,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -11892,6 +12087,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataFirmaHistorieOvereniFirmyVRegistru() {
             this.objectNameField = "FirmaRegistrPlatcuDPH";
             this.objectTypeField = "List";
@@ -11927,6 +12124,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -12327,6 +12535,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataFirmaInsolvencniSpisyFirmy() {
             this.objectNameField = "FirmaInsolvencniSpis";
             this.objectTypeField = "List";
@@ -12362,6 +12572,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -13366,6 +13587,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataFirmaSeznamSpojeni() {
             this.objectNameField = "Spojeni";
             this.objectTypeField = "List";
@@ -13403,6 +13626,17 @@ namespace S6_Ceny {
                 this.objectTypeField = value;
             }
         }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
+            }
+        }
     }
     
     /// <remarks/>
@@ -13414,6 +13648,8 @@ namespace S6_Ceny {
     public partial class S5DataFirmaSeznamSpojeniSpojeni {
         
         private string autoRow_IDField;
+        
+        private string kod_UserDataField;
         
         private string osoba_IDField;
         
@@ -13460,6 +13696,17 @@ namespace S6_Ceny {
             }
             set {
                 this.autoRow_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod_UserData {
+            get {
+                return this.kod_UserDataField;
+            }
+            set {
+                this.kod_UserDataField = value;
             }
         }
         
@@ -13826,6 +14073,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataFirmaZakazky() {
             this.objectNameField = "Zakazka";
             this.objectTypeField = "List";
@@ -13861,6 +14110,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -15234,6 +15494,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataPolozkaCenikuPolozkyCenikuIDoklad() {
             this.objectNameField = "IDokladPolozkaCeniku";
             this.objectTypeField = "List";
@@ -15269,6 +15531,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -15525,6 +15798,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataPolozkaCenikuSeznamHladin() {
             this.objectNameField = "PolozkaCenikuHladina";
             this.objectTypeField = "List";
@@ -15560,6 +15835,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -17150,6 +17436,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataZasobaCinnosti() {
             this.objectNameField = "ArtiklCinnost";
             this.objectTypeField = "List";
@@ -17185,6 +17473,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -17348,6 +17647,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataZasobaDetaily() {
             this.objectNameField = "ZasobaDetail";
             this.objectTypeField = "List";
@@ -17383,6 +17684,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -17626,6 +17938,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataZasobaPohyby() {
             this.objectNameField = "PohybZasoby";
             this.objectTypeField = "List";
@@ -17661,6 +17975,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -17904,6 +18229,8 @@ namespace S6_Ceny {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataZasobaStavy() {
             this.objectNameField = "StavZasoby";
             this.objectTypeField = "List";
@@ -17939,6 +18266,17 @@ namespace S6_Ceny {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }

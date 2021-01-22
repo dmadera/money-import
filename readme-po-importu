@@ -5,3 +5,4 @@ Označit všechny artikly - menu - Hromadné operace - Hromadné operace s dodav
 Nastavit v Seznamu Typ spojení "GSM brána" na "GSM".
 Skrýt Pokladnu, Kód: SEK_INT pro všechny role kromě administrátora
 Omezit editaci a přidávání šeku pouze na Manažera
+Omezit v účetním deníku zobrazení účtu 999999 pouze pro admina.

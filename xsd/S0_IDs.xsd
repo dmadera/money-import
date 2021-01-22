@@ -3,6 +3,22 @@
   <xs:element name="S5Data">
     <xs:complexType>
       <xs:sequence>
+        <xs:element name="AdresniKlicList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AdresniKlic" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Kod" type="emptiable_string_10" />
+                  </xs:sequence>
+                  <xs:attribute name="ObjectName" fixed="AdresniKlic" use="required" />
+                  <xs:attribute name="ObjectType" fixed="Object" use="required" />
+                  <xs:attribute name="ID" type="guid" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="ArtiklList">
           <xs:complexType>
             <xs:sequence>
@@ -119,6 +135,23 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="OsobaList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Osoba" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Group" type="group" minOccurs="0" />
+                    <xs:element name="Kod" type="emptiable_string_20" />
+                  </xs:sequence>
+                  <xs:attribute name="ObjectName" fixed="Osoba" use="required" />
+                  <xs:attribute name="ObjectType" fixed="Object" use="required" />
+                  <xs:attribute name="ID" type="guid" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="ProduktovyKlicList">
           <xs:complexType>
             <xs:sequence>
@@ -162,6 +195,22 @@
                     <xs:element name="Kod" type="emptiable_string_10" />
                   </xs:sequence>
                   <xs:attribute name="ObjectName" fixed="Sklad" use="required" />
+                  <xs:attribute name="ObjectType" fixed="Object" use="required" />
+                  <xs:attribute name="ID" type="guid" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SpojeniList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Spojeni" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Kod_UserData" type="emptiable_string_unbounded" />
+                  </xs:sequence>
+                  <xs:attribute name="ObjectName" fixed="Spojeni" use="required" />
                   <xs:attribute name="ObjectType" fixed="Object" use="required" />
                   <xs:attribute name="ID" type="guid" use="required" />
                 </xs:complexType>
@@ -240,6 +289,9 @@
   <xs:simpleType name="emptiable_string_60">
     <xs:union memberTypes="string_60 empty" />
   </xs:simpleType>
+  <xs:simpleType name="emptiable_string_unbounded">
+    <xs:union memberTypes="string_unbounded empty" />
+  </xs:simpleType>
   <xs:simpleType name="empty">
     <xs:restriction base="xs:string">
       <xs:maxLength value="0" />
@@ -276,6 +328,11 @@
     <xs:restriction base="xs:string">
       <xs:minLength value="1" />
       <xs:maxLength value="60" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_unbounded">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>

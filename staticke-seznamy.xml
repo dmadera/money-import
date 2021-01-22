@@ -39,23 +39,18 @@
   </DruhArtikluList>
   <FunkceOsobyList>
     <FunkceOsoby>
-      <Code>NÁK</Code>
-      <Name>Nákupčí</Name>
-      <Note />
-    </FunkceOsoby>
-    <FunkceOsoby>
       <Code>OZ</Code>
       <Name>Obchodní zástupce</Name>
       <Note />
     </FunkceOsoby>
     <FunkceOsoby>
-      <Code>PŘE</Code>
+      <Code>PRE</Code>
       <Name>Přebírající</Name>
       <Note />
     </FunkceOsoby>
     <FunkceOsoby>
-      <Code>ŘED</Code>
-      <Name>Ředitel</Name>
+      <Code>ZAS</Code>
+      <Name>Zastupující</Name>
       <Note />
     </FunkceOsoby>
   </FunkceOsobyList>
@@ -249,7 +244,7 @@
       <DruhSpojeni EnumValueName="Email">2</DruhSpojeni>
       <IsUser>True</IsUser>
       <Kod>E-mailFA</Kod>
-      <Nazev>E-mail fakturační</Nazev>
+      <Nazev>E-mail FA</Nazev>
       <Poznamka />
     </TypSpojeni>
     <TypSpojeni>
@@ -262,7 +257,7 @@
     <TypSpojeni>
       <DruhSpojeni EnumValueName="Telefon">0</DruhSpojeni>
       <IsUser>False</IsUser>
-      <Kod>GSM</Kod>
+      <Kod>GSM brána</Kod>
       <Nazev>GSM brána</Nazev>
       <Poznamka />
     </TypSpojeni>
@@ -339,4 +334,26 @@
       <Poznamka />
     </ZpusobPlatby>
   </ZpusobPlatbyList>
+  <AdresniKlicList>
+    <AdresniKlic>
+      <Kod>SDPH</Kod> 
+      <Nazev>Ceny s DPH</Nazev> 
+      <Poznamka>Na dokladu se budou zobrazovat ceny položek s DPH.</Poznamka>
+    </AdresniKlic>
+    <AdresniKlic>
+      <Kod>BEZCEN</Kod> 
+      <Nazev>DL bez cen</Nazev> 
+      <Poznamka>Na DL nebude uvedená cena položek ani celková.</Poznamka>
+    </AdresniKlic>
+    <AdresniKlic>
+      <Kod>ZAKSEK</Kod> 
+      <Nazev>Nevystavovat šek</Nazev> 
+      <Poznamka>Odběrateli nevystavovat šek. Má nejvyšší prioritu.</Poznamka>
+    </AdresniKlic>
+    <AdresniKlic>
+      <Kod>ODESFA</Kod> 
+      <Nazev>Odesílat FA emailem</Nazev> 
+      <Poznamka>Parametr zda odesílat zákazníkovi FA emailem.</Poznamka>
+    </AdresniKlic>
+  </AdresniKlicList>
 </S5Data>

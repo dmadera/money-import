@@ -7092,6 +7092,8 @@ namespace S6_SklDokl {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataSkladovyDokladDetailniRozpisDPH() {
             this.objectNameField = "DetailniRozpisDPH";
             this.objectTypeField = "List";
@@ -7127,6 +7129,17 @@ namespace S6_SklDokl {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -7892,6 +7905,8 @@ namespace S6_SklDokl {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataSkladovyDokladDokladInfo() {
             this.objectNameField = "DokladInfo";
             this.objectTypeField = "List";
@@ -7927,6 +7942,17 @@ namespace S6_SklDokl {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -8341,6 +8367,8 @@ namespace S6_SklDokl {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataSkladovyDokladNakladoveDoklady() {
             this.objectNameField = "VazbaRozpousteniNakladu";
             this.objectTypeField = "List";
@@ -8376,6 +8404,17 @@ namespace S6_SklDokl {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -8618,6 +8657,8 @@ namespace S6_SklDokl {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataSkladovyDokladPolozky() {
             this.objectNameField = "PolozkaSkladovehoDokladu";
             this.objectTypeField = "List";
@@ -8653,6 +8694,17 @@ namespace S6_SklDokl {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -10563,6 +10615,8 @@ namespace S6_SklDokl {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuAdresneBlokace() {
             this.objectNameField = "BlokaceZasob";
             this.objectTypeField = "List";
@@ -10598,6 +10652,17 @@ namespace S6_SklDokl {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -12066,6 +12131,8 @@ namespace S6_SklDokl {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuUcetniPohyby() {
             this.objectNameField = "PohybKonta";
             this.objectTypeField = "List";
@@ -12101,6 +12168,17 @@ namespace S6_SklDokl {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -12172,6 +12250,8 @@ namespace S6_SklDokl {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuUcetniZapisy() {
             this.objectNameField = "UcetniZapis";
             this.objectTypeField = "List";
@@ -12207,6 +12287,17 @@ namespace S6_SklDokl {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -13828,6 +13919,8 @@ namespace S6_SklDokl {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataSkladovyDokladPoplatky() {
             this.objectNameField = "PoplatekZaDoklad";
             this.objectTypeField = "List";
@@ -13863,6 +13956,17 @@ namespace S6_SklDokl {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -14501,6 +14605,8 @@ namespace S6_SklDokl {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataSkladovyDokladSazbyDPHNaDoklade() {
             this.objectNameField = "SazbaDPHNaDoklade";
             this.objectTypeField = "List";
@@ -14536,6 +14642,17 @@ namespace S6_SklDokl {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -15108,6 +15225,8 @@ namespace S6_SklDokl {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataSkladovyDokladUcetniZapisy() {
             this.objectNameField = "UcetniZapis";
             this.objectTypeField = "List";
@@ -15143,6 +15262,17 @@ namespace S6_SklDokl {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -15214,6 +15344,8 @@ namespace S6_SklDokl {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataSkladovyDokladVazbyObjektu() {
             this.objectNameField = "VazbaObjektu";
             this.objectTypeField = "List";
@@ -15249,6 +15381,17 @@ namespace S6_SklDokl {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }

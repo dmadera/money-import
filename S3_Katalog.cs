@@ -93,6 +93,7 @@ namespace SDataObjs {
                     DruhArtiklu_ID = S0_IDs.GetDruhZboziID("ZBO"),
                     SkladovaPozice_UserData = d["Pozice"].GetAlfaNum().ToUpper(), 
                     SazbyDPH = new S5DataArtiklSazbyDPH() {
+                        DeleteItems = "1",
                         ArtiklDPH = new S5DataArtiklSazbyDPHArtiklDPH[] {
                             new S5DataArtiklSazbyDPHArtiklDPH() {
                                 SazbaVstup = sazbaDPH,
@@ -108,6 +109,7 @@ namespace SDataObjs {
                             Jednotka_ID = jednotkaID,
                         },
                         SeznamJednotek = new S5DataArtiklJednotkySeznamJednotek() {
+                        DeleteItems = "1",
                             ArtiklJednotka = new S5DataArtiklJednotkySeznamJednotekArtiklJednotka[] {
                                     new S5DataArtiklJednotkySeznamJednotekArtiklJednotka() {
                                         Mnozstvi = "1",
@@ -153,6 +155,7 @@ namespace SDataObjs {
 
                 if(priznak != "P") {
                     artikl.ProduktoveKlice = priznakID != null ? new S5DataArtiklProduktoveKlice() {
+                        DeleteItems = "1",
                         ArtiklProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlic[] {
                             new S5DataArtiklProduktoveKliceArtiklProduktovyKlic() {                        
                                 ProduktovyKlic_ID = priznakID,
@@ -174,6 +177,7 @@ namespace SDataObjs {
                         
                     },
                     SeznamDodavatelu = new S5DataArtiklDodavateleSeznamDodavatelu() {
+                        DeleteItems = "1",
                         ArtiklDodavatel = new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatel[] {
                                 new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatel() {
                                     DodavatelskeOznaceni = new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatelDodavatelskeOznaceni() {
@@ -200,11 +204,6 @@ namespace SDataObjs {
                         podkod.ID
                     );
                 }
-
-                artikl.SmazatOstatniDodavatele = "True";
-                artikl.SmazatOstatniJednotky = "True";
-                artikl.SmazatOstatniSazbyDPH = "True";
-                artikl.SmazatOstatniProduktoveKlice = "True";
 
                 _artikly.Add(artikl);
             }

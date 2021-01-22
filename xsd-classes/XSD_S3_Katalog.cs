@@ -4210,6 +4210,8 @@ namespace S3_Katalog {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataArtiklDodavateleSeznamDodavatelu() {
             this.objectNameField = "ArtiklDodavatel";
             this.objectTypeField = "List";
@@ -4245,6 +4247,17 @@ namespace S3_Katalog {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -5550,6 +5563,8 @@ namespace S3_Katalog {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataArtiklJednotkySeznamJednotek() {
             this.objectNameField = "ArtiklJednotka";
             this.objectTypeField = "List";
@@ -5585,6 +5600,17 @@ namespace S3_Katalog {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -5903,6 +5929,8 @@ namespace S3_Katalog {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataArtiklJednotkySeznamJednotekArtiklJednotkaBaleni() {
             this.objectNameField = "ArtiklBaleni";
             this.objectTypeField = "List";
@@ -5938,6 +5966,17 @@ namespace S3_Katalog {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -6153,6 +6192,8 @@ namespace S3_Katalog {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataArtiklJednotkySeznamJednotekArtiklJednotkaBaleniArtiklBaleniPrirazeniObalu() {
             this.objectNameField = "PrirazeniObalu";
             this.objectTypeField = "List";
@@ -6188,6 +6229,17 @@ namespace S3_Katalog {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -6962,6 +7014,8 @@ namespace S3_Katalog {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataArtiklOdberateleSeznamOdberatelu() {
             this.objectNameField = "ArtiklOdberatel";
             this.objectTypeField = "List";
@@ -6997,6 +7051,17 @@ namespace S3_Katalog {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -8062,6 +8127,8 @@ namespace S3_Katalog {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataArtiklRozmerySeznamRozmeru() {
             this.objectNameField = "ArtiklRozmer";
             this.objectTypeField = "List";
@@ -8097,6 +8164,17 @@ namespace S3_Katalog {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -8821,6 +8899,8 @@ namespace S3_Katalog {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataArtiklArtiklElektronickyObchod() {
             this.objectNameField = "ArtiklElektronickyObchod";
             this.objectTypeField = "List";
@@ -8856,6 +8936,17 @@ namespace S3_Katalog {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -9085,6 +9176,8 @@ namespace S3_Katalog {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataArtiklCinnosti() {
             this.objectNameField = "ArtiklCinnost";
             this.objectTypeField = "List";
@@ -9120,6 +9213,17 @@ namespace S3_Katalog {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -9707,6 +9811,8 @@ namespace S3_Katalog {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataArtiklIdentifikace() {
             this.objectNameField = "ArtiklIdentifikace";
             this.objectTypeField = "List";
@@ -9742,6 +9848,17 @@ namespace S3_Katalog {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -10261,6 +10378,8 @@ namespace S3_Katalog {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataArtiklParametry() {
             this.objectNameField = "ArtiklHodnotaParametru";
             this.objectTypeField = "List";
@@ -10296,6 +10415,17 @@ namespace S3_Katalog {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -10854,6 +10984,8 @@ namespace S3_Katalog {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataArtiklPrislusenstvi() {
             this.objectNameField = "ArtiklPrislusenstvi";
             this.objectTypeField = "List";
@@ -10889,6 +11021,17 @@ namespace S3_Katalog {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -11628,6 +11771,8 @@ namespace S3_Katalog {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataArtiklProduktoveKlice() {
             this.objectNameField = "ArtiklProduktovyKlic";
             this.objectTypeField = "List";
@@ -11663,6 +11808,17 @@ namespace S3_Katalog {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -11839,6 +11995,8 @@ namespace S3_Katalog {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataArtiklSazbyDPH() {
             this.objectNameField = "ArtiklDPH";
             this.objectTypeField = "List";
@@ -11874,6 +12032,17 @@ namespace S3_Katalog {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -12326,6 +12495,8 @@ namespace S3_Katalog {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataArtiklSerie() {
             this.objectNameField = "ArtiklSerie";
             this.objectTypeField = "List";
@@ -12361,6 +12532,17 @@ namespace S3_Katalog {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -12432,6 +12614,8 @@ namespace S3_Katalog {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataArtiklSeznamAlternativ() {
             this.objectNameField = "ArtiklAlternativa";
             this.objectTypeField = "List";
@@ -12467,6 +12651,17 @@ namespace S3_Katalog {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -12735,6 +12930,8 @@ namespace S3_Katalog {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataArtiklSlozeni() {
             this.objectNameField = "ArtiklSlozeni";
             this.objectTypeField = "List";
@@ -12770,6 +12967,17 @@ namespace S3_Katalog {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -13564,6 +13772,8 @@ namespace S3_Katalog {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataArtiklZavady() {
             this.objectNameField = "ArtiklZavady";
             this.objectTypeField = "List";
@@ -13599,6 +13809,17 @@ namespace S3_Katalog {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }
@@ -14352,6 +14573,8 @@ namespace S3_Katalog {
         
         private string objectTypeField;
         
+        private string deleteItemsField;
+        
         public S5DataKategorieArtikluParametry() {
             this.objectNameField = "KategorieArtikluHodnotaParametru";
             this.objectTypeField = "List";
@@ -14387,6 +14610,17 @@ namespace S3_Katalog {
             }
             set {
                 this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DeleteItems {
+            get {
+                return this.deleteItemsField;
+            }
+            set {
+                this.deleteItemsField = value;
             }
         }
     }

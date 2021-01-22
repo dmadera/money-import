@@ -1,0 +1,19 @@
+Lze uložit rozložení sloupců pro danou skupinu záznamů?
+
+Formátování telefonních čísel. 
+
+Jak při importu smazat např seznam osob nebo spojení. 
+
+Skrytí například záložky bankovní účty u Firem.
+
+Adresní klíče mají položku Poznámka v databázi, ale v seznamu chybí. Hodila by se. 
+
+Lze zamknout rozložení sloupců?
+
+Bylo by možné nechat vytvořit SQL proceduru, která vytváří interní doklad na základě zadaných paramtrů? Potřebovali bychom evidovat šeky.
+    Trigger bych si napsal sám, když by poskytli proceduru, která bude generovat interní doklad se všemi návaznostmi. 
+    Popřípadě najít nějaké jiné řešení, jak šeky zpracovávat.
+
+Souhrnná fakturace? Jak nastavit u ODB (zda povolujeme souhrnnou FA a v jakém časovém rozmezí). 
+
+Jak fungují aktualizace? databáze, program? Vydává se předem nějaký informační email o nadcházející aktualizaci? 
