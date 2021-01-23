@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
-using S7_OsSpoj;
+using S7_Adresar;
 using SkladData;
 
 namespace SDataObjs {
-    class S7_OsSpoj: S0_Generic<S5Data> {
+    class S7_Adresar: S0_Generic<S5Data> {
 
         private List<S5DataFirma> _firmy = new List<S5DataFirma>();
 
-        public S7_OsSpoj(string dir, Encoding enc) {
+        private SkladDataFile kodSumFile;
+
+        public S7_Adresar(string dir, Encoding enc) {
+            kodSumFile = new SkladDataFile(dir, SFile.KODSUMFA, enc);
             convertOdb(new SkladDataFile(dir, SFile.ODB, enc));
             convertDod(new SkladDataFile(dir, SFile.DOD, enc));
         }
@@ -36,6 +39,7 @@ namespace SDataObjs {
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
                 string kod = S3_Adresar.GetOdbID(d["CisloOdberatele"].GetNum());
+                string kodSumFa = d["KodSumFa"].GetText();
 
                 var firma = new S5DataFirma() {};
                 firma.ID = S0_IDs.GetFirmaID(kod);
@@ -72,8 +76,39 @@ namespace SDataObjs {
                     } 
                 };
 
+                if(kodSumFa == "dr") {
+                    firma.Cinnosti = new S5DataFirmaCinnosti() {
+                        FirmaCinnost = new S5DataFirmaCinnostiFirmaCinnost[] {
+                            new S5DataFirmaCinnostiFirmaCinnost() {
+                                Cinnost_ID = S0_IDs.GetCinnostID("DRAK")
+                            }
+                        }
+                    };
+                } else {
+                    var kodOdb = S3_Adresar.GetOdbID(findKodOdbKodSum(kodSumFa));
+                    var firmaID = S0_IDs.GetFirmaID(kodOdb);
+
+                    if(firma.ID != firmaID && firmaID != null) {
+                        firma.NadrazenaFirma = new S5DataFirmaNadrazenaFirma() {
+                            Firma = new S5DataFirmaNadrazenaFirmaFirma() {
+                                ID = firmaID
+                            },
+                            PrevzitObchodniPodminky = "True",
+                            PrevzitObchodniUdaje = "True"
+                        };
+                    }
+                }
+
                 _firmy.Add(firma);
             }
+        }
+
+        private string findKodOdbKodSum(string kodSumFa) {
+            var found = kodSumFile.Data.Find(delegate (SkladDataObj obj) {
+                return obj.Items["KodSumFa"].GetText() == kodSumFa;
+            });
+            if (found == null) return null;
+            return found.Items["CisloOdberatele"].GetText();
         }
 
         private void convertDod(SkladDataFile file) {
@@ -131,7 +166,6 @@ namespace SDataObjs {
                     } 
                 };
                 
-                _firmy.Add(firma);
                 _firmy.Add(firma);
             }
 

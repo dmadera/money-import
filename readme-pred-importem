@@ -3,48 +3,52 @@ Nastavení číselných řada
     PROD_PRI, prefix: PP
     POKL_PRI, prefix: HP
     POKL_VYD, prefix: HV
-    SEK_VYD, název: Šeky vydané, prefix: SEK, Max. počet cifer: 5, Úhrady zálohových faktur: zrušit vazbu
+    SEK_VYD, název: Šeky vydané, prefix: SEK
     FAK_VYD_S, název: Výdeje na šek, prefix: FS
+    INT_SEK, název: Interní doklad ŠEK, prefix: IS
+    POKD_SEK, název: Pokladní doklad ŠEK, prefix: PS
 
-Nastavení skupin seznamů
 Vytvořit skupiny objektu Jednotka
     Kód: _, Název: logistické
 
-Firma
+Firma - skupiny
     Kód: NP, Název: Náhradní plnění, Převzít nastavení z nadřazené úrovně: true
     Kód: OST, Název: Ostatní odběratelé, Převzít nastavení z nadřazené úrovně: false, Obchod/Způsob dopravy: Osobní odběr, 
         Obchod/Způsob platby: Hotově, Použít kredit: ANO, Hodnota: 0,00
-    Kód: ZRUŠ, Název: Zrušené, Převzít nastavení z nadřazené úrovně: true, Není pro ukládání záznamů: True
+    Kód: ZRUS, Název: Zrušené, Převzít nastavení z nadřazené úrovně: true
     Kód: Nezařazené, Použít kredit: ANO, Hodnota: 0,00, Způsob dopravy: Osobní odběr, Způsob platby: Hotově, Přiřadit ceník: ZAKLADNI
 
-Artikl
+Artikl - skupiny
+    Nastavit zobrazení včetně podřízených
     Kód: Nezařazené, Není určena pro ukládání záznamů: true
     Kód: ART, Název: Artikly, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu
 
-Pokladní doklady - skupy
-    Kód: POKL_SEK, Název: Pokladní doklady ŠEK, Vnutit nastavneí podřízeným: ANO, Pokladna: CZK_SEK, Typ ceny: Pouze základ, Sazba DPH: Nulová, 
-        Podrobnosti/Příjmový doklad/Číselná řada: POKD_SEK, Podrobnosti/Příjmový doklad/Číselná řada: POKD_SEK
+Pokladní doklady - skupiny
+    Kód: POKL_SEK, Název: Pokladní doklady ŠEK, Vnutit nastavneí podřízeným: ANO, Pokladna: CZK_SEK, Typ ceny: Bez daně, Sazba DPH: Nulová, 
+        Podrobnosti/PřijVyd doklad/Číselná řada: POKD_SEK
+        Podrobnosti/PřijVyd doklad/Predkontace zaokrouhlení: SEKY, Podrobnosti/PřijVyd doklad/Doklad: SEKY, Podrobnosti/PřijVyd doklad/Uhrady: SEKY
 
-Interní doklady
+Interní doklady - skupiny
     Kód: SEKY, Název: Šeky, Vnutit nastavneí podřízeným: ANO, 
-        Podrobnosti/Číselná řada: SEK
-
-Pokladna
-    Kód: CZK, Název: Účetní pokladna
-    Kód: CZK_PRO, Název: Prodejní pokladna, Primární účet: 211100
-    Kód: CZK_SEK, Název: Prodejní pokladna při odběru na šek, Primární účet: 999999, Kurz: 0100
+        Číselná řada: INT_SEK, Typ ceny: Pouze základ, Sazba DPH: Nulová, Zaokrouhlení celkové částky: 1_MAT, Členění DPH: _Ř000 U
+        Předkontace: SEKY, Primární účet MD: 999999, Předkontace zaokrouhlení: SEKY, Sazba DPH: Nulova
 
 Účtový rozvrh
     Účet: 999999, Název: Evidence šeků, Druh účtu: Výsledkový, Typ účtu: Nákladový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO, Technický: ANO
 
 Předkontace
     Kód: SEKY, Členění DPH: _Ř000U P, Název: Šeky
-        Přidat Cena za nulovou sazbu, MD: 999999, DAL: 999999, Hlavní položka: ANO, Přednostně: ANO
+        Přidat Zaklad celkem, MD: 999999, DAL: 999999, Hlavní položka: ANO, Přednostně: ANO
 
-Faktura
+Pokladna
+    Kód: CZK, Název: Účetní pokladna
+    Kód: CZK_PRO, Název: Prodejní pokladna, Primární účet: 211100, Kurz: 0710
+    Kód: CZK_SEK, Název: Prodejní pokladna při odběru na šek, Primární účet: 999999, Kurz: 0710
+
+Faktura vydaná
     Kód: FASEKY, Název: Výdeje na šek, Členění DPH: _Ř000U U, Sazba: Nulová, Řada: FAK_VYD_S
     Rozúčtování/Předkontace: SEKY, Předkontace sklad. položek: SEKY, Předkontace zaokrouhlení: SEKY, 
-        Skupina pokladních dokladů: Šeky, Skupina ceninových pokladních dokladů: Šeky, Doprava: osobní odběr, Způsob platby: Hotově
+        Skupina interních dokladů: Šeky, Doprava: osobní odběr, Způsob platby: Hotově
         Druh pohybu: prodej, Druh skl. pohybu: spotřeba
 
 Sklad
@@ -58,15 +62,13 @@ Ceník
     Typ zdroje přebírání: Katalog, Skupina katalogu: ART
     Nastavit jako výchozí: ANO
     Poznamka: ZAKLADNI
-    
-
-Nastavení uživatelských sloupců
 
 Průvodce nastavení programu
     Vzhled aplikace/Každý sudý řádek...: 255; 255; 255
-    Vzhled aplikace/Každý sudý řádek...: 245; 245; 245
-    Vzhled aplikace/Zobrazit horizontální posuvník: false
+    Vzhled aplikace/Každý sudý řádek...: 240; 248; 255
+    Vzhled aplikace/Zobrazit horizontální posuvník: true
 
+    Nastavení agendy/Evidovat Intrastat: false
     Nastavení agendy/Evidovat náhradní plnění: true
     Nastavení agendy/Roční limit náhradního plnění: 1200000
 

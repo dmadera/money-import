@@ -53,6 +53,11 @@
       <Name>Zastupující</Name>
       <Note />
     </FunkceOsoby>
+    <FunkceOsoby>
+      <Code>VED</Code>
+      <Name>Vedení</Name>
+      <Note />
+    </FunkceOsoby>
   </FunkceOsobyList>
   <JednotkaList>
     <Jednotka>
@@ -248,24 +253,10 @@
       <Poznamka />
     </TypSpojeni>
     <TypSpojeni>
-      <DruhSpojeni EnumValueName="Fax">1</DruhSpojeni>
-      <IsUser>False</IsUser>
-      <Kod>Fax</Kod>
-      <Nazev>Fax</Nazev>
-      <Poznamka />
-    </TypSpojeni>
-    <TypSpojeni>
       <DruhSpojeni EnumValueName="Telefon">0</DruhSpojeni>
       <IsUser>False</IsUser>
-      <Kod>GSM brána</Kod>
-      <Nazev>GSM brána</Nazev>
-      <Poznamka />
-    </TypSpojeni>
-    <TypSpojeni>
-      <DruhSpojeni EnumValueName="Telefon">0</DruhSpojeni>
-      <IsUser>False</IsUser>
-      <Kod>Mob</Kod>
-      <Nazev>Mobil</Nazev>
+      <Kod>GSM</Kod>
+      <Nazev>GSM</Nazev>
       <Poznamka />
     </TypSpojeni>
     <TypSpojeni>
@@ -294,6 +285,13 @@
     <ZpusobPlatby>
       <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
       <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
+      <Kod>SF</Kod>
+      <Nazev>Souhrnná faktura</Nazev>
+      <Poznamka />
+    </ZpusobPlatby>
+    <ZpusobPlatby>
+      <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
+      <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
       <Kod>D</Kod>
       <Nazev>Dobírkou</Nazev>
       <Poznamka />
@@ -308,29 +306,8 @@
     <ZpusobPlatby>
       <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
       <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
-      <Kod>I</Kod>
-      <Nazev>Inkasem</Nazev>
-      <Poznamka />
-    </ZpusobPlatby>
-    <ZpusobPlatby>
-      <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
-      <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
       <Kod>K</Kod>
       <Nazev>Platební kartou</Nazev>
-      <Poznamka />
-    </ZpusobPlatby>
-    <ZpusobPlatby>
-      <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
-      <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
-      <Kod>S</Kod>
-      <Nazev>Poštovní složenkou</Nazev>
-      <Poznamka />
-    </ZpusobPlatby>
-    <ZpusobPlatby>
-      <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
-      <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
-      <Kod>Z</Kod>
-      <Nazev>Zápočtem</Nazev>
       <Poznamka />
     </ZpusobPlatby>
   </ZpusobPlatbyList>
@@ -355,5 +332,40 @@
       <Nazev>Odesílat FA emailem</Nazev> 
       <Poznamka>Parametr zda odesílat zákazníkovi FA emailem.</Poznamka>
     </AdresniKlic>
+    <AdresniKlic>
+      <Kod>OZ</Kod> 
+      <Nazev>Obchodní zástupce</Nazev> 
+      <Poznamka>Odběratel pod obchodním zástupcem.</Poznamka>
+    </AdresniKlic>
+    <AdresniKlic>
+      <Kod>OZN</Kod> 
+      <Nazev>Obchodní zástupce NOVÝ</Nazev> 
+      <Poznamka>Nový odběratel pod obchodním zástupcem.</Poznamka>
+    </AdresniKlic>
   </AdresniKlicList>
+  <CinnostList>
+    <Cinnost>
+      <Kod>DRAK</Kod>
+      <Nazev>Drak</Nazev>
+      <ParentObject_ID/>
+      <Poznamka>Fakturace přes OS DRAK.</Poznamka>
+    </Cinnost>
+  </CinnostList>
+  <ZpusobDopravyList>
+    <ZpusobDopravy>
+      <Kod>O</Kod>
+      <Nazev>Osobní odběr</Nazev>
+      <Poznamka />
+    </ZpusobDopravy>
+    <ZpusobDopravy>
+      <Kod>P</Kod>
+      <Nazev>Přepravní služba</Nazev>
+      <Poznamka />
+    </ZpusobDopravy>
+    <ZpusobDopravy>
+      <Kod>R</Kod>
+      <Nazev>Rozvoz</Nazev>
+      <Poznamka />
+    </ZpusobDopravy>
+  </ZpusobDopravyList>
 </S5Data>

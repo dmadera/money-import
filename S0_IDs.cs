@@ -201,5 +201,16 @@ namespace SDataObjs {
 
             return null;
         }
+        public static string GetCinnostID(string kod) {
+            if (_data == null) throw new Exception("First call Deserialize method.");
+
+            foreach (S5DataCinnost cinnost in _data.CinnostList) {
+                if (cinnost.Kod == kod) {
+                    return cinnost.ID;
+                }
+            }
+
+            return null;
+        }
     }
 }

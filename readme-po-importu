@@ -6,3 +6,5 @@ Nastavit v Seznamu Typ spojení "GSM brána" na "GSM".
 Skrýt Pokladnu, Kód: SEK_INT pro všechny role kromě administrátora
 Omezit editaci a přidávání šeku pouze na Manažera
 Omezit v účetním deníku zobrazení účtu 999999 pouze pro admina.
+Firma skupina - ZRUS, Není pro ukládání záznamů: True
+Adresni klic OZ na přidělený obchodník, až se zadají zaměstanci.

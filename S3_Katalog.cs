@@ -93,7 +93,6 @@ namespace SDataObjs {
                     DruhArtiklu_ID = S0_IDs.GetDruhZboziID("ZBO"),
                     SkladovaPozice_UserData = d["Pozice"].GetAlfaNum().ToUpper(), 
                     SazbyDPH = new S5DataArtiklSazbyDPH() {
-                        DeleteItems = "1",
                         ArtiklDPH = new S5DataArtiklSazbyDPHArtiklDPH[] {
                             new S5DataArtiklSazbyDPHArtiklDPH() {
                                 SazbaVstup = sazbaDPH,

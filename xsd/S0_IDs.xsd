@@ -53,6 +53,22 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="CinnostList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cinnost" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Kod" type="emptiable_string_10" />
+                  </xs:sequence>
+                  <xs:attribute name="ObjectName" fixed="Cinnost" use="required" />
+                  <xs:attribute name="ObjectType" fixed="Object" use="required" />
+                  <xs:attribute name="ID" type="guid" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="DruhArtikluList">
           <xs:complexType>
             <xs:sequence>

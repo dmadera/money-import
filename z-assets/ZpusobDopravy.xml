@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<S5Data>
+  <ZpusobDopravyList>
+    <ZpusobDopravy ID="73cd5949-ceaa-4ed3-ace8-34710f724e9c">
+      <Kod>O</Kod>
+      <Nazev>Osobní odběr</Nazev>
+      <Poznamka />
+    </ZpusobDopravy>
+    <ZpusobDopravy ID="987aa2ec-d6d2-459f-abfd-374b71116d88">
+      <Kod>P</Kod>
+      <Nazev>Přepravní služba</Nazev>
+      <Poznamka />
+    </ZpusobDopravy>
+    <ZpusobDopravy ID="c5b94801-4fc1-4ab9-bfdd-a77c2b93b6b4">
+      <Kod>D</Kod>
+      <Nazev>Dobírka</Nazev>
+      <Poznamka />
+    </ZpusobDopravy>
+  </ZpusobDopravyList>
+</S5Data>

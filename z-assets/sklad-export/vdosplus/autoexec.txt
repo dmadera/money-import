@@ -22,5 +22,6 @@ rem Type HELP for help, or EXIT to close the vDosPlus window.
 rem You may start Doszip Commander by typing DZ from the command line.
 @ECHO OFF
 
-call c:\export\vdosplus\run.bat
+call vdosplus\run.bat
+rem call c:\sklad-export\vdosplus\run.bat
 exit /b

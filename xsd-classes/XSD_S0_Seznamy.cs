@@ -25,6 +25,8 @@ namespace S0_Seznamy {
         
         private S5DataAdresniKlic[] adresniKlicListField;
         
+        private S5DataCinnost[] cinnostListField;
+        
         private S5DataDruhArtiklu[] druhArtikluListField;
         
         private S5DataFunkceOsoby[] funkceOsobyListField;
@@ -46,6 +48,18 @@ namespace S0_Seznamy {
             }
             set {
                 this.adresniKlicListField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Cinnost", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public S5DataCinnost[] CinnostList {
+            get {
+                return this.cinnostListField;
+            }
+            set {
+                this.cinnostListField = value;
             }
         }
         
@@ -441,6 +455,111 @@ namespace S0_Seznamy {
             }
             set {
                 this.kodField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class S5DataCinnost {
+        
+        private string kodField;
+        
+        private string nazevField;
+        
+        private string parentObject_IDField;
+        
+        private string poznamkaField;
+        
+        private string objectNameField;
+        
+        private string objectTypeField;
+        
+        private string idField;
+        
+        public S5DataCinnost() {
+            this.objectNameField = "Cinnost";
+            this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod {
+            get {
+                return this.kodField;
+            }
+            set {
+                this.kodField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Nazev {
+            get {
+                return this.nazevField;
+            }
+            set {
+                this.nazevField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string ParentObject_ID {
+            get {
+                return this.parentObject_IDField;
+            }
+            set {
+                this.parentObject_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Poznamka {
+            get {
+                return this.poznamkaField;
+            }
+            set {
+                this.poznamkaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ObjectName {
+            get {
+                return this.objectNameField;
+            }
+            set {
+                this.objectNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ObjectType {
+            get {
+                return this.objectTypeField;
+            }
+            set {
+                this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
             }
         }
     }

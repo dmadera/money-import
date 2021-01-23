@@ -21,6 +21,25 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="CinnostList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cinnost" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="Kod" type="string_10" />
+                    <xs:element name="Nazev" type="emptiable_string_50" minOccurs="0" />
+                    <xs:element name="ParentObject_ID" type="emptiable_guid" minOccurs="0" />
+                    <xs:element name="Poznamka" type="emptiable_string_unbounded" minOccurs="0" />
+                  </xs:all>
+                  <xs:attribute name="ObjectName" fixed="Cinnost" />
+                  <xs:attribute name="ObjectType" fixed="Object" />
+                  <xs:attribute name="ID" type="guid" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="DruhArtikluList">
           <xs:complexType>
             <xs:sequence>
@@ -148,6 +167,9 @@
   </xs:simpleType>
   <xs:simpleType name="emptiable_bool">
     <xs:union memberTypes="bool empty" />
+  </xs:simpleType>
+  <xs:simpleType name="emptiable_guid">
+    <xs:union memberTypes="guid empty" />
   </xs:simpleType>
   <xs:simpleType name="emptiable_integer">
     <xs:union memberTypes="xs:integer empty" />
