@@ -212,5 +212,44 @@ namespace SDataObjs {
 
             return null;
         }
+        public static string GetCeniktID(string kod) {
+            if (_data == null) throw new Exception("First call Deserialize method.");
+
+            foreach (S5DataCenik cenik in _data.CenikList) {
+                if (cenik.Kod == kod) {
+                    return cenik.ID;
+                }
+            }
+
+            return null;
+        }
+
+        public static string GetElektronickyObchodID(string kod) {
+            if (_data == null) throw new Exception("First call Deserialize method.");
+
+            foreach (S5DataElektronickyObchod eobchod in _data.ElektronickyObchodList) {
+                if (eobchod.Kod == kod) {
+                    return eobchod.ID;
+                }
+            }
+
+            return null;
+        }
+
+        public static string GetArtiklJednotkaID(string artiklID, string jednotkaID) {
+            if (_data == null) throw new Exception("First call Deserialize method.");
+
+            foreach (S5DataArtikl artikl in _data.ArtiklList) {
+                if (artikl.ID == artiklID) {
+                    foreach (S5DataArtiklJednotkySeznamJednotekArtiklJednotka jednotka in artikl.Jednotky.SeznamJednotek.ArtiklJednotka) {
+                        if (jednotka.Jednotka_ID == jednotkaID) {
+                            return jednotka.ID;
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
     }
 }

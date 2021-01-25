@@ -40,6 +40,10 @@ namespace SkladData {
                 _items["Dic1"].GetAlfaNum() + _items["Dic2"].GetAlfaNum() : null;
         }
 
+        public string GetNazevZbozi() {
+            return (_items["NazevZbozi"].GetText() + " " + _items["NazevZbozi2"].GetText()).TrimEnd();
+        }
+
         public string GetIco() {
             try {
                 var ico = int.Parse(_items["Ico"].GetNum());

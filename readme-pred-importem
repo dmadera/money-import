@@ -22,6 +22,9 @@ Artikl - skupiny
     Nastavit zobrazení včetně podřízených
     Kód: Nezařazené, Není určena pro ukládání záznamů: true
     Kód: ART, Název: Artikly, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu
+    Parent: ART, Kód: LOM, Název: Zboží pod lomítkem, Převzít nastavení z nadřazené úrovně: ANO
+    Kód: OBA, Název: Obaly, Druh položky katalogu: OBA
+    Parent: ART, Kód: ZRUS, Název: Zrušeno, Převzít nastavení z nadřazené úrovně
 
 Pokladní doklady - skupiny
     Kód: POKL_SEK, Název: Pokladní doklady ŠEK, Vnutit nastavneí podřízeným: ANO, Pokladna: CZK_SEK, Typ ceny: Bez daně, Sazba DPH: Nulová, 
@@ -46,10 +49,12 @@ Pokladna
     Kód: CZK_SEK, Název: Prodejní pokladna při odběru na šek, Primární účet: 999999, Kurz: 0710
 
 Faktura vydaná
-    Kód: FASEKY, Název: Výdeje na šek, Členění DPH: _Ř000U U, Sazba: Nulová, Řada: FAK_VYD_S
+    Kód: FASEKY, Název: Výdeje na šek, Členění DPH: _Ř000U U, Sazba: Nulová, Řada: FAK_VYD_S, Zaokrouhlení: 0,01_MAT
     Rozúčtování/Předkontace: SEKY, Předkontace sklad. položek: SEKY, Předkontace zaokrouhlení: SEKY, 
         Skupina interních dokladů: Šeky, Doprava: osobní odběr, Způsob platby: Hotově
-        Druh pohybu: prodej, Druh skl. pohybu: spotřeba
+        Druh pohybu: prodej, Druh skl. pohybu: spotřeba, Primární účet: 999999
+    Kód: FAVYD, Název: Faktury, Převzít nastavení: NE
+    Kód: Nezařazené, Není pro ukládání záznamů: ANO
 
 Sklad
     Kód: HL, Název: Hlavní
@@ -61,7 +66,7 @@ Ceník
     Typ výchozí ceny: Nákupní, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -10%
     Typ zdroje přebírání: Katalog, Skupina katalogu: ART
     Nastavit jako výchozí: ANO
-    Poznamka: ZAKLADNI
+    Poznamka: ZAKLADNI !!Důležité, je to spojovací hodnota pro import!!
 
 Průvodce nastavení programu
     Vzhled aplikace/Každý sudý řádek...: 255; 255; 255

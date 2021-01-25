@@ -10,10 +10,12 @@ Adresní klíče mají položku Poznámka v databázi, ale v seznamu chybí. Hod
 
 Lze zamknout rozložení sloupců?
 
+Nejde při importu XML objektu Artikl nedělitelné množství.
+
 Bylo by možné nechat vytvořit SQL proceduru, která vytváří interní doklad na základě zadaných paramtrů? Potřebovali bychom evidovat šeky.
     Trigger bych si napsal sám, když by poskytli proceduru, která bude generovat interní doklad se všemi návaznostmi. 
     Popřípadě najít nějaké jiné řešení, jak šeky zpracovávat.
 
-Souhrnná fakturace? Jak nastavit u ODB (zda povolujeme souhrnnou FA a v jakém časovém rozmezí). 
+Souhrnná fakturace? Jak nastavit u ODB. Evidence časového rozmezí pro fakturaci. 
 
 Jak fungují aktualizace? databáze, program? Vydává se předem nějaký informační email o nadcházející aktualizaci? 

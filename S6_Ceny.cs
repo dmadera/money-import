@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 
 using S6_Ceny;
 using SkladData;
+using MainProgram;
 
 namespace SDataObjs {
 
@@ -16,8 +17,10 @@ namespace SDataObjs {
         private List<S5DataZasoba> _zasoby = new List<S5DataZasoba>();
         private List<S5DataFirma> _firmy = new List<S5DataFirma>();
 
+        private Dictionary<string, string> kodSkupKodCenik = new Dictionary<string, string>();
+
         public static string GetKod(string nazev) {
-            var alfanum = Regex.Replace(SkladDataItem.RemoveDiacritics(nazev), @"[^0-9a-zA-Z]+", "").ToUpper();
+            var alfanum = Regex.Replace(nazev.RemoveDiacritics(), @"[^0-9a-zA-Z]+", "").ToUpper();
             if(alfanum.Length > 8) return alfanum.Substring(0, 8);
             return alfanum;
         }
@@ -45,7 +48,7 @@ namespace SDataObjs {
             foreach (var karta in karty.Data) {
                 var d = karta.Items;
                 var k = new S5DataPolozkaCeniku();
-                k.Cenik = new S5DataPolozkaCenikuCenik() { Poznamka = "ZAKLADNI" };
+                k.Cenik_ID = S0_IDs.GetCeniktID("ZAKL");
                 k.Kod = "0000" + d["CisloKarty"].GetNum();
                 k.Artikl_ID = S0_IDs.GetArtiklID(S3_Katalog.GetID(d["CisloKarty"].GetNum()));
                 k.Sklad_ID = skladID;
@@ -71,33 +74,54 @@ namespace SDataObjs {
                 string cenikNazev = data["NazevSkup"].GetText() != "" ? data["NazevSkup"].GetText() : "Neznámý";
                 cenik.Kod = GetKod(cenikNazev);
                 cenik.Nazev = cenikNazev;
-                cenik.Poznamka = data["CisloSkup"].GetNum();
                 cenik.VychoziSklad_ID = skladID;
                 _ceniky.Add(cenik);
+                kodSkupKodCenik.Add(data["CisloSkup"].GetNum(), cenik.Kod);
             }
         }
         private void convertOdbCeniky(SkladDataFile firmy) {
             foreach (var f in firmy.Data) {
                 var data = f.Items;
-                if(data["CisloSkup"].GetNum() == "0000") continue;
 
                 var firma = new S5DataFirma();
                 var firmaID = S0_IDs.GetFirmaID(S3_Adresar.GetOdbID(data["CisloOdberatele"].GetNum()));
+                var zaklCenikID = S0_IDs.GetCeniktID("ZAKL");
                 firma.ID = firmaID;
-                firma.ObchodniPodminky = new S5DataFirmaObchodniPodminky() {
-                    SeznamCeniku = new S5DataFirmaObchodniPodminkySeznamCeniku() {
-                        DeleteItems = "1",
-                        FirmaCenik = new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik[] {
-                            new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
-                                Poradi = "0",
-                                Firma_ID = firmaID,
-                                Cenik = new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenikCenik() {
-                                    Poznamka = data["CisloSkup"].GetNum()
-                                }
+
+                if(data["CisloSkup"].GetNum() == "0000") {
+                    firma.ObchodniPodminky = new S5DataFirmaObchodniPodminky() {
+                        SeznamCeniku = new S5DataFirmaObchodniPodminkySeznamCeniku() {
+                            DeleteItems = "1",
+                            FirmaCenik = new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik[] {
+                                new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
+                                    Poradi = "1",
+                                    Firma_ID = firmaID,
+                                    Cenik_ID = zaklCenikID
+                                },
                             }
                         }
-                    }
-                };
+                    };
+                } else {
+                    firma.ObchodniPodminky = new S5DataFirmaObchodniPodminky() {
+                        SeznamCeniku = new S5DataFirmaObchodniPodminkySeznamCeniku() {
+                            DeleteItems = "1",
+                            FirmaCenik = new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik[] {
+                                new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
+                                    Poradi = "1",
+                                    Firma_ID = firmaID,
+                                    Cenik = new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenikCenik() {
+                                        Kod = kodSkupKodCenik.GetValueOrDefault(data["CisloSkup"].GetNum())
+                                    }
+                                },
+                                new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
+                                    Poradi = "2",
+                                    Firma_ID = firmaID,
+                                    Cenik_ID = zaklCenikID
+                                },
+                            }
+                        }
+                    };
+                }
                 _firmy.Add(firma);
             }
         }
@@ -109,7 +133,7 @@ namespace SDataObjs {
                 var d = cena.Items;
                 var c = new S5DataPolozkaCeniku();
                 c.Cenik = new S5DataPolozkaCenikuCenik() { 
-                    Poznamka = d["CisloSkup"].GetNum()
+                    Kod = kodSkupKodCenik.GetValueOrDefault(d["CisloSkup"].GetNum())
                 };
                 c.Kod = d["CisloSkup"].GetNum() + d["CisloKarty"].GetNum();
                 c.Artikl_ID = S0_IDs.GetArtiklID(S3_Katalog.GetID(d["CisloKarty"].GetNum()));

@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 using S3_Katalog;
 using SkladData;
+using MainProgram;
 
 namespace SDataObjs {
     class S3_Katalog : S0_Generic<S5Data> {
@@ -71,44 +73,66 @@ namespace SDataObjs {
         }
 
         private void convertKarty(SkladDataFile file) {
+            var eobchodID = S0_IDs.GetElektronickyObchodID("EO_PEMA");
+
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
 
-                var sazbaDPH = new enum_DruhSazbyDPH() {
-                    Value = d["SazbaD"].GetNum() == "21" ?
-                        enum_DruhSazbyDPH_value.Item1 :
-                        (d["SazbaD"].GetNum() == "15" ?
-                            enum_DruhSazbyDPH_value.Item0 :
-                            enum_DruhSazbyDPH_value.Item2)
-                };
-
-                var mernaJednotka = SkladDataItem.RemoveDiacritics(d["MernaJednotka"].GetNoSpaces().ToLower());
-                var jednotkaID = S0_IDs.GetJednotkaID(mernaJednotka);
-
+                var nazevZbozi = obj.GetNazevZbozi();                
                 var artikl = new S5DataArtikl() {
                     Kod = GetID(d["CisloKarty"].GetNum()),
-                    Nazev = d["NazevZbozi"].GetText() + " " + d["NazevZbozi2"].GetText(),
-                    Group = new group() { Kod = "ART" },
                     PosledniCena = d["NakupCena"].GetDecimal(),
-                    DruhArtiklu_ID = S0_IDs.GetDruhZboziID("ZBO"),
                     SkladovaPozice_UserData = d["Pozice"].GetAlfaNum().ToUpper(), 
-                    SazbyDPH = new S5DataArtiklSazbyDPH() {
-                        ArtiklDPH = new S5DataArtiklSazbyDPHArtiklDPH[] {
-                            new S5DataArtiklSazbyDPHArtiklDPH() {
-                                SazbaVstup = sazbaDPH,
-                                SazbaVystup = sazbaDPH
-                            }
+                };
+
+                var groupKod = "ART";
+                var druhZboziKod = "ZBO";
+                var regexLom = new Regex(@"^\\[a-zA-Z]+\\");
+                var regexObal = new Regex(@"^\|[a-zA-Z0-9]");
+                var regexZrus = new Regex(@"^\|\|[0-9]");
+                if(regexLom.IsMatch(nazevZbozi)) {
+                    groupKod = "LOM";
+                    artikl.Katalog = regexLom.Match(nazevZbozi).Value.Replace(@"\", "").ToUpper();
+                    nazevZbozi = regexLom.Replace(nazevZbozi, "").FirstCharToUpper();
+                } else if(regexObal.IsMatch(nazevZbozi)) {
+                    groupKod = "OBA";
+                    druhZboziKod = "OBA";
+                    nazevZbozi = nazevZbozi.Replace("|", "").FirstCharToUpper();
+                    artikl.NepodlehatSleveDokladu = "True";
+                } else if(regexZrus.IsMatch(nazevZbozi)) {
+                    groupKod = "ZRUS";
+                    nazevZbozi = nazevZbozi.Replace("|", "");
+                }
+                artikl.Nazev = nazevZbozi;
+                artikl.Group = new group() { Kod = groupKod };
+                artikl.DruhArtiklu_ID = S0_IDs.GetDruhZboziID(druhZboziKod);
+
+
+                var sazbaDPH = new enum_DruhSazbyDPH() {};
+                switch(d["SazbaD"].GetNum()) {
+                    case "21": sazbaDPH.Value = enum_DruhSazbyDPH_value.Item1; break;
+                    case "15": sazbaDPH.Value = enum_DruhSazbyDPH_value.Item0; break;
+                    case "0": sazbaDPH.Value = enum_DruhSazbyDPH_value.Item2; break;
+                 }
+
+                artikl.SazbyDPH = new S5DataArtiklSazbyDPH() {
+                    ArtiklDPH = new S5DataArtiklSazbyDPHArtiklDPH[] {
+                        new S5DataArtiklSazbyDPHArtiklDPH() {
+                            SazbaVstup = sazbaDPH,
+                            SazbaVystup = sazbaDPH
                         }
                     }
                 };
 
-                if (jednotkaID != "") {
+                var mernaJednotka = d["MernaJednotka"].GetNoSpaces().RemoveDiacritics().ToLower();
+                var jednotkaID = S0_IDs.GetJednotkaID(mernaJednotka);
+                artikl.SmazatOstatniJednotky = "True";
+                if (jednotkaID != null) {
                     artikl.Jednotky = new S5DataArtiklJednotky() {
                         HlavniJednotka = new S5DataArtiklJednotkyHlavniJednotka() {
                             Jednotka_ID = jednotkaID,
                         },
                         SeznamJednotek = new S5DataArtiklJednotkySeznamJednotek() {
-                        DeleteItems = "1",
                             ArtiklJednotka = new S5DataArtiklJednotkySeznamJednotekArtiklJednotka[] {
                                     new S5DataArtiklJednotkySeznamJednotekArtiklJednotka() {
                                         Mnozstvi = "1",
@@ -151,6 +175,7 @@ namespace SDataObjs {
 
                 var priznak = d["Priznak"].GetNoSpaces().ToUpper();
                 var priznakID = S0_IDs.GetProduktovyKlicID(priznak);
+                var webNezobrazovatExtra = d["Zobrazovat"].GetBooleanNegative();
 
                 if(priznak != "P") {
                     artikl.ProduktoveKlice = priznakID != null ? new S5DataArtiklProduktoveKlice() {
@@ -161,7 +186,13 @@ namespace SDataObjs {
                                 ProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlicProduktovyKlic() {
                                     ID = priznakID
                                 }
-                            }
+                            },
+                            webNezobrazovatExtra == "True" ? new S5DataArtiklProduktoveKliceArtiklProduktovyKlic() {                        
+                                ProduktovyKlic_ID = S0_IDs.GetProduktovyKlicID("NZ"),
+                                ProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlicProduktovyKlic() {
+                                    ID = S0_IDs.GetProduktovyKlicID("NZ")
+                                }
+                            } : null,
                         }
                     } : null;
                 } else {
@@ -171,10 +202,20 @@ namespace SDataObjs {
                     };
                 }
 
+                var kodStr = d["KodZbozi"].GetNum();
+                var podkodStr = d["PodKodZbozi"].GetNum();
+                if(!(kodStr == "" || kodStr == "0000" || podkodStr == "" || podkodStr == "0000")) {
+                    artikl.ArtiklElektronickyObchod = new S5DataArtiklArtiklElektronickyObchod() {
+                        DeleteItems = "1",
+                        ArtiklElektronickyObchod = new S5DataArtiklArtiklElektronickyObchodArtiklElektronickyObchod[] {
+                            new S5DataArtiklArtiklElektronickyObchodArtiklElektronickyObchod() {
+                                Obchod_ID = eobchodID
+                            }
+                        }
+                    };
+                }
+
                 artikl.Dodavatele = d["CisloDodavatele"].GetNum() != "00000" ? new S5DataArtiklDodavatele() {
-                    HlavniDodavatel = new S5DataArtiklDodavateleHlavniDodavatel() {
-                        
-                    },
                     SeznamDodavatelu = new S5DataArtiklDodavateleSeznamDodavatelu() {
                         DeleteItems = "1",
                         ArtiklDodavatel = new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatel[] {
@@ -207,7 +248,6 @@ namespace SDataObjs {
                 _artikly.Add(artikl);
             }
         }
-
 
     }
 }
