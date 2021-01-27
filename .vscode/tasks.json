@@ -2,15 +2,6 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "publishexe",
-            "command": "cp ${workspaceFolder}/bin/Debug/netcoreapp3.1/win-x64/publish/moneys4-import.exe ${workspaceFolder}/../moneys4-import/ && cp ${workspaceFolder}/bin/Debug/netcoreapp3.1/win-x64/publish/moneys4-import.exe ${workspaceFolder}/z-assets/",
-            "type": "shell",
-            "args": [],
-            "dependsOn": [
-                "publish"
-            ]
-        },
-        {
             "label": "buildxsd",
             "command": "${workspaceFolder}/xsd/generate-cs",
             "type": "shell",

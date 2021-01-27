@@ -27,6 +27,37 @@
                   <xs:sequence>
                     <xs:element name="Group" type="group" minOccurs="0" />
                     <xs:element name="Kod" type="emptiable_string_60" />
+                    <xs:element name="Dodavatele">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="HlavniDodavatel" minOccurs="0">
+                            <xs:complexType>
+                              <xs:attribute name="ObjectName" fixed="ArtiklDodavatel" use="required" />
+                              <xs:attribute name="ObjectType" fixed="Object" use="required" />
+                              <xs:attribute name="ID" type="guid" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="SeznamDodavatelu" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ArtiklDodavatel" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Firma_ID" type="emptiable_guid" />
+                                    </xs:sequence>
+                                    <xs:attribute name="ObjectName" fixed="ArtiklDodavatel" use="required" />
+                                    <xs:attribute name="ObjectType" fixed="Object" use="required" />
+                                    <xs:attribute name="ID" type="guid" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="ObjectName" fixed="ArtiklDodavatel" use="required" />
+                              <xs:attribute name="ObjectType" fixed="List" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
                     <xs:element name="Jednotky">
                       <xs:complexType>
                         <xs:sequence>

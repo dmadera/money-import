@@ -25,9 +25,9 @@ Artikl - skupiny
     Nastavit zobrazení včetně podřízených
     Kód: Nezařazené, Není určena pro ukládání záznamů: true
     Kód: ART, Název: Artikly, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu
-    Parent: ART, Kód: LOM, Název: Zboží pod lomítkem, Převzít nastavení z nadřazené úrovně: ANO
-    Kód: OBA, Název: Obaly, Druh položky katalogu: OBA
-    Parent: ART, Kód: ZRUS, Název: Zrušeno, Převzít nastavení z nadřazené úrovně: ANO
+    Kód: LOM, Název: Zboží pod lomítkem, Převzít nastavení z nadřazené úrovně: ANO, Parent: ART
+    Kód: ZRUS, Název: Zrušeno, Převzít nastavení z nadřazené úrovně: ANO, Parent: ART
+    Kód: OBA, Název: Obaly, Druh položky katalogu: OBA, Číselná řada: zrušit vazbu 
 
 Pokladní doklady - skupiny
     Kód: POKL_SEK, Název: Pokladní doklady ŠEK, Vnutit nastavneí podřízeným: ANO, Pokladna: CZK_SEK, Typ ceny: Bez daně, Sazba DPH: Nulová, 
@@ -89,7 +89,6 @@ Průvodce nastavení programu
     Ceníky/Minimální procentuální zisk: 3,00
     Ceníky/Automatické přidání nové položky katalogu: Přidat automaticky
     Ceníky/Zobrazit kartu ceníkové ceny: false
-    Ceníky/Výchozí ceník agendy/uživatele: žádný, protože to bere z nastavní skupiny
 
     Sklady/Výchozí sklad agendy: Hlavní
     Sklady/Automatické přidání nové položky katalogu do skladové zásoby: Přidat automaticky

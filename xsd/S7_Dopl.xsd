@@ -77,7 +77,9 @@
                     <xs:element name="PripojitParametryKObchJmenu" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="PripojitParametryKPopisu" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="PripojitParametryKVariante" type="emptiable_bool" minOccurs="0" />
+                    <xs:element name="Priznaky_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="ProdejniJednotka_ID" type="guid" />
+                    <xs:element name="ProdJednotkaMnozstvi_UserData" type="emptiable_decimal_2" minOccurs="0" />
                     <xs:element name="PuvodemMajetek" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="RadaCarovyKod_ID" type="guid" />
                     <xs:element name="RadaDetail_ID" type="guid" />

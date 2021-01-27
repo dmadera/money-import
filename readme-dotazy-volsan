@@ -29,7 +29,16 @@ Firma - zobrazit způsob dopravy do sloupců.
 
 Katalog - výchozí nastavení e-shopu.
 
-Katalog - jednotky vychozí nedělitelné množství. 
+Katalog - jednotky vychozí nedělitelné množství.
+Katalog - sazba dph, nejsou vidět procenta a nejde dát do sloupce na hlavní seznam.
+
+Ceník - způsob výpočtu ceny není logické změna - přičítá, + odečítá, nepropisuje se výše ceny ze základního ceníku v dokladu
+    - automaticky synchronizovat ceny
+    - nejde napsat mínus
+
+DL přijatý - poslední nákupní cena místo prodejní u položky
+
+Co dělá databáze Agenda_DOC - lze nějak dopisovat? 
 
 ---
 Nejde při importu XML objektu Artikl nedělitelné množství.

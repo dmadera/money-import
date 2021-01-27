@@ -372,6 +372,31 @@
       <Nazev>Rozvoz</Nazev>
       <Poznamka />
     </ZpusobDopravy>
+    <ZpusobDopravy>
+      <Kod>Rp</Kod>
+      <Nazev>Rozvoz pondělí</Nazev>
+      <Poznamka />
+    </ZpusobDopravy>
+    <ZpusobDopravy>
+      <Kod>Ru</Kod>
+      <Nazev>Rozvoz úterý</Nazev>
+      <Poznamka />
+    </ZpusobDopravy>
+    <ZpusobDopravy>
+      <Kod>Rs</Kod>
+      <Nazev>Rozvoz středa</Nazev>
+      <Poznamka />
+    </ZpusobDopravy>
+    <ZpusobDopravy>
+      <Kod>Rc</Kod>
+      <Nazev>Rozvoz čtvrtek</Nazev>
+      <Poznamka />
+    </ZpusobDopravy>
+    <ZpusobDopravy>
+      <Kod>Rp</Kod>
+      <Nazev>Rozvoz pátek</Nazev>
+      <Poznamka />
+    </ZpusobDopravy>
   </ZpusobDopravyList>
   <ElektronickyObchodList>
     <ElektronickyObchod>

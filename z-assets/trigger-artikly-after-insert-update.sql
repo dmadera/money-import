@@ -25,7 +25,8 @@ BEGIN
 	/* jednotky - nastavi prodejni jednotku první pod hlavní, pocet prodejni jednotky nastavi do UserData pole */
 	UPDATE Artikly_Artikl SET
 	Artikly_Artikl.ProdJednotkaMnozstvi_UserData = ISNULL(SQ.ProdJednotkaMnozstvi_UserData, Artikly_ArtiklJednotka.NedelitelneMnozstvi), 
-	Artikly_Artikl.ProdejniJednotka_ID = ISNULL(SQ.ProdejniJednotka_ID, Artikly_ArtiklJednotka.ID)
+	Artikly_Artikl.ProdejniJednotka_ID = ISNULL(SQ.ProdejniJednotka_ID, Artikly_ArtiklJednotka.ID),
+	Artikly_Artikl.NakupniJednotka_ID = ISNULL(SQ.ProdejniJednotka_ID, Artikly_ArtiklJednotka.ID)
 	FROM (
 		SELECT
 			MinMnozstviT.Parent_ID AS ID, 
@@ -46,7 +47,8 @@ BEGIN
 	RIGHT JOIN Artikly_ArtiklJednotka ON Artikly_ArtiklJednotka.Parent_ID = SQ.ID
 	INNER JOIN Artikly_Artikl ON Artikly_ArtiklJednotka.Parent_ID = Artikly_Artikl.ID
 	WHERE 
-		Artikly_ArtiklJednotka.ParentJednotka_ID IS NULL AND 
+		Artikly_ArtiklJednotka.ParentJednotka_ID IS NULL AND
+		Artikly_ArtiklJednotka.Deleted = 0 AND
 		Artikly_Artikl.ID IN (SELECT ID FROM inserted)
 
 

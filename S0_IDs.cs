@@ -251,5 +251,21 @@ namespace SDataObjs {
 
             return null;
         }
+
+        public static string GetArtiklDodavatelID(string artiklID, string FirmaID) {
+            if (_data == null) throw new Exception("First call Deserialize method.");
+
+            foreach (S5DataArtikl artikl in _data.ArtiklList) {
+                if (artikl.ID == artiklID && artikl.Dodavatele.SeznamDodavatelu.ArtiklDodavatel != null) {
+                    foreach (S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatel dodavatel in artikl.Dodavatele.SeznamDodavatelu.ArtiklDodavatel) {
+                        if (dodavatel.Firma_ID== FirmaID) {
+                            return dodavatel.ID;
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
     }
 }

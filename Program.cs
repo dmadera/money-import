@@ -102,9 +102,9 @@ namespace MainProgram {
                 SDataObjs.S6_SklDokl docs = new SDataObjs.S6_SklDokl(inputDir, enc);
                 docs.serialize(outputFile);
 
-                outputFile = Path.Combine(outputDir, typeof(SDataObjs.S7_Adresar).Name + ".xml");
+                outputFile = Path.Combine(outputDir, typeof(SDataObjs.S7_Dopl).Name + ".xml");
                 Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
-                SDataObjs.S7_Adresar osSpoj = new SDataObjs.S7_Adresar(inputDir, enc);
+                SDataObjs.S7_Dopl osSpoj = new SDataObjs.S7_Dopl(inputDir, enc);
                 osSpoj.serialize(outputFile);
             }
 

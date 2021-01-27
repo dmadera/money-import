@@ -1,4 +1,5 @@
-Nastavit číselnou řadu KATALOG ve skupině ART (Artikl).
+Nastavit číselnou řadu KATALOG ve skupině ART (Artikl) a Obaly.
+nastavit kontrolu minimálního zisku. 
 Bude se muset založit nový sklad s vlastností nepovolit výdej do mínusu a přesunout zásoby do něj. Původní sklad smazat a přejmenovat nový sklad na Hlavní (HL).
 Skrýt nepotřebné jednotky pro agendu - aplikovat filtr pouze na jednotky logistické.
 Označit všechny artikly - menu - Hromadné operace - Hromadné operace s dodavatelem - Aktualizace hlavního dodavatele podle posledních příjmů

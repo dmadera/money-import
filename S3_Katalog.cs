@@ -113,6 +113,7 @@ namespace SDataObjs {
                     case "21": sazbaDPH.Value = enum_DruhSazbyDPH_value.Item1; break;
                     case "15": sazbaDPH.Value = enum_DruhSazbyDPH_value.Item0; break;
                     case "0": sazbaDPH.Value = enum_DruhSazbyDPH_value.Item2; break;
+                    default: sazbaDPH.Value = enum_DruhSazbyDPH_value.Item2; break;
                  }
 
                 artikl.SazbyDPH = new S5DataArtiklSazbyDPH() {

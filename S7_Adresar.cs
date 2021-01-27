@@ -1,14 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.IO;
 
-using S7_Adresar;
+using S7_Dopl;
 using SkladData;
 using MainProgram;
 
 namespace SDataObjs {
-    class S7_Adresar : S0_Generic<S5Data> {
+    class S7_Dopl : S0_Generic<S5Data> {
 
         private List<S5DataFirma> _firmy = new List<S5DataFirma>();
         private List<S5DataArtikl> _artikly = new List<S5DataArtikl>();
@@ -16,7 +15,7 @@ namespace SDataObjs {
         private SkladDataFile kodSumFile;
         private SkladDataFile odbFile;
 
-        public S7_Adresar(string dir, Encoding enc) {
+        public S7_Dopl(string dir, Encoding enc) {
             kodSumFile = new SkladDataFile(dir, SFile.KODSUMFA, enc);
             odbFile = new SkladDataFile(dir, SFile.ODB, enc);
             convertOdb(odbFile);
@@ -204,12 +203,11 @@ namespace SDataObjs {
                 var artikl = new S5DataArtikl() {};
                 artikl.ID = S0_IDs.GetArtiklID(kod);
                 var kodDodavatele = S3_Adresar.GetDodID(d["CisloDodavatele"].GetNum());
-                artikl.HlavniDodavatel_ID = S0_IDs.GetFirmaID(kodDodavatele);
+                artikl.HlavniDodavatel_ID = S0_IDs.GetArtiklDodavatelID(artikl.ID, S0_IDs.GetFirmaID(kodDodavatele));
                 var mernaJednotka = d["MernaJednotka"].GetNoSpaces().RemoveDiacritics().ToLower();
                 var jednotkaID = S0_IDs.GetJednotkaID(mernaJednotka);
                 var hlavniJednotkaID = S0_IDs.GetArtiklJednotkaID(artikl.ID, jednotkaID);
-                // artikl.HlavniJednotka_ID = hlavniJednotkaID;
-                artikl.Jednotky = new S5DataArtiklJednotky() {
+                artikl.Jednotky = hlavniJednotkaID != null ? new S5DataArtiklJednotky() {
                     SeznamJednotek = new S5DataArtiklJednotkySeznamJednotek() {
                         ArtiklJednotka = new S5DataArtiklJednotkySeznamJednotekArtiklJednotka[] {
                             new S5DataArtiklJednotkySeznamJednotekArtiklJednotka() {
@@ -218,7 +216,7 @@ namespace SDataObjs {
                             }
                         }
                     }
-                };
+                } : null;
                 _artikly.Add(artikl);
             }
         }

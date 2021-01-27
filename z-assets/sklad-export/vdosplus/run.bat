@@ -1,2 +1,2 @@
-C:\sklad-export\fand\fand
+C:\sklad-export\ufand\ufandl C:\sklad-export\EXPORT
 exit /b

@@ -45,12 +45,12 @@ namespace SkladData {
         }
 
         public string GetIco() {
-            try {
+            if(int.TryParse(_items["Ico"].GetNum(), out int result)) {
                 var ico = int.Parse(_items["Ico"].GetNum());
                 return string.Format("{0:00000000}", ico);
-            } catch(Exception) {
-                return null;
             }
+            
+            return null;
         }
 
         public static string GetNazev(SkladDataItem nazevItem, SkladDataItem nazev1Item) {
@@ -72,21 +72,27 @@ namespace SkladData {
             try {
                 tel = Regex.Replace(tel, @"[^0-9]+", "");
                 
-                tel1 = tel.Substring(0, 9);
-                tel1 = tel1.Length > 9 ? tel1.Substring(tel1.Length - 9) : tel1;
-                t1 = int.Parse(tel1);
-                tel1 = string.Format("{0:000 000 000}", t1);
+                if(tel.Length < 9) tel1 = tel;
+                else {
+                    tel1 = tel.Substring(0, 9);
+                    tel1 = tel1.Length > 9 ? tel1.Substring(tel1.Length - 9) : tel1;
+                    t1 = int.Parse(tel1);
+                    tel1 = string.Format("{0:000 000 000}", t1);
 
-                if(tel.Length > 9) {
-                    tel2 = tel.Substring(9);
-                    tel2 = tel2.Length > 9 ? tel2.Substring(0, 9) : tel2;
-                    t2 = int.Parse(tel2);
-                    int d = (int) Math.Pow(10, ((int) (Math.Log10(t2) + 1)));
-                    t2 = ((int) t1 / d) * d + t2;
-                    tel2 = string.Format("{0:000 000 000}", t2);
+                    if(tel.Length > 9) {
+                        tel2 = tel.Substring(9);
+                        tel2 = tel2.Length > 9 ? tel2.Substring(0, 9) : tel2;
+                        t2 = int.Parse(tel2);
+                        int d = (int) Math.Pow(10, ((int) (Math.Log10(t2) + 1)));
+                        if(d == 0) tel2 = null;
+                        else {
+                            t2 = ((int) t1 / d) * d + t2;
+                            tel2 = string.Format("{0:000 000 000}", t2);
+                        }
+                    }
+                    
+                    if(tel1 == tel2) tel2 = null;
                 }
-                
-                if(tel1 == tel2) tel2 = null;
                 return new Tuple<string, string>(tel1, tel2);
 
             } catch(Exception) {
@@ -116,12 +122,12 @@ namespace SkladData {
         }
 
         public override string ToString() {
-            string output = "Zdroj:" + Environment.NewLine;
+            string output = "Zdroj:" + XmlEnv.NewLine;
             int counter = 0;
             foreach (KeyValuePair<string, SkladDataItem> entry in _items) {
                 output += string.Format("{0}:{1},", entry.Key, entry.Value.GetRaw());
                 if (++counter % 3 == 0) {
-                    output += Environment.NewLine;
+                    output += XmlEnv.NewLine;
                 }
             }
             return output.Substring(0, output.Length - 2);
