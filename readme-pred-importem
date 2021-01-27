@@ -1,3 +1,5 @@
+Vygeneruj triggery a procedury
+
 Nastavení číselných řada
     PROD_VYD, prefix: PV
     PROD_PRI, prefix: PP
@@ -16,7 +18,8 @@ Firma - skupiny
     Kód: OST, Název: Ostatní odběratelé, Převzít nastavení z nadřazené úrovně: false, Obchod/Způsob dopravy: Osobní odběr, 
         Obchod/Způsob platby: Hotově, Použít kredit: ANO, Hodnota: 0,00
     Kód: ZRUS, Název: Zrušené, Převzít nastavení z nadřazené úrovně: true
-    Kód: Nezařazené, Použít kredit: ANO, Hodnota: 0,00, Způsob dopravy: Osobní odběr, Způsob platby: Hotově, Přiřadit ceník: ZAKLADNI
+    Kód: Nezařazené, Použít kredit: ANO, Hodnota: 0,00, Způsob dopravy: Osobní odběr, Způsob platby: Hotově, 
+         Způsob výpočtu ceny: Výběrem, Splatnost: ANO, 10 dní
 
 Artikl - skupiny
     Nastavit zobrazení včetně podřízených
@@ -24,7 +27,7 @@ Artikl - skupiny
     Kód: ART, Název: Artikly, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu
     Parent: ART, Kód: LOM, Název: Zboží pod lomítkem, Převzít nastavení z nadřazené úrovně: ANO
     Kód: OBA, Název: Obaly, Druh položky katalogu: OBA
-    Parent: ART, Kód: ZRUS, Název: Zrušeno, Převzít nastavení z nadřazené úrovně
+    Parent: ART, Kód: ZRUS, Název: Zrušeno, Převzít nastavení z nadřazené úrovně: ANO
 
 Pokladní doklady - skupiny
     Kód: POKL_SEK, Název: Pokladní doklady ŠEK, Vnutit nastavneí podřízeným: ANO, Pokladna: CZK_SEK, Typ ceny: Bez daně, Sazba DPH: Nulová, 
@@ -35,6 +38,7 @@ Interní doklady - skupiny
     Kód: SEKY, Název: Šeky, Vnutit nastavneí podřízeným: ANO, 
         Číselná řada: INT_SEK, Typ ceny: Pouze základ, Sazba DPH: Nulová, Zaokrouhlení celkové částky: 1_MAT, Členění DPH: _Ř000 U
         Předkontace: SEKY, Primární účet MD: 999999, Předkontace zaokrouhlení: SEKY, Sazba DPH: Nulova
+        Podrobnosti: Všechno SEKY
 
 Účtový rozvrh
     Účet: 999999, Název: Evidence šeků, Druh účtu: Výsledkový, Typ účtu: Nákladový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO, Technický: ANO
@@ -53,6 +57,7 @@ Faktura vydaná
     Rozúčtování/Předkontace: SEKY, Předkontace sklad. položek: SEKY, Předkontace zaokrouhlení: SEKY, 
         Skupina interních dokladů: Šeky, Doprava: osobní odběr, Způsob platby: Hotově
         Druh pohybu: prodej, Druh skl. pohybu: spotřeba, Primární účet: 999999
+        Popis: Používat pouze pro výdej za ŠEKY!
     Kód: FAVYD, Název: Faktury, Převzít nastavení: NE
     Kód: Nezařazené, Není pro ukládání záznamů: ANO
 
@@ -63,7 +68,7 @@ Sklad
 
 Ceník
     Kód: ZAKLADNI, Název: Základní
-    Typ výchozí ceny: Nákupní, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -10%
+    Typ výchozí ceny: Nákupní, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -25%
     Typ zdroje přebírání: Katalog, Skupina katalogu: ART
     Nastavit jako výchozí: ANO
     Poznamka: ZAKLADNI !!Důležité, je to spojovací hodnota pro import!!
@@ -84,6 +89,7 @@ Průvodce nastavení programu
     Ceníky/Minimální procentuální zisk: 3,00
     Ceníky/Automatické přidání nové položky katalogu: Přidat automaticky
     Ceníky/Zobrazit kartu ceníkové ceny: false
+    Ceníky/Výchozí ceník agendy/uživatele: žádný, protože to bere z nastavní skupiny
 
     Sklady/Výchozí sklad agendy: Hlavní
     Sklady/Automatické přidání nové položky katalogu do skladové zásoby: Přidat automaticky

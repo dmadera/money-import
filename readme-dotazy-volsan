@@ -4,13 +4,11 @@ Formátování telefonních čísel.
 
 Jak při importu smazat např seznam osob nebo spojení. 
 
-Skrytí například záložky bankovní účty u Firem.
+Skrytí například záložky bankovní účty u Firem, různých záložek u Produktů.
 
 Adresní klíče mají položku Poznámka v databázi, ale v seznamu chybí. Hodila by se. 
 
 Lze zamknout rozložení sloupců?
-
-Nejde při importu XML objektu Artikl nedělitelné množství.
 
 Bylo by možné nechat vytvořit SQL proceduru, která vytváří interní doklad na základě zadaných paramtrů? Potřebovali bychom evidovat šeky.
     Trigger bych si napsal sám, když by poskytli proceduru, která bude generovat interní doklad se všemi návaznostmi. 
@@ -19,3 +17,20 @@ Bylo by možné nechat vytvořit SQL proceduru, která vytváří interní dokla
 Souhrnná fakturace? Jak nastavit u ODB. Evidence časového rozmezí pro fakturaci. 
 
 Jak fungují aktualizace? databáze, program? Vydává se předem nějaký informační email o nadcházející aktualizaci? 
+
+Zobrazení decimálních čísel na 2 místa.
+
+Přebírat automaticky nastavení ze skupiny. Při přidání nového ceníku například.
+Jak dělat akční zboží? Aby to bylo vidět i v katalogu.  
+
+Výpočet délky objednávky k vyřízení. 
+
+Firma - zobrazit způsob dopravy do sloupců.
+
+Katalog - výchozí nastavení e-shopu.
+
+Katalog - jednotky vychozí nedělitelné množství. 
+
+---
+Nejde při importu XML objektu Artikl nedělitelné množství.
+Nefunguje Import/Export položky ElektronickehoObchodu na Artiklu.

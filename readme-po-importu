@@ -8,3 +8,5 @@ Omezit editaci a přidávání šeku pouze na Manažera
 Omezit v účetním deníku zobrazení účtu 999999 pouze pro admina.
 Firma skupina - ZRUS, Není pro ukládání záznamů: True
 Adresni klic OZ na přidělený obchodník, až se zadají zaměstanci.
+Nastavit u všech artiklů, které jsou zařazeni v kategorii elektronický obchod.
+Zakázat v Artiklu editaci Přízanky (uživatelský sloupec).

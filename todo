@@ -1,4 +1,9 @@
-Dodělat e obchod
+Zrušit zakladni cenik v importu u firem kvůli nastaveni ceniku v skupine
+Sleva < 0 nastavit nejvyšší cenu
+Akce & Sleva >= 0 nasatavit výběr cen
+Dod závozový den, doba dodání - udělat do seznamu doprava rozvozy podle dni
+Trigger - Katalog - jednotky pokud neni hlavni vynulovat nedelitelne mnozstvi, a nastavit prodejni jednotku 1. pod hlavni, udělat uživatelský sloupec na 
+
 
 log skladových zásob - položky jsou tisíce v mínusu
 
