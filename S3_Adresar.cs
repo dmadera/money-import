@@ -39,6 +39,9 @@ namespace SDataObjs {
                 group grp = null;
                 string kodOdb = d["CisloOdberatele"].GetNum();
                 string kod = GetOdbID(kodOdb);
+
+                if(kod == GetOdbID("00001")) continue;
+
                 if (d["NahradniPlneni"].GetBoolean() == "True") {
                     grp = new group() { Kod = "NP" };
                 } else if (d["NazevOdberatele"].GetText().StartsWith("\\")) {

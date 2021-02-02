@@ -13,7 +13,6 @@ namespace SDataObjs {
 
         public S6_SklDokl(string dir, Encoding enc) {
             convertKartyInv(new SkladDataFile(dir, SFile.KARTYINV, enc));
-            
             convertPohybV(new SkladDataFile(dir, SFile.CPOHYBVP, enc), new SkladDataFile(dir, SFile.POHYBVP, enc));
             convertPohybV(new SkladDataFile(dir, SFile.CPOHYBV, enc), new SkladDataFile(dir, SFile.POHYBV, enc));
             convertPohybV(new SkladDataFile(dir, SFile.CPOHYBZ, enc), new SkladDataFile(dir, SFile.POHYBZ, enc));
@@ -25,7 +24,10 @@ namespace SDataObjs {
             // faktury pouze ty, ktere nemaji cislozakazky
             // s cislemzakazky uz jsou importovane v cislech zakazky
             var filtrovane = _doklady.FindAll(delegate (S5DataSkladovyDoklad doc) {
-                return doc.Polozky.PolozkaSkladovehoDokladu != null && doc.Polozky.PolozkaSkladovehoDokladu[0].Zakazka_ID == null;
+                return 
+                    doc.Polozky.PolozkaSkladovehoDokladu != null &&
+                    doc.Polozky.PolozkaSkladovehoDokladu.Length > 0 && // rozepsane vydeje
+                    doc.Polozky.PolozkaSkladovehoDokladu[0].Zakazka_ID == null; 
             });
 
             return new S5Data() {
@@ -58,6 +60,8 @@ namespace SDataObjs {
         }
 
         private void convertPohybV(SkladDataFile headers, SkladDataFile rows) {
+            Console.WriteLine("Zpracovávám " + headers.Soubor.ToString());
+
             string id = "";
 
             foreach (var header in headers.Data) {
@@ -76,6 +80,7 @@ namespace SDataObjs {
                 _doklady.Add(doc);
             }
 
+            Console.WriteLine("Zpracovávám " + rows.Soubor.ToString());
             int cisloPolozky = 0;
             string prevId = "", artiklID, skladID, katalog;
             var polozky = new List<S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu>();
@@ -119,6 +124,7 @@ namespace SDataObjs {
         }
 
         private void convertKartyInv(SkladDataFile karty) {
+            Console.WriteLine("Zpracovávám " + karty.Soubor.ToString());
             var firstDay = new DateTime(DateTime.Now.Year, 1, 1);
 
             var doc = new S5DataSkladovyDoklad();
@@ -159,6 +165,7 @@ namespace SDataObjs {
         }
 
         private void convertPohybP(SkladDataFile headers, SkladDataFile rows) {
+            Console.WriteLine("Zpracovávám " + headers.Soubor.ToString());
             string id = "";
             foreach (var header in headers.Data) {
                 var data = header.Items;
@@ -178,7 +185,7 @@ namespace SDataObjs {
 
             int cisloPolozky = 0;
             string prevId = "", artiklID, skladID, katalog;
-
+            Console.WriteLine("Zpracovávám " + rows.Soubor.ToString());
             List<S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu> polozky = null;
             foreach (var row in rows.Data) {
                 var data = row.Items;
@@ -224,7 +231,8 @@ namespace SDataObjs {
                 return doc.ParovaciSymbol == id;
             });
             if (found == null) {
-                throw new ArgumentException(string.Format("Nebyla nalezena hlavička k dokladu {0} v {1}.", id, this.GetType().Name));
+                Console.WriteLine(string.Format("Nebyla nalezena hlavička k dokladu {0} v {1}.", id, this.GetType().Name));
+                return;
             }
             found.Polozky = new S5DataSkladovyDokladPolozky() {
                 PolozkaSkladovehoDokladu = items.ToArray()

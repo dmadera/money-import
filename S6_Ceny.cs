@@ -83,25 +83,11 @@ namespace SDataObjs {
             foreach (var f in firmy.Data) {
                 var data = f.Items;
 
-                var firma = new S5DataFirma();
-                var firmaID = S0_IDs.GetFirmaID(S3_Adresar.GetOdbID(data["CisloOdberatele"].GetNum()));
-                var zaklCenikID = S0_IDs.GetCeniktID("ZAKL");
-                firma.ID = firmaID;
-
-                if(data["CisloSkup"].GetNum() == "0000") {
-                    firma.ObchodniPodminky = new S5DataFirmaObchodniPodminky() {
-                        SeznamCeniku = new S5DataFirmaObchodniPodminkySeznamCeniku() {
-                            DeleteItems = "1",
-                            FirmaCenik = new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik[] {
-                                new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
-                                    Poradi = "1",
-                                    Firma_ID = firmaID,
-                                    Cenik_ID = zaklCenikID
-                                },
-                            }
-                        }
-                    };
-                } else {
+                if(data["CisloSkup"].GetNum() != "0000") {
+                    var firma = new S5DataFirma();
+                    var firmaID = S0_IDs.GetFirmaID(S3_Adresar.GetOdbID(data["CisloOdberatele"].GetNum()));
+                    var zaklCenikID = S0_IDs.GetCeniktID("ZAKL");
+                    firma.ID = firmaID;
                     firma.ObchodniPodminky = new S5DataFirmaObchodniPodminky() {
                         SeznamCeniku = new S5DataFirmaObchodniPodminkySeznamCeniku() {
                             DeleteItems = "1",
@@ -121,8 +107,8 @@ namespace SDataObjs {
                             }
                         }
                     };
+                    _firmy.Add(firma);
                 }
-                _firmy.Add(firma);
             }
         }
 

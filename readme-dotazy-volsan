@@ -1,44 +1,41 @@
-Lze uložit rozložení sloupců pro danou skupinu záznamů?
+Obchod
+    Ukázat jak nejlépe tvořit objednávky vydané v kombinaci s obratovým a pojistným množstvím. 
+        Jak obrat. množství načíst z importovaných skladových dokladů. 
+    Ukázat jak tvořit dodací listy přijaté. U položek by se hodila poslední nákupní cena místo prodejní. 
+    Ukázat jak dělat cenotvorbu (ceníkové ceny) na základě nákupních cen. Jak vybrat v ceníkových cenách položky z posledního dodacího listu přijatého. 
 
-Formátování telefonních čísel. 
+Uživatelské rozhraní obecné
+    Zobrazení decimálních čísel v seznamech na 2 místa.
+    Lze uložit rozložení sloupců seznamu pro danou skupinu záznamů? Jak funguje ukládání rozložení seznamů v detailech například detail katalogu v seznamu ceníkové ceny? 
+    Neplánujete zavést formátování telefonních čísel - na formát +000 000 000 000. 
+    Lze zamknout rozložení sloupců pro daného uživatele, popřípadě jak na to v přístupových právech?
+    Při tvorbě agendy v databázi se vytvoří i databáze Agenda_DOC. Je to dokumentace, která se dá doplňovat a bude součástí nápovědy?
 
-Jak při importu smazat např seznam osob nebo spojení. 
+Katalog
+    Prozatím nelze u nastavení skupiny vybrat pro nové položky automaticky přiřazený elektronický obchod. (možná vyřešeno v updatu)
+    Jednotky vychozí nedělitelné množství 0. 
+    Sazba dph, nejsou vidět procenta a nejde dát do sloupce na hlavní seznam.
+    Skrytí nepotřebných záložek.
 
-Skrytí například záložky bankovní účty u Firem, různých záložek u Produktů.
+Firma
+    Adresní klíče mají položku Poznámka v databázi, ale v seznamu chybí. Hodila by se. 
+    U seznamu by se hodil sloupec způsob dopravy. 
+    Skrytí nepotřebných záložek? Například bankovní účty - i když zrušim práva uživatele na tento podseznam, stejně se záložka zobrazuje. 
 
-Adresní klíče mají položku Poznámka v databázi, ale v seznamu chybí. Hodila by se. 
 
-Lze zamknout rozložení sloupců?
+Ceníky
+    Jak nastavit ceníky u ODB, aby automaticky v případě neuvedení speciálního ceníku nebo když ve speciálním ceníku nejsou všechny produkty, přebíraly základní ceník společně s ceníkem akčním. 
+        Tzn. hiearchie přebírání cen produktů: speciální ceník, akční ceník, základní ceník, tak abychom u ODB evidovali jen speciální ceník, akční a základní by se přebíraly pro všechny ODB automaticky v návaznosti na platnost akčních cen. 
+        Lze nastavit u odběratele, že akční ceník má vyšší prioritu než ceník speciální. Pro ty, co sledují leták.
+    Způsob výpočtu ceníkové ceny není logická změna (- přičítá, + odečítá) jako tomu je u např. slevy u dokladu.
+        Proč jsou ve způsobu výpočtu 2 stejné položky jen s jiným názvem (+sleva/-marže,+srazka/-rabat)? Tady si myslím, že by mělo být (-srážka/+rabat). Takto v obou případech je ve sloupci cen "Výše změny" mínus znamená plus k ceně. 
+    Lze automaticky synchronizovat ceny?
+    Do numerického textového pole nelze jednoduše napsat mínus. 
 
-Bylo by možné nechat vytvořit SQL proceduru, která vytváří interní doklad na základě zadaných paramtrů? Potřebovali bychom evidovat šeky.
-    Trigger bych si napsal sám, když by poskytli proceduru, která bude generovat interní doklad se všemi návaznostmi. 
-    Popřípadě najít nějaké jiné řešení, jak šeky zpracovávat.
-
-Souhrnná fakturace? Jak nastavit u ODB. Evidence časového rozmezí pro fakturaci. 
-
-Jak fungují aktualizace? databáze, program? Vydává se předem nějaký informační email o nadcházející aktualizaci? 
-
-Zobrazení decimálních čísel na 2 místa.
-
-Přebírat automaticky nastavení ze skupiny. Při přidání nového ceníku například.
-Jak dělat akční zboží? Aby to bylo vidět i v katalogu.  
-
-Výpočet délky objednávky k vyřízení. 
-
-Firma - zobrazit způsob dopravy do sloupců.
-
-Katalog - výchozí nastavení e-shopu.
-
-Katalog - jednotky vychozí nedělitelné množství.
-Katalog - sazba dph, nejsou vidět procenta a nejde dát do sloupce na hlavní seznam.
-
-Ceník - způsob výpočtu ceny není logické změna - přičítá, + odečítá, nepropisuje se výše ceny ze základního ceníku v dokladu
-    - automaticky synchronizovat ceny
-    - nejde napsat mínus
-
-DL přijatý - poslední nákupní cena místo prodejní u položky
-
-Co dělá databáze Agenda_DOC - lze nějak dopisovat? 
+Šeky
+    Vysvětlit jak fungují šeky v našem systému a zkusit najít řešení. 
+        Bylo by možné nechat vytvořit SQL proceduru, která vytváří interní doklad na základě zadaných paramtrů?
+        Trigger bych si napsal sám, když by poskytli proceduru, která bude generovat interní doklad se všemi návaznostmi. 
 
 ---
 Nejde při importu XML objektu Artikl nedělitelné množství.

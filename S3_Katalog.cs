@@ -87,7 +87,7 @@ namespace SDataObjs {
 
                 var groupKod = "ART";
                 var druhZboziKod = "ZBO";
-                var regexLom = new Regex(@"^\\[a-zA-Z]+\\");
+                var regexLom = new Regex(@"^\\[a-zA-Z0-9]+\\");
                 var regexObal = new Regex(@"^\|[a-zA-Z0-9]");
                 var regexZrus = new Regex(@"^\|\|[0-9]");
                 if(regexLom.IsMatch(nazevZbozi)) {

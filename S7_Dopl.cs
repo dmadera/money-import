@@ -46,6 +46,8 @@ namespace SDataObjs {
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
                 string kod = S3_Adresar.GetOdbID(d["CisloOdberatele"].GetNum());
+                if(kod == S3_Adresar.GetOdbID("00001")) continue;
+                
                 string kodSumFa = d["KodSumFa"].GetText();
 
                 var firma = new S5DataFirma() { };
