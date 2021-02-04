@@ -408,8 +408,8 @@
   </ElektronickyObchodList>
   <StrediskoList>
     <Stredisko>
-      <Kod>INT</Kod>
-      <Nazev>Internetová objednávka</Nazev>
+      <Kod>ESHOP</Kod>
+      <Nazev>Objednávka z e-shopu</Nazev>
       <ParentObject_ID />
       <Poznamka />
     </Stredisko>

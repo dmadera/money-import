@@ -58,8 +58,8 @@ Faktura vydaná
         Skupina interních dokladů: Šeky, Doprava: osobní odběr, Způsob platby: Hotově
         Druh pohybu: prodej, Druh skl. pohybu: spotřeba, Primární účet: 999999
         Popis: Používat pouze pro výdej za ŠEKY!
-    Kód: FAVYD, Název: Faktury, Převzít nastavení: NE
-    Kód: Nezařazené, Není pro ukládání záznamů: ANO
+    // zatím nedělat Kód: FAVYD, Název: Faktury, Převzít nastavení: NE
+    // zatím nedělat Kód: Nezařazené, Není pro ukládání záznamů: ANO
 
 Sklad
     Kód: HL, Název: Hlavní
@@ -71,7 +71,9 @@ Ceník
     Typ výchozí ceny: Nákupní, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -25%
     Typ zdroje přebírání: Katalog, Skupina katalogu: ART
     Nastavit jako výchozí: ANO
-    Poznamka: ZAKLADNI !!Důležité, je to spojovací hodnota pro import!!
+
+Objednávka přijatá
+    Kód: OP_ESHOP, Název: Objednávka z e-shopu, Doba platnosti: 5 dní, Středisko: ESHOP
 
 Průvodce nastavení programu
     Vzhled aplikace/Každý sudý řádek...: 255; 255; 255
