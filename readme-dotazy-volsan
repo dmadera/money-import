@@ -1,8 +1,12 @@
-Obchod
+Proces přijmu
     Ukázat jak nejlépe tvořit objednávky vydané v kombinaci s obratovým a pojistným množstvím. 
         Jak obrat. množství načíst z importovaných skladových dokladů. 
     Ukázat jak tvořit dodací listy přijaté. U položek by se hodila poslední nákupní cena místo prodejní. 
-    Ukázat jak dělat cenotvorbu (ceníkové ceny) na základě nákupních cen. Jak vybrat v ceníkových cenách položky z posledního dodacího listu přijatého. 
+    
+Proces výdeje
+    Jak pracovat s objednaným a rezervovaným zbožím? Lze vytvářet rovnou fa na základě objednaného zboží? Nebo musíme řešit přes povolený výdej do mínusu? 
+    Lze upozorňovat při přidání položky do objednávky, že jde do mínusu? Bylo by dobré označit červeně. 
+    Do položek objednávky dát marži (zisk na položce).
 
 Uživatelské rozhraní obecné
     Zobrazení decimálních čísel v seznamech na 2 místa.
@@ -10,6 +14,7 @@ Uživatelské rozhraní obecné
     Neplánujete zavést formátování telefonních čísel - na formát +000 000 000 000. 
     Lze zamknout rozložení sloupců pro daného uživatele, popřípadě jak na to v přístupových právech?
     Při tvorbě agendy v databázi se vytvoří i databáze Agenda_DOC. Je to dokumentace, která se dá doplňovat a bude součástí nápovědy?
+    Lze oddělit zobrazení katalogu a katalogu ve výběru položky do dokladu? 
 
 Katalog
     Prozatím nelze u nastavení skupiny vybrat pro nové položky automaticky přiřazený elektronický obchod. (možná vyřešeno v updatu)
@@ -22,14 +27,15 @@ Firma
     U seznamu by se hodil sloupec způsob dopravy. 
     Skrytí nepotřebných záložek? Například bankovní účty - i když zrušim práva uživatele na tento podseznam, stejně se záložka zobrazuje. 
 
-
 Ceníky
+    Ukázat jak dělat cenotvorbu (ceníkové ceny) na základě nákupních cen. Jak vybrat v ceníkových cenách položky z posledního dodacího listu přijatého.
     Jak nastavit ceníky u ODB, aby automaticky v případě neuvedení speciálního ceníku nebo když ve speciálním ceníku nejsou všechny produkty, přebíraly základní ceník společně s ceníkem akčním. 
         Tzn. hiearchie přebírání cen produktů: speciální ceník, akční ceník, základní ceník, tak abychom u ODB evidovali jen speciální ceník, akční a základní by se přebíraly pro všechny ODB automaticky v návaznosti na platnost akčních cen. 
         Lze nastavit u odběratele, že akční ceník má vyšší prioritu než ceník speciální. Pro ty, co sledují leták.
     Způsob výpočtu ceníkové ceny není logická změna (- přičítá, + odečítá) jako tomu je u např. slevy u dokladu.
         Proč jsou ve způsobu výpočtu 2 stejné položky jen s jiným názvem (+sleva/-marže,+srazka/-rabat)? Tady si myslím, že by mělo být (-srážka/+rabat). Takto v obou případech je ve sloupci cen "Výše změny" mínus znamená plus k ceně. 
     Lze automaticky synchronizovat ceny?
+    Lze v ceníkových cenách filtrování podle skupin zařazení položky katalogu?
     Do numerického textového pole nelze jednoduše napsat mínus. 
 
 Šeky
