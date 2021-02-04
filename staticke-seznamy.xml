@@ -373,27 +373,27 @@
       <Poznamka />
     </ZpusobDopravy>
     <ZpusobDopravy>
-      <Kod>Rp</Kod>
+      <Kod>Rpo</Kod>
       <Nazev>Rozvoz pondělí</Nazev>
       <Poznamka />
     </ZpusobDopravy>
     <ZpusobDopravy>
-      <Kod>Ru</Kod>
+      <Kod>Rut</Kod>
       <Nazev>Rozvoz úterý</Nazev>
       <Poznamka />
     </ZpusobDopravy>
     <ZpusobDopravy>
-      <Kod>Rs</Kod>
+      <Kod>Rst</Kod>
       <Nazev>Rozvoz středa</Nazev>
       <Poznamka />
     </ZpusobDopravy>
     <ZpusobDopravy>
-      <Kod>Rc</Kod>
+      <Kod>Rct</Kod>
       <Nazev>Rozvoz čtvrtek</Nazev>
       <Poznamka />
     </ZpusobDopravy>
     <ZpusobDopravy>
-      <Kod>Rp</Kod>
+      <Kod>Rpa</Kod>
       <Nazev>Rozvoz pátek</Nazev>
       <Poznamka />
     </ZpusobDopravy>
@@ -406,4 +406,12 @@
       <PrebiratStrukturu EnumValueName="Katalog">0</PrebiratStrukturu>
     </ElektronickyObchod>
   </ElektronickyObchodList>
+  <StrediskoList>
+    <Stredisko>
+      <Kod>INT</Kod>
+      <Nazev>Internetová objednávka</Nazev>
+      <ParentObject_ID />
+      <Poznamka />
+    </Stredisko>
+  </StrediskoList>
 </S5Data>

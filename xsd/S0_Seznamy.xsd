@@ -58,6 +58,30 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ElektronickyObchodList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ElektronickyObchod" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="HlavniCenik_ID" type="emptiable_guid" minOccurs="0" />
+                    <xs:element name="HlavniSklad_ID" type="emptiable_guid" minOccurs="0" />
+                    <xs:element name="Kod" type="string_10" />
+                    <xs:element name="Nazev" type="emptiable_string_50" minOccurs="0" />
+                    <xs:element name="PouzePolozkySCenouVCeniku" type="emptiable_bool" minOccurs="0" />
+                    <xs:element name="PrebiratStrukturu" type="enum_PrebiraniStrukturyElektronickyObchod" minOccurs="0" />
+                    <xs:element name="SkupinaFaktur_ID" type="emptiable_guid" minOccurs="0" />
+                    <xs:element name="SkupinaFirem_ID" type="emptiable_guid" minOccurs="0" />
+                    <xs:element name="SkupinaObjednavek_ID" type="emptiable_guid" minOccurs="0" />
+                  </xs:all>
+                  <xs:attribute name="ObjectName" fixed="ElektronickyObchod" />
+                  <xs:attribute name="ObjectType" fixed="Object" />
+                  <xs:attribute name="ID" type="guid" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="FunkceOsobyList">
           <xs:complexType>
             <xs:sequence>
@@ -116,6 +140,25 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="StrediskoList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Stredisko" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="Kod" type="string_10" />
+                    <xs:element name="Nazev" type="emptiable_string_50" minOccurs="0" />
+                    <xs:element name="ParentObject_ID" type="emptiable_guid" minOccurs="0" />
+                    <xs:element name="Poznamka" type="emptiable_string_unbounded" minOccurs="0" />
+                  </xs:all>
+                  <xs:attribute name="ObjectName" fixed="Stredisko" />
+                  <xs:attribute name="ObjectType" fixed="Object" />
+                  <xs:attribute name="ID" type="guid" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="TypSpojeniList">
           <xs:complexType>
             <xs:sequence>
@@ -129,6 +172,24 @@
                     <xs:element name="Poznamka" type="emptiable_string_unbounded" minOccurs="0" />
                   </xs:all>
                   <xs:attribute name="ObjectName" fixed="TypSpojeni" />
+                  <xs:attribute name="ObjectType" fixed="Object" />
+                  <xs:attribute name="ID" type="guid" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ZpusobDopravyList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ZpusobDopravy" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="Kod" type="string_10" />
+                    <xs:element name="Nazev" type="emptiable_string_50" minOccurs="0" />
+                    <xs:element name="Poznamka" type="emptiable_string_unbounded" minOccurs="0" />
+                  </xs:all>
+                  <xs:attribute name="ObjectName" fixed="ZpusobDopravy" />
                   <xs:attribute name="ObjectType" fixed="Object" />
                   <xs:attribute name="ID" type="guid" />
                 </xs:complexType>
@@ -211,6 +272,30 @@
       <xs:enumeration value="3" />
       <xs:enumeration value="4" />
       <xs:enumeration value="5" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="enum_PrebiraniStrukturyElektronickyObchod">
+    <xs:simpleContent>
+      <xs:extension base="enum_PrebiraniStrukturyElektronickyObchod_value">
+        <xs:attribute name="EnumValueName">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Katalog" />
+              <xs:enumeration value="Sklad" />
+              <xs:enumeration value="Cenik" />
+              <xs:enumeration value="Kategorie" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="enum_PrebiraniStrukturyElektronickyObchod_value">
+    <xs:restriction base="xs:integer">
+      <xs:enumeration value="0" />
+      <xs:enumeration value="1" />
+      <xs:enumeration value="2" />
+      <xs:enumeration value="3" />
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="enum_TypJednotky">
