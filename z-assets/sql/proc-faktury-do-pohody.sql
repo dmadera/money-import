@@ -8,6 +8,63 @@ CREATE OR ALTER PROCEDURE dbo.Scripter_Import_faktur_Pohoda (
 -- vybere vsechny faktury z Money starsi 4 dni a ty co nejsou uz ve fakturach Pohody
 -- a vlozi je do faktur Pohody
 
+SELECT
+	1 AS RelTpFak,
+	17 AS RelPK,
+	480 AS RelCR,
+	Fa.Dph0Zaklad AS Kc0,
+	Fa.Dph1Zaklad AS Kc1,
+	Fa.Dph2Zaklad AS Kc2,
+	0 AS Kc3,
+	0 AS KcP, -- TODO
+	Fa.Dph1Dan AS KcDPH1,
+	Fa.Dph2Dan AS KcDPH2,
+	0 AS KcDPH3,
+	0 AS KcU,
+	0 AS KcZaloha,
+	0 AS KcKRZaloha,
+	0 AS KcZaokr,
+	0 AS ZaokrFV,
+	0 AS RelZpVypDPH,
+	Fa.CelkovaCastka AS KcCelkem,
+	Fa.CelkovaCastka AS KcLikv,
+	CASE
+		WHEN ZP.Kod = 'H' THEN 2
+		WHEN ZP.Kod = 'P' THEN 1
+		WHEN ZP.Kod = 'D' THEN 4
+		ELSE 1
+	END AS RelForUh,
+	CASE
+		WHEN ZP.Kod = 'H' THEN 1
+		WHEN ZP.Kod = 'P' THEN 2
+		WHEN ZP.Kod = 'D' THEN 1
+		ELSE 2
+	END AS RefUcet,
+	CASE WHEN ZP.Kod = 'SF' THEN 1 ELSE 0 END AS RefCin,
+	PhsDPH.ID AS RelTpDPH, -- TODO
+	CASE WHEN Fa.EvidovatNahradniPlneni = 1 THEN PhsSTR.ID ELSE 0 END AS RefStr,
+	Fa.DatumVystaveni AS Datum,
+	Fa.DatumVystaveni AS DatUCP,
+    Fa.DatumVystaveni AS DatZdPln,
+    Fa.DatumSplatnosti AS DatSplat,
+	CASE WHEN ZP.Kod = 'SF' THEN 'Fakturujeme Vám za zboží dle dodacího listu' ELSE 'Fakturujeme Vám za zboží dle vaší objednávky' END AS SText,
+	-- TODO
+	Fa.IC AS IC,
+	Fa.DIC AS DIC, 
+	Fa.FakturacniAdresaNazev AS Firma,
+	Fa.FakturacniAdresaUlice AS Ulice,
+	Fa.FakturacniAdresaMisto AS Mesto,
+	Fa.FakturacniAdresaPSC AS PSC
+FROM S4_Agenda_PEMA.dbo.Fakturace_FakturaVydana AS Fa
+LEFT JOIN StwPh_46713301_202001.dbo.sDPH AS PhsDPH ON PhsDPH.IDS = 'UD'
+LEFT JOIN StwPh_46713301_202001.dbo.sSTR AS PhsSTR ON PhsSTR.IDS = 'NP'
+INNER JOIN S4_Agenda_PEMA.dbo.System_Groups AS Grp ON Grp.ID = Fa.Group_ID
+INNER JOIN S4_Agenda_PEMA.dbo.Ciselniky_ZpusobPlatby AS ZP ON ZP.ID = Fa.ZpusobPlatby_ID
+WHERE 
+	Grp.Kod != 'FASEKY' 
+	AND Fa.DatumVystaveni < DATEADD(day, -4, GETDATE())
+	AND Fa.CisloDokladu NOT IN (SELECT PhFa.Cislo FROM StwPh_46713301_202001.dbo.FA AS PhFa)
+
 /*
     "CisloVydej AS _id" +
     ",CisloOdber as _idOdber" +
