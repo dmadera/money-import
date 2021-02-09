@@ -2,10 +2,10 @@
 
 ## Installation
 
-## Usage
+## Useful
 
 ```bash
-
+awk 'BEGIN { FS = "\$;" } ; { print $24 }' ./z-assets/input/complete/CPOHYBV.TXT |  sort | uniq
 ```
 
 ## Requirements
