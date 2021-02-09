@@ -12,3 +12,5 @@ Firma skupina - ZRUS, Není pro ukládání záznamů: True
 Adresni klic OZ na přidělený obchodník, až se zadají zaměstanci.
 Nastavit u všech artiklů, které jsou zařazeni v kategorii elektronický obchod.
 Zakázat v Artiklu editaci Přízanky (uživatelský sloupec).
+Přenést u odběratelů z Pohody, kteří využívají náhradní plnění, emaily pro export do NP. Evidovat se budou u odběratelů. 
+Přenést u dodavatelů z Pohody bankovní účty do Money.

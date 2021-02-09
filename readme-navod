@@ -4,3 +4,8 @@ Tvorba výdeje
 
 
 awk 'BEGIN { FS = "\$;" } ; { print $24 }' ./z-assets/input/complete/CPOHYBV.TXT |  sort | uniq
+
+
+NP
+    Emaily se budou evidovat v Money - E-mailNP.
+    Pomocí SQL cronu se přenesou E-mailNP do dokladu do Pohody. Faktury budou bez vazby na adresář. 
