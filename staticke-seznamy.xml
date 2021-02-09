@@ -258,6 +258,13 @@
       <Poznamka />
     </TypSpojeni>
     <TypSpojeni>
+      <DruhSpojeni EnumValueName="Email">2</DruhSpojeni>
+      <IsUser>True</IsUser>
+      <Kod>E-mailNP</Kod>
+      <Nazev>E-mail NP</Nazev>
+      <Poznamka>E-mail exportovaný do evidence náhradního plnění.</Poznamka>
+    </TypSpojeni>
+    <TypSpojeni>
       <DruhSpojeni EnumValueName="Telefon">0</DruhSpojeni>
       <IsUser>False</IsUser>
       <Kod>GSM</Kod>
