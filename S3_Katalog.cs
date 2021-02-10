@@ -97,16 +97,19 @@ namespace SDataObjs {
                 } else if(regexObal.IsMatch(nazevZbozi)) {
                     groupKod = "OBA";
                     druhZboziKod = "OBA";
-                    nazevZbozi = nazevZbozi.Replace("|", "").FirstCharToUpper();
+                    nazevZbozi = nazevZbozi.Replace("|", "").Trim().FirstCharToUpper();
                     artikl.NepodlehatSleveDokladu = "True";
                 } else if(regexZrus.IsMatch(nazevZbozi)) {
                     groupKod = "ZRUS";
-                    nazevZbozi = nazevZbozi.Replace("|", "");
+                    nazevZbozi = nazevZbozi.Replace("|", "").Trim().FirstCharToUpper();
+                    int aktualniRok = new DateTime().Year;
+                    var rokOdstranStr = nazevZbozi.Substring(0, 2);
+                    int rokOdstran = int.TryParse(rokOdstranStr, out int result) ? int.Parse(rokOdstranStr) : aktualniRok;
+                    if(rokOdstran < aktualniRok) continue;
                 }
                 artikl.Nazev = nazevZbozi;
                 artikl.Group = new group() { Kod = groupKod };
                 artikl.DruhArtiklu_ID = S0_IDs.GetDruhZboziID(druhZboziKod);
-
 
                 var sazbaDPH = new enum_DruhSazbyDPH() {};
                 switch(d["SazbaD"].GetNum()) {

@@ -42,12 +42,11 @@ namespace SDataObjs {
 
                 if(kod == GetOdbID("00001")) continue;
 
-                if (d["NahradniPlneni"].GetBoolean() == "True") {
-                    grp = new group() { Kod = "NP" };
-                } else if (d["NazevOdberatele"].GetText().StartsWith("\\")) {
+                if (d["NazevOdberatele"].GetText().StartsWith("\\")) {
                     grp = new group() { Kod = "OST" };
                 } else if (d["NazevOdberatele"].GetText().StartsWith("||")) {
                     grp = new group() { Kod = "ZRUS" };
+                    continue;
                 }
 
                 var zpusobPlatbyKod = "H";
