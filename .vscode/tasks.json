@@ -27,11 +27,9 @@
                 "publish",
                 "${workspaceFolder}/moneys4-import.csproj",
                 "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary",
-                "--runtime", "win-x64",
-                "/p:PublishSingleFile=true"
+                "/consoleloggerparameters:NoSummary"
             ],
-            "problemMatcher": "$msCompile",
+            "problemMatcher": "$msCompile"
         },
         {
             "label": "watch",
