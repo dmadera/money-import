@@ -1,49 +1,82 @@
-Proces výdeje
-    Jak pracovat s blokovaným a rezervovaným zbožím? Lze vytvářet rovnou fa na základě objednaného zboží? Nebo musíme řešit přes povolený výdej do mínusu? 
-    Lze upozorňovat při přidání položky do objednávky, že jde do mínusu? Bylo by dobré označit červeně. 
-    Do položek objednávky dát marži %.
-    Z nabídky vydané převzít do objednávky, aby se to neptalo na výběr skupiny. 
 
+
+-- Volšan: 10. 2. 2021
+Proces výdeje
+    Lze upozorňovat při přidání položky do objednávky, že jde do mínusu? 
+        -- nelze, označení červěně pouze v S5
+        -- lze upozornit hláškou, nastavení v skladových zásobách - množství k dispozici. Počítá se mnozstvidispozici = aktualnistav - objednavkyprijate + objednavkyvydane
+    Do položek objednávky a nabídky dát marži % !!!
+        -- vytvořit uživatelský sloupec s triggerem
+    Z nabídky vydané převzít do objednávky, aby se to neptalo na výběr skupiny. 
+        -- nelze
+    
 Ceníky
     Ukázat jak dělat cenotvorbu (ceníkové ceny) na základě nákupních cen. Jak vybrat v ceníkových cenách položky z posledního dodacího listu přijatého.
+        -- pokud se nastaví typ výchozí ceny skladová, počítá to průměr prodejních cen
     Jak nastavit ceníky u ODB, aby automaticky v případě neuvedení speciálního ceníku nebo když ve speciálním ceníku nejsou všechny produkty, přebíraly základní ceník společně s ceníkem akčním. 
         Tzn. hiearchie přebírání cen produktů: speciální ceník, akční ceník, základní ceník, tak abychom u ODB evidovali jen speciální ceník, akční a základní by se přebíraly pro všechny ODB automaticky v návaznosti na platnost akčních cen. 
         Lze nastavit u odběratele, že akční ceník má vyšší prioritu než ceník speciální. Pro ty, co sledují leták.
+        -- akční ceníky vyřešit ve skupině udělat základní hierarchii - akcni_sudy_mesic, akcni_lichy_mesic, zakladni a jhromadně nastavit všem odběratelům
     Způsob výpočtu ceníkové ceny není logická změna (- přičítá, + odečítá) jako tomu je u např. slevy u dokladu.
+        -- zkusí se na to zeptat a vyřešit to
         Proč jsou ve způsobu výpočtu 2 stejné položky jen s jiným názvem (+sleva/-marže,+srazka/-rabat)? Tady si myslím, že by mělo být (-srážka/+rabat). Takto v obou případech je ve sloupci cen "Výše změny" mínus znamená plus k ceně. 
-    Lze automaticky synchronizovat ceny?
-    Lze v ceníkových cenách filtrování podle skupin zařazení položky katalogu?
-    Do numerického textového pole nelze jednoduše napsat mínus. 
+    Lze automaticky synchronizovat ceny? 
+        -- podívá se jak dělat automatickou synchronizaci cen !!! NUTNÉ        
+    Lze v ceníkových cenách filtrování podle skupin zařazení položky katalogu? 
+        -- synchronizace struktury v ceníkových cenách
 
 Proces přijmu
     Ukázat jak nejlépe tvořit objednávky vydané v kombinaci s obratovým a pojistným množstvím. 
         Jak obrat. množství načíst z importovaných skladových dokladů. 
-    Ukázat jak tvořit dodací listy přijaté. U položek by se hodila poslední nákupní cena místo prodejní. 
+        -- v generování objednávek lze automaticky vypočítat
+    Ukázat jak tvořit dodací listy přijaté. U položek by se hodila poslední nákupní cena místo prodejní.         
 
 Uživatelské rozhraní obecné
+    Do numerického textového pole nelze jednoduše napsat mínus. Například v ceníkové ceně. 
+        -- zeptá se
     Zobrazení decimálních čísel v seznamech na 2 místa.
-    Lze uložit rozložení sloupců seznamu pro danou skupinu záznamů? Jak funguje ukládání rozložení seznamů v detailech například detail katalogu v seznamu ceníkové ceny? 
+        -- nelze
+    Lze uložit rozložení sloupců seznamu pro danou skupinu záznamů? Jak funguje ukládání rozložení seznamů v detailech například detail katalogu v seznamu ceníkové ceny?
+        -- nelze
     Neplánujete zavést formátování telefonních čísel - na formát +000 000 000 000. 
+        -- zeptá se
     Lze zamknout rozložení sloupců pro daného uživatele, popřípadě jak na to v přístupových právech?
+        -- nelze
     Při tvorbě agendy v databázi se vytvoří i databáze Agenda_DOC. Je to dokumentace, která se dá doplňovat a bude součástí nápovědy?
+        -- je to databáze pro dokumenty a obrázky
     Lze oddělit zobrazení katalogu a katalogu ve výběru položky do dokladu? 
+        -- mělo by fungovat
 
 Katalog
     Prozatím nelze u nastavení skupiny vybrat pro nové položky automaticky přiřazený elektronický obchod. (možná vyřešeno v updatu)
+        -- nelze
     Jednotky vychozí nedělitelné množství 0. 
+        -- zeptá se
     Sazba dph, nejsou vidět procenta a nejde dát do sloupce na hlavní seznam.
+        -- zeptá se
     Skrytí nepotřebných záložek.
+        -- nelze, možná půjde je přesunout
 
 Firma
+        -- pole "Zprava" ukazuje při každém výběru firmy z adresáře
     Adresní klíče mají položku Poznámka v databázi, ale v seznamu chybí. Hodila by se. 
+        -- zeptá se
     U seznamu by se hodil sloupec způsob dopravy. 
+        -- zeptá se
     Skrytí nepotřebných záložek? Například bankovní účty - i když zrušim práva uživatele na tento podseznam, stejně se záložka zobrazuje. 
+        -- zeptá se
 
 Šeky
     Vysvětlit jak fungují šeky v našem systému a zkusit najít řešení. 
         Bylo by možné nechat vytvořit SQL proceduru, která vytváří interní doklad na základě zadaných paramtrů?
         Trigger bych si napsal sám, když by poskytli proceduru, která bude generovat interní doklad se všemi návaznostmi. 
+        -- řešení uživatelskými sloupci ve fakturách vydaných a prodejkách vydaných (číslo šeku, částka, uhrazenost)
+        -- řešení interními doklady - lepší evidence, výdej faktur na šek a hrazení vygenerovanými interními doklady
+        -- generování interního dokladu řešit skrze CSW automatic - hlídání na adresář, ze kterého bude importovat
 
+Ostatn
+    Jaké všechny možnosti má CSW automatic? - Lze udělat hlášku při ukládání dokladu popřípadě položky do dokladu? 
+    
 ---
 Nejde při importu XML objektu Artikl nedělitelné množství.
 Nefunguje Import/Export položky ElektronickehoObchodu na Artiklu.

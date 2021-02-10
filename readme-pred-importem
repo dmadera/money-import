@@ -14,17 +14,16 @@ Vytvořit skupiny objektu Jednotka
     Kód: _, Název: logistické
 
 Firma - skupiny
-    Kód: NP, Název: Náhradní plnění, Převzít nastavení z nadřazené úrovně: true
     Kód: OST, Název: Ostatní odběratelé, Převzít nastavení z nadřazené úrovně: false, Obchod/Způsob dopravy: Osobní odběr, 
         Obchod/Způsob platby: Hotově, Použít kredit: ANO, Hodnota: 0,00
     Kód: ZRUS, Název: Zrušené, Převzít nastavení z nadřazené úrovně: true
     Kód: Nezařazené, Použít kredit: ANO, Hodnota: 0,00, Způsob dopravy: Osobní odběr, Způsob platby: Hotově, 
-         Způsob výpočtu ceny: Výběrem, Splatnost: ANO, 10 dní
+         Způsob výpočtu ceny: Výběrem, Splatnost: ANO, 10 dní, Vlastní sleva: ANO, Sleva: 0,00
 
 Artikl - skupiny
     Nastavit zobrazení včetně podřízených
     Kód: Nezařazené, Není určena pro ukládání záznamů: true
-    Kód: ART, Název: Artikly, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu
+    Kód: ART, Název: Zboží, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu
     Kód: LOM, Název: Zboží pod lomítkem, Převzít nastavení z nadřazené úrovně: ANO, Parent: ART
     Kód: ZRUS, Název: Zrušeno, Převzít nastavení z nadřazené úrovně: ANO, Parent: ART
     Kód: OBA, Název: Obaly, Druh položky katalogu: OBA, Číselná řada: zrušit vazbu 
