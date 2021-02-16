@@ -47,6 +47,7 @@
                     <xs:element name="ISIRRelevanceVysledku" type="emptiable_integer" minOccurs="0" />
                     <xs:element name="Kod" type="string_20" />
                     <xs:element name="KodDanovehoUradu" type="emptiable_string_4" minOccurs="0" />
+                    <xs:element name="KodOdb_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="Kraj_ID" type="guid" />
                     <xs:element name="Logo_ID" type="guid" />
                     <xs:element name="Mena_ID" type="guid" />

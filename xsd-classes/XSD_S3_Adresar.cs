@@ -138,6 +138,8 @@ namespace S3_Adresar {
         
         private string kodDanovehoUraduField;
         
+        private string kodOdb_UserDataField;
+        
         private string kraj_IDField;
         
         private string logo_IDField;
@@ -808,6 +810,17 @@ namespace S3_Adresar {
             }
             set {
                 this.kodDanovehoUraduField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string KodOdb_UserData {
+            get {
+                return this.kodOdb_UserDataField;
+            }
+            set {
+                this.kodOdb_UserDataField = value;
             }
         }
         

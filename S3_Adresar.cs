@@ -115,6 +115,7 @@ namespace SDataObjs {
                         } : null,
                     }
                 };
+                firma.KodOdb_UserData = d["KodOdb"].GetAlfaNum();
 
                 var tels = SkladDataObj.GetTelefony(d["Telefon"]);
                 var emails = SkladDataObj.GetEmaily(d["Mail"]);

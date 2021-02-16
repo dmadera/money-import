@@ -1,6 +1,7 @@
 Aktualizovat data podle triggrů. Provést update all na Katalog. 
 Nastavit číselnou řadu KATALOG ve skupině ART (Artikl) a Obaly.
 Nastavit kontrolu minimálního zisku. 
+Nastavit hierarchii ceniku - Specialni, Letak, Zakladni
 Bude se muset založit nový sklad s vlastností nepovolit výdej do mínusu a přesunout zásoby do něj. Původní sklad smazat a přejmenovat nový sklad na Hlavní (HL).
 Skrýt nepotřebné jednotky pro agendu - aplikovat filtr pouze na jednotky logistické.
 Označit všechny artikly - menu - Hromadné operace - Hromadné operace s dodavatelem - Aktualizace hlavního dodavatele podle posledních příjmů
@@ -14,3 +15,4 @@ Nastavit u všech artiklů, které jsou zařazeni v kategorii elektronický obch
 Zakázat v Artiklu editaci Přízanky (uživatelský sloupec).
 Přenést u odběratelů z Pohody, kteří využívají náhradní plnění, emaily pro export do NP. Evidovat se budou u odběratelů. 
 Přenést u dodavatelů z Pohody bankovní účty do Money.
+Nastavit u odběratelů správnou prioritu ceníku - ti, kteří mají ve skladu Prirazka = N, zrusit ceníky akce a sleva.
