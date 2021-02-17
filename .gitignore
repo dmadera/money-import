@@ -36,4 +36,9 @@ z-assets/output/*
 z-assets/sklad-export/input/*
 z-assets/sklad-export/output/*
 
+z-assets/exportin/assets/WinSCP.ini
+z-assets/exportin/assets/passpemasklad
+z-assets/exportin/assets/passlipasklad
+z-assets/exportin/*.log
+
 todo

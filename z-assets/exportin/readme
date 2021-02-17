@@ -1,0 +1,4 @@
+Opravit db:
+ALTER TABLE `pema_extraceny` CHANGE `id_skupiny` `id_skupiny` VARCHAR(20) NOT NULL DEFAULT '';
+ALTER TABLE `pema_odberatele` CHANGE `skupina` `skupina` VARCHAR(20) NULL DEFAULT NULL; 
+ALTER TABLE `pema_odberatele` CHANGE `nazev` `nazev` VARCHAR(100) CHARACTER SET cp1250 COLLATE cp1250_general_ci NOT NULL DEFAULT ''; 
