@@ -1,5 +1,65 @@
 Vygeneruj triggery a procedury
 
+Sklad
+    Kód: HL, Název: Hlavní
+    Výdej do mínusu: Nekontrolovat (pro import)
+    Typ zdroje přebírání: Katalog, Skupina katalogu: Artikly (ART)
+
+Objednávka přijatá
+    Kód: OP_ESHOP, Název: Objednávka z e-shopu, Doba platnosti: 5 dní, Středisko: ESHOP
+
+Průvodce nastavení programu
+    Vzhled aplikace/Každý sudý řádek...: 255; 255; 255
+    Vzhled aplikace/Každý sudý řádek...: 240; 248; 255
+    Vzhled aplikace/Zobrazit horizontální posuvník: true
+
+    Nastavení agendy/Evidovat Intrastat: false
+    Nastavení agendy/Evidovat náhradní plnění: true
+    Nastavení agendy/Roční limit náhradního plnění: 1200000
+
+    Zakladní údaje o firmě/Spisová značka: Společnost je zapsána v Obchodním rejstříku vedeném Krajským soudem v Ústí nad Labem, oddíl C, vložka 2701.
+    Základní údaje o firmě/Logo: vybrat soubor z-assets/logo.png
+
+    Ceníky/Kontrolovat minimální zisk při prodeji: true
+    Ceníky/Minimální procentuální zisk: 3,00
+    Ceníky/Automatické přidání nové položky katalogu: Přidat automaticky
+    Ceníky/Zobrazit kartu ceníkové ceny: false
+
+    Sklady/Výchozí sklad agendy: Hlavní
+    Sklady/Automatické přidání nové položky katalogu do skladové zásoby: Přidat automaticky
+    Sklady/Zobrazit kartu skladové zásoby: false
+    Sklady/Metoda vedení skladů: Metoda B
+
+Doplnění informace o firmě jednotky
+    tel, gsm, email, www, vybrat hlavní kontakt, bankovní spojení
+
+Typy spojení 
+    Smazat- Skype, IM
+
+Ceník
+    Kód: _PRODEJ, Název: Prodejní
+    Typ výchozí ceny: Nákupní, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -25%
+    Typ zdroje přebírání: Katalog, Skupina katalogu: ART
+    Nastavit jako výchozí: ANO
+    Kód: _SPECIAL, Název: Speciální, // žádné přebírání
+    Kód: _LETAK, Název: Leták, // žádné přebírání
+
+Firma - skupiny
+    Kód: OST, Název: Ostatní odběratelé, Převzít nastavení z nadřazené úrovně: false, Obchod/Způsob dopravy: Osobní odběr, 
+        Obchod/Způsob platby: Hotově, Použít kredit: ANO, Hodnota: 0,00, Ceníky: _NÁKUP
+    Kód: Nezařazené, Použít kredit: ANO, Hodnota: 0,00, Způsob dopravy: Osobní odběr, Způsob platby: Hotově, 
+         Způsob výpočtu ceny: Výběrem, Splatnost: ANO, 10 dní, Vlastní sleva: ANO, Sleva: 0,00, Ceníky: _SPECIAL, _LETAK, _PRODEJ
+
+Artikl - skupiny
+    Nastavit zobrazení včetně podřízených
+    Kód: Nezařazené, Není určena pro ukládání záznamů: true
+    Kód: ART, Název: Zboží, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu
+    Kód: LOM, Název: Zboží pod lomítkem, Převzít nastavení z nadřazené úrovně: ANO, Parent: ART
+    Kód: ZRUS, Název: Zrušeno, Převzít nastavení z nadřazené úrovně: ANO, Parent: ART
+    Kód: OBAL, Název: Obaly, Druh položky katalogu: OBA, Číselná řada: zrušit vazbu 
+
+------------ŠEKY------------
+
 Nastavení číselných řada
     PROD_VYD, prefix: PV
     PROD_PRI, prefix: PP
@@ -9,24 +69,6 @@ Nastavení číselných řada
     FAK_VYD_S, název: Výdeje na šek, prefix: FS
     INT_SEK, název: Interní doklad ŠEK, prefix: IS
     POKD_SEK, název: Pokladní doklad ŠEK, prefix: PS
-
-Vytvořit skupiny objektu Jednotka
-    Kód: _, Název: logistické
-
-Firma - skupiny
-    Kód: OST, Název: Ostatní odběratelé, Převzít nastavení z nadřazené úrovně: false, Obchod/Způsob dopravy: Osobní odběr, 
-        Obchod/Způsob platby: Hotově, Použít kredit: ANO, Hodnota: 0,00
-    Kód: ZRUS, Název: Zrušené, Převzít nastavení z nadřazené úrovně: true
-    Kód: Nezařazené, Použít kredit: ANO, Hodnota: 0,00, Způsob dopravy: Osobní odběr, Způsob platby: Hotově, 
-         Způsob výpočtu ceny: Výběrem, Splatnost: ANO, 10 dní, Vlastní sleva: ANO, Sleva: 0,00
-
-Artikl - skupiny
-    Nastavit zobrazení včetně podřízených
-    Kód: Nezařazené, Není určena pro ukládání záznamů: true
-    Kód: ART, Název: Zboží, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu
-    Kód: LOM, Název: Zboží pod lomítkem, Převzít nastavení z nadřazené úrovně: ANO, Parent: ART
-    Kód: ZRUS, Název: Zrušeno, Převzít nastavení z nadřazené úrovně: ANO, Parent: ART
-    Kód: OBA, Název: Obaly, Druh položky katalogu: OBA, Číselná řada: zrušit vazbu 
 
 Pokladní doklady - skupiny
     Kód: POKL_SEK, Název: Pokladní doklady ŠEK, Vnutit nastavneí podřízeným: ANO, Pokladna: CZK_SEK, Typ ceny: Bez daně, Sazba DPH: Nulová, 
@@ -59,45 +101,3 @@ Faktura vydaná
         Popis: Používat pouze pro výdej za ŠEKY!
     // zatím nedělat Kód: FAVYD, Název: Faktury, Převzít nastavení: NE
     // zatím nedělat Kód: Nezařazené, Není pro ukládání záznamů: ANO
-
-Sklad
-    Kód: HL, Název: Hlavní
-    Výdej do mínusu: Nekontrolovat (pro import)
-    Typ zdroje přebírání: Katalog, Skupina katalogu: Artikly (ART)
-
-Ceník
-    Kód: ZAKLADNI, Název: Základní
-    Typ výchozí ceny: Nákupní, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -25%
-    Typ zdroje přebírání: Katalog, Skupina katalogu: ART
-    Nastavit jako výchozí: ANO
-
-Objednávka přijatá
-    Kód: OP_ESHOP, Název: Objednávka z e-shopu, Doba platnosti: 5 dní, Středisko: ESHOP
-
-Průvodce nastavení programu
-    Vzhled aplikace/Každý sudý řádek...: 255; 255; 255
-    Vzhled aplikace/Každý sudý řádek...: 240; 248; 255
-    Vzhled aplikace/Zobrazit horizontální posuvník: true
-
-    Nastavení agendy/Evidovat Intrastat: false
-    Nastavení agendy/Evidovat náhradní plnění: true
-    Nastavení agendy/Roční limit náhradního plnění: 1200000
-
-    Zakladní údaje o firmě/Spisová značka: Společnost je zapsána v Obchodním rejstříku vedeném Krajským soudem v Ústí nad Labem, oddíl C, vložka 2701.
-    Základní údaje o firmě/Logo: vybrat soubor
-
-    Ceníky/Kontrolovat minimální zisk při prodeji: true
-    Ceníky/Minimální procentuální zisk: 3,00
-    Ceníky/Automatické přidání nové položky katalogu: Přidat automaticky
-    Ceníky/Zobrazit kartu ceníkové ceny: false
-
-    Sklady/Výchozí sklad agendy: Hlavní
-    Sklady/Automatické přidání nové položky katalogu do skladové zásoby: Přidat automaticky
-    Sklady/Zobrazit kartu skladové zásoby: false
-    Sklady/Metoda vedení skladů: Metoda B
-
-Doplnění informace o firmě jednotky
-    tel, gsm, email, www, vybrat hlavní kontakt, bankovní spojení
-
-Ostatní
-    Smazat Typy spojení - Skype, IM
