@@ -61,7 +61,6 @@
   </FunkceOsobyList>
   <JednotkaList>
     <Jednotka>
-      <Group Kod="_" />
       <DesMisto>0</DesMisto>
       <Kod>bal</Kod>
       <Nazev>balení</Nazev>
@@ -69,7 +68,6 @@
       <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
     </Jednotka>
     <Jednotka>
-      <Group Kod="_" />
       <DesMisto>0</DesMisto>
       <Kod>box</Kod>
       <Nazev>box</Nazev>
@@ -77,7 +75,6 @@
       <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
     </Jednotka>
     <Jednotka>
-      <Group Kod="_" />
       <DesMisto>0</DesMisto>
       <Kod>duo</Kod>
       <Nazev>duo</Nazev>
@@ -85,7 +82,6 @@
       <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
     </Jednotka>
     <Jednotka>
-      <Group Kod="_" />
       <DesMisto>0</DesMisto>
       <Kod>fol</Kod>
       <Nazev>folie</Nazev>
@@ -93,7 +89,6 @@
       <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
     </Jednotka>
     <Jednotka>
-      <Group Kod="_" />
       <DesMisto>0</DesMisto>
       <Kod>kan</Kod>
       <Nazev>kanystr</Nazev>
@@ -101,7 +96,6 @@
       <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
     </Jednotka>
     <Jednotka>
-      <Group Kod="_" />
       <DesMisto>0</DesMisto>
       <Kod>kar</Kod>
       <Nazev>karton</Nazev>
@@ -109,7 +103,6 @@
       <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
     </Jednotka>
     <Jednotka>
-      <Group Kod="_" />
       <DesMisto>0</DesMisto>
       <Kod>kra</Kod>
       <Nazev>krabice</Nazev>
@@ -117,7 +110,6 @@
       <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
     </Jednotka>
     <Jednotka>
-      <Group Kod="_" />
       <DesMisto>0</DesMisto>
       <Kod>ks</Kod>
       <Nazev>kus</Nazev>
@@ -125,7 +117,6 @@
       <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
     </Jednotka>
     <Jednotka>
-      <Group Kod="_" />
       <DesMisto>0</DesMisto>
       <Kod>pal</Kod>
       <Nazev>paleta</Nazev>
@@ -133,7 +124,6 @@
       <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
     </Jednotka>
     <Jednotka>
-      <Group Kod="_" />
       <DesMisto>0</DesMisto>
       <Kod>par</Kod>
       <Nazev>pár</Nazev>
@@ -141,7 +131,6 @@
       <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
     </Jednotka>
     <Jednotka>
-      <Group Kod="_" />
       <DesMisto>0</DesMisto>
       <Kod>pyt</Kod>
       <Nazev>pytel</Nazev>
@@ -149,7 +138,6 @@
       <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
     </Jednotka>
     <Jednotka>
-      <Group Kod="_" />
       <DesMisto>0</DesMisto>
       <Kod>rol</Kod>
       <Nazev>role</Nazev>
@@ -157,7 +145,6 @@
       <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
     </Jednotka>
     <Jednotka>
-      <Group Kod="_" />
       <DesMisto>0</DesMisto>
       <Kod>sad</Kod>
       <Nazev>sada</Nazev>
@@ -165,7 +152,6 @@
       <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
     </Jednotka>
     <Jednotka>
-      <Group Kod="_" />
       <DesMisto>0</DesMisto>
       <Kod>sud</Kod>
       <Nazev>sud</Nazev>
@@ -173,7 +159,6 @@
       <TypJednotky EnumValueName="LogiJednotka">4</TypJednotky>
     </Jednotka>
     <Jednotka>
-      <Group Kod="_" />
       <DesMisto>0</DesMisto>
       <Kod>tyc</Kod>
       <Nazev>tyč</Nazev>
