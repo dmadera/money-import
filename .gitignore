@@ -36,6 +36,7 @@ z-assets/input/*
 z-assets/output/*
 z-assets/sklad-export/input/*
 z-assets/sklad-export/output/*
+z-assets/sklad-export/vdosplus/run.bat
 
 z-assets/exportin/assets/WinSCP.ini
 z-assets/exportin/assets/passpemasklad
