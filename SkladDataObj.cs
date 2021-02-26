@@ -54,8 +54,8 @@ namespace SkladData {
         }
 
         public static string GetNazev(SkladDataItem nazevItem, SkladDataItem nazev1Item) {
-            string nazev = nazevItem.GetText();
-            string nazev1 = nazev1Item.GetText();
+            string nazev = nazevItem.GetText().Replace("\\", "");
+            string nazev1 = nazev1Item.GetText().Replace("\\", "");
             
             var r = new Regex(@"[-–]$");
             if(r.IsMatch(nazev)) return nazev.Substring(0, nazev.Length-1) + nazev1;

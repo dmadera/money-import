@@ -21,8 +21,8 @@ SELECT DISTINCT
 	IIF(F.PouzivatKredit = 1, 'N', 'A') AS KupniSmlouva,
 	FORMAT(F.HodnotaSlevy, '0.00') AS RabatO, 
 	FORMAT(IIF(F.SlevaUvadena_UserData != 0, F.SlevaUvadena_UserData, F.HodnotaSlevy), '0.00') AS PRabatO,
-	-- pokud nejvyssi prioritu ceniku ma zakladni => prirazka=N, v eshopu: pokud sleva<0 a prirazka=N tak sleva je 0
-	IIF(FirmaCenik.Kod = '_ZAKL', 'N', 'A') AS Prirazka,
+	-- pokud nejvyssi prioritu ceniku ma Prodejní => prirazka=N, v eshopu: pokud sleva<0 a prirazka=N tak sleva je 0
+	IIF(FirmaCenik.Kod = '_PRODEJ', 'N', 'A') AS Prirazka,
 	-- vybere specialni cenik
 	ISNULL(FirmaCenik1.Kod,'') AS CisloSkup,
 	F.KodOdb_UserData AS KodOdb,

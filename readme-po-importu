@@ -1,3 +1,10 @@
+Filtry
+    Marže pod 10%	    PolozkaCeniku       Výše změny > -10
+    OZ všechny	        Firma               Produktový klíč OZ nebo OZN
+    OZ nové	            Firma               Produktový klíč OZN
+    DRAK	            Firma               Činnost DRAK
+    NP	                Firma               Evidovat náhradní plnění ANO
+
 Aktualizovat data podle triggrů. Provést update all na Katalog. 
 Nastavit číselnou řadu KATALOG ve skupině ART (Artikl) a Obaly.
 Nastavit kontrolu minimálního zisku. 

@@ -1,0 +1,500 @@
+.pl 16959
+CisloVydejky;DatumVydeje;CisloOdberatele;NazevOdberatele;CisloKarty;NazevZbozi;MernaJednotka;Rabat;ProdCena;SazbaD;VKart;Vydano;Zisk
+--DATA--
+00001$;737794$;00001$;* 1 Zboží za body$;2411$;Mýdlo FAX 75g Lesní plody/ostružina   /6$;ks$;0.00$;5.41$;21$;72$;2$;2.76
+00001$;737794$;00001$;* 1 Zboží za body$;2797$;Mýdlo Solvina 100g$;ks$;0.00$;4.80$;21$;56$;1$;1.67
+00001$;737794$;00001$;* 1 Zboží za body$;2108$;Tekuté mýdlo 1l Mitia Silk Satin$;ks$;0.00$;32.56$;21$;10$;2$;13.02
+00001$;737794$;00001$;* 1 Zboží za body$;5269$;Zubní pasta Colgate Triple Action 100ml$;ks$;0.00$;22.09$;21$;48$;8$;35.92
+00001$;737794$;00001$;* 1 Zboží za body$;4729$;Zubní pasta Colgate CavityProt 100ml$;ks$;0.00$;22.12$;21$;48$;4$;18.04
+00002$;737794$;00051$;\Madìra Jiøí$;6033$;Balíèek STR8 Protect Deo+SG 400ml$;bal$;0.00$;59.90$;21$;6$;1$;0.00
+00003$;737794$;00119$;\Strenzl Pavel$;1668$;WC èistiè Dr.Devil 750ml Lemon$;ks$;10.00$;18.47$;21$;16$;1$;0.00
+00003$;737794$;00119$;\Strenzl Pavel$;2793$;WC gel Dr.Devil 400ml Lemon$;ks$;10.00$;22.16$;21$;16$;1$;0.00
+00003$;737794$;00119$;\Strenzl Pavel$;4132$;Vlhèené dìtské ubrousky Linteo 72ks$;ks$;10.00$;13.90$;21$;24$;1$;0.00
+00003$;737794$;00119$;\Strenzl Pavel$;5359$;Papírové kuch.role 11m Harmony Profes 2k$;bal$;10.00$;11.30$;21$;24$;1$;0.00
+00003$;737794$;00119$;\Strenzl Pavel$;5400$;Papírové kapesníky krabice Linteo 200ks$;kra$;10.00$;16.80$;21$;15$;2$;0.00
+00003$;737794$;00119$;\Strenzl Pavel$;2982$;Papírové kapesníky Linteo 3vrstvé/ 10ks$;tyè$;10.00$;9.80$;21$;24$;2$;0.00
+00003$;737794$;00119$;\Strenzl Pavel$;1460$;Peèící papír * TopStar * 6mx35cm hnìdý$;ks$;10.00$;9.52$;21$;40$;2$;0.00
+00003$;737794$;00119$;\Strenzl Pavel$;1053$;Sáèky MIKRO 25x35/50ks 0.015$;bal$;10.00$;8.17$;21$;80$;1$;0.00
+00003$;737794$;00119$;\Strenzl Pavel$;2980$;Sáèky do koše 30l 50x60 /10mi zatah.ŽL15$;rol$;10.00$;11.25$;21$;50$;2$;0.00
+00003$;737794$;00119$;\Strenzl Pavel$;5625$;Osvìžovaè dávk.Freshmatic NN Sate/mag250$;ks$;10.00$;48.31$;21$;6$;1$;0.00
+00004$;737794$;00099$;\Bonus$;0757$;Páska lepící transparentní 48x60 Manuli$;ks$;0.00$;9.90$;21$;36$;1$;0.00
+00004$;737794$;00099$;\Bonus$;2564$;Papírové ruèníky ZZ 1vr Cerepa 250 šedá$;ks$;0.00$;7.70$;21$;20$;2$;0.00
+00004$;737794$;00099$;\Bonus$;3661$;Destilovaná voda 5l$;kan$;0.00$;22.00$;21$;0$;2$;0.00
+00004$;737794$;00099$;\Bonus$;5105$;WC blok Bref 4koul 50g závìs barvíc Purp$;ks$;0.00$;21.02$;21$;10$;1$;0.00
+00004$;737794$;00099$;\Bonus$;3738$;WC èistiè Dr.Devil 750ml Polar agua$;ks$;0.00$;18.47$;21$;16$;1$;0.00
+00004$;737794$;00099$;\Bonus$;4642$;Papírové ruèníky role 2vr PK Midi 455VPL$;rol$;0.00$;15.99$;21$;12$;2$;0.00
+00004$;737794$;00099$;\Bonus$;2786$;Krém na ruce Isolda 100ml keratin+mandl.$;ks$;0.00$;14.21$;21$;25$;1$;0.00
+00004$;737794$;00099$;\Bonus$;2564$;Papírové ruèníky ZZ 1vr Cerepa 250 šedá$;ks$;0.00$;7.70$;21$;20$;2$;0.00
+00004$;737794$;00099$;\Bonus$;3292$;Toaletní papír Gigant 2vrs.230 Celuloza$;rol$;0.00$;15.22$;21$;6$;1$;0.00
+00004$;737794$;00099$;\Bonus$;1761$;Souprava smetáèek+lopatka 5220 EKO s gum$;ks$;0.00$;32.63$;21$;24$;1$;0.00
+00004$;737794$;00099$;\Bonus$;2564$;Papírové ruèníky ZZ 1vr Cerepa 250 šedá$;ks$;0.00$;7.70$;21$;20$;2$;0.00
+00004$;737794$;00099$;\Bonus$;4075$;Rukavice Technik *** èervené è.10$;par$;0.00$;37.80$;21$;12$;1$;0.00
+00004$;737794$;00099$;\Bonus$;2564$;Papírové ruèníky ZZ 1vr Cerepa 250 šedá$;ks$;0.00$;7.70$;21$;20$;16$;0.00
+00004$;737794$;00099$;\Bonus$;6035$;Toaletní papír 3vrs.150 Tento Pearl wh.8$;rol$;0.00$;3.95$;21$;56$;8$;0.00
+00004$;737794$;00099$;\Bonus$;4642$;Papírové ruèníky role 2vr PK Midi 455VPL$;rol$;0.00$;15.99$;21$;12$;3$;0.00
+00004$;737794$;00099$;\Bonus$;0793$;Sùl posypová 10kg$;taš$;0.00$;34.50$;21$;0$;1$;0.00
+00004$;737794$;00099$;\Bonus$;3636$;Písek tekutý REAL 600g industrial$;ks$;0.00$;14.51$;21$;18$;1$;0.00
+00005$;737794$;03084$;\Hvìzdová Šárka$;5492$;Tekuté mýdlo 250ml Sanytol dezinfekèní$;ks$;10.00$;35.99$;21$;12$;1$;0.00
+00005$;737794$;03084$;\Hvìzdová Šárka$;4132$;Vlhèené dìtské ubrousky Linteo 72ks$;ks$;10.00$;13.90$;21$;24$;2$;0.00
+00005$;737794$;03084$;\Hvìzdová Šárka$;2600$;Houbièka nádobí s drážkou po 1ks 10x7cm$;ks$;10.00$;1.44$;21$;0$;2$;0.00
+00005$;737794$;03084$;\Hvìzdová Šárka$;4642$;Papírové ruèníky role 2vr PK Midi 455VPL$;rol$;10.00$;15.99$;21$;12$;1$;0.00
+00006$;737794$;00001$;* 1 Zboží za body$;3057$;Aviváž Coccolino 1,05l Blue$;Ks$;0.00$;37.16$;21$;8$;4$;27.20
+00006$;737794$;00001$;* 1 Zboží za body$;0241$;Prací gel Persil 2l /40dávek Color$;ks$;0.00$;150.25$;21$;4$;2$;70.94
+00006$;737794$;00001$;* 1 Zboží za body$;3938$;Pulirapid 750ml vodní kámen$;ks$;0.00$;52.59$;21$;16$;1$;10.18
+00006$;737794$;00001$;* 1 Zboží za body$;2670$;Univerzál Cif Briliance 1l Oceán$;ks$;0.00$;32.61$;21$;15$;1$;6.31
+00006$;737794$;00001$;* 1 Zboží za body$;3011$;Nádobí Jar 900ml Teatree sensitive$;ks$;0.00$;36.45$;21$;12$;1$;9.31
+00006$;737794$;00001$;* 1 Zboží za body$;2853$;Kuchynì Larin KERA  sklokeram.desky 200m$;ks$;0.00$;59.55$;21$;12$;1$;11.91
+00006$;737794$;00001$;* 1 Zboží za body$;3203$;Kuchynì Real 550g MR trouby, grily$;ks$;0.00$;49.82$;21$;10$;1$;11.17
+00006$;737794$;00001$;* 1 Zboží za body$;0694$;Koupelny Cif 750ml MR$;ks$;0.00$;56.16$;21$;6$;1$;12.15
+00006$;737794$;00001$;* 1 Zboží za body$;3222$;Osvìžovaè spray Brait 300m suchý Glamour$;ks$;0.00$;27.50$;21$;12$;1$;5.50
+00006$;737794$;00001$;* 1 Zboží za body$;3886$;Osvìžovaè spray Glade 300ml Oceán$;ks$;0.00$;47.77$;21$;12$;1$;13.87
+00006$;737794$;00001$;* 1 Zboží za body$;2648$;Osvìžovaè elek.Airwick komplet Prád/Sate$;ks$;0.00$;73.53$;21$;6$;1$;14.71
+00006$;737794$;00001$;* 1 Zboží za body$;4301$;Osvìžovaè elek.Airwick NN saten 19ml$;ks$;0.00$;62.71$;21$;6$;1$;14.40
+00006$;737794$;00001$;* 1 Zboží za body$;1207$;AVA odstraòovaè vodního kamene 250g$;ks$;0.00$;30.80$;21$;30$;1$;6.00
+00006$;737794$;00001$;* 1 Zboží za body$;3170$;Hadr na podlahu švédský 50x60cm Modrý$;ks$;0.00$;22.14$;21$;100$;1$;4.47
+00006$;737794$;00001$;* 1 Zboží za body$;2223$;Utìrka houbová 3ks SPOKAR 15x18cm    /24$;bal$;0.00$;22.18$;21$;192$;1$;4.42
+00006$;737794$;00001$;* 1 Zboží za body$;3158$;Zubní pasta dìtská Signal Kids 50ml$;ks$;0.00$;47.35$;21$;12$;1$;9.77
+00006$;737794$;00001$;* 1 Zboží za body$;0397$;Vlhèené dìtské ubr.Pampers 4x52ks$;bal$;0.00$;125.42$;21$;3$;2$;57.88
+00006$;737794$;00001$;* 1 Zboží za body$;1931$;Šampon suchý Amica 30g$;ks$;0.00$;23.31$;21$;10$;1$;4.66
+00006$;737794$;00001$;* 1 Zboží za body$;1708$;Šampon Primo 1l Kopøiva Clear$;ks$;0.00$;19.20$;21$;10$;1$;4.20
+00006$;737794$;00001$;* 1 Zboží za body$;5220$;Alpa gel Lesana bylinkový 100ml$;ks$;0.00$;40.35$;21$;10$;1$;11.53
+00006$;737794$;00001$;* 1 Zboží za body$;1636$;Odlakovaè Delia mix 100ml$;ks$;0.00$;16.49$;21$;12$;1$;4.11
+00006$;737794$;00001$;* 1 Zboží za body$;2235$;Pomáda na rty mix$;ks$;0.00$;11.90$;21$;0$;2$;5.94
+00006$;737794$;00001$;* 1 Zboží za body$;3140$;Deo Rexona 150ml Aloe Vera$;ks$;0.00$;50.12$;21$;6$;1$;9.70
+00006$;737794$;00001$;* 1 Zboží za body$;1370$;Destilovaná voda 25l Bal$;ks$;0.00$;172.45$;21$;0$;1$;44.99
+00006$;737794$;00001$;* 1 Zboží za body$;5997$;Ostøikovaè zimní Carline 5L (-20)$;kan$;0.00$;89.33$;21$;3$;1$;19.43
+00006$;737794$;00001$;* 1 Zboží za body$;3828$;Osvìžovaè CAR Ambi-pur komplet Aqua$;ks$;0.00$;98.90$;21$;6$;1$;20.47
+00006$;737794$;00001$;* 1 Zboží za body$;4750$;Prací gel Savo 50dávek 2,5L bílé$;ks$;0.00$;198.24$;21$;3$;1$;30.24
+00006$;737794$;00001$;* 1 Zboží za body$;2539$;Dezinfekèní pøípravek na povrchy 500ml$;ks$;0.00$;49.99$;21$;10$;1$;11.54
+00006$;737794$;00001$;* 1 Zboží za body$;2293$;Papírové kapesníky krabice Harmony 100ks$;kra$;0.00$;11.97$;21$;35$;1$;2.47
+00007$;737795$;01832$;\Liberecká Bouda - penzion$;1700$;\o\Spojky ke gum.rohožím Okta$;ks$;0.00$;25.00$;21$;0$;2$;0.00
+00008$;737795$;00001$;* 1 Zboží za body$;0161$;Krém na ruce Isolda 100ml Aloe Vera/rege$;ks$;0.00$;13.83$;21$;25$;1$;3.00
+00008$;737795$;00001$;* 1 Zboží za body$;2988$;Krém na ruce Isolda 100ml Oliva regenera$;ks$;0.00$;12.84$;21$;25$;2$;5.42
+00008$;737795$;00001$;* 1 Zboží za body$;5558$;Krém na ruce Isolda 100ml s Lanolinem$;ks$;0.00$;17.75$;21$;25$;2$;7.10
+00008$;737795$;00001$;* 1 Zboží za body$;3052$;Krém na ruce Isolda 100ml Heømánek hojiv$;ks$;0.00$;12.66$;21$;25$;1$;2.53
+00008$;737795$;00001$;* 1 Zboží za body$;3005$;Krém na ruce Isolda 100ml mìsíèek$;ks$;0.00$;13.81$;21$;25$;1$;2.99
+00008$;737795$;00001$;* 1 Zboží za body$;2786$;Krém na ruce Isolda 100ml keratin+mandl.$;ks$;0.00$;17.76$;21$;25$;1$;3.55
+00008$;737795$;00001$;* 1 Zboží za body$;4656$;Deo Old Spice 125ml MIX$;ks$;0.00$;69.19$;21$;6$;1$;14.28
+00008$;737795$;00001$;* 1 Zboží za body$;4729$;Zubní pasta Colgate CavityProt 100ml$;ks$;0.00$;22.12$;21$;48$;9$;40.59
+00008$;737795$;00001$;* 1 Zboží za body$;2613$;Krém na ruce Vakavo 100ml s glycerinem$;ks$;0.00$;8.52$;21$;25$;9$;17.91
+00009$;737796$;00099$;\Bonus$;2538$;Aviril dìtský zásyp 100g dóza$;ks$;0.00$;24.59$;21$;10$;1$;4.89
+00009$;737796$;00099$;\Bonus$;2201$;Aviril olej ïìtský s azulenem 50ml$;ks$;0.00$;17.89$;21$;10$;2$;7.16
+00009$;737796$;00099$;\Bonus$;4349$;Pampers Jumbo è.2 Mini 100ks 4-8kg$;ks$;0.00$;448.63$;21$;0$;2$;243.76
+00009$;737796$;00099$;\Bonus$;5400$;Papírové kapesníky krabice Linteo 200ks$;kra$;0.00$;21.00$;21$;15$;15$;63.00
+00009$;737796$;00099$;\Bonus$;0686$;Peèící papír * FINO * 38cm x 8m, bílý$;ks$;0.00$;24.94$;21$;24$;3$;15.39
+00009$;737796$;00099$;\Bonus$;2235$;Pomáda na rty mix$;ks$;0.00$;11.90$;21$;0$;6$;17.82
+00009$;737796$;00099$;\Bonus$;1554$;SG/šamp.dìtský Milli Baby vitamín.250ml$;ks$;0.00$;25.84$;21$;10$;2$;10.40
+00009$;737796$;00099$;\Bonus$;4764$;Vatové kosmetické tampony Linteo 100ks$;ks$;0.00$;16.20$;21$;36$;2$;6.34
+00009$;737796$;00099$;\Bonus$;0397$;Vlhèené dìtské ubr.Pampers 4x52ks$;bal$;0.00$;125.42$;21$;3$;2$;57.88
+00009$;737796$;00099$;\Bonus$;4543$;Zubní pasta Colgate Advanced bìlící 75ml$;ks$;0.00$;30.93$;21$;12$;3$;18.57
+00009$;737796$;00099$;\Bonus$;4729$;Zubní pasta Colgate CavityProt 100ml$;ks$;0.00$;22.12$;21$;48$;3$;13.53
+00009$;737796$;00099$;\Bonus$;4601$;Zubní pasta Signal Nature Aktivn uhlí 75$;ks$;0.00$;31.09$;21$;24$;3$;18.66
+00009$;737796$;00099$;\Bonus$;2743$;Zubní pasta Signal Nature Sensitive 75ml$;ks$;0.00$;32.29$;21$;24$;3$;19.86
+00009$;737796$;00099$;\Bonus$;1928$;Zubní pasta Vademecum 75ml Clean$;ks$;0.00$;26.26$;21$;12$;3$;17.52
+00009$;737796$;00099$;\Bonus$;0150$;Sùl posypová 50kg$;pyt$;0.00$;211.34$;21$;0$;-6$;-383.16
+00009$;737796$;00099$;\Bonus$;1423$;Hrablo na sníh PE 50cm + hliník.hùl Ergo$;ks$;0.00$;307.50$;21$;10$;-5$;-287.50
+00009$;737796$;00099$;\Bonus$;0654$;Alobal 29cm x 10m, 9mi TopStar$;ks$;0.00$;12.48$;21$;45$;3$;8.94
+00009$;737796$;00099$;\Bonus$;0748$;Prací gel Persil 1l /20dávek Sensiti$;ks$;0.00$;98.96$;21$;8$;2$;45.08
+00010$;737796$;05276$;\Žateèková Markéta$;5697$;Svíèka HØBIT olejová W07 Memoria bílá$;ks$;10.00$;17.96$;21$;16$;4$;0.00
+00010$;737796$;05276$;\Žateèková Markéta$;4642$;Papírové ruèníky role 2vr PK Midi 455VPL$;rol$;10.00$;15.99$;21$;12$;4$;0.00
+00010$;737796$;05276$;\Žateèková Markéta$;0654$;Alobal 29cm x 10m, 9mi TopStar$;ks$;10.00$;9.50$;21$;45$;1$;0.00
+00011$;737796$;00099$;\Bonus$;2406$;Solvina 450g Industrial$;ks$;0.00$;17.57$;21$;12$;-36$;-192.24
+00011$;737796$;00099$;\Bonus$;2592$;Autošampon COYOTE 500ml s voskem$;ks$;0.00$;69.04$;21$;10$;-30$;-437.70
+00011$;737796$;00099$;\Bonus$;3199$;MICCI tampony normál 8ks$;ks$;0.00$;15.67$;21$;24$;24$;73.68
+00011$;737796$;00099$;\Bonus$;4943$;Zubní kartáèek Spokar 3428 Plus M$;ks$;0.00$;33.55$;21$;12$;8$;51.92
+00011$;737796$;00099$;\Bonus$;4457$;Zubní pasta Colgate Whitening 100ml$;ks$;0.00$;22.10$;21$;48$;8$;35.92
+00011$;737796$;00099$;\Bonus$;4382$;Prášek Palmex 63dávek Hory Modrý$;ks$;0.00$;182.12$;21$;0$;1$;41.92
+00011$;737796$;00099$;\Bonus$;3221$;Aviváž Coccolino 1,8l Blue$;ks$;0.00$;57.45$;21$;6$;2$;21.10
+00011$;737796$;00099$;\Bonus$;3585$;SG Mitia**750ml**2v1 Men Wild lime$;ks$;0.00$;29.90$;21$;12$;6$;53.40
+00011$;737796$;00099$;\Bonus$;3307$;SG FA dámský mix 250ml$;ks$;0.00$;34.12$;21$;6$;6$;51.12
+00011$;737796$;00099$;\Bonus$;1608$;Leštìnka Pronto spray Multis.400ml$;ks$;0.00$;82.57$;21$;12$;2$;56.42
+00011$;737796$;00099$;\Bonus$;1655$;Mýdlový èistiè Pronto 750ml laminát.podl$;ks$;0.00$;75.85$;21$;12$;2$;49.20
+00011$;737796$;00099$;\Bonus$;5108$;WC èistiè Domestos 750ml vod.kámen$;ks$;0.00$;31.89$;21$;12$;2$;19.30
+00011$;737796$;00099$;\Bonus$;5105$;WC blok Bref 4koul 50g závìs barvíc Purp$;ks$;0.00$;30.58$;21$;10$;4$;38.24
+00011$;737796$;00099$;\Bonus$;5836$;Prášek Persil 63dávek Fresh$;ks$;0.00$;247.84$;21$;0$;1$;79.01
+00011$;737796$;00099$;\Bonus$;3062$;Aviváž Coccolino 1l Yellow$;Ks$;0.00$;37.17$;21$;8$;2$;12.60
+00012$;737796$;02523$;\Spìšný Jan$;3348$;Toaletní papír 2vrs.160 ForestBIG 48/16m$;rol$;10.00$;2.85$;21$;48$;48$;0.00
+00013$;737796$;00128$;\Tomáš Peter$;4515$;Pytle  80L/200mi 55x100cm silné èerné$;ks$;10.00$;6.54$;21$;50$;50$;0.00
+00013$;737796$;00128$;\Tomáš Peter$;2830$;Toaletní papír 2vrs.1875 HarmComfo10/24m$;rol$;10.00$;3.28$;21$;80$;160$;0.00
+00013$;737796$;00128$;\Tomáš Peter$;2706$;Papírové ruèníky role 3vr Tento Complex$;ks$;10.00$;41.90$;21$;8$;8$;0.00
+00014$;737796$;03118$;\Schönherrová Jana$;0532$;Savo  1,2l original obyè$;ks$;10.00$;23.39$;21$;6$;2$;0.00
+00014$;737796$;03118$;\Schönherrová Jana$;6035$;Toaletní papír 3vrs.150 Tento Pearl wh.8$;rol$;10.00$;3.95$;21$;56$;16$;0.00
+00014$;737796$;03118$;\Schönherrová Jana$;1643$;Vteøinové lepidlo                    /12$;ks$;10.00$;2.52$;21$;288$;6$;0.00
+00014$;737796$;03118$;\Schönherrová Jana$;5108$;WC èistiè Domestos 750ml vod.kámen$;ks$;10.00$;22.24$;21$;12$;1$;0.00
+00015$;737796$;01810$;\Doubravský Vladimír$;5625$;Osvìžovaè dávk.Freshmatic NN Sate/mag250$;ks$;10.00$;48.31$;21$;6$;1$;0.00
+00015$;737796$;01810$;\Doubravský Vladimír$;2648$;Osvìžovaè elek.Airwick komplet Prád/Sate$;ks$;10.00$;58.82$;21$;6$;1$;0.00
+00015$;737796$;01810$;\Doubravský Vladimír$;4301$;Osvìžovaè elek.Airwick NN saten 19ml$;ks$;10.00$;48.31$;21$;6$;1$;0.00
+00015$;737796$;01810$;\Doubravský Vladimír$;4290$;Hadr na podlahu šedý 50x60cm$;ks$;10.00$;5.50$;21$;25$;1$;0.00
+00016$;737796$;00276$;\Fialová Jana$;2546$;Sáèky do koše 60l 60x80 /40mi zatah 10èe$;rol$;10.00$;15.90$;21$;25$;3$;0.00
+00017$;737796$;00140$;\Neumann Lukáš$;2829$;Toaletní papír 3vrs.1801 HarmPremi 8/29m$;rol$;10.00$;6.19$;21$;56$;8$;0.00
+00017$;737796$;00140$;\Neumann Lukáš$;5894$;Papírové kuch.role 18m Tento Maxi 2ks$;bal$;10.00$;20.90$;21$;12$;1$;0.00
+00017$;737796$;00140$;\Neumann Lukáš$;0850$;Sáèky do koše 35l 50x60/ 15mi zatah15kMO$;rol$;10.00$;17.58$;21$;32$;2$;0.00
+00017$;737796$;00140$;\Neumann Lukáš$;3011$;Nádobí Jar 900ml Teatree sensitive$;ks$;10.00$;27.14$;21$;12$;1$;0.00
+00017$;737796$;00140$;\Neumann Lukáš$;2021$;Vatové tyèinky 160ks Linteo náplò$;ks$;10.00$;9.90$;21$;60$;1$;0.00
+00017$;737796$;00140$;\Neumann Lukáš$;6018$;Papírové kapesníky Tento aloe 3vrstvé 10$;tyè$;10.00$;12.20$;21$;0$;1$;0.00
+00017$;737796$;00140$;\Neumann Lukáš$;5400$;Papírové kapesníky krabice Linteo 200ks$;kra$;10.00$;16.80$;21$;15$;2$;0.00
+00017$;737796$;00140$;\Neumann Lukáš$;5105$;WC blok Bref 4koul 50g závìs barvíc Purp$;ks$;10.00$;21.02$;21$;10$;1$;0.00
+00018$;737796$;00001$;* 1 Zboží za body$;1954$;Houbièka nádobí s drážkou po 10ks 10x7cm$;tyè$;0.00$;19.91$;21$;50$;1$;5.47
+00018$;737796$;00001$;* 1 Zboží za body$;0389$;Nádobí Jar 5l PROFI$;ks$;0.00$;182.91$;21$;3$;1$;43.18
+00018$;737796$;00001$;* 1 Zboží za body$;4750$;Prací gel Savo 50dávek 2,5L bílé$;ks$;0.00$;198.24$;21$;3$;1$;30.24
+00018$;737796$;00001$;* 1 Zboží za body$;2985$;Sáèky do koše 60l 63x68/ 15mi zata 15SPO$;rol$;0.00$;31.04$;21$;25$;3$;18.51
+00019$;737797$;03118$;\Schönherrová Jana$;2077$;Pepo 320g podpalovaè pevný$;ks$;10.00$;16.47$;21$;30$;2$;0.00
+00020$;737797$;00001$;* 1 Zboží za body$;0654$;Alobal 29cm x 10m, 9mi TopStar$;ks$;0.00$;12.48$;21$;45$;2$;5.96
+00020$;737797$;00001$;* 1 Zboží za body$;2571$;Biolit P 400ml lezoucí$;ks$;0.00$;78.66$;21$;12$;2$;47.00
+00020$;737797$;00001$;* 1 Zboží za body$;4018$;Cockpit spray 400ml COYOTE vanilka$;ks$;0.00$;60.28$;21$;6$;2$;24.72
+00020$;737797$;00001$;* 1 Zboží za body$;1613$;Koupelny Primona na rez a vod.kám.MR 500$;ks$;0.00$;18.94$;21$;16$;2$;8.08
+00020$;737797$;00001$;* 1 Zboží za body$;0161$;Krém na ruce Isolda 100ml Aloe Vera/rege$;ks$;0.00$;13.83$;21$;25$;2$;6.00
+00020$;737797$;00001$;* 1 Zboží za body$;2143$;Krém Nivea 150ml                      /4$;ks$;0.00$;70.46$;21$;24$;4$;56.36
+00020$;737797$;00001$;* 1 Zboží za body$;0728$;Louh hydroxid sodný 1kg$;ks$;0.00$;34.53$;21$;8$;2$;15.06
+00020$;737797$;00001$;* 1 Zboží za body$;0400$;Mio  600g$;ks$;0.00$;24.55$;21$;18$;2$;10.22
+00020$;737797$;00001$;* 1 Zboží za body$;0352$;Nádobí Jar 900ml Citron$;ks$;0.00$;36.51$;21$;12$;4$;36.16
+00020$;737797$;00001$;* 1 Zboží za body$;5359$;Papírové kuch.role 11m Harmony Profes 2k$;bal$;0.00$;14.46$;21$;24$;2$;6.32
+00020$;737797$;00001$;* 1 Zboží za body$;2400$;Potravináøská folie 29cm x 20m$;ks$;0.00$;10.08$;21$;42$;2$;7.90
+00020$;737797$;00001$;* 1 Zboží za body$;5106$;Savo  1,2l Prim s vùní- Svìží$;ks$;0.00$;34.29$;21$;6$;4$;41.52
+00020$;737797$;00001$;* 1 Zboží za body$;0457$;Souprava smetáèek+lopatka 5207/616$;ks$;0.00$;53.98$;21$;15$;1$;10.90
+00020$;737797$;00001$;* 1 Zboží za body$;2508$;Svíèka SKLO aroma tøibarvy Levandule$;ks$;0.00$;41.69$;21$;6$;6$;53.34
+00020$;737797$;00001$;* 1 Zboží za body$;3522$;Svíèka SKLO aroma tøibarvy vanilka$;Ks$;0.00$;41.70$;21$;6$;6$;52.74
+00020$;737797$;00001$;* 1 Zboží za body$;0779$;WC závìs Bref 4koule Ocean 51g$;ks$;0.00$;26.87$;21$;10$;10$;86.30
+00020$;737797$;00001$;* 1 Zboží za body$;5647$;Zubní kartáèek Signal Essent/Antipl.1+1$;ks$;0.00$;29.51$;21$;8$;2$;14.78
+00020$;737797$;00001$;* 1 Zboží za body$;2091$;Toaletní papír 2vrs.6620 HarmProfe16/19m$;rol$;0.00$;4.14$;21$;64$;32$;28.16
+00021$;737797$;00001$;* 1 Zboží za body$;2143$;Krém Nivea 150ml                      /4$;ks$;0.00$;70.46$;21$;24$;2$;28.18
+00021$;737797$;00001$;* 1 Zboží za body$;3863$;SG Radox 250ml Relaxed$;ks$;0.00$;24.72$;21$;6$;7$;45.64
+00022$;737797$;00051$;\Madìra Jiøí$;3682$;Somat do myèky èistiè tablety 3x20g$;bal$;0.00$;51.51$;21$;6$;1$;0.00
+00023$;737797$;03118$;\Schönherrová Jana$;0171$;Somat do myèky sùl 1.5kg$;ks$;10.00$;32.91$;21$;8$;1$;0.00
+00024$;737797$;03118$;\Schönherrová Jana$;0171$;Somat do myèky sùl 1.5kg$;ks$;10.00$;32.91$;21$;8$;1$;0.00
+00025$;737797$;05276$;\Žateèková Markéta$;1954$;Houbièka nádobí s drážkou po 10ks 10x7cm$;tyè$;10.00$;14.44$;21$;50$;1$;0.00
+00026$;737797$;00124$;\Pokorná Petra$;4132$;Vlhèené dìtské ubrousky Linteo 72ks$;ks$;10.00$;13.90$;21$;24$;1$;0.00
+00026$;737797$;00124$;\Pokorná Petra$;2223$;Utìrka houbová 3ks SPOKAR 15x18cm    /24$;bal$;10.00$;17.76$;21$;192$;1$;0.00
+00026$;737797$;00124$;\Pokorná Petra$;2829$;Toaletní papír 3vrs.1801 HarmPremi 8/29m$;rol$;10.00$;6.19$;21$;56$;8$;0.00
+00027$;737797$;01832$;\Liberecká Bouda - penzion$;2189$;Hùl DR 140cm prùmìr 24mm$;ks$;0.00$;28.71$;21$;0$;2$;0.00
+00027$;737797$;01832$;\Liberecká Bouda - penzion$;1155$;Hùl døevìná 13Ocm s kovovým jemný závit.$;ks$;0.00$;31.20$;21$;25$;2$;0.00
+00027$;737797$;01832$;\Liberecká Bouda - penzion$;2632$;Rýžák na hul DR + hul 130cm 22x7cm$;ks$;0.00$;45.40$;21$;3$;2$;0.00
+00027$;737797$;01832$;\Liberecká Bouda - penzion$;3211$;Univerzal Real Maxi 1l Pohlcovaè pachu$;ks$;0.00$;22.96$;21$;10$;1$;0.00
+00028$;737798$;05276$;\Žateèková Markéta$;5810$;Sáèky do koše 35l 50x65 /20mi 25ks èerné$;rol$;10.00$;16.50$;21$;25$;1$;0.00
+00028$;737798$;05276$;\Žateèková Markéta$;3234$;Sáèky do koše 35l 50x60 /7mi 50k TopStar$;rol$;10.00$;8.00$;21$;50$;-1$;0.00
+00029$;737798$;03118$;\Schönherrová Jana$;0862$;Orkán èistiè myèky 150g$;ks$;10.00$;43.55$;21$;12$;1$;0.00
+00030$;737798$;03084$;\Hvìzdová Šárka$;0582$;Prací gel Savo 100dávek bílé+barevné UNI$;Ks$;10.00$;177.00$;21$;2$;2$;0.00
+00031$;737798$;00140$;\Neumann Lukáš$;1357$;Hùl DR 160cm prùmìr 24mm$;ks$;10.00$;30.70$;21$;25$;1$;0.00
+00031$;737798$;00140$;\Neumann Lukáš$;3661$;Destilovaná voda 5l$;kan$;10.00$;22.00$;21$;0$;1$;0.00
+00031$;737798$;00140$;\Neumann Lukáš$;0474$;Smeták sálový 60cm/IV$;ks$;10.00$;88.40$;21$;0$;1$;0.00
+00032$;737798$;10143$;\Sekeres Jan$;4642$;Papírové ruèníky role 2vr PK Midi 455VPL$;rol$;0.00$;15.99$;21$;12$;12$;0.00
+00032$;737798$;10143$;\Sekeres Jan$;5736$;Stojan na WC papíry + papír.utìrky chrom$;ks$;0.00$;19.50$;21$;10$;1$;0.00
+00032$;737798$;10143$;\Sekeres Jan$;4397$;Gumové rukavice DOVOZ è.7-7,5/M      /12$;pár$;0.00$;7.80$;21$;240$;2$;0.00
+00032$;737798$;10143$;\Sekeres Jan$;1643$;Vteøinové lepidlo                    /12$;ks$;0.00$;2.52$;21$;288$;1$;0.00
+00033$;737801$;03118$;\Schönherrová Jana$;3672$;Rozprašovaè + láhev 500ml Cormen$;ks$;10.00$;16.95$;21$;12$;1$;0.00
+00034$;737801$;01409$;\Chocholoušková Iva$;3596$;Koš výklopný  7L kulatý Oskar 29x18cm$;ks$;10.00$;35.90$;21$;8$;1$;0.00
+00035$;737801$;00061$;\Labaj Martin$;0150$;Sùl posypová 50kg$;pyt$;10.00$;147.48$;21$;0$;1$;0.00
+00036$;737801$;00056$;\Honc Jiøí$;5805$;Papírové ruèníky role 2vr Tento XXL 75m$;rol$;10.00$;41.89$;21$;6$;6$;0.00
+00036$;737801$;00056$;\Honc Jiøí$;2738$;Pytle 240L/100mi 120x150cm 1ks èerné$;ks$;10.00$;8.95$;21$;25$;10$;0.00
+00036$;737801$;00056$;\Honc Jiøí$;3234$;Sáèky do koše 35l 50x60 /7mi 50k TopStar$;rol$;10.00$;8.00$;21$;50$;2$;0.00
+00036$;737801$;00056$;\Honc Jiøí$;2205$;Toaletní papír Gigant 2vrs.280 Harm/7366$;rol$;10.00$;36.20$;21$;6$;6$;0.00
+00037$;737801$;00061$;\Labaj Martin$;2829$;Toaletní papír 3vrs.1801 HarmPremi 8/29m$;rol$;10.00$;6.98$;21$;56$;56$;44.24
+00037$;737801$;00061$;\Labaj Martin$;5400$;Papírové kapesníky krabice Linteo 200ks$;kra$;10.00$;18.90$;21$;15$;10$;21.00
+00037$;737801$;00061$;\Labaj Martin$;1707$;Papírové kapesníky krabice Cube 60ks 3vr$;ks$;10.00$;16.47$;21$;12$;5$;10.85
+00037$;737801$;00061$;\Labaj Martin$;4993$;Carine Ultra aloe vera 9 s køidélky$;ks$;10.00$;16.37$;21$;24$;3$;6.57
+00037$;737801$;00061$;\Labaj Martin$;2980$;Sáèky do koše 30l 50x60 /10mi zatah.ŽL15$;rol$;10.00$;12.96$;21$;50$;2$;3.42
+00037$;737801$;00061$;\Labaj Martin$;2649$;Carine Ultra Wings TD 9ks s køidélky$;ks$;10.00$;14.36$;21$;24$;2$;3.72
+00037$;737801$;00061$;\Labaj Martin$;6018$;Papírové kapesníky Tento aloe 3vrstvé 10$;tyè$;10.00$;13.64$;21$;0$;4$;5.76
+00037$;737801$;00061$;\Labaj Martin$;4997$;Nádobí Jar 650ml Extra Hygiene$;ks$;10.00$;33.62$;21$;16$;1$;4.30
+00038$;737801$;02523$;\Spìšný Jan$;3633$;Sáèky MIKRO 25x40/50ks 0.015$;bal$;10.00$;12.88$;21$;75$;1$;0.00
+00039$;737801$;00060$;\Madìra Daniel$;1490$;Hrablo na sníh PE 50cm + døevìná hùl$;ks$;10.00$;97.30$;21$;10$;1$;0.00
+00039$;737801$;00060$;\Madìra Daniel$;4794$;Silkal 93 400ml$;ks$;10.00$;50.27$;21$;10$;2$;0.00
+00040$;737802$;01832$;\Liberecká Bouda - penzion$;0714$;Smetáèek PE dlouhý 5180/616$;ks$;0.00$;22.60$;21$;12$;1$;0.00
+00041$;737802$;00140$;\Neumann Lukáš$;3614$;\o\Prací gel Lovela color 32dávek$;ks$;10.00$;137.65$;21$;4$;4$;0.00
+00041$;737802$;00140$;\Neumann Lukáš$;0714$;Smetáèek PE dlouhý 5180/616$;ks$;10.00$;22.60$;21$;12$;1$;0.00
+00041$;737802$;00140$;\Neumann Lukáš$;1490$;Hrablo na sníh PE 50cm + døevìná hùl$;ks$;10.00$;97.30$;21$;10$;1$;0.00
+00042$;737803$;00001$;* 1 Zboží za body$;5400$;Papírové kapesníky krabice Linteo 200ks$;kra$;0.00$;21.00$;21$;15$;38$;159.60
+00043$;737803$;00124$;\Pokorná Petra$;0158$;Nádobí Jar 900ml Pome granate$;Ks$;10.00$;27.68$;21$;12$;1$;0.00
+00043$;737803$;00124$;\Pokorná Petra$;2372$;Váleèek malíøský + síto 24$;ks$;10.00$;38.58$;21$;25$;1$;0.00
+00043$;737803$;00124$;\Pokorná Petra$;1948$;Hùl teleskop 110- 200cm + redukce Spokar$;ks$;10.00$;55.61$;21$;10$;1$;0.00
+00044$;737803$;00128$;\Tomáš Peter$;1247$;Univerzal Savo bez chlor podl.1L Antibak$;ks$;10.00$;32.20$;21$;12$;1$;0.00
+00044$;737803$;00128$;\Tomáš Peter$;4193$;Kyselina citronová 100g$;ks$;10.00$;6.00$;21$;60$;1$;0.00
+00044$;737803$;00128$;\Tomáš Peter$;2546$;Sáèky do koše 60l 60x80 /40mi zatah 10èe$;rol$;10.00$;15.90$;21$;25$;1$;0.00
+00044$;737803$;00128$;\Tomáš Peter$;5963$;WC èistiè Hit 750g gelový dezinfekèní$;ks$;10.00$;11.22$;21$;12$;1$;0.00
+00044$;737803$;00128$;\Tomáš Peter$;0542$;Savo plíseò MR 500ml$;ks$;10.00$;37.66$;21$;20$;1$;0.00
+00044$;737803$;00128$;\Tomáš Peter$;5356$;Prášek Ariel 100dávek Profi Color$;ks$;10.00$;302.90$;21$;0$;1$;0.00
+00045$;737804$;03118$;\Schönherrová Jana$;1490$;Hrablo na sníh PE 50cm + døevìná hùl$;ks$;10.00$;97.30$;21$;10$;1$;0.00
+00046$;737804$;00061$;\Labaj Martin$;2829$;Toaletní papír 3vrs.1801 HarmPremi 8/29m$;rol$;10.00$;6.19$;21$;56$;56$;0.00
+00047$;737804$;10143$;\Sekeres Jan$;3399$;Svíèka SKLO aroma tøibarvy SaltCave šedá$;ks$;0.00$;33.09$;21$;6$;1$;0.00
+00047$;737804$;10143$;\Sekeres Jan$;4193$;Kyselina citronová 100g$;ks$;0.00$;6.00$;21$;60$;1$;0.00
+00047$;737804$;10143$;\Sekeres Jan$;0654$;Alobal 29cm x 10m, 9mi TopStar$;ks$;0.00$;9.50$;21$;45$;2$;0.00
+00047$;737804$;10143$;\Sekeres Jan$;2888$;Sitol 300g na kovy a sklo$;ks$;0.00$;13.82$;21$;25$;1$;0.00
+00047$;737804$;10143$;\Sekeres Jan$;0565$;Štìtec zárohák C 2.5 PH$;ks$;0.00$;25.25$;21$;160$;1$;0.00
+00048$;737804$;01810$;\Doubravský Vladimír$;5356$;Prášek Ariel 100dávek Profi Color$;ks$;10.00$;302.90$;21$;0$;1$;0.00
+00049$;737804$;00001$;* 1 Zboží za body$;2205$;Toaletní papír Gigant 2vrs.280 Harm/7366$;rol$;0.00$;36.20$;21$;6$;6$;0.00
+00049$;737804$;00001$;* 1 Zboží za body$;3221$;Aviváž Coccolino 1,8l Blue$;ks$;0.00$;46.90$;21$;6$;2$;0.00
+00050$;737805$;00056$;\Honc Jiøí$;0749$;Toaletní papír Gigant 2vrs.240 Harm/7362$;rol$;10.00$;25.70$;21$;6$;6$;0.00
+00051$;737805$;00001$;* 1 Zboží za body$;3878$;Koš PVC 60L kulatý bez víka 67x39cm$;ks$;0.00$;153.50$;21$;0$;1$;0.00
+00051$;737805$;00001$;* 1 Zboží za body$;3105$;Víko ke koši 30,60l plastové$;ks$;0.00$;61.22$;21$;0$;1$;0.00
+00051$;737805$;00001$;* 1 Zboží za body$;3211$;Univerzal Real Maxi 1l Pohlcovaè pachu$;ks$;0.00$;22.96$;21$;10$;1$;0.00
+00051$;737805$;00001$;* 1 Zboží za body$;1532$;Kartáèek na ruce PE s držadlem Kamil$;ks$;0.00$;8.50$;21$;14$;1$;0.00
+00051$;737805$;00001$;* 1 Zboží za body$;4642$;Papírové ruèníky role 2vr PK Midi 455VPL$;rol$;0.00$;15.99$;21$;12$;2$;0.00
+00051$;737805$;00001$;* 1 Zboží za body$;2829$;Toaletní papír 3vrs.1801 HarmPremi 8/29m$;rol$;0.00$;6.19$;21$;56$;24$;0.00
+00052$;737805$;00001$;* 1 Zboží za body$;0221$;Prací gel Persil 2l /40dávek Regular$;ks$;0.00$;114.71$;21$;4$;1$;0.00
+00052$;737805$;00001$;* 1 Zboží za body$;4909$;Vonný olej Krystal 750ml rùžový$;ks$;0.00$;62.22$;21$;18$;1$;0.00
+00052$;737805$;00001$;* 1 Zboží za body$;1008$;Cleamen 302/402 1l osvìžovaè-neutralizát$;ks$;0.00$;119.11$;21$;12$;1$;0.00
+00052$;737805$;00001$;* 1 Zboží za body$;1770$;Osvìžovaè spray Fresh Air 300ml Lily$;ks$;0.00$;10.91$;21$;24$;1$;0.00
+00052$;737805$;00001$;* 1 Zboží za body$;1789$;Osvìžovaè dávk.Fresh Air 260ml Vanila$;ks$;0.00$;16.20$;21$;24$;1$;0.00
+00052$;737805$;00001$;* 1 Zboží za body$;4301$;Osvìžovaè elek.Airwick NN saten 19ml$;ks$;0.00$;48.31$;21$;6$;2$;0.00
+00052$;737805$;00001$;* 1 Zboží za body$;2829$;Toaletní papír 3vrs.1801 HarmPremi 8/29m$;rol$;0.00$;6.19$;21$;56$;16$;0.00
+00052$;737805$;00001$;* 1 Zboží za body$;0654$;Alobal 29cm x 10m, 9mi TopStar$;ks$;0.00$;9.50$;21$;45$;1$;0.00
+00052$;737805$;00001$;* 1 Zboží za body$;1460$;Peèící papír * TopStar * 6mx35cm hnìdý$;ks$;0.00$;9.52$;21$;40$;1$;0.00
+00052$;737805$;00001$;* 1 Zboží za body$;1842$;Zubní pasta Vademecum 75ml White$;ks$;0.00$;20.19$;21$;12$;1$;0.00
+00053$;737805$;00276$;\Fialová Jana$;3132$;Houbièka Vileda po 3+2ks TIP TOP 7x9x3cm$;tyè$;10.00$;14.85$;21$;36$;2$;3.68
+00054$;737805$;00001$;* 1 Zboží za body$;3793$;Jar tablety do myèky Yellow A.One 96k$;ks$;0.00$;306.02$;21$;2$;1$;70.62
+00055$;737805$;00276$;\Fialová Jana$;4646$;Jar tablety do myèky 45ks Platinum$;ks$;10.00$;165.51$;21$;4$;1$;0.00
+00056$;737805$;00001$;* 1 Zboží za body$;2985$;Sáèky do koše 60l 63x68/ 15mi zata 15SPO$;rol$;0.00$;24.87$;21$;25$;1$;0.00
+00056$;737805$;00001$;* 1 Zboží za body$;5108$;WC èistiè Domestos 750ml vod.kámen$;ks$;0.00$;22.24$;21$;12$;1$;0.00
+00056$;737805$;00001$;* 1 Zboží za body$;0582$;Prací gel Savo 100dávek bílé+barevné UNI$;Ks$;0.00$;177.00$;21$;2$;1$;0.00
+00056$;737805$;00001$;* 1 Zboží za body$;1364$;Neon odstraòovaè skvrn na bílé/White 750$;ks$;0.00$;53.00$;21$;6$;1$;0.00
+00056$;737805$;00001$;* 1 Zboží za body$;3167$;WC blok Bref 4koul *3x50g* závìs barvící$;bal$;0.00$;49.90$;21$;9$;1$;0.00
+00056$;737805$;00001$;* 1 Zboží za body$;4943$;Zubní kartáèek Spokar 3428 Plus M$;ks$;0.00$;33.55$;21$;12$;2$;12.98
+00057$;737805$;00001$;* 1 Zboží za body$;0352$;Nádobí Jar 900ml Citron$;ks$;0.00$;36.51$;21$;12$;1$;9.04
+00057$;737805$;00001$;* 1 Zboží za body$;0158$;Nádobí Jar 900ml Pome granate$;Ks$;0.00$;36.45$;21$;12$;1$;8.77
+00057$;737805$;00001$;* 1 Zboží za body$;3011$;Nádobí Jar 900ml Teatree sensitive$;ks$;0.00$;36.44$;21$;12$;1$;8.94
+00057$;737805$;00001$;* 1 Zboží za body$;2948$;Mýdlo FA Energising tmavì modrá 90g   /4$;ks$;0.00$;9.90$;21$;24$;1$;2.00
+00057$;737805$;00001$;* 1 Zboží za body$;4742$;Mýdlo FA jogurt sensitive 90g         /4$;ks$;0.00$;9.90$;21$;24$;1$;2.02
+00057$;737805$;00001$;* 1 Zboží za body$;2371$;Mýdlo Palmolive Black Orchid 90g      /6$;ks$;0.00$;8.76$;21$;72$;1$;2.26
+00057$;737805$;00001$;* 1 Zboží za body$;3258$;Mýdlo Palmolive Heømánek/ Camellia 90g/6$;ks$;0.00$;8.72$;21$;72$;1$;1.79
+00058$;737805$;00001$;* 1 Zboží za body$;1643$;Vteøinové lepidlo                    /12$;ks$;0.00$;2.52$;21$;288$;2$;0.00
+00058$;737805$;00001$;* 1 Zboží za body$;2864$;Hadr na podlahu bílý MAXI Aratex 50x90cm$;ks$;0.00$;6.95$;21$;50$;1$;0.00
+00058$;737805$;00001$;* 1 Zboží za body$;2416$;Hadr na podlahu PETR 60x70cm oranžový$;ks$;0.00$;8.98$;21$;100$;2$;0.00
+00058$;737805$;00001$;* 1 Zboží za body$;5400$;Papírové kapesníky krabice Linteo 200ks$;kra$;0.00$;16.80$;21$;15$;4$;0.00
+00058$;737805$;00001$;* 1 Zboží za body$;4132$;Vlhèené dìtské ubrousky Linteo 72ks$;ks$;0.00$;13.90$;21$;24$;2$;0.00
+00058$;737805$;00001$;* 1 Zboží za body$;3313$;Always ULTRA Night 7ks  noèní$;ks$;0.00$;31.12$;21$;20$;1$;0.00
+00058$;737805$;00001$;* 1 Zboží za body$;2141$;Always Classic standard 10ks$;ks$;0.00$;17.69$;21$;24$;1$;0.00
+00058$;737805$;00001$;* 1 Zboží za body$;0221$;Prací gel Persil 2l /40dávek Regular$;ks$;0.00$;114.71$;21$;4$;1$;0.00
+00058$;737805$;00001$;* 1 Zboží za body$;2395$;Písek tekutý Cif 500ml/720g citrus$;ks$;0.00$;20.00$;21$;8$;1$;0.00
+00058$;737805$;00001$;* 1 Zboží za body$;2740$;Kondicioner Elseve 200ml Arginine Posilu$;ks$;0.00$;42.96$;21$;12$;1$;0.00
+00058$;737805$;00001$;* 1 Zboží za body$;4788$;WC èistiè HIT 750ml Industrial$;ks$;0.00$;11.22$;21$;12$;1$;0.00
+00058$;737805$;00001$;* 1 Zboží za body$;3167$;WC blok Bref 4koul *3x50g* závìs barvící$;bal$;0.00$;49.90$;21$;9$;1$;0.00
+00058$;737805$;00001$;* 1 Zboží za body$;4601$;Zubní pasta Signal Nature Aktivn uhlí 75$;ks$;0.00$;24.87$;21$;24$;1$;0.00
+00058$;737805$;00001$;* 1 Zboží za body$;5485$;Osvìžovaè dávk.Freshmatic NN Léto/kvì250$;ks$;0.00$;48.31$;21$;6$;1$;0.00
+00059$;737808$;00060$;\Madìra Daniel$;2482$;Holící gel  Gillete Series 200ml mix  /2$;ks$;10.00$;69.90$;21$;6$;1$;0.00
+00059$;737808$;00060$;\Madìra Daniel$;2537$;Pampers Jumbo è.4 Maxi 9-14kg 90ks$;ks$;10.00$;379.00$;21$;0$;1$;0.00
+00059$;737808$;00060$;\Madìra Daniel$;4069$;Pampers Jumbo è.4 Maxi 9-14kg 76ks$;ks$;10.00$;352.40$;21$;0$;1$;0.00
+00059$;737808$;00060$;\Madìra Daniel$;5285$;Pampers Jumbo è.5 Junior 11-16kg 64ks$;ks$;10.00$;318.30$;21$;0$;2$;0.00
+00059$;737808$;00060$;\Madìra Daniel$;0397$;Vlhèené dìtské ubr.Pampers 4x52ks$;bal$;10.00$;94.28$;21$;3$;1$;0.00
+00060$;737808$;03084$;\Hvìzdová Šárka$;2829$;Toaletní papír 3vrs.1801 HarmPremi 8/29m$;rol$;10.00$;6.19$;21$;56$;56$;0.00
+00060$;737808$;03084$;\Hvìzdová Šárka$;3167$;WC blok Bref 4koul *3x50g* závìs barvící$;bal$;10.00$;49.90$;21$;9$;2$;0.00
+00060$;737808$;03084$;\Hvìzdová Šárka$;4257$;Cleamen 122 1l podlaha s leskem$;ks$;10.00$;31.02$;21$;12$;1$;0.00
+00060$;737808$;03084$;\Hvìzdová Šárka$;1008$;Cleamen 302/402 1l osvìžovaè-neutralizát$;ks$;10.00$;119.11$;21$;12$;1$;0.00
+00061$;737808$;03118$;\Schönherrová Jana$;0862$;Orkán èistiè myèky 150g$;ks$;10.00$;43.55$;21$;12$;1$;0.00
+00061$;737808$;03118$;\Schönherrová Jana$;5108$;WC èistiè Domestos 750ml vod.kámen$;ks$;10.00$;22.24$;21$;12$;1$;0.00
+00061$;737808$;03118$;\Schönherrová Jana$;2434$;Somat do myèky tablety 72ks Gold$;ks$;10.00$;234.50$;21$;4$;1$;0.00
+00061$;737808$;03118$;\Schönherrová Jana$;2108$;Tekuté mýdlo 1l Mitia Silk Satin$;ks$;10.00$;26.05$;21$;10$;2$;0.00
+00061$;737808$;03118$;\Schönherrová Jana$;1938$;Tekuté mýdlo 500ml Mitia Silk Satin bílá$;ks$;10.00$;23.60$;21$;12$;1$;0.00
+00061$;737808$;03118$;\Schönherrová Jana$;1053$;Sáèky MIKRO 25x35/50ks 0.015$;bal$;10.00$;8.16$;21$;80$;2$;0.00
+00061$;737808$;03118$;\Schönherrová Jana$;3633$;Sáèky MIKRO 25x40/50ks 0.015$;bal$;10.00$;12.88$;21$;75$;1$;0.00
+00061$;737808$;03118$;\Schönherrová Jana$;1424$;SG Dove 250ml Relaxing Secret Lavender$;ks$;10.00$;27.90$;21$;12$;1$;0.00
+00062$;737808$;00099$;\Bonus$;2829$;Toaletní papír 3vrs.1801 HarmPremi 8/29m$;rol$;0.00$;7.76$;21$;56$;56$;87.92
+00062$;737808$;00099$;\Bonus$;5830$;Prací tablety Ariel 14ks Color$;ks$;0.00$;85.46$;21$;6$;6$;148.86
+00062$;737808$;00099$;\Bonus$;4924$;Papírové ruèníky role 2vr PK Maxi 7372$;rol$;0.00$;58.50$;21$;6$;6$;70.20
+00063$;737808$;00276$;\Fialová Jana$;0542$;Savo plíseò MR 500ml$;ks$;10.00$;37.66$;21$;20$;1$;0.00
+00064$;737808$;05276$;\Žateèková Markéta$;1490$;Hrablo na sníh PE 50cm + døevìná hùl$;ks$;10.00$;97.30$;21$;10$;1$;0.00
+00064$;737808$;05276$;\Žateèková Markéta$;5810$;Sáèky do koše 35l 50x65 /20mi 25ks èerné$;rol$;10.00$;16.50$;21$;25$;1$;0.00
+00065$;737808$;00140$;\Neumann Lukáš$;3011$;Nádobí Jar 900ml Teatree sensitive$;ks$;10.00$;27.50$;21$;12$;2$;0.00
+00065$;737808$;00140$;\Neumann Lukáš$;5200$;Rouška 3vr.zdravotnická netkaná textilie$;ks$;10.00$;1.30$;21$;50$;50$;0.00
+00065$;737808$;00140$;\Neumann Lukáš$;3161$;Toaletní papír 3vrs.150 Linteo celul.  8$;rol$;10.00$;3.21$;21$;80$;8$;0.00
+00066$;737809$;00124$;\Pokorná Petra$;5997$;Ostøikovaè zimní Carline 5L (-20)$;kan$;10.00$;69.90$;21$;3$;1$;0.00
+00067$;737809$;03118$;\Schönherrová Jana$;2367$;Ramínka PVC 40cm 5ks$;bal$;10.00$;19.90$;21$;32$;3$;0.00
+00068$;737809$;00124$;\Pokorná Petra$;5881$;\o\Primalex Plus 40kg$;ks$;10.00$;798.00$;21$;0$;2$;0.00
+00068$;737809$;00124$;\Pokorná Petra$;4596$;\o\Primalex Plus 15kg$;ks$;10.00$;337.25$;21$;0$;1$;0.00
+00068$;737809$;00124$;\Pokorná Petra$;2929$;\o\Primalex Plus 4l$;ks$;10.00$;164.35$;21$;0$;1$;0.00
+00069$;737809$;00001$;* 1 Zboží za body$;1735$;Potravináøská folie MAXI 30*300m prum.38$;ks$;0.00$;50.65$;21$;4$;1$;10.99
+00070$;737809$;00001$;* 1 Zboží za body$;2648$;Osvìžovaè elek.Airwick komplet Prád/Sate$;ks$;0.00$;73.53$;21$;6$;1$;14.71
+00070$;737809$;00001$;* 1 Zboží za body$;1760$;Osvìžovaè elek.Airwick komplet Bílé kvìt$;ks$;0.00$;73.53$;21$;6$;2$;29.60
+00071$;737809$;00056$;\Honc Jiøí$;5805$;Papírové ruèníky role 2vr Tento XXL 75m$;rol$;10.00$;41.89$;21$;0$;6$;0.00
+00072$;737810$;03118$;\Schönherrová Jana$;1763$;Houba koupel.masáž.Ledvinka 15x8,5x4,5cm$;ks$;10.00$;6.90$;21$;25$;2$;0.00
+00073$;737810$;05276$;\Žateèková Markéta$;4669$;\o\Primalex Plus 7.5kg$;ks$;10.00$;220.40$;21$;0$;1$;0.00
+00074$;737810$;05276$;\Žateèková Markéta$;5165$;Pìna do koupele Elegance 1L Les$;ks$;10.00$;15.70$;21$;8$;1$;0.00
+00074$;737810$;05276$;\Žateèková Markéta$;5984$;Pìna do koupele Elegance 1l Moøe$;ks$;10.00$;15.70$;21$;8$;1$;0.00
+00075$;737810$;05276$;\Žateèková Markéta$;5997$;Ostøikovaè zimní Carline 5L (-20)$;kan$;10.00$;69.90$;21$;3$;1$;0.00
+00075$;737810$;05276$;\Žateèková Markéta$;2829$;Toaletní papír 3vrs.1801 HarmPremi 8/29m$;rol$;10.00$;6.19$;21$;56$;56$;0.00
+00075$;737810$;05276$;\Žateèková Markéta$;3141$;Drátìnka KOV støední kruh            /25$;ks$;10.00$;3.70$;21$;500$;5$;0.00
+00076$;737811$;00001$;* 1 Zboží za body$;0171$;Somat do myèky sùl 1.5kg$;ks$;0.00$;32.91$;21$;8$;1$;0.00
+00076$;737811$;00001$;* 1 Zboží za body$;0243$;Prací gel Perwoll 900ml Black Magic$;ks$;0.00$;36.20$;21$;8$;1$;0.00
+00076$;737811$;00001$;* 1 Zboží za body$;4809$;Nádobí Jar 450ml Teatree sensitive$;ks$;0.00$;17.65$;21$;21$;1$;0.00
+00076$;737811$;00001$;* 1 Zboží za body$;2213$;Zubní pasta Signal Family Herbal 75ml$;ks$;0.00$;18.38$;21$;24$;1$;0.00
+00076$;737811$;00001$;* 1 Zboží za body$;1789$;Osvìžovaè dávk.Fresh Air 260ml Vanila$;ks$;0.00$;16.20$;21$;24$;1$;0.00
+00076$;737811$;00001$;* 1 Zboží za body$;5400$;Papírové kapesníky krabice Linteo 200ks$;kra$;0.00$;16.80$;21$;15$;4$;0.00
+00076$;737811$;00001$;* 1 Zboží za body$;2829$;Toaletní papír 3vrs.1801 HarmPremi 8/29m$;rol$;0.00$;6.19$;21$;56$;24$;0.00
+00076$;737811$;00001$;* 1 Zboží za body$;1034$;Respirátor oznaèen FFP2/ KN95 bez ventil$;ks$;0.00$;7.00$;21$;40$;5$;0.00
+00077$;737811$;03118$;\Schönherrová Jana$;0874$;Chrániè sluchu zátky 2ks EAR$;pár$;10.00$;2.92$;21$;250$;3$;0.00
+00078$;737811$;00001$;* 1 Zboží za body$;1357$;Hùl DR 160cm prùmìr 24mm$;ks$;0.00$;30.70$;21$;25$;1$;0.00
+00078$;737811$;00001$;* 1 Zboží za body$;5503$;Hùl DR 130cm lopaty a hrabla zahnutá I.$;ks$;0.00$;46.93$;21$;10$;2$;0.00
+00078$;737811$;00001$;* 1 Zboží za body$;2209$;Lopata AL velká 34x35cm$;ks$;0.00$;75.74$;21$;10$;2$;0.00
+00078$;737811$;00001$;* 1 Zboží za body$;1220$;Kartáèek na ruce PE s držadlem3311/726/1$;ks$;0.00$;11.65$;21$;10$;1$;0.00
+00078$;737811$;00001$;* 1 Zboží za body$;0149$;Stìrka podlaha kovová 45cm s gumou$;ks$;0.00$;100.00$;21$;10$;1$;0.00
+00078$;737811$;00001$;* 1 Zboží za body$;4205$;SG Nivea 250ml Men mix$;ks$;0.00$;37.21$;21$;6$;1$;0.00
+00078$;737811$;00001$;* 1 Zboží za body$;1138$;Èistiè brzd 500ml Dinitrol 7450$;ks$;0.00$;53.00$;21$;12$;1$;0.00
+00078$;737811$;00001$;* 1 Zboží za body$;1690$;SG FA Men 2v1 mix 250ml$;ks$;0.00$;26.81$;21$;6$;1$;0.00
+00079$;737812$;10143$;\Sekeres Jan$;3764$;SG Isolda 500ml Energy$;ks$;0.00$;23.46$;21$;15$;1$;0.00
+00079$;737812$;10143$;\Sekeres Jan$;2508$;Svíèka SKLO aroma tøibarvy Levandule$;ks$;0.00$;32.80$;21$;6$;1$;0.00
+00080$;737812$;03084$;\Hvìzdová Šárka$;3909$;Sáèky do koše 60l 63x74 /20mi 25ks èerné$;rol$;10.00$;20.50$;21$;25$;1$;0.00
+00080$;737812$;03084$;\Hvìzdová Šárka$;5732$;Vlhèené ubrousk 40k Linteo univer.Alkoho$;ks$;10.00$;15.40$;21$;48$;1$;0.00
+00080$;737812$;03084$;\Hvìzdová Šárka$;1950$;SG Lactovit 300ml Regener. LactoUrea$;ks$;10.00$;31.00$;21$;8$;1$;0.00
+00080$;737812$;03084$;\Hvìzdová Šárka$;3167$;WC blok Bref 4koul *3x50g* závìs barvící$;bal$;10.00$;49.90$;21$;9$;1$;0.00
+00080$;737812$;03084$;\Hvìzdová Šárka$;5940$;SG Isolda 1l Black Cherry$;ks$;10.00$;27.13$;21$;10$;1$;0.00
+00081$;737812$;01810$;\Doubravský Vladimír$;0840$;Štìtka malíøská, hranatá PE C4 ST.$;ks$;10.00$;371.18$;21$;24$;1$;0.00
+00082$;737812$;01810$;\Doubravský Vladimír$;5713$;Rohož textilní 90x60cm Tiger šedá$;ks$;10.00$;239.00$;21$;0$;2$;0.00
+00083$;737812$;05276$;\Žateèková Markéta$;0988$;Váleèek malíøský + síto 18$;ks$;10.00$;35.01$;21$;30$;1$;0.00
+00083$;737812$;05276$;\Žateèková Markéta$;0497$;Štìtec zárohák C 1   PH$;ks$;10.00$;17.11$;21$;160$;1$;0.00
+00083$;737812$;05276$;\Žateèková Markéta$;0987$;Štìtec plochý C 3    PH 81216$;ks$;10.00$;38.14$;21$;10$;1$;0.00
+00084$;737812$;03118$;\Schönherrová Jana$;0728$;Louh hydroxid sodný 1kg$;ks$;10.00$;27.00$;21$;8$;1$;0.00
+00085$;737812$;00001$;* 1 Zboží za body$;3323$;Žiletky Gillete Mach 3 Náhrada 4ks$;ks$;0.00$;190.37$;21$;10$;1$;0.00
+00085$;737812$;00001$;* 1 Zboží za body$;2152$;Peodorant do bot spray 150ml$;ks$;0.00$;32.95$;21$;6$;1$;0.00
+00085$;737812$;00001$;* 1 Zboží za body$;3539$;SG Mitia 400ml 2v1 Diamond èerný$;ks$;0.00$;21.00$;21$;12$;1$;0.00
+00085$;737812$;00001$;* 1 Zboží za body$;2213$;Zubní pasta Signal Family Herbal 75ml$;ks$;0.00$;18.38$;21$;24$;1$;0.00
+00085$;737812$;00001$;* 1 Zboží za body$;2829$;Toaletní papír 3vrs.1801 HarmPremi 8/29m$;rol$;0.00$;6.19$;21$;56$;32$;0.00
+00085$;737812$;00001$;* 1 Zboží za body$;2982$;Papírové kapesníky Linteo 3vrstvé/ 10ks$;tyè$;0.00$;9.80$;21$;24$;4$;0.00
+00085$;737812$;00001$;* 1 Zboží za body$;3167$;WC blok Bref 4koul *3x50g* závìs barvící$;bal$;0.00$;49.90$;21$;9$;2$;0.00
+00085$;737812$;00001$;* 1 Zboží za body$;2674$;Deo AXE 150ml MIX vuní$;ks$;0.00$;40.25$;21$;6$;1$;0.00
+00086$;737812$;00003$;\Zdenìk Ondra$;2648$;Osvìžovaè elek.Airwick komplet Prád/Sate$;ks$;10.00$;58.82$;21$;6$;1$;0.00
+00086$;737812$;00003$;\Zdenìk Ondra$;6035$;Toaletní papír 3vrs.150 Tento Pearl wh.8$;rol$;10.00$;3.95$;21$;56$;8$;0.00
+00087$;737815$;05276$;\Žateèková Markéta$;2293$;Papírové kapesníky krabice Harmony 100ks$;kra$;10.00$;9.50$;21$;35$;5$;0.00
+00087$;737815$;05276$;\Žateèková Markéta$;2173$;Krém na ruce Isolda 100ml šalvìj antibak$;ks$;10.00$;14.22$;21$;25$;1$;0.00
+00087$;737815$;05276$;\Žateèková Markéta$;4543$;Zubní pasta Colgate Advanced bìlící 75ml$;ks$;10.00$;25.06$;21$;12$;1$;0.00
+00088$;737815$;00001$;* 1 Zboží za body$;3271$;Oprašovák stropní s teleskop.tyèí 150cm$;ks$;0.00$;64.18$;21$;12$;1$;21.28
+00089$;737815$;00001$;* 1 Zboží za body$;0221$;Prací gel Persil 2l /40dávek Regular$;ks$;0.00$;150.27$;21$;4$;13$;462.28
+00089$;737815$;00001$;* 1 Zboží za body$;4803$;Aviváž Lenor 0,925l /31dávek Summer$;ks$;0.00$;43.73$;21$;12$;12$;128.16
+00089$;737815$;00001$;* 1 Zboží za body$;5025$;Osvìžovaè dávk.FreshMati NN prád/ostr250$;ks$;0.00$;62.71$;21$;6$;1$;14.40
+00089$;737815$;00001$;* 1 Zboží za body$;2981$;Osvìžovaè dávk.Fresh Air 260ml Patchouli$;ks$;0.00$;20.57$;21$;24$;2$;8.74
+00089$;737815$;00001$;* 1 Zboží za body$;1760$;Osvìžovaè elek.Airwick komplet Bílé kvìt$;ks$;0.00$;73.55$;21$;6$;1$;14.85
+00089$;737815$;00001$;* 1 Zboží za body$;3167$;WC blok Bref 4koul *3x50g* závìs barvící$;bal$;0.00$;74.30$;21$;9$;1$;24.40
+00089$;737815$;00001$;* 1 Zboží za body$;2029$;Utìrka mikro Ecolab ECO 5ks èerven.toale$;bal$;0.00$;199.84$;21$;0$;2$;87.68
+00089$;737815$;00001$;* 1 Zboží za body$;2706$;Papírové ruèníky role 3vr Tento Complex$;ks$;0.00$;51.96$;21$;8$;2$;20.12
+00089$;737815$;00001$;* 1 Zboží za body$;3124$;Svíèka SKLO aroma tøibarvy lesní ovoce$;ks$;0.00$;41.69$;21$;6$;18$;156.78
+00089$;737815$;00001$;* 1 Zboží za body$;1797$;Pytle 120L/60mi 70x110cm role-20ks modrá$;rol$;0.00$;58.78$;21$;10$;1$;11.98
+00089$;737815$;00001$;* 1 Zboží za body$;5750$;Houbièka nadobí po 10ks 8x5x2.5cm$;tyè$;0.00$;6.86$;21$;48$;1$;1.51
+00089$;737815$;00001$;* 1 Zboží za body$;0682$;Sáèky PACLAN vel.2 9x10x27cm 1000ks$;ks$;0.00$;80.26$;21$;10$;1$;16.26
+00089$;737815$;00001$;* 1 Zboží za body$;5092$;Dezinfekce na ruce Sanytol 75ml$;ks$;0.00$;58.89$;21$;24$;1$;13.59
+00090$;737815$;05276$;\Žateèková Markéta$;5997$;Ostøikovaè zimní Carline 5L (-20)$;kan$;10.00$;69.90$;21$;3$;1$;0.00
+00091$;737815$;00128$;\Tomáš Peter$;1524$;Souprava smetáèek+lopatka na tyèi 80cm$;ks$;10.00$;49.00$;21$;20$;1$;0.00
+00092$;737815$;00001$;* 1 Zboží za body$;1490$;Hrablo na sníh PE 50cm + døevìná hùl$;ks$;0.00$;97.30$;21$;10$;1$;0.00
+00092$;737815$;00001$;* 1 Zboží za body$;5894$;Papírové kuch.role 18m Tento Maxi 2ks$;bal$;0.00$;20.90$;21$;0$;2$;0.00
+00092$;737815$;00001$;* 1 Zboží za body$;0850$;Sáèky do koše 35l 50x60/ 15mi zatah15kMO$;rol$;0.00$;17.58$;21$;32$;2$;0.00
+00092$;737815$;00001$;* 1 Zboží za body$;3167$;WC blok Bref 4koul *3x50g* závìs barvící$;bal$;0.00$;49.90$;21$;9$;1$;0.00
+00092$;737815$;00001$;* 1 Zboží za body$;2829$;Toaletní papír 3vrs.1801 HarmPremi 8/29m$;rol$;0.00$;6.19$;21$;56$;24$;0.00
+00092$;737815$;00001$;* 1 Zboží za body$;5400$;Papírové kapesníky krabice Linteo 200ks$;kra$;0.00$;16.80$;21$;15$;3$;0.00
+00093$;737815$;00001$;* 1 Zboží za body$;3348$;Toaletní papír 2vrs.160 ForestBIG 48/16m$;rol$;0.00$;2.85$;21$;48$;48$;0.00
+00093$;737815$;00001$;* 1 Zboží za body$;5708$;Koš výklopný 26L Klip 49x28x32cm mix bar$;ks$;0.00$;109.00$;21$;6$;1$;0.00
+00093$;737815$;00001$;* 1 Zboží za body$;0542$;Savo plíseò MR 500ml$;ks$;0.00$;37.27$;21$;20$;1$;0.00
+00093$;737815$;00001$;* 1 Zboží za body$;2265$;WC èistiè Savo 750ml Citron$;ks$;0.00$;21.84$;21$;12$;1$;0.00
+00093$;737815$;00001$;* 1 Zboží za body$;1757$;Žiletky Astra 5ks Platinum zelené$;kra$;0.00$;9.90$;21$;20$;2$;0.00
+00093$;737815$;00001$;* 1 Zboží za body$;5611$;Zubní kartáèek Rebi-Dental M46 mìkký$;ks$;0.00$;4.16$;21$;12$;2$;0.00
+00093$;737815$;00001$;* 1 Zboží za body$;3633$;Sáèky MIKRO 25x40/50ks 0.015$;bal$;0.00$;12.88$;21$;75$;1$;0.00
+00093$;737815$;00001$;* 1 Zboží za body$;0999$;Utìrka UNI Petr 34x38cm 110g zelená$;ks$;0.00$;2.12$;21$;500$;1$;0.00
+00093$;737815$;00001$;* 1 Zboží za body$;3167$;WC blok Bref 4koul *3x50g* závìs barvící$;bal$;0.00$;49.90$;21$;9$;1$;0.00
+00093$;737815$;00001$;* 1 Zboží za body$;4543$;Zubní pasta Colgate Advanced bìlící 75ml$;ks$;0.00$;25.06$;21$;12$;12$;0.00
+00093$;737815$;00001$;* 1 Zboží za body$;3072$;Sáèky do koše 60l 63x74 /7mi 50ks èerný$;rol$;0.00$;12.38$;21$;40$;1$;0.00
+00094$;737815$;01832$;\Liberecká Bouda - penzion$;2209$;Lopata AL velká 34x35cm$;ks$;0.00$;75.74$;21$;10$;4$;0.00
+00095$;737816$;00001$;* 1 Zboží za body$;3230$;Tekuté mýdlo 5l Vakavo Love Lecitin ružo$;kan$;0.00$;67.51$;21$;0$;1$;13.72
+00095$;737816$;00001$;* 1 Zboží za body$;5597$;Aviváž Wansou 1l Tropic blossom$;ks$;0.00$;30.69$;21$;10$;2$;12.28
+00095$;737816$;00001$;* 1 Zboží za body$;0881$;Aviváž Wansou 1l Lotos$;ks$;0.00$;30.69$;21$;10$;2$;12.28
+00095$;737816$;00001$;* 1 Zboží za body$;0389$;Nádobí Jar 5l PROFI$;ks$;0.00$;182.84$;21$;3$;1$;43.16
+00095$;737816$;00001$;* 1 Zboží za body$;3685$;Cleamen 110 5l sklenìné plochy$;kan$;0.00$;171.38$;21$;0$;1$;34.28
+00095$;737816$;00001$;* 1 Zboží za body$;2221$;Cleamen 410 5l koupelny$;kan$;0.00$;179.99$;21$;0$;1$;36.00
+00095$;737816$;00001$;* 1 Zboží za body$;5920$;WC závìs tekutý Dr.Devil +2NN Sunse 55ml$;ks$;0.00$;27.91$;21$;12$;1$;5.76
+00095$;737816$;00001$;* 1 Zboží za body$;1684$;Prášek Rex 63dávek Color$;ks$;0.00$;185.82$;21$;0$;1$;44.62
+00095$;737816$;00001$;* 1 Zboží za body$;1954$;Houbièka nádobí s drážkou po 10ks 10x7cm$;tyè$;0.00$;19.91$;21$;50$;1$;5.47
+00095$;737816$;00001$;* 1 Zboží za body$;1515$;Utìrka houbová 5ks 15x18cm$;bal$;0.00$;16.91$;21$;160$;1$;3.27
+00095$;737816$;00001$;* 1 Zboží za body$;2180$;Pytle 200L/80mi 100x120cm role-5ks èerné$;rol$;0.00$;36.11$;21$;15$;1$;7.36
+00096$;737816$;03118$;\Schönherrová Jana$;0610$;Always ULTRA normal plus 10$;ks$;10.00$;30.38$;21$;20$;1$;0.00
+00096$;737816$;03118$;\Schönherrová Jana$;1964$;Always ULTRA super plus 8$;ks$;10.00$;29.75$;21$;0$;1$;0.00
+00096$;737816$;03118$;\Schönherrová Jana$;2703$;Aviváž Lenor vonné ubr.susièka 25ks$;kra$;10.00$;35.62$;21$;15$;1$;0.00
+00096$;737816$;03118$;\Schönherrová Jana$;4767$;Batole dìtský krém 75ml oliva$;ks$;10.00$;23.90$;21$;10$;1$;0.00
+00096$;737816$;03118$;\Schönherrová Jana$;1763$;Houba koupel.masáž.Ledvinka 15x8,5x4,5cm$;ks$;10.00$;6.90$;21$;25$;3$;0.00
+00096$;737816$;03118$;\Schönherrová Jana$;0694$;Koupelny Cif 750ml MR$;ks$;10.00$;44.81$;21$;6$;1$;0.00
+00096$;737816$;03118$;\Schönherrová Jana$;5757$;Koupelny Krystal 750ml MR$;ks$;10.00$;28.97$;21$;18$;1$;0.00
+00096$;737816$;03118$;\Schönherrová Jana$;0810$;Krém na ruce Isolda 100ml Vèelí vosk/hyd$;ks$;10.00$;10.13$;21$;25$;1$;0.00
+00096$;737816$;03118$;\Schönherrová Jana$;4264$;Náplast dìtská 5ks 1682-5$;ks$;10.00$;6.20$;15$;30$;1$;0.00
+00096$;737816$;03118$;\Schönherrová Jana$;0243$;Prací gel Perwoll 900ml Black Magic$;ks$;10.00$;36.20$;21$;8$;1$;0.00
+00096$;737816$;03118$;\Schönherrová Jana$;0216$;Prací gel Perwoll 900ml vlna Wool$;ks$;10.00$;36.28$;21$;8$;1$;0.00
+00096$;737816$;03118$;\Schönherrová Jana$;3857$;SG Radox 250ml Refreshed/ Active$;ks$;10.00$;16.07$;21$;6$;1$;0.00
+00097$;737816$;00061$;\Labaj Martin$;0582$;Prací gel Savo 100dávek bílé+barevné UNI$;Ks$;10.00$;177.00$;21$;2$;1$;0.00
+00098$;737816$;00061$;\Labaj Martin$;0669$;WC kartáè samostatný 4312 85mm$;ks$;10.00$;15.85$;21$;40$;2$;0.00
+00098$;737816$;00061$;\Labaj Martin$;5346$;Smeták DR lakov.5111/Z/613 závit jemný$;ks$;10.00$;70.22$;21$;6$;1$;0.00
+00098$;737816$;00061$;\Labaj Martin$;1008$;Cleamen 302/402 1l osvìžovaè-neutralizát$;ks$;10.00$;119.11$;21$;12$;1$;0.00
+00099$;737816$;10143$;\Sekeres Jan$;5400$;Papírové kapesníky krabice Linteo 200ks$;kra$;0.00$;16.80$;21$;15$;4$;0.00
+00099$;737816$;10143$;\Sekeres Jan$;2420$;Svíèka SKLO aroma tøibarvy zelená$;ks$;0.00$;32.66$;21$;6$;1$;0.00
+00099$;737816$;10143$;\Sekeres Jan$;3124$;Svíèka SKLO aroma tøibarvy lesní ovoce$;ks$;0.00$;32.98$;21$;6$;1$;0.00
+00099$;737816$;10143$;\Sekeres Jan$;1657$;Pemza s kartáèkem Natural$;ks$;0.00$;10.90$;21$;12$;2$;0.00
+00099$;737816$;10143$;\Sekeres Jan$;1643$;Vteøinové lepidlo                    /12$;ks$;0.00$;2.52$;21$;288$;4$;0.00
+00099$;737816$;10143$;\Sekeres Jan$;5595$;Osvìžovaè vzd.AIR menl. kompl. 3x15 Rain$;ks$;0.00$;43.71$;21$;10$;1$;0.00
+00100$;737816$;00061$;\Labaj Martin$;0158$;Nádobí Jar 900ml Pome granate$;Ks$;10.00$;27.68$;21$;12$;2$;0.00
+00100$;737816$;00061$;\Labaj Martin$;0728$;Louh hydroxid sodný 1kg$;ks$;10.00$;27.00$;21$;8$;2$;0.00
+00101$;737816$;03084$;\Hvìzdová Šárka$;1034$;Respirátor oznaèen FFP2/ KN95 bez ventil$;ks$;10.00$;7.00$;21$;40$;20$;0.00
+00102$;737816$;00061$;\Labaj Martin$;5997$;Ostøikovaè zimní Carline 5L (-20)$;kan$;10.00$;69.90$;21$;3$;1$;0.00
+00102$;737816$;00061$;\Labaj Martin$;0352$;Nádobí Jar 900ml Citron$;ks$;10.00$;27.47$;21$;12$;1$;0.00
+00102$;737816$;00061$;\Labaj Martin$;0203$;Milit myèka sùl 1,5kg$;ks$;10.00$;19.87$;21$;8$;1$;0.00
+00102$;737816$;00061$;\Labaj Martin$;2147$;Pomáda na rty ružová Astrid          /10$;ks$;10.00$;8.70$;21$;100$;1$;0.00
+00103$;737816$;00099$;\Bonus$;4646$;Jar tablety do myèky 45ks Platinum$;ks$;0.00$;215.08$;21$;4$;1$;50.14
+00103$;737816$;00099$;\Bonus$;2431$;Univerzal Mr.Proper 1l Oceán$;ks$;0.00$;48.99$;21$;12$;1$;10.98
+00103$;737816$;00099$;\Bonus$;3167$;WC blok Bref 4koul *3x50g* závìs barvící$;bal$;0.00$;74.30$;21$;9$;1$;24.40
+00103$;737816$;00099$;\Bonus$;2218$;Toaletní papír 2vrs.1000 Max1603 Neut/69$;rol$;0.00$;7.94$;21$;20$;20$;33.40
+00103$;737816$;00099$;\Bonus$;4905$;Papírové ruèníky role 2vr 401589 67m cel$;rol$;0.00$;47.85$;21$;12$;1$;10.35
+00104$;737816$;00061$;\Labaj Martin$;1034$;Respirátor oznaèen FFP2/ KN95 bez ventil$;ks$;10.00$;7.00$;21$;40$;2$;0.00
+00105$;737817$;00051$;\Madìra Jiøí$;0712$;Ostøikovaè zimní Carline 5L (-40)$;kan$;0.00$;94.73$;21$;3$;1$;0.00
+00105$;737817$;00051$;\Madìra Jiøí$;3792$;Sanytol dezinf.vlh.utìrky 36ks univerzal$;bal$;0.00$;52.64$;21$;10$;1$;0.00
+00105$;737817$;00051$;\Madìra Jiøí$;2461$;Osvìžovaè spray Sanytol 300ml dezinfekèn$;ks$;0.00$;49.06$;21$;12$;1$;0.00
+00105$;737817$;00051$;\Madìra Jiøí$;0654$;Alobal 29cm x 10m, 9mi TopStar$;ks$;0.00$;9.50$;21$;45$;3$;0.00
+00106$;737817$;05276$;\Žateèková Markéta$;1034$;Respirátor oznaèen FFP2/ KN95 bez ventil$;ks$;10.00$;7.00$;21$;40$;50$;0.00
+00107$;737817$;00124$;\Pokorná Petra$;1034$;Respirátor oznaèen FFP2/ KN95 bez ventil$;ks$;10.00$;7.00$;21$;40$;6$;0.00
+00108$;737817$;00098$;\Popivanov Dimitar$;1034$;Respirátor oznaèen FFP2/ KN95 bez ventil$;ks$;10.00$;7.00$;21$;40$;1$;0.00
+00109$;737817$;00001$;* 1 Zboží za body$;4543$;Zubní pasta Colgate Advanced bìlící 75ml$;ks$;0.00$;25.06$;21$;12$;-11$;0.00
+00110$;737817$;00276$;\Fialová Jana$;0173$;Zubní pasta Odol Stoma 75ml$;ks$;10.00$;17.55$;21$;12$;1$;0.00
+00110$;737817$;00276$;\Fialová Jana$;1034$;Respirátor oznaèen FFP2/ KN95 bez ventil$;ks$;10.00$;7.00$;21$;40$;8$;0.00
+00111$;737817$;00140$;\Neumann Lukáš$;1034$;Respirátor oznaèen FFP2/ KN95 bez ventil$;ks$;10.00$;7.00$;21$;40$;40$;0.00
+00112$;737818$;02523$;\Spìšný Jan$;1034$;Respirátor oznaèen FFP2/ KN95 bez ventil$;ks$;10.00$;7.00$;21$;40$;82$;0.00
+00112$;737818$;02523$;\Spìšný Jan$;3998$;Respirátor oznaèen FFP3 bez ventilku$;ks$;10.00$;45.00$;21$;10$;2$;0.00
+00113$;737818$;00001$;* 1 Zboží za body$;1034$;Respirátor oznaèen FFP2/ KN95 bez ventil$;ks$;0.00$;7.00$;21$;40$;40$;0.00
+00113$;737818$;00001$;* 1 Zboží za body$;5793$;Lysol dezinf.spray povrchy 400ml Svìží$;ks$;0.00$;96.70$;21$;6$;1$;0.00
+00113$;737818$;00001$;* 1 Zboží za body$;5400$;Papírové kapesníky krabice Linteo 200ks$;kra$;0.00$;16.80$;21$;15$;2$;0.00
+00114$;737818$;03084$;\Hvìzdová Šárka$;1034$;Respirátor oznaèen FFP2/ KN95 bez ventil$;ks$;10.00$;7.00$;21$;40$;20$;0.00
+00114$;737818$;03084$;\Hvìzdová Šárka$;2734$;Cleamen 110 1l sklenìné plochy s MR$;ks$;10.00$;38.95$;21$;12$;1$;0.00
+00115$;737818$;05276$;\Žateèková Markéta$;2885$;Nádobí Robeta 500ml$;ks$;10.00$;7.83$;21$;20$;1$;0.00
+00115$;737818$;05276$;\Žateèková Markéta$;1576$;Toaletní papír 2vrs.1000 Linteo Maxi 66m$;rol$;10.00$;7.60$;21$;36$;3$;0.00
+00116$;737818$;01810$;\Doubravský Vladimír$;1034$;Respirátor oznaèen FFP2/ KN95 bez ventil$;ks$;10.00$;7.00$;21$;40$;40$;0.00
+00117$;737818$;00061$;\Labaj Martin$;1034$;Respirátor oznaèen FFP2/ KN95 bez ventil$;ks$;10.00$;7.00$;21$;40$;80$;0.00
+00118$;737818$;01409$;\Chocholoušková Iva$;1034$;Respirátor oznaèen FFP2/ KN95 bez ventil$;ks$;10.00$;7.00$;21$;40$;40$;0.00
+00119$;737818$;00051$;\Madìra Jiøí$;0665$;Fixaèní folie 500mm/20mi$;ks$;0.00$;48.59$;21$;6$;1$;0.00
+00120$;737818$;00051$;\Madìra Jiøí$;2500$;Dezinfekce na ruce Sanytol 500ml dávkov.$;ks$;0.00$;110.41$;21$;12$;1$;0.00
+00120$;737818$;00051$;\Madìra Jiøí$;2627$;Prášek Persil 63dávek Color$;ks$;0.00$;194.50$;21$;0$;1$;0.00
+00120$;737818$;00051$;\Madìra Jiøí$;5486$;Aviváž Silan 1,8l Fresh Sky$;ks$;0.00$;53.60$;21$;8$;1$;0.00
+00120$;737818$;00051$;\Madìra Jiøí$;2165$;Koupelny Savo MR 500ml$;ks$;0.00$;24.85$;21$;12$;1$;0.00
+00120$;737818$;00051$;\Madìra Jiøí$;2395$;Písek tekutý Cif 500ml/720g citrus$;ks$;0.00$;19.93$;21$;8$;1$;0.00
+00120$;737818$;00051$;\Madìra Jiøí$;1668$;WC èistiè Dr.Devil 750ml Lemon$;ks$;0.00$;18.47$;21$;16$;1$;0.00
+00120$;737818$;00051$;\Madìra Jiøí$;5094$;WC závìs tekutý Dr.Devil +2NN Polar 55ml$;ks$;0.00$;22.16$;21$;12$;1$;0.00
+00120$;737818$;00051$;\Madìra Jiøí$;5921$;WC závìs tekutý Dr.Devil +2NN Sprin 55ml$;ks$;0.00$;22.16$;21$;12$;1$;0.00
+00120$;737818$;00051$;\Madìra Jiøí$;1271$;Mydlový èistiè Pronto 750ml na døevo$;ks$;0.00$;52.81$;21$;12$;1$;0.00
+00120$;737818$;00051$;\Madìra Jiøí$;2198$;Leštìnka Pronto spray mult.modr 250ml$;ks$;0.00$;50.91$;21$;12$;1$;0.00
+00120$;737818$;00051$;\Madìra Jiøí$;5750$;Houbièka nadobí po 10ks 8x5x2.5cm$;tyè$;0.00$;5.35$;21$;48$;1$;0.00
+00120$;737818$;00051$;\Madìra Jiøí$;1515$;Utìrka houbová 5ks 15x18cm$;bal$;0.00$;13.64$;21$;160$;2$;0.00
+00120$;737818$;00051$;\Madìra Jiøí$;5313$;Finish tablety 100ks Powerball Classic$;ks$;0.00$;127.00$;21$;4$;1$;0.00
+00120$;737818$;00051$;\Madìra Jiøí$;0768$;Finish lesk 800ml$;ks$;0.00$;87.36$;21$;12$;1$;0.00
+00120$;737818$;00051$;\Madìra Jiøí$;5810$;Sáèky do koše 35l 50x65 /20mi 25ks èerné$;rol$;0.00$;16.50$;21$;25$;3$;0.00
+00120$;737818$;00051$;\Madìra Jiøí$;2077$;Pepo 320g podpalovaè pevný$;ks$;0.00$;16.47$;21$;30$;6$;0.00
+00120$;737818$;00051$;\Madìra Jiøí$;4784$;Mýdlo Protex anti  bakteriální 90g    /6$;ks$;0.00$;9.91$;21$;72$;5$;0.00
+00121$;737818$;00124$;\Pokorná Petra$;2394$;Svíèka ÈAJOVÁ Linteo *30ks*$;bal$;10.00$;22.26$;21$;15$;2$;0.00
+00122$;737819$;05276$;\Žateèková Markéta$;1576$;Toaletní papír 2vrs.1000 Linteo Maxi 66m$;rol$;10.00$;7.60$;21$;36$;-3$;0.00
+00122$;737819$;05276$;\Žateèková Markéta$;2885$;Nádobí Robeta 500ml$;ks$;10.00$;7.83$;21$;20$;-1$;0.00
+00123$;737819$;03084$;\Hvìzdová Šárka$;1698$;Rukavice latex jednorázové 100ks M pudro$;kra$;10.00$;201.21$;21$;10$;1$;0.00
+00124$;737819$;10143$;\Sekeres Jan$;1735$;Potravináøská folie MAXI 30*300m prum.38$;ks$;0.00$;39.66$;21$;4$;1$;0.00
+00125$;737819$;00001$;* 1 Zboží za body$;5400$;Papírové kapesníky krabice Linteo 200ks$;kra$;0.00$;16.80$;21$;15$;2$;0.00
+00125$;737819$;00001$;* 1 Zboží za body$;5359$;Papírové kuch.role 11m Harmony Profes 2k$;bal$;0.00$;11.30$;21$;24$;1$;0.00
+00125$;737819$;00001$;* 1 Zboží za body$;2982$;Papírové kapesníky Linteo 3vrstvé/ 10ks$;tyè$;0.00$;9.80$;21$;24$;1$;0.00
+00125$;737819$;00001$;* 1 Zboží za body$;2572$;Micci Slip 30ks$;ks$;0.00$;13.88$;21$;16$;1$;0.00
+00125$;737819$;00001$;* 1 Zboží za body$;0241$;Prací gel Persil 2l /40dávek Color$;ks$;0.00$;114.70$;21$;4$;1$;0.00
+00125$;737819$;00001$;* 1 Zboží za body$;0221$;Prací gel Persil 2l /40dávek Regular$;ks$;0.00$;114.71$;21$;4$;1$;0.00
+00125$;737819$;00001$;* 1 Zboží za body$;6020$;Aviváž Lenor 0,925l /31dávek Spring$;ks$;0.00$;32.65$;21$;12$;1$;0.00
+00125$;737819$;00001$;* 1 Zboží za body$;1824$;SG Mitia 400ml 2v1 Fresh force$;ks$;0.00$;21.00$;21$;12$;1$;0.00
+00125$;737819$;00001$;* 1 Zboží za body$;4144$;Stick Dove Original$;ks$;0.00$;52.85$;21$;6$;1$;0.00
+00125$;737819$;00001$;* 1 Zboží za body$;3348$;Toaletní papír 2vrs.160 ForestBIG 48/16m$;rol$;0.00$;2.85$;21$;48$;48$;0.00
+00126$;737819$;05276$;\Žateèková Markéta$;4642$;Papírové ruèníky role 2vr PK Midi 455VPL$;rol$;10.00$;15.99$;21$;12$;3$;0.00
+00126$;737819$;05276$;\Žateèková Markéta$;4132$;Vlhèené dìtské ubrousky Linteo 72ks$;ks$;10.00$;13.90$;21$;24$;3$;0.00
+00126$;737819$;05276$;\Žateèková Markéta$;2293$;Papírové kapesníky krabice Harmony 100ks$;kra$;10.00$;9.50$;21$;35$;3$;0.00
+00127$;737819$;03760$;\Èelák Pavel$;1034$;Respirátor oznaèen FFP2/ KN95 bez ventil$;ks$;10.00$;7.00$;21$;40$;40$;0.00
+00128$;737819$;00188$;\Keith Roman$;2829$;Toaletní papír 3vrs.1801 HarmPremi 8/29m$;rol$;10.00$;6.19$;21$;56$;16$;0.00
+00128$;737819$;00188$;\Keith Roman$;2982$;Papírové kapesníky Linteo 3vrstvé/ 10ks$;tyè$;10.00$;9.80$;21$;24$;2$;0.00
+00128$;737819$;00188$;\Keith Roman$;3167$;WC blok Bref 4koul *3x50g* závìs barvící$;bal$;10.00$;49.90$;21$;9$;1$;0.00

@@ -1,0 +1,276 @@
+.pl 16959
+CisloPrijemky;DatumVydeje;CisloDodavatele;NazevDodavatele;CisloKarty;NazevZbozi;MernaJednotka;NakupCena;SazbaD;VPal;VKart;Prijato
+--DATA--
+00001$;737794$;00099$;* Inventurni rozdily$;5566$;Roho gumová dìrovaná 100x50cm Honey/Med$;ks$;109.00$;21$;0$;0$;-1
+00001$;737794$;00099$;* Inventurni rozdily$;5713$;Roho textilní 90x60cm Tiger šedá$;ks$;239.00$;21$;0$;0$;-1
+00001$;737794$;00099$;* Inventurni rozdily$;2189$;Hùl DR 140cm prùmìr 24mm$;ks$;28.71$;21$;0$;0$;-1
+00001$;737794$;00099$;* Inventurni rozdily$;5497$;Larrin na spotøebièe-rez a vod.kámen 500$;ks$;34.76$;21$;0$;12$;-196
+00001$;737794$;00099$;* Inventurni rozdily$;0880$;Larrin rez a vodní kámen 500ml$;ks$;33.86$;21$;864$;12$;196
+00001$;737794$;00099$;* Inventurni rozdily$;0845$;Osvìovaè Gel Glade Konvalinka 150g$;ks$;29.09$;21$;0$;0$;-62
+00001$;737794$;00099$;* Inventurni rozdily$;3155$;Osvìovaè Gel Glade Levandule fial.150g$;ks$;29.09$;21$;0$;8$;62
+00001$;737794$;00099$;* Inventurni rozdily$;5657$;Tekuté mıdlo 500ml Vione zelené$;ks$;10.50$;21$;0$;10$;-40
+00001$;737794$;00099$;* Inventurni rozdily$;5673$;Tekuté mıdlo 500ml Vione rùové$;ks$;10.50$;21$;0$;10$;-20
+00001$;737794$;00099$;* Inventurni rozdily$;0404$;WC pisoar DEO doza citron 750g$;ks$;121.40$;21$;0$;6$;-12
+00001$;737794$;00099$;* Inventurni rozdily$;0483$;Stìrka na okna 35cm   è.4425$;ks$;30.46$;21$;0$;12$;-23
+00001$;737794$;00099$;* Inventurni rozdily$;1308$;Stìrka na okna 25cm   è.4425$;ks$;26.15$;21$;0$;12$;23
+00001$;737794$;00099$;* Inventurni rozdily$;2722$;Osvìovaè spray Brait 300m suchı Alaska$;ks$;21.73$;21$;0$;12$;-1
+00001$;737794$;00099$;* Inventurni rozdily$;1490$;Hrablo na sníh PE 50cm + døevìná hùl$;ks$;97.30$;21$;0$;10$;20
+00001$;737794$;00099$;* Inventurni rozdily$;5335$;Hrablo na sníh PE 50cm bez hole$;ks$;56.90$;21$;0$;0$;-22
+00001$;737794$;00099$;* Inventurni rozdily$;5999$;Ostøikovaè zimní Glacidet 5L (-40)$;kan$;120.95$;21$;0$;3$;9
+00001$;737794$;00099$;* Inventurni rozdily$;0712$;Ostøikovaè zimní Carline 5L (-40)$;kan$;94.84$;21$;0$;3$;-9
+00001$;737794$;00099$;* Inventurni rozdily$;1708$;Šampon Primo 1l Kopøiva Clear$;ks$;15.00$;21$;0$;10$;-1
+00001$;737794$;00099$;* Inventurni rozdily$;4045$;\o\Pytle 70L/50mi 550x1000cm lutı 25ks$;rol$;46.25$;21$;0$;10$;-7
+00001$;737794$;00099$;* Inventurni rozdily$;4313$;Šampon Palmolive 350ml lupy Men$;ks$;31.31$;21$;0$;6$;-21
+00001$;737794$;00099$;* Inventurni rozdily$;0793$;Sùl posypová 10kg$;taš$;34.50$;21$;90$;0$;-2
+00001$;737794$;00099$;* Inventurni rozdily$;0793$;Sùl posypová 10kg$;taš$;34.50$;21$;90$;0$;1
+00002$;737794$;00156$;* Reklamace 2021 zákazník$;4030$;Ceresit Stop vlhkosti náplò 2x450g$;ks$;135.03$;21$;0$;12$;-7
+00002$;737794$;00156$;* Reklamace 2021 zákazník$;2954$;\O\Toaletní papír Gigant 2vrs.230 recykl$;rol$;18.50$;21$;0$;6$;-90
+00002$;737794$;00156$;* Reklamace 2021 zákazník$;5209$;\O\Toaletní papír Gigant 2vrs.260 recykl$;ks$;24.60$;21$;0$;6$;-12
+00002$;737794$;00156$;* Reklamace 2021 zákazník$;4850$;Hul DR 180cm prùmìr 24mm$;ks$;49.71$;21$;0$;25$;-20
+00002$;737794$;00156$;* Reklamace 2021 zákazník$;2734$;Cleamen 110 1l sklenìné plochy s MR$;ks$;38.95$;21$;0$;12$;-4
+00002$;737794$;00156$;* Reklamace 2021 zákazník$;2865$;\o\Vak odpadní do skart.stroje 3804 50ks$;bal$;2360.00$;21$;0$;0$;-2
+00002$;737794$;00156$;* Reklamace 2021 zákazník$;0790$;Orkán profi lesk 25kg do myèek$;kan$;1739.98$;21$;0$;0$;-2
+00002$;737794$;00156$;* Reklamace 2021 zákazník$;4932$;Prášek Ariel 45dávek Mountain$;ks$;141.31$;21$;0$;4$;-4
+00002$;737794$;00156$;* Reklamace 2021 zákazník$;5775$;Smeták PE závit hrubı Viktoria 30cm$;ks$;17.03$;21$;0$;24$;-7
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;6009$;Papírové ruèníky ZZ 1vr zelené$;kar$;142.00$;21$;32$;0$;-128
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;1653$;Papírové ruèníky ZZ 1vr Cerepa 250 zelen$;ks$;7.10$;21$;640$;20$;2560
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;1954$;Houbièka nádobí s drákou po 10ks 10x7cm$;tyè$;14.44$;21$;0$;50$;-100
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;2600$;Houbièka nádobí s drákou po 1ks 10x7cm$;ks$;1.44$;21$;0$;0$;1000
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;5613$;Úklidovı vozík 2x17 základní$;ks$;1500.00$;21$;0$;0$;-2
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;5739$;Vloka do dímaèe$;ks$;27.92$;21$;0$;0$;2
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;5169$;dímaè k uklidovému vozíku plastovı SPL$;ks$;493.18$;21$;0$;0$;2
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;0701$;Úklidovı vozík 2x17 bez dímaèe$;ks$;978.90$;21$;0$;0$;2
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;5613$;Úklidovı vozík 2x17 základní$;ks$;1500.00$;21$;0$;0$;-2
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;5774$;Košík na vozík Maxi boèní$;ks$;256.40$;21$;0$;0$;-2
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;0159$;Úklidovı vozík 2x17 + košík boèní$;ks$;1756.40$;21$;0$;0$;2
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;5613$;Úklidovı vozík 2x17 základní$;ks$;1500.00$;21$;0$;0$;-1
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;1090$;Podpìra mopu PVC + drák Alu tyèe-modrı$;ks$;265.00$;21$;0$;0$;-1
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;5774$;Košík na vozík Maxi boèní$;ks$;256.40$;21$;0$;0$;-1
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;5721$;Košík na vozík pod vìdro 6l$;ks$;215.00$;21$;0$;0$;-1
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;5722$;Vìdro 6l pro uklidovı vozík  mix barev$;ks$;55.47$;21$;0$;0$;-1
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;3197$;Úklidovı vozík 2x17 + vıbava$;ks$;2291.90$;21$;0$;0$;1
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;1804$;Smeták PE závit hrubı imitace døeva$;ks$;29.90$;21$;0$;12$;-60
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;1221$;Hùl kovová 130cm hrubı závit$;ks$;10.08$;21$;0$;24$;-60
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;0576$;Smeták PE závit hrubı+hùl 130cm imitace$;ks$;39.98$;21$;0$;12$;60
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;3923$;Mop drák FW 60cm s kloubem$;ks$;83.64$;21$;0$;0$;-5
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;4068$;Hùl AL 140cm prùmìr 23,5mm bez zavitu$;ks$;58.00$;21$;0$;0$;-5
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;3885$;Mop drák FW 80cm s kloubem$;ks$;120.00$;21$;0$;0$;-5
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;4068$;Hùl AL 140cm prùmìr 23,5mm bez zavitu$;ks$;58.00$;21$;0$;0$;-5
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;1120$;Mop NN bavlnìnı FW 80cm plochı$;ks$;94.00$;21$;0$;0$;-5
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;0475$;Mop KOMPLET plochı FW 80cm$;ks$;272.00$;21$;0$;0$;5
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;3073$;Mop drák Speedy/Flipper 40cm s magnetem$;ks$;320.00$;21$;0$;10$;-5
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;4068$;Hùl AL 140cm prùmìr 23,5mm bez zavitu$;ks$;58.00$;21$;0$;0$;-5
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;4192$;Mop NN bavlnìnı Speedy 40cm uni 2xjazyk$;ks$;63.00$;21$;0$;50$;-5
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;4253$;Mop KOMPLET plochı Speedy 40cm /2x jazyk$;ks$;441.00$;21$;0$;0$;5
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;5715$;Mop drák Sprint PLUS 40cm s magnetem$;ks$;355.00$;21$;0$;10$;-5
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;4068$;Hùl AL 140cm prùmìr 23,5mm bez zavitu$;ks$;58.00$;21$;0$;0$;-5
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;5718$;Mop NN bavlnìnı Sprint PLUS 40cm 2xkapsa$;ks$;68.00$;21$;0$;50$;-5
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;1992$;Mop KOMPLET plochı Sprint PL.40 /2xkapsa$;ks$;481.00$;21$;0$;0$;5
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;5298$;\o\Mop drák Unger 3druky$;ks$;755.00$;21$;0$;0$;-2
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;4068$;Hùl AL 140cm prùmìr 23,5mm bez zavitu$;ks$;58.00$;21$;0$;0$;-2
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;1128$;Mop NN bavlnìnı Speedy 40cm 3druky uni$;ks$;71.00$;21$;0$;50$;-2
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;1110$;Mop KOMPLET plochı Unger 40cm 3díry/2jaz$;ks$;884.00$;21$;0$;0$;2
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;1095$;Mop NN bavlnìnı FW 60cm plochı$;ks$;72.00$;21$;0$;0$;-5
+00003$;737794$;00814$;* Ostatní pøevod mezi karty$;0376$;Mop KOMPLET plochı FW 60cm$;ks$;213.64$;21$;0$;0$;5
+00004$;737794$;00814$;* Ostatní pøevod mezi karty$;2855$;Brıle VS 160/Basic èiré$;ks$;19.73$;21$;0$;10$;-14
+00004$;737794$;00814$;* Ostatní pøevod mezi karty$;3126$;Brıle VS 160/Basic hnìdé$;ks$;19.73$;21$;0$;0$;14
+00005$;737794$;00245$;Lipa velkoobchod papirem s.r.o.$;0665$;Fixaèní folie 500mm/20mi$;ks$;48.13$;21$;96$;6$;60
+00006$;737794$;00206$;Espace velkoobchod drogerie s.r.o.$;2735$;Mop NN VILEDA Super Mocio modrı$;ks$;102.74$;21$;0$;12$;12
+00006$;737794$;00206$;Espace velkoobchod drogerie s.r.o.$;5543$;Smeták/hlavice Vileda Classic 2v1+hul$;ks$;112.10$;21$;0$;6$;12
+00006$;737794$;00206$;Espace velkoobchod drogerie s.r.o.$;4137$;Ustní voda Odol classic 500ml$;ks$;44.36$;21$;0$;8$;8
+00006$;737794$;00206$;Espace velkoobchod drogerie s.r.o.$;3156$;Louh Stura Facile 1l na odpady$;ks$;65.12$;21$;0$;12$;120
+00006$;737794$;00206$;Espace velkoobchod drogerie s.r.o.$;4357$;Desinfekto 5l dezinfekce povrchy bezchlo$;kan$;122.12$;21$;108$;2$;12
+00006$;737794$;00206$;Espace velkoobchod drogerie s.r.o.$;2267$;Cilit Bang 750ml MR vodní kámen oranovı$;ks$;47.70$;21$;0$;12$;48
+00006$;737794$;00206$;Espace velkoobchod drogerie s.r.o.$;3117$;Osvìovaè dávkovaè FreshMatic stroj+vùnì$;ks$;97.84$;21$;0$;4$;4
+00006$;737794$;00206$;Espace velkoobchod drogerie s.r.o.$;1326$;Osvìovaè elek.Airwick NN prádlo/tyrk19m$;Ks$;48.31$;21$;0$;6$;6
+00006$;737794$;00206$;Espace velkoobchod drogerie s.r.o.$;2311$;Louh Tiret 500ml èistiè odpadu$;ks$;23.24$;21$;0$;12$;48
+00006$;737794$;00206$;Espace velkoobchod drogerie s.r.o.$;5269$;Zubní pasta Colgate Triple Action 100ml$;ks$;17.62$;21$;0$;48$;48
+00006$;737794$;00206$;Espace velkoobchod drogerie s.r.o.$;3258$;Mıdlo Palmolive Heømánek/Camellia 90g /6$;ks$;6.93$;21$;0$;72$;216
+00006$;737794$;00206$;Espace velkoobchod drogerie s.r.o.$;5418$;SG Palmolive 250ml Cherry$;ks$;28.28$;21$;0$;6$;6
+00007$;737795$;01058$;Vìra Niníková NIMPEX$;1700$;\o\Spojky gumové rohoí Okta$;ks$;25.00$;21$;0$;0$;2
+00008$;737795$;00944$;* Zápùjèka$;0737$;Dávkovaè mıdla 1l bílı CN 10099$;ks$;161.84$;21$;0$;0$;-1
+00009$;737795$;00812$;* Reklamace$;2596$;\O\Roho gumová mix 60x40cm doprodej$;ks$;40.00$;21$;0$;0$;2
+00010$;737795$;00936$;VULKAN - Medical,a.s.$;3845$;Gumové rukavice technic 300/0,65 è.8-8,5$;par$;38.22$;21$;0$;12$;120
+00010$;737795$;00936$;VULKAN - Medical,a.s.$;5950$;Gumové rukavice technic 300/0.65 è.9-9,5$;pár$;38.22$;21$;0$;12$;120
+00010$;737795$;00936$;VULKAN - Medical,a.s.$;2806$;Rukavice latex jednorázové 100k XL pudro$;kra$;192.10$;21$;0$;10$;100
+00010$;737795$;00936$;VULKAN - Medical,a.s.$;3178$;Rukavice latex jednorázové 100ks L pudro$;kra$;192.10$;21$;0$;10$;200
+00010$;737795$;00936$;VULKAN - Medical,a.s.$;1698$;Rukavice latex jednorázové 100ks M pudro$;kra$;192.08$;21$;0$;10$;200
+00010$;737795$;00936$;VULKAN - Medical,a.s.$;2951$;Rukavice latex jednor.100ks L nepudr9012$;kra$;225.40$;21$;0$;10$;80
+00010$;737795$;00936$;VULKAN - Medical,a.s.$;5789$;Rukavice latex jednor.100ks M nepudr9012$;kr$;225.40$;21$;0$;10$;80
+00011$;737796$;00981$;Miroslav Kuèera - Kuku papír$;2056$;Papírové ruèníky role 2vr PMidi9897/7371$;rol$;21.40$;21$;528$;12$;528
+00011$;737796$;00981$;Miroslav Kuèera - Kuku papír$;3607$;Papírové ruèníky ZZ 2vr 1193 celuloz 150$;ks$;14.75$;21$;640$;20$;3200
+00011$;737796$;00981$;Miroslav Kuèera - Kuku papír$;4263$;Papírové ruèníky ZZ 2vr Harm.1614 rec150$;ks$;11.45$;21$;640$;20$;1920
+00011$;737796$;00981$;Miroslav Kuèera - Kuku papír$;5913$;Papírové ruèníky ZZ 2vr Katrin 65944 bíl$;ks$;14.50$;21$;720$;20$;720
+00011$;737796$;00981$;Miroslav Kuèera - Kuku papír$;1245$;Toaletní papír 1vrs. Harmasan 400    50m$;rol$;3.70$;21$;1800$;30$;1800
+00011$;737796$;00981$;Miroslav Kuèera - Kuku papír$;2205$;Toaletní papír Gigant 2vrs.280 Harm/7366$;rol$;36.20$;21$;288$;6$;576
+00011$;737796$;00981$;Miroslav Kuèera - Kuku papír$;5494$;Ubrousky skládané 200k Harm.5130/7340 2v$;bal$;15.90$;21$;1040$;20$;200
+00011$;737796$;00981$;Miroslav Kuèera - Kuku papír$;5666$;Papírové ruèníky role 2vr Katri 2634 60m$;rol$;28.00$;21$;0$;12$;96
+00011$;737796$;00981$;Miroslav Kuèera - Kuku papír$;0749$;Toaletní papír Gigant 2vrs.240 Harm/7362$;rol$;25.70$;21$;336$;6$;336
+00011$;737796$;00981$;Miroslav Kuèera - Kuku papír$;3309$;Toaletní papír Gigant 2vrs.190 Harm/7360$;rol$;16.50$;21$;576$;12$;576
+00012$;737796$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;0743$;Alpa 1l francovka$;ks$;98.70$;21$;180$;6$;6
+00012$;737796$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;2201$;Aviril olej ïìtskı s azulenem 50ml$;ks$;14.30$;21$;0$;10$;10
+00012$;737796$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;6019$;Destilovaná voda 1l$;ks$;8.00$;21$;0$;6$;18
+00012$;737796$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;1690$;SG FA Men 2v1 mix 250ml$;ks$;27.60$;21$;0$;6$;60
+00012$;737796$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;0178$;Finish prášek 2,5kg$;ks$;95.50$;21$;0$;6$;120
+00012$;737796$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;3886$;Osvìovaè spray Glade 300ml Oceán$;ks$;34.70$;21$;0$;12$;60
+00012$;737796$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;1970$;Tìlové mléko Lactovit 400ml Regeneraèní$;ks$;79.61$;21$;0$;6$;6
+00012$;737796$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;4535$;Alpa 160ml lesana$;ks$;22.70$;21$;0$;12$;24
+00012$;737796$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;3252$;Koberce Mr.Teppich antialer.spray 600ml$;ks$;55.54$;21$;0$;12$;12
+00012$;737796$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;0838$;Šampon Nivea 250ml Volume$;ks$;43.47$;21$;0$;6$;6
+00012$;737796$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;1016$;Leštìnka Pronto spray hnìdá 250ml$;ks$;53.25$;21$;0$;12$;60
+00012$;737796$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;4976$;\o\Barva SU 2013/4400 0.75l modrá$;ks$;108.61$;21$;0$;0$;6
+00012$;737796$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;2461$;Osvìovaè spray Sanytol 300ml dezinfekèn$;ks$;49.06$;21$;0$;12$;48
+00012$;737796$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;3489$;Prací gel Sanytol 1650ml dezinfekèní$;ks$;128.95$;21$;0$;6$;60
+00012$;737796$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;1483$;Univerzal Sidolux obsahem sody 1l Marsei$;ks$;26.60$;21$;0$;12$;60
+00012$;737796$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;0948$;Voda po holení Windsor 100ml$;ks$;22.90$;21$;0$;10$;30
+00013$;737796$;01029$;PYTLÍK, a.s.$;2986$;\o\Pytle 120L/100mi 70x110cm èerven nebe$;ks$;6.79$;21$;0$;100$;300
+00013$;737796$;01029$;PYTLÍK, a.s.$;5853$;Pytle  70L/30mi  60x80cm 20ks èernı$;rol$;19.00$;21$;0$;25$;100
+00013$;737796$;01029$;PYTLÍK, a.s.$;4515$;Pytle  80L/200mi 55x100cm silné èerné$;ks$;6.54$;21$;0$;50$;200
+00013$;737796$;01029$;PYTLÍK, a.s.$;0446$;Pytle 120L/60mi 70x110cm role-20ks èerná$;rol$;46.80$;21$;420$;10$;420
+00013$;737796$;01029$;PYTLÍK, a.s.$;2180$;Pytle 200L/80mi 100x120cm role-5ks èerné$;rol$;28.75$;21$;0$;15$;150
+00013$;737796$;01029$;PYTLÍK, a.s.$;2738$;Pytle 240L/100mi 120x150cm 1ks èerné$;ks$;8.95$;21$;0$;25$;100
+00013$;737796$;01029$;PYTLÍK, a.s.$;4739$;Sáèky do koše 16l 45x52 /50ks bílé/trans$;rol$;8.00$;21$;0$;40$;80
+00013$;737796$;01029$;PYTLÍK, a.s.$;2980$;Sáèky do koše 30l 50x60 /10mi zatah.L15$;rol$;11.25$;21$;0$;50$;200
+00013$;737796$;01029$;PYTLÍK, a.s.$;5972$;Sáèky do koše 60l 60x80 /15mi zatah.10ZE$;rol$;11.90$;21$;0$;50$;200
+00013$;737796$;01029$;PYTLÍK, a.s.$;2546$;Sáèky do koše 60l 60x80 /40mi zatah 10èe$;rol$;15.90$;21$;0$;25$;250
+00013$;737796$;01029$;PYTLÍK, a.s.$;0419$;Sáèky do koše 60l 60x85 /10mi 25ks modrı$;rol$;14.75$;21$;0$;40$;200
+00013$;737796$;01029$;PYTLÍK, a.s.$;3474$;Sáèky do koše 60l 63x74 /7mi 50ks bílı$;rol$;12.50$;21$;0$;40$;200
+00013$;737796$;01029$;PYTLÍK, a.s.$;1246$;Sáèky do koše 70l 63x85 /8mi 40ks bílı$;rol$;15.60$;21$;0$;9$;90
+00014$;737796$;00078$;Vamtex s.r.o. Vamberk$;0826$;Hadr na podlahu tkanı SOÒA 60x60cm$;ks$;14.23$;21$;0$;50$;800
+00014$;737796$;00078$;Vamtex s.r.o. Vamberk$;4074$;Hadr na podlahu tkanı Venda 60x60cm$;ks$;16.91$;21$;0$;50$;300
+00014$;737796$;00078$;Vamtex s.r.o. Vamberk$;2659$;Hadr na podlahu tkanı Venda 60x90cm$;ks$;24.71$;21$;0$;50$;100
+00015$;737796$;00629$;KALVEI, s.r.o.$;3535$;Osvìovaè vzduchu EASY náplò Apple$;ks$;68.50$;21$;6000$;12$;12
+00015$;737796$;00629$;KALVEI, s.r.o.$;3504$;Osvìovaè vzduchu EASY náplò Kiwi/Grep$;ks$;68.50$;21$;0$;12$;12
+00016$;737796$;00629$;KALVEI, s.r.o.$;4667$;\o\Pap.ruè.ZZ 2vr.Tork 150299 4746ut bíl$;kar$;718.50$;21$;0$;0$;2
+00016$;737796$;00629$;KALVEI, s.r.o.$;1864$;Papírové ruèníky role 1vr Tork 510137 bí$;rol$;663.00$;21$;72$;0$;4
+00016$;737796$;00629$;KALVEI, s.r.o.$;5312$;Papírové ruèníky ZZ 2vr Tork 100288 Bílá$;ks$;35.74$;21$;672$;21$;210
+00017$;737797$;00772$;DISTRIMO$;4030$;Ceresit Stop vlhkosti náplò 2x450g$;ks$;141.05$;21$;0$;12$;24
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;3166$;\o\Hadr švédskı mikro 50x60  380g$;ks$;30.90$;21$;0$;60$;10
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;5046$;Houbièka nádobí viskozní 12x7x1,5cm$;ks$;6.80$;21$;0$;12$;36
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;5210$;Smetáèek PE obyè. YA  26x3,5cm$;ks$;11.20$;21$;0$;24$;24
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;5775$;Smeták PE závit hrubı Viktoria 30cm$;ks$;16.99$;21$;0$;24$;72
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;0930$;Kartáè silnièní 40cm Fave s holí 140c$;ks$;75.00$;21$;0$;3$;12
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;2698$;Hul teleskop 300cm závit hrubı+kolnus!!$;ks$;44.00$;21$;0$;0$;10
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;1532$;Kartáèek na ruce PE s dradlem Kamil$;ks$;8.50$;21$;0$;14$;14
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;1705$;WC souprava obyè Streè bílá 13x13x39cm$;ks$;12.00$;21$;0$;20$;100
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;2049$;Zvon na vılevky - obyè  v.33x10cm$;ks$;26.90$;21$;0$;25$;25
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;5381$;Vìdro PVC 10l mìrka Jolly$;ks$;27.90$;21$;0$;0$;60
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;0744$;Mop KOMPLET plochı inylkovı + hul$;ks$;65.00$;21$;0$;20$;20
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;5582$;Koš PVC 12L kulatı plnı šedı$;ks$;32.90$;21$;0$;0$;1
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;1257$;Koš PVC 12L kulatı plnı hnìdı$;ks$;32.90$;21$;0$;0$;5
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;5600$;Koš PVC 12L kulatı plnı bílı$;ks$;32.90$;21$;0$;0$;2
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;3821$;Koš PVC 12L kulatı plnı èernı$;ks$;32.90$;21$;0$;0$;2
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;0423$;Chòapka bavlnìná 2ks magnet+poutko mix$;bal$;28.20$;21$;0$;25$;50
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;3570$;Kolíèky na prádlo DR 20ks$;bal$;7.90$;21$;0$;60$;60
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;0805$;Roho textilní 60x40cm Clin gum.kraj$;ks$;49.50$;21$;0$;20$;10
+00018$;737797$;00975$;Velkoobchod FAVE s.r.o.$;1893$;Roho textilní 75x45cm Excelent gum.kraj$;ks$;71.00$;21$;0$;10$;10
+00019$;737797$;00465$;Osapo s.r.o.$;3481$;Gumové rukavice kys standard l/èer è.9$;pár$;54.23$;21$;0$;10$;30
+00019$;737797$;00465$;Osapo s.r.o.$;4220$;Zástìra jednorázová igelit.100ks 80x135c$;bal$;116.93$;21$;0$;5$;20
+00019$;737797$;00465$;Osapo s.r.o.$;1972$;Respirátor s ventilkem 731/1031 FFP2NRD$;ks$;32.40$;21$;0$;15$;150
+00020$;737797$;01007$;Augustin Pecha-Mopservis s.r.o.$;3472$;Houbièka nádobí velká s bílım Padem 13x7$;ks$;7.50$;21$;0$;10$;50
+00020$;737797$;01007$;Augustin Pecha-Mopservis s.r.o.$;3073$;Mop drák Speedy/Flipper 40cm s magnetem$;ks$;320.00$;21$;0$;10$;20
+00020$;737797$;01007$;Augustin Pecha-Mopservis s.r.o.$;5003$;Pad ruèní èernı vysokı-S$;ks$;25.00$;21$;0$;25$;100
+00020$;737797$;01007$;Augustin Pecha-Mopservis s.r.o.$;5718$;Mop NN bavlnìnı Sprint PLUS 40cm 2xkapsa$;ks$;68.00$;21$;0$;50$;100
+00021$;737797$;00029$;Severochema v.d. Liberec$;2247$;Aceton èistı 9l kanystr$;kan$;383.33$;21$;0$;0$;10
+00021$;737797$;00029$;Severochema v.d. Liberec$;1659$;Benzín technickı 4l$;kan$;209.40$;21$;0$;0$;10
+00021$;737797$;00029$;Severochema v.d. Liberec$;1999$;Líh technickı 4l$;kan$;204.74$;21$;0$;0$;2
+00021$;737797$;00029$;Severochema v.d. Liberec$;2345$;Pepo 1000ml tekutı podpalovaè$;ks$;41.00$;21$;0$;8$;24
+00021$;737797$;00029$;Severochema v.d. Liberec$;2077$;Pepo 320g podpalovaè pevnı$;ks$;16.47$;21$;1800$;30$;1800
+00021$;737797$;00029$;Severochema v.d. Liberec$;1266$;Øedidlo nitro 4l 6000$;kan$;150.55$;21$;0$;0$;10
+00021$;737797$;00029$;Severochema v.d. Liberec$;0151$;Øedidlo nitro 9l 6000 kanystr$;kan$;295.85$;21$;0$;0$;15
+00021$;737797$;00029$;Severochema v.d. Liberec$;0854$;Øedidlo syntetik 4l 6006$;kan$;138.17$;21$;0$;0$;1
+00021$;737797$;00029$;Severochema v.d. Liberec$;0152$;Øedidlo syntetik 9l 6006 kanystr$;kan$;257.26$;21$;0$;0$;1
+00021$;737797$;00029$;Severochema v.d. Liberec$;4354$;Toluen 9l$;kan$;298.94$;21$;0$;0$;16
+00022$;737797$;00638$;Cormen Bystøice$;5685$;Rozprašovaè pro vırobky Cleamen$;ks$;7.26$;21$;0$;12$;-240
+00023$;737797$;00638$;Cormen Bystøice$;3804$;Krystal Pine Sanan 750ml$;ks$;21.70$;21$;0$;17$;85
+00023$;737797$;00638$;Cormen Bystøice$;3913$;\o\Cleamen 123 5l$;Ks$;504.30$;21$;0$;0$;2
+00023$;737797$;00638$;Cormen Bystøice$;2488$;Cleamen 100/200 1l denní uklid$;ks$;102.46$;21$;0$;12$;12
+00023$;737797$;00638$;Cormen Bystøice$;2768$;Cleamen 100/200 5l denní uklid$;kan$;429.27$;21$;0$;0$;10
+00023$;737797$;00638$;Cormen Bystøice$;3953$;Cleamen 101/201 5l osvìovaè neutralizát$;kan$;370.79$;21$;0$;0$;8
+00023$;737797$;00638$;Cormen Bystøice$;2734$;Cleamen 110 1l sklenìné plochy s MR$;ks$;38.95$;21$;0$;12$;36
+00023$;737797$;00638$;Cormen Bystøice$;0306$;Cleamen 112 1l okna a rámy$;ks$;35.72$;21$;0$;12$;24
+00023$;737797$;00638$;Cormen Bystøice$;5849$;Cleamen 131 5l na koberce$;kan$;263.35$;21$;0$;0$;2
+00023$;737797$;00638$;Cormen Bystøice$;3999$;Cleamen 145 5l strojní$;kan$;205.92$;21$;0$;0$;12
+00023$;737797$;00638$;Cormen Bystøice$;4153$;Cleamen 210 1l odmašovaè$;ks$;51.97$;21$;0$;12$;24
+00023$;737797$;00638$;Cormen Bystøice$;1582$;Cleamen 220 1l nerez$;ks$;100.30$;21$;0$;12$;12
+00023$;737797$;00638$;Cormen Bystøice$;1759$;Cleamen 230 6kg strojní mytí nádobí$;kan$;286.48$;21$;0$;0$;5
+00023$;737797$;00638$;Cormen Bystøice$;4351$;Cleamen 231 5l strojní oplach nádobí$;kan$;258.51$;21$;0$;0$;3
+00023$;737797$;00638$;Cormen Bystøice$;2325$;Cleamen 240 1,1 kg trouby,gril MR$;ks$;85.10$;21$;0$;12$;36
+00023$;737797$;00638$;Cormen Bystøice$;1008$;Cleamen 302/402 1l osvìovaè-neutralizát$;ks$;119.11$;21$;0$;12$;24
+00023$;737797$;00638$;Cormen Bystøice$;4453$;Cleamen 310 750ml wc èistiè$;Ks$;28.77$;21$;0$;17$;51
+00023$;737797$;00638$;Cormen Bystøice$;1435$;Cleamen 410 1l koupelny$;ks$;42.70$;21$;0$;12$;384
+00023$;737797$;00638$;Cormen Bystøice$;3461$;Dezinf.ruce Isolda bezopl.5l virucidní$;kan$;475.32$;21$;0$;0$;3
+00023$;737797$;00638$;Cormen Bystøice$;2173$;Krém na ruce Isolda 100ml šalvìj antibak$;ks$;14.22$;21$;0$;25$;250
+00023$;737797$;00638$;Cormen Bystøice$;3837$;Krystal 750ml MR UNI dezinfekce bez chlo$;ks$;41.59$;21$;576$;18$;576
+00023$;737797$;00638$;Cormen Bystøice$;2433$;Krystal Pine Sanan 5l$;kan$;103.36$;21$;0$;0$;10
+00023$;737797$;00638$;Cormen Bystøice$;3804$;Krystal Pine Sanan 750ml$;ks$;21.70$;21$;0$;17$;34
+00023$;737797$;00638$;Cormen Bystøice$;5712$;Lahev aplikaèní øedící 1l$;ks$;13.20$;21$;0$;12$;12
+00023$;737797$;00638$;Cormen Bystøice$;5937$;Leštìnka Krystal 750ml MR$;ks$;40.72$;21$;0$;18$;18
+00023$;737797$;00638$;Cormen Bystøice$;5764$;Møíka do pisoaru vonná *Cleamen*modr/ze$;Ks$;26.52$;21$;0$;12$;60
+00023$;737797$;00638$;Cormen Bystøice$;2588$;Mıdlovı èistiè Krystal 750ml vèelí vosk$;ks$;19.04$;21$;0$;18$;54
+00023$;737797$;00638$;Cormen Bystøice$;2295$;Okna Krystal 5l$;kan$;85.00$;21$;0$;0$;2
+00023$;737797$;00638$;Cormen Bystøice$;1056$;Tekuté mıdlo 5l Vakavo Love Herbal bílé$;kan$;54.71$;21$;108$;0$;108
+00023$;737797$;00638$;Cormen Bystøice$;1412$;Utìrka Cleamax Fine zelená$;ks$;19.00$;21$;0$;12$;12
+00023$;737797$;00638$;Cormen Bystøice$;5545$;Vonnı olej Krystal 750ml Black$;ks$;67.66$;21$;576$;18$;18
+00023$;737797$;00638$;Cormen Bystøice$;4909$;Vonnı olej Krystal 750ml rùovı$;ks$;62.22$;21$;576$;18$;18
+00023$;737797$;00638$;Cormen Bystøice$;5930$;WC èistiè Krystal EKO 750ml$;ks$;20.33$;21$;0$;17$;34
+00024$;737797$;01037$;Ing.David Pikula$;0790$;Orkán profi lesk 25kg do myèek$;kan$;1740.00$;21$;0$;0$;6
+00024$;737797$;01037$;Ing.David Pikula$;0853$;Orkán profi uni 29kg do myèek$;kan$;1777.30$;21$;0$;0$;2
+00025$;737797$;01095$;Hygienickı servis s.r.o.$;4270$;Toaletní papír Gigant 2vrs.190*Imb402297$;rol$;29.15$;21$;480$;12$;480
+00026$;737797$;00358$;KARKO PAPER s.r.o.$;4677$;Papírové ruèníky role 2vr PK MaxiCar6130$;rol$;36.80$;21$;360$;6$;600
+00026$;737797$;00358$;KARKO PAPER s.r.o.$;4642$;Papírové ruèníky role 2vr PK Midi 455VPL$;rol$;15.99$;21$;576$;12$;480
+00027$;737798$;00041$;Dubrava Valašské Klobouky$;1099$;Koberce Akypo 5l strojní èistiè$;kan$;211.50$;21$;0$;0$;16
+00027$;737798$;00041$;Dubrava Valašské Klobouky$;0406$;Prášek Montéráèek 500g$;ks$;36.00$;21$;720$;12$;12
+00028$;737798$;00206$;Espace velkoobchod drogerie s.r.o.$;4954$;Koupelny Sanytol 500ml MR$;ks$;57.66$;21$;0$;12$;240
+00029$;737798$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;2224$;Alpa emulze s arnikou 100ml$;ks$;32.60$;21$;0$;10$;10
+00029$;737798$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;5637$;Prášek Bonux 60dávek bílé$;ks$;136.90$;21$;0$;0$;10
+00029$;737798$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;5265$;Prášek Bonux 60dávek Color$;ks$;136.90$;21$;0$;0$;10
+00029$;737798$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;1491$;Finish èistiè 250ml                   /2$;ks$;33.50$;21$;0$;12$;20
+00029$;737798$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;1491$;Finish èistiè 250ml                   /2$;ks$;33.50$;21$;0$;12$;36
+00029$;737798$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;1491$;Finish èistiè 250ml                   /2$;ks$;33.50$;21$;0$;12$;40
+00029$;737798$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;0768$;Finish lesk 800ml$;ks$;87.80$;21$;0$;12$;60
+00029$;737798$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;5313$;Finish tablety 100ks Powerball Classic$;ks$;126.90$;21$;0$;4$;100
+00029$;737798$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;2249$;Osvìovaè spray Glade 300ml Oud Desire$;ks$;35.70$;21$;0$;12$;50
+00029$;737798$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;0798$;\O\Kuchyne Brilla Sgrassa 750ml MR troub$;ks$;49.00$;21$;0$;10$;24
+00029$;737798$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;2614$;Servošampon kbelík Rapid 5 kg$;kan$;284.93$;21$;0$;0$;10
+00029$;737798$;00984$;BARVY A LAKY HOSTIVAØ a.s.$;0802$;Holící pìna Windsor 200ml$;ks$;26.90$;21$;0$;12$;36
+00030$;737798$;00687$;Avex Liberec s.r.o.$;1574$;\o\Barva SU 2013/1000 4l/3.5l  bílá$;ks$;572.85$;21$;0$;0$;4
+00030$;737798$;00687$;Avex Liberec s.r.o.$;5191$;\o\Barva SU 2013/8140/8141 4l èervená$;ks$;666.90$;21$;0$;0$;1
+00030$;737798$;00687$;Avex Liberec s.r.o.$;2087$;\o\Barva SU 2013/6401 4l/3,5l lutá$;ks$;822.70$;21$;0$;0$;3
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;1136$;Drátìnı kartáè PE 1100 - 5øadı$;ks$;20.00$;21$;0$;12$;12
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;4850$;Hul DR 180cm prùmìr 24mm$;ks$;49.72$;21$;0$;25$;50
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;1948$;Hùl teleskop 110- 200cm + redukce Spokar$;ks$;55.61$;21$;0$;10$;10
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;1071$;Kartáè lahvovı 50mm    2519$;ks$;17.76$;21$;0$;20$;20
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;5079$;Kartáè na nádobí 4432 color$;ks$;9.63$;21$;0$;10$;10
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;1122$;Kartáè na nádobí EKO 4434$;ks$;12.37$;21$;0$;25$;25
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;1141$;Kartáè na prádlo PE 3603 16x5x4cm$;ks$;21.41$;21$;0$;20$;20
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;1177$;Kartáè na radiátor 4420$;ks$;37.53$;21$;0$;15$;15
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;1389$;Kartáèek na ruce døevìnı štìtiny 3120$;ks$;18.51$;21$;0$;10$;40
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;0459$;Kartáèek na ruce PE jednostrannı 3105/1$;ks$;9.63$;21$;0$;10$;100
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;2236$;Mop KOMPLET s holí hnìdı pásky$;ks$;118.77$;21$;0$;36$;6
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;1495$;Mop NN pásky hnìdé jemnı závit$;ks$;42.50$;21$;0$;50$;50
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;3510$;Roho gumová s kokosem 60x40 CRISS CROSS$;ks$;86.50$;21$;0$;0$;5
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;2985$;Sáèky do koše 60l 63x68/ 15mi zata 15SPO$;rol$;24.87$;21$;0$;25$;250
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;0714$;Smetáèek PE dlouhı 5180/616$;ks$;22.60$;21$;0$;12$;48
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;0457$;Souprava smetáèek+lopatka 5207/616$;ks$;43.24$;21$;0$;15$;30
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;1761$;Souprava smetáèek+lopatka 5220 EKO s gum$;ks$;32.63$;21$;0$;24$;48
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;1765$;STC lyonskı plochı C 12$;ks$;19.67$;21$;0$;20$;20
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;1308$;Stìrka na okna 25cm   è.4425$;ks$;26.15$;21$;0$;12$;24
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;2176$;Štìtec plochı slabı C2   PH 81215$;ks$;17.85$;21$;0$;10$;10
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;1403$;Váleèek molitan náhrada 10cm$;ks$;5.13$;21$;0$;10$;200
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;1650$;Vìdro PVC 10l Spokar s mìrkou a vılevkou$;ks$;46.03$;21$;0$;10$;20
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;1176$;WC kartáè toèenı 1023 PH$;ks$;30.30$;21$;0$;10$;10
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;1303$;WC souprava 4322 bílá prumìr 85mm$;ks$;40.01$;21$;0$;30$;60
+00031$;737798$;00002$;Kartacovny a.s. Pelhrimov$;4943$;Zubní kartáèek Spokar 3428 Plus M$;ks$;27.06$;21$;0$;12$;12
+00032$;737798$;00237$;Ecolab Hygiene s.r.o.$;0288$;Prášek Eltra 6kg$;ks$;618.80$;21$;0$;0$;8
+00032$;737798$;00237$;Ecolab Hygiene s.r.o.$;1670$;\o\Into Fresh 1l$;ks$;82.63$;21$;0$;12$;12
+00032$;737798$;00237$;Ecolab Hygiene s.r.o.$;2029$;Utìrka mikro Ecolab ECO 5ks èerven.toale$;bal$;156.00$;21$;0$;0$;2
+00032$;737798$;00237$;Ecolab Hygiene s.r.o.$;3426$;Utìrka mikro Ecolab ECO 5ks modrá kancel$;bal$;156.00$;21$;0$;0$;10
+00033$;737798$;00629$;KALVEI, s.r.o.$;2653$;Osvìovaè dávkovaè TimeMist Vanil.NN 270$;ks$;105.30$;21$;0$;12$;12
+00034$;737798$;00449$;Canis Safety a.s.$;0431$;Rukavice komfort Tern/ Zoro è.10     /12$;pár$;18.00$;21$;0$;120$;120
+00034$;737798$;00449$;Canis Safety a.s.$;3134$;Rukavice kùe kom.Magpie LZ/Falco è.10$;pár$;25.20$;21$;0$;60$;120
+00034$;737798$;00449$;Canis Safety a.s.$;4075$;Rukavice Technik *** èervené è.10$;par$;37.80$;21$;0$;12$;60
+00035$;737798$;00910$;SVING s.r.o.$;1075$;Pøíbor nerez polévková líce Miláno$;ks$;6.40$;21$;0$;12$;120
+00035$;737798$;00910$;SVING s.r.o.$;1680$;Pøíbor nerez kávová lièka Miláno$;ks$;4.20$;21$;0$;12$;84
+00035$;737798$;00910$;SVING s.r.o.$;1074$;Pøíbor nerez nù Miláno$;ks$;10.60$;21$;0$;12$;60
+00035$;737798$;00910$;SVING s.r.o.$;1076$;Pøíbor nerez vidlièka Miláno$;ks$;6.40$;21$;0$;12$;60

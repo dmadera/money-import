@@ -95,7 +95,7 @@ namespace SDataObjs {
                     artikl.Katalog = regexLom.Match(nazevZbozi).Value.Replace(@"\", "").ToUpper();
                     nazevZbozi = regexLom.Replace(nazevZbozi, "").FirstCharToUpper();
                 } else if(regexObal.IsMatch(nazevZbozi)) {
-                    groupKod = "OBA";
+                    groupKod = "OBAL";
                     druhZboziKod = "OBA";
                     nazevZbozi = nazevZbozi.Replace("|", "").Trim().FirstCharToUpper();
                     artikl.NepodlehatSleveDokladu = "True";
@@ -103,7 +103,7 @@ namespace SDataObjs {
                     groupKod = "ZRUS";
                     nazevZbozi = nazevZbozi.Replace("|", "").Trim().FirstCharToUpper();
                     int aktualniRok = new DateTime().Year;
-                    var rokOdstranStr = nazevZbozi.Substring(0, 2);
+                    var rokOdstranStr = "20" + nazevZbozi.Substring(0, 2);
                     int rokOdstran = int.TryParse(rokOdstranStr, out int result) ? int.Parse(rokOdstranStr) : aktualniRok;
                     if(rokOdstran < aktualniRok) continue;
                 }
@@ -202,7 +202,8 @@ namespace SDataObjs {
                 } else {
                     // zbozi uvedene v priloze c. 5 - odpad a srot od roku 2012 (HADR 10kg)
                     artikl.PreneseniDane = new S5DataArtiklPreneseniDane() {
-                        Kod = "5"
+                        Kod = "5",
+                        PlatnostDo = new DateTime(9998, 12, 31)
                     };
                 }
 

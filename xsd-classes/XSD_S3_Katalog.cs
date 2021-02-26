@@ -198,7 +198,11 @@ namespace S3_Katalog {
         
         private string pripojitParametryKVarianteField;
         
+        private string priznaky_UserDataField;
+        
         private string prodejniJednotka_IDField;
+        
+        private string prodJednotkaMnozstvi_UserDataField;
         
         private string puvodemMajetekField;
         
@@ -1138,12 +1142,34 @@ namespace S3_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Priznaky_UserData {
+            get {
+                return this.priznaky_UserDataField;
+            }
+            set {
+                this.priznaky_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string ProdejniJednotka_ID {
             get {
                 return this.prodejniJednotka_IDField;
             }
             set {
                 this.prodejniJednotka_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string ProdJednotkaMnozstvi_UserData {
+            get {
+                return this.prodJednotkaMnozstvi_UserDataField;
+            }
+            set {
+                this.prodJednotkaMnozstvi_UserDataField = value;
             }
         }
         
@@ -10914,6 +10940,8 @@ namespace S3_Katalog {
         
         private string kodField;
         
+        private System.DateTime platnostDoField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -10933,6 +10961,17 @@ namespace S3_Katalog {
             }
             set {
                 this.kodField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public System.DateTime PlatnostDo {
+            get {
+                return this.platnostDoField;
+            }
+            set {
+                this.platnostDoField = value;
             }
         }
         

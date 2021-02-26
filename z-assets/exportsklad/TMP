@@ -1,0 +1,79 @@
+.pl 16959
+CisloVydejky;DatumVydeje;CisloOdberatele;NazevOdberatele;Celkem0;Celkem5;Celkem23;Zisk;Prebirajici;Upozorneni;Obsluha;CisloObjednavkyD
+--DATA--
+00001$;737794$;07526$;DENSO MANUFACTURING CZECH s.r.o.$;6902.28$;0.00$;0.00$;2282.28$;Pomezn† 488 100 174$; $;¶ateükov† MarkÇta$; 
+00002$;737794$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;184.76$;44.26$; $; $;Hvÿzdov† Ê†rka$; 
+00003$;737794$;03756$;DÿtskÏ domov a Ákoln° j°delna$;0.00$;0.00$;666.18$;140.32$;Monika DolejÁ°$; $;¶ateükov† MarkÇta$; 
+00004$;737795$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;331.94$;92.38$; $; $;Hvÿzdov† Ê†rka$; 
+00005$;737795$;01534$;¨ipro ¶B, v.o.s.$;0.00$;0.00$;13490.00$;1989.26$;Z†kouckÏ$; $;Hvÿzdov† Ê†rka$; 
+00006$;737796$;10641$;SPORT Jablonec nad Nisou,s.r.o.$;0.00$;0.00$;1895.82$;367.15$;Dobi†Áov†$; $;Labaj Martin$; 
+00007$;737797$;01509$;Severoüesk† servisn° a.s.        LB$;0.00$;0.00$;7323.14$;2090.53$;Reinerov† Petra$; $;¶ateükov† MarkÇta$;SMJE2100011
+00008$;737797$;01509$;Severoüesk† servisn° a.s.        LB$;0.00$;0.00$;57727.17$;15634.99$;Reinerov† Petra$; $;¶ateükov† MarkÇta$;SMJE2100011
+00009$;737797$;08695$;Nemocnice Na Homolce$;0.00$;0.00$;24871.00$;4656.24$;Vladim°r Vop†tek$; $;Hvÿzdov† Ê†rka$; 
+00010$;737798$;03684$;Severoüesk† servisn° a.s.        JB$;0.00$;0.00$;28632.73$;8459.95$;Hajkov†$; $;¶ateükov† MarkÇta$;SMJE2100018
+00011$;737798$;04046$;Statut†rn° mÿsto Pardubice$;0.00$;8.42$;2027.31$;344.11$;Bukaüov†$; $;Labaj Martin$; 
+00012$;737798$;04227$;Miroslav Kuüera$;0.00$;0.00$;1206.55$;139.34$; $; $;Hvÿzdov† Ê†rka$; 
+00013$;737798$;03296$;Blyth s.r.o.$;0.00$;0.00$;8972.64$;1423.44$;Jan Zikmund$; $;Hvÿzdov† Ê†rka$; 
+00014$;737801$;01445$;KNORR-BREMSE SystÇmy pro ußitkov†$;0.00$;0.00$;199.53$;74.53$;Hartmanov†$; $;¶ateükov† MarkÇta$; 
+00015$;737801$;01534$;¨ipro ¶B, v.o.s.$;0.00$;0.00$;174.60$;22.95$;Z†kouckÏ$; $;Hvÿzdov† Ê†rka$; 
+00016$;737802$;01509$;Severoüesk† servisn° a.s.        LB$;0.00$;0.00$;72.01$;19.56$;Reinerov† Petra$; $;¶ateükov† MarkÇta$; 
+00017$;737802$;01509$;Severoüesk† servisn° a.s.        LB$;0.00$;0.00$;4180.41$;1135.49$;Reinerov† Petra$; $;¶ateükov† MarkÇta$; 
+00018$;737802$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;1365.04$;341.22$; $; $;Hvÿzdov† Ê†rka$; 
+00019$;737802$;00421$;Hygotrend, s.r.o.$;0.00$;0.00$;4.17$;0.47$;Eva Malinovsk†$; $;Hvÿzdov† Ê†rka$; 
+00020$;737803$;01509$;Severoüesk† servisn° a.s.        LB$;0.00$;0.00$;8368.11$;2278.91$;Hubnerov†$; $;¶ateükov† MarkÇta$;SMJE2100029
+00021$;737803$;00421$;Hygotrend, s.r.o.$;0.00$;0.00$;236.86$;54.86$;Eva Malinovsk†$; $;¶ateükov† MarkÇta$; 
+00022$;737803$;02873$;Oblastn° nemocnice Mlad† Boleslav$;0.00$;0.00$;27150.00$;3750.00$;Dufkov†,Pa˝°zkov†$; $;Hvÿzdov† Ê†rka$; 
+00023$;737803$;02873$;Oblastn° nemocnice Mlad† Boleslav$;0.00$;0.00$;17899.21$;4561.69$;Dufkov†,Pa˝°zkov†$; $;Hvÿzdov† Ê†rka$; 
+00024$;737805$;04054$;St˝edn° Ákola gastronomie a slußeb,$;0.00$;0.00$;8553.60$;2366.10$;Ko˝°nkov†, Hoz†k$; $;Hvÿzdov† Ê†rka$; 
+00025$;737805$;02117$;OSAPO, s.r.o.$;0.00$;0.00$;62.37$;9.02$;Drbohlav$; $;Hvÿzdov† Ê†rka$; 
+00026$;737808$;12049$;Real-servisis s.r.o.$;0.00$;0.00$;7041.47$;1474.88$;Jaroslav J†ü$; $;ChocholouÁkov† Ivana$; 
+00027$;737808$;03836$;Antolin LIBAN,s.r.o.$;0.00$;0.00$;10048.16$;2463.74$;Eva Svobodov†$; $;¶ateükov† MarkÇta$; 
+00028$;737809$;05229$;LIPA VELKOOBCHOD PAP÷REM s.r.o.$;0.00$;0.00$;482.20$;14.05$;˝idiü$; $;Hvÿzdov† Ê†rka$; 
+00029$;737809$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;1526.64$;360.29$; $; $;Hvÿzdov† Ê†rka$; 
+00030$;737811$;04151$;Komunitn° pr†ce Liberec,o.p.s.$;0.00$;0.00$;185.01$;-0.19$;Uhl°k$; $;Hvÿzdov† Ê†rka$; 
+00031$;737811$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;10572.73$;152.14$; $; $;Hvÿzdov† Ê†rka$; 
+00032$;737811$;03877$;VÿzeÂsk† slußba ¨R STR$;0.00$;0.00$;537.00$;124.00$;Kulisek Zdenÿk$; $;Hvÿzdov† Ê†rka$; 
+00033$;737812$;02720$;Inteva Products Czech Republic$;0.00$;0.00$;1579.70$;343.88$;Pelik†n Pavel$; $;¶ateükov† MarkÇta$; 
+00034$;737812$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;89.70$;26.83$; $; $;Hvÿzdov† Ê†rka$; 
+00035$;737812$;01568$;Nab°dky pro z†kazn°ky$;0.00$;8.97$;31257.68$;304.85$; $; $;Hvÿzdov† Ê†rka$; 
+00036$;737812$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;11039.01$;286.66$; $; $;Hvÿzdov† Ê†rka$; 
+00037$;737812$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;60808.03$;186.20$; $; $;Hvÿzdov† Ê†rka$; 
+00038$;737815$;01568$;Nab°dky pro z†kazn°ky$;0.00$;8.97$;40568.67$;147.64$; $; $;Hvÿzdov† Ê†rka$; 
+00039$;737816$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;85.08$;33.08$; $; $;Hvÿzdov† Ê†rka$; 
+00040$;737816$;00187$;Severoüesk† servisn° a.s.        TU$;0.00$;0.00$;10137.42$;3013.00$;Bl†hov†$; $;¶ateükov† MarkÇta$;SMJC2100067
+00041$;737816$;02676$;Benteler ¨R s.r.o.        CHRASTAVA$;0.00$;0.00$;3983.49$;691.14$;Martin Kunc$; $;Hvÿzdov† Ê†rka$; 
+00042$;737816$;00187$;Severoüesk† servisn° a.s.        TU$;0.00$;0.00$;2246.24$;701.98$;Bl†hov†$; $;¶ateükov† MarkÇta$;SMJC2100066
+00043$;737816$;02117$;OSAPO, s.r.o.$;0.00$;0.00$;14.72$;2.22$;Drbohlav$; $;Hvÿzdov† Ê†rka$; 
+00044$;737816$;07977$;Intertell spol.s r.o.$;0.00$;0.00$;579.70$;137.93$;Êandov†$; $;Hvÿzdov† Ê†rka$; 
+00045$;737817$;01534$;¨ipro ¶B, v.o.s.$;0.00$;0.00$;4200.00$;850.00$;Z†kouckÏ$; $;Hvÿzdov† Ê†rka$; 
+00046$;737817$;07059$;DINO SERVIS$;0.00$;0.00$;691.56$;148.86$;Kulh†nek Petr$; $;Hvÿzdov† Ê†rka$; 
+00047$;737817$;00737$;PEKM Kabeltechnik s.r.o.$;0.00$;0.00$;178.81$;48.43$;Burda$; $;Labaj Martin$; 
+00048$;737818$;02357$;Z†kladn° Ákola,Liberec,$;0.00$;0.00$;42491.71$;11871.29$;Jadrn†,Koü°$; $;¶ateükov† MarkÇta$; 
+00049$;737818$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;20587.72$;144.84$; $; $;Hvÿzdov† Ê†rka$; 
+00050$;737818$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;10625.54$;185.99$; $; $;Hvÿzdov† Ê†rka$; 
+00051$;737818$;01394$;KrajskÇ ˝editelstv° policie ¨R   LB$;0.00$;0.00$;4210.76$;857.36$;Jedin†kov†$; $;Labaj Martin$; 
+00052$;737822$;01118$;Sklostroj Turnov CZ, s.r.o.$;0.00$;0.00$;265.62$;68.31$;Vrbata$; $;Hvÿzdov† Ê†rka$; 
+00053$;737822$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;92.51$;20.03$; $; $;Hvÿzdov† Ê†rka$; 
+00054$;737822$;01509$;Severoüesk† servisn° a.s.        LB$;0.00$;0.00$;5416.80$;2066.80$;Reinerov† Petra$; $;Labaj Martin$; 
+00055$;737823$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;50849.42$;203.72$; $; $;Hvÿzdov† Ê†rka$; 
+00056$;737823$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;17404.45$;1479.76$; $; $;Hvÿzdov† Ê†rka$; 
+00057$;737823$;03266$;KSM Castings CZ s.r.o.$;0.00$;0.00$;2462.20$;787.20$;Svobodov†$; $;ChocholouÁkov† Ivana$; 
+00058$;737824$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;2102.03$;441.22$; $; $;Hvÿzdov† Ê†rka$; 
+00059$;737824$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;42774.27$;634.90$; $; $;Hvÿzdov† Ê†rka$; 
+00060$;737824$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;11217.11$;272.29$; $; $;Hvÿzdov† Ê†rka$; 
+00061$;737824$;02000$;PEMA velkoobchod s.r.o.$;0.00$;0.00$;313.87$;0.00$;Labaj$; $;Labaj Martin$; 
+00063$;737826$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;638.42$;150.96$; $; $;Hvÿzdov† Ê†rka$; 
+00064$;737826$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;33666.20$;5972.70$; $; $;Hvÿzdov† Ê†rka$; 
+00065$;737826$;01100$;STµTN÷ TISKµRNA CENIN,st†tn° podnik$;0.00$;0.00$;2693.71$;795.39$;Kamen°k$; $;Hvÿzdov† Ê†rka$; 
+00066$;737826$;02152$;Laird s.r.o.$;0.00$;0.00$;226.80$;45.00$;Lauerov†$; $;Hvÿzdov† Ê†rka$; 
+00067$;737829$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;1005.00$;250.97$; $; $;Hvÿzdov† Ê†rka$; 
+00068$;737829$;01568$;Nab°dky pro z†kazn°ky$;0.00$;8.97$;33709.80$;882.61$; $; $;Hvÿzdov† Ê†rka$; 
+00069$;737830$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;1010.53$;221.97$; $; $;Hvÿzdov† Ê†rka$; 
+00070$;737830$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;10927.43$;225.13$; $; $;Hvÿzdov† Ê†rka$; 
+00071$;737830$;08695$;Nemocnice Na Homolce$;0.00$;0.00$;33294.00$;4924.80$;Vladim°r Vop†tek$; $;Hvÿzdov† Ê†rka$; 
+00072$;737831$;11832$;4soft,s.r.o.$;0.00$;0.00$;2785.86$;594.21$;Wunscherov†$; $;¶ateükov† MarkÇta$; 
+00062$;737824$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;22417.30$;3733.20$; $; $;Hvÿzdov† Ê†rka$; 
+00073$;737831$;04227$;Miroslav Kuüera$;0.00$;0.00$;758.00$;68.00$; $; $;Hvÿzdov† Ê†rka$; 
+00074$;737831$;01568$;Nab°dky pro z†kazn°ky$;0.00$;0.00$;196.65$;50.72$; $; $;Hvÿzdov† Ê†rka$; 
+00075$;737831$;11832$;4soft,s.r.o.$;0.00$;0.00$;9445.68$;2855.48$;Wunscherov†$; $;Hvÿzdov† Ê†rka$; 
+00076$;737831$;11832$;4soft,s.r.o.$;0.00$;0.00$;5044.63$;1069.43$;Wunscherov†$; $;Hvÿzdov† Ê†rka$; 

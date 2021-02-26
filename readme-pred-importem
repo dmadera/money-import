@@ -1,23 +1,71 @@
+Uživatelské sloupce
+//  Sek_UserData                    Šek	                Text	                            Faktura vydaná
+    KodOdb_UserData	                Kód ODB     	    Text		                        Firma
+    PoznamkaInterni_UserData	    Interní poznámka	Text		                        Firma
+    SlevaUvadena_UserData	        Uváděná sleva	    Desetinné číslo	0.00	            Firma
+    DatumPorizeni_UserData  	    Datum pořízení	    Datum	        2021-01-01T00:00:00 Firma
+    Priznaky_UserData	            Příznaky	        Text		                        Položka katalogu
+    ProdJednotkaMnozstvi_UserData	Bal. množ	        Desetinné číslo	0.00	            Položka katalogu
+    SkladovaPozice_UserData	        Skladová pozice	    Text		                        Položka katalogu
+    Marze_UserData	                Marže	            Desetinné číslo	0.00	            Položka nabídky vydané
+    NakupniCena_UserData	        Nakupní cena	    Částka	        0.00	            Položka nabídky vydané
+    Marze_UserData	                Marže               Desetinné číslo	0.00	            Položka objednávky přijaté
+    NakupniCena_UserData	        Nakupní cena	    Částka	        0.00	            Položka objednávky přijaté
+    Kod_UserData	                Kód	                Text		                        Spojení
+
 Vygeneruj triggery a procedury
+Import exportu a importu
+Import statických seznamů
 
 Sklad
     Kód: HL, Název: Hlavní
-    Výdej do mínusu: Nekontrolovat (pro import)
-    Typ zdroje přebírání: Katalog, Skupina katalogu: Artikly (ART)
+    Způsob oceňování: FIFO
+    Výdej do mínusu: Upozornit
+    Pokles množství k dispozici: Upozornit
+    Typ zdroje přebírání: Katalog
+    Výchozí sklad agendy: ANO
 
-Objednávka přijatá
-    Kód: OP_ESHOP, Název: Objednávka z e-shopu, Doba platnosti: 5 dní, Středisko: ESHOP
+Objednávka přijatá - skupiny
+    Kód: Nezařazeno, Provádět konrolu překročení kreditu: ANO
+    Kód: ESHOP, Název: Objednávka z e-shopu, Doba platnosti: 5 dní, Středisko: ESHOP, Provádět konrolu překročení kreditu: NE
+Objednávka přijatá - obecné
+    Posouvat platnost na následující pracovní den
+    Upozorňovat na nevyřízené položky: Stejné položky všech odběratelů
+    Počítat zisk: true
+    Povolit výchozí výpočet nákladů: Aktuální pořízovací cena zásoby
+    Zakázat uživateli změnu typu výpočtu: true
+
+Nabídky vydané - obecné
+    Počítat zisk: true
+    Povolit výchozí výpočet nákladů: Aktuální pořízovací cena zásoby
+    Zakázat uživateli změnu typu výpočtu: true
+
+Ceník
+    Kód: _PRODEJ, Název: Prodejní
+    Typ výchozí ceny: Nákupní, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -25%
+    Typ zdroje přebírání: Katalog, Skupina katalogu: ART
+    Nastavit jako výchozí: ANO
+    Kód: _SPECIAL, Název: Speciální, // žádné přebírání
+    Kód: _LETAK, Název: Leták, // žádné přebírání
+    Kód: _AKCE, Název: Akce, // žádné přebírání
+    Kód: _NAKUP, Název: Nákupní 
 
 Průvodce nastavení programu
-    Vzhled aplikace/Každý sudý řádek...: 255; 255; 255
-    Vzhled aplikace/Každý sudý řádek...: 240; 248; 255
+    Vzhled aplikace/Každý lichý řáde...: 255; 255; 255
+    Vzhled aplikace/Každý sudý řádek...: (Web/Azure)
     Vzhled aplikace/Zobrazit horizontální posuvník: true
+    Vzhled aplikace/Záložky detailu: nahoře
+
+    Ovládání a chování aplikace: 
+    U nového záznamu nabízet výběr skupiny: false
+    Sumovat položky dokladu až po..: true
 
     Nastavení agendy/Evidovat Intrastat: false
     Nastavení agendy/Evidovat náhradní plnění: true
     Nastavení agendy/Roční limit náhradního plnění: 1200000
 
     Zakladní údaje o firmě/Spisová značka: Společnost je zapsána v Obchodním rejstříku vedeném Krajským soudem v Ústí nad Labem, oddíl C, vložka 2701.
+    Základní údaje o firmě/Předmět činnosti: Velkoobchod s drogistickým zbožím
     Základní údaje o firmě/Logo: vybrat soubor z-assets/logo.png
 
     Ceníky/Kontrolovat minimální zisk při prodeji: true
@@ -34,28 +82,20 @@ Doplnění informace o firmě jednotky
     tel, gsm, email, www, vybrat hlavní kontakt, bankovní spojení
 
 Typy spojení 
-    Smazat- Skype, IM
-
-Ceník
-    Kód: _PRODEJ, Název: Prodejní
-    Typ výchozí ceny: Nákupní, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -25%
-    Typ zdroje přebírání: Katalog, Skupina katalogu: ART
-    Nastavit jako výchozí: ANO
-    Kód: _SPECIAL, Název: Speciální, // žádné přebírání
-    Kód: _LETAK, Název: Leták, // žádné přebírání
+    Smazat- Skype, IM, GSM brána
 
 Firma - skupiny
     Kód: OST, Název: Ostatní odběratelé, Převzít nastavení z nadřazené úrovně: false, Obchod/Způsob dopravy: Osobní odběr, 
         Obchod/Způsob platby: Hotově, Použít kredit: ANO, Hodnota: 0,00, Ceníky: _NÁKUP
     Kód: Nezařazené, Použít kredit: ANO, Hodnota: 0,00, Způsob dopravy: Osobní odběr, Způsob platby: Hotově, 
-         Způsob výpočtu ceny: Výběrem, Splatnost: ANO, 10 dní, Vlastní sleva: ANO, Sleva: 0,00, Ceníky: _SPECIAL, _LETAK, _PRODEJ
+         Způsob výpočtu ceny: Výběrem, Splatnost: ANO, 10 dní, Vlastní sleva: ANO, Sleva: 0,00, Ceníky: _AKCE, _LETAK, _SPECIAL, _PRODEJ
 
 Artikl - skupiny
     Nastavit zobrazení včetně podřízených
-    Kód: Nezařazené, Není určena pro ukládání záznamů: true
-    Kód: ART, Název: Zboží, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu
+    Kód: Nezařazené, Není určena pro ukládání záznamů: true, Číselná řada: zrušit vazbu (pro import)
+    Kód: ART, Název: Zboží, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu 
     Kód: LOM, Název: Zboží pod lomítkem, Převzít nastavení z nadřazené úrovně: ANO, Parent: ART
-    Kód: ZRUS, Název: Zrušeno, Převzít nastavení z nadřazené úrovně: ANO, Parent: ART
+    Kód: ZRUS, Název: Zrušeno, Převzít nastavení z nadřazené úrovně: ANO
     Kód: OBAL, Název: Obaly, Druh položky katalogu: OBA, Číselná řada: zrušit vazbu 
 
 ------------ŠEKY------------

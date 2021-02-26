@@ -38,7 +38,7 @@ namespace SDataObjs {
         public static string GetID(string id, SFile f) {
             switch(f) {
                 case SFile.CPOHYBV: return "FA" + id;
-                case SFile.CPOHYBVP: return "PR" + id;
+                case SFile.CPOHYBVP: return "VP" + id;
                 case SFile.CPOHYBOV: return "OV" + id;     
                 case SFile.CPOHYBZ: return "ZA" + id;
                 case SFile.CPOHYBP: return "PR" + id;
