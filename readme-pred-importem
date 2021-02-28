@@ -1,8 +1,8 @@
 Uživatelské sloupce
 //  Sek_UserData                    Šek	                Text	                            Faktura vydaná
     KodOdb_UserData	                Kód ODB     	    Text		                        Firma
-    PoznamkaInterni_UserData	    Interní poznámka	Text		                        Firma
-    SlevaUvadena_UserData	        Uváděná sleva	    Desetinné číslo	0.00	            Firma
+    PoznamkaInterni_UserData	    Poznámka interní	Text		                        Firma
+    SlevaUvadena_UserData	        Sleva uváděná	    Desetinné číslo	0.00	            Firma
     DatumPorizeni_UserData  	    Datum pořízení	    Datum	        2021-01-01T00:00:00 Firma
     Priznaky_UserData	            Příznaky	        Text		                        Položka katalogu
     ProdJednotkaMnozstvi_UserData	Bal. množ	        Desetinné číslo	0.00	            Položka katalogu
@@ -27,7 +27,7 @@ Sklad
 
 Objednávka přijatá - skupiny
     Kód: Nezařazeno, Provádět konrolu překročení kreditu: ANO
-    Kód: ESHOP, Název: Objednávka z e-shopu, Doba platnosti: 5 dní, Středisko: ESHOP, Provádět konrolu překročení kreditu: NE
+    Kód: ESHOP, Název: Objednávky z e-shopu, Doba platnosti: 5 dní, Středisko: ESHOP, Provádět konrolu překročení kreditu: NE
 Objednávka přijatá - obecné
     Posouvat platnost na následující pracovní den
     Upozorňovat na nevyřízené položky: Stejné položky všech odběratelů
@@ -40,15 +40,26 @@ Nabídky vydané - obecné
     Povolit výchozí výpočet nákladů: Aktuální pořízovací cena zásoby
     Zakázat uživateli změnu typu výpočtu: true
 
+Artikl - skupiny
+    Nastavit zobrazení včetně podřízených
+    Kód: Nezařazené, Není určena pro ukládání záznamů: true, Číselná řada: zrušit vazbu (pro import)
+    Kód: ART, Název: Zboží, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu 
+    Kód: LOM, Název: Zboží pod lomítkem, Převzít nastavení z nadřazené úrovně: ANO, Parent: ART
+    Kód: ZRUS, Název: Zrušeno, Převzít nastavení z nadřazené úrovně: ANO
+    Kód: OBAL, Název: Obaly, Druh položky katalogu: OBA, Číselná řada: zrušit vazbu 
+
 Ceník
     Kód: _PRODEJ, Název: Prodejní
-    Typ výchozí ceny: Nákupní, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -25%
-    Typ zdroje přebírání: Katalog, Skupina katalogu: ART
-    Nastavit jako výchozí: ANO
-    Kód: _SPECIAL, Název: Speciální, // žádné přebírání
-    Kód: _LETAK, Název: Leták, // žádné přebírání
+        Typ výchozí ceny: Nákupní, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -25%
+        Typ zdroje přebírání: Katalog, Skupina katalogu: ART
+        Nastavit jako výchozí: ANO
+    Kód: _NAKUP, Název: Nákupní
+        Typ výchozí ceny: Nákupní, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -25%
+        Typ zdroje přebírání: Katalog, Skupina katalogu: ART
     Kód: _AKCE, Název: Akce, // žádné přebírání
-    Kód: _NAKUP, Název: Nákupní 
+    Kód: _LETAK, Název: Leták, // žádné přebírání
+    Kód: _SPECIAL, Název: Speciální, // žádné přebírání
+    
 
 Průvodce nastavení programu
     Vzhled aplikace/Každý lichý řáde...: 255; 255; 255
@@ -89,14 +100,6 @@ Firma - skupiny
         Obchod/Způsob platby: Hotově, Použít kredit: ANO, Hodnota: 0,00, Ceníky: _NÁKUP
     Kód: Nezařazené, Použít kredit: ANO, Hodnota: 0,00, Způsob dopravy: Osobní odběr, Způsob platby: Hotově, 
          Způsob výpočtu ceny: Výběrem, Splatnost: ANO, 10 dní, Vlastní sleva: ANO, Sleva: 0,00, Ceníky: _AKCE, _LETAK, _SPECIAL, _PRODEJ
-
-Artikl - skupiny
-    Nastavit zobrazení včetně podřízených
-    Kód: Nezařazené, Není určena pro ukládání záznamů: true, Číselná řada: zrušit vazbu (pro import)
-    Kód: ART, Název: Zboží, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu 
-    Kód: LOM, Název: Zboží pod lomítkem, Převzít nastavení z nadřazené úrovně: ANO, Parent: ART
-    Kód: ZRUS, Název: Zrušeno, Převzít nastavení z nadřazené úrovně: ANO
-    Kód: OBAL, Název: Obaly, Druh položky katalogu: OBA, Číselná řada: zrušit vazbu 
 
 ------------ŠEKY------------
 

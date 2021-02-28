@@ -13,11 +13,11 @@ namespace SDataObjs {
 
         public S6_SklDokl(string dir, Encoding enc) {
             convertKartyInv(new SkladDataFile(dir, SFile.KARTYINV, enc));
-            convertPohybV(new SkladDataFile(dir, SFile.CPOHYBVP, enc), new SkladDataFile(dir, SFile.POHYBVP, enc));
-            convertPohybV(new SkladDataFile(dir, SFile.CPOHYBV, enc), new SkladDataFile(dir, SFile.POHYBV, enc));
-            convertPohybV(new SkladDataFile(dir, SFile.CPOHYBZ, enc), new SkladDataFile(dir, SFile.POHYBZ, enc));
-            convertPohybV(new SkladDataFile(dir, SFile.CPOHYBOV, enc), new SkladDataFile(dir, SFile.POHYBOV, enc));
             convertPohybP(new SkladDataFile(dir, SFile.CPOHYBP, enc), new SkladDataFile(dir, SFile.POHYBP, enc));
+            convertPohybV(new SkladDataFile(dir, SFile.CPOHYBV, enc), new SkladDataFile(dir, SFile.POHYBV, enc));
+            convertPohybV(new SkladDataFile(dir, SFile.CPOHYBVP, enc), new SkladDataFile(dir, SFile.POHYBVP, enc));
+            convertPohybV(new SkladDataFile(dir, SFile.CPOHYBZ, enc), new SkladDataFile(dir, SFile.POHYBZ, enc));
+            convertPohybV(new SkladDataFile(dir, SFile.CPOHYBOV, enc), new SkladDataFile(dir, SFile.POHYBOV, enc));            
         }
 
         public override S5Data GetS5Data() {
@@ -106,8 +106,12 @@ namespace SDataObjs {
                 var pol = new S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu();
                 pol.CisloPolozky = (++cisloPolozky).ToString();
                 pol.Mnozstvi = data["Vydano"].GetNum();
+                if (pol.Mnozstvi.StartsWith("-")) {
+                    pol.Mnozstvi = pol.Mnozstvi.Replace("-","");
+                    pol.Vratka = "True";
+                }
                 pol.Nazev = data["NazevZbozi"].GetText();
-                pol.JednCena = data["ProdCena"].GetDecimal();
+                pol.JednCena = data["ProdCena"].GetDecimal().Replace("-","");
                 pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };
                 pol.SazbaDPH_ID = S0_IDs.GetSazbaDPHID(data["SazbaD"].GetNum());
                 pol.Vyrizeno = "True";
@@ -149,6 +153,10 @@ namespace SDataObjs {
                 var pol = new S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu();
                 pol.CisloPolozky = (++cisloPolozky).ToString();
                 pol.Mnozstvi = data["PocetInv"].GetNum();
+                if (pol.Mnozstvi.StartsWith("-")) {
+                    pol.Mnozstvi = pol.Mnozstvi.Replace("-","");
+                    pol.Vratka = "True";
+                }
                 pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };
                 pol.ObsahPolozky = new S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuObsahPolozky() {
                     Artikl_ID = artiklID,
@@ -209,10 +217,13 @@ namespace SDataObjs {
                 var pol = new S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu();
                 pol.CisloPolozky = (++cisloPolozky).ToString();
                 pol.Mnozstvi = data["Prijato"].GetNum();
+                if (pol.Mnozstvi.StartsWith("-")) {
+                    pol.Mnozstvi = pol.Mnozstvi.Replace("-","");
+                    pol.Vratka = "True";
+                }
                 pol.Nazev = data["NazevZbozi"].GetText();
-                pol.JednotkovaPorizovaciCena = data["NakupCena"].GetDecimal();
+                pol.JednotkovaPorizovaciCena = data["NakupCena"].GetDecimal().Replace("-","");
                 pol.TypCeny = new enum_TypCeny() { Value = enum_TypCeny_value.Item0 };
-                if (pol.Mnozstvi.StartsWith("-")) pol.JednotkovaPorizovaciCena = "0";
                 pol.SazbaDPH_ID = S0_IDs.GetSazbaDPHID(data["SazbaD"].GetNum());
                 pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };
                 pol.Vyrizeno = "True";

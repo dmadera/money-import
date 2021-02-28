@@ -41,7 +41,7 @@ namespace SkladData {
         }
 
         public string GetNazevZbozi() {
-            return (_items["NazevZbozi"].GetText() + " " + _items["NazevZbozi2"].GetText()).TrimEnd();
+            return _items["NazevZbozi"].GetText();
         }
 
         public string GetIco() {

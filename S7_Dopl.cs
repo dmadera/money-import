@@ -53,6 +53,8 @@ namespace SDataObjs {
                 var firma = new S5DataFirma() { };
                 firma.ID = S0_IDs.GetFirmaID(kod);
 
+                if(firma.ID == null) continue;
+
                 string zastoupenyID = S0_IDs.GetOsobaID(GetKodZastoupeny(kod));
                 string tel1ID = S0_IDs.GetSpojeniID(GetKodTelefon(kod));
                 string email1ID = S0_IDs.GetSpojeniID(GetKodEmail1(kod));
@@ -147,6 +149,8 @@ namespace SDataObjs {
                 var firma = new S5DataFirma() { };
                 firma.ID = S0_IDs.GetFirmaID(kod);
 
+                if(firma.ID == null) continue;
+
                 string zastoupenyID = S0_IDs.GetOsobaID(GetKodZastoupeny(kod));
                 string zastoupenyOZID = S0_IDs.GetOsobaID(GetKodZastoupenyOZ(kod));
                 string tel1ID = S0_IDs.GetSpojeniID(GetKodTelefon(kod));
@@ -204,6 +208,9 @@ namespace SDataObjs {
                 string kod = S3_Katalog.GetID(d["CisloKarty"].GetNum());
                 var artikl = new S5DataArtikl() {};
                 artikl.ID = S0_IDs.GetArtiklID(kod);
+                
+                if(artikl.ID == null) continue;
+
                 var kodDodavatele = S3_Adresar.GetDodID(d["CisloDodavatele"].GetNum());
                 artikl.HlavniDodavatel_ID = S0_IDs.GetArtiklDodavatelID(artikl.ID, S0_IDs.GetFirmaID(kodDodavatele));
                 var mernaJednotka = d["MernaJednotka"].GetNoSpaces().RemoveDiacritics().ToLower();

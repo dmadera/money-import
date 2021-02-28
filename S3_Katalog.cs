@@ -83,6 +83,7 @@ namespace SDataObjs {
                     Kod = GetID(d["CisloKarty"].GetNum()),
                     PosledniCena = d["NakupCena"].GetDecimal(),
                     SkladovaPozice_UserData = d["Pozice"].GetAlfaNum().ToUpper(), 
+                    Poznamka = d["NazevZbozi2"].GetText()
                 };
 
                 var groupKod = "ART";
