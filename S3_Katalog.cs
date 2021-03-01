@@ -103,7 +103,7 @@ namespace SDataObjs {
                 } else if(regexZrus.IsMatch(nazevZbozi)) {
                     groupKod = "ZRUS";
                     nazevZbozi = nazevZbozi.Replace("|", "").Trim().FirstCharToUpper();
-                    int aktualniRok = new DateTime().Year;
+                    int aktualniRok = DateTime.Now.Year;
                     var rokOdstranStr = "20" + nazevZbozi.Substring(0, 2);
                     int rokOdstran = int.TryParse(rokOdstranStr, out int result) ? int.Parse(rokOdstranStr) : aktualniRok;
                     if(rokOdstran < aktualniRok) continue;
