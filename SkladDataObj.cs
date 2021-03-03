@@ -100,13 +100,18 @@ namespace SkladData {
             }
         }
 
-        public string GetCelkem() {
+        public float GetCelkemFloat() {
             float celkem = _items["Celkem0"].GetFloat() + _items["Celkem5"].GetFloat() + _items["Celkem23"].GetFloat();
+            return celkem;
+        }
+
+        public string GetCelkem() {
+            float celkem = GetCelkemFloat();
             return celkem.ToString().Replace(".", ",");
         }
 
         public string GetProcentniZisk() {
-            float celkem = _items["Celkem0"].GetFloat() + _items["Celkem5"].GetFloat() + _items["Celkem23"].GetFloat();
+            float celkem = GetCelkemFloat();
             float ziskZaDoklad = _items["Zisk"].GetFloat();
             float procentniZisk = 100/celkem*ziskZaDoklad;
             return procentniZisk.ToString().Replace(".", ",");

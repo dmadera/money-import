@@ -10,6 +10,8 @@ namespace SDataObjs {
     class S6_SklDokl : S0_Generic<S5Data> {
 
         private List<S5DataSkladovyDoklad> _doklady = new List<S5DataSkladovyDoklad>();
+        private enum_TypDokladu prijemka = new enum_TypDokladu() { Value = enum_TypDokladu_value.Item1 };
+        private enum_TypDokladu vydejka = new enum_TypDokladu() { Value = enum_TypDokladu_value.Item2 };
 
         public S6_SklDokl(string dir, Encoding enc) {
             convertKartyInv(new SkladDataFile(dir, SFile.KARTYINV, enc));
@@ -76,7 +78,10 @@ namespace SDataObjs {
                 doc.ProcentniZisk = header.GetProcentniZisk();
                 string firmaID = S0_IDs.GetFirmaID(S3_Adresar.GetOdbID(header.Items["CisloOdberatele"].GetNum()));
                 doc.Firma_ID = doc.FakturacniAdresaFirma_ID = doc.PrijemceFaktury_ID = firmaID;
-                doc.TypDokladu = new enum_TypDokladu() { Value = enum_TypDokladu_value.Item2 };
+                
+                doc.TypDokladu = vydejka;
+                if(header.GetCelkemFloat() < 0) doc.TypDokladu = prijemka;
+                
                 _doklady.Add(doc);
             }
 
@@ -84,10 +89,15 @@ namespace SDataObjs {
             int cisloPolozky = 0;
             string prevId = "", artiklID, skladID, katalog;
             var polozky = new List<S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu>();
+            enum_TypDokladu typDokladu = vydejka;
+            S5DataSkladovyDoklad skladovyDoklad = null;
+
             foreach (var row in rows.Data) {
                 var data = row.Items;
                 id = GetID(data["CisloVydejky"].GetNum(), headers.Soubor);
                 katalog = S3_Katalog.GetID(data["CisloKarty"].GetNum());
+                skladovyDoklad = find(id);
+                typDokladu = skladovyDoklad != null ? skladovyDoklad.TypDokladu : vydejka;
 
                 if (prevId != id) {
                     if (prevId != "") {
@@ -105,13 +115,16 @@ namespace SDataObjs {
 
                 var pol = new S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu();
                 pol.CisloPolozky = (++cisloPolozky).ToString();
+                
+                pol.Vratka = "False";
                 pol.Mnozstvi = data["Vydano"].GetNum();
-                if (pol.Mnozstvi.StartsWith("-")) {
-                    pol.Mnozstvi = pol.Mnozstvi.Replace("-","");
-                    pol.Vratka = "True";
-                }
+                if (typDokladu.Value == vydejka.Value && pol.Mnozstvi.StartsWith("-")) pol.Vratka = "True";
+                if (typDokladu.Value == prijemka.Value && !pol.Mnozstvi.StartsWith("-")) pol.Vratka = "True";
+                pol.Mnozstvi = pol.Mnozstvi.Replace("-", "");
+
                 pol.Nazev = data["NazevZbozi"].GetText();
                 pol.JednCena = data["ProdCena"].GetDecimal().Replace("-","");
+                pol.TypCeny = new enum_TypCeny() { Value = enum_TypCeny_value.Item0 };
                 pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };
                 pol.SazbaDPH_ID = S0_IDs.GetSazbaDPHID(data["SazbaD"].GetNum());
                 pol.Vyrizeno = "True";
@@ -132,11 +145,14 @@ namespace SDataObjs {
             var firstDay = new DateTime(DateTime.Now.Year, 1, 1);
 
             var doc = new S5DataSkladovyDoklad();
+            doc.Adresa = new S5DataSkladovyDokladAdresa() {
+                Nazev = "Invetura zásob"
+            };
             doc.Nazev = GetNazev("00000", karty.Soubor);
             doc.ParovaciSymbol = GetID("00000", karty.Soubor);
             doc.DatumSkladovehoPohybu = doc.DatumZauctovani = doc.DatumSchvaleni = doc.DatumVystaveni = firstDay;
             doc.DatumSkladovehoPohybuSpecified = doc.DatumZauctovaniSpecified = doc.DatumSchvaleniSpecified = doc.DatumVystaveniSpecified = true;
-            doc.Schvaleno = doc.Vyrizeno = "True";
+            doc.Schvaleno = "True";
             doc.TypDokladu = new enum_TypDokladu() { Value = enum_TypDokladu_value.Item1 };
             int cisloPolozky = 0;
             var polozky = new List<S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu>();
@@ -162,6 +178,7 @@ namespace SDataObjs {
                     Artikl_ID = artiklID,
                     Sklad_ID = skladID
                 };
+                pol.Vyrizeno = "True";
                 polozky.Add(pol);
             }
 
@@ -185,8 +202,10 @@ namespace SDataObjs {
                 doc.Poznamka = data["Upozorneni"].GetText() + XmlEnv.NewLine + XmlEnv.NewLine + header.ToString();
                 string firmaID = S0_IDs.GetFirmaID(S3_Adresar.GetDodID(header.Items["CisloDodavatele"].GetNum()));
                 doc.Firma_ID = doc.FakturacniAdresaFirma_ID = doc.PrijemceFaktury_ID = firmaID;
-                doc.Vyrizeno = "True";
-                doc.TypDokladu = new enum_TypDokladu() { Value = enum_TypDokladu_value.Item1 };
+                
+                doc.TypDokladu = prijemka;
+                if(header.GetCelkemFloat() < 0) doc.TypDokladu = vydejka;
+                
                 doc.Polozky = new S5DataSkladovyDokladPolozky();
                 _doklady.Add(doc);
             }
@@ -195,10 +214,15 @@ namespace SDataObjs {
             string prevId = "", artiklID, skladID, katalog;
             Console.WriteLine("Zpracovávám " + rows.Soubor.ToString());
             List<S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu> polozky = null;
+            enum_TypDokladu typDokladu = prijemka;
+            S5DataSkladovyDoklad skladovyDoklad = null;
+
             foreach (var row in rows.Data) {
                 var data = row.Items;
                 id = GetID(data["CisloPrijemky"].GetNum(), headers.Soubor);
                 katalog = S3_Katalog.GetID(data["CisloKarty"].GetNum());
+                skladovyDoklad = find(id);
+                typDokladu = skladovyDoklad != null ? skladovyDoklad.TypDokladu : prijemka;
 
                 if (prevId != id) {
                     if (prevId != "") {
@@ -216,13 +240,16 @@ namespace SDataObjs {
 
                 var pol = new S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu();
                 pol.CisloPolozky = (++cisloPolozky).ToString();
+
+                pol.Vratka = "False";
                 pol.Mnozstvi = data["Prijato"].GetNum();
-                if (pol.Mnozstvi.StartsWith("-")) {
-                    pol.Mnozstvi = pol.Mnozstvi.Replace("-","");
-                    pol.Vratka = "True";
-                }
+                if (typDokladu.Value == prijemka.Value && pol.Mnozstvi.StartsWith("-")) pol.Vratka = "True";
+                if (typDokladu.Value == vydejka.Value && !pol.Mnozstvi.StartsWith("-")) pol.Vratka = "True";
+                pol.Mnozstvi = pol.Mnozstvi.Replace("-", "");
+
                 pol.Nazev = data["NazevZbozi"].GetText();
-                pol.JednotkovaPorizovaciCena = data["NakupCena"].GetDecimal().Replace("-","");
+                pol.JednCena = data["NakupCena"].GetDecimal().Replace("-","");
+                pol.JednotkovaPorizovaciCena = pol.JednCena;
                 pol.TypCeny = new enum_TypCeny() { Value = enum_TypCeny_value.Item0 };
                 pol.SazbaDPH_ID = S0_IDs.GetSazbaDPHID(data["SazbaD"].GetNum());
                 pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };
@@ -238,9 +265,7 @@ namespace SDataObjs {
         }
         
         private void addRows(List<S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu> items, string id) {
-            var found = _doklady.Find(delegate (S5DataSkladovyDoklad doc) {
-                return doc.ParovaciSymbol == id;
-            });
+            var found = find(id);
             if (found == null) {
                 Console.WriteLine(string.Format("Nebyla nalezena hlavička k dokladu {0} v {1}.", id, this.GetType().Name));
                 return;
@@ -248,6 +273,12 @@ namespace SDataObjs {
             found.Polozky = new S5DataSkladovyDokladPolozky() {
                 PolozkaSkladovehoDokladu = items.ToArray()
             };
+        }
+
+        private S5DataSkladovyDoklad find(string id) {
+            return _doklady.Find(delegate (S5DataSkladovyDoklad doc) {
+                return doc.ParovaciSymbol == id;
+            });
         }
 
         
