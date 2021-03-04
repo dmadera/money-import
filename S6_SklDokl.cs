@@ -150,10 +150,11 @@ namespace SDataObjs {
             };
             doc.Nazev = GetNazev("00000", karty.Soubor);
             doc.ParovaciSymbol = GetID("00000", karty.Soubor);
+            doc.Poznamka = "Inventura zásob, množství, kde bylo na 0, nastaveno na 1. K narovnání došlo dalším výdejem.";
             doc.DatumSkladovehoPohybu = doc.DatumZauctovani = doc.DatumSchvaleni = doc.DatumVystaveni = firstDay;
             doc.DatumSkladovehoPohybuSpecified = doc.DatumZauctovaniSpecified = doc.DatumSchvaleniSpecified = doc.DatumVystaveniSpecified = true;
             doc.Schvaleno = "True";
-            doc.TypDokladu = new enum_TypDokladu() { Value = enum_TypDokladu_value.Item1 };
+            doc.TypDokladu = prijemka;
             int cisloPolozky = 0;
             var polozky = new List<S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu>();
             string artiklID, skladID, katalog;
@@ -173,6 +174,54 @@ namespace SDataObjs {
                     pol.Mnozstvi = pol.Mnozstvi.Replace("-","");
                     pol.Vratka = "True";
                 }
+
+                if(pol.Mnozstvi == "0") pol.Mnozstvi = "1";
+                pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };
+                pol.ObsahPolozky = new S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuObsahPolozky() {
+                    Artikl_ID = artiklID,
+                    Sklad_ID = skladID
+                };
+                pol.Vyrizeno = "True";
+                polozky.Add(pol);
+            }
+
+            doc.Polozky = new S5DataSkladovyDokladPolozky() {
+                PolozkaSkladovehoDokladu = polozky.ToArray()
+            };
+
+            _doklady.Add(doc);
+
+            // narovnani inventury, kde bylo k mnozstvi 0 prictena 1
+            // aby byla evidence o porizovacich cenach v money
+            doc = new S5DataSkladovyDoklad();
+            doc.Adresa = new S5DataSkladovyDokladAdresa() {
+                Nazev = "Invetura zásob - narovnání"
+            };
+            doc.Nazev = GetNazev("0000N", karty.Soubor);
+            doc.ParovaciSymbol = GetID("0000N", karty.Soubor);
+            doc.DatumSkladovehoPohybu = doc.DatumZauctovani = doc.DatumSchvaleni = doc.DatumVystaveni = firstDay;
+            doc.DatumSkladovehoPohybuSpecified = doc.DatumZauctovaniSpecified = doc.DatumSchvaleniSpecified = doc.DatumVystaveniSpecified = true;
+            doc.Schvaleno = "True";
+            doc.TypDokladu = vydejka;
+            cisloPolozky = 0;
+            polozky = new List<S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu>();
+            
+            foreach (var row in karty.Data) {
+                var data = row.Items;
+
+                katalog = S3_Katalog.GetID(data["CisloKarty"].GetNum());
+                artiklID = S0_IDs.GetArtiklID(katalog);
+                skladID = S0_IDs.GetSkladID("HL");
+
+                if (artiklID == null) continue;
+
+                var pol = new S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu();
+                pol.CisloPolozky = (++cisloPolozky).ToString();
+                pol.Mnozstvi = data["PocetInv"].GetNum().Replace("-","");
+                
+                if(pol.Mnozstvi == "0") pol.Mnozstvi = "1";
+                else continue;
+
                 pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };
                 pol.ObsahPolozky = new S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuObsahPolozky() {
                     Artikl_ID = artiklID,

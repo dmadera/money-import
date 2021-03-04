@@ -7,9 +7,8 @@ Filtry
 
 Aktualizovat data podle triggrů. Provést update all na Katalog. 
 Nastavit číselnou řadu KATALOG ve skupině ART (Artikl) a Obaly.
+Provést výpočet pořizovacích nákladů zásob - v menu skladové operace + synchronizace cen.
 Nastavit kontrolu minimálního zisku. 
-Nastavit hierarchii ceniku - Specialni, Letak, Zakladni
-Bude se muset založit nový sklad s vlastností nepovolit výdej do mínusu a přesunout zásoby do něj. Původní sklad smazat a přejmenovat nový sklad na Hlavní (HL).
 Skrýt nepotřebné jednotky pro agendu - aplikovat filtr pouze na jednotky logistické.
 Označit všechny artikly - menu - Hromadné operace - Hromadné operace s dodavatelem - Aktualizace hlavního dodavatele podle posledních příjmů
 Smazat nepoužívatné hodnoty v seznamech - Typy spojení, Způsob dopravy (smazat - D), Způsob platby (smazat - I,P,S,Z)

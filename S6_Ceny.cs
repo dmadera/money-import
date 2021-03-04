@@ -51,12 +51,18 @@ namespace SDataObjs {
                 k.Cenik_ID = S0_IDs.GetCeniktID("_PRODEJ");
                 k.Kod = "PPPP" + d["CisloKarty"].GetNum();
                 k.Artikl_ID = S0_IDs.GetArtiklID(S3_Katalog.GetID(d["CisloKarty"].GetNum()));
+                if(k.Artikl_ID == null) continue;
+
                 k.Sklad_ID = skladID;
                 k.ZmenaVProcentech = "True";
                 k.CanGetDataFromGroup = "False";
                 k.VychoziCena = new S5DataPolozkaCenikuVychoziCena() {
-                    TypCeny = new enum_TypVychoziCeny() { Value = enum_TypVychoziCeny_value.Item1 },
+                    TypCeny = new enum_TypVychoziCeny() { Value = enum_TypVychoziCeny_value.Item2 },
+                    Sklad = new S5DataPolozkaCenikuVychoziCenaSklad() {
+                        ID = skladID
+                    }
                 };
+                k.Sklad_ID = skladID;
                 k.VypocetCeny = new S5DataPolozkaCenikuVypocetCeny() {
                     VyseZmeny = d["Rabat"].GetDecimalNegative(),
                     ZpusobVypoctu = new enum_ZpusobVypoctuCeny() { Value = enum_ZpusobVypoctuCeny_value.Item1 }
@@ -70,14 +76,20 @@ namespace SDataObjs {
                 k.Cenik_ID = S0_IDs.GetCeniktID("_NAKUP");
                 k.Kod = "NNNN" + d["CisloKarty"].GetNum();
                 k.Artikl_ID = S0_IDs.GetArtiklID(S3_Katalog.GetID(d["CisloKarty"].GetNum()));
+                if(k.Artikl_ID == null) continue;
+                
                 k.Sklad_ID = skladID;
                 k.ZmenaVProcentech = "True";
                 k.CanGetDataFromGroup = "False";
                 k.VychoziCena = new S5DataPolozkaCenikuVychoziCena() {
-                    TypCeny = new enum_TypVychoziCeny() { Value = enum_TypVychoziCeny_value.Item1 },
+                    TypCeny = new enum_TypVychoziCeny() { Value = enum_TypVychoziCeny_value.Item2 },
+                    Sklad = new S5DataPolozkaCenikuVychoziCenaSklad() {
+                        ID = skladID
+                    }
                 };
+                k.Sklad_ID = skladID;
                 k.VypocetCeny = new S5DataPolozkaCenikuVypocetCeny() {
-                    VyseZmeny = d["Rabat"].GetDecimalNegative(),
+                    VyseZmeny = "0",
                     ZpusobVypoctu = new enum_ZpusobVypoctuCeny() { Value = enum_ZpusobVypoctuCeny_value.Item1 }
                 };
                 _ceny.Add(k);
@@ -165,6 +177,8 @@ namespace SDataObjs {
                 };
                 c.Kod = d["CisloSkup"].GetNum() + d["CisloKarty"].GetNum();
                 c.Artikl_ID = S0_IDs.GetArtiklID(S3_Katalog.GetID(d["CisloKarty"].GetNum()));
+                if(c.Artikl_ID == null) continue;
+
                 c.Sklad_ID = skladID;
                 c.Cena = d["SpecCena"].GetDecimal();
                 c.CanGetDataFromGroup = "False";
@@ -189,16 +203,12 @@ namespace SDataObjs {
                 katalog = S3_Katalog.GetID(d["CisloKarty"].GetNum());
                 artiklID = S0_IDs.GetArtiklID(katalog);
 
+                if(artiklID == null) continue;
+
                 var zasoba = new S5DataZasoba() {
                     Kod = katalog,
-                    HistorickaCena = d["NakupCena"].GetDecimal(),
                     Sklad_ID = skladID,
-                    Artikl_ID = artiklID,
-                    NastaveniZasoby = new S5DataZasobaNastaveniZasoby() {
-                        VydejDoMinusu = new enum_VydejDoMinusu() {
-                            Value = enum_VydejDoMinusu_value.Item0
-                        }
-                    }
+                    Artikl_ID = artiklID
                 };
 
                 _zasoby.Add(zasoba);

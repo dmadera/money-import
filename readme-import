@@ -5,3 +5,14 @@
 5. export S_IDs
 6. program moneys4-import 
 7. import Ceny, SklDokl
+
+
+--
+S4_System
+uživatelské role
+zobrazení sloupců
+
+S4_Agenda
+skupiny
+tiskové sestavy
+přebírání dokladů

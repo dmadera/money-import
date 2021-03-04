@@ -6,6 +6,7 @@
 
 ```bash
 awk 'BEGIN { FS = "\$;" } ; { print $24 }' ./z-assets/input/complete/CPOHYBV.TXT |  sort | uniq
+xml sel -t -c "/S5Data/SkladovyDokladList/SkladovyDoklad[4]" S6_SklDokl.xml > failed.xml
 ```
 
 ## Requirements

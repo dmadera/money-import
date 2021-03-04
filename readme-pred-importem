@@ -50,11 +50,11 @@ Artikl - skupiny
 
 Ceník
     Kód: _PRODEJ, Název: Prodejní
-        Typ výchozí ceny: Nákupní, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -25%
+        Typ výchozí ceny: Skladová, Výchozí sklad: HL, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -25%
         Typ zdroje přebírání: Katalog, Skupina katalogu: ART
         Nastavit jako výchozí: ANO
     Kód: _NAKUP, Název: Nákupní
-        Typ výchozí ceny: Nákupní, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -25%
+        Typ výchozí ceny: Skladová, Výchozí sklad: HL, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -25%
         Typ zdroje přebírání: Katalog, Skupina katalogu: ART
     Kód: _AKCE, Název: Akce, // žádné přebírání
     Kód: _LETAK, Název: Leták, // žádné přebírání
@@ -97,9 +97,11 @@ Typy spojení
 
 Firma - skupiny
     Kód: OST, Název: Ostatní odběratelé, Převzít nastavení z nadřazené úrovně: false, Obchod/Způsob dopravy: Osobní odběr, 
-        Obchod/Způsob platby: Hotově, Použít kredit: ANO, Hodnota: 0,00, Ceníky: _NÁKUP
+        Obchod/Způsob platby: Hotově, Použít kredit: ANO, Hodnota: 0,00, Ceníky: _NÁKUP, Způsob výběru ceny: Podle pořadí, Sleva pro doklad: NE 0,00
     Kód: Nezařazené, Použít kredit: ANO, Hodnota: 0,00, Způsob dopravy: Osobní odběr, Způsob platby: Hotově, 
          Způsob výpočtu ceny: Výběrem, Splatnost: ANO, 10 dní, Vlastní sleva: ANO, Sleva: 0,00, Ceníky: _AKCE, _LETAK, _SPECIAL, _PRODEJ
+
+Nastavit v nastavení skupin popis u všech dokladů.
 
 ------------ŠEKY------------
 

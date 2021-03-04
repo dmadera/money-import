@@ -135,7 +135,7 @@ namespace SkladData {
                     output += XmlEnv.NewLine;
                 }
             }
-            return output.Substring(0, output.Length - 2);
+            return output;
         }
     }
 }
