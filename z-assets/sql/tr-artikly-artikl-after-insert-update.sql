@@ -1,7 +1,7 @@
 USE [S4_Agenda_PEMA]
 GO
 
-CREATE OR ALTER TRIGGER AktualizujArtiklyAfterInsertUpdate
+CREATE OR ALTER TRIGGER TR_Artikly_Artikl_AfterInsertUpdate
 ON Artikly_Artikl
 AFTER INSERT, UPDATE
 AS
@@ -22,7 +22,7 @@ BEGIN
 	) AS SQ
 	WHERE Artikly_Artikl.ID = SQ.ID
 
-	/* jednotky - nastavi prodejni jednotku první pod hlavní, pocet prodejni jednotky nastavi do UserData pole */
+	/* jednotky - nastavi prodejni jednotku prvni pod hlavni, pocet prodejni jednotky nastavi do UserData pole */
 	UPDATE Artikly_Artikl SET
 	Artikly_Artikl.ProdJednotkaMnozstvi_UserData = ISNULL(SQ.ProdJednotkaMnozstvi_UserData, Artikly_ArtiklJednotka.NedelitelneMnozstvi), 
 	Artikly_Artikl.ProdejniJednotka_ID = ISNULL(SQ.ProdejniJednotka_ID, Artikly_ArtiklJednotka.ID),

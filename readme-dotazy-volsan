@@ -6,6 +6,9 @@ Elektronické obchody
 U přidávání položek výběrem do objednávky přijaté nelze potvrdit výběr ceny enterem ani ctrl+enterem.
 Zvolím okamžitá záloha, nelze obnovit skrze Money, musím přes Management Studio 
 
+!!! NUTNÉ !!!!
+Synchronizace cen automatická
+Tvorba ceny - výpočet v sekci Nákupní cena a marže/rabat - tam potřebujeme aktuální pořizovací cenu zásoby (používáme jeden sklad)
 
 -- Volšan: 10. 2. 2021
 Proces výdeje
