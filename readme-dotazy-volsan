@@ -1,3 +1,13 @@
+Lze náhled v editaci sestav naplnit daty? 
+Dodat modul CSW Automatic. 
+Kolik bude stát modul čtení čárových kódu dokladu? 
+!!! NUTNÉ !!!! Synchronizace cen automatická.
+Jak funguje mazání položek katalogu a obsazování čísel kódu? Chceme zachovat 4 čísla na kódu zboží. 
+Jak DB bobtná? Co se děje při roční skladové uzávěrce? Co se děje s uzavřeným účetním obdobím? 
+Má smysl odělovat dle roku čísla dokladů - FV (je jasné - účetní rok), ale DL apod? 
+Tvorba ceny - výpočet v sekci Nákupní cena a marže/rabat - tam potřebujeme aktuální pořizovací cenu zásoby (používáme jeden sklad)
+Výchozí výběr skupiny - nastavení průvodce (vypnutí, že se neptá při vypnutých skupinách), ale při přebírání dokladů se to ptá.
+
 Kategorie - vyhledávání v nadřazených kategoriích. Jak s kategoriemi správně pracovat? Má smysl u produktu označit i nadřazenou kategorii?
 Nabídky vydané - výběr položky - kategorie katalogu stejné rozložení sloupců a detailů jako v katalogu
 Elektronické obchody 
@@ -5,10 +15,6 @@ Elektronické obchody
 
 U přidávání položek výběrem do objednávky přijaté nelze potvrdit výběr ceny enterem ani ctrl+enterem.
 Zvolím okamžitá záloha, nelze obnovit skrze Money, musím přes Management Studio 
-
-!!! NUTNÉ !!!!
-Synchronizace cen automatická
-Tvorba ceny - výpočet v sekci Nákupní cena a marže/rabat - tam potřebujeme aktuální pořizovací cenu zásoby (používáme jeden sklad)
 
 -- Volšan: 10. 2. 2021
 Proces výdeje

@@ -12,6 +12,8 @@ Uživatelské sloupce
     Marze_UserData	                Marže               Desetinné číslo	0.00	            Položka objednávky přijaté
     NakupniCena_UserData	        Nakupní cena	    Částka	        0.00	            Položka objednávky přijaté
     Kod_UserData	                Kód	                Text		                        Spojení
+    MnozstviPozn_UserData	        Množství pozn.      Text		                        Položka dodacího listu vydaného
+    MnozstviPozn_UserData	        Množství pozn.      Text		                        Položka skladového dokladu
 
 Vygeneruj triggery a procedury
 Import exportu a importu
@@ -106,41 +108,35 @@ Nastavit v nastavení skupin popis u všech dokladů.
 ------------ŠEKY------------
 
 Nastavení číselných řada
-    PROD_VYD, prefix: PV
-    PROD_PRI, prefix: PP
-    POKL_PRI, prefix: HP
-    POKL_VYD, prefix: HV
-    SEK_VYD, název: Šeky vydané, prefix: SEK
-    FAK_VYD_S, název: Výdeje na šek, prefix: FS
-    INT_SEK, název: Interní doklad ŠEK, prefix: IS
-    POKD_SEK, název: Pokladní doklad ŠEK, prefix: PS
+    OST_FAVYD, název: OST výdeje, prefix: _F
+    OST_SEK, název: OST šeky, prefix: _S
+    OST_POKD, název: OST pokladní doklad, prefix: _P
 
 Pokladní doklady - skupiny
-    Kód: POKL_SEK, Název: Pokladní doklady ŠEK, Vnutit nastavneí podřízeným: ANO, Pokladna: CZK_SEK, Typ ceny: Bez daně, Sazba DPH: Nulová, 
+    Kód: OST_POKD, Název: OST Pokladní doklady, Vnutit nastavneí podřízeným: ANO, Pokladna: CZK_SEK, Typ ceny: Bez daně, Sazba DPH: Nulová, 
         Podrobnosti/PřijVyd doklad/Číselná řada: POKD_SEK
-        Podrobnosti/PřijVyd doklad/Predkontace zaokrouhlení: SEKY, Podrobnosti/PřijVyd doklad/Doklad: SEKY, Podrobnosti/PřijVyd doklad/Uhrady: SEKY
+        Podrobnosti/PřijVyd doklad/Predkontace zaokrouhlení: OST, Podrobnosti/PřijVyd doklad/Doklad: OST, Podrobnosti/PřijVyd doklad/Uhrady: OST
 
-Interní doklady - skupiny
     Kód: SEKY, Název: Šeky, Vnutit nastavneí podřízeným: ANO, 
-        Číselná řada: INT_SEK, Typ ceny: Pouze základ, Sazba DPH: Nulová, Zaokrouhlení celkové částky: 1_MAT, Členění DPH: _Ř000 U
-        Předkontace: SEKY, Primární účet MD: 999999, Předkontace zaokrouhlení: SEKY, Sazba DPH: Nulova
-        Podrobnosti: Všechno SEKY
+        Číselná řada: OST_SEK, Typ ceny: Pouze základ, Sazba DPH: Nulová, Zaokrouhlení celkové částky: 1_MAT, Členění DPH: _Ř000 U
+        Předkontace: OST, Primární účet MD: 999999, Předkontace zaokrouhlení: OST, Sazba DPH: Nulova
+        Podrobnosti: Všechno OST
 
 Účtový rozvrh
     Účet: 999999, Název: Evidence šeků, Druh účtu: Výsledkový, Typ účtu: Nákladový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO, Technický: ANO
 
 Předkontace
-    Kód: SEKY, Členění DPH: _Ř000U P, Název: Šeky
+    Kód: OST, Členění DPH: _Ř000U P, Název: Šeky
         Přidat Zaklad celkem, MD: 999999, DAL: 999999, Hlavní položka: ANO, Přednostně: ANO
 
 Pokladna
     Kód: CZK, Název: Účetní pokladna
     Kód: CZK_PRO, Název: Prodejní pokladna, Primární účet: 211100, Kurz: 0710
-    Kód: CZK_SEK, Název: Prodejní pokladna při odběru na šek, Primární účet: 999999, Kurz: 0710
+    Kód: CZK_OST, Název: Prodejní pokladna při odběru na šek, Primární účet: 999999, Kurz: 0710
 
 Faktura vydaná
-    Kód: FASEKY, Název: Výdeje na šek, Členění DPH: _Ř000U U, Sazba: Nulová, Řada: FAK_VYD_S, Zaokrouhlení: 0,01_MAT
-    Rozúčtování/Předkontace: SEKY, Předkontace sklad. položek: SEKY, Předkontace zaokrouhlení: SEKY, 
+    Kód: OST_VYD, Název: OST Výdeje, Členění DPH: _Ř000U U, Sazba: Nulová, Řada: OST_FAVYD, Zaokrouhlení: 0,01_MAT
+    Rozúčtování/Předkontace: OST, Předkontace sklad. položek: OST, Předkontace zaokrouhlení: OST, 
         Skupina interních dokladů: Šeky, Doprava: osobní odběr, Způsob platby: Hotově
         Druh pohybu: prodej, Druh skl. pohybu: spotřeba, Primární účet: 999999
         Popis: Používat pouze pro výdej za ŠEKY!
