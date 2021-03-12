@@ -1,0 +1,2068 @@
+/// <XRTypeInfo>
+///   <AssemblyFullName>DevExpress.XtraReports.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</AssemblyFullName>
+///   <AssemblyLocation>C:\Program Files (x86)\Solitea\Money S4\DevExpress.XtraReports.v19.1.dll</AssemblyLocation>
+///   <TypeName>DevExpress.XtraReports.UI.XtraReport</TypeName>
+///   <Localization>cs-CZ</Localization>
+///   <Version>19.1</Version>
+///   <References>
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWSystemUI.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089\System.Windows.Forms.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Security\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Security.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Numerics\v4.0_4.0.0.0__b77a5c561934e089\System.Numerics.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Accessibility\v4.0_4.0.0.0__b03f5f7f11d50a3a\Accessibility.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWInterfaces.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\FluentValidation.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_64\System.Data\v4.0_4.0.0.0__b77a5c561934e089\System.Data.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_64\System.Transactions\v4.0_4.0.0.0__b77a5c561934e089\System.Transactions.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_64\System.EnterpriseServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.EnterpriseServices.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSW.Core.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Data.DataSetExtensions\v4.0_4.0.0.0__b77a5c561934e089\System.Data.DataSetExtensions.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Device\v4.0_4.0.0.0__b77a5c561934e089\System.Device.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Xml.Linq\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.Linq.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Serialization\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Serialization.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel.Internals\v4.0_4.0.0.0__31bf3856ad364e35\System.ServiceModel.Internals.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\SMDiagnostics\v4.0_4.0.0.0__b77a5c561934e089\SMDiagnostics.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\DevExpress.XtraTreeList.v19.1.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\DevExpress.Utils.v19.1.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.ComponentModel.DataAnnotations\v4.0_4.0.0.0__31bf3856ad364e35\System.ComponentModel.DataAnnotations.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\UIAutomationClient\v4.0_4.0.0.0__31bf3856ad364e35\UIAutomationClient.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\WindowsBase\v4.0_4.0.0.0__31bf3856ad364e35\WindowsBase.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Xaml\v4.0_4.0.0.0__b77a5c561934e089\System.Xaml.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_64\PresentationCore\v4.0_4.0.0.0__31bf3856ad364e35\PresentationCore.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\DevExpress.XtraEditors.v19.1.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Data.Linq\v4.0_4.0.0.0__b77a5c561934e089\System.Data.Linq.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\DevExpress.XtraLayout.v19.1.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\SecureBlackbox.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\SecureBlackbox.PDF.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\DevExpress.XtraGrid.v19.1.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\DevExpress.XtraPrinting.v19.1.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\DevExpress.XtraBars.v19.1.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWControls.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWSystem.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Net.Http\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Net.Http.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\Mono.Cecil.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\ICSharpCode.SharpZipLib.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CodingAlgorithms_client.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel\v4.0_4.0.0.0__b77a5c561934e089\System.ServiceModel.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Web.Services\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_64\System.Web\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Design\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Design.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Drawing.Design\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.Design.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.DirectoryServices.Protocols\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.DirectoryServices.Protocols.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSW.DataProcess.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\GemBox.Spreadsheet.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWFakturace.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWSaldo.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWEconomicBase.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWAdresar.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWCiselniky.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWEET.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWMessaging.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWMeny.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWArtikly.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWDane.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWSkladoveDoklady.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWUcetnictvi.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWObchod.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWCeniky.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWImageLib.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\ComponentFactory.Krypton.Toolkit.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\DevExpress.XtraRichEdit.v19.1.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\DevExpress.Pdf.v19.1.Core.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\DevExpress.XtraReports.v19.1.Extensions.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\DevExpress.Utils.v19.1.UI.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\DevExpress.XtraVerticalGrid.v19.1.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\DevExpress.DataAccess.v19.1.UI.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\DevExpress.XtraNavBar.v19.1.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\DevExpress.XtraCharts.v19.1.Wizard.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\Microsoft.WindowsAPICodePack.Shell.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\Microsoft.WindowsAPICodePack.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\DevExpress.BonusSkins.v19.1.dll" />
+///   </References>
+///   <Resources>
+///     <Resource Name="XtraReportSerialization.xtraReport1">
+/// zsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAGAAAAAAAAAFBBRFBBRFCrek2fz7lRwEhecsHzHoUOusH/KuEYzVO4AAAAYAAAAAAAAAArAAAAjQAAAOUAAAD6AQAAJiQAdABoAGkAcwAuAFMAYwByAGkAcAB0AHMAUwBvAHUAcgBjAGUAAAAAADBLAG8AZABCAGUAegBQAHIAZQBmAGkAeAB1AC4ARABhAHQAYQBNAGUAbQBiAGUAcgDYDQAAKGwAYQBiAGUAbAA0ADQALgBEAGEAdABhAEIAaQBuAGQAaQBuAGcAcwC7DgAAJmwAYQBi
+/// AGUAbAA1AC4ARABhAHQAYQBCAGkAbgBkAGkAbgBnAHMAtg8AAChsAGEAYgBlAGwANQAxAC4ARABhAHQAYQBCAGkAbgBkAGkAbgBnAHMAsRAAACx4AHIATABhAGIAZQBsADYAMgAuAEQAYQB0AGEAQgBpAG4AZABpAG4AZwBzALIRAAAB1Rt1c2luZyBDU1cuQ1NXU3lzdGVtLlJlcG9ydHM7DQp1c2luZyBTeXN0ZW0uRGF0YTsNCg0KcHJpdmF0ZSBzdHJpbmcgRG9wbG5lbmlNZW55KHN0cmluZyBtZW5hKQ0Kew0KCXN0cmluZyBkb21hY2lNZW5hID0gQ29udmVydC5Ub1N0cmluZyhkZXRhaWxLb250ZXh0b3ZlSW5mby5HZXRDdXJyZW50Q29sdW1uVmFsdWUoIktvZERvbWFjaU1lbnkiKSk7DQoNCglpZiAoKG1lbmEgPT0gIkNaSyIpICYmIChkb21hY2lNZW5hID09ICJD
+/// WksiKSkgew0KCXJldHVybiAiIEvEjSI7fQ0KDQoJZWxzZSB7DQoJcmV0dXJuICIgIiArIG1lbmE7fQkNCn0NCg0KcHJpdmF0ZSB2b2lkIGRldGFpbEJhbmQyX0JlZm9yZVByaW50KG9iamVjdCBzZW5kZXIsIFN5c3RlbS5EcmF3aW5nLlByaW50aW5nLlByaW50RXZlbnRBcmdzIGUpIHsNCkRhdGFSb3dWaWV3IGRydiA9IChEYXRhUm93VmlldylkZXRhaWxSZXBvcnRCYW5kNC5HZXRDdXJyZW50Um93KCk7DQppZiAoZHJ2ICE9IG51bGwpDQp7DQpvYmplY3Qgb2JqID0gZHJ2LlJvd1siVmF6YmFab2JyYXpvdmF0TmFWeXN0dXB1Il07DQpib29sIHpvYnJhem92YXQgPSAob2JqICE9IERCTnVsbC5WYWx1ZSkgPyBDb252ZXJ0LlRvQm9vbGVhbihvYmopIDogdHJ1ZTsN
+/// CmUuQ2FuY2VsID0gIXpvYnJhem92YXQ7DQp9DQplbHNlDQp7DQplLkNhbmNlbCA9IGZhbHNlOw0KfQ0KfQ0KLyoNCnByaXZhdGUgdm9pZCB4cmxDZWxrZW1TRFBIX0JlZm9yZVByaW50KG9iamVjdCBzZW5kZXIsIFN5c3RlbS5EcmF3aW5nLlByaW50aW5nLlByaW50RXZlbnRBcmdzIGUpIHsNCg0Kb2JqZWN0IHZyYXRrYU9iaiA9IGRldGFpbFJlcG9ydEJhbmQxLkdldEN1cnJlbnRDb2x1bW5WYWx1ZSgiVnJhdGthIik7DQpib29sIHZyYXRrYSA9ICh2cmF0a2FPYmogIT0gREJOdWxsLlZhbHVlKSA/IChib29sKXZyYXRrYU9iaiA6IGZhbHNlOw0KDQppZiAodnJhdGthKQ0KDQp7DQpkZWNpbWFsIGNlbGtlbSA9IENvbnZlcnQuVG9EZWNpbWFsKGRldGFpbFJlcG9y
+/// dEJhbmQxLkdldEN1cnJlbnRDb2x1bW5WYWx1ZSgiRHBoQ2Vsa2VtQ00iKSk7DQp4cmxDZWxrZW1TRFBILlRleHQgPSAoLWNlbGtlbSkuVG9TdHJpbmcoIiMjIyAjIyMgIyMwLjAwIik7DQp9DQoNClhSTGFiZWwgbGJsID0gc2VuZGVyIGFzIFhSTGFiZWw7DQppZiAoIWxibC5UZXh0LkVxdWFscygiIikpIHtsYmwuVGV4dCA9ICBsYmwuVGV4dCArIERvcGxuZW5pTWVueShDb252ZXJ0LlRvU3RyaW5nKGxibC5UYWcpKTsgfSANCg0KfSovDQoNCnByaXZhdGUgdm9pZCB4cmxuYXpldl9CZWZvcmVQcmludChvYmplY3Qgc2VuZGVyLCBTeXN0ZW0uRHJhd2luZy5QcmludGluZy5QcmludEV2ZW50QXJncyBlKSB7DQoNClhSTGFiZWwgbGJsID0gc2VuZGVyIGFzIFhSTGFi
+/// ZWw7DQpvYmplY3QgbGV2ZWxPYmogPSBkZXRhaWxSZXBvcnRCYW5kMS5HZXRDdXJyZW50Q29sdW1uVmFsdWUoIlM1UG9sb3prYUxldmVsIik7DQppbnQgbGV2ZWwgPSAobGV2ZWxPYmogIT0gREJOdWxsLlZhbHVlKSA/IENvbnZlcnQuVG9JbnQzMihsZXZlbE9iaikgOiAwOw0KDQppbnQgb2RzYXplbmkgPSAwOw0KDQppZiAobGV2ZWwgPj0gMTApeyANCiAgb2RzYXplbmkgPSAoMTAqMTUpOw0KICBsYmwuUGFkZGluZyA9IG5ldyBQYWRkaW5nSW5mbyhvZHNhemVuaSwwLDAsMCk7fQ0KDQppZiAoKGxldmVsID4gMCkmJiAobGV2ZWwgPCAxMCkpew0KICBvZHNhemVuaSA9IChsZXZlbCoxNSk7DQogIGxibC5QYWRkaW5nID0gbmV3IFBhZGRpbmdJbmZvKG9kc2F6ZW5p
+/// LDAsMCwwKTt9DQoNCmVsc2V7DQogIGxibC5QYWRkaW5nID0gbmV3IFBhZGRpbmdJbmZvKDIsMCwwLDApO30NCg0KfQ0KDQpwcml2YXRlIHZvaWQgeHJMYWJlbDE2X0JlZm9yZVByaW50KG9iamVjdCBzZW5kZXIsIFN5c3RlbS5EcmF3aW5nLlByaW50aW5nLlByaW50RXZlbnRBcmdzIGUpIHsNCg0KWFJMYWJlbCBsYmwgPSBzZW5kZXIgYXMgWFJMYWJlbDsNCmludCB0eXAgPSBDb252ZXJ0LlRvSW50MzIoYXJ0aWtsLkdldEN1cnJlbnRDb2x1bW5WYWx1ZSgiVHlwRXZpZGVuY2UiKSk7DQoNCmlmICh0eXAgPT0gMSkge2xibC5UZXh0ID0gInbDvXJvYm7DrSDEjcOtc2xvOiAiICsgbGJsLlRleHQ7fQ0KaWYgKHR5cCA9PSAyKSB7bGJsLlRleHQgPSAixI3DrXNsbyBz
+/// w6lyaWU6ICIgKyBsYmwuVGV4dDt9DQppZiAodHlwID09IDMpIHtsYmwuVGV4dCA9ICJleHBpcmFjZTogIiArIGxibC5UZXh0O30NCg0KDQp9DQoNCnByaXZhdGUgdm9pZCB4ckxhYmVsOThfQmVmb3JlUHJpbnQob2JqZWN0IHNlbmRlciwgU3lzdGVtLkRyYXdpbmcuUHJpbnRpbmcuUHJpbnRFdmVudEFyZ3MgZSkgew0KDQpYUkxhYmVsIGxibCA9IHNlbmRlciBhcyBYUkxhYmVsOw0KaWYgKCFsYmwuVGV4dC5FcXVhbHMoIiIpKSB7bGJsLlRleHQgPSAgbGJsLlRleHQgKyBEb3BsbmVuaU1lbnkoQ29udmVydC5Ub1N0cmluZyhsYmwuVGFnKSk7IH0gIA0KDQp9DQoNCnByaXZhdGUgdm9pZCB4ckxhYmVsOTNfQmVmb3JlUHJpbnQob2JqZWN0IHNlbmRlciwgU3lzdGVt
+/// LkRyYXdpbmcuUHJpbnRpbmcuUHJpbnRFdmVudEFyZ3MgZSkgew0KDQoNClhSTGFiZWwgbGJsID0gc2VuZGVyIGFzIFhSTGFiZWw7DQpsYmwuVGV4dCA9ICJSb3pwaXMgRFBIIHV2ZWRlbiB2IG3Em27EmyIgKyBEb3BsbmVuaU1lbnkoQ29udmVydC5Ub1N0cmluZyhsYmwuVGV4dCkpOyAgDQoNCn0NCg0KcHJpdmF0ZSB2b2lkIHhyTGFiZWwxNV9CZWZvcmVQcmludChvYmplY3Qgc2VuZGVyLCBTeXN0ZW0uRHJhd2luZy5QcmludGluZy5QcmludEV2ZW50QXJncyBlKSB7DQoNCm9iamVjdCBwb3puT2JqID0gR2V0Q3VycmVudENvbHVtblZhbHVlKCJQb3puYW1rYSIpOw0Kc3RyaW5nIHBvem4gPSBDb252ZXJ0LlRvU3RyaW5nKHBvem5PYmopOw0KDQppZiAoc3RyaW5n
+/// LklzTnVsbE9yRW1wdHkocG96bikpe2UuQ2FuY2VsID0gdHJ1ZTt9DQp9DQoNCnByaXZhdGUgdm9pZCB4dHJhUmVwb3J0MV9CZWZvcmVQcmludChvYmplY3Qgc2VuZGVyLCBTeXN0ZW0uRHJhd2luZy5QcmludGluZy5QcmludEV2ZW50QXJncyBlKSANCnsNCiAgICBwYWdlSW5mbzEuUnVubmluZ0JhbmQgPSBHcm91cEhlYWRlcjE7DQp9DQoNCnByaXZhdGUgdm9pZCBHcm91cEZvb3RlcjFfQmVmb3JlUHJpbnQob2JqZWN0IHNlbmRlciwgU3lzdGVtLkRyYXdpbmcuUHJpbnRpbmcuUHJpbnRFdmVudEFyZ3MgZSkge30NCnByaXZhdGUgdm9pZCBsYWJlbDRfQmVmb3JlUHJpbnQob2JqZWN0IHNlbmRlciwgU3lzdGVtLkRyYXdpbmcuUHJpbnRpbmcuUHJpbnRFdmVudEFy
+/// Z3MgZSkgew0KICBpZiAoIUNvbnZlcnQuVG9Cb29sZWFuKEdldEN1cnJlbnRDb2x1bW5WYWx1ZSgiWmFwb3JueVBvaHliIikpKQ0KICB7DQogICAgZS5DYW5jZWwgPSB0cnVlOw0KICB9DQp9DQoNCnByaXZhdGUgdm9pZCBLb2RCZXpQcmVmaXh1X0dldFZhbHVlKG9iamVjdCBzZW5kZXIsIERldkV4cHJlc3MuWHRyYVJlcG9ydHMuVUkuR2V0VmFsdWVFdmVudEFyZ3MgZSkgew0KCXN0cmluZyBjb2x1bW5WYWx1ZSA9IGUuR2V0VmFsdWUoKTsNCgllLlZhbHVlID0gUmVnZXguTWF0Y2goY29sdW1uVmFsdWUsIEAiXGQrIik7CQ0KfQ0KAeABU2tsYWRvdnlEb2tsYWRfRG9kYWNpTGlzdFZ5ZGFueS5Ta2xhZG92eURva2xhZF9Eb2RhY2lMaXN0VnlkYW55LVNrbGFkb3Z5
+/// RG9rbGFkX1BvbG96a2FEb2RhY2lob0xpc3R1VnlkYW5laG8uU2tsYWRvdnlEb2tsYWRfUG9sb3prYURvZGFjaWhvTGlzdHVWeWRhbmVoby1PYmNob2RfT2JzYWhQb2xvemt5U0FydGlrbGVtLk9iY2hvZF9PYnNhaFBvbG96a3lTQXJ0aWtsZW0tQXJ0aWtseV9BcnRpa2wB+AFTa2xhZG92eURva2xhZF9Eb2RhY2lMaXN0VnlkYW55LlNrbGFkb3Z5RG9rbGFkX0RvZGFjaUxpc3RWeWRhbnktU2tsYWRvdnlEb2tsYWRfUG9sb3prYURvZGFjaWhvTGlzdHVWeWRhbmVoby5Ta2xhZG92eURva2xhZF9Qb2xvemthRG9kYWNpaG9MaXN0dVZ5ZGFuZWhvLU9iY2hvZF9PYnNhaFBvbG96a3lTQXJ0aWtsZW0uT2JjaG9kX09ic2FoUG9sb3preVNBcnRpa2xlbS1BcnRpa2x5X0Fy
+/// dGlrbC5Ta2xhZG92YVBvemljZV9Vc2VyRGF0YQH4AVNrbGFkb3Z5RG9rbGFkX0RvZGFjaUxpc3RWeWRhbnkuU2tsYWRvdnlEb2tsYWRfRG9kYWNpTGlzdFZ5ZGFueS1Ta2xhZG92eURva2xhZF9Qb2xvemthRG9kYWNpaG9MaXN0dVZ5ZGFuZWhvLlNrbGFkb3Z5RG9rbGFkX1BvbG96a2FEb2RhY2lob0xpc3R1VnlkYW5laG8tT2JjaG9kX09ic2FoUG9sb3preVNBcnRpa2xlbS5PYmNob2RfT2JzYWhQb2xvemt5U0FydGlrbGVtLUFydGlrbHlfQXJ0aWtsLlNrbGFkb3ZhUG96aWNlX1VzZXJEYXRhAf4BU2tsYWRvdnlEb2tsYWRfRG9kYWNpTGlzdFZ5ZGFueS5Ta2xhZG92eURva2xhZF9Eb2RhY2lMaXN0VnlkYW55LVNrbGFkb3Z5RG9rbGFkX1BvbG96a2FEb2RhY2lo
+/// b0xpc3R1VnlkYW5laG8uU2tsYWRvdnlEb2tsYWRfUG9sb3prYURvZGFjaWhvTGlzdHVWeWRhbmVoby1PYmNob2RfT2JzYWhQb2xvemt5U0FydGlrbGVtLk9iY2hvZF9PYnNhaFBvbG96a3lTQXJ0aWtsZW0tQXJ0aWtseV9BcnRpa2wuUHJvZEplZG5vdGthTW5venN0dmlfVXNlckRhdGEB7gFTa2xhZG92eURva2xhZF9Eb2RhY2lMaXN0VnlkYW55LlNrbGFkb3Z5RG9rbGFkX0RvZGFjaUxpc3RWeWRhbnktU2tsYWRvdnlEb2tsYWRfUG9sb3prYURvZGFjaWhvTGlzdHVWeWRhbmVoby5Ta2xhZG92eURva2xhZF9Qb2xvemthRG9kYWNpaG9MaXN0dVZ5ZGFuZWhvLU9iY2hvZF9PYnNhaFBvbG96a3lTQXJ0aWtsZW0uT2JjaG9kX09ic2FoUG9sb3preVNBcnRpa2xlbS1B
+/// cnRpa2x5X0FydGlrbC5Lb2RCZXpQcmVmaXh1</Resource>
+///   </Resources>
+/// </XRTypeInfo>
+namespace XtraReportSerialization {
+    
+    public class xtraReport1 : DevExpress.XtraReports.UI.XtraReport {
+        private DevExpress.XtraReports.UI.DetailBand detailBand1;
+        private DevExpress.XtraReports.UI.XRLine line4;
+        private DevExpress.XtraReports.UI.XRPanel dodavatelPanel;
+        private DevExpress.XtraReports.UI.XRLabel label12;
+        private DevExpress.XtraReports.UI.XRLabel label13;
+        private DevExpress.XtraReports.UI.XRLabel label14;
+        private DevExpress.XtraReports.UI.XRLabel label15;
+        private DevExpress.XtraReports.UI.XRLabel label16;
+        private DevExpress.XtraReports.UI.XRLabel label17;
+        private DevExpress.XtraReports.UI.XRLabel label18;
+        private DevExpress.XtraReports.UI.XRLabel label19;
+        private DevExpress.XtraReports.UI.XRLabel label20;
+        private DevExpress.XtraReports.UI.XRLabel label21;
+        private DevExpress.XtraReports.UI.XRLabel label22;
+        private DevExpress.XtraReports.UI.XRLabel label23;
+        private DevExpress.XtraReports.UI.XRLabel DIC;
+        private DevExpress.XtraReports.UI.XRLabel IC;
+        private DevExpress.XtraReports.UI.XRLabel Email;
+        private DevExpress.XtraReports.UI.XRLabel Telefon;
+        private DevExpress.XtraReports.UI.XRLabel Mesto;
+        private DevExpress.XtraReports.UI.XRLabel Ulice;
+        private DevExpress.XtraReports.UI.XRLabel Nazev;
+        private DevExpress.XtraReports.UI.XRLabel Popis;
+        private DevExpress.XtraReports.UI.XRLabel PSC;
+        private DevExpress.XtraReports.UI.XRPanel panel2;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel19;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel23;
+        private DevExpress.XtraReports.UI.XRPageInfo pageInfo1;
+        private DevExpress.XtraReports.UI.XRLabel label10;
+        private DevExpress.XtraReports.UI.XRLabel label8;
+        private DevExpress.XtraReports.UI.XRLabel label11;
+        private DevExpress.XtraReports.UI.XRPanel panel3;
+        private DevExpress.XtraReports.UI.XRLabel label30;
+        private DevExpress.XtraReports.UI.XRLabel label31;
+        private DevExpress.XtraReports.UI.XRLabel label42;
+        private DevExpress.XtraReports.UI.XRLabel label43;
+        private DevExpress.XtraReports.UI.XRLabel label46;
+        private DevExpress.XtraReports.UI.XRLabel label47;
+        private DevExpress.XtraReports.UI.XRLabel label48;
+        private DevExpress.XtraReports.UI.XRLabel label49;
+        private DevExpress.XtraReports.UI.XRLabel label50;
+        private DevExpress.XtraReports.UI.XRPanel panel4;
+        private DevExpress.XtraReports.UI.XRLabel label1;
+        private DevExpress.XtraReports.UI.XRLabel label2;
+        private DevExpress.XtraReports.UI.XRLabel label6;
+        private DevExpress.XtraReports.UI.XRLabel label7;
+        private DevExpress.XtraReports.UI.XRLabel label9;
+        private DevExpress.XtraReports.UI.XRLabel label32;
+        private DevExpress.XtraReports.UI.XRLabel label33;
+        private DevExpress.XtraReports.UI.XRLabel label34;
+        private DevExpress.XtraReports.UI.XRLabel label35;
+        private DevExpress.XtraReports.UI.XRLabel label36;
+        private DevExpress.XtraReports.UI.XRLabel label37;
+        private DevExpress.XtraReports.UI.XRLabel label38;
+        private DevExpress.XtraReports.UI.XRLabel label39;
+        private DevExpress.XtraReports.UI.XRLabel label40;
+        private DevExpress.XtraReports.UI.DetailReportBand detailReportBand1;
+        private DevExpress.XtraReports.UI.DetailBand detailBand2;
+        private DevExpress.XtraReports.UI.XRLabel label51;
+        private DevExpress.XtraReports.UI.XRLabel label44;
+        private DevExpress.XtraReports.UI.XRLabel label29;
+        private DevExpress.XtraReports.UI.XRLabel label5;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel59;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel60;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel61;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel62;
+        private DevExpress.XtraReports.UI.XRLabel xrlnazev;
+        private DevExpress.XtraReports.UI.GroupHeaderBand groupHeaderBand2;
+        private DevExpress.XtraReports.UI.XRLabel label45;
+        private DevExpress.XtraReports.UI.XRLabel label41;
+        private DevExpress.XtraReports.UI.XRLabel label24;
+        private DevExpress.XtraReports.UI.XRLabel label4;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel67;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel68;
+        private DevExpress.XtraReports.UI.XRLine xrLine7;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel69;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel70;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel71;
+        private DevExpress.XtraReports.UI.GroupFooterBand GroupFooter1;
+        private DevExpress.XtraReports.UI.XRPanel panel1;
+        private CSW.CSWSystemUI.Reports.Controls.DynamicDPHTable dynamicDPHTable1;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel104;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel99;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel98;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel103;
+        private DevExpress.XtraReports.UI.XRLabel label25;
+        private DevExpress.XtraReports.UI.XRLabel label26;
+        private DevExpress.XtraReports.UI.XRLine line5;
+        private DevExpress.XtraReports.UI.XRLine line6;
+        private DevExpress.XtraReports.UI.XRLine xrLine10;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel15;
+        private DevExpress.XtraReports.UI.PageFooterBand pageFooterBand1;
+        private DevExpress.XtraReports.UI.XRPageInfo pageInfo2;
+        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader1;
+        private DevExpress.XtraReports.UI.XRLine line7;
+        private DevExpress.XtraReports.UI.XRLabel label27;
+        private DevExpress.XtraReports.UI.XRBarCode barCode1;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel2;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel21;
+        private DevExpress.XtraReports.UI.TopMarginBand topMarginBand1;
+        private DevExpress.XtraReports.UI.BottomMarginBand bottomMarginBand1;
+        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader2;
+        private DevExpress.XtraReports.UI.XRLabel label3;
+        private DevExpress.XtraReports.UI.XRLine line1;
+        private DevExpress.XtraReports.UI.XRLabel label28;
+        private DevExpress.XtraReports.UI.XRControlStyle Vychozi;
+        private DevExpress.XtraReports.UI.CalculatedField KodBezPrefixu;
+        private System.Resources.ResourceManager _resources;
+        private string _resourceString;
+        public xtraReport1() {
+            this._resourceString = DevExpress.XtraReports.Serialization.XRResourceManager.GetResourceFor("XtraReportSerialization.xtraReport1");
+            this.InitializeComponent();
+        }
+        private System.Resources.ResourceManager resources {
+            get {
+                if (_resources == null) {
+                    this._resources = new DevExpress.XtraReports.Serialization.XRResourceManager(this._resourceString);
+                }
+                return this._resources;
+            }
+        }
+        private void InitializeComponent() {
+            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator1 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
+            this.detailBand1 = new DevExpress.XtraReports.UI.DetailBand();
+            this.detailReportBand1 = new DevExpress.XtraReports.UI.DetailReportBand();
+            this.pageFooterBand1 = new DevExpress.XtraReports.UI.PageFooterBand();
+            this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.topMarginBand1 = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.GroupHeader2 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.line4 = new DevExpress.XtraReports.UI.XRLine();
+            this.dodavatelPanel = new DevExpress.XtraReports.UI.XRPanel();
+            this.panel2 = new DevExpress.XtraReports.UI.XRPanel();
+            this.panel3 = new DevExpress.XtraReports.UI.XRPanel();
+            this.panel4 = new DevExpress.XtraReports.UI.XRPanel();
+            this.label12 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label13 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label14 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label15 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label16 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label17 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label18 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label19 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label20 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label21 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label22 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label23 = new DevExpress.XtraReports.UI.XRLabel();
+            this.DIC = new DevExpress.XtraReports.UI.XRLabel();
+            this.IC = new DevExpress.XtraReports.UI.XRLabel();
+            this.Email = new DevExpress.XtraReports.UI.XRLabel();
+            this.Telefon = new DevExpress.XtraReports.UI.XRLabel();
+            this.Mesto = new DevExpress.XtraReports.UI.XRLabel();
+            this.Ulice = new DevExpress.XtraReports.UI.XRLabel();
+            this.Nazev = new DevExpress.XtraReports.UI.XRLabel();
+            this.Popis = new DevExpress.XtraReports.UI.XRLabel();
+            this.PSC = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel19 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel23 = new DevExpress.XtraReports.UI.XRLabel();
+            this.pageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.label10 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label8 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label11 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label30 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label31 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label42 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label43 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label46 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label47 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label48 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label49 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label50 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label6 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label7 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label9 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label32 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label33 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label34 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label35 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label36 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label37 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label38 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label39 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label40 = new DevExpress.XtraReports.UI.XRLabel();
+            this.detailBand2 = new DevExpress.XtraReports.UI.DetailBand();
+            this.groupHeaderBand2 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.xrLabel59 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel60 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel61 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel62 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrlnazev = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel67 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel68 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine7 = new DevExpress.XtraReports.UI.XRLine();
+            this.xrLabel69 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel70 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel71 = new DevExpress.XtraReports.UI.XRLabel();
+            this.panel1 = new DevExpress.XtraReports.UI.XRPanel();
+            this.xrLine10 = new DevExpress.XtraReports.UI.XRLine();
+            this.xrLabel15 = new DevExpress.XtraReports.UI.XRLabel();
+            this.dynamicDPHTable1 = new CSW.CSWSystemUI.Reports.Controls.DynamicDPHTable();
+            this.xrLabel104 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel99 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel98 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel103 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label25 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label26 = new DevExpress.XtraReports.UI.XRLabel();
+            this.line5 = new DevExpress.XtraReports.UI.XRLine();
+            this.line6 = new DevExpress.XtraReports.UI.XRLine();
+            this.pageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.line7 = new DevExpress.XtraReports.UI.XRLine();
+            this.label27 = new DevExpress.XtraReports.UI.XRLabel();
+            this.barCode1 = new DevExpress.XtraReports.UI.XRBarCode();
+            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel21 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.line1 = new DevExpress.XtraReports.UI.XRLine();
+            this.label28 = new DevExpress.XtraReports.UI.XRLabel();
+            this.Vychozi = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.KodBezPrefixu = new DevExpress.XtraReports.UI.CalculatedField();
+            this.label4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label5 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label24 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label29 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label41 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label44 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label45 = new DevExpress.XtraReports.UI.XRLabel();
+            this.label51 = new DevExpress.XtraReports.UI.XRLabel();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            // 
+            // detailBand1
+            // 
+            this.detailBand1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.line4,
+                        this.dodavatelPanel,
+                        this.panel2,
+                        this.panel3,
+                        this.panel4});
+            this.detailBand1.Dpi = 254F;
+            this.detailBand1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.detailBand1.HeightF = 543.8005F;
+            this.detailBand1.KeepTogether = true;
+            this.detailBand1.MultiColumn.ColumnCount = 2;
+            this.detailBand1.MultiColumn.ColumnWidth = 1150F;
+            this.detailBand1.MultiColumn.Layout = DevExpress.XtraPrinting.ColumnLayout.AcrossThenDown;
+            this.detailBand1.Name = "detailBand1";
+            this.detailBand1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.detailBand1.StylePriority.UseFont = false;
+            this.detailBand1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // detailReportBand1
+            // 
+            this.detailReportBand1.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+                        this.detailBand2,
+                        this.groupHeaderBand2,
+                        this.GroupFooter1});
+            this.detailReportBand1.DataMember = "SkladovyDoklad_DodaciListVydany.SkladovyDoklad_DodaciListVydany-SkladovyDoklad_Po" +
+                "lozkaDodacihoListuVydaneho";
+            this.detailReportBand1.Dpi = 254F;
+            this.detailReportBand1.Level = 0;
+            this.detailReportBand1.Name = "detailReportBand1";
+            this.detailReportBand1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.detailReportBand1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // pageFooterBand1
+            // 
+            this.pageFooterBand1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.pageInfo2});
+            this.pageFooterBand1.Dpi = 254F;
+            this.pageFooterBand1.Expanded = false;
+            this.pageFooterBand1.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.pageFooterBand1.HeightF = 54.00002F;
+            this.pageFooterBand1.Name = "pageFooterBand1";
+            this.pageFooterBand1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.pageFooterBand1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // GroupHeader1
+            // 
+            this.GroupHeader1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.line7,
+                        this.label27,
+                        this.barCode1,
+                        this.xrLabel2,
+                        this.xrLabel21});
+            this.GroupHeader1.Dpi = 254F;
+            this.GroupHeader1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
+                        new DevExpress.XtraReports.UI.GroupField("Row_ID", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            this.GroupHeader1.HeightF = 84.22918F;
+            this.GroupHeader1.Level = 1;
+            this.GroupHeader1.Name = "GroupHeader1";
+            this.GroupHeader1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.GroupHeader1.RepeatEveryPage = true;
+            this.GroupHeader1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // topMarginBand1
+            // 
+            this.topMarginBand1.Dpi = 254F;
+            this.topMarginBand1.HeightF = 45F;
+            this.topMarginBand1.Name = "topMarginBand1";
+            // 
+            // bottomMarginBand1
+            // 
+            this.bottomMarginBand1.Dpi = 254F;
+            this.bottomMarginBand1.HeightF = 127F;
+            this.bottomMarginBand1.Name = "bottomMarginBand1";
+            // 
+            // GroupHeader2
+            // 
+            this.GroupHeader2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.label3,
+                        this.line1,
+                        this.label28});
+            this.GroupHeader2.Dpi = 254F;
+            this.GroupHeader2.HeightF = 63.55741F;
+            this.GroupHeader2.Name = "GroupHeader2";
+            this.GroupHeader2.StyleName = "Vychozi";
+            // 
+            // line4
+            // 
+            this.line4.AnchorVertical = ((DevExpress.XtraReports.UI.VerticalAnchorStyles)((DevExpress.XtraReports.UI.VerticalAnchorStyles.Top | DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom)));
+            this.line4.Dpi = 254F;
+            this.line4.ForeColor = System.Drawing.Color.Black;
+            this.line4.LineDirection = DevExpress.XtraReports.UI.LineDirection.Vertical;
+            this.line4.LineWidth = 0.5F;
+            this.line4.LocationFloat = new DevExpress.Utils.PointFloat(866.2172F, 0.5098742F);
+            this.line4.Name = "line4";
+            this.line4.SizeF = new System.Drawing.SizeF(22F, 405.0912F);
+            this.line4.StylePriority.UseForeColor = false;
+            // 
+            // dodavatelPanel
+            // 
+            this.dodavatelPanel.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.dodavatelPanel.BorderWidth = 0.5F;
+            this.dodavatelPanel.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.label12,
+                        this.label13,
+                        this.label14,
+                        this.label15,
+                        this.label16,
+                        this.label17,
+                        this.label18,
+                        this.label19,
+                        this.label20,
+                        this.label21,
+                        this.label22,
+                        this.label23,
+                        this.DIC,
+                        this.IC,
+                        this.Email,
+                        this.Telefon,
+                        this.Mesto,
+                        this.Ulice,
+                        this.Nazev,
+                        this.Popis,
+                        this.PSC});
+            this.dodavatelPanel.Dpi = 254F;
+            this.dodavatelPanel.LocationFloat = new DevExpress.Utils.PointFloat(10.00026F, 10.00002F);
+            this.dodavatelPanel.Name = "dodavatelPanel";
+            this.dodavatelPanel.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.dodavatelPanel.SizeF = new System.Drawing.SizeF(856.217F, 320.155F);
+            this.dodavatelPanel.StyleName = "Vychozi";
+            this.dodavatelPanel.StylePriority.UseBorders = false;
+            this.dodavatelPanel.StylePriority.UseBorderWidth = false;
+            this.dodavatelPanel.StylePriority.UsePadding = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.panel2.BorderWidth = 0.5F;
+            this.panel2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.xrLabel19,
+                        this.xrLabel23,
+                        this.pageInfo1,
+                        this.label10,
+                        this.label8,
+                        this.label11});
+            this.panel2.Dpi = 254F;
+            this.panel2.LocationFloat = new DevExpress.Utils.PointFloat(9.999983F, 358.3019F);
+            this.panel2.Name = "panel2";
+            this.panel2.SizeF = new System.Drawing.SizeF(856.217F, 185.4986F);
+            this.panel2.StylePriority.UseBorders = false;
+            this.panel2.StylePriority.UseBorderWidth = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.panel3.BorderWidth = 0.5F;
+            this.panel3.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.label30,
+                        this.label31,
+                        this.label42,
+                        this.label43,
+                        this.label46,
+                        this.label47,
+                        this.label48,
+                        this.label49,
+                        this.label50});
+            this.panel3.Dpi = 254F;
+            this.panel3.LocationFloat = new DevExpress.Utils.PointFloat(888.2173F, 9.999996F);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.panel3.SizeF = new System.Drawing.SizeF(957.7827F, 176.2878F);
+            this.panel3.StyleName = "Vychozi";
+            this.panel3.StylePriority.UseBorders = false;
+            this.panel3.StylePriority.UseBorderWidth = false;
+            this.panel3.StylePriority.UsePadding = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.panel4.BorderWidth = 0.5F;
+            this.panel4.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.label1,
+                        this.label2,
+                        this.label6,
+                        this.label7,
+                        this.label9,
+                        this.label32,
+                        this.label33,
+                        this.label34,
+                        this.label35,
+                        this.label36,
+                        this.label37,
+                        this.label38,
+                        this.label39,
+                        this.label40});
+            this.panel4.Dpi = 254F;
+            this.panel4.LocationFloat = new DevExpress.Utils.PointFloat(888.2172F, 210.7849F);
+            this.panel4.Name = "panel4";
+            this.panel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.panel4.SizeF = new System.Drawing.SizeF(957.7828F, 333.0156F);
+            this.panel4.StyleName = "Vychozi";
+            this.panel4.StylePriority.UseBorders = false;
+            this.panel4.StylePriority.UseBorderWidth = false;
+            this.panel4.StylePriority.UsePadding = false;
+            // 
+            // label12
+            // 
+            this.label12.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label12.Dpi = 254F;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label12.LocationFloat = new DevExpress.Utils.PointFloat(540.0901F, 124F);
+            this.label12.Name = "label12";
+            this.label12.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label12.SizeF = new System.Drawing.SizeF(64.53729F, 40.00002F);
+            this.label12.StylePriority.UseBorders = false;
+            this.label12.StylePriority.UseFont = false;
+            this.label12.StylePriority.UsePadding = false;
+            this.label12.StylePriority.UseTextAlignment = false;
+            this.label12.Text = "DIČ:";
+            this.label12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label12.TextFormatString = "telefon";
+            // 
+            // label13
+            // 
+            this.label13.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label13.Dpi = 254F;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label13.LocationFloat = new DevExpress.Utils.PointFloat(540.0901F, 82.00005F);
+            this.label13.Name = "label13";
+            this.label13.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label13.SizeF = new System.Drawing.SizeF(64.53729F, 40.00002F);
+            this.label13.StylePriority.UseBorders = false;
+            this.label13.StylePriority.UseFont = false;
+            this.label13.StylePriority.UsePadding = false;
+            this.label13.StylePriority.UseTextAlignment = false;
+            this.label13.Text = "IČO:";
+            this.label13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label13.TextFormatString = "telefon";
+            // 
+            // label14
+            // 
+            this.label14.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label14.Dpi = 254F;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label14.LocationFloat = new DevExpress.Utils.PointFloat(115.8048F, 268.9999F);
+            this.label14.Name = "label14";
+            this.label14.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label14.SizeF = new System.Drawing.SizeF(5F, 40.00003F);
+            this.label14.StylePriority.UseBorders = false;
+            this.label14.StylePriority.UseFont = false;
+            this.label14.StylePriority.UsePadding = false;
+            this.label14.StylePriority.UseTextAlignment = false;
+            this.label14.Text = ":";
+            this.label14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label14.TextFormatString = "telefon";
+            // 
+            // label15
+            // 
+            this.label15.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label15.Dpi = 254F;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label15.LocationFloat = new DevExpress.Utils.PointFloat(12.78239F, 268.9998F);
+            this.label15.Name = "label15";
+            this.label15.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label15.SizeF = new System.Drawing.SizeF(103.0221F, 40.00003F);
+            this.label15.StylePriority.UseBorders = false;
+            this.label15.StylePriority.UseFont = false;
+            this.label15.StylePriority.UsePadding = false;
+            this.label15.StylePriority.UseTextAlignment = false;
+            this.label15.Text = "www";
+            this.label15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label15.TextFormatString = "telefon";
+            // 
+            // label16
+            // 
+            this.label16.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label16.Dpi = 254F;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label16.LocationFloat = new DevExpress.Utils.PointFloat(499.493F, 188.9997F);
+            this.label16.Name = "label16";
+            this.label16.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label16.SizeF = new System.Drawing.SizeF(5F, 40.00003F);
+            this.label16.StylePriority.UseBorders = false;
+            this.label16.StylePriority.UseFont = false;
+            this.label16.StylePriority.UsePadding = false;
+            this.label16.StylePriority.UseTextAlignment = false;
+            this.label16.Text = ":";
+            this.label16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label16.TextFormatString = "telefon";
+            // 
+            // label17
+            // 
+            this.label17.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label17.Dpi = 254F;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label17.LocationFloat = new DevExpress.Utils.PointFloat(418.2158F, 188.9997F);
+            this.label17.Name = "label17";
+            this.label17.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label17.SizeF = new System.Drawing.SizeF(81.27713F, 40F);
+            this.label17.StylePriority.UseBorders = false;
+            this.label17.StylePriority.UseFont = false;
+            this.label17.StylePriority.UsePadding = false;
+            this.label17.StylePriority.UseTextAlignment = false;
+            this.label17.Text = "GSM";
+            this.label17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.label17.TextFormatString = "telefon";
+            // 
+            // label18
+            // 
+            this.label18.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label18.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "Kontextové informace.Telefon1")});
+            this.label18.Dpi = 254F;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label18.LocationFloat = new DevExpress.Utils.PointFloat(504.493F, 188.9997F);
+            this.label18.Name = "label18";
+            this.label18.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 0, 0, 0, 254F);
+            this.label18.SizeF = new System.Drawing.SizeF(341.0536F, 40.00003F);
+            this.label18.StylePriority.UseBorders = false;
+            this.label18.StylePriority.UseFont = false;
+            this.label18.StylePriority.UsePadding = false;
+            this.label18.StylePriority.UseTextAlignment = false;
+            this.label18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label18.TextFormatString = "{0:### ### ###}";
+            // 
+            // label19
+            // 
+            this.label19.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label19.Dpi = 254F;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label19.LocationFloat = new DevExpress.Utils.PointFloat(115.8048F, 228.9998F);
+            this.label19.Name = "label19";
+            this.label19.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label19.SizeF = new System.Drawing.SizeF(5F, 40.00003F);
+            this.label19.StylePriority.UseBorders = false;
+            this.label19.StylePriority.UseFont = false;
+            this.label19.StylePriority.UsePadding = false;
+            this.label19.StylePriority.UseTextAlignment = false;
+            this.label19.Text = ":";
+            this.label19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label19.TextFormatString = "telefon";
+            // 
+            // label20
+            // 
+            this.label20.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label20.Dpi = 254F;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label20.LocationFloat = new DevExpress.Utils.PointFloat(12.78239F, 228.9998F);
+            this.label20.Name = "label20";
+            this.label20.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label20.SizeF = new System.Drawing.SizeF(103.0221F, 40.00003F);
+            this.label20.StylePriority.UseBorders = false;
+            this.label20.StylePriority.UseFont = false;
+            this.label20.StylePriority.UsePadding = false;
+            this.label20.StylePriority.UseTextAlignment = false;
+            this.label20.Text = "e-mail";
+            this.label20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label20.TextFormatString = "telefon";
+            // 
+            // label21
+            // 
+            this.label21.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label21.Dpi = 254F;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label21.LocationFloat = new DevExpress.Utils.PointFloat(115.8048F, 188.9997F);
+            this.label21.Name = "label21";
+            this.label21.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label21.SizeF = new System.Drawing.SizeF(5F, 40.00003F);
+            this.label21.StylePriority.UseBorders = false;
+            this.label21.StylePriority.UseFont = false;
+            this.label21.StylePriority.UsePadding = false;
+            this.label21.StylePriority.UseTextAlignment = false;
+            this.label21.Text = ":";
+            this.label21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label21.TextFormatString = "telefon";
+            // 
+            // label22
+            // 
+            this.label22.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label22.Dpi = 254F;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label22.LocationFloat = new DevExpress.Utils.PointFloat(12.78264F, 188.9997F);
+            this.label22.Name = "label22";
+            this.label22.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label22.SizeF = new System.Drawing.SizeF(103.0221F, 40.00003F);
+            this.label22.StylePriority.UseBorders = false;
+            this.label22.StylePriority.UseFont = false;
+            this.label22.StylePriority.UsePadding = false;
+            this.label22.StylePriority.UseTextAlignment = false;
+            this.label22.Text = "telefon";
+            this.label22.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label22.TextFormatString = "telefon";
+            // 
+            // label23
+            // 
+            this.label23.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label23.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "Kontextové informace.MojeFirmaWWW")});
+            this.label23.Dpi = 254F;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label23.LocationFloat = new DevExpress.Utils.PointFloat(120.8047F, 268.9999F);
+            this.label23.Name = "label23";
+            this.label23.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 0, 0, 0, 254F);
+            this.label23.SizeF = new System.Drawing.SizeF(724.7419F, 40.00003F);
+            this.label23.StylePriority.UseBorders = false;
+            this.label23.StylePriority.UseFont = false;
+            this.label23.StylePriority.UsePadding = false;
+            this.label23.StylePriority.UseTextAlignment = false;
+            this.label23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label23.TextFormatString = "{0}";
+            // 
+            // DIC
+            // 
+            this.DIC.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.DIC.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.MojeFirmaDIC")});
+            this.DIC.Dpi = 254F;
+            this.DIC.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DIC.LocationFloat = new DevExpress.Utils.PointFloat(604.6274F, 124.0001F);
+            this.DIC.Name = "DIC";
+            this.DIC.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.DIC.SizeF = new System.Drawing.SizeF(240.9193F, 40.00003F);
+            this.DIC.StylePriority.UseBorders = false;
+            this.DIC.StylePriority.UseFont = false;
+            this.DIC.StylePriority.UsePadding = false;
+            this.DIC.StylePriority.UseTextAlignment = false;
+            this.DIC.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.DIC.TextFormatString = "{0}";
+            // 
+            // IC
+            // 
+            this.IC.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.IC.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "Kontextové informace.ICO")});
+            this.IC.Dpi = 254F;
+            this.IC.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.IC.LocationFloat = new DevExpress.Utils.PointFloat(604.6274F, 82.00005F);
+            this.IC.Name = "IC";
+            this.IC.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.IC.SizeF = new System.Drawing.SizeF(240.9193F, 40.00001F);
+            this.IC.StylePriority.UseBorders = false;
+            this.IC.StylePriority.UseFont = false;
+            this.IC.StylePriority.UsePadding = false;
+            this.IC.StylePriority.UseTextAlignment = false;
+            this.IC.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.IC.TextFormatString = "{0}";
+            // 
+            // Email
+            // 
+            this.Email.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Email.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "Kontextové informace.Email")});
+            this.Email.Dpi = 254F;
+            this.Email.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Email.LocationFloat = new DevExpress.Utils.PointFloat(120.8047F, 228.9998F);
+            this.Email.Name = "Email";
+            this.Email.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 0, 0, 0, 254F);
+            this.Email.SizeF = new System.Drawing.SizeF(724.7419F, 40.00005F);
+            this.Email.StylePriority.UseBorders = false;
+            this.Email.StylePriority.UseFont = false;
+            this.Email.StylePriority.UsePadding = false;
+            this.Email.StylePriority.UseTextAlignment = false;
+            this.Email.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.Email.TextFormatString = "{0}";
+            // 
+            // Telefon
+            // 
+            this.Telefon.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Telefon.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "Kontextové informace.Telefon1")});
+            this.Telefon.Dpi = 254F;
+            this.Telefon.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Telefon.LocationFloat = new DevExpress.Utils.PointFloat(120.8047F, 188.9997F);
+            this.Telefon.Name = "Telefon";
+            this.Telefon.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 0, 0, 0, 254F);
+            this.Telefon.SizeF = new System.Drawing.SizeF(297.411F, 40.00003F);
+            this.Telefon.StylePriority.UseBorders = false;
+            this.Telefon.StylePriority.UseFont = false;
+            this.Telefon.StylePriority.UsePadding = false;
+            this.Telefon.StylePriority.UseTextAlignment = false;
+            this.Telefon.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.Telefon.TextFormatString = "{0:### ### ###}";
+            // 
+            // Mesto
+            // 
+            this.Mesto.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Mesto.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "Kontextové informace.MistoObchodniAdresy")});
+            this.Mesto.Dpi = 254F;
+            this.Mesto.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Mesto.LocationFloat = new DevExpress.Utils.PointFloat(140.7824F, 124.0001F);
+            this.Mesto.Name = "Mesto";
+            this.Mesto.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.Mesto.SizeF = new System.Drawing.SizeF(385.5409F, 40.00002F);
+            this.Mesto.StylePriority.UseBorders = false;
+            this.Mesto.StylePriority.UseFont = false;
+            this.Mesto.StylePriority.UsePadding = false;
+            this.Mesto.StylePriority.UseTextAlignment = false;
+            this.Mesto.Text = "xrLabel28";
+            this.Mesto.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            // 
+            // Ulice
+            // 
+            this.Ulice.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Ulice.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "Kontextové informace.UliceObchodniAdresy")});
+            this.Ulice.Dpi = 254F;
+            this.Ulice.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Ulice.LocationFloat = new DevExpress.Utils.PointFloat(12.78239F, 82.00006F);
+            this.Ulice.Name = "Ulice";
+            this.Ulice.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.Ulice.SizeF = new System.Drawing.SizeF(513.541F, 40.00002F);
+            this.Ulice.StylePriority.UseBorders = false;
+            this.Ulice.StylePriority.UseFont = false;
+            this.Ulice.StylePriority.UsePadding = false;
+            this.Ulice.StylePriority.UseTextAlignment = false;
+            this.Ulice.Text = "xrLabel26";
+            this.Ulice.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            // 
+            // Nazev
+            // 
+            this.Nazev.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Nazev.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "Kontextové informace.ObchodniAdresa")});
+            this.Nazev.Dpi = 254F;
+            this.Nazev.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.Nazev.LocationFloat = new DevExpress.Utils.PointFloat(12.78238F, 40.00003F);
+            this.Nazev.Name = "Nazev";
+            this.Nazev.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.Nazev.SizeF = new System.Drawing.SizeF(832.7642F, 40.00002F);
+            this.Nazev.StylePriority.UseBorders = false;
+            this.Nazev.StylePriority.UseFont = false;
+            this.Nazev.StylePriority.UsePadding = false;
+            this.Nazev.StylePriority.UseTextAlignment = false;
+            this.Nazev.Text = "xrLabel25";
+            this.Nazev.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            // 
+            // Popis
+            // 
+            this.Popis.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Popis.Dpi = 254F;
+            this.Popis.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.Popis.LocationFloat = new DevExpress.Utils.PointFloat(12.78236F, 0F);
+            this.Popis.Name = "Popis";
+            this.Popis.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.Popis.SizeF = new System.Drawing.SizeF(254F, 40.00002F);
+            this.Popis.StylePriority.UseBorderDashStyle = false;
+            this.Popis.StylePriority.UseBorders = false;
+            this.Popis.StylePriority.UseBorderWidth = false;
+            this.Popis.StylePriority.UseFont = false;
+            this.Popis.StylePriority.UsePadding = false;
+            this.Popis.StylePriority.UseTextAlignment = false;
+            this.Popis.Text = "Dodavatel";
+            this.Popis.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            // 
+            // PSC
+            // 
+            this.PSC.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.PSC.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "Kontextové informace.PSCObchodniAdresy")});
+            this.PSC.Dpi = 254F;
+            this.PSC.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.PSC.LocationFloat = new DevExpress.Utils.PointFloat(12.78236F, 124F);
+            this.PSC.Name = "PSC";
+            this.PSC.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.PSC.SizeF = new System.Drawing.SizeF(127F, 40.00002F);
+            this.PSC.StylePriority.UseBorders = false;
+            this.PSC.StylePriority.UseFont = false;
+            this.PSC.StylePriority.UsePadding = false;
+            this.PSC.StylePriority.UseTextAlignment = false;
+            this.PSC.Text = "xrLabel27";
+            this.PSC.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            // 
+            // xrLabel19
+            // 
+            this.xrLabel19.Dpi = 254F;
+            this.xrLabel19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(12.78288F, 6.103516E-05F);
+            this.xrLabel19.Name = "xrLabel19";
+            this.xrLabel19.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel19.SizeF = new System.Drawing.SizeF(287.499F, 42F);
+            this.xrLabel19.StyleName = "Vychozi";
+            this.xrLabel19.StylePriority.UseFont = false;
+            this.xrLabel19.Text = "Datum vystavení";
+            this.xrLabel19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // xrLabel23
+            // 
+            this.xrLabel23.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.DatumVystaveni", "{0:dd.MM.yyyy}")});
+            this.xrLabel23.Dpi = 254F;
+            this.xrLabel23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(300.2819F, 0F);
+            this.xrLabel23.Name = "xrLabel23";
+            this.xrLabel23.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel23.SizeF = new System.Drawing.SizeF(545.265F, 42F);
+            this.xrLabel23.StyleName = "Vychozi";
+            this.xrLabel23.StylePriority.UseTextAlignment = false;
+            this.xrLabel23.Text = "xrLabel34";
+            this.xrLabel23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // pageInfo1
+            // 
+            this.pageInfo1.Dpi = 254F;
+            this.pageInfo1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(300.2819F, 42.00031F);
+            this.pageInfo1.Name = "pageInfo1";
+            this.pageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.pageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
+            this.pageInfo1.SizeF = new System.Drawing.SizeF(545.265F, 41.99997F);
+            this.pageInfo1.StyleName = "Vychozi";
+            this.pageInfo1.StylePriority.UseFont = false;
+            this.pageInfo1.StylePriority.UseTextAlignment = false;
+            this.pageInfo1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.pageInfo1.TextFormatString = "{0:HH:mm dd.MM.yyyy}";
+            // 
+            // label10
+            // 
+            this.label10.Dpi = 254F;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label10.LocationFloat = new DevExpress.Utils.PointFloat(12.78262F, 42.00009F);
+            this.label10.Name = "label10";
+            this.label10.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label10.SizeF = new System.Drawing.SizeF(287.4992F, 42F);
+            this.label10.StyleName = "Vychozi";
+            this.label10.StylePriority.UseFont = false;
+            this.label10.Text = "Datum tisku";
+            this.label10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // label8
+            // 
+            this.label8.Dpi = 254F;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label8.LocationFloat = new DevExpress.Utils.PointFloat(12.78262F, 84.00009F);
+            this.label8.Name = "label8";
+            this.label8.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label8.SizeF = new System.Drawing.SizeF(287.4992F, 42F);
+            this.label8.StyleName = "Vychozi";
+            this.label8.StylePriority.UseFont = false;
+            this.label8.Text = "Vystavil";
+            this.label8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // label11
+            // 
+            this.label11.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.Vystavil")});
+            this.label11.Dpi = 254F;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label11.LocationFloat = new DevExpress.Utils.PointFloat(300.2819F, 84.00024F);
+            this.label11.Multiline = true;
+            this.label11.Name = "label11";
+            this.label11.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label11.SizeF = new System.Drawing.SizeF(545.265F, 42.00003F);
+            this.label11.StyleName = "Vychozi";
+            this.label11.StylePriority.UseFont = false;
+            this.label11.StylePriority.UseTextAlignment = false;
+            this.label11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // label30
+            // 
+            this.label30.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label30.Dpi = 254F;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label30.LocationFloat = new DevExpress.Utils.PointFloat(640.9724F, 123.9999F);
+            this.label30.Name = "label30";
+            this.label30.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label30.SizeF = new System.Drawing.SizeF(64.53729F, 40.00002F);
+            this.label30.StylePriority.UseBorders = false;
+            this.label30.StylePriority.UseFont = false;
+            this.label30.StylePriority.UsePadding = false;
+            this.label30.StylePriority.UseTextAlignment = false;
+            this.label30.Text = "DIČ:";
+            this.label30.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label30.TextFormatString = "telefon";
+            // 
+            // label31
+            // 
+            this.label31.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label31.Dpi = 254F;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label31.LocationFloat = new DevExpress.Utils.PointFloat(640.9725F, 80.00003F);
+            this.label31.Name = "label31";
+            this.label31.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label31.SizeF = new System.Drawing.SizeF(64.53729F, 40.00002F);
+            this.label31.StylePriority.UseBorders = false;
+            this.label31.StylePriority.UseFont = false;
+            this.label31.StylePriority.UsePadding = false;
+            this.label31.StylePriority.UseTextAlignment = false;
+            this.label31.Text = "IČO:";
+            this.label31.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label31.TextFormatString = "telefon";
+            // 
+            // label42
+            // 
+            this.label42.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label42.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.DIC")});
+            this.label42.Dpi = 254F;
+            this.label42.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label42.LocationFloat = new DevExpress.Utils.PointFloat(705.5096F, 124F);
+            this.label42.Name = "label42";
+            this.label42.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label42.SizeF = new System.Drawing.SizeF(240.9193F, 40.00003F);
+            this.label42.StylePriority.UseBorders = false;
+            this.label42.StylePriority.UseFont = false;
+            this.label42.StylePriority.UsePadding = false;
+            this.label42.StylePriority.UseTextAlignment = false;
+            this.label42.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.label42.TextFormatString = "{0}";
+            // 
+            // label43
+            // 
+            this.label43.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label43.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.IC")});
+            this.label43.Dpi = 254F;
+            this.label43.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label43.LocationFloat = new DevExpress.Utils.PointFloat(705.5098F, 80.00003F);
+            this.label43.Name = "label43";
+            this.label43.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label43.SizeF = new System.Drawing.SizeF(240.9193F, 40.00001F);
+            this.label43.StylePriority.UseBorders = false;
+            this.label43.StylePriority.UseFont = false;
+            this.label43.StylePriority.UsePadding = false;
+            this.label43.StylePriority.UseTextAlignment = false;
+            this.label43.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.label43.TextFormatString = "{0}";
+            // 
+            // label46
+            // 
+            this.label46.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label46.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.AdresaMisto")});
+            this.label46.Dpi = 254F;
+            this.label46.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label46.LocationFloat = new DevExpress.Utils.PointFloat(140.7826F, 124.0001F);
+            this.label46.Name = "label46";
+            this.label46.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label46.SizeF = new System.Drawing.SizeF(489.3657F, 40.00002F);
+            this.label46.StylePriority.UseBorders = false;
+            this.label46.StylePriority.UseFont = false;
+            this.label46.StylePriority.UsePadding = false;
+            this.label46.StylePriority.UseTextAlignment = false;
+            this.label46.Text = "xrLabel28";
+            this.label46.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            // 
+            // label47
+            // 
+            this.label47.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label47.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.AdresaUlice")});
+            this.label47.Dpi = 254F;
+            this.label47.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label47.LocationFloat = new DevExpress.Utils.PointFloat(12.78241F, 82.00007F);
+            this.label47.Name = "label47";
+            this.label47.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label47.SizeF = new System.Drawing.SizeF(617.3659F, 40.00001F);
+            this.label47.StylePriority.UseBorders = false;
+            this.label47.StylePriority.UseFont = false;
+            this.label47.StylePriority.UsePadding = false;
+            this.label47.StylePriority.UseTextAlignment = false;
+            this.label47.Text = "xrLabel26";
+            this.label47.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            // 
+            // label48
+            // 
+            this.label48.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label48.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.AdresaNazev")});
+            this.label48.Dpi = 254F;
+            this.label48.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label48.LocationFloat = new DevExpress.Utils.PointFloat(12.78238F, 40.00003F);
+            this.label48.Name = "label48";
+            this.label48.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label48.SizeF = new System.Drawing.SizeF(832.7642F, 40.00002F);
+            this.label48.StylePriority.UseBorders = false;
+            this.label48.StylePriority.UseFont = false;
+            this.label48.StylePriority.UsePadding = false;
+            this.label48.StylePriority.UseTextAlignment = false;
+            this.label48.Text = "xrLabel25";
+            this.label48.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            // 
+            // label49
+            // 
+            this.label49.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label49.Dpi = 254F;
+            this.label49.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label49.LocationFloat = new DevExpress.Utils.PointFloat(12.78236F, 0F);
+            this.label49.Name = "label49";
+            this.label49.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label49.SizeF = new System.Drawing.SizeF(254F, 40.00002F);
+            this.label49.StylePriority.UseBorderDashStyle = false;
+            this.label49.StylePriority.UseBorders = false;
+            this.label49.StylePriority.UseBorderWidth = false;
+            this.label49.StylePriority.UseFont = false;
+            this.label49.StylePriority.UsePadding = false;
+            this.label49.StylePriority.UseTextAlignment = false;
+            this.label49.Text = "Odběratel";
+            this.label49.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            // 
+            // label50
+            // 
+            this.label50.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label50.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.AdresaPSC")});
+            this.label50.Dpi = 254F;
+            this.label50.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label50.LocationFloat = new DevExpress.Utils.PointFloat(12.78236F, 124F);
+            this.label50.Name = "label50";
+            this.label50.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label50.SizeF = new System.Drawing.SizeF(127F, 40.00002F);
+            this.label50.StylePriority.UseBorders = false;
+            this.label50.StylePriority.UseFont = false;
+            this.label50.StylePriority.UsePadding = false;
+            this.label50.StylePriority.UseTextAlignment = false;
+            this.label50.Text = "xrLabel27";
+            this.label50.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            // 
+            // label1
+            // 
+            this.label1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label1.Dpi = 254F;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label1.LocationFloat = new DevExpress.Utils.PointFloat(162.2824F, 269.5173F);
+            this.label1.Name = "label1";
+            this.label1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label1.SizeF = new System.Drawing.SizeF(5F, 40.00003F);
+            this.label1.StylePriority.UseBorders = false;
+            this.label1.StylePriority.UseFont = false;
+            this.label1.StylePriority.UsePadding = false;
+            this.label1.StylePriority.UseTextAlignment = false;
+            this.label1.Text = ":";
+            this.label1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label1.TextFormatString = "telefon";
+            // 
+            // label2
+            // 
+            this.label2.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label2.Dpi = 254F;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label2.LocationFloat = new DevExpress.Utils.PointFloat(12.78229F, 269.5172F);
+            this.label2.Name = "label2";
+            this.label2.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label2.SizeF = new System.Drawing.SizeF(149.5007F, 40.00003F);
+            this.label2.StylePriority.UseBorders = false;
+            this.label2.StylePriority.UseFont = false;
+            this.label2.StylePriority.UsePadding = false;
+            this.label2.StylePriority.UseTextAlignment = false;
+            this.label2.Text = "číslo obj.";
+            this.label2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label2.TextFormatString = "telefon";
+            // 
+            // label6
+            // 
+            this.label6.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label6.Dpi = 254F;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label6.LocationFloat = new DevExpress.Utils.PointFloat(162.2824F, 229.5172F);
+            this.label6.Name = "label6";
+            this.label6.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label6.SizeF = new System.Drawing.SizeF(5F, 40.00003F);
+            this.label6.StylePriority.UseBorders = false;
+            this.label6.StylePriority.UseFont = false;
+            this.label6.StylePriority.UsePadding = false;
+            this.label6.StylePriority.UseTextAlignment = false;
+            this.label6.Text = ":";
+            this.label6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label6.TextFormatString = "telefon";
+            // 
+            // label7
+            // 
+            this.label7.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label7.Dpi = 254F;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label7.LocationFloat = new DevExpress.Utils.PointFloat(12.78229F, 229.5172F);
+            this.label7.Name = "label7";
+            this.label7.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label7.SizeF = new System.Drawing.SizeF(149.5001F, 40F);
+            this.label7.StylePriority.UseBorders = false;
+            this.label7.StylePriority.UseFont = false;
+            this.label7.StylePriority.UsePadding = false;
+            this.label7.StylePriority.UseTextAlignment = false;
+            this.label7.Text = "telefon";
+            this.label7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label7.TextFormatString = "telefon";
+            // 
+            // label9
+            // 
+            this.label9.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label9.Dpi = 254F;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label9.LocationFloat = new DevExpress.Utils.PointFloat(162.2829F, 189.5171F);
+            this.label9.Name = "label9";
+            this.label9.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label9.SizeF = new System.Drawing.SizeF(5F, 40.00003F);
+            this.label9.StylePriority.UseBorders = false;
+            this.label9.StylePriority.UseFont = false;
+            this.label9.StylePriority.UsePadding = false;
+            this.label9.StylePriority.UseTextAlignment = false;
+            this.label9.Text = ":";
+            this.label9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label9.TextFormatString = "telefon";
+            // 
+            // label32
+            // 
+            this.label32.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label32.Dpi = 254F;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label32.LocationFloat = new DevExpress.Utils.PointFloat(12.78241F, 189.5172F);
+            this.label32.Name = "label32";
+            this.label32.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label32.SizeF = new System.Drawing.SizeF(149.5005F, 40.00003F);
+            this.label32.StylePriority.UseBorders = false;
+            this.label32.StylePriority.UseFont = false;
+            this.label32.StylePriority.UsePadding = false;
+            this.label32.StylePriority.UseTextAlignment = false;
+            this.label32.Text = "přebírající";
+            this.label32.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label32.TextFormatString = "telefon";
+            // 
+            // label33
+            // 
+            this.label33.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label33.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.Odkaz")});
+            this.label33.Dpi = 254F;
+            this.label33.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label33.LocationFloat = new DevExpress.Utils.PointFloat(167.2824F, 269.5173F);
+            this.label33.Name = "label33";
+            this.label33.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 0, 0, 0, 254F);
+            this.label33.SizeF = new System.Drawing.SizeF(724.7419F, 40.00003F);
+            this.label33.StylePriority.UseBorders = false;
+            this.label33.StylePriority.UseFont = false;
+            this.label33.StylePriority.UsePadding = false;
+            this.label33.StylePriority.UseTextAlignment = false;
+            this.label33.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label33.TextFormatString = "{0}";
+            // 
+            // label34
+            // 
+            this.label34.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label34.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany_DC.SkladovyDoklad_DodaciListVydany_DC-Adresar_Oso" +
+                                "ba_2_DC.Tel1Cislo")});
+            this.label34.Dpi = 254F;
+            this.label34.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label34.LocationFloat = new DevExpress.Utils.PointFloat(167.2824F, 229.5172F);
+            this.label34.Name = "label34";
+            this.label34.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 0, 0, 0, 254F);
+            this.label34.SizeF = new System.Drawing.SizeF(724.7419F, 40.00005F);
+            this.label34.StylePriority.UseBorders = false;
+            this.label34.StylePriority.UseFont = false;
+            this.label34.StylePriority.UsePadding = false;
+            this.label34.StylePriority.UseTextAlignment = false;
+            this.label34.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label34.TextFormatString = "{0}";
+            // 
+            // label35
+            // 
+            this.label35.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label35.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany_DC.SkladovyDoklad_DodaciListVydany_DC-Adresar_Oso" +
+                                "ba_2_DC.Jmeno")});
+            this.label35.Dpi = 254F;
+            this.label35.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label35.LocationFloat = new DevExpress.Utils.PointFloat(167.2824F, 189.5172F);
+            this.label35.Name = "label35";
+            this.label35.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 0, 0, 0, 254F);
+            this.label35.SizeF = new System.Drawing.SizeF(779.1466F, 40.00003F);
+            this.label35.StylePriority.UseBorders = false;
+            this.label35.StylePriority.UseFont = false;
+            this.label35.StylePriority.UsePadding = false;
+            this.label35.StylePriority.UseTextAlignment = false;
+            this.label35.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            this.label35.TextFormatString = "{0:### ### ###}";
+            // 
+            // label36
+            // 
+            this.label36.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label36.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.DodaciAdresaMisto")});
+            this.label36.Dpi = 254F;
+            this.label36.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label36.LocationFloat = new DevExpress.Utils.PointFloat(140.7826F, 124.0001F);
+            this.label36.Name = "label36";
+            this.label36.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label36.SizeF = new System.Drawing.SizeF(489.3657F, 40.00002F);
+            this.label36.StylePriority.UseBorders = false;
+            this.label36.StylePriority.UseFont = false;
+            this.label36.StylePriority.UsePadding = false;
+            this.label36.StylePriority.UseTextAlignment = false;
+            this.label36.Text = "xrLabel28";
+            this.label36.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            // 
+            // label37
+            // 
+            this.label37.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label37.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.DodaciAdresaUlice")});
+            this.label37.Dpi = 254F;
+            this.label37.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label37.LocationFloat = new DevExpress.Utils.PointFloat(12.78241F, 82.00007F);
+            this.label37.Name = "label37";
+            this.label37.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label37.SizeF = new System.Drawing.SizeF(617.3659F, 40.00001F);
+            this.label37.StylePriority.UseBorders = false;
+            this.label37.StylePriority.UseFont = false;
+            this.label37.StylePriority.UsePadding = false;
+            this.label37.StylePriority.UseTextAlignment = false;
+            this.label37.Text = "xrLabel26";
+            this.label37.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            // 
+            // label38
+            // 
+            this.label38.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label38.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.DodaciAdresaNazev")});
+            this.label38.Dpi = 254F;
+            this.label38.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label38.LocationFloat = new DevExpress.Utils.PointFloat(12.78238F, 40.00003F);
+            this.label38.Name = "label38";
+            this.label38.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label38.SizeF = new System.Drawing.SizeF(832.7642F, 40.00002F);
+            this.label38.StylePriority.UseBorders = false;
+            this.label38.StylePriority.UseFont = false;
+            this.label38.StylePriority.UsePadding = false;
+            this.label38.StylePriority.UseTextAlignment = false;
+            this.label38.Text = "xrLabel25";
+            this.label38.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            // 
+            // label39
+            // 
+            this.label39.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label39.Dpi = 254F;
+            this.label39.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label39.LocationFloat = new DevExpress.Utils.PointFloat(12.78236F, 0F);
+            this.label39.Name = "label39";
+            this.label39.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label39.SizeF = new System.Drawing.SizeF(254F, 40.00002F);
+            this.label39.StylePriority.UseBorderDashStyle = false;
+            this.label39.StylePriority.UseBorders = false;
+            this.label39.StylePriority.UseBorderWidth = false;
+            this.label39.StylePriority.UseFont = false;
+            this.label39.StylePriority.UsePadding = false;
+            this.label39.StylePriority.UseTextAlignment = false;
+            this.label39.Text = "Příjemce";
+            this.label39.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            // 
+            // label40
+            // 
+            this.label40.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label40.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.DodaciAdresaPSC")});
+            this.label40.Dpi = 254F;
+            this.label40.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label40.LocationFloat = new DevExpress.Utils.PointFloat(12.78236F, 124F);
+            this.label40.Name = "label40";
+            this.label40.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label40.SizeF = new System.Drawing.SizeF(127F, 40.00002F);
+            this.label40.StylePriority.UseBorders = false;
+            this.label40.StylePriority.UseFont = false;
+            this.label40.StylePriority.UsePadding = false;
+            this.label40.StylePriority.UseTextAlignment = false;
+            this.label40.Text = "xrLabel27";
+            this.label40.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            // 
+            // detailBand2
+            // 
+            this.detailBand2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.label51,
+                        this.label44,
+                        this.label29,
+                        this.label5,
+                        this.xrLabel59,
+                        this.xrLabel60,
+                        this.xrLabel61,
+                        this.xrLabel62,
+                        this.xrlnazev});
+            this.detailBand2.Dpi = 254F;
+            this.detailBand2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.detailBand2.HeightF = 79.99996F;
+            this.detailBand2.KeepTogether = true;
+            this.detailBand2.Name = "detailBand2";
+            this.detailBand2.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.detailBand2.Scripts.OnBeforePrint = "detailBand2_BeforePrint";
+            this.detailBand2.SortFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
+                        new DevExpress.XtraReports.UI.GroupField("S5PolozkaSort", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            this.detailBand2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // groupHeaderBand2
+            // 
+            this.groupHeaderBand2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.label45,
+                        this.label41,
+                        this.label24,
+                        this.label4,
+                        this.xrLabel67,
+                        this.xrLabel68,
+                        this.xrLine7,
+                        this.xrLabel69,
+                        this.xrLabel70,
+                        this.xrLabel71});
+            this.groupHeaderBand2.Dpi = 254F;
+            this.groupHeaderBand2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.groupHeaderBand2.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
+                        new DevExpress.XtraReports.UI.GroupField("SkladovyDoklad_PolozkaDodacihoListuVydaneho-Obchod_ObsahPolozkySArtiklem.Obchod_O" +
+                                "bsahPolozkySArtiklem-Artikly_Artikl.SkladovaPozice_UserData", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            this.groupHeaderBand2.HeightF = 51.99994F;
+            this.groupHeaderBand2.Name = "groupHeaderBand2";
+            this.groupHeaderBand2.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.groupHeaderBand2.RepeatEveryPage = true;
+            this.groupHeaderBand2.StyleName = "Vychozi";
+            this.groupHeaderBand2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // GroupFooter1
+            // 
+            this.GroupFooter1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.panel1,
+                        this.xrLine10,
+                        this.xrLabel15});
+            this.GroupFooter1.Dpi = 254F;
+            this.GroupFooter1.HeightF = 761.2914F;
+            this.GroupFooter1.KeepTogether = true;
+            this.GroupFooter1.Level = 1;
+            this.GroupFooter1.Name = "GroupFooter1";
+            this.GroupFooter1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.GroupFooter1.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
+            this.GroupFooter1.Scripts.OnBeforePrint = "GroupFooter1_BeforePrint";
+            this.GroupFooter1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // xrLabel59
+            // 
+            this.xrLabel59.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.SkladovyDoklad_DodaciListVydany-SkladovyDoklad_Po" +
+                                "lozkaDodacihoListuVydaneho.JednCenaCM", "{0:### ### ### ##0.0000}")});
+            this.xrLabel59.Dpi = 254F;
+            this.xrLabel59.LocationFloat = new DevExpress.Utils.PointFloat(1572F, 0F);
+            this.xrLabel59.Name = "xrLabel59";
+            this.xrLabel59.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel59.SizeF = new System.Drawing.SizeF(270.0002F, 39.99997F);
+            this.xrLabel59.Text = "xrLabel59";
+            this.xrLabel59.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // xrLabel60
+            // 
+            this.xrLabel60.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.SkladovyDoklad_DodaciListVydany-SkladovyDoklad_Po" +
+                                "lozkaDodacihoListuVydaneho.Jednotka")});
+            this.xrLabel60.Dpi = 254F;
+            this.xrLabel60.LocationFloat = new DevExpress.Utils.PointFloat(1482F, 0F);
+            this.xrLabel60.Name = "xrLabel60";
+            this.xrLabel60.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel60.SizeF = new System.Drawing.SizeF(71.479F, 40F);
+            this.xrLabel60.Text = "xrLabel47";
+            this.xrLabel60.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // xrLabel61
+            // 
+            this.xrLabel61.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.SkladovyDoklad_DodaciListVydany-SkladovyDoklad_Po" +
+                                "lozkaDodacihoListuVydaneho.Mnozstvi", "{0:### ### ### ### ##0.0000}")});
+            this.xrLabel61.Dpi = 254F;
+            this.xrLabel61.LocationFloat = new DevExpress.Utils.PointFloat(1289F, 0F);
+            this.xrLabel61.Name = "xrLabel61";
+            this.xrLabel61.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel61.SizeF = new System.Drawing.SizeF(192.9998F, 39.99997F);
+            this.xrLabel61.Text = "xrLabel61";
+            this.xrLabel61.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // xrLabel62
+            // 
+            this.xrLabel62.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("xrLabel62.DataBindings"))});
+            this.xrLabel62.Dpi = 254F;
+            this.xrLabel62.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrLabel62.Name = "xrLabel62";
+            this.xrLabel62.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel62.SizeF = new System.Drawing.SizeF(206F, 39.99997F);
+            this.xrLabel62.Text = "xrLabel45";
+            this.xrLabel62.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // xrlnazev
+            // 
+            this.xrlnazev.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.SkladovyDoklad_DodaciListVydany-SkladovyDoklad_Po" +
+                                "lozkaDodacihoListuVydaneho.Nazev")});
+            this.xrlnazev.Dpi = 254F;
+            this.xrlnazev.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.xrlnazev.LocationFloat = new DevExpress.Utils.PointFloat(206F, 0F);
+            this.xrlnazev.Name = "xrlnazev";
+            this.xrlnazev.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrlnazev.Scripts.OnBeforePrint = "xrlnazev_BeforePrint";
+            this.xrlnazev.SizeF = new System.Drawing.SizeF(480F, 40F);
+            this.xrlnazev.Text = "xrLabel44";
+            this.xrlnazev.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // xrLabel67
+            // 
+            this.xrLabel67.Dpi = 254F;
+            this.xrLabel67.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.xrLabel67.LocationFloat = new DevExpress.Utils.PointFloat(1572F, 0F);
+            this.xrLabel67.Name = "xrLabel67";
+            this.xrLabel67.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel67.SizeF = new System.Drawing.SizeF(270.0002F, 42F);
+            this.xrLabel67.StylePriority.UseFont = false;
+            this.xrLabel67.Text = "Cena za MJ";
+            this.xrLabel67.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // xrLabel68
+            // 
+            this.xrLabel68.Dpi = 254F;
+            this.xrLabel68.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.xrLabel68.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrLabel68.Name = "xrLabel68";
+            this.xrLabel68.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel68.SizeF = new System.Drawing.SizeF(206F, 42F);
+            this.xrLabel68.StylePriority.UseFont = false;
+            this.xrLabel68.Text = "Kód";
+            this.xrLabel68.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // xrLine7
+            // 
+            this.xrLine7.BorderWidth = 1F;
+            this.xrLine7.Dpi = 254F;
+            this.xrLine7.LocationFloat = new DevExpress.Utils.PointFloat(0F, 41.99994F);
+            this.xrLine7.Name = "xrLine7";
+            this.xrLine7.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.xrLine7.SizeF = new System.Drawing.SizeF(1842F, 10F);
+            // 
+            // xrLabel69
+            // 
+            this.xrLabel69.Dpi = 254F;
+            this.xrLabel69.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.xrLabel69.LocationFloat = new DevExpress.Utils.PointFloat(1482F, 0F);
+            this.xrLabel69.Name = "xrLabel69";
+            this.xrLabel69.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel69.SizeF = new System.Drawing.SizeF(71.479F, 41.99988F);
+            this.xrLabel69.StylePriority.UseFont = false;
+            this.xrLabel69.Text = "MJ";
+            this.xrLabel69.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // xrLabel70
+            // 
+            this.xrLabel70.Dpi = 254F;
+            this.xrLabel70.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.xrLabel70.LocationFloat = new DevExpress.Utils.PointFloat(1289F, 0F);
+            this.xrLabel70.Name = "xrLabel70";
+            this.xrLabel70.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel70.SizeF = new System.Drawing.SizeF(192.9998F, 42F);
+            this.xrLabel70.StylePriority.UseFont = false;
+            this.xrLabel70.Text = "Počet MJ";
+            this.xrLabel70.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // xrLabel71
+            // 
+            this.xrLabel71.Dpi = 254F;
+            this.xrLabel71.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.xrLabel71.LocationFloat = new DevExpress.Utils.PointFloat(206F, 0F);
+            this.xrLabel71.Name = "xrLabel71";
+            this.xrLabel71.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel71.SizeF = new System.Drawing.SizeF(480F, 42F);
+            this.xrLabel71.StylePriority.UseFont = false;
+            this.xrLabel71.Text = "Název zboží";
+            this.xrLabel71.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.dynamicDPHTable1,
+                        this.xrLabel104,
+                        this.xrLabel99,
+                        this.xrLabel98,
+                        this.xrLabel103,
+                        this.label25,
+                        this.label26,
+                        this.line5,
+                        this.line6});
+            this.panel1.Dpi = 254F;
+            this.panel1.LocationFloat = new DevExpress.Utils.PointFloat(4.037221E-05F, 50.00002F);
+            this.panel1.Name = "panel1";
+            this.panel1.SizeF = new System.Drawing.SizeF(1847F, 711.2914F);
+            // 
+            // xrLine10
+            // 
+            this.xrLine10.Dpi = 254F;
+            this.xrLine10.LineWidth = 3F;
+            this.xrLine10.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrLine10.Name = "xrLine10";
+            this.xrLine10.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.xrLine10.SizeF = new System.Drawing.SizeF(1842F, 8F);
+            // 
+            // xrLabel15
+            // 
+            this.xrLabel15.CanShrink = true;
+            this.xrLabel15.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.Poznamka", "Poznámka: {0}")});
+            this.xrLabel15.Dpi = 254F;
+            this.xrLabel15.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.xrLabel15.KeepTogether = true;
+            this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(4.037221E-05F, 7.999996F);
+            this.xrLabel15.Multiline = true;
+            this.xrLabel15.Name = "xrLabel15";
+            this.xrLabel15.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel15.Scripts.OnBeforePrint = "xrLabel15_BeforePrint";
+            this.xrLabel15.SizeF = new System.Drawing.SizeF(1842F, 42F);
+            this.xrLabel15.StylePriority.UseFont = false;
+            this.xrLabel15.Text = "xrLabel15";
+            this.xrLabel15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // dynamicDPHTable1
+            // 
+            this.dynamicDPHTable1.BaseCaption = "Základ";
+            this.dynamicDPHTable1.ContentFont = new System.Drawing.Font("Segoe UI", 9F);
+            this.dynamicDPHTable1.CurrencyInfoFont = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.dynamicDPHTable1.CurrencyInforText = "Rozpis DPH uveden v měně";
+            this.dynamicDPHTable1.CurrencyType = CSW.CSWSystemUI.Reports.Controls.CurrencyType.DomesticCurrency;
+            this.dynamicDPHTable1.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Doklad_ID", null, "SkladovyDoklad_DodaciListVydany.ID"),
+                        new DevExpress.XtraReports.UI.XRBinding("DokladCurrency_ID", null, "Meny_Mena.ID"),
+                        new DevExpress.XtraReports.UI.XRBinding("NastaveniSazby_ID", null, "SkladovyDoklad_DodaciListVydany.SkladovyDoklad_DodaciListVydany-Dane_SazbaDPHNaDo" +
+                                "klade.ID"),
+                        new DevExpress.XtraReports.UI.XRBinding("NastaveniSazbySazba_ID", null, "SkladovyDoklad_DodaciListVydany.SkladovyDoklad_DodaciListVydany-Dane_SazbaDPHNaDo" +
+                                "klade.Dane_SazbaDPHNaDoklade-EconomicBase_SazbaDPH.ID"),
+                        new DevExpress.XtraReports.UI.XRBinding("RozpisDPH_ID", null, "SkladovyDoklad_DodaciListVydany.SkladovyDoklad_DodaciListVydany-Dane_SazbaDPHNaDo" +
+                                "klade.Dane_SazbaDPHNaDoklade-Dane_RozpisDPH.ID")});
+            this.dynamicDPHTable1.DesignType = CSW.CSWSystemUI.Reports.Controls.DynamicDPHTable.DynamicDPHTableDesign.CSWObycejny;
+            this.dynamicDPHTable1.Doklad_ID = new System.Guid("00000000-0000-0000-0000-000000000000");
+            this.dynamicDPHTable1.DokladCurrency_ID = new System.Guid("00000000-0000-0000-0000-000000000000");
+            this.dynamicDPHTable1.Dpi = 254F;
+            this.dynamicDPHTable1.DruhSazbyNulovaCaption = "nulová";
+            this.dynamicDPHTable1.DruhSazbySnizenaCaption = "snížená";
+            this.dynamicDPHTable1.DruhSazbyZakladniCaption = "základní";
+            this.dynamicDPHTable1.ExtraFooterReport = null;
+            this.dynamicDPHTable1.FooterFont = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.dynamicDPHTable1.GrossCaption = "Celkem";
+            this.dynamicDPHTable1.HeaderFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dynamicDPHTable1.LocationFloat = new DevExpress.Utils.PointFloat(2.645821F, 259.2072F);
+            this.dynamicDPHTable1.Name = "dynamicDPHTable1";
+            this.dynamicDPHTable1.NastaveniSazby_ID = new System.Guid("00000000-0000-0000-0000-000000000000");
+            this.dynamicDPHTable1.NastaveniSazbySazba_ID = new System.Guid("00000000-0000-0000-0000-000000000000");
+            this.dynamicDPHTable1.RateCaption = "Sazba DPH";
+            this.dynamicDPHTable1.RozpisDPH_ID = new System.Guid("00000000-0000-0000-0000-000000000000");
+            this.dynamicDPHTable1.ShowAllRozpisyDPH = false;
+            this.dynamicDPHTable1.ShowCurrencyInfo = true;
+            this.dynamicDPHTable1.ShowCurrencyInInfoText = true;
+            this.dynamicDPHTable1.SizeF = new System.Drawing.SizeF(1119.354F, 118.1679F);
+            this.dynamicDPHTable1.TotalCaption = "CELKEM";
+            this.dynamicDPHTable1.ValuesFormatString = "### ### ### ##0.00";
+            this.dynamicDPHTable1.VatCaption = "Výše DPH";
+            // 
+            // xrLabel104
+            // 
+            this.xrLabel104.Dpi = 254F;
+            this.xrLabel104.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.xrLabel104.LocationFloat = new DevExpress.Utils.PointFloat(985.5686F, 37.37497F);
+            this.xrLabel104.Name = "xrLabel104";
+            this.xrLabel104.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel104.SizeF = new System.Drawing.SizeF(401.3939F, 53.00001F);
+            this.xrLabel104.Text = "Sleva v %";
+            this.xrLabel104.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // xrLabel99
+            // 
+            this.xrLabel99.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.Sleva", "{0:### ### ### ##0.00}")});
+            this.xrLabel99.Dpi = 254F;
+            this.xrLabel99.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.xrLabel99.LocationFloat = new DevExpress.Utils.PointFloat(1405.156F, 37.37497F);
+            this.xrLabel99.Name = "xrLabel99";
+            this.xrLabel99.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel99.SizeF = new System.Drawing.SizeF(429.4904F, 53.00001F);
+            this.xrLabel99.Text = "xrLabel99";
+            this.xrLabel99.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // xrLabel98
+            // 
+            this.xrLabel98.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+                        | DevExpress.XtraPrinting.BorderSide.Right) 
+                        | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrLabel98.BorderWidth = 3F;
+            this.xrLabel98.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Tag", null, "SkladovyDoklad_DodaciListVydany.SkladovyDoklad_DodaciListVydany-Meny_Mena.Kod"),
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.SumaCelkemCM", "{0:### ### ### ##0.00}")});
+            this.xrLabel98.Dpi = 254F;
+            this.xrLabel98.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.xrLabel98.LocationFloat = new DevExpress.Utils.PointFloat(1405.156F, 121.375F);
+            this.xrLabel98.Name = "xrLabel98";
+            this.xrLabel98.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel98.Scripts.OnBeforePrint = "xrLabel98_BeforePrint";
+            this.xrLabel98.SizeF = new System.Drawing.SizeF(429.4904F, 83.00002F);
+            this.xrLabel98.Text = "xrLabel98";
+            this.xrLabel98.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // xrLabel103
+            // 
+            this.xrLabel103.Dpi = 254F;
+            this.xrLabel103.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.xrLabel103.LocationFloat = new DevExpress.Utils.PointFloat(985.5686F, 137.375F);
+            this.xrLabel103.Name = "xrLabel103";
+            this.xrLabel103.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel103.SizeF = new System.Drawing.SizeF(401.3939F, 53F);
+            this.xrLabel103.Text = "Cena celkem s DPH";
+            this.xrLabel103.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // label25
+            // 
+            this.label25.Dpi = 254F;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label25.LocationFloat = new DevExpress.Utils.PointFloat(1112.646F, 669.2914F);
+            this.label25.Name = "label25";
+            this.label25.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label25.SizeF = new System.Drawing.SizeF(520F, 42F);
+            this.label25.StylePriority.UseFont = false;
+            this.label25.StylePriority.UseTextAlignment = false;
+            this.label25.Text = "Předal";
+            this.label25.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            // 
+            // label26
+            // 
+            this.label26.Dpi = 254F;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label26.LocationFloat = new DevExpress.Utils.PointFloat(202.6458F, 669.2914F);
+            this.label26.Name = "label26";
+            this.label26.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label26.SizeF = new System.Drawing.SizeF(520F, 42F);
+            this.label26.StylePriority.UseFont = false;
+            this.label26.StylePriority.UseTextAlignment = false;
+            this.label26.Text = "Převzal";
+            this.label26.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            // 
+            // line5
+            // 
+            this.line5.Dpi = 254F;
+            this.line5.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.line5.LocationFloat = new DevExpress.Utils.PointFloat(1112.646F, 659.2914F);
+            this.line5.Name = "line5";
+            this.line5.SizeF = new System.Drawing.SizeF(520F, 10F);
+            // 
+            // line6
+            // 
+            this.line6.Dpi = 254F;
+            this.line6.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.line6.LocationFloat = new DevExpress.Utils.PointFloat(202.6458F, 659.2914F);
+            this.line6.Name = "line6";
+            this.line6.SizeF = new System.Drawing.SizeF(520F, 10.00003F);
+            // 
+            // pageInfo2
+            // 
+            this.pageInfo2.Dpi = 254F;
+            this.pageInfo2.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.pageInfo2.LocationFloat = new DevExpress.Utils.PointFloat(796.5F, 28.00001F);
+            this.pageInfo2.Name = "pageInfo2";
+            this.pageInfo2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.pageInfo2.SizeF = new System.Drawing.SizeF(254F, 26F);
+            this.pageInfo2.StylePriority.UseFont = false;
+            this.pageInfo2.StylePriority.UseTextAlignment = false;
+            this.pageInfo2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            // 
+            // line7
+            // 
+            this.line7.AnchorHorizontal = ((DevExpress.XtraReports.UI.HorizontalAnchorStyles)((DevExpress.XtraReports.UI.HorizontalAnchorStyles.Left | DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right)));
+            this.line7.AnchorVertical = ((DevExpress.XtraReports.UI.VerticalAnchorStyles)((DevExpress.XtraReports.UI.VerticalAnchorStyles.Top | DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom)));
+            this.line7.Dpi = 254F;
+            this.line7.ForeColor = System.Drawing.Color.Black;
+            this.line7.LineWidth = 0.05F;
+            this.line7.LocationFloat = new DevExpress.Utils.PointFloat(0F, 64.00005F);
+            this.line7.Name = "line7";
+            this.line7.SizeF = new System.Drawing.SizeF(1846F, 20.22912F);
+            this.line7.StylePriority.UseForeColor = false;
+            // 
+            // label27
+            // 
+            this.label27.Dpi = 254F;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label27.ForeColor = System.Drawing.Color.Red;
+            this.label27.LocationFloat = new DevExpress.Utils.PointFloat(796.5001F, 0F);
+            this.label27.Name = "label27";
+            this.label27.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label27.Scripts.OnBeforePrint = "label4_BeforePrint";
+            this.label27.SizeF = new System.Drawing.SizeF(214.6609F, 64F);
+            this.label27.StylePriority.UseBorders = false;
+            this.label27.StylePriority.UseBorderWidth = false;
+            this.label27.Text = "VRATKA";
+            this.label27.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // barCode1
+            // 
+            this.barCode1.Alignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.barCode1.AutoModule = true;
+            this.barCode1.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.CisloDokladu")});
+            this.barCode1.Dpi = 254F;
+            this.barCode1.LocationFloat = new DevExpress.Utils.PointFloat(1011.161F, 0F);
+            this.barCode1.Module = 5.08F;
+            this.barCode1.Name = "barCode1";
+            this.barCode1.Padding = new DevExpress.XtraPrinting.PaddingInfo(26, 26, 0, 0, 254F);
+            this.barCode1.SizeF = new System.Drawing.SizeF(459.8391F, 64.00003F);
+            this.barCode1.StylePriority.UseBorders = false;
+            this.barCode1.StylePriority.UseBorderWidth = false;
+            this.barCode1.StylePriority.UseTextAlignment = false;
+            this.barCode1.Symbology = code128Generator1;
+            this.barCode1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomRight;
+            // 
+            // xrLabel2
+            // 
+            this.xrLabel2.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.CisloDokladu")});
+            this.xrLabel2.Dpi = 254F;
+            this.xrLabel2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(1471F, 0F);
+            this.xrLabel2.Name = "xrLabel2";
+            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(375F, 64F);
+            this.xrLabel2.StylePriority.UseBorders = false;
+            this.xrLabel2.StylePriority.UseBorderWidth = false;
+            this.xrLabel2.StylePriority.UseTextAlignment = false;
+            this.xrLabel2.Text = "xrLabel2";
+            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // xrLabel21
+            // 
+            this.xrLabel21.Dpi = 254F;
+            this.xrLabel21.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrLabel21.Name = "xrLabel21";
+            this.xrLabel21.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel21.SizeF = new System.Drawing.SizeF(796.5001F, 64F);
+            this.xrLabel21.StylePriority.UseBorders = false;
+            this.xrLabel21.StylePriority.UseBorderWidth = false;
+            this.xrLabel21.Text = "Dodací list - Expediční příkaz";
+            this.xrLabel21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // label3
+            // 
+            this.label3.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.Poznamka")});
+            this.label3.Dpi = 254F;
+            this.label3.LocationFloat = new DevExpress.Utils.PointFloat(289.5652F, 0F);
+            this.label3.Multiline = true;
+            this.label3.Name = "label3";
+            this.label3.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label3.SizeF = new System.Drawing.SizeF(1545.081F, 38.55744F);
+            this.label3.StylePriority.UseTextAlignment = false;
+            this.label3.Text = "label3";
+            this.label3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // line1
+            // 
+            this.line1.AnchorHorizontal = ((DevExpress.XtraReports.UI.HorizontalAnchorStyles)((DevExpress.XtraReports.UI.HorizontalAnchorStyles.Left | DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right)));
+            this.line1.AnchorVertical = ((DevExpress.XtraReports.UI.VerticalAnchorStyles)((DevExpress.XtraReports.UI.VerticalAnchorStyles.Top | DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom)));
+            this.line1.Dpi = 254F;
+            this.line1.ForeColor = System.Drawing.Color.Black;
+            this.line1.LineWidth = 0.05F;
+            this.line1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 40.00002F);
+            this.line1.Name = "line1";
+            this.line1.SizeF = new System.Drawing.SizeF(1846F, 23.55735F);
+            this.line1.StylePriority.UseForeColor = false;
+            // 
+            // label28
+            // 
+            this.label28.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.label28.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.SkladovyDoklad_DodaciListVydany-Ciselniky_ZpusobD" +
+                                "opravy.Nazev")});
+            this.label28.Dpi = 254F;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label28.LocationFloat = new DevExpress.Utils.PointFloat(22.78289F, 0F);
+            this.label28.Name = "label28";
+            this.label28.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.label28.SizeF = new System.Drawing.SizeF(266.7823F, 40.00002F);
+            this.label28.StylePriority.UseBorderDashStyle = false;
+            this.label28.StylePriority.UseBorders = false;
+            this.label28.StylePriority.UseBorderWidth = false;
+            this.label28.StylePriority.UseFont = false;
+            this.label28.StylePriority.UsePadding = false;
+            this.label28.StylePriority.UseTextAlignment = false;
+            this.label28.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
+            // 
+            // Vychozi
+            // 
+            this.Vychozi.BackColor = System.Drawing.Color.Transparent;
+            this.Vychozi.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.Vychozi.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Vychozi.BorderWidth = 0F;
+            this.Vychozi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Vychozi.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Vychozi.Name = "Vychozi";
+            // 
+            // KodBezPrefixu
+            // 
+            this.KodBezPrefixu.DataMember = resources.GetString("KodBezPrefixu.DataMember");
+            this.KodBezPrefixu.Name = "KodBezPrefixu";
+            this.KodBezPrefixu.Scripts.OnGetValue = "KodBezPrefixu_GetValue";
+            // 
+            // label4
+            // 
+            this.label4.Dpi = 254F;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label4.LocationFloat = new DevExpress.Utils.PointFloat(1162.146F, 0F);
+            this.label4.Name = "label4";
+            this.label4.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label4.SizeF = new System.Drawing.SizeF(126.854F, 42F);
+            this.label4.StylePriority.UseFont = false;
+            this.label4.Text = "Pozice";
+            this.label4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // label5
+            // 
+            this.label5.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label5.DataBindings"), "{0:### ### ### ### ##0.0000}")});
+            this.label5.Dpi = 254F;
+            this.label5.LocationFloat = new DevExpress.Utils.PointFloat(1162.146F, 0F);
+            this.label5.Name = "label5";
+            this.label5.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label5.SizeF = new System.Drawing.SizeF(126.854F, 39.99997F);
+            this.label5.Text = "xrLabel61";
+            this.label5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // label24
+            // 
+            this.label24.Dpi = 254F;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label24.LocationFloat = new DevExpress.Utils.PointFloat(1553.479F, 0F);
+            this.label24.Multiline = true;
+            this.label24.Name = "label24";
+            this.label24.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label24.SizeF = new System.Drawing.SizeF(18.52112F, 41.99989F);
+            this.label24.StylePriority.UseFont = false;
+            this.label24.Text = "\r\n";
+            this.label24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // label29
+            // 
+            this.label29.Dpi = 254F;
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label29.LocationFloat = new DevExpress.Utils.PointFloat(1553.479F, 0F);
+            this.label29.Multiline = true;
+            this.label29.Name = "label29";
+            this.label29.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label29.SizeF = new System.Drawing.SizeF(18.52112F, 41.99989F);
+            this.label29.StylePriority.UseFont = false;
+            this.label29.Text = "\r\n";
+            this.label29.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // label41
+            // 
+            this.label41.Dpi = 254F;
+            this.label41.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label41.LocationFloat = new DevExpress.Utils.PointFloat(1035.292F, 0F);
+            this.label41.Name = "label41";
+            this.label41.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label41.SizeF = new System.Drawing.SizeF(126.854F, 42F);
+            this.label41.StylePriority.UseFont = false;
+            this.label41.Text = "Balení";
+            this.label41.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // label44
+            // 
+            this.label44.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label44.DataBindings"), "{0:### ### ### ### ##0.0000}")});
+            this.label44.Dpi = 254F;
+            this.label44.LocationFloat = new DevExpress.Utils.PointFloat(1035.292F, 1.999878F);
+            this.label44.Name = "label44";
+            this.label44.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label44.SizeF = new System.Drawing.SizeF(126.854F, 39.99997F);
+            this.label44.Text = "xrLabel61";
+            this.label44.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // label45
+            // 
+            this.label45.Dpi = 254F;
+            this.label45.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label45.LocationFloat = new DevExpress.Utils.PointFloat(806.6918F, 0F);
+            this.label45.Name = "label45";
+            this.label45.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label45.SizeF = new System.Drawing.SizeF(126.854F, 42F);
+            this.label45.StylePriority.UseFont = false;
+            this.label45.Text = "Balení";
+            this.label45.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // label51
+            // 
+            this.label51.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, resources.GetString("label51.DataBindings"), "{0:### ### ### ### ##0.0000}")});
+            this.label51.Dpi = 254F;
+            this.label51.LocationFloat = new DevExpress.Utils.PointFloat(806.6918F, 0F);
+            this.label51.Name = "label51";
+            this.label51.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label51.SizeF = new System.Drawing.SizeF(126.854F, 39.99997F);
+            this.label51.Text = "xrLabel61";
+            this.label51.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // xtraReport1
+            // 
+            this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+                        this.detailBand1,
+                        this.detailReportBand1,
+                        this.pageFooterBand1,
+                        this.GroupHeader1,
+                        this.topMarginBand1,
+                        this.bottomMarginBand1,
+                        this.GroupHeader2});
+            this.CalculatedFields.AddRange(new DevExpress.XtraReports.UI.CalculatedField[] {
+                        this.KodBezPrefixu});
+            this.DataMember = "SkladovyDoklad_DodaciListVydany";
+            this.Dpi = 254F;
+            this.Margins = new System.Drawing.Printing.Margins(127, 127, 45, 127);
+            this.Name = "xtraReport1";
+            this.PageHeight = 2970;
+            this.PageWidth = 2100;
+            this.PaperKind = System.Drawing.Printing.PaperKind.A4;
+            this.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter;
+            this.ScriptReferencesString = "CSWSystem";
+            this.Scripts.OnBeforePrint = "xtraReport1_BeforePrint";
+            this.ScriptsSource = resources.GetString("$this.ScriptsSource");
+            this.ShowPrintMarginsWarning = false;
+            this.SnapGridSize = 25F;
+            this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
+                        this.Vychozi});
+            this.StyleSheetPath = "";
+            this.Version = "19.1";
+            this.Watermark.Font = new System.Drawing.Font("Tahoma", 120F, System.Drawing.FontStyle.Bold);
+            this.Watermark.TextTransparency = 200;
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+        }
+    }
+}
