@@ -8,6 +8,31 @@ for n in xsd/*.xsd; do
 done
 
 DATA='<!--ADDED BY SCRIPT-->
+    <xs:element name="Group" type="group" minOccurs="0" />
+    <xs:element name="Polozky" minOccurs="0">
+        <xs:complexType>
+        <xs:sequence>
+            <xs:element name="PolozkaPokladnihoDokladu" minOccurs="0" maxOccurs="unbounded">
+            <xs:complexType>
+                <xs:all>                              
+                <xs:element name="CelkovaCena" type="emptiable_decimal_2" minOccurs="0" />
+                <xs:element name="CelkovaCenaCM" type="emptiable_decimal_2" minOccurs="0" />
+                <xs:element name="CisloPolozky" type="xs:integer" />
+                <xs:element name="JednCena" type="emptiable_decimal_4" minOccurs="0" />
+                <xs:element name="JednCenaCM" type="emptiable_decimal_4" minOccurs="0" />
+                </xs:all>
+            </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+<!--ADDED BY SCRIPT END-->'
+
+ESCAPED=`echo "${DATA}" | sed -r ':a;N;$!ba;s|\n|\\\|g' | sed 's|/|\\\/|g'`
+
+sed -i "s/^\s*<xs:element name=\"Group\" type=\"group\" minOccurs=\"0\" \\/>/${ESCAPED}/g" xsd/S9_Seky.xsd ;
+
+DATA='<!--ADDED BY SCRIPT-->
     <xs:element name="ObsahPolozky" minOccurs="0">
         <xs:complexType>
             <xs:all>

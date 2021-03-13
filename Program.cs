@@ -106,6 +106,11 @@ namespace MainProgram {
                 Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
                 SDataObjs.S7_Dopl osSpoj = new SDataObjs.S7_Dopl(inputDir, enc);
                 osSpoj.serialize(outputFile);
+
+                outputFile = Path.Combine(outputDir, typeof(SDataObjs.S9_Seky).Name + ".xml");
+                Console.WriteLine("Generuji soubor {0}", Path.GetFileName(outputFile));
+                SDataObjs.S9_Seky seky = new SDataObjs.S9_Seky(inputDir, enc);
+                seky.serialize(outputFile);
             }
 
             return 0;

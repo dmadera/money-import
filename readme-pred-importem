@@ -119,7 +119,7 @@ Nastavit v nastavení skupin popis u všech dokladů.
 ------------ŠEKY------------
 
 Pokladní doklady - skupiny
-    Kód: OST_POKD, Název: OST Pokladní doklady, Vnutit nastavneí podřízeným: ANO, Pokladna: CZK_SEK, Typ ceny: Bez daně, Sazba DPH: Nulová, 
+    Kód: OST, Název: Ostaní, Vnutit nastavneí podřízeným: ANO, Pokladna: CZK_SEK, Typ ceny: Bez daně, Sazba DPH: Nulová, 
         Podrobnosti/PřijVyd doklad/Číselná řada: POKD_SEK
         Podrobnosti/PřijVyd doklad/Predkontace zaokrouhlení: OST, Podrobnosti/PřijVyd doklad/Doklad: OST, Podrobnosti/PřijVyd doklad/Uhrady: OST
 

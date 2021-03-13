@@ -341,7 +341,7 @@
       <Poznamka>Fakturace přes OS DRAK.</Poznamka>
     </Cinnost>
     <Cinnost>
-      <Kod>SFA</Kod>
+      <Kod>S_FA</Kod>
       <Nazev>Souhrnná fakturace</Nazev>
       <ParentObject_ID/>
       <Poznamka>Souhrnná fakturace dodacích listů.</Poznamka>
