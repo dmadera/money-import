@@ -14,3 +14,7 @@ Firmy
 NP
     Emaily se budou evidovat v Money - E-mailNP.
     Pomocí SQL cronu se přenesou E-mailNP do dokladu do Pohody. Faktury budou bez vazby na adresář. 
+
+DLV
+    Párovací symbol je přebírající změna. 
+    Popis je poznámka v tiskové sestavě. 
