@@ -50,8 +50,8 @@ namespace SDataObjs {
                 }
 
                 var zpusobPlatbyKod = "H";
-                if (d["KupniSmlouva"].GetBoolean() == "True") zpusobPlatbyKod = "F";
-                if (d["SumFa"].GetBoolean() == "True") zpusobPlatbyKod = "SF";
+                if (d["KupniSmlouva"].GetBoolean() == "True") zpusobPlatbyKod = "B";
+                if (d["SumFa"].GetBoolean() == "True") zpusobPlatbyKod = "B";
 
                 var firma = new S5DataFirma() {
                     Group = grp,

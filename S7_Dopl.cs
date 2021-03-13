@@ -95,6 +95,14 @@ namespace SDataObjs {
                             }
                         }
                     };
+                } else if (d["SumFa"].GetBoolean() == "True") {
+                    firma.Cinnosti = new S5DataFirmaCinnosti() {
+                        FirmaCinnost = new S5DataFirmaCinnostiFirmaCinnost[] {
+                            new S5DataFirmaCinnostiFirmaCinnost() {
+                                Cinnost_ID = S0_IDs.GetCinnostID("S_FA")
+                            }
+                        }
+                    };
                 } else {
                     var kodOdb = S3_Adresar.GetOdbID(findKodOdbKodSum(kodSumFa));
                     var nadrazenaFirmaObj = findOdbByKod(kodOdb);

@@ -13,7 +13,7 @@ Uživatelské sloupce
     NakupniCena_UserData	        Nakupní cena	    Částka	        0.00	            Položka objednávky přijaté
     Kod_UserData	                Kód	                Text		                        Spojení
     MnozstviPozn_UserData	        Množství pozn.      Text		                        Položka dodacího listu vydaného
-    MnozstviPozn_UserData	        Množství pozn.      Text		                        Položka skladového dokladu
+
 
 Vygeneruj triggery a procedury
 Import exportu a importu
@@ -28,8 +28,8 @@ Sklad
     Výchozí sklad agendy: ANO
 
 Objednávka přijatá - skupiny
-    Kód: Nezařazeno, Provádět konrolu překročení kreditu: ANO
-    Kód: ESHOP, Název: Objednávky z e-shopu, Doba platnosti: 5 dní, Středisko: ESHOP, Provádět konrolu překročení kreditu: NE
+    Kód: Nezařazeno, Provádět konrolu překročení kreditu: ANO, Popis: *
+    Kód: ESHOP, Název: Objednávky z e-shopu, Doba platnosti: 5 dní, Středisko: ESHOP, Provádět konrolu překročení kreditu: NE, Popis: *
 Objednávka přijatá - obecné
     Posouvat platnost na následující pracovní den
     Upozorňovat na nevyřízené položky: Stejné položky všech odběratelů
@@ -37,6 +37,8 @@ Objednávka přijatá - obecné
     Povolit výchozí výpočet nákladů: Aktuální pořízovací cena zásoby
     Zakázat uživateli změnu typu výpočtu: true
 
+Nabídky vydané - skupiny
+    Kód: Nezařazeno, Popis: *
 Nabídky vydané - obecné
     Počítat zisk: true
     Povolit výchozí výpočet nákladů: Aktuální pořízovací cena zásoby
@@ -103,14 +105,18 @@ Firma - skupiny
     Kód: Nezařazené, Použít kredit: ANO, Hodnota: 0,00, Způsob dopravy: Osobní odběr, Způsob platby: Hotově, 
          Způsob výpočtu ceny: Výběrem, Splatnost: ANO, 10 dní, Vlastní sleva: ANO, Sleva: 0,00, Ceníky: _AKCE, _LETAK, _SPECIAL, _PRODEJ
 
+Faktura vydaná
+    Kód: Nezařazené, Není pro ukládání záznamů
+    Kód: FAKTURY, Název: Faktury, Popis: *
+    Kód: OST, Název: Ostatní, Členění DPH: _Ř000U U, Sazba: Nulová, Řada: OST_FAVYD, Zaokrouhlení: 0,01_MAT
+        Rozúčtování/Předkontace: OST, Předkontace sklad. položek: OST, Předkontace zaokrouhlení: OST, 
+        Skupina pokladních dokladů: Ostatní pokladní doklady, Doprava: osobní odběr, Způsob platby: Hotově
+        Druh pohybu: prodej, Druh skl. pohybu: spotřeba, Primární účet: 999999
+        Popis: OSTATNÍ VÝDEJ
+
 Nastavit v nastavení skupin popis u všech dokladů.
 
 ------------ŠEKY------------
-
-Nastavení číselných řada
-    OST_FAVYD, název: OST výdeje, prefix: _F
-    OST_SEK, název: OST šeky, prefix: _S
-    OST_POKD, název: OST pokladní doklad, prefix: _P
 
 Pokladní doklady - skupiny
     Kód: OST_POKD, Název: OST Pokladní doklady, Vnutit nastavneí podřízeným: ANO, Pokladna: CZK_SEK, Typ ceny: Bez daně, Sazba DPH: Nulová, 
@@ -133,12 +139,3 @@ Pokladna
     Kód: CZK, Název: Účetní pokladna
     Kód: CZK_PRO, Název: Prodejní pokladna, Primární účet: 211100, Kurz: 0710
     Kód: CZK_OST, Název: Prodejní pokladna při odběru na šek, Primární účet: 999999, Kurz: 0710
-
-Faktura vydaná
-    Kód: OST_VYD, Název: OST Výdeje, Členění DPH: _Ř000U U, Sazba: Nulová, Řada: OST_FAVYD, Zaokrouhlení: 0,01_MAT
-    Rozúčtování/Předkontace: OST, Předkontace sklad. položek: OST, Předkontace zaokrouhlení: OST, 
-        Skupina interních dokladů: Šeky, Doprava: osobní odběr, Způsob platby: Hotově
-        Druh pohybu: prodej, Druh skl. pohybu: spotřeba, Primární účet: 999999
-        Popis: Používat pouze pro výdej za ŠEKY!
-    // zatím nedělat Kód: FAVYD, Název: Faktury, Převzít nastavení: NE
-    // zatím nedělat Kód: Nezařazené, Není pro ukládání záznamů: ANO

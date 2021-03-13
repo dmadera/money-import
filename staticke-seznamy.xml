@@ -282,13 +282,6 @@
     <ZpusobPlatby>
       <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
       <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
-      <Kod>SF</Kod>
-      <Nazev>Souhrnná faktura</Nazev>
-      <Poznamka />
-    </ZpusobPlatby>
-    <ZpusobPlatby>
-      <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
-      <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
       <Kod>D</Kod>
       <Nazev>Dobírkou</Nazev>
       <Poznamka />
@@ -346,6 +339,12 @@
       <Nazev>Drak</Nazev>
       <ParentObject_ID/>
       <Poznamka>Fakturace přes OS DRAK.</Poznamka>
+    </Cinnost>
+    <Cinnost>
+      <Kod>SFA</Kod>
+      <Nazev>Souhrnná fakturace</Nazev>
+      <ParentObject_ID/>
+      <Poznamka>Souhrnná fakturace dodacích listů.</Poznamka>
     </Cinnost>
   </CinnostList>
   <ZpusobDopravyList>
