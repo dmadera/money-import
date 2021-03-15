@@ -14,7 +14,7 @@ namespace SDataObjs {
         private List<S5DataKategorieArtiklu> _kategorie = new List<S5DataKategorieArtiklu>();
 
         public static string GetID(string id) {
-            return "ART0" + id;
+            return id;
         }
 
         public static string GetNazev(string id) {
@@ -83,17 +83,17 @@ namespace SDataObjs {
                     Kod = GetID(d["CisloKarty"].GetNum()),
                     PosledniCena = d["NakupCena"].GetDecimal(),
                     SkladovaPozice_UserData = d["Pozice"].GetAlfaNum().ToUpper(), 
-                    Poznamka = d["NazevZbozi2"].GetText()
+                    PLU = d["NazevZbozi2"].GetText()
                 };
 
-                var groupKod = "ART";
+                var groupKod = "KATALOG";
                 var druhZboziKod = "ZBO";
                 var regexLom = new Regex(@"^\\[a-zA-Z0-9]+\\");
                 var regexObal = new Regex(@"^\|[a-zA-Z0-9]");
                 var regexZrus = new Regex(@"^\|\|[0-9]");
                 if(regexLom.IsMatch(nazevZbozi)) {
-                    groupKod = "LOM";
-                    artikl.Katalog = regexLom.Match(nazevZbozi).Value.Replace(@"\", "").ToUpper();
+                    groupKod = "SPECIAL";
+                    artikl.Zkratka12 = regexLom.Match(nazevZbozi).Value.Replace(@"\", "").ToUpper();
                     nazevZbozi = regexLom.Replace(nazevZbozi, "").FirstCharToUpper();
                 } else if(regexObal.IsMatch(nazevZbozi)) {
                     groupKod = "OBAL";
@@ -108,6 +108,7 @@ namespace SDataObjs {
                     int rokOdstran = int.TryParse(rokOdstranStr, out int result) ? int.Parse(rokOdstranStr) : aktualniRok;
                     if(rokOdstran < aktualniRok) continue;
                 }
+
                 artikl.Nazev = nazevZbozi;
                 artikl.Group = new group() { Kod = groupKod };
                 artikl.DruhArtiklu_ID = S0_IDs.GetDruhZboziID(druhZboziKod);
@@ -182,7 +183,7 @@ namespace SDataObjs {
                 var priznakID = S0_IDs.GetProduktovyKlicID(priznak);
                 var webNezobrazovatExtra = d["Zobrazovat"].GetBooleanNegative();
 
-                if(priznak != "P") {
+                if(priznak != "P" && priznakID != null) {
                     artikl.ProduktoveKlice = priznakID != null ? new S5DataArtiklProduktoveKlice() {
                         DeleteItems = "1",
                         ArtiklProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlic[] {

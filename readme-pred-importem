@@ -47,8 +47,8 @@ Nabídky vydané - obecné
 Artikl - skupiny
     Nastavit zobrazení včetně podřízených
     Kód: Nezařazené, Není určena pro ukládání záznamů: true, Číselná řada: zrušit vazbu (pro import)
-    Kód: ART, Název: Zboží, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu 
-    Kód: LOM, Název: Zboží pod lomítkem, Převzít nastavení z nadřazené úrovně: ANO, Parent: ART
+    Kód: KATALOG, Název: Katalog zboží, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu 
+    Kód: SPECIAL, Název: Speciální zboží, Převzít nastavení z nadřazené úrovně: ANO, Parent: ART
     Kód: ZRUS, Název: Zrušeno, Převzít nastavení z nadřazené úrovně: ANO
     Kód: OBAL, Název: Obaly, Druh položky katalogu: OBA, Číselná řada: zrušit vazbu 
 
@@ -100,10 +100,15 @@ Typy spojení
     Smazat- Skype, IM, GSM brána
 
 Firma - skupiny
-    Kód: OST, Název: Ostatní odběratelé, Převzít nastavení z nadřazené úrovně: false, Obchod/Způsob dopravy: Osobní odběr, 
+    Kód: ZAMEST, 
+        Název: Zaměstnanci, Převzít nastavení z nadřazené úrovně: false, Obchod/Způsob dopravy: Osobní odběr, 
         Obchod/Způsob platby: Hotově, Použít kredit: ANO, Hodnota: 0,00, Ceníky: _NÁKUP, Způsob výběru ceny: Podle pořadí, Sleva pro doklad: NE 0,00
-    Kód: Nezařazené, Použít kredit: ANO, Hodnota: 0,00, Způsob dopravy: Osobní odběr, Způsob platby: Hotově, 
+    Kód: Nezařazené, Není určena k ukládání záznamů: ANO, Použít kredit: ANO, Hodnota: 0,00, Způsob dopravy: Osobní odběr, Způsob platby: Hotově, 
          Způsob výpočtu ceny: Výběrem, Splatnost: ANO, 10 dní, Vlastní sleva: ANO, Sleva: 0,00, Ceníky: _AKCE, _LETAK, _SPECIAL, _PRODEJ
+    Kód: INTERNET
+        Název: Internetoví odběratelé, Převzít nastavení z nadřazené úrovně: TRUE
+    Kód: PARTNER
+        Název: Obchodní partneři, Převzít nastavení z nadřazené úrovně: TRUE
 
 Faktura vydaná
     Kód: Nezařazené, Není pro ukládání záznamů
@@ -114,7 +119,7 @@ Faktura vydaná
         Druh pohybu: prodej, Druh skl. pohybu: spotřeba, Primární účet: 999999
         Popis: OSTATNÍ VÝDEJ
 
-Nastavit v nastavení skupin popis u všech dokladů.
+Nastavit v nastavení skupin u všech dokladů - Popis: *
 
 ------------ŠEKY------------
 

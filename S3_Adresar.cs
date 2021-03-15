@@ -12,11 +12,11 @@ namespace SDataObjs {
         private List<S5DataFirma> _firmy = new List<S5DataFirma>();
 
         public static string GetOdbID(string id) {
-            return "ADR" + id;
+            return "AD" + id;
         }
 
         public static string GetDodID(string id) {
-            return "ADR2" + id.Substring(1);
+            return "AD2" + id.Substring(1);
         }
 
         public S3_Adresar(string dir, Encoding enc) {
@@ -43,10 +43,13 @@ namespace SDataObjs {
                 if(kod == GetOdbID("00001")) continue;
 
                 if (d["NazevOdberatele"].GetText().StartsWith("\\")) {
-                    grp = new group() { Kod = "OST" };
+                    grp = new group() { Kod = "ZAMEST" };
                 } else if (d["NazevOdberatele"].GetText().StartsWith("||")) {
-                    grp = new group() { Kod = "ZRUS" };
                     continue;
+                } else if (int.Parse(kodOdb) > 7000) {
+                    grp = new group() { Kod = "INTERNET" };
+                } else {
+                    grp = new group() { Kod = "PARTNER" };
                 }
 
                 var zpusobPlatbyKod = "H";
@@ -167,21 +170,24 @@ namespace SDataObjs {
                 var emails = SkladDataObj.GetEmaily(d["Mail"]);
                 var emailsFA = SkladDataObj.GetEmaily(d["MailFA"]);
 
+                var preb = d["Prebirajici"].GetTextNoDiacritics().ToLower();
+                var zast = d["Zastoupeny"].GetTextNoDiacritics().ToLower();
+                bool zastoupenyJePrebirajici = zast != string.Empty && (preb.Contains(zast) || zast.Contains(preb));
+
                 firma.Osoby = new S5DataFirmaOsoby() {
+                    UvadetNaDokladech = "True",
                     SeznamOsob = new S5DataFirmaOsobySeznamOsob() {
                         DeleteItems = "1",
                         Osoba = new S5DataFirmaOsobySeznamOsobOsoba[] {
-                            !d["Zastoupeny"].IsEmpty() ? new S5DataFirmaOsobySeznamOsobOsoba() {
-                                Nazev = d["Zastoupeny"].GetText(),
-                                Prijmeni = d["Zastoupeny"].GetText(),
-                                FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("ZAS"),
-                                Kod = S7_Dopl.GetKodZastoupeny(kod)
-                            } : null,
                             !d["Prebirajici"].IsEmpty() ? new S5DataFirmaOsobySeznamOsobOsoba() {
-                                Nazev = d["Prebirajici"].GetText(),
-                                Prijmeni = d["Prebirajici"].GetText(),
+                                Jmeno = d["Prebirajici"].GetText(),
                                 FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("PRE"),
                                 Kod = S7_Dopl.GetKodPrebirajici(kod)
+                            } : null,
+                            !d["Zastoupeny"].IsEmpty() && !zastoupenyJePrebirajici ? new S5DataFirmaOsobySeznamOsobOsoba() {
+                                Jmeno = d["Zastoupeny"].GetText(),
+                                FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("ZAS"),
+                                Kod = S7_Dopl.GetKodZastoupeny(kod)
                             } : null
                         }
                     }
@@ -194,6 +200,11 @@ namespace SDataObjs {
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Tel"),
                             SpojeniCislo = tels.Item1,
                             Kod_UserData = S7_Dopl.GetKodTelefon(kod),
+                        } : null,
+                        tels.Item1 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Tel"),
+                            SpojeniCislo = tels.Item1,
+                            Kod_UserData = S7_Dopl.GetKodTelefonCopy(kod),
                         } : null,
                         tels.Item2 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Tel"),
@@ -254,7 +265,7 @@ namespace SDataObjs {
 
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
-                var kod = GetDodID(d["CisloDodavatele"].GetNum());
+                var kod = GetDodID(d["CisloDodavatele"].GetNum());                
 
                 var firma = new S5DataFirma() {
                     Kod = kod,
@@ -262,7 +273,8 @@ namespace SDataObjs {
                     ICO = obj.GetIco(),
                     DIC = obj.GetDic(),
                     DatumPorizeni_UserData = d["DatumPorizeni"].GetDate(),
-                    DatumPorizeni_UserDataSpecified = true
+                    DatumPorizeni_UserDataSpecified = true,
+                    Group = new group() { Kod = "PARTNER" }
                 };
 
                 firma.Poznamka = (
@@ -274,19 +286,21 @@ namespace SDataObjs {
                 var emails = SkladDataObj.GetEmaily(d["Mail"]);
                 var emailsOZ = SkladDataObj.GetEmaily(d["MailOZ"]);
 
+                var zast = d["Zastoupeny"].GetTextNoDiacritics().ToLower();
+                var zastOZ = d["ZastoupenyOZ"].GetTextNoDiacritics().ToLower();
+                bool zastoupenyJeZastoupenyOZ = zast != string.Empty && (zast.Contains(zastOZ) || zastOZ.Contains(zast));
+
                 firma.Osoby = new S5DataFirmaOsoby() {
                     SeznamOsob = new S5DataFirmaOsobySeznamOsob() {
                     DeleteItems = "1",
                         Osoba = new S5DataFirmaOsobySeznamOsobOsoba[] {
                             !d["Zastoupeny"].IsEmpty() ? new S5DataFirmaOsobySeznamOsobOsoba() {
-                                Nazev = d["Zastoupeny"].GetText(),
-                                Prijmeni = d["Zastoupeny"].GetText(),
+                                Jmeno = d["Zastoupeny"].GetText(),
                                 FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("ZAS"),
                                 Kod = S7_Dopl.GetKodZastoupeny(kod)
                             } : null,
-                            !d["ZastoupenyOZ"].IsEmpty() && d["Zastoupeny"].GetText() != d["ZastoupenyOZ"].GetText() ? new S5DataFirmaOsobySeznamOsobOsoba() {
-                                Nazev = d["ZastoupenyOZ"].GetText(),
-                                Prijmeni = d["ZastoupenyOZ"].GetText(),
+                            !d["ZastoupenyOZ"].IsEmpty() && !zastoupenyJeZastoupenyOZ ? new S5DataFirmaOsobySeznamOsobOsoba() {
+                                Jmeno = d["ZastoupenyOZ"].GetText(),
                                 FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("OZ"),
                                 Kod = S7_Dopl.GetKodZastoupenyOZ(kod)
                             } : null

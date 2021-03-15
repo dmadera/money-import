@@ -1,5 +1,7 @@
-Tvorba výdeje
-    Vše tvořit nejdříve z objednávky.
+Katalog
+    Název - název produktu pro sklad. MAX 40 znaků.
+    Katalog - název produktu pro e-shop, pokud se liší, MAX 60 znaků.
+    PLU - interní popis produktu, MAX 60 znaků.
 
 Firmy
     Drak se eviduje skrze činnosti pod kódem DRAK. Činnosti se propisují z Firmy do dokladů.
@@ -16,5 +18,6 @@ NP
     Pomocí SQL cronu se přenesou E-mailNP do dokladu do Pohody. Faktury budou bez vazby na adresář. 
 
 DLV
-    Párovací symbol je přebírající změna. 
-    Popis je poznámka v tiskové sestavě. 
+    Výběr firmy provádět přes seznam firem. Zkontrolovat, zda jsou uvedené správně kontaktní osoby - telefon, email. Popřípadě opravit.
+    V případě rychlé změny přebírajícího bez uložení - osoba zrušit vazbu a přepsat.  
+    Popis je poznámka pro skladníky na expedičním listu. 

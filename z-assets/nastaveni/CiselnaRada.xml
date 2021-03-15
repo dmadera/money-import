@@ -4,7 +4,7 @@
     <CiselnaRada>
       <Kod>REKL_PRI</Kod>
       <Nazev>Reklamační doklady přijaté</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>RP</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -19,7 +19,7 @@
     <CiselnaRada>
       <Kod>PROD_PRI</Kod>
       <Nazev>Prodejky přijaté</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>HP</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -34,7 +34,7 @@
     <CiselnaRada>
       <Kod>PREVOD</Kod>
       <Nazev>Převodky</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>PR</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -64,7 +64,7 @@
     <CiselnaRada>
       <Kod>INV</Kod>
       <Nazev>Inventurní doklad</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>IN</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -79,7 +79,7 @@
     <CiselnaRada>
       <Kod>OBJ_PRI</Kod>
       <Nazev>Objednávky přijaté</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>OP</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -94,7 +94,7 @@
     <CiselnaRada>
       <Kod>POPT_VYD</Kod>
       <Nazev>Poptávky vydané</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>PO</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -109,7 +109,7 @@
     <CiselnaRada>
       <Kod>KATALOG</Kod>
       <Nazev>Položky katalogu</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix></Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -124,7 +124,7 @@
     <CiselnaRada>
       <Kod>BANK_VYP</Kod>
       <Nazev>Bankovní výpisy</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>BV</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -139,7 +139,7 @@
     <CiselnaRada>
       <Kod>NAB_PRI</Kod>
       <Nazev>Nabídky přijaté</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>NP</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -154,7 +154,7 @@
     <CiselnaRada>
       <Kod>PRIK_INK</Kod>
       <Nazev>Příkaz k inkasu</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>PI</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -169,7 +169,7 @@
     <CiselnaRada>
       <Kod>INT_DOKL</Kod>
       <Nazev>Interní doklady</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>ID</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -184,7 +184,7 @@
     <CiselnaRada>
       <Kod>PROD_VYD</Kod>
       <Nazev>Prodejky vydané</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>HV</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -199,7 +199,7 @@
     <CiselnaRada>
       <Kod>OBJ_PRIS</Kod>
       <Nazev>Objednávky přijaté pro servis</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>OS</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -214,7 +214,7 @@
     <CiselnaRada>
       <Kod>OBJ_VYD</Kod>
       <Nazev>Objednávky vydané</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>OV</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -229,7 +229,7 @@
     <CiselnaRada>
       <Kod>ZAPOCTY</Kod>
       <Nazev>Vzájemné zápočty</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>VZ</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -244,7 +244,7 @@
     <CiselnaRada>
       <Kod>POKD_VYD</Kod>
       <Nazev>Pokladní doklady vydané</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>PV</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -259,7 +259,7 @@
     <CiselnaRada>
       <Kod>NAB_VYD</Kod>
       <Nazev>Nabídky vydané</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>NV</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -274,7 +274,7 @@
     <CiselnaRada>
       <Kod>SKL_DOKL</Kod>
       <Nazev>Skladové doklady</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>SD</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -289,7 +289,7 @@
     <CiselnaRada>
       <Kod>ZAM</Kod>
       <Nazev>Zaměstnanci</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>ZA</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -304,7 +304,7 @@
     <CiselnaRada>
       <Kod>DODL_PRI</Kod>
       <Nazev>Dodací listy přijaté</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>DP</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -319,7 +319,7 @@
     <CiselnaRada>
       <Kod>FAKT_PRI</Kod>
       <Nazev>Faktury přijaté</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>FP</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -334,7 +334,7 @@
     <CiselnaRada>
       <Kod>LEAS_MAJ</Kod>
       <Nazev>Leasingový majetek</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>LM</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -349,7 +349,7 @@
     <CiselnaRada>
       <Kod>ADRES</Kod>
       <Nazev>Adresář</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>AD</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -364,7 +364,7 @@
     <CiselnaRada>
       <Kod>PRIJEMKY</Kod>
       <Nazev>Příjemky</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>SP</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -379,7 +379,7 @@
     <CiselnaRada>
       <Kod>ZALF_PRI</Kod>
       <Nazev>Zálohové faktuty přijaté</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>ZP</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -394,7 +394,7 @@
     <CiselnaRada>
       <Kod>EXP_DOKL</Kod>
       <Nazev>Expediční doklady</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>ED</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -409,7 +409,7 @@
     <CiselnaRada>
       <Kod>MAJETEK</Kod>
       <Nazev>Majetek</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>MA</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -424,7 +424,7 @@
     <CiselnaRada>
       <Kod>POKL_DOKL</Kod>
       <Nazev>Pokladní doklady</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>PD</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -439,7 +439,7 @@
     <CiselnaRada>
       <Kod>ZALF_VYD</Kod>
       <Nazev>Zálohové faktury vydané</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>ZV</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -454,7 +454,7 @@
     <CiselnaRada>
       <Kod>OBJ_PRIR</Kod>
       <Nazev>Objednávky přijaté pro reklamace</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>OR</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -469,7 +469,7 @@
     <CiselnaRada>
       <Kod>REKL_VYD</Kod>
       <Nazev>Reklamační doklady vydané</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>RV</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -484,7 +484,7 @@
     <CiselnaRada>
       <Kod>POHL_DOKL</Kod>
       <Nazev>Pohledávkové doklady</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>PH</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -499,7 +499,7 @@
     <CiselnaRada>
       <Kod>VYROB</Kod>
       <Nazev>Výrobky</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>VY</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -513,7 +513,7 @@
     </CiselnaRada>
     <CiselnaRada>
       <Kod>OST_POKD</Kod>
-      <Nazev>OST Pokladní doklad</Nazev>
+      <Nazev>Ostatní pokladní doklad</Nazev>
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>_P</Prefix>
@@ -544,7 +544,7 @@
     <CiselnaRada>
       <Kod>PRIK_UHR</Kod>
       <Nazev>Příkaz k úhradě</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>PU</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -559,7 +559,7 @@
     <CiselnaRada>
       <Kod>POPT_PRI</Kod>
       <Nazev>Poptávky přijaté</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>PT</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -574,7 +574,7 @@
     <CiselnaRada>
       <Kod>SRV_PRI</Kod>
       <Nazev>Servisní doklady</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>SD</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -589,7 +589,7 @@
     <CiselnaRada>
       <Kod>CEST_PRIK</Kod>
       <Nazev>Cestovní příkaz</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>CP</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -604,7 +604,7 @@
     <CiselnaRada>
       <Kod>VYDEJKY</Kod>
       <Nazev>Výdejky</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>SV</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -619,7 +619,7 @@
     <CiselnaRada>
       <Kod>POKD_PRI</Kod>
       <Nazev>Pokladní doklady přijaté</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>PP</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -634,7 +634,7 @@
     <CiselnaRada>
       <Kod>DODL_VYD</Kod>
       <Nazev>Dodací listy vydané</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>DV</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -649,7 +649,7 @@
     <CiselnaRada>
       <Kod>ZAV_DOKL</Kod>
       <Nazev>Závazkové doklady</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>ZA</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -664,7 +664,7 @@
     <CiselnaRada>
       <Kod>AKTIVITY</Kod>
       <Nazev>Aktivity</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>AK</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
@@ -679,7 +679,7 @@
     <CiselnaRada>
       <Kod>FAKT_VYD</Kod>
       <Nazev>Faktury vydané</Nazev>
-      <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>FV</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">

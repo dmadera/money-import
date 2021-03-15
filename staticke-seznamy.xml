@@ -172,46 +172,29 @@
       <Nazev>Akce</Nazev>
       <Poznamka />
     </ProduktovyKlic>
-  </ProduktovyKlicList>
-  <ProduktovyKlicList>
     <ProduktovyKlic>
       <Kod>S</Kod>
       <Nazev>Sleva</Nazev>
       <Poznamka />
     </ProduktovyKlic>
-  </ProduktovyKlicList>
-  <ProduktovyKlicList>
     <ProduktovyKlic>
       <Kod>N</Kod>
       <Nazev>Novinka</Nazev>
       <Poznamka />
     </ProduktovyKlic>
-  </ProduktovyKlicList>
-  <ProduktovyKlicList>
     <ProduktovyKlic>
       <Kod>D</Kod>
       <Nazev>Doprodej</Nazev>
       <Poznamka />
     </ProduktovyKlic>
-  </ProduktovyKlicList>
-  <ProduktovyKlicList>
     <ProduktovyKlic>
       <Kod>O</Kod>
       <Nazev>Na objednávku</Nazev>
       <Poznamka />
     </ProduktovyKlic>
-  </ProduktovyKlicList>
-  <ProduktovyKlicList>
     <ProduktovyKlic>
       <Kod>X</Kod>
       <Nazev>Nedostupné</Nazev>
-      <Poznamka />
-    </ProduktovyKlic>
-  </ProduktovyKlicList>
-  <ProduktovyKlicList>
-    <ProduktovyKlic>
-      <Kod>0</Kod>
-      <Nazev>Neznámý</Nazev>
       <Poznamka />
     </ProduktovyKlic>
     <ProduktovyKlic>
@@ -248,13 +231,6 @@
       <Kod>E-mailNP</Kod>
       <Nazev>E-mail NP</Nazev>
       <Poznamka>E-mail exportovaný do evidence náhradního plnění.</Poznamka>
-    </TypSpojeni>
-    <TypSpojeni>
-      <DruhSpojeni EnumValueName="Telefon">0</DruhSpojeni>
-      <IsUser>False</IsUser>
-      <Kod>GSM</Kod>
-      <Nazev>GSM</Nazev>
-      <Poznamka />
     </TypSpojeni>
     <TypSpojeni>
       <DruhSpojeni EnumValueName="Telefon">0</DruhSpojeni>

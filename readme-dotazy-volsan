@@ -1,21 +1,39 @@
-API dát!
-Lze náhled v editaci sestav naplnit daty? 
-Dodat modul CSW Automatic. 
-Kolik bude stát modul čtení čárových kódu dokladu? 
+-- Volšan 15. 3. 2021
 !!! NUTNÉ !!!! Synchronizace cen automatická.
-Jak funguje mazání položek katalogu a obsazování čísel kódu? Chceme zachovat 4 čísla na kódu zboží. 
-Jak DB bobtná? Co se děje při roční skladové uzávěrce? Co se děje s uzavřeným účetním obdobím? 
-Má smysl odělovat dle roku čísla dokladů - FV (je jasné - účetní rok), ale DL apod? 
-Tvorba ceny - výpočet v sekci Nákupní cena a marže/rabat - tam potřebujeme aktuální pořizovací cenu zásoby (používáme jeden sklad)
-Výchozí výběr skupiny - nastavení průvodce (vypnutí, že se neptá při vypnutých skupinách), ale při přebírání dokladů se to ptá.
+    Půjde navázat synchronizaci cen, že trigger bude vytvořený dodací list nebo příjemka a synchronizace se provede pouze na položky z dokladu? Synchronizovat po každém příjmu všechny ceníkové ceny by byla zbytečná zátěž. 
+    V nastavení ceníku je možnost "Automaticky synchronizovat ceny při vložení do dokladu", což je dobré, že při tvorbě výdejního dokladu je správná cena. 
+    Ale při výběru položky do výdejového dokladu přes seznam ceník nebo katalog je cena špatná, až když se vkládá do dokladu, dojde k přepočtu.
+    -- zjistíme od seniora v další schůzce
 
-Kategorie - vyhledávání v nadřazených kategoriích. Jak s kategoriemi správně pracovat? Má smysl u produktu označit i nadřazenou kategorii?
-Nabídky vydané - výběr položky - kategorie katalogu stejné rozložení sloupců a detailů jako v katalogu
+Lze náhled v editaci sestav naplnit daty?
+    -- nelze
+
+Formátování DPH table. 
+    -- pořešíme na další schůzce
+
+Dodat modul CSW Automatic a API.
+    -- dodal, dodá info o api do emailu
+
+Jak funguje mazání položek katalogu a obsazování čísel kódu? Chceme zachovat 4 čísla na kódu zboží. 
+    -- možno udělat, zjistí, jestli obsazování funguje na smazané položky
+
+Jak DB bobtná? Co se děje při roční skladové uzávěrce? Co se děje s uzavřeným účetním obdobím? 
+    -- odhad 2-3GB za rok, 4100 dokladů měsíčně, průměrně 20 položek na doklad
+    -- skladová uzávěrka lze, nelze potom sahat zpětně do pohybů, lze nastavit na číselnou řadu hromadně nový číslený prefix
+    -- účetní také lze = skladová
+
+Tvorba ceny - výpočet v sekci Nákupní cena a marže/rabat - tam potřebujeme aktuální pořizovací cenu zásoby (používáme jeden sklad, tzn. výchozího)
+    Dle nápovědy výpočet slouží k informaci rozdílu mezi prodejní a nákupní cenou. Poslední nákupní cena není směrodatná. Například v případě aktuální skladová cena zásoby je 100 Kč za kus u množství 1000 ks a nakoupím 10 ks za cenu 80 Kč za kus.
+    -- řešíme triggerem zatím
+
 Elektronické obchody 
     Jak automaticky synchronizovat strukuturu po přidání k elektronickému obchodu?
+    -- není nastavení ve skupině
 
 U přidávání položek výběrem do objednávky přijaté nelze potvrdit výběr ceny enterem ani ctrl+enterem.
-Zvolím okamžitá záloha, nelze obnovit skrze Money, musím přes Management Studio 
+    -- nechá opravit
+Kategorie - vyhledávání v nadřazených kategoriích. Jak s kategoriemi správně pracovat? Má smysl u produktu označit i nadřazenou kategorii?
+    -- udělat ještě jednu nadřazenou (nevím, zda budou dle toho vybírat)
 
 -- Volšan: 10. 2. 2021
 Proces výdeje

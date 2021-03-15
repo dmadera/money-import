@@ -27,6 +27,7 @@ namespace SDataObjs {
         public static string GetKodZastoupeny(string kodFirmy) { return kodFirmy + "ZAS"; }
         public static string GetKodZastoupenyOZ(string kodFirmy) { return kodFirmy + "ZOZ"; }
         public static string GetKodTelefon(string kodFirmy) { return kodFirmy + "TEL"; }
+        public static string GetKodTelefonCopy(string kodFirmy) { return kodFirmy + "TEC"; }
         public static string GetKodTelefonFA(string kodFirmy) { return kodFirmy + "TFA"; }
         public static string GetKodEmail1(string kodFirmy) { return kodFirmy + "EM1"; }
         public static string GetKodEmail2(string kodFirmy) { return kodFirmy + "EM2"; }
@@ -55,19 +56,25 @@ namespace SDataObjs {
 
                 if(firma.ID == null) continue;
 
+                string prebirajiciID = S0_IDs.GetOsobaID(GetKodPrebirajici(kod));
                 string zastoupenyID = S0_IDs.GetOsobaID(GetKodZastoupeny(kod));
                 string tel1ID = S0_IDs.GetSpojeniID(GetKodTelefon(kod));
+                string tel1copyID = S0_IDs.GetSpojeniID(GetKodTelefonCopy(kod));
                 string email1ID = S0_IDs.GetSpojeniID(GetKodEmail1(kod));
 
                 firma.Osoby = new S5DataFirmaOsoby() {
-                    HlavniOsoba = zastoupenyID == null ? null : new S5DataFirmaOsobyHlavniOsoba() {
-                        ID = zastoupenyID
+                    HlavniOsoba = prebirajiciID == null ? null : new S5DataFirmaOsobyHlavniOsoba() {
+                        ID = prebirajiciID
                     },
                     SeznamOsob = new S5DataFirmaOsobySeznamOsob() {
                         Osoba = new S5DataFirmaOsobySeznamOsobOsoba[] {
+                            prebirajiciID == null ? null : new S5DataFirmaOsobySeznamOsobOsoba() {
+                                ID = prebirajiciID,
+                                TelefonSpojeni1_ID = tel1ID
+                            },
                             zastoupenyID == null ? null : new S5DataFirmaOsobySeznamOsobOsoba() {
-                                ID = zastoupenyID,
-                                TelefonSpojeni1_ID = tel1ID,
+                                ID = prebirajiciID,
+                                TelefonSpojeni1_ID = tel1copyID,
                                 EmailSpojeni_ID = email1ID
                             }
                         }
@@ -78,11 +85,11 @@ namespace SDataObjs {
                     Spojeni = new S5DataFirmaSeznamSpojeniSpojeni[] {
                         tel1ID == null ? null : new S5DataFirmaSeznamSpojeniSpojeni() {
                             ID = tel1ID,
-                            Osoba_ID = zastoupenyID
+                            Osoba_ID = prebirajiciID
                         },
                         email1ID == null ? null : new S5DataFirmaSeznamSpojeniSpojeni() {
                             ID = email1ID,
-                            Osoba_ID = zastoupenyID
+                            Osoba_ID = prebirajiciID
                         }
                     }
                 };
