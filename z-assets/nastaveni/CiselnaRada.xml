@@ -291,11 +291,11 @@
       <Nazev>Zaměstnanci</Nazev>
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
-      <Prefix>ZA</Prefix>
+      <Prefix>Z</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix />
-          <PocetMist>5</PocetMist>
+          <PocetMist>4</PocetMist>
           <Zacatek>2021-01-01T00:00:00</Zacatek>
           <ZobrazitNuly>True</ZobrazitNuly>
         </ObdobiCiselneRady>
@@ -576,7 +576,7 @@
       <Nazev>Servisní doklady</Nazev>
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
-      <Prefix>SD</Prefix>
+      <Prefix>SR</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>

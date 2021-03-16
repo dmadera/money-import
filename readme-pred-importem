@@ -1,19 +1,20 @@
 Uživatelské sloupce
-//  Sek_UserData                    Šek	                Text	                            Faktura vydaná
     KodOdb_UserData	                Kód ODB     	    Text		                        Firma
     PoznamkaInterni_UserData	    Poznámka interní	Text		                        Firma
     SlevaUvadena_UserData	        Sleva uváděná	    Desetinné číslo	0.00	            Firma
     DatumPorizeni_UserData  	    Datum pořízení	    Datum	        2021-01-01T00:00:00 Firma
+    ADSek_UserData           	    AD Šek      	    Text                                Firma
+    Cinnost_UserData           	    Činnost      	    Text                                Firma
+    Doprava_UserData           	    Doprava      	    Text                                Firma
+    Platba_UserData           	    Platba      	    Text                                Firma
+    NahradniPlneni_UserData         NP        	        Text                                Firma
     Priznaky_UserData	            Příznaky	        Text		                        Položka katalogu
     ProdJednotkaMnozstvi_UserData	Bal. množ	        Desetinné číslo	0.00	            Položka katalogu
     SkladovaPozice_UserData	        Skladová pozice	    Text		                        Položka katalogu
-    Marze_UserData	                Marže	            Desetinné číslo	0.00	            Položka nabídky vydané
-    NakupniCena_UserData	        Nakupní cena	    Částka	        0.00	            Položka nabídky vydané
-    Marze_UserData	                Marže               Desetinné číslo	0.00	            Položka objednávky přijaté
-    NakupniCena_UserData	        Nakupní cena	    Částka	        0.00	            Položka objednávky přijaté
+    Marze_UserData	                Marže	            Desetinné číslo	0.00	            Položka katalogu, Položka nabídky vydané, Položka objednávky přijaté, Položka faktury vydané, Položka dodacího listu vydaného
+    NakupniCena_UserData	        Nakupní cena	    Částka	        0.00	            Položka katalogu, Položka nabídky vydané, Položka objednávky přijaté, Položka faktury vydané, Položka dodacího listu vydaného 
     Kod_UserData	                Kód	                Text		                        Spojení
     MnozstviPozn_UserData	        Množství pozn.      Text		                        Položka dodacího listu vydaného
-
 
 Vygeneruj triggery a procedury
 Import exportu a importu
@@ -21,9 +22,9 @@ Import statických seznamů
 
 Sklad
     Kód: HL, Název: Hlavní
-    Způsob oceňování: FIFO
+    Způsob oceňování: Vážený průměr
     Výdej do mínusu: Upozornit
-    Pokles množství k dispozici: Upozornit
+    Pokles množství k dispozici: Nedělat nic
     Typ zdroje přebírání: Katalog
     Výchozí sklad agendy: ANO
 

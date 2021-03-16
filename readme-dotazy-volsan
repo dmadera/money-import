@@ -1,3 +1,18 @@
+Přidat do odběratele sloupec Zpusob platby, dopravy.
+Do dokladů přidat nákupní cena a marže. 
+Dodací list přijatý nepřebírá nákupní jednotku. 
+Neni porizovaci cena ve vyberu polozky do dokladu.
+Mají všude poslední nákupní cenu, nákupní cena výchozího skladu. 
+
+HW dle mailů
+Velikost DB / rok
+Tiskové FRM – DPH table
+Přepočet ceníku, pouze položek dodacího listu
+Skupiny a jejich výběr defaultní skupina
+Přednastavení na skupině pro e-shop
+Výběr zboží/více ceníků/cenotvorba výběrem – nefunguje ENTER nebo CTR+ENTER, kursor na výběr ceny
+Při výběru položek z Kategorie, nelze skrýt kód kategorie
+
 -- Volšan 15. 3. 2021
 !!! NUTNÉ !!!! Synchronizace cen automatická.
     Půjde navázat synchronizaci cen, že trigger bude vytvořený dodací list nebo příjemka a synchronizace se provede pouze na položky z dokladu? Synchronizovat po každém příjmu všechny ceníkové ceny by byla zbytečná zátěž. 

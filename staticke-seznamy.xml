@@ -279,17 +279,17 @@
   </ZpusobPlatbyList>
   <AdresniKlicList>
     <AdresniKlic>
-      <Kod>SDPH</Kod> 
+      <Kod>sDPH</Kod> 
       <Nazev>Ceny s DPH</Nazev> 
       <Poznamka>Na dokladu se budou zobrazovat ceny položek s DPH.</Poznamka>
     </AdresniKlic>
     <AdresniKlic>
-      <Kod>BEZCEN</Kod> 
+      <Kod>DLbezCEN</Kod> 
       <Nazev>DL bez cen</Nazev> 
       <Poznamka>Na DL nebude uvedená cena položek ani celková.</Poznamka>
     </AdresniKlic>
     <AdresniKlic>
-      <Kod>ZAKSEK</Kod> 
+      <Kod>-SEK</Kod> 
       <Nazev>Nevystavovat šek</Nazev> 
       <Poznamka>Odběrateli nevystavovat šek. Má nejvyšší prioritu.</Poznamka>
     </AdresniKlic>
@@ -331,7 +331,7 @@
     </ZpusobDopravy>
     <ZpusobDopravy>
       <Kod>P</Kod>
-      <Nazev>Přepravní služba</Nazev>
+      <Nazev>Přeprava</Nazev>
       <Poznamka />
     </ZpusobDopravy>
     <ZpusobDopravy>

@@ -53,8 +53,8 @@ namespace SDataObjs {
                 }
 
                 var zpusobPlatbyKod = "H";
-                if (d["KupniSmlouva"].GetBoolean() == "True") zpusobPlatbyKod = "B";
-                if (d["SumFa"].GetBoolean() == "True") zpusobPlatbyKod = "B";
+                if (d["KupniSmlouva"].GetBoolean() == "True") zpusobPlatbyKod = "P";
+                if (d["SumFa"].GetBoolean() == "True") zpusobPlatbyKod = "P";
 
                 var firma = new S5DataFirma() {
                     Group = grp,
@@ -145,13 +145,13 @@ namespace SDataObjs {
                     DeleteItems = "1",
                     FirmaAdresniKlic = new S5DataFirmaAdresniKliceFirmaAdresniKlic[] {
                         d["SDani"].GetAlfaNum().ToUpper() == "A" ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
-                            AdresniKlic_ID = S0_IDs.GetAdresniKlicID("SDPH")
+                            AdresniKlic_ID = S0_IDs.GetAdresniKlicID("sDPH")
                         } : null,
                         d["SDani"].GetAlfaNum().ToUpper() == "X" ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
-                            AdresniKlic_ID = S0_IDs.GetAdresniKlicID("BEZCEN")
+                            AdresniKlic_ID = S0_IDs.GetAdresniKlicID("-DLCENY")
                         } : null,
                         d["DavatSek"].GetAlfaNum().ToUpper() == "N" ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
-                            AdresniKlic_ID = S0_IDs.GetAdresniKlicID("ZAKSEK")
+                            AdresniKlic_ID = S0_IDs.GetAdresniKlicID("-SEK")
                         } : null,
                         d["Odesilat"].GetAlfaNum().ToUpper() == "A" ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
                             AdresniKlic_ID = S0_IDs.GetAdresniKlicID("ODESFA")
@@ -164,7 +164,11 @@ namespace SDataObjs {
                         } : null,
                     }
                 };
-                firma.KodOdb_UserData = d["KodOdb"].GetAlfaNum();
+                if(d["KodOdb"].GetAlfaNum().ToUpper().Contains("OZ")) {
+                    firma.KodOdb_UserData = d["KodOdb"].GetAlfaNum().ToUpper();
+                } else {
+                    firma.KodOdb_UserData = d["KodOdb"].GetAlfaNum();
+                }
 
                 var tels = SkladDataObj.GetTelefony(d["Telefon"]);
                 var emails = SkladDataObj.GetEmaily(d["Mail"]);
@@ -254,7 +258,7 @@ namespace SDataObjs {
                         Stat = new S5DataFirmaAdresyProvozovnaStat() { ID = statID }
                     } : null,
                     OdlisnaAdresaProvozovny = isPrijemce ? "True" : "False"
-                };
+                };                
 
                 _firmy.Add(firma);
             }
@@ -352,7 +356,8 @@ namespace SDataObjs {
                         Misto = d["Mesto"].GetText(),
                         Stat = new S5DataFirmaAdresyObchodniAdresaStat() { ID = statID }
                     }
-                };
+                };             
+
                 _firmy.Add(firma);
             }
 
