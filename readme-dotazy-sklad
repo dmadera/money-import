@@ -1,11 +1,14 @@
-Způsob úhrady hodnoty: 
-
 U DOD je Pozn4, Pozn 5 taky interní pouze pro Martina? 
 
-ODB parametr SDani: A,n,N,V,x,X (a/A s daní ceny, N/n bez daně, x/X na DL je to bez cen, V - ?)
+ODB 
+    SDani: A,n,N,V,x,X (a/A s daní ceny, N/n bez daně, x/X na DL je to bez cen, V - ?)
+    KodOdb není jen oz a ozn, co jsou ty ostatní: al arm azc ben bur csh css dduhk drak fr ins k kar ksz lim m1 nem nku np obl ol pov PR pr3 PR3 pr8 PR8 r S8 scv zoo
 
-ODB KodOdb není jen oz a ozn, co jsou ty ostatní: al arm azc ben bur csh css dduhk drak fr ins k kar ksz lim m1 nem nku np obl ol pov PR pr3 PR3 pr8 PR8 r S8 scv zoo
+KARTY
+    Zobrazovat - pokud je N, tak na eshopu zobrazovat jen pro ty, co mají produkt v extra cenách
+
 
 Zaokrouhlování dokladů? 
-
 Prirazka - v eshopu: pokud sleva<0 a prirazka=N tak sleva je 0
+
+Jaké třídění zboží na dokladech? 

@@ -7,7 +7,7 @@ AFTER INSERT, UPDATE
 AS
 BEGIN
     SET NOCOUNT ON;
-	/* produktove klice - spoji jako retezec do UserData pole */
+	-- produktove klice - spoji jako retezec do UserData pole
 	UPDATE Artikly_Artikl SET 
 		Artikly_Artikl.Priznaky_UserData=SQ.Priznaky_UserData
 	FROM (
@@ -22,7 +22,7 @@ BEGIN
 	) AS SQ
 	WHERE Artikly_Artikl.ID = SQ.ID
 
-	/* jednotky - nastavi prodejni jednotku prvni pod hlavni, pocet prodejni jednotky nastavi do UserData pole */
+	-- jednotky - nastavi prodejni jednotku prvni pod hlavni, pocet prodejni jednotky nastavi do UserData pole
 	UPDATE Artikly_Artikl SET
 	Artikly_Artikl.ProdJednotkaMnozstvi_UserData = ISNULL(SQ.ProdJednotkaMnozstvi_UserData, Artikly_ArtiklJednotka.NedelitelneMnozstvi), 
 	Artikly_Artikl.ProdejniJednotka_ID = ISNULL(SQ.ProdejniJednotka_ID, Artikly_ArtiklJednotka.ID),
@@ -51,12 +51,60 @@ BEGIN
 		Artikly_ArtiklJednotka.Deleted = 0 AND
 		Artikly_Artikl.ID IN (SELECT ID FROM inserted)
 
+	-- jednotky - u dodavatele nastavi prodejni jednotku
+	UPDATE Artikly_ArtiklDodavatel SET
+		Jednotka_ID = ArtJed.Jednotka_ID,
+		ArtiklJednotka_ID = ArtJed.ID
+	FROM Artikly_ArtiklDodavatel AS ArtDod
+	INNER JOIN inserted ON inserted.ID = ArtDod.Parent_ID
+	INNER JOIN Artikly_Artikl AS Artikl ON Artikl.ID = ArtDod.Parent_ID
+	INNER JOIN Artikly_ArtiklJednotka AS ArtJed ON ArtJed.ID = Artikl.NakupniJednotka_ID
 
-	/* jednotky - nastavi u vedlejsich jednotek aktualizovanych artiklu nedelitelne mnozstvi na 0 */
+	-- jednotky - nastavi u vedlejsich jednotek aktualizovanych artiklu nedelitelne mnozstvi na 0
 	UPDATE Artikly_ArtiklJednotka SET
 		Artikly_ArtiklJednotka.NedelitelneMnozstvi = 0.0
 	FROM (
 		SELECT ID FROM inserted
 	) AS SQ
-	WHERE Parent_ID = SQ.ID AND ParentJednotka_ID IS NOT NULL	
+	WHERE Parent_ID = SQ.ID AND ParentJednotka_ID IS NOT NULL
+
+	-- kategorie - naplnit uzivatelsky sloupec kategorii
+	;WITH Tree (ID, Nazev, ParentObject_ID, Level, KompletniCesta, ListID) AS (
+		-- anchor:
+		SELECT 
+			ID, Nazev, ParentObject_ID, 0, CAST(Nazev AS varchar(max)), CAST(ID AS varchar(max))
+		FROM Artikly_KategorieArtiklu WHERE ParentObject_ID IS NULL
+		UNION ALL
+		-- recursive:
+		SELECT 
+			t.ID, t.Nazev, t.ParentObject_ID, Tree.Level + 1, 
+			CAST(CONCAT(Tree.KompletniCesta, ' > ', t.Nazev) AS VARCHAR(max)),
+			CAST(CONCAT(Tree.ListID, '|', t.ID) AS VARCHAR(max))
+		FROM Tree 
+		INNER JOIN Artikly_KategorieArtiklu AS t ON t.ParentObject_ID = Tree.ID
+	)
+
+	UPDATE Artikly_Artikl SET
+		Kategorie_UserData = SQ.Kategorie_UserData,
+		Kategorie = SQ.Kategorie
+	FROM Artikly_Artikl AS Art
+	INNER JOIN inserted ON inserted.ID = Art.ID
+	RIGHT JOIN (
+		SELECT 
+			Art.ID AS ID,
+			STRING_AGG(Kat.KompletniCesta, ' @ ') AS Kategorie_UserData,
+			LOWER(STRING_AGG(Kat.ListID, '|')) AS Kategorie
+		FROM Artikly_Artikl AS Art
+		CROSS APPLY STRING_SPLIT(Art.Kategorie, '|') AS ArtKat
+		INNER JOIN (
+			SELECT 
+				ID, KompletniCesta, ListID 
+			FROM Tree
+			WHERE ParentObject_ID IS NOT NULL
+		) AS Kat ON CAST(Kat.ID AS varchar(100)) = ArtKat.value
+		GROUP BY Art.ID
+	) AS SQ ON SQ.ID = Art.ID
+
+	OPTION (MAXRECURSION 5);
+
 END

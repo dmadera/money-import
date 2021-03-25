@@ -1,17 +1,29 @@
+-- Volšan + Senior 16. 3. 2021 
 Přidat do odběratele sloupec Zpusob platby, dopravy.
+    -- dodělají
 Do dokladů přidat nákupní cena a marže. 
+    -- určitě ne
 Dodací list přijatý nepřebírá nákupní jednotku. 
+    -- vyřešeno, problém nastavení jednotky u dodavatele na položce
 Neni porizovaci cena ve vyberu polozky do dokladu.
+    -- dodělají
 Mají všude poslední nákupní cenu, nákupní cena výchozího skladu. 
+    -- určitě nebudou přidávat
 
 HW dle mailů
+    -- více paměti min 64, a min Silver 4210
 Velikost DB / rok
+    -- 5 GB rok 
 Tiskové FRM – DPH table
+    -- nelze, lze vyzobat pole z datové kofigurace, ale bude bez 2. snížené sazby
 Přepočet ceníku, pouze položek dodacího listu
-Skupiny a jejich výběr defaultní skupina
+    -- budou přidávat číslo posledního dodacího listu do ceníkových cen, bude se moci vyselektovat a ručně Synchronizovat ceny
 Přednastavení na skupině pro e-shop
+    -- nelze
 Výběr zboží/více ceníků/cenotvorba výběrem – nefunguje ENTER nebo CTR+ENTER, kursor na výběr ceny
+    -- opraví
 Při výběru položek z Kategorie, nelze skrýt kód kategorie
+    -- opraví
 
 -- Volšan 15. 3. 2021
 !!! NUTNÉ !!!! Synchronizace cen automatická.

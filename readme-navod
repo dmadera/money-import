@@ -2,7 +2,7 @@ Katalog
     Název - název produktu pro sklad. MAX 40 znaků.
     Katalog - název produktu pro e-shop, pokud se liší, MAX 60 znaků.
     PLU - interní popis produktu, MAX 60 znaků.
-
+    
 Firmy
     Drak se eviduje skrze činnosti pod kódem DRAK. Činnosti se propisují z Firmy do dokladů.
     OZ, OZN pro import jsou v adresních klíčích. Po importu bude pod přiděleným obchodníkem v rámci CRM. 
@@ -21,3 +21,9 @@ DLV
     Výběr firmy provádět přes seznam firem. Zkontrolovat, zda jsou uvedené správně kontaktní osoby - telefon, email. Popřípadě opravit.
     V případě rychlé změny přebírajícího bez uložení - osoba zrušit vazbu a přepsat.  
     Popis je poznámka pro skladníky na expedičním listu. 
+
+NAV
+    2 typy - standardní a výběrovky
+    Výběrovky
+        Export do XML přednastaveným exportem -> transformace XLST -> převod do CSV -> převod do XLS (vše lze nastavením exportu, použití externího programu na CSV2XLS)
+        Z XLS -> CSV -> transformace XLST -> Import XML do nabídek

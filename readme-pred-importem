@@ -11,10 +11,14 @@ Uživatelské sloupce
     Priznaky_UserData	            Příznaky	        Text		                        Položka katalogu
     ProdJednotkaMnozstvi_UserData	Bal. množ	        Desetinné číslo	0.00	            Položka katalogu
     SkladovaPozice_UserData	        Skladová pozice	    Text		                        Položka katalogu
+    Kategorie_UserData  	        Kategorie   	    Text		                        Položka katalogu
+    Eshop_UserData  	            Eshop     	        Text		                        Položka katalogu
     Marze_UserData	                Marže	            Desetinné číslo	0.00	            Položka katalogu, Položka nabídky vydané, Položka objednávky přijaté, Položka faktury vydané, Položka dodacího listu vydaného
     NakupniCena_UserData	        Nakupní cena	    Částka	        0.00	            Položka katalogu, Položka nabídky vydané, Položka objednávky přijaté, Položka faktury vydané, Položka dodacího listu vydaného 
     Kod_UserData	                Kód	                Text		                        Spojení
     MnozstviPozn_UserData	        Množství pozn.      Text		                        Položka dodacího listu vydaného
+    RPDP_UserData                   RPDP                Text                                Položka dodacího listu vydaného
+    KartonovaJednotka_UserData      Kartonová jednotka  Logická Hodnota                     Jednotky
 
 Vygeneruj triggery a procedury
 Import exportu a importu
