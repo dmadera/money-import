@@ -22,16 +22,9 @@
 ///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\WindowsBase\v4.0_4.0.0.0__31bf3856ad364e35\WindowsBase.dll" />
 ///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Xaml\v4.0_4.0.0.0__b77a5c561934e089\System.Xaml.dll" />
 ///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_64\PresentationCore\v4.0_4.0.0.0__31bf3856ad364e35\PresentationCore.dll" />
-///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Remoting\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Remoting.dll" />
-///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_64\System.Web\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.dll" />
 ///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_64\System.Data\v4.0_4.0.0.0__b77a5c561934e089\System.Data.dll" />
 ///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_64\System.Transactions\v4.0_4.0.0.0__b77a5c561934e089\System.Transactions.dll" />
 ///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_64\System.EnterpriseServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.EnterpriseServices.dll" />
-///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Caching\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Runtime.Caching.dll" />
-///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Design\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Design.dll" />
-///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Drawing.Design\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.Design.dll" />
-///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.DirectoryServices.Protocols\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.DirectoryServices.Protocols.dll" />
-///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Web.Services\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll" />
 ///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Data.Linq\v4.0_4.0.0.0__b77a5c561934e089\System.Data.Linq.dll" />
 ///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.Serialization\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Serialization.dll" />
 ///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel.Internals\v4.0_4.0.0.0__31bf3856ad364e35\System.ServiceModel.Internals.dll" />
@@ -52,11 +45,14 @@
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWSystem.dll" />
 ///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Net.Http\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Net.Http.dll" />
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\Mono.Cecil.dll" />
-///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\AutoMapper.dll" />
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\ICSharpCode.SharpZipLib.dll" />
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CodingAlgorithms_client.dll" />
 ///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.ServiceModel\v4.0_4.0.0.0__b77a5c561934e089\System.ServiceModel.dll" />
-///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.IdentityModel\v4.0_4.0.0.0__b77a5c561934e089\System.IdentityModel.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Web.Services\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_64\System.Web\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Design\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Design.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Drawing.Design\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.Design.dll" />
+///     <Reference Path="C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.DirectoryServices.Protocols\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.DirectoryServices.Protocols.dll" />
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSW.DataProcess.dll" />
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\GemBox.Spreadsheet.dll" />
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\Newtonsoft.Json.dll" />
@@ -69,16 +65,14 @@
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWEconomicBase.dll" />
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWAdresar.dll" />
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWCiselniky.dll" />
-///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSW.WebServicesWrapper.dll" />
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWEET.dll" />
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWMessaging.dll" />
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWMeny.dll" />
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWArtikly.dll" />
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWDane.dll" />
-///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWSklady.dll" />
+///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWSkladoveDoklady.dll" />
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWUcetnictvi.dll" />
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWPlatebniTerminaly.dll" />
-///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWSkladoveDoklady.dll" />
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWObchod.dll" />
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWCeniky.dll" />
 ///     <Reference Path="C:\Program Files (x86)\Solitea\Money S4\CSWImageLib.dll" />
@@ -2128,7 +2122,7 @@ namespace XtraReportSerialization {
             this.label69.StylePriority.UsePadding = false;
             this.label69.StylePriority.UseTextAlignment = false;
             this.label69.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label69.TextFormatString = "{0:### ### ##0.00}";
+            this.label69.TextFormatString = "{0:### ### ##0.00} Kč";
             // 
             // label70
             // 
@@ -2162,7 +2156,7 @@ namespace XtraReportSerialization {
             this.label71.StylePriority.UsePadding = false;
             this.label71.StylePriority.UseTextAlignment = false;
             this.label71.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label71.TextFormatString = "{0:### ### ##0.00}";
+            this.label71.TextFormatString = "{0:### ### ##0.00} Kč";
             // 
             // label72
             // 
@@ -2203,7 +2197,7 @@ namespace XtraReportSerialization {
             this.label73.StylePriority.UseFont = false;
             this.label73.StylePriority.UsePadding = false;
             this.label73.StylePriority.UseTextAlignment = false;
-            this.label73.Text = "Celkem Kč s DPH";
+            this.label73.Text = "Celkem s DPH";
             this.label73.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // label74
@@ -2222,7 +2216,7 @@ namespace XtraReportSerialization {
             this.label74.StylePriority.UsePadding = false;
             this.label74.StylePriority.UseTextAlignment = false;
             this.label74.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.label74.TextFormatString = "{0:### ### ##0.00}";
+            this.label74.TextFormatString = "{0:### ### ##0.00} Kč";
             // 
             // table1
             // 

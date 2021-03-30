@@ -130,6 +130,9 @@ Nastavit v nastavení skupin u všech dokladů - Popis: *
 ------------ŠEKY------------
 
 Pokladní doklady - skupiny
+    Kód: PRODEJKY, Název: Prodejky, Vnutit nastavneí podřízeným: ANO, 
+        Číselná řada: POKD_PRI
+
     Kód: OST, Název: Ostaní, Vnutit nastavneí podřízeným: ANO, Pokladna: CZK_SEK, Typ ceny: Bez daně, Sazba DPH: Nulová, 
         Podrobnosti/PřijVyd doklad/Číselná řada: POKD_SEK
         Podrobnosti/PřijVyd doklad/Predkontace zaokrouhlení: OST, Podrobnosti/PřijVyd doklad/Doklad: OST, Podrobnosti/PřijVyd doklad/Uhrady: OST
