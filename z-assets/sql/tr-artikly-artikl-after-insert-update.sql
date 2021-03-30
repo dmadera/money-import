@@ -24,7 +24,6 @@ BEGIN
 
 	-- jednotky - nastavi prodejni jednotku prvni pod hlavni, pocet prodejni jednotky nastavi do UserData pole
 	UPDATE Artikly_Artikl SET
-	Artikly_Artikl.ProdJednotkaMnozstvi_UserData = ISNULL(SQ.ProdJednotkaMnozstvi_UserData, Artikly_ArtiklJednotka.NedelitelneMnozstvi), 
 	Artikly_Artikl.ProdejniJednotka_ID = ISNULL(SQ.ProdejniJednotka_ID, Artikly_ArtiklJednotka.ID),
 	Artikly_Artikl.NakupniJednotka_ID = ISNULL(SQ.ProdejniJednotka_ID, Artikly_ArtiklJednotka.ID)
 	FROM (
@@ -50,6 +49,25 @@ BEGIN
 		Artikly_ArtiklJednotka.ParentJednotka_ID IS NULL AND
 		Artikly_ArtiklJednotka.Deleted = 0 AND
 		Artikly_Artikl.ID IN (SELECT ID FROM inserted)
+
+	UPDATE Artikly_Artikl SET
+		BaleniMnozstvi_UserData = Bal.Mnozstvi,
+		BaleniJednotky_UserData = Bal.Jednotky
+	FROM Artikly_Artikl AS Art
+	INNER JOIN (
+		SELECT 
+			ArtJed.Parent_ID as Parent_ID, 
+			STRING_AGG(FORMAT(ArtJed.VychoziMnozstvi, '#' ), '/') WITHIN GROUP (ORDER BY VychoziMnozstvi DESC) AS Mnozstvi,
+			STRING_AGG(ArtJed.Kod, '/') WITHIN GROUP (ORDER BY VychoziMnozstvi DESC)  AS Jednotky
+		FROM (
+			SELECT AJ.VychoziMnozstvi, AJ.Kod, AJ.Parent_ID, AJ.Jednotka_ID, ParentJednotka_ID
+			FROM Artikly_ArtiklJednotka AS AJ
+			INNER JOIN inserted ON inserted.ID = AJ.Parent_ID 
+		) AS ArtJed
+		INNER JOIN Ciselniky_Jednotka AS Jed ON Jed.ID = ArtJed.Jednotka_ID
+		WHERE ArtJed.ParentJednotka_ID IS NOT NULL AND Jed.KartonovaJednotka_UserData = 1
+		GROUP BY ArtJed.Parent_ID
+	) Bal ON Art.ID = Bal.Parent_ID
 
 	-- jednotky - u dodavatele nastavi prodejni jednotku
 	UPDATE Artikly_ArtiklDodavatel SET

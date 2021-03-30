@@ -9,7 +9,8 @@ Uživatelské sloupce
     Platba_UserData           	    Platba      	    Text                                Firma
     NahradniPlneni_UserData         NP        	        Text                                Firma
     Priznaky_UserData	            Příznaky	        Text		                        Položka katalogu
-    ProdJednotkaMnozstvi_UserData	Bal. množ	        Desetinné číslo	0.00	            Položka katalogu
+    BaleniMnozstvi_UserData	        Balení množství     Text                	            Položka katalogu
+    BaleniJednotky_UserData	        Balení jednotky     Text                	            Položka katalogu
     SkladovaPozice_UserData	        Skladová pozice	    Text		                        Položka katalogu
     Kategorie_UserData  	        Kategorie   	    Text		                        Položka katalogu
     Eshop_UserData  	            Eshop     	        Text		                        Položka katalogu
