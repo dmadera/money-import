@@ -153,3 +153,7 @@ Pokladna
     Kód: CZK, Název: Účetní pokladna
     Kód: CZK_PRO, Název: Prodejní pokladna, Primární účet: 211100, Kurz: 0710
     Kód: CZK_OST, Název: Prodejní pokladna při odběru na šek, Primární účet: 999999, Kurz: 0710
+
+Vytvoř první šek jako koncept (kopírují se z něho další šeky)
+    CisloDokladu = "", CisloRady = OST_SEK
+    ParovaciSymbol = "FF0000000", Datumy: 1.1.2021
