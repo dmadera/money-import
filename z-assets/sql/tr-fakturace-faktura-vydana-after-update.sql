@@ -7,12 +7,9 @@ AFTER UPDATE
 AS
 BEGIN
     SET NOCOUNT ON;
+	-- aktualizovat finance-pokladni-doklad aby se spustil trigger na pokladni doklady (seky)
 	UPDATE Finance_PokladniDoklad SET 
-		Faze = 0,
-		SumaCelkem = ROUND(CASE 
-				WHEN FV.SumaCelkem >= 10000 THEN FV.SumaCelkem / 100 * 1.5
-				WHEN FV.SumaCelkem >= 5000 THEN FV.SumaCelkem / 100 * 1
-			END, 0)
+		ID = PD.ID
 	FROM Finance_PokladniDoklad AS PD
 	INNER JOIN inserted AS FV ON PD.ParovaciSymbol = FV.CisloDokladu
 	SET NOCOUNT OFF;

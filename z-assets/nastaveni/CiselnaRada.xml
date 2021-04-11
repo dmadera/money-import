@@ -21,7 +21,7 @@
       <Nazev>Prodejky přijaté</Nazev>
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
-      <Prefix>HP</Prefix>
+      <Prefix>PP</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
@@ -47,29 +47,14 @@
       </SeznamObdobi>
     </CiselnaRada>
     <CiselnaRada>
-      <Kod>OST_FAVYD</Kod>
-      <Nazev>Ostatní výdeje</Nazev>
+      <Kod>AKTIVITY</Kod>
+      <Nazev>Aktivity</Nazev>
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
-      <Prefix>_F</Prefix>
+      <Prefix>AK</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
-          <PocetMist>4</PocetMist>
-          <Zacatek>2021-01-01T00:00:00</Zacatek>
-          <ZobrazitNuly>True</ZobrazitNuly>
-        </ObdobiCiselneRady>
-      </SeznamObdobi>
-    </CiselnaRada>
-    <CiselnaRada>
-      <Kod>INV</Kod>
-      <Nazev>Inventurní doklad</Nazev>
-      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
-      <Poznamka />
-      <Prefix>IN</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
-        <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
-          <CiselnyPrefix>00</CiselnyPrefix>
           <PocetMist>5</PocetMist>
           <Zacatek>2021-01-01T00:00:00</Zacatek>
           <ZobrazitNuly>True</ZobrazitNuly>
@@ -101,21 +86,6 @@
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <PocetMist>5</PocetMist>
-          <Zacatek>2021-01-01T00:00:00</Zacatek>
-          <ZobrazitNuly>True</ZobrazitNuly>
-        </ObdobiCiselneRady>
-      </SeznamObdobi>
-    </CiselnaRada>
-    <CiselnaRada>
-      <Kod>KATALOG</Kod>
-      <Nazev>Položky katalogu</Nazev>
-      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
-      <Poznamka />
-      <Prefix></Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
-        <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
-          <CiselnyPrefix />
-          <PocetMist>4</PocetMist>
           <Zacatek>2021-01-01T00:00:00</Zacatek>
           <ZobrazitNuly>True</ZobrazitNuly>
         </ObdobiCiselneRady>
@@ -167,6 +137,36 @@
       </SeznamObdobi>
     </CiselnaRada>
     <CiselnaRada>
+      <Kod>INV_DOKL</Kod>
+      <Nazev>Inventurní doklad</Nazev>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
+      <Poznamka />
+      <Prefix>IN</Prefix>
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
+        <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
+          <CiselnyPrefix>00</CiselnyPrefix>
+          <PocetMist>5</PocetMist>
+          <Zacatek>2021-01-01T00:00:00</Zacatek>
+          <ZobrazitNuly>True</ZobrazitNuly>
+        </ObdobiCiselneRady>
+      </SeznamObdobi>
+    </CiselnaRada>
+    <CiselnaRada>
+      <Kod>KATALOG</Kod>
+      <Nazev>Položky katalogu</Nazev>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
+      <Poznamka />
+      <Prefix></Prefix>
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
+        <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
+          <CiselnyPrefix />
+          <PocetMist>4</PocetMist>
+          <Zacatek>2021-01-01T00:00:00</Zacatek>
+          <ZobrazitNuly>True</ZobrazitNuly>
+        </ObdobiCiselneRady>
+      </SeznamObdobi>
+    </CiselnaRada>
+    <CiselnaRada>
       <Kod>INT_DOKL</Kod>
       <Nazev>Interní doklady</Nazev>
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
@@ -186,7 +186,7 @@
       <Nazev>Prodejky vydané</Nazev>
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
-      <Prefix>HV</Prefix>
+      <Prefix>PV</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
@@ -232,21 +232,6 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>VZ</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
-        <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
-          <CiselnyPrefix>21</CiselnyPrefix>
-          <PocetMist>5</PocetMist>
-          <Zacatek>2021-01-01T00:00:00</Zacatek>
-          <ZobrazitNuly>True</ZobrazitNuly>
-        </ObdobiCiselneRady>
-      </SeznamObdobi>
-    </CiselnaRada>
-    <CiselnaRada>
-      <Kod>POKD_VYD</Kod>
-      <Nazev>Pokladní doklady vydané</Nazev>
-      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
-      <Poznamka />
-      <Prefix>PV</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
@@ -422,21 +407,6 @@
       </SeznamObdobi>
     </CiselnaRada>
     <CiselnaRada>
-      <Kod>POKL_DOKL</Kod>
-      <Nazev>Pokladní doklady</Nazev>
-      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
-      <Poznamka />
-      <Prefix>PD</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
-        <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
-          <CiselnyPrefix>21</CiselnyPrefix>
-          <PocetMist>5</PocetMist>
-          <Zacatek>2021-01-01T00:00:00</Zacatek>
-          <ZobrazitNuly>True</ZobrazitNuly>
-        </ObdobiCiselneRady>
-      </SeznamObdobi>
-    </CiselnaRada>
-    <CiselnaRada>
       <Kod>ZALF_VYD</Kod>
       <Nazev>Zálohové faktury vydané</Nazev>
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
@@ -505,36 +475,6 @@
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix />
-          <PocetMist>5</PocetMist>
-          <Zacatek>2021-01-01T00:00:00</Zacatek>
-          <ZobrazitNuly>True</ZobrazitNuly>
-        </ObdobiCiselneRady>
-      </SeznamObdobi>
-    </CiselnaRada>
-    <CiselnaRada>
-      <Kod>OST_POKD</Kod>
-      <Nazev>Ostatní pokladní doklad</Nazev>
-      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
-      <Poznamka />
-      <Prefix>_P</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
-        <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
-          <CiselnyPrefix>21</CiselnyPrefix>
-          <PocetMist>5</PocetMist>
-          <Zacatek>2021-01-01T00:00:00</Zacatek>
-          <ZobrazitNuly>True</ZobrazitNuly>
-        </ObdobiCiselneRady>
-      </SeznamObdobi>
-    </CiselnaRada>
-    <CiselnaRada>
-      <Kod>OST_SEK</Kod>
-      <Nazev>Šeky</Nazev>
-      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
-      <Poznamka />
-      <Prefix>_S</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
-        <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
-          <CiselnyPrefix>21</CiselnyPrefix>
           <PocetMist>5</PocetMist>
           <Zacatek>2021-01-01T00:00:00</Zacatek>
           <ZobrazitNuly>True</ZobrazitNuly>
@@ -617,21 +557,6 @@
       </SeznamObdobi>
     </CiselnaRada>
     <CiselnaRada>
-      <Kod>POKD_PRI</Kod>
-      <Nazev>Pokladní doklady přijaté</Nazev>
-      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
-      <Poznamka />
-      <Prefix>PP</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
-        <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
-          <CiselnyPrefix>21</CiselnyPrefix>
-          <PocetMist>5</PocetMist>
-          <Zacatek>2021-01-01T00:00:00</Zacatek>
-          <ZobrazitNuly>True</ZobrazitNuly>
-        </ObdobiCiselneRady>
-      </SeznamObdobi>
-    </CiselnaRada>
-    <CiselnaRada>
       <Kod>DODL_VYD</Kod>
       <Nazev>Dodací listy vydané</Nazev>
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
@@ -662,11 +587,11 @@
       </SeznamObdobi>
     </CiselnaRada>
     <CiselnaRada>
-      <Kod>AKTIVITY</Kod>
-      <Nazev>Aktivity</Nazev>
+      <Kod>FAKT_VYD</Kod>
+      <Nazev>Faktury vydané</Nazev>
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
-      <Prefix>AK</Prefix>
+      <Prefix>FV</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
@@ -677,11 +602,71 @@
       </SeznamObdobi>
     </CiselnaRada>
     <CiselnaRada>
-      <Kod>FAKT_VYD</Kod>
-      <Nazev>Faktury vydané</Nazev>
+      <Kod>POKD_UCETNI</Kod>
+      <Nazev>Pokladní doklady UCETNI</Nazev>
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
-      <Prefix>FV</Prefix>
+      <Prefix>PU</Prefix>
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
+        <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
+          <CiselnyPrefix>21</CiselnyPrefix>
+          <PocetMist>5</PocetMist>
+          <Zacatek>2021-01-01T00:00:00</Zacatek>
+          <ZobrazitNuly>True</ZobrazitNuly>
+        </ObdobiCiselneRady>
+      </SeznamObdobi>
+    </CiselnaRada>
+    <CiselnaRada>
+      <Kod>POKD_ODBYT</Kod>
+      <Nazev>Pokladní doklady ODBYT</Nazev>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
+      <Poznamka />
+      <Prefix>PO</Prefix>
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
+        <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
+          <CiselnyPrefix>21</CiselnyPrefix>
+          <PocetMist>5</PocetMist>
+          <Zacatek>2021-01-01T00:00:00</Zacatek>
+          <ZobrazitNuly>True</ZobrazitNuly>
+        </ObdobiCiselneRady>
+      </SeznamObdobi>
+    </CiselnaRada>
+    <CiselnaRada>
+      <Kod>OST_POKD_ODBYT</Kod>
+      <Nazev>Ostatní pokladní doklad ODBYT</Nazev>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
+      <Poznamka />
+      <Prefix>_P</Prefix>
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
+        <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
+          <CiselnyPrefix>21</CiselnyPrefix>
+          <PocetMist>5</PocetMist>
+          <Zacatek>2021-01-01T00:00:00</Zacatek>
+          <ZobrazitNuly>True</ZobrazitNuly>
+        </ObdobiCiselneRady>
+      </SeznamObdobi>
+    </CiselnaRada>
+    <CiselnaRada>
+      <Kod>OST_FAVYD</Kod>
+      <Nazev>Ostatní faktury</Nazev>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
+      <Poznamka />
+      <Prefix>_F</Prefix>
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
+        <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
+          <CiselnyPrefix>21</CiselnyPrefix>
+          <PocetMist>4</PocetMist>
+          <Zacatek>2021-01-01T00:00:00</Zacatek>
+          <ZobrazitNuly>True</ZobrazitNuly>
+        </ObdobiCiselneRady>
+      </SeznamObdobi>
+    </CiselnaRada>
+    <CiselnaRada>
+      <Kod>OST_SEK</Kod>
+      <Nazev>Šeky</Nazev>
+      <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
+      <Poznamka />
+      <Prefix>_S</Prefix>
       <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>

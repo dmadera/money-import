@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<S5Data>
+  <AutomaticActionList>
+    <AutomaticAction ID="5e1e9ca5-892a-4cfd-b3a3-5ea808bfdb9d">
+      <ApplyFilterBeforeFirstAction>False</ApplyFilterBeforeFirstAction>
+      <Export_ID />
+      <Note />
+      <NumberOfCopies>1</NumberOfCopies>
+      <Printer>Microsoft Print to PDF</Printer>
+      <ShowPrintDialog>False</ShowPrintDialog>
+      <UseSystemPrinter>True</UseSystemPrinter>
+      <Events>
+        <AfterRecordAdded>False</AfterRecordAdded>
+        <AfterRecordDeleted>True</AfterRecordDeleted>
+        <AfterRecordEdited>True</AfterRecordEdited>
+        <AfterStateChanged>False</AfterStateChanged>
+        <BeforeEventsModifier>True</BeforeEventsModifier>
+        <BeforeRecordAdded>False</BeforeRecordAdded>
+        <BeforeRecordDeleted>False</BeforeRecordDeleted>
+        <BeforeRecordEdited>False</BeforeRecordEdited>
+        <OtherAction>False</OtherAction>
+      </Events>
+      <General>
+        <Action EnumValueName="CustomAction">2</Action>
+        <ActionFilter>9b3b201a-47e7-48d1-9e1b-4a9c10d8de68</ActionFilter>
+        <ActionForAgenda_ID>483a7917-3932-467c-8e30-8f362a9a0a02</ActionForAgenda_ID>
+        <ActionForGroup_ID />
+        <Code>SekFaUprav</Code>
+        <CustomAssembly>CSWEconomicBaseUI</CustomAssembly>
+        <CustomConfig>&lt;S5AutomatConfig&gt;&lt;AutomatConfig&gt;&lt;S5MessageBoxAutomatConfig&gt;&lt;TypDialogu&gt;Upozorneni&lt;/TypDialogu&gt;&lt;Text&gt;Byl upraven šek - opravte v evidenci.&lt;/Text&gt;&lt;PrerusitUdalost&gt;false&lt;/PrerusitUdalost&gt;&lt;NespoustetNasledujiciAkce&gt;false&lt;/NespoustetNasledujiciAkce&gt;&lt;/S5MessageBoxAutomatConfig&gt;&lt;/AutomatConfig&gt;&lt;/S5AutomatConfig&gt;</CustomConfig>
+        <CustomType>CSW.Modules.EconomicBaseUI.Automats.S5MessageBoxAutomat</CustomType>
+        <Enabled>True</Enabled>
+        <Name>Upozornit na upravený šek</Name>
+        <Object_ID>3e9b8f7e-8cee-4363-95fe-195eccd9a14e</Object_ID>
+        <ObjName>FakturaVydana</ObjName>
+        <OnlyForFilter>True</OnlyForFilter>
+        <OnlyForGroup>False</OnlyForGroup>
+        <OnlyForWorkflowDefiniceProcesStavy>False</OnlyForWorkflowDefiniceProcesStavy>
+        <Poradi>0</Poradi>
+        <PrintConfiguration>603eb6fc-8b9d-4c9e-ae93-f0a64ea50d8e</PrintConfiguration>
+        <PrintDesign_ID>39dd1080-e917-4cd1-98c4-c63922522799</PrintDesign_ID>
+        <WorkManually>False</WorkManually>
+        <WorkOnBackground>False</WorkOnBackground>
+      </General>
+      <Source>
+        <ImportedObjects>False</ImportedObjects>
+        <NormalObjects>True</NormalObjects>
+      </Source>
+      <Users>
+        <AppliesToAllUsers>True</AppliesToAllUsers>
+        <CheckedUsers>&lt;CheckedUsers /&gt;</CheckedUsers>
+      </Users>
+    </AutomaticAction>
+    <AutomaticAction ID="dc30e107-0602-4404-90ee-71f37e2f16a1">
+      <ApplyFilterBeforeFirstAction>True</ApplyFilterBeforeFirstAction>
+      <Export_ID />
+      <Note />
+      <NumberOfCopies>1</NumberOfCopies>
+      <Printer>Microsoft Print to PDF</Printer>
+      <ShowPrintDialog>False</ShowPrintDialog>
+      <UseSystemPrinter>True</UseSystemPrinter>
+      <Events>
+        <AfterRecordAdded>False</AfterRecordAdded>
+        <AfterRecordDeleted>False</AfterRecordDeleted>
+        <AfterRecordEdited>False</AfterRecordEdited>
+        <AfterStateChanged>False</AfterStateChanged>
+        <BeforeEventsModifier>True</BeforeEventsModifier>
+        <BeforeRecordAdded>True</BeforeRecordAdded>
+        <BeforeRecordDeleted>False</BeforeRecordDeleted>
+        <BeforeRecordEdited>True</BeforeRecordEdited>
+        <OtherAction>False</OtherAction>
+      </Events>
+      <General>
+        <Action EnumValueName="CustomAction">2</Action>
+        <ActionFilter>0a651c98-a195-4336-b4c4-f6bd97be0b4e</ActionFilter>
+        <ActionForAgenda_ID>483a7917-3932-467c-8e30-8f362a9a0a02</ActionForAgenda_ID>
+        <ActionForGroup_ID />
+        <Code>FvLimitBezOdb</Code>
+        <CustomAssembly>CSWEconomicBaseUI</CustomAssembly>
+        <CustomConfig>&lt;S5AutomatConfig&gt;&lt;AutomatConfig&gt;&lt;S5MessageBoxAutomatConfig&gt;&lt;TypDialogu&gt;Upozorneni&lt;/TypDialogu&gt;&lt;Text&gt;Doklad nad 10000 Kč lze uložit pouze s identifikací odběratele.&lt;/Text&gt;&lt;PrerusitUdalost&gt;true&lt;/PrerusitUdalost&gt;&lt;NespoustetNasledujiciAkce&gt;true&lt;/NespoustetNasledujiciAkce&gt;&lt;/S5MessageBoxAutomatConfig&gt;&lt;/AutomatConfig&gt;&lt;/S5AutomatConfig&gt;</CustomConfig>
+        <CustomType>CSW.Modules.EconomicBaseUI.Automats.S5MessageBoxAutomat</CustomType>
+        <Enabled>True</Enabled>
+        <Name>Zakázat FA nad 10000 bez odběratele</Name>
+        <Object_ID>3e9b8f7e-8cee-4363-95fe-195eccd9a14e</Object_ID>
+        <ObjName>FakturaVydana</ObjName>
+        <OnlyForFilter>True</OnlyForFilter>
+        <OnlyForGroup>False</OnlyForGroup>
+        <OnlyForWorkflowDefiniceProcesStavy>False</OnlyForWorkflowDefiniceProcesStavy>
+        <Poradi>0</Poradi>
+        <PrintConfiguration>603eb6fc-8b9d-4c9e-ae93-f0a64ea50d8e</PrintConfiguration>
+        <PrintDesign_ID>39dd1080-e917-4cd1-98c4-c63922522799</PrintDesign_ID>
+        <WorkManually>False</WorkManually>
+        <WorkOnBackground>False</WorkOnBackground>
+      </General>
+      <Source>
+        <ImportedObjects>False</ImportedObjects>
+        <NormalObjects>True</NormalObjects>
+      </Source>
+      <Users>
+        <AppliesToAllUsers>True</AppliesToAllUsers>
+        <CheckedUsers>&lt;CheckedUsers /&gt;</CheckedUsers>
+      </Users>
+    </AutomaticAction>
+    <AutomaticAction ID="b82f946b-828c-4954-a8cb-f4838995a2f5">
+      <ApplyFilterBeforeFirstAction>True</ApplyFilterBeforeFirstAction>
+      <Export_ID />
+      <Note />
+      <NumberOfCopies>1</NumberOfCopies>
+      <Printer>Microsoft Print to PDF</Printer>
+      <ShowPrintDialog>False</ShowPrintDialog>
+      <UseSystemPrinter>True</UseSystemPrinter>
+      <Events>
+        <AfterRecordAdded>True</AfterRecordAdded>
+        <AfterRecordDeleted>False</AfterRecordDeleted>
+        <AfterRecordEdited>False</AfterRecordEdited>
+        <AfterStateChanged>False</AfterStateChanged>
+        <BeforeEventsModifier>True</BeforeEventsModifier>
+        <BeforeRecordAdded>False</BeforeRecordAdded>
+        <BeforeRecordDeleted>False</BeforeRecordDeleted>
+        <BeforeRecordEdited>False</BeforeRecordEdited>
+        <OtherAction>False</OtherAction>
+      </Events>
+      <General>
+        <Action EnumValueName="CustomAction">2</Action>
+        <ActionFilter>9b3b201a-47e7-48d1-9e1b-4a9c10d8de68</ActionFilter>
+        <ActionForAgenda_ID>483a7917-3932-467c-8e30-8f362a9a0a02</ActionForAgenda_ID>
+        <ActionForGroup_ID />
+        <Code>SekFaNovy</Code>
+        <CustomAssembly>CSWEconomicBaseUI</CustomAssembly>
+        <CustomConfig>&lt;S5AutomatConfig&gt;&lt;AutomatConfig&gt;&lt;S5MessageBoxAutomatConfig&gt;&lt;TypDialogu&gt;Upozorneni&lt;/TypDialogu&gt;&lt;Text&gt;Byl vytvořen nový šek - upravte v evidenci.&lt;/Text&gt;&lt;PrerusitUdalost&gt;false&lt;/PrerusitUdalost&gt;&lt;NespoustetNasledujiciAkce&gt;false&lt;/NespoustetNasledujiciAkce&gt;&lt;/S5MessageBoxAutomatConfig&gt;&lt;/AutomatConfig&gt;&lt;/S5AutomatConfig&gt;</CustomConfig>
+        <CustomType>CSW.Modules.EconomicBaseUI.Automats.S5MessageBoxAutomat</CustomType>
+        <Enabled>True</Enabled>
+        <Name>Upozornit na vytvořený šek</Name>
+        <Object_ID>3e9b8f7e-8cee-4363-95fe-195eccd9a14e</Object_ID>
+        <ObjName>FakturaVydana</ObjName>
+        <OnlyForFilter>True</OnlyForFilter>
+        <OnlyForGroup>False</OnlyForGroup>
+        <OnlyForWorkflowDefiniceProcesStavy>False</OnlyForWorkflowDefiniceProcesStavy>
+        <Poradi>0</Poradi>
+        <PrintConfiguration>603eb6fc-8b9d-4c9e-ae93-f0a64ea50d8e</PrintConfiguration>
+        <PrintDesign_ID>39dd1080-e917-4cd1-98c4-c63922522799</PrintDesign_ID>
+        <WorkManually>False</WorkManually>
+        <WorkOnBackground>False</WorkOnBackground>
+      </General>
+      <Source>
+        <ImportedObjects>False</ImportedObjects>
+        <NormalObjects>True</NormalObjects>
+      </Source>
+      <Users>
+        <AppliesToAllUsers>True</AppliesToAllUsers>
+        <CheckedUsers>&lt;CheckedUsers /&gt;</CheckedUsers>
+      </Users>
+    </AutomaticAction>
+  </AutomaticActionList>
+</S5Data>

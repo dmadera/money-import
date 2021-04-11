@@ -11,4 +11,9 @@ KARTY
 Zaokrouhlování dokladů? 
 Prirazka - v eshopu: pokud sleva<0 a prirazka=N tak sleva je 0
 
+Seky
+    - pouze pro firmy, které nemají přirážku a slevu a nemají ADR_KOD -SEK
+    - >= 5000 tak 1% z částky s DPH
+    - >= 10000 tak 1,5% z částky s DPH
+
 Jaké třídění zboží na dokladech? 

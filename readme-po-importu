@@ -4,15 +4,18 @@ Filtry
     OZ nové	            Firma               Produktový klíč OZN
     DRAK	            Firma               Činnost DRAK
     NP	                Firma               Evidovat náhradní plnění ANO
+    S nárokem na šek    Faktura vydaná      Odběratel - Adresní klíč != -SEK & CelkemSDPH >= 5000 & Sleva = 0
+    
 
 Aktualizovat data podle triggrů. Provést update all na Katalog. 
 Nastavit číselnou řadu KATALOG ve skupině ART (Artikl) a Obaly.
+Promazat číselné řady.
+Promazat Typy spojení (Skype, IM, GSM brána).
 Provést výpočet pořizovacích nákladů zásob - v menu skladové operace + synchronizace cen.
 Nastavit kontrolu minimálního zisku. 
 Skrýt nepotřebné jednotky pro agendu - aplikovat filtr pouze na jednotky logistické.
 Označit všechny artikly - menu - Hromadné operace - Hromadné operace s dodavatelem - Aktualizace hlavního dodavatele podle posledních příjmů
 Smazat nepoužívatné hodnoty v seznamech - Typy spojení, Způsob dopravy (smazat - D), Způsob platby (smazat - I,P,S,Z)
-Skrýt Pokladnu, Kód: SEK_INT pro všechny role kromě administrátora
 Omezit editaci a přidávání šeku pouze na Manažera
 Omezit v účetním deníku zobrazení účtu 999999 pouze pro admina.
 Firma skupina - ZRUS, Není pro ukládání záznamů: True

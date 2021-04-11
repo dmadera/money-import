@@ -15,4 +15,15 @@ SELECT ID, Kod, Parent_ID FROM Artikly_ArtiklJednotka AS ArtJed WITH(NOLOCK) WHE
 SELECT ID, RozpisDPH_ID, Parent_ID FROM Dane_SazbaDPHNaDoklade AS SazDPHDokl WITH(NOLOCK) WHERE (Deleted = 0)
 -- SazDPHDokl.RozpisDPH_ID = RozDPH.ID, SazDPHDokl-RozDPH
 SELECT ID, Sazba, SumaZaklad, SumaDph, SumaCelkem FROM Dane_RozpisDPH AS RozDPH WITH(NOLOCK) WHERE (Deleted = 0)
+
+-- FakturaVydana.ID = VazObj.Zdroj_ID, FV-VazObj1
+SELECT Cil_ID, Zdroj_ID FROM EconomicBase_VazbaObjektu AS VazObj1 WITH(NOLOCK) WHERE (Deleted = 0)
+-- VazObj.Cil_ID = PoklDokl.ID, VazObj1-PD
+SELECT ID, CelkovaCastka, DatumPlatby FROM Finance_PokladniDoklad AS PD WITH(NOLOCK) WHERE (Deleted = 0)
+
+-- FakturaVydana.ID = FV.ID, FakVyd-FV
+SELECT ID, Group_ID FROM Fakturace_FakturaVydana AS FV WITH(NOLOCK) WHERE (Deleted = 0)
+-- FV.Group_ID = Grp.ID, FV-Grp
+SELECT ID, Kod, Nazev FROM System_Groups AS Grp WITH(NOLOCK)
+
 GO
