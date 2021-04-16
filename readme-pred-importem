@@ -5,7 +5,7 @@ Průvodce nastavení programu
         Zobrazit horizontální posuvník: true
         Záložky detailu: nahoře
     Ovládání a chování aplikace: 
-        U nového záznamu nabízet výběr skupiny: false
+        U nového záznamu nabízet výběr skupiny: true
         Pamatovat si v seznamu sloupec
         Sumovat položky dokladu až po..: true
     Nastavení agendy
@@ -14,7 +14,7 @@ Průvodce nastavení programu
         Roční limit náhradního plnění: 1200000
         Evidovat pohlaví u osob: false
     Zakladní údaje o firmě:
-        Spisová značka: Společnost je zapsána v Obchodním rejstříku vedeném Krajským soudem v Ústí nad Labem, oddíl C, vložka 2701.
+        Spisová značka: Společnost je zapsána v OR vedeném Krajským soudem v Ústí nad Labem, oddíl C, vložka 2701.
         Předmět činnosti: Velkoobchod s drogistickým zbožím
         Logo: vybrat soubor z-assets/logo.png
     Ceníky
@@ -26,15 +26,19 @@ Průvodce nastavení programu
         Výchozí sklad agendy: Hlavní
         Automatické přidání nové položky katalogu do skladové zásoby: Přidat automaticky
         Zobrazit kartu skladové zásoby: false
-        Metoda vedení skladů: Metoda B
-    Ucetnictvi
-        Kontrola vzájemného zápočtu: Nekontrolovat
+        Metoda vedení skladů: Metoda B     
+    Obchod
+        Vystaveni dokladu: Nekontrolovat - DL, OP, NV; Upozornit - FV
+        Kontrola překročení kreditu: DL, ZFV, OP, NV - false
+        Kontrola uplatnění záloh: false
+        Kontrola vzájemného zápočtu: FV, FP, ZD, PD - Nekontrolovat
 
+Vytvoř uživatelské sloupce
 Vygeneruj triggery a procedury
 Import exportu a importu
-Import statických seznamů
 Import číselných řad
     Smazat: INV
+Import statických seznamů
 
 Sklad
     Kód: HL, Název: Hlavní
@@ -97,18 +101,17 @@ Firma - skupiny
 
 Faktura vydaná
     Kód: Nezařazené, Není pro ukládání záznamů
-    Kód: FAKT_ODBYT, Název: Faktury ODBYT, Popis: *, Řada: FV
-    Kód: FAKT_UCETNI, Název: Faktury UCETNI, Popis: *, Řada: FV
+    // Kód: FAKT_ODBYT, Název: Faktury ODBYT, Popis: *, Řada: FV, Zaokr: 0,01_MAT
+    Kód: FAKT_UCETNI, Název: Faktury UCETNI, Popis: *, Řada: FV,  Zaokr: 0,01_MAT
 
-Nastavit v nastavení skupin u všech dokladů - Popis: *
+Prodejka vydaná
+    Kód: PRODEJKY, Název: Prodejky
+    Kód: OSTATNI, Název: Ostatní
 
-Nepeněžní platidla
-    Kod: Kartou, Nazev: Platba Kartou
-    Primární účet pohledávek: 315000
-    Zobrazovat na kartě Platby: NE
-    Vystavite: B-Payment s.r.o.
-
-------------ŠEKY------------
+Pokladna
+    Kód: UCETNI, Název: Pokladna UCETNI
+    Kód: ODBYT, Název: Pokladna ODBYT
+    Kód: OSTATNI, Název: Pokladna OSTATNI
 
 Pokladní doklady - skupiny
     Kód: UCETNI, Název: Pokladna UCETNI
@@ -119,17 +122,23 @@ Pokladní doklady - skupiny
         Číselná řada: OST_POKD, Typ ceny: Pouze základ, Sazba DPH: Nulová, 
         Členění DPH: _Ř000 U, Předkontace: OST, Primární účet MD: 911500
 
+-- nevíme jak nastavit --
+
+Nepeněžní platidla
+    Kod: KARTA, Nazev: Platební karta
+    Primární účet pohledávek: 315000
+    Zobrazovat na kartě Platby: NE
+    Vystavitel: B-Payment s.r.o.
+    Kod: SEK, Nazev: Šek
+    Primární účet pohledávek: 
+    Zobrazovat na kartě Platby: NE
+
 Účtový rozvrh
     Účet: 211100, Název: Pokladna UCETNI, nechat nastavení dle výchozího
-    Účet: 911600, Název: OST Evidence šeků, Druh účtu: Rozvahový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO
-    Účet: 911500, Název: OST Pokladna ODBYT, Druh účtu: Rozvahový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO
     Účet: 211500, Název: Pokladna ODBYT, Druh účtu: Rozvahový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO
     Účet: 261500, Název: Převod ODBYT-UCETNI, Druh účtu: Rozvahový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO
+    Účet: 911600, Název: OST Evidence šeků, Druh účtu: Rozvahový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO
+    Účet: 911500, Název: OST Pokladna ODBYT, Druh účtu: Rozvahový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO
 
 Předkontace
     Nastavit dle účtových rozvrhů
-
-Pokladna
-    Kód: UCETNI, Název: Pokladna UCETNI
-    Kód: ODBYT, Název: Pokladna ODBYT
-    Kód: OSTATNI, Název: Pokladna OSTATNI

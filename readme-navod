@@ -27,3 +27,7 @@ NAV
     Výběrovky
         Export do XML přednastaveným exportem -> transformace XLST -> převod do CSV -> převod do XLS (vše lze nastavením exportu, použití externího programu na CSV2XLS)
         Z XLS -> CSV -> transformace XLST -> Import XML do nabídek
+
+
+Ostatní
+    Nefunkční nápověda - ve složce Solitea\Money S4\Help\Help_S4.chm pravým tlačítkem vlastnosti - odblokovat - OK

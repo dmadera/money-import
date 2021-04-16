@@ -103,7 +103,7 @@ BEGIN
 	)
 
 	UPDATE Artikly_Artikl SET
-		Kategorie_UserData = SQ.Kategorie_UserData,
+		KategorieRetezec_UserData = SQ.Kategorie_UserData,
 		Kategorie = SQ.Kategorie
 	FROM Artikly_Artikl AS Art
 	INNER JOIN inserted ON inserted.ID = Art.ID

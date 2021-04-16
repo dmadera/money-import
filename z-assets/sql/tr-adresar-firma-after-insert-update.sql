@@ -12,8 +12,8 @@ BEGIN
 		Doprava_UserData = ISNULL(Doprava.Nazev, ''),
 		Platba_UserData = ISNULL(Platba.Nazev, ''),
 		NahradniPlneni_UserData = IIF(Firma.EvidovatNahradniPlneni = 1, 'NP', ''),
-		ADSek_UserData = ISNULL(FirAdrKlic.Kod, ''),
-		Cinnost_UserData = ISNULL(FirCinnost.Kod, '')
+		Sek_UserData = ISNULL(FirAdrKlic.Kod, ''),
+		HlavniCinnost_UserData = ISNULL(FirCinnost.Kod, '')
 	FROM Adresar_Firma AS Firma
 	INNER JOIN inserted ON inserted.ID = Firma.ID
 	LEFT JOIN Ciselniky_ZpusobDopravy AS Doprava ON Doprava.ID = Firma.ZpusobDopravy_ID
