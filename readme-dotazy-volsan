@@ -1,5 +1,11 @@
+-- Volšan 15. 4. 2021
 Jak zaúčtovat platby kartou? Interní doklad, Pohledávka (261, 311) 
-
+    -- Zavolá z technické podpory. Nastavíme online. 
+GraphQL - dynamické schéma
+    -- pošle kuchařku
+Licence
+    -- poslat, jak bychom si to představovali do emailu
+    -- rozfakturování, počet licencí apod. 
 
 -- Volšan + Senior 16. 3. 2021 
 Přidat do odběratele sloupec Zpusob platby, dopravy.

@@ -276,6 +276,20 @@
       <Nazev>Platební kartou</Nazev>
       <Poznamka />
     </ZpusobPlatby>
+    <ZpusobPlatby>
+      <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
+      <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
+      <Kod>R</Kod>
+      <Nazev>Na rozvozu</Nazev>
+      <Poznamka />
+    </ZpusobPlatby>
+    <ZpusobPlatby>
+      <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
+      <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
+      <Kod>N</Kod>
+      <Nazev>Neuhrazeno</Nazev>
+      <Poznamka />
+    </ZpusobPlatby>
   </ZpusobPlatbyList>
   <AdresniKlicList>
     <AdresniKlic>

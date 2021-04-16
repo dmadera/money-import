@@ -1,29 +1,40 @@
-Uživatelské sloupce
-    KodOdb_UserData	                Kód ODB     	    Text		                        Firma
-    PoznamkaInterni_UserData	    Poznámka interní	Text		                        Firma
-    SlevaUvadena_UserData	        Sleva uváděná	    Desetinné číslo	0.00	            Firma
-    DatumPorizeni_UserData  	    Datum pořízení	    Datum	        2021-01-01T00:00:00 Firma
-    ADSek_UserData           	    AD Šek      	    Text                                Firma
-    Cinnost_UserData           	    Činnost      	    Text                                Firma
-    Doprava_UserData           	    Doprava      	    Text                                Firma
-    Platba_UserData           	    Platba      	    Text                                Firma
-    NahradniPlneni_UserData         NP        	        Text                                Firma
-    Priznaky_UserData	            Příznaky	        Text		                        Položka katalogu
-    BaleniMnozstvi_UserData	        Balení množství     Text                	            Položka katalogu
-    BaleniJednotky_UserData	        Balení jednotky     Text                	            Položka katalogu
-    SkladovaPozice_UserData	        Skladová pozice	    Text		                        Položka katalogu
-    Kategorie_UserData  	        Kategorie   	    Text		                        Položka katalogu
-    Eshop_UserData  	            Eshop     	        Text		                        Položka katalogu
-    Marze_UserData	                Marže	            Desetinné číslo	0.00	            Položka katalogu, Položka nabídky vydané, Položka objednávky přijaté, Položka faktury vydané, Položka dodacího listu vydaného
-    NakupniCena_UserData	        Nakupní cena	    Částka	        0.00	            Položka katalogu, Položka nabídky vydané, Položka objednávky přijaté, Položka faktury vydané, Položka dodacího listu vydaného 
-    Kod_UserData	                Kód	                Text		                        Spojení
-    MnozstviPozn_UserData	        Množství pozn.      Text		                        Položka dodacího listu vydaného
-    RPDP_UserData                   RPDP                Text                                Položka dodacího listu vydaného
-    KartonovaJednotka_UserData      Kartonová jednotka  Logická Hodnota                     Jednotky
+Průvodce nastavení programu
+    Vzhled:
+        Každý lichý řáde...: 255; 255; 255
+        Každý sudý řádek...: (Web/Azure)
+        Zobrazit horizontální posuvník: true
+        Záložky detailu: nahoře
+    Ovládání a chování aplikace: 
+        U nového záznamu nabízet výběr skupiny: false
+        Pamatovat si v seznamu sloupec
+        Sumovat položky dokladu až po..: true
+    Nastavení agendy
+        Evidovat Intrastat: false
+        Evidovat náhradní plnění: true
+        Roční limit náhradního plnění: 1200000
+        Evidovat pohlaví u osob: false
+    Zakladní údaje o firmě:
+        Spisová značka: Společnost je zapsána v Obchodním rejstříku vedeném Krajským soudem v Ústí nad Labem, oddíl C, vložka 2701.
+        Předmět činnosti: Velkoobchod s drogistickým zbožím
+        Logo: vybrat soubor z-assets/logo.png
+    Ceníky
+        Kontrolovat minimální zisk při prodeji: true
+        Minimální procentuální zisk: 3,00
+        Automatické přidání nové položky katalogu: Přidat automaticky
+        Zobrazit kartu ceníkové ceny: false
+    Sklady
+        Výchozí sklad agendy: Hlavní
+        Automatické přidání nové položky katalogu do skladové zásoby: Přidat automaticky
+        Zobrazit kartu skladové zásoby: false
+        Metoda vedení skladů: Metoda B
+    Ucetnictvi
+        Kontrola vzájemného zápočtu: Nekontrolovat
 
 Vygeneruj triggery a procedury
 Import exportu a importu
 Import statických seznamů
+Import číselných řad
+    Smazat: INV
 
 Sklad
     Kód: HL, Název: Hlavní
@@ -54,54 +65,22 @@ Artikl - skupiny
     Nastavit zobrazení včetně podřízených
     Kód: Nezařazené, Není určena pro ukládání záznamů: true, Číselná řada: zrušit vazbu (pro import)
     Kód: KATALOG, Název: Katalog zboží, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu 
-    Kód: SPECIAL, Název: Speciální zboží, Převzít nastavení z nadřazené úrovně: ANO, Parent: ART
+    Kód: SPECIAL, Název: Speciální zboží, Převzít nastavení z nadřazené úrovně: ANO, Parent: KATALOG
     Kód: ZRUSENO, Název: Zrušeno, Převzít nastavení z nadřazené úrovně: ANO
     Kód: OBALY, Název: Obaly, Druh položky katalogu: OBA, Číselná řada: zrušit vazbu 
 
 Ceník
     Kód: _PRODEJ, Název: Prodejní
         Typ výchozí ceny: Skladová, Výchozí sklad: HL, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -25%
-        Typ zdroje přebírání: Katalog, Skupina katalogu: ART
+        Typ zdroje přebírání: Katalog, Skupina katalogu: Nezařazené
         Nastavit jako výchozí: ANO
     Kód: _NAKUP, Název: Nákupní
-        Typ výchozí ceny: Skladová, Výchozí sklad: HL, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -25%
-        Typ zdroje přebírání: Katalog, Skupina katalogu: ART
+        Typ výchozí ceny: Skladová, Výchozí sklad: HL, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny 0
+        Typ zdroje přebírání: Katalog, Skupina katalogu: Nezařazené
     Kód: _AKCE, Název: Akce, // žádné přebírání
     Kód: _LETAK, Název: Leták, // žádné přebírání
     Kód: _SPECIAL, Název: Speciální, // žádné přebírání
     
-
-Průvodce nastavení programu
-    Vzhled:
-        Každý lichý řáde...: 255; 255; 255
-        Každý sudý řádek...: (Web/Azure)
-        Zobrazit horizontální posuvník: true
-        Záložky detailu: nahoře
-    Ovládání a chování aplikace: 
-        U nového záznamu nabízet výběr skupiny: false
-        Sumovat položky dokladu až po..: true
-    Nastavení agendy
-        Evidovat Intrastat: false
-        Evidovat náhradní plnění: true
-        Roční limit náhradního plnění: 1200000
-    Zakladní údaje o firmě:
-        Spisová značka: Společnost je zapsána v Obchodním rejstříku vedeném Krajským soudem v Ústí nad Labem, oddíl C, vložka 2701.
-        Předmět činnosti: Velkoobchod s drogistickým zbožím
-        Logo: vybrat soubor z-assets/logo.png
-    Ceníky
-        Kontrolovat minimální zisk při prodeji: true
-        Minimální procentuální zisk: 3,00
-        Automatické přidání nové položky katalogu: Přidat automaticky
-        Zobrazit kartu ceníkové ceny: false
-
-    Sklady
-        Výchozí sklad agendy: Hlavní
-        Automatické přidání nové položky katalogu do skladové zásoby: Přidat automaticky
-        Zobrazit kartu skladové zásoby: false
-        Metoda vedení skladů: Metoda B
-    Ucetnictvi
-        Kontrola vzájemného zápočtu: Nekontrolovat
-
 Doplnění informace o firmě jednotky
     tel, gsm, email, www, vybrat hlavní kontakt, bankovní spojení
 
@@ -118,13 +97,8 @@ Firma - skupiny
 
 Faktura vydaná
     Kód: Nezařazené, Není pro ukládání záznamů
-    Kód: FAKTURY, Název: Faktury vydané, Popis: *, Řada: FV
-    Kód: PRODEJKY, Název: Prodeky vydané, Popis: *, Řada: PV, Zaokrouhlení na celou částku
-    Kód: OSTATNI, Název: Ostatní, Členění DPH: _Ř000U U, Sazba: Nulová, Řada: OST_FAVYD, Zaokrouhlení: 0,01_MAT
-        Rozúčtování/Předkontace: OST, Předkontace sklad. položek: OST, Předkontace zaokrouhlení: OST, 
-        Skupina pokladních dokladů: Ostatní pokladní doklady, Doprava: osobní odběr, Způsob platby: Hotově
-        Druh pohybu: prodej, Druh skl. pohybu: spotřeba, Primární účet: 999999
-        Popis: OSTATNÍ VÝDEJ
+    Kód: FAKT_ODBYT, Název: Faktury ODBYT, Popis: *, Řada: FV
+    Kód: FAKT_UCETNI, Název: Faktury UCETNI, Popis: *, Řada: FV
 
 Nastavit v nastavení skupin u všech dokladů - Popis: *
 
@@ -137,23 +111,18 @@ Nepeněžní platidla
 ------------ŠEKY------------
 
 Pokladní doklady - skupiny
-    Kód: UCETNI, Název: Pokl. doklady UCETNI
-        Číselná řada: POKD_UCETNI (prefix PP, PV)
-    Kód: ODBYT, Název: Pokl. doklady ODBYT
+    Kód: UCETNI, Název: Pokladna UCETNI
+        Číselná řada: POKD_UCETNI (prefix HP, HV)
+    Kód: ODBYT, Název: Pokladna ODBYT
         Číselná řada: POKD_ODBYT (prefix PO)
     Kód: OSTATNI, Název: Pokl. doklady OSTATNI
         Číselná řada: OST_POKD, Typ ceny: Pouze základ, Sazba DPH: Nulová, 
         Členění DPH: _Ř000 U, Předkontace: OST, Primární účet MD: 911500
-    Kód: SEKY, Název: Šeky
-        Číselná řada: OST_SEK, Typ ceny: Pouze základ, Sazba DPH: Nulová, 
-        Členění DPH: _Ř000 U, Předkontace: OST, Primární účet MD: 911600
 
 Účtový rozvrh
     Účet: 211100, Název: Pokladna UCETNI, nechat nastavení dle výchozího
     Účet: 911600, Název: OST Evidence šeků, Druh účtu: Rozvahový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO
     Účet: 911500, Název: OST Pokladna ODBYT, Druh účtu: Rozvahový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO
-    Účet: 961500, Název: OST Převod ODBYT-VEDENI, Druh účtu: Rozvahový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO
-    Účet: 911900, Název: OST Pokladna VEDENI, Druh účtu: Rozvahový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO
     Účet: 211500, Název: Pokladna ODBYT, Druh účtu: Rozvahový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO
     Účet: 261500, Název: Převod ODBYT-UCETNI, Druh účtu: Rozvahový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO
 
@@ -164,8 +133,3 @@ Pokladna
     Kód: UCETNI, Název: Pokladna UCETNI
     Kód: ODBYT, Název: Pokladna ODBYT
     Kód: OSTATNI, Název: Pokladna OSTATNI
-    Kód: SEKY, Název: Pokladna ŠEKY
-
-Vytvoř první šek jako koncept (kopírují se z něho další šeky)
-    CisloDokladu = "", CisloRady = OST_SEK
-    ParovaciSymbol = "FF0000000", Datumy: 1.1.2021

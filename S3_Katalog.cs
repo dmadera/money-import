@@ -96,12 +96,12 @@ namespace SDataObjs {
                     artikl.Zkratka12 = regexLom.Match(nazevZbozi).Value.Replace(@"\", "").ToUpper();
                     nazevZbozi = regexLom.Replace(nazevZbozi, "").FirstCharToUpper();
                 } else if(regexObal.IsMatch(nazevZbozi)) {
-                    groupKod = "OBAL";
+                    groupKod = "OBALY";
                     druhZboziKod = "OBA";
                     nazevZbozi = nazevZbozi.Replace("|", "").Trim().FirstCharToUpper();
                     artikl.NepodlehatSleveDokladu = "True";
                 } else if(regexZrus.IsMatch(nazevZbozi)) {
-                    groupKod = "ZRUS";
+                    groupKod = "ZRUSENO";
                     nazevZbozi = nazevZbozi.Replace("|", "").Trim().FirstCharToUpper();
                     int aktualniRok = DateTime.Now.Year;
                     var rokOdstranStr = "20" + nazevZbozi.Substring(0, 2);
