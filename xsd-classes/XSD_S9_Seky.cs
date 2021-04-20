@@ -23,17 +23,17 @@ namespace S9_Seky {
     [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
     public partial class S5Data {
         
-        private S5DataPokladniDoklad[] pokladniDokladListField;
+        private S5DataInterniDoklad[] interniDokladListField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("PokladniDoklad", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDoklad[] PokladniDokladList {
+        [System.Xml.Serialization.XmlArrayItemAttribute("InterniDoklad", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public S5DataInterniDoklad[] InterniDokladList {
             get {
-                return this.pokladniDokladListField;
+                return this.interniDokladListField;
             }
             set {
-                this.pokladniDokladListField = value;
+                this.interniDokladListField = value;
             }
         }
     }
@@ -44,21 +44,21 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDoklad {
+    public partial class S5DataInterniDoklad {
         
         private group groupField;
         
-        private S5DataPokladniDokladPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladPolozkaPokladnihoDokladu[] polozkyField;
         
         private string adresaKontaktniOsoba_IDField;
         
         private string adresaStat_IDField;
         
+        private string autoRow_IDField;
+        
         private string celkovaCastkaField;
         
         private string celkovaCastkaCMField;
-        
-        private string celkovaCastkaDualField;
         
         private string cinnost_IDField;
         
@@ -67,6 +67,8 @@ namespace S9_Seky {
         private string cisloDokladuField;
         
         private string cisloRadyField;
+        
+        private string cisloZapoctuField;
         
         private string cleneniDPH_IDField;
         
@@ -158,8 +160,6 @@ namespace S9_Seky {
         
         private string pocetPolozekField;
         
-        private string pokladna_IDField;
-        
         private string poznamkaField;
         
         private string predkontace_IDField;
@@ -170,9 +170,13 @@ namespace S9_Seky {
         
         private string prijatyDokladField;
         
-        private string primarniUcet_IDField;
+        private string primarniUcetDal_IDField;
+        
+        private string primarniUcetMD_IDField;
         
         private string priznakVyrizenoField;
+        
+        private string puvodniDokladField;
         
         private string registraceDPH_IDField;
         
@@ -200,6 +204,8 @@ namespace S9_Seky {
         
         private enum_TypDokladu typDokladuField;
         
+        private enum_TypZaverkovehoDokladu typZaverkovehoDokladuField;
+        
         private string ucetDal_IDField;
         
         private string ucetMD_IDField;
@@ -214,7 +220,9 @@ namespace S9_Seky {
         
         private string variabilniSymbolField;
         
-        private string vygenerovanPrecenenimField;
+        private string vygenerovanReverseChargemField;
+        
+        private string vygenerovanZalohouField;
         
         private string vyrizenoField;
         
@@ -242,61 +250,39 @@ namespace S9_Seky {
         
         private enum_ZpusobVypoctuDPH zpusobVypoctuDPHField;
         
-        private S5DataPokladniDokladAdresa adresaField;
+        private S5DataInterniDokladAdresa adresaField;
         
-        private S5DataPokladniDokladDPH0 dPH0Field;
+        private S5DataInterniDokladDPH0 dPH0Field;
         
-        private S5DataPokladniDokladDPH1 dPH1Field;
+        private S5DataInterniDokladDPH1 dPH1Field;
         
-        private S5DataPokladniDokladDPH2 dPH2Field;
+        private S5DataInterniDokladDPH2 dPH2Field;
         
-        private S5DataPokladniDokladKorekce0 korekce0Field;
+        private S5DataInterniDokladKorekce0 korekce0Field;
         
-        private S5DataPokladniDokladKorekce1 korekce1Field;
+        private S5DataInterniDokladKorekce1 korekce1Field;
         
-        private S5DataPokladniDokladKorekce2 korekce2Field;
+        private S5DataInterniDokladKorekce2 korekce2Field;
         
-        private S5DataPokladniDokladMojeFirma mojeFirmaField;
+        private S5DataInterniDokladMojeFirma mojeFirmaField;
         
-        private S5DataPokladniDokladPreneseniDane preneseniDaneField;
+        private S5DataInterniDokladPreneseniDane preneseniDaneField;
         
-        private S5DataPokladniDokladSuma sumaField;
+        private S5DataInterniDokladSuma sumaField;
         
-        private S5DataPokladniDokladUcetniKurz ucetniKurzField;
+        private S5DataInterniDokladUcetniKurz ucetniKurzField;
         
-        private S5DataPokladniDokladZaokrouhleni zaokrouhleniField;
+        private S5DataInterniDokladZaokrouhleni zaokrouhleniField;
         
-        private S5DataPokladniDokladCleneniDPH cleneniDPHField;
+        private S5DataInterniDokladDetailniRozpisDPH detailniRozpisDPHField;
         
-        private S5DataPokladniDokladDetailniRozpisDPH detailniRozpisDPHField;
+        private S5DataInterniDokladEETUctenky eETUctenkyField;
         
-        private S5DataPokladniDokladEETUctenky eETUctenkyField;
+        private S5DataInterniDokladOdpoctyZaloh odpoctyZalohField;
         
-        private S5DataPokladniDokladKonstantniSymbol konstantniSymbolField;
+        private S5DataInterniDokladSazbyDPHNaDoklade sazbyDPHNaDokladeField;
         
-        private S5DataPokladniDokladObecneProdejniMisto obecneProdejniMistoField;
-        
-        private S5DataPokladniDokladPokladna pokladnaField;
-        
-        private S5DataPokladniDokladPredkontace predkontaceField;
-        
-        private S5DataPokladniDokladPredkontaceZaokrouhleni predkontaceZaokrouhleniField;
-        
-        private S5DataPokladniDokladPrimarniUcet primarniUcetField;
-        
-        private S5DataPokladniDokladSazbyDPHNaDoklade sazbyDPHNaDokladeField;
-        
-        private S5DataPokladniDokladSeznamPOSAExchange seznamPOSAExchangeField;
-        
-        private S5DataPokladniDokladSeznamUhrad seznamUhradField;
-        
-        private S5DataPokladniDokladUcetDal ucetDalField;
-        
-        private S5DataPokladniDokladUcetMD ucetMDField;
-        
-        private S5DataPokladniDokladUcetniZapisy ucetniZapisyField;
-        
-        private S5DataPokladniDokladZalohy zalohyField;
+        private S5DataInterniDokladZalohy zalohyField;
         
         private string objectNameField;
         
@@ -304,8 +290,8 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDoklad() {
-            this.objectNameField = "PokladniDoklad";
+        public S5DataInterniDoklad() {
+            this.objectNameField = "InterniDoklad";
             this.objectTypeField = "Object";
         }
         
@@ -323,7 +309,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -356,6 +342,17 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string AutoRow_ID {
+            get {
+                return this.autoRow_IDField;
+            }
+            set {
+                this.autoRow_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string CelkovaCastka {
             get {
                 return this.celkovaCastkaField;
@@ -373,17 +370,6 @@ namespace S9_Seky {
             }
             set {
                 this.celkovaCastkaCMField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CelkovaCastkaDual {
-            get {
-                return this.celkovaCastkaDualField;
-            }
-            set {
-                this.celkovaCastkaDualField = value;
             }
         }
         
@@ -428,6 +414,17 @@ namespace S9_Seky {
             }
             set {
                 this.cisloRadyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string CisloZapoctu {
+            get {
+                return this.cisloZapoctuField;
+            }
+            set {
+                this.cisloZapoctuField = value;
             }
         }
         
@@ -928,17 +925,6 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Pokladna_ID {
-            get {
-                return this.pokladna_IDField;
-            }
-            set {
-                this.pokladna_IDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string Poznamka {
             get {
                 return this.poznamkaField;
@@ -994,12 +980,23 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string PrimarniUcet_ID {
+        public string PrimarniUcetDal_ID {
             get {
-                return this.primarniUcet_IDField;
+                return this.primarniUcetDal_IDField;
             }
             set {
-                this.primarniUcet_IDField = value;
+                this.primarniUcetDal_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string PrimarniUcetMD_ID {
+            get {
+                return this.primarniUcetMD_IDField;
+            }
+            set {
+                this.primarniUcetMD_IDField = value;
             }
         }
         
@@ -1011,6 +1008,17 @@ namespace S9_Seky {
             }
             set {
                 this.priznakVyrizenoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string PuvodniDoklad {
+            get {
+                return this.puvodniDokladField;
+            }
+            set {
+                this.puvodniDokladField = value;
             }
         }
         
@@ -1159,6 +1167,17 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public enum_TypZaverkovehoDokladu TypZaverkovehoDokladu {
+            get {
+                return this.typZaverkovehoDokladuField;
+            }
+            set {
+                this.typZaverkovehoDokladuField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string UcetDal_ID {
             get {
                 return this.ucetDal_IDField;
@@ -1236,12 +1255,23 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string VygenerovanPrecenenim {
+        public string VygenerovanReverseChargem {
             get {
-                return this.vygenerovanPrecenenimField;
+                return this.vygenerovanReverseChargemField;
             }
             set {
-                this.vygenerovanPrecenenimField = value;
+                this.vygenerovanReverseChargemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string VygenerovanZalohou {
+            get {
+                return this.vygenerovanZalohouField;
+            }
+            set {
+                this.vygenerovanZalohouField = value;
             }
         }
         
@@ -1390,7 +1420,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladAdresa Adresa {
+        public S5DataInterniDokladAdresa Adresa {
             get {
                 return this.adresaField;
             }
@@ -1401,7 +1431,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladDPH0 DPH0 {
+        public S5DataInterniDokladDPH0 DPH0 {
             get {
                 return this.dPH0Field;
             }
@@ -1412,7 +1442,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladDPH1 DPH1 {
+        public S5DataInterniDokladDPH1 DPH1 {
             get {
                 return this.dPH1Field;
             }
@@ -1423,7 +1453,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladDPH2 DPH2 {
+        public S5DataInterniDokladDPH2 DPH2 {
             get {
                 return this.dPH2Field;
             }
@@ -1434,7 +1464,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladKorekce0 Korekce0 {
+        public S5DataInterniDokladKorekce0 Korekce0 {
             get {
                 return this.korekce0Field;
             }
@@ -1445,7 +1475,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladKorekce1 Korekce1 {
+        public S5DataInterniDokladKorekce1 Korekce1 {
             get {
                 return this.korekce1Field;
             }
@@ -1456,7 +1486,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladKorekce2 Korekce2 {
+        public S5DataInterniDokladKorekce2 Korekce2 {
             get {
                 return this.korekce2Field;
             }
@@ -1467,7 +1497,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladMojeFirma MojeFirma {
+        public S5DataInterniDokladMojeFirma MojeFirma {
             get {
                 return this.mojeFirmaField;
             }
@@ -1478,7 +1508,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladPreneseniDane PreneseniDane {
+        public S5DataInterniDokladPreneseniDane PreneseniDane {
             get {
                 return this.preneseniDaneField;
             }
@@ -1489,7 +1519,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSuma Suma {
+        public S5DataInterniDokladSuma Suma {
             get {
                 return this.sumaField;
             }
@@ -1500,7 +1530,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladUcetniKurz UcetniKurz {
+        public S5DataInterniDokladUcetniKurz UcetniKurz {
             get {
                 return this.ucetniKurzField;
             }
@@ -1511,7 +1541,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZaokrouhleni Zaokrouhleni {
+        public S5DataInterniDokladZaokrouhleni Zaokrouhleni {
             get {
                 return this.zaokrouhleniField;
             }
@@ -1522,18 +1552,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladCleneniDPH CleneniDPH {
-            get {
-                return this.cleneniDPHField;
-            }
-            set {
-                this.cleneniDPHField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladDetailniRozpisDPH DetailniRozpisDPH {
+        public S5DataInterniDokladDetailniRozpisDPH DetailniRozpisDPH {
             get {
                 return this.detailniRozpisDPHField;
             }
@@ -1544,7 +1563,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladEETUctenky EETUctenky {
+        public S5DataInterniDokladEETUctenky EETUctenky {
             get {
                 return this.eETUctenkyField;
             }
@@ -1555,73 +1574,18 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladKonstantniSymbol KonstantniSymbol {
+        public S5DataInterniDokladOdpoctyZaloh OdpoctyZaloh {
             get {
-                return this.konstantniSymbolField;
+                return this.odpoctyZalohField;
             }
             set {
-                this.konstantniSymbolField = value;
+                this.odpoctyZalohField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladObecneProdejniMisto ObecneProdejniMisto {
-            get {
-                return this.obecneProdejniMistoField;
-            }
-            set {
-                this.obecneProdejniMistoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladPokladna Pokladna {
-            get {
-                return this.pokladnaField;
-            }
-            set {
-                this.pokladnaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladPredkontace Predkontace {
-            get {
-                return this.predkontaceField;
-            }
-            set {
-                this.predkontaceField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladPredkontaceZaokrouhleni PredkontaceZaokrouhleni {
-            get {
-                return this.predkontaceZaokrouhleniField;
-            }
-            set {
-                this.predkontaceZaokrouhleniField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladPrimarniUcet PrimarniUcet {
-            get {
-                return this.primarniUcetField;
-            }
-            set {
-                this.primarniUcetField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSazbyDPHNaDoklade SazbyDPHNaDoklade {
+        public S5DataInterniDokladSazbyDPHNaDoklade SazbyDPHNaDoklade {
             get {
                 return this.sazbyDPHNaDokladeField;
             }
@@ -1632,62 +1596,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamPOSAExchange SeznamPOSAExchange {
-            get {
-                return this.seznamPOSAExchangeField;
-            }
-            set {
-                this.seznamPOSAExchangeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhrad SeznamUhrad {
-            get {
-                return this.seznamUhradField;
-            }
-            set {
-                this.seznamUhradField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladUcetDal UcetDal {
-            get {
-                return this.ucetDalField;
-            }
-            set {
-                this.ucetDalField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladUcetMD UcetMD {
-            get {
-                return this.ucetMDField;
-            }
-            set {
-                this.ucetMDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladUcetniZapisy UcetniZapisy {
-            get {
-                return this.ucetniZapisyField;
-            }
-            set {
-                this.ucetniZapisyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohy Zalohy {
+        public S5DataInterniDokladZalohy Zalohy {
             get {
                 return this.zalohyField;
             }
@@ -1769,263 +1678,6 @@ namespace S9_Seky {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class enum_TypObsahuPolozky {
-        
-        private enum_TypObsahuPolozkyEnumValueName enumValueNameField;
-        
-        private bool enumValueNameFieldSpecified;
-        
-        private enum_TypObsahuPolozky_value valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public enum_TypObsahuPolozkyEnumValueName EnumValueName {
-            get {
-                return this.enumValueNameField;
-            }
-            set {
-                this.enumValueNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool EnumValueNameSpecified {
-            get {
-                return this.enumValueNameFieldSpecified;
-            }
-            set {
-                this.enumValueNameFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public enum_TypObsahuPolozky_value Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public enum enum_TypObsahuPolozkyEnumValueName {
-        
-        /// <remarks/>
-        BezObsahu,
-        
-        /// <remarks/>
-        SObsahem,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    public enum enum_TypObsahuPolozky_value {
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("0")]
-        Item0,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("1")]
-        Item1,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class enum_FormatPolozek {
-        
-        private enum_FormatPolozekEnumValueName enumValueNameField;
-        
-        private bool enumValueNameFieldSpecified;
-        
-        private enum_FormatPolozek_value valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public enum_FormatPolozekEnumValueName EnumValueName {
-            get {
-                return this.enumValueNameField;
-            }
-            set {
-                this.enumValueNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool EnumValueNameSpecified {
-            get {
-                return this.enumValueNameFieldSpecified;
-            }
-            set {
-                this.enumValueNameFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public enum_FormatPolozek_value Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public enum enum_FormatPolozekEnumValueName {
-        
-        /// <remarks/>
-        Normalni,
-        
-        /// <remarks/>
-        Rozuctovaci,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    public enum enum_FormatPolozek_value {
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("0")]
-        Item0,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("1")]
-        Item1,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class enum_TypZaverkovehoDokladu {
-        
-        private enum_TypZaverkovehoDokladuEnumValueName enumValueNameField;
-        
-        private bool enumValueNameFieldSpecified;
-        
-        private enum_TypZaverkovehoDokladu_value valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public enum_TypZaverkovehoDokladuEnumValueName EnumValueName {
-            get {
-                return this.enumValueNameField;
-            }
-            set {
-                this.enumValueNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool EnumValueNameSpecified {
-            get {
-                return this.enumValueNameFieldSpecified;
-            }
-            set {
-                this.enumValueNameFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public enum_TypZaverkovehoDokladu_value Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public enum enum_TypZaverkovehoDokladuEnumValueName {
-        
-        /// <remarks/>
-        Neurceno,
-        
-        /// <remarks/>
-        UzavreniObdobiPrevodStavu,
-        
-        /// <remarks/>
-        UzavreniObdobiPrevodZiskuZtrat,
-        
-        /// <remarks/>
-        OtevreniObdobiPrevodStavu,
-        
-        /// <remarks/>
-        OtevreniObdobiPrevodHospVysledku,
-        
-        /// <remarks/>
-        UzavreniObdobiPrevodSalda,
-        
-        /// <remarks/>
-        OtevreniObdobiPrevodSalda,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    public enum enum_TypZaverkovehoDokladu_value {
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("0")]
-        Item0,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("1")]
-        Item1,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("2")]
-        Item2,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("3")]
-        Item3,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("4")]
-        Item4,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("5")]
-        Item5,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("6")]
-        Item6,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class enum_TypPolozkyDokladu {
         
         private enum_TypPolozkyDokladuEnumValueName enumValueNameField;
@@ -2100,6 +1752,80 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlEnumAttribute("2")]
         Item2,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class enum_TypObsahuPolozky {
+        
+        private enum_TypObsahuPolozkyEnumValueName enumValueNameField;
+        
+        private bool enumValueNameFieldSpecified;
+        
+        private enum_TypObsahuPolozky_value valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public enum_TypObsahuPolozkyEnumValueName EnumValueName {
+            get {
+                return this.enumValueNameField;
+            }
+            set {
+                this.enumValueNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EnumValueNameSpecified {
+            get {
+                return this.enumValueNameFieldSpecified;
+            }
+            set {
+                this.enumValueNameFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public enum_TypObsahuPolozky_value Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum enum_TypObsahuPolozkyEnumValueName {
+        
+        /// <remarks/>
+        BezObsahu,
+        
+        /// <remarks/>
+        SObsahem,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    public enum enum_TypObsahuPolozky_value {
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("0")]
+        Item0,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("1")]
+        Item1,
     }
     
     /// <remarks/>
@@ -2195,17 +1921,17 @@ namespace S9_Seky {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class enum_DruhUhrady {
+    public partial class enum_FormatPolozek {
         
-        private enum_DruhUhradyEnumValueName enumValueNameField;
+        private enum_FormatPolozekEnumValueName enumValueNameField;
         
         private bool enumValueNameFieldSpecified;
         
-        private enum_DruhUhrady_value valueField;
+        private enum_FormatPolozek_value valueField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public enum_DruhUhradyEnumValueName EnumValueName {
+        public enum_FormatPolozekEnumValueName EnumValueName {
             get {
                 return this.enumValueNameField;
             }
@@ -2227,7 +1953,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlTextAttribute()]
-        public enum_DruhUhrady_value Value {
+        public enum_FormatPolozek_value Value {
             get {
                 return this.valueField;
             }
@@ -2241,19 +1967,19 @@ namespace S9_Seky {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public enum enum_DruhUhradyEnumValueName {
+    public enum enum_FormatPolozekEnumValueName {
         
         /// <remarks/>
-        BeznaUhrada,
+        Normalni,
         
         /// <remarks/>
-        PrecenovaciUhrada,
+        Rozuctovaci,
     }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
     [System.SerializableAttribute()]
-    public enum enum_DruhUhrady_value {
+    public enum enum_FormatPolozek_value {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlEnumAttribute("0")]
@@ -2857,6 +2583,115 @@ namespace S9_Seky {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class enum_TypZaverkovehoDokladu {
+        
+        private enum_TypZaverkovehoDokladuEnumValueName enumValueNameField;
+        
+        private bool enumValueNameFieldSpecified;
+        
+        private enum_TypZaverkovehoDokladu_value valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public enum_TypZaverkovehoDokladuEnumValueName EnumValueName {
+            get {
+                return this.enumValueNameField;
+            }
+            set {
+                this.enumValueNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EnumValueNameSpecified {
+            get {
+                return this.enumValueNameFieldSpecified;
+            }
+            set {
+                this.enumValueNameFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public enum_TypZaverkovehoDokladu_value Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum enum_TypZaverkovehoDokladuEnumValueName {
+        
+        /// <remarks/>
+        Neurceno,
+        
+        /// <remarks/>
+        UzavreniObdobiPrevodStavu,
+        
+        /// <remarks/>
+        UzavreniObdobiPrevodZiskuZtrat,
+        
+        /// <remarks/>
+        OtevreniObdobiPrevodStavu,
+        
+        /// <remarks/>
+        OtevreniObdobiPrevodHospVysledku,
+        
+        /// <remarks/>
+        UzavreniObdobiPrevodSalda,
+        
+        /// <remarks/>
+        OtevreniObdobiPrevodSalda,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    public enum enum_TypZaverkovehoDokladu_value {
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("0")]
+        Item0,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("1")]
+        Item1,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("2")]
+        Item2,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("3")]
+        Item3,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("4")]
+        Item4,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("5")]
+        Item5,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("6")]
+        Item6,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class enum_TypDokladu {
         
         private enum_TypDokladuEnumValueName enumValueNameField;
@@ -3182,7 +3017,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -3256,7 +3091,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladAdresa {
+    public partial class S5DataInterniDokladAdresa {
         
         private string kontaktniOsobaJmenoField;
         
@@ -3274,11 +3109,11 @@ namespace S9_Seky {
         
         private string uliceField;
         
-        private S5DataPokladniDokladAdresaAdresaStat adresaStatField;
+        private S5DataInterniDokladAdresaAdresaStat adresaStatField;
         
-        private S5DataPokladniDokladAdresaFirma firmaField;
+        private S5DataInterniDokladAdresaFirma firmaField;
         
-        private S5DataPokladniDokladAdresaKontaktniOsoba kontaktniOsobaField;
+        private S5DataInterniDokladAdresaKontaktniOsoba kontaktniOsobaField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -3370,7 +3205,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladAdresaAdresaStat AdresaStat {
+        public S5DataInterniDokladAdresaAdresaStat AdresaStat {
             get {
                 return this.adresaStatField;
             }
@@ -3381,7 +3216,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladAdresaFirma Firma {
+        public S5DataInterniDokladAdresaFirma Firma {
             get {
                 return this.firmaField;
             }
@@ -3392,7 +3227,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladAdresaKontaktniOsoba KontaktniOsoba {
+        public S5DataInterniDokladAdresaKontaktniOsoba KontaktniOsoba {
             get {
                 return this.kontaktniOsobaField;
             }
@@ -3408,7 +3243,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladAdresaAdresaStat {
+    public partial class S5DataInterniDokladAdresaAdresaStat {
         
         private string objectNameField;
         
@@ -3416,7 +3251,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladAdresaAdresaStat() {
+        public S5DataInterniDokladAdresaAdresaStat() {
             this.objectNameField = "Stat";
             this.objectTypeField = "Object";
         }
@@ -3461,11 +3296,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladAdresaFirma {
+    public partial class S5DataInterniDokladAdresaFirma {
         
         private group groupField;
         
-        private S5DataPokladniDokladAdresaFirmaPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladAdresaFirmaPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -3473,7 +3308,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladAdresaFirma() {
+        public S5DataInterniDokladAdresaFirma() {
             this.objectNameField = "Firma";
             this.objectTypeField = "Object";
         }
@@ -3492,7 +3327,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladAdresaFirmaPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladAdresaFirmaPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -3541,7 +3376,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladAdresaFirmaPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladAdresaFirmaPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -3615,11 +3450,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladAdresaKontaktniOsoba {
+    public partial class S5DataInterniDokladAdresaKontaktniOsoba {
         
         private group groupField;
         
-        private S5DataPokladniDokladAdresaKontaktniOsobaPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladAdresaKontaktniOsobaPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -3627,7 +3462,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladAdresaKontaktniOsoba() {
+        public S5DataInterniDokladAdresaKontaktniOsoba() {
             this.objectNameField = "Osoba";
             this.objectTypeField = "Object";
         }
@@ -3646,7 +3481,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladAdresaKontaktniOsobaPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladAdresaKontaktniOsobaPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -3695,7 +3530,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladAdresaKontaktniOsobaPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladAdresaKontaktniOsobaPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -3769,7 +3604,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladDPH0 {
+    public partial class S5DataInterniDokladDPH0 {
         
         private string celkemField;
         
@@ -3869,7 +3704,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladDPH1 {
+    public partial class S5DataInterniDokladDPH1 {
         
         private string celkemField;
         
@@ -3969,7 +3804,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladDPH2 {
+    public partial class S5DataInterniDokladDPH2 {
         
         private string celkemField;
         
@@ -4069,7 +3904,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladKorekce0 {
+    public partial class S5DataInterniDokladKorekce0 {
         
         private string celkemField;
         
@@ -4169,7 +4004,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladKorekce1 {
+    public partial class S5DataInterniDokladKorekce1 {
         
         private string celkemField;
         
@@ -4269,7 +4104,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladKorekce2 {
+    public partial class S5DataInterniDokladKorekce2 {
         
         private string celkemField;
         
@@ -4369,7 +4204,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladMojeFirma {
+    public partial class S5DataInterniDokladMojeFirma {
         
         private string dICField;
         
@@ -4387,15 +4222,15 @@ namespace S9_Seky {
         
         private string uliceField;
         
-        private S5DataPokladniDokladMojeFirmaBankovniSpojeni bankovniSpojeniField;
+        private S5DataInterniDokladMojeFirmaBankovniSpojeni bankovniSpojeniField;
         
-        private S5DataPokladniDokladMojeFirmaKontakty kontaktyField;
+        private S5DataInterniDokladMojeFirmaKontakty kontaktyField;
         
-        private S5DataPokladniDokladMojeFirmaOsoba osobaField;
+        private S5DataInterniDokladMojeFirmaOsoba osobaField;
         
-        private S5DataPokladniDokladMojeFirmaFirma firmaField;
+        private S5DataInterniDokladMojeFirmaFirma firmaField;
         
-        private S5DataPokladniDokladMojeFirmaMojeFirmaStat mojeFirmaStatField;
+        private S5DataInterniDokladMojeFirmaMojeFirmaStat mojeFirmaStatField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -4487,7 +4322,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladMojeFirmaBankovniSpojeni BankovniSpojeni {
+        public S5DataInterniDokladMojeFirmaBankovniSpojeni BankovniSpojeni {
             get {
                 return this.bankovniSpojeniField;
             }
@@ -4498,7 +4333,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladMojeFirmaKontakty Kontakty {
+        public S5DataInterniDokladMojeFirmaKontakty Kontakty {
             get {
                 return this.kontaktyField;
             }
@@ -4509,7 +4344,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladMojeFirmaOsoba Osoba {
+        public S5DataInterniDokladMojeFirmaOsoba Osoba {
             get {
                 return this.osobaField;
             }
@@ -4520,7 +4355,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladMojeFirmaFirma Firma {
+        public S5DataInterniDokladMojeFirmaFirma Firma {
             get {
                 return this.firmaField;
             }
@@ -4531,7 +4366,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladMojeFirmaMojeFirmaStat MojeFirmaStat {
+        public S5DataInterniDokladMojeFirmaMojeFirmaStat MojeFirmaStat {
             get {
                 return this.mojeFirmaStatField;
             }
@@ -4547,7 +4382,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladMojeFirmaBankovniSpojeni {
+    public partial class S5DataInterniDokladMojeFirmaBankovniSpojeni {
         
         private string ciselnyKodField;
         
@@ -4559,9 +4394,9 @@ namespace S9_Seky {
         
         private string sWIFTField;
         
-        private S5DataPokladniDokladMojeFirmaBankovniSpojeniBanka bankaField;
+        private S5DataInterniDokladMojeFirmaBankovniSpojeniBanka bankaField;
         
-        private S5DataPokladniDokladMojeFirmaBankovniSpojeniBankovniSpojeni bankovniSpojeniField;
+        private S5DataInterniDokladMojeFirmaBankovniSpojeniBankovniSpojeni bankovniSpojeniField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -4620,7 +4455,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladMojeFirmaBankovniSpojeniBanka Banka {
+        public S5DataInterniDokladMojeFirmaBankovniSpojeniBanka Banka {
             get {
                 return this.bankaField;
             }
@@ -4631,7 +4466,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladMojeFirmaBankovniSpojeniBankovniSpojeni BankovniSpojeni {
+        public S5DataInterniDokladMojeFirmaBankovniSpojeniBankovniSpojeni BankovniSpojeni {
             get {
                 return this.bankovniSpojeniField;
             }
@@ -4647,11 +4482,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladMojeFirmaBankovniSpojeniBanka {
+    public partial class S5DataInterniDokladMojeFirmaBankovniSpojeniBanka {
         
         private group groupField;
         
-        private S5DataPokladniDokladMojeFirmaBankovniSpojeniBankaPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladMojeFirmaBankovniSpojeniBankaPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -4659,7 +4494,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladMojeFirmaBankovniSpojeniBanka() {
+        public S5DataInterniDokladMojeFirmaBankovniSpojeniBanka() {
             this.objectNameField = "Banka";
             this.objectTypeField = "Object";
         }
@@ -4678,7 +4513,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladMojeFirmaBankovniSpojeniBankaPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladMojeFirmaBankovniSpojeniBankaPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -4727,7 +4562,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladMojeFirmaBankovniSpojeniBankaPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladMojeFirmaBankovniSpojeniBankaPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -4801,7 +4636,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladMojeFirmaBankovniSpojeniBankovniSpojeni {
+    public partial class S5DataInterniDokladMojeFirmaBankovniSpojeniBankovniSpojeni {
         
         private string objectNameField;
         
@@ -4809,7 +4644,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladMojeFirmaBankovniSpojeniBankovniSpojeni() {
+        public S5DataInterniDokladMojeFirmaBankovniSpojeniBankovniSpojeni() {
             this.objectNameField = "BankovniSpojeni";
             this.objectTypeField = "Object";
         }
@@ -4854,7 +4689,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladMojeFirmaKontakty {
+    public partial class S5DataInterniDokladMojeFirmaKontakty {
         
         private string emailField;
         
@@ -4928,7 +4763,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladMojeFirmaOsoba {
+    public partial class S5DataInterniDokladMojeFirmaOsoba {
         
         private string jmenoField;
         
@@ -4936,7 +4771,7 @@ namespace S9_Seky {
         
         private string prijmeniField;
         
-        private S5DataPokladniDokladMojeFirmaOsobaOsoba osobaField;
+        private S5DataInterniDokladMojeFirmaOsobaOsoba osobaField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -4973,7 +4808,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladMojeFirmaOsobaOsoba Osoba {
+        public S5DataInterniDokladMojeFirmaOsobaOsoba Osoba {
             get {
                 return this.osobaField;
             }
@@ -4989,11 +4824,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladMojeFirmaOsobaOsoba {
+    public partial class S5DataInterniDokladMojeFirmaOsobaOsoba {
         
         private group groupField;
         
-        private S5DataPokladniDokladMojeFirmaOsobaOsobaPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladMojeFirmaOsobaOsobaPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -5001,7 +4836,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladMojeFirmaOsobaOsoba() {
+        public S5DataInterniDokladMojeFirmaOsobaOsoba() {
             this.objectNameField = "Osoba";
             this.objectTypeField = "Object";
         }
@@ -5020,7 +4855,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladMojeFirmaOsobaOsobaPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladMojeFirmaOsobaOsobaPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -5069,7 +4904,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladMojeFirmaOsobaOsobaPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladMojeFirmaOsobaOsobaPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -5143,11 +4978,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladMojeFirmaFirma {
+    public partial class S5DataInterniDokladMojeFirmaFirma {
         
         private group groupField;
         
-        private S5DataPokladniDokladMojeFirmaFirmaPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladMojeFirmaFirmaPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -5155,7 +4990,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladMojeFirmaFirma() {
+        public S5DataInterniDokladMojeFirmaFirma() {
             this.objectNameField = "Firma";
             this.objectTypeField = "Object";
         }
@@ -5174,7 +5009,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladMojeFirmaFirmaPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladMojeFirmaFirmaPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -5223,7 +5058,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladMojeFirmaFirmaPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladMojeFirmaFirmaPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -5297,7 +5132,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladMojeFirmaMojeFirmaStat {
+    public partial class S5DataInterniDokladMojeFirmaMojeFirmaStat {
         
         private string objectNameField;
         
@@ -5305,7 +5140,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladMojeFirmaMojeFirmaStat() {
+        public S5DataInterniDokladMojeFirmaMojeFirmaStat() {
             this.objectNameField = "Stat";
             this.objectTypeField = "Object";
         }
@@ -5350,15 +5185,15 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladPreneseniDane {
+    public partial class S5DataInterniDokladPreneseniDane {
         
         private string kombinovanaNomenklaturaKodField;
         
         private string pomerMnozstviMJField;
         
-        private S5DataPokladniDokladPreneseniDaneKombinovanaNomenklatura kombinovanaNomenklaturaField;
+        private S5DataInterniDokladPreneseniDaneKombinovanaNomenklatura kombinovanaNomenklaturaField;
         
-        private S5DataPokladniDokladPreneseniDanePreneseniDane preneseniDaneField;
+        private S5DataInterniDokladPreneseniDanePreneseniDane preneseniDaneField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -5384,7 +5219,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladPreneseniDaneKombinovanaNomenklatura KombinovanaNomenklatura {
+        public S5DataInterniDokladPreneseniDaneKombinovanaNomenklatura KombinovanaNomenklatura {
             get {
                 return this.kombinovanaNomenklaturaField;
             }
@@ -5395,7 +5230,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladPreneseniDanePreneseniDane PreneseniDane {
+        public S5DataInterniDokladPreneseniDanePreneseniDane PreneseniDane {
             get {
                 return this.preneseniDaneField;
             }
@@ -5411,11 +5246,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladPreneseniDaneKombinovanaNomenklatura {
+    public partial class S5DataInterniDokladPreneseniDaneKombinovanaNomenklatura {
         
         private group groupField;
         
-        private S5DataPokladniDokladPreneseniDaneKombinovanaNomenklaturaPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladPreneseniDaneKombinovanaNomenklaturaPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -5423,7 +5258,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladPreneseniDaneKombinovanaNomenklatura() {
+        public S5DataInterniDokladPreneseniDaneKombinovanaNomenklatura() {
             this.objectNameField = "KombinovanaNomenklatura";
             this.objectTypeField = "Object";
         }
@@ -5442,7 +5277,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladPreneseniDaneKombinovanaNomenklaturaPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladPreneseniDaneKombinovanaNomenklaturaPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -5491,7 +5326,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladPreneseniDaneKombinovanaNomenklaturaPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladPreneseniDaneKombinovanaNomenklaturaPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -5565,7 +5400,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladPreneseniDanePreneseniDane {
+    public partial class S5DataInterniDokladPreneseniDanePreneseniDane {
         
         private string objectNameField;
         
@@ -5573,7 +5408,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladPreneseniDanePreneseniDane() {
+        public S5DataInterniDokladPreneseniDanePreneseniDane() {
             this.objectNameField = "PreneseniDanovePovinnosti";
             this.objectTypeField = "Object";
         }
@@ -5618,7 +5453,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSuma {
+    public partial class S5DataInterniDokladSuma {
         
         private string celkemField;
         
@@ -5705,7 +5540,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladUcetniKurz {
+    public partial class S5DataInterniDokladUcetniKurz {
         
         private string kurzField;
         
@@ -5740,17 +5575,17 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZaokrouhleni {
+    public partial class S5DataInterniDokladZaokrouhleni {
         
         private enum_DruhSazbyDPH druhSazbyDPHField;
         
         private string prevazujiciSazbaDPHField;
         
-        private S5DataPokladniDokladZaokrouhleniCelkovaCastka celkovaCastkaField;
+        private S5DataInterniDokladZaokrouhleniCelkovaCastka celkovaCastkaField;
         
-        private S5DataPokladniDokladZaokrouhleniDPH dPHField;
+        private S5DataInterniDokladZaokrouhleniDPH dPHField;
         
-        private S5DataPokladniDokladZaokrouhleniSazbaDPH sazbaDPHField;
+        private S5DataInterniDokladZaokrouhleniSazbaDPH sazbaDPHField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -5776,7 +5611,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZaokrouhleniCelkovaCastka CelkovaCastka {
+        public S5DataInterniDokladZaokrouhleniCelkovaCastka CelkovaCastka {
             get {
                 return this.celkovaCastkaField;
             }
@@ -5787,7 +5622,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZaokrouhleniDPH DPH {
+        public S5DataInterniDokladZaokrouhleniDPH DPH {
             get {
                 return this.dPHField;
             }
@@ -5798,7 +5633,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZaokrouhleniSazbaDPH SazbaDPH {
+        public S5DataInterniDokladZaokrouhleniSazbaDPH SazbaDPH {
             get {
                 return this.sazbaDPHField;
             }
@@ -5814,7 +5649,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZaokrouhleniCelkovaCastka {
+    public partial class S5DataInterniDokladZaokrouhleniCelkovaCastka {
         
         private string objectNameField;
         
@@ -5822,7 +5657,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZaokrouhleniCelkovaCastka() {
+        public S5DataInterniDokladZaokrouhleniCelkovaCastka() {
             this.objectNameField = "Zaokrouhleni";
             this.objectTypeField = "Object";
         }
@@ -5867,7 +5702,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZaokrouhleniDPH {
+    public partial class S5DataInterniDokladZaokrouhleniDPH {
         
         private string objectNameField;
         
@@ -5875,7 +5710,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZaokrouhleniDPH() {
+        public S5DataInterniDokladZaokrouhleniDPH() {
             this.objectNameField = "Zaokrouhleni";
             this.objectTypeField = "Object";
         }
@@ -5920,7 +5755,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZaokrouhleniSazbaDPH {
+    public partial class S5DataInterniDokladZaokrouhleniSazbaDPH {
         
         private string objectNameField;
         
@@ -5928,7 +5763,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZaokrouhleniSazbaDPH() {
+        public S5DataInterniDokladZaokrouhleniSazbaDPH() {
             this.objectNameField = "SazbaDPH";
             this.objectTypeField = "Object";
         }
@@ -5973,62 +5808,9 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladCleneniDPH {
+    public partial class S5DataInterniDokladDetailniRozpisDPH {
         
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataPokladniDokladCleneniDPH() {
-            this.objectNameField = "CleneniDPH";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladDetailniRozpisDPH {
-        
-        private S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPH[] detailniRozpisDPHField;
+        private S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPH[] detailniRozpisDPHField;
         
         private string objectNameField;
         
@@ -6036,14 +5818,14 @@ namespace S9_Seky {
         
         private string deleteItemsField;
         
-        public S5DataPokladniDokladDetailniRozpisDPH() {
+        public S5DataInterniDokladDetailniRozpisDPH() {
             this.objectNameField = "DetailniRozpisDPH";
             this.objectTypeField = "List";
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("DetailniRozpisDPH", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPH[] DetailniRozpisDPH {
+        public S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPH[] DetailniRozpisDPH {
             get {
                 return this.detailniRozpisDPHField;
             }
@@ -6092,7 +5874,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPH {
+    public partial class S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPH {
         
         private string cleneniDPH_IDField;
         
@@ -6148,15 +5930,15 @@ namespace S9_Seky {
         
         private enum_DetailniRozpisDPHZdroj zdrojField;
         
-        private S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHCleneniDPH cleneniDPHField;
+        private S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHCleneniDPH cleneniDPHField;
         
-        private S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHKombinovanaNomenklatura kombinovanaNomenklaturaField;
+        private S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHKombinovanaNomenklatura kombinovanaNomenklaturaField;
         
-        private S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHMena menaField;
+        private S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHMena menaField;
         
-        private S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHPreneseniDanovePovinnosti preneseniDanovePovinnostiField;
+        private S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHPreneseniDanovePovinnosti preneseniDanovePovinnostiField;
         
-        private S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHSazbaDPH sazbaDPHField;
+        private S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHSazbaDPH sazbaDPHField;
         
         private string objectNameField;
         
@@ -6164,7 +5946,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPH() {
+        public S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPH() {
             this.objectNameField = "DetailniRozpisDPH";
             this.objectTypeField = "Object";
         }
@@ -6468,7 +6250,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHCleneniDPH CleneniDPH {
+        public S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHCleneniDPH CleneniDPH {
             get {
                 return this.cleneniDPHField;
             }
@@ -6479,7 +6261,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHKombinovanaNomenklatura KombinovanaNomenklatura {
+        public S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHKombinovanaNomenklatura KombinovanaNomenklatura {
             get {
                 return this.kombinovanaNomenklaturaField;
             }
@@ -6490,7 +6272,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHMena Mena {
+        public S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHMena Mena {
             get {
                 return this.menaField;
             }
@@ -6501,7 +6283,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHPreneseniDanovePovinnosti PreneseniDanovePovinnosti {
+        public S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHPreneseniDanovePovinnosti PreneseniDanovePovinnosti {
             get {
                 return this.preneseniDanovePovinnostiField;
             }
@@ -6512,7 +6294,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHSazbaDPH SazbaDPH {
+        public S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHSazbaDPH SazbaDPH {
             get {
                 return this.sazbaDPHField;
             }
@@ -6561,7 +6343,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHCleneniDPH {
+    public partial class S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHCleneniDPH {
         
         private string objectNameField;
         
@@ -6569,7 +6351,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHCleneniDPH() {
+        public S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHCleneniDPH() {
             this.objectNameField = "CleneniDPH";
             this.objectTypeField = "Object";
         }
@@ -6614,11 +6396,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHKombinovanaNomenklatura {
+    public partial class S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHKombinovanaNomenklatura {
         
         private group groupField;
         
-        private S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHKombinovanaNomenklaturaPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHKombinovanaNomenklaturaPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -6626,7 +6408,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHKombinovanaNomenklatura() {
+        public S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHKombinovanaNomenklatura() {
             this.objectNameField = "KombinovanaNomenklatura";
             this.objectTypeField = "Object";
         }
@@ -6645,7 +6427,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHKombinovanaNomenklaturaPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHKombinovanaNomenklaturaPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -6694,7 +6476,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHKombinovanaNomenklaturaPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHKombinovanaNomenklaturaPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -6768,7 +6550,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHMena {
+    public partial class S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHMena {
         
         private string objectNameField;
         
@@ -6776,7 +6558,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHMena() {
+        public S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHMena() {
             this.objectNameField = "Mena";
             this.objectTypeField = "Object";
         }
@@ -6821,7 +6603,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHPreneseniDanovePovinnosti {
+    public partial class S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHPreneseniDanovePovinnosti {
         
         private string objectNameField;
         
@@ -6829,7 +6611,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHPreneseniDanovePovinnosti() {
+        public S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHPreneseniDanovePovinnosti() {
             this.objectNameField = "PreneseniDanovePovinnosti";
             this.objectTypeField = "Object";
         }
@@ -6874,7 +6656,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHSazbaDPH {
+    public partial class S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHSazbaDPH {
         
         private string objectNameField;
         
@@ -6882,7 +6664,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladDetailniRozpisDPHDetailniRozpisDPHSazbaDPH() {
+        public S5DataInterniDokladDetailniRozpisDPHDetailniRozpisDPHSazbaDPH() {
             this.objectNameField = "SazbaDPH";
             this.objectTypeField = "Object";
         }
@@ -6927,9 +6709,9 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladEETUctenky {
+    public partial class S5DataInterniDokladEETUctenky {
         
-        private S5DataPokladniDokladEETUctenkyEETUctenka[] eETUctenkaField;
+        private S5DataInterniDokladEETUctenkyEETUctenka[] eETUctenkaField;
         
         private string objectNameField;
         
@@ -6937,14 +6719,14 @@ namespace S9_Seky {
         
         private string deleteItemsField;
         
-        public S5DataPokladniDokladEETUctenky() {
+        public S5DataInterniDokladEETUctenky() {
             this.objectNameField = "EETUctenka";
             this.objectTypeField = "List";
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("EETUctenka", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladEETUctenkyEETUctenka[] EETUctenka {
+        public S5DataInterniDokladEETUctenkyEETUctenka[] EETUctenka {
             get {
                 return this.eETUctenkaField;
             }
@@ -6993,7 +6775,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladEETUctenkyEETUctenka {
+    public partial class S5DataInterniDokladEETUctenkyEETUctenka {
         
         private string bKPField;
         
@@ -7081,11 +6863,11 @@ namespace S9_Seky {
         
         private string uUIDField;
         
-        private S5DataPokladniDokladEETUctenkyEETUctenkaDruhDokladu druhDokladuField;
+        private S5DataInterniDokladEETUctenkyEETUctenkaDruhDokladu druhDokladuField;
         
-        private S5DataPokladniDokladEETUctenkyEETUctenkaObecneProdejniMisto obecneProdejniMistoField;
+        private S5DataInterniDokladEETUctenkyEETUctenkaObecneProdejniMisto obecneProdejniMistoField;
         
-        private S5DataPokladniDokladEETUctenkyEETUctenkaStornovanaUctenka stornovanaUctenkaField;
+        private S5DataInterniDokladEETUctenkyEETUctenkaStornovanaUctenka stornovanaUctenkaField;
         
         private string objectNameField;
         
@@ -7093,7 +6875,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladEETUctenkyEETUctenka() {
+        public S5DataInterniDokladEETUctenkyEETUctenka() {
             this.objectNameField = "EETUctenka";
             this.objectTypeField = "Object";
         }
@@ -7573,7 +7355,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladEETUctenkyEETUctenkaDruhDokladu DruhDokladu {
+        public S5DataInterniDokladEETUctenkyEETUctenkaDruhDokladu DruhDokladu {
             get {
                 return this.druhDokladuField;
             }
@@ -7584,7 +7366,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladEETUctenkyEETUctenkaObecneProdejniMisto ObecneProdejniMisto {
+        public S5DataInterniDokladEETUctenkyEETUctenkaObecneProdejniMisto ObecneProdejniMisto {
             get {
                 return this.obecneProdejniMistoField;
             }
@@ -7595,7 +7377,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladEETUctenkyEETUctenkaStornovanaUctenka StornovanaUctenka {
+        public S5DataInterniDokladEETUctenkyEETUctenkaStornovanaUctenka StornovanaUctenka {
             get {
                 return this.stornovanaUctenkaField;
             }
@@ -7644,7 +7426,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladEETUctenkyEETUctenkaDruhDokladu {
+    public partial class S5DataInterniDokladEETUctenkyEETUctenkaDruhDokladu {
         
         private string objectNameField;
         
@@ -7652,7 +7434,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladEETUctenkyEETUctenkaDruhDokladu() {
+        public S5DataInterniDokladEETUctenkyEETUctenkaDruhDokladu() {
             this.objectNameField = "DruhDokladu";
             this.objectTypeField = "Object";
         }
@@ -7697,7 +7479,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladEETUctenkyEETUctenkaObecneProdejniMisto {
+    public partial class S5DataInterniDokladEETUctenkyEETUctenkaObecneProdejniMisto {
         
         private string objectNameField;
         
@@ -7705,7 +7487,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladEETUctenkyEETUctenkaObecneProdejniMisto() {
+        public S5DataInterniDokladEETUctenkyEETUctenkaObecneProdejniMisto() {
             this.objectNameField = "ObecneProdejniMisto";
             this.objectTypeField = "Object";
         }
@@ -7750,7 +7532,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladEETUctenkyEETUctenkaStornovanaUctenka {
+    public partial class S5DataInterniDokladEETUctenkyEETUctenkaStornovanaUctenka {
         
         private string objectNameField;
         
@@ -7758,7 +7540,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladEETUctenkyEETUctenkaStornovanaUctenka() {
+        public S5DataInterniDokladEETUctenkyEETUctenkaStornovanaUctenka() {
             this.objectNameField = "EETUctenka";
             this.objectTypeField = "Object";
         }
@@ -7803,630 +7585,9 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladKonstantniSymbol {
+    public partial class S5DataInterniDokladOdpoctyZaloh {
         
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataPokladniDokladKonstantniSymbol() {
-            this.objectNameField = "KonstantniSymbol";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladObecneProdejniMisto {
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataPokladniDokladObecneProdejniMisto() {
-            this.objectNameField = "ObecneProdejniMisto";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladPokladna {
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataPokladniDokladPokladna() {
-            this.objectNameField = "Pokladna";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladPredkontace {
-        
-        private group groupField;
-        
-        private S5DataPokladniDokladPredkontacePolozkaPokladnihoDokladu[] polozkyField;
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataPokladniDokladPredkontace() {
-            this.objectNameField = "Predkontace";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public group Group {
-            get {
-                return this.groupField;
-            }
-            set {
-                this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladPredkontacePolozkaPokladnihoDokladu[] Polozky {
-            get {
-                return this.polozkyField;
-            }
-            set {
-                this.polozkyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladPredkontacePolozkaPokladnihoDokladu {
-        
-        private string celkovaCenaField;
-        
-        private string celkovaCenaCMField;
-        
-        private string cisloPolozkyField;
-        
-        private string jednCenaField;
-        
-        private string jednCenaCMField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CelkovaCena {
-            get {
-                return this.celkovaCenaField;
-            }
-            set {
-                this.celkovaCenaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CelkovaCenaCM {
-            get {
-                return this.celkovaCenaCMField;
-            }
-            set {
-                this.celkovaCenaCMField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string CisloPolozky {
-            get {
-                return this.cisloPolozkyField;
-            }
-            set {
-                this.cisloPolozkyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string JednCena {
-            get {
-                return this.jednCenaField;
-            }
-            set {
-                this.jednCenaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string JednCenaCM {
-            get {
-                return this.jednCenaCMField;
-            }
-            set {
-                this.jednCenaCMField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladPredkontaceZaokrouhleni {
-        
-        private group groupField;
-        
-        private S5DataPokladniDokladPredkontaceZaokrouhleniPolozkaPokladnihoDokladu[] polozkyField;
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataPokladniDokladPredkontaceZaokrouhleni() {
-            this.objectNameField = "Predkontace";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public group Group {
-            get {
-                return this.groupField;
-            }
-            set {
-                this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladPredkontaceZaokrouhleniPolozkaPokladnihoDokladu[] Polozky {
-            get {
-                return this.polozkyField;
-            }
-            set {
-                this.polozkyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladPredkontaceZaokrouhleniPolozkaPokladnihoDokladu {
-        
-        private string celkovaCenaField;
-        
-        private string celkovaCenaCMField;
-        
-        private string cisloPolozkyField;
-        
-        private string jednCenaField;
-        
-        private string jednCenaCMField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CelkovaCena {
-            get {
-                return this.celkovaCenaField;
-            }
-            set {
-                this.celkovaCenaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CelkovaCenaCM {
-            get {
-                return this.celkovaCenaCMField;
-            }
-            set {
-                this.celkovaCenaCMField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string CisloPolozky {
-            get {
-                return this.cisloPolozkyField;
-            }
-            set {
-                this.cisloPolozkyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string JednCena {
-            get {
-                return this.jednCenaField;
-            }
-            set {
-                this.jednCenaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string JednCenaCM {
-            get {
-                return this.jednCenaCMField;
-            }
-            set {
-                this.jednCenaCMField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladPrimarniUcet {
-        
-        private group groupField;
-        
-        private S5DataPokladniDokladPrimarniUcetPolozkaPokladnihoDokladu[] polozkyField;
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataPokladniDokladPrimarniUcet() {
-            this.objectNameField = "Ucet";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public group Group {
-            get {
-                return this.groupField;
-            }
-            set {
-                this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladPrimarniUcetPolozkaPokladnihoDokladu[] Polozky {
-            get {
-                return this.polozkyField;
-            }
-            set {
-                this.polozkyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladPrimarniUcetPolozkaPokladnihoDokladu {
-        
-        private string celkovaCenaField;
-        
-        private string celkovaCenaCMField;
-        
-        private string cisloPolozkyField;
-        
-        private string jednCenaField;
-        
-        private string jednCenaCMField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CelkovaCena {
-            get {
-                return this.celkovaCenaField;
-            }
-            set {
-                this.celkovaCenaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CelkovaCenaCM {
-            get {
-                return this.celkovaCenaCMField;
-            }
-            set {
-                this.celkovaCenaCMField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string CisloPolozky {
-            get {
-                return this.cisloPolozkyField;
-            }
-            set {
-                this.cisloPolozkyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string JednCena {
-            get {
-                return this.jednCenaField;
-            }
-            set {
-                this.jednCenaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string JednCenaCM {
-            get {
-                return this.jednCenaCMField;
-            }
-            set {
-                this.jednCenaCMField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSazbyDPHNaDoklade {
-        
-        private S5DataPokladniDokladSazbyDPHNaDokladeSazbaDPHNaDoklade[] sazbaDPHNaDokladeField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohy[] odpocetZalohyField;
         
         private string objectNameField;
         
@@ -8434,19 +7595,19 @@ namespace S9_Seky {
         
         private string deleteItemsField;
         
-        public S5DataPokladniDokladSazbyDPHNaDoklade() {
-            this.objectNameField = "SazbaDPHNaDoklade";
+        public S5DataInterniDokladOdpoctyZaloh() {
+            this.objectNameField = "OdpocetZalohy";
             this.objectTypeField = "List";
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("SazbaDPHNaDoklade", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSazbyDPHNaDokladeSazbaDPHNaDoklade[] SazbaDPHNaDoklade {
+        [System.Xml.Serialization.XmlElementAttribute("OdpocetZalohy", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohy[] OdpocetZalohy {
             get {
-                return this.sazbaDPHNaDokladeField;
+                return this.odpocetZalohyField;
             }
             set {
-                this.sazbaDPHNaDokladeField = value;
+                this.odpocetZalohyField = value;
             }
         }
         
@@ -8490,427 +7651,57 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSazbyDPHNaDokladeSazbaDPHNaDoklade {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohy {
         
-        private string aktivniField;
+        private string castkaZalohyCMField;
         
-        private enum_DruhSazbyDPH druhSazbyField;
+        private string castkaZalohyDMField;
         
-        private string pouzitaField;
+        private string celkovaCenaField;
         
-        private string rozpisDPH_IDField;
-        
-        private string sazbaDPH_IDField;
-        
-        private string vybranaNaHlavicceField;
-        
-        private S5DataPokladniDokladSazbyDPHNaDokladeSazbaDPHNaDokladeSazbaDPH sazbaDPHField;
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataPokladniDokladSazbyDPHNaDokladeSazbaDPHNaDoklade() {
-            this.objectNameField = "SazbaDPHNaDoklade";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Aktivni {
-            get {
-                return this.aktivniField;
-            }
-            set {
-                this.aktivniField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public enum_DruhSazbyDPH DruhSazby {
-            get {
-                return this.druhSazbyField;
-            }
-            set {
-                this.druhSazbyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Pouzita {
-            get {
-                return this.pouzitaField;
-            }
-            set {
-                this.pouzitaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string RozpisDPH_ID {
-            get {
-                return this.rozpisDPH_IDField;
-            }
-            set {
-                this.rozpisDPH_IDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string SazbaDPH_ID {
-            get {
-                return this.sazbaDPH_IDField;
-            }
-            set {
-                this.sazbaDPH_IDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string VybranaNaHlavicce {
-            get {
-                return this.vybranaNaHlavicceField;
-            }
-            set {
-                this.vybranaNaHlavicceField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSazbyDPHNaDokladeSazbaDPHNaDokladeSazbaDPH SazbaDPH {
-            get {
-                return this.sazbaDPHField;
-            }
-            set {
-                this.sazbaDPHField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSazbyDPHNaDokladeSazbaDPHNaDokladeSazbaDPH {
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataPokladniDokladSazbyDPHNaDokladeSazbaDPHNaDokladeSazbaDPH() {
-            this.objectNameField = "SazbaDPH";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamPOSAExchange {
-        
-        private S5DataPokladniDokladSeznamPOSAExchangePOSAExchange[] pOSAExchangeField;
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string deleteItemsField;
-        
-        public S5DataPokladniDokladSeznamPOSAExchange() {
-            this.objectNameField = "POSAExchange";
-            this.objectTypeField = "List";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("POSAExchange", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamPOSAExchangePOSAExchange[] POSAExchange {
-            get {
-                return this.pOSAExchangeField;
-            }
-            set {
-                this.pOSAExchangeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string DeleteItems {
-            get {
-                return this.deleteItemsField;
-            }
-            set {
-                this.deleteItemsField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamPOSAExchangePOSAExchange {
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataPokladniDokladSeznamPOSAExchangePOSAExchange() {
-            this.objectNameField = "POSAExchange";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhrad {
-        
-        private S5DataPokladniDokladSeznamUhradUhrada[] uhradaField;
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string deleteItemsField;
-        
-        public S5DataPokladniDokladSeznamUhrad() {
-            this.objectNameField = "Uhrada";
-            this.objectTypeField = "List";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Uhrada", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhrada[] Uhrada {
-            get {
-                return this.uhradaField;
-            }
-            set {
-                this.uhradaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string DeleteItems {
-            get {
-                return this.deleteItemsField;
-            }
-            set {
-                this.deleteItemsField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhrada {
-        
-        private string autoRow_IDField;
-        
-        private string castkaHradiciCMField;
-        
-        private string castkaHradiciDMField;
-        
-        private string castkaHrazenaCMField;
-        
-        private string castkaHrazenaDMField;
-        
-        private string cilovyDoklad_IDField;
-        
-        private string cilovyDokladObjectNameField;
+        private string celkovaCenaCMField;
         
         private string cinnost_IDField;
         
+        private string cisloPolozkyField;
+        
         private string cleneniDPH_IDField;
+        
+        private string dokladObjectNameField;
         
         private string dPHEditovanoRucneField;
         
-        private enum_DruhUhrady druhUhradyField;
+        private string druhPolozky_IDField;
         
-        private string firma_IDField;
+        private enum_DruhSazbyDPH druhSazbyDPHField;
+        
+        private enum_FormatPolozek formatPolozkyField;
         
         private string iCOField;
         
-        private string kodTransakceField;
+        private string jednCenaField;
         
-        private string komunikaceSPT_IDField;
+        private string jednCenaCMField;
+        
+        private string jednotkaField;
+        
+        private string kompletneVyuctovanaField;
         
         private string kurzovyRozdilField;
         
-        private string parentPolozka_IDField;
+        private string mnozstviField;
+        
+        private string nazevField;
+        
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyObsahPolozky obsahPolozkyField;
+        
+        private string odpocetDobropisovanField;
+        
+        private string parentObject_IDField;
         
         private string parovaciSymbolField;
         
-        private string platbaPlatebnimTerminalemField;
+        private string poradiField;
         
         private string poznamkaField;
         
@@ -8918,7 +7709,7 @@ namespace S9_Seky {
         
         private string predkontaceRozdil_IDField;
         
-        private string primarniUcetZalohy_IDField;
+        private string priznakVyrizenoField;
         
         private string sazbaDPH_IDField;
         
@@ -8926,61 +7717,69 @@ namespace S9_Seky {
         
         private enum_TypCeny typCenyField;
         
-        private enum_TypPolozkyDokladu typUhradyField;
+        private enum_TypObsahuPolozky typObsahuField;
+        
+        private enum_TypPolozkyDokladu typPolozkyField;
         
         private string ucetDal_IDField;
         
         private string ucetMD_IDField;
         
+        private string vratkaField;
+        
+        private string vyrizenoField;
+        
         private string vzor_IDField;
         
         private string zakazka_IDField;
         
-        private string zdrojovyDoklad_IDField;
+        private string zaloha_IDField;
         
-        private string zdrojovyDokladObjectNameField;
+        private string zalohaCelkemCMField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaCilovyDokladInfo cilovyDokladInfoField;
+        private string zalohaDanCMField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaKrizovyKurz krizovyKurzField;
+        private string zalohaKurzRozdilCMField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaPrecenovaciKurz precenovaciKurzField;
+        private string zalohaZakladCMField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaZdrojovyDokladInfo zdrojovyDokladInfoField;
+        private string zbyvaField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaCilovyDoklad cilovyDokladField;
+        private string zdrojovaPolozkaKopirovani_IDField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaCinnost cinnostField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyDPH dPHField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaCleneniDPH cleneniDPHField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyKrizovyKurz krizovyKurzField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaFirma firmaField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyAkcePolozky akcePolozkyField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaKomunikaceSPT komunikaceSPTField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyCinnost cinnostField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaPredkontace predkontaceField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyCleneniDPH cleneniDPHField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaPredkontaceRozdil predkontaceRozdilField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyDruhPolozky druhPolozkyField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaPrimarniUcetZalohy primarniUcetZalohyField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyPredkontace predkontaceField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaSazbaDPH sazbaDPHField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyPredkontaceRozdil predkontaceRozdilField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaStredisko strediskoField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohySazbaDPH sazbaDPHField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetDal ucetDalField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyStredisko strediskoField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetMD ucetMDField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetDal ucetDalField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniPohyby ucetniPohybyField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetMD ucetMDField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisy ucetniZapisyField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniPohyby ucetniPohybyField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaVzor vzorField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisy ucetniZapisyField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaZakazka zakazkaField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyVzor vzorField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaZdrojovyDoklad zdrojovyDokladField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyZakazka zakazkaField;
+        
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyZaloha zalohaField;
         
         private string objectNameField;
         
@@ -8988,85 +7787,52 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhrada() {
-            this.objectNameField = "Uhrada";
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohy() {
+            this.objectNameField = "OdpocetZalohy";
             this.objectTypeField = "Object";
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string AutoRow_ID {
+        public string CastkaZalohyCM {
             get {
-                return this.autoRow_IDField;
+                return this.castkaZalohyCMField;
             }
             set {
-                this.autoRow_IDField = value;
+                this.castkaZalohyCMField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CastkaHradiciCM {
+        public string CastkaZalohyDM {
             get {
-                return this.castkaHradiciCMField;
+                return this.castkaZalohyDMField;
             }
             set {
-                this.castkaHradiciCMField = value;
+                this.castkaZalohyDMField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CastkaHradiciDM {
+        public string CelkovaCena {
             get {
-                return this.castkaHradiciDMField;
+                return this.celkovaCenaField;
             }
             set {
-                this.castkaHradiciDMField = value;
+                this.celkovaCenaField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CastkaHrazenaCM {
+        public string CelkovaCenaCM {
             get {
-                return this.castkaHrazenaCMField;
+                return this.celkovaCenaCMField;
             }
             set {
-                this.castkaHrazenaCMField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CastkaHrazenaDM {
-            get {
-                return this.castkaHrazenaDMField;
-            }
-            set {
-                this.castkaHrazenaDMField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CilovyDoklad_ID {
-            get {
-                return this.cilovyDoklad_IDField;
-            }
-            set {
-                this.cilovyDoklad_IDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CilovyDokladObjectName {
-            get {
-                return this.cilovyDokladObjectNameField;
-            }
-            set {
-                this.cilovyDokladObjectNameField = value;
+                this.celkovaCenaCMField = value;
             }
         }
         
@@ -9083,12 +7849,34 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string CisloPolozky {
+            get {
+                return this.cisloPolozkyField;
+            }
+            set {
+                this.cisloPolozkyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string CleneniDPH_ID {
             get {
                 return this.cleneniDPH_IDField;
             }
             set {
                 this.cleneniDPH_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string DokladObjectName {
+            get {
+                return this.dokladObjectNameField;
+            }
+            set {
+                this.dokladObjectNameField = value;
             }
         }
         
@@ -9105,23 +7893,34 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public enum_DruhUhrady DruhUhrady {
+        public string DruhPolozky_ID {
             get {
-                return this.druhUhradyField;
+                return this.druhPolozky_IDField;
             }
             set {
-                this.druhUhradyField = value;
+                this.druhPolozky_IDField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Firma_ID {
+        public enum_DruhSazbyDPH DruhSazbyDPH {
             get {
-                return this.firma_IDField;
+                return this.druhSazbyDPHField;
             }
             set {
-                this.firma_IDField = value;
+                this.druhSazbyDPHField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public enum_FormatPolozek FormatPolozky {
+            get {
+                return this.formatPolozkyField;
+            }
+            set {
+                this.formatPolozkyField = value;
             }
         }
         
@@ -9138,23 +7937,45 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string KodTransakce {
+        public string JednCena {
             get {
-                return this.kodTransakceField;
+                return this.jednCenaField;
             }
             set {
-                this.kodTransakceField = value;
+                this.jednCenaField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string KomunikaceSPT_ID {
+        public string JednCenaCM {
             get {
-                return this.komunikaceSPT_IDField;
+                return this.jednCenaCMField;
             }
             set {
-                this.komunikaceSPT_IDField = value;
+                this.jednCenaCMField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Jednotka {
+            get {
+                return this.jednotkaField;
+            }
+            set {
+                this.jednotkaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string KompletneVyuctovana {
+            get {
+                return this.kompletneVyuctovanaField;
+            }
+            set {
+                this.kompletneVyuctovanaField = value;
             }
         }
         
@@ -9171,12 +7992,56 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string ParentPolozka_ID {
+        public string Mnozstvi {
             get {
-                return this.parentPolozka_IDField;
+                return this.mnozstviField;
             }
             set {
-                this.parentPolozka_IDField = value;
+                this.mnozstviField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Nazev {
+            get {
+                return this.nazevField;
+            }
+            set {
+                this.nazevField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyObsahPolozky ObsahPolozky {
+            get {
+                return this.obsahPolozkyField;
+            }
+            set {
+                this.obsahPolozkyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string OdpocetDobropisovan {
+            get {
+                return this.odpocetDobropisovanField;
+            }
+            set {
+                this.odpocetDobropisovanField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string ParentObject_ID {
+            get {
+                return this.parentObject_IDField;
+            }
+            set {
+                this.parentObject_IDField = value;
             }
         }
         
@@ -9193,12 +8058,12 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string PlatbaPlatebnimTerminalem {
+        public string Poradi {
             get {
-                return this.platbaPlatebnimTerminalemField;
+                return this.poradiField;
             }
             set {
-                this.platbaPlatebnimTerminalemField = value;
+                this.poradiField = value;
             }
         }
         
@@ -9237,12 +8102,12 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string PrimarniUcetZalohy_ID {
+        public string PriznakVyrizeno {
             get {
-                return this.primarniUcetZalohy_IDField;
+                return this.priznakVyrizenoField;
             }
             set {
-                this.primarniUcetZalohy_IDField = value;
+                this.priznakVyrizenoField = value;
             }
         }
         
@@ -9281,12 +8146,23 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public enum_TypPolozkyDokladu TypUhrady {
+        public enum_TypObsahuPolozky TypObsahu {
             get {
-                return this.typUhradyField;
+                return this.typObsahuField;
             }
             set {
-                this.typUhradyField = value;
+                this.typObsahuField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public enum_TypPolozkyDokladu TypPolozky {
+            get {
+                return this.typPolozkyField;
+            }
+            set {
+                this.typPolozkyField = value;
             }
         }
         
@@ -9314,6 +8190,28 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Vratka {
+            get {
+                return this.vratkaField;
+            }
+            set {
+                this.vratkaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Vyrizeno {
+            get {
+                return this.vyrizenoField;
+            }
+            set {
+                this.vyrizenoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string Vzor_ID {
             get {
                 return this.vzor_IDField;
@@ -9336,40 +8234,95 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string ZdrojovyDoklad_ID {
+        public string Zaloha_ID {
             get {
-                return this.zdrojovyDoklad_IDField;
+                return this.zaloha_IDField;
             }
             set {
-                this.zdrojovyDoklad_IDField = value;
+                this.zaloha_IDField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string ZdrojovyDokladObjectName {
+        public string ZalohaCelkemCM {
             get {
-                return this.zdrojovyDokladObjectNameField;
+                return this.zalohaCelkemCMField;
             }
             set {
-                this.zdrojovyDokladObjectNameField = value;
+                this.zalohaCelkemCMField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaCilovyDokladInfo CilovyDokladInfo {
+        public string ZalohaDanCM {
             get {
-                return this.cilovyDokladInfoField;
+                return this.zalohaDanCMField;
             }
             set {
-                this.cilovyDokladInfoField = value;
+                this.zalohaDanCMField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaKrizovyKurz KrizovyKurz {
+        public string ZalohaKurzRozdilCM {
+            get {
+                return this.zalohaKurzRozdilCMField;
+            }
+            set {
+                this.zalohaKurzRozdilCMField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string ZalohaZakladCM {
+            get {
+                return this.zalohaZakladCMField;
+            }
+            set {
+                this.zalohaZakladCMField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Zbyva {
+            get {
+                return this.zbyvaField;
+            }
+            set {
+                this.zbyvaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string ZdrojovaPolozkaKopirovani_ID {
+            get {
+                return this.zdrojovaPolozkaKopirovani_IDField;
+            }
+            set {
+                this.zdrojovaPolozkaKopirovani_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyDPH DPH {
+            get {
+                return this.dPHField;
+            }
+            set {
+                this.dPHField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyKrizovyKurz KrizovyKurz {
             get {
                 return this.krizovyKurzField;
             }
@@ -9380,40 +8333,18 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaPrecenovaciKurz PrecenovaciKurz {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyAkcePolozky AkcePolozky {
             get {
-                return this.precenovaciKurzField;
+                return this.akcePolozkyField;
             }
             set {
-                this.precenovaciKurzField = value;
+                this.akcePolozkyField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaZdrojovyDokladInfo ZdrojovyDokladInfo {
-            get {
-                return this.zdrojovyDokladInfoField;
-            }
-            set {
-                this.zdrojovyDokladInfoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaCilovyDoklad CilovyDoklad {
-            get {
-                return this.cilovyDokladField;
-            }
-            set {
-                this.cilovyDokladField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaCinnost Cinnost {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyCinnost Cinnost {
             get {
                 return this.cinnostField;
             }
@@ -9424,7 +8355,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaCleneniDPH CleneniDPH {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyCleneniDPH CleneniDPH {
             get {
                 return this.cleneniDPHField;
             }
@@ -9435,29 +8366,18 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaFirma Firma {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyDruhPolozky DruhPolozky {
             get {
-                return this.firmaField;
+                return this.druhPolozkyField;
             }
             set {
-                this.firmaField = value;
+                this.druhPolozkyField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaKomunikaceSPT KomunikaceSPT {
-            get {
-                return this.komunikaceSPTField;
-            }
-            set {
-                this.komunikaceSPTField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaPredkontace Predkontace {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyPredkontace Predkontace {
             get {
                 return this.predkontaceField;
             }
@@ -9468,7 +8388,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaPredkontaceRozdil PredkontaceRozdil {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyPredkontaceRozdil PredkontaceRozdil {
             get {
                 return this.predkontaceRozdilField;
             }
@@ -9479,18 +8399,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaPrimarniUcetZalohy PrimarniUcetZalohy {
-            get {
-                return this.primarniUcetZalohyField;
-            }
-            set {
-                this.primarniUcetZalohyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaSazbaDPH SazbaDPH {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohySazbaDPH SazbaDPH {
             get {
                 return this.sazbaDPHField;
             }
@@ -9501,7 +8410,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaStredisko Stredisko {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyStredisko Stredisko {
             get {
                 return this.strediskoField;
             }
@@ -9512,7 +8421,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetDal UcetDal {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetDal UcetDal {
             get {
                 return this.ucetDalField;
             }
@@ -9523,7 +8432,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetMD UcetMD {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetMD UcetMD {
             get {
                 return this.ucetMDField;
             }
@@ -9534,7 +8443,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniPohyby UcetniPohyby {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniPohyby UcetniPohyby {
             get {
                 return this.ucetniPohybyField;
             }
@@ -9545,7 +8454,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisy UcetniZapisy {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisy UcetniZapisy {
             get {
                 return this.ucetniZapisyField;
             }
@@ -9556,7 +8465,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaVzor Vzor {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyVzor Vzor {
             get {
                 return this.vzorField;
             }
@@ -9567,7 +8476,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaZakazka Zakazka {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyZakazka Zakazka {
             get {
                 return this.zakazkaField;
             }
@@ -9578,12 +8487,12 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaZdrojovyDoklad ZdrojovyDoklad {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyZaloha Zaloha {
             get {
-                return this.zdrojovyDokladField;
+                return this.zalohaField;
             }
             set {
-                this.zdrojovyDokladField = value;
+                this.zalohaField = value;
             }
         }
         
@@ -9627,122 +8536,44 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaCilovyDokladInfo {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyObsahPolozky {
         
-        private string cisloDokladuField;
+        private object artikl_IDField;
         
-        private System.DateTime datumPlatbyField;
+        private object sklad_IDField;
         
-        private bool datumPlatbyFieldSpecified;
-        
-        private System.DateTime datumVystaveniField;
-        
-        private bool datumVystaveniFieldSpecified;
-        
-        private string druhDokladuField;
-        
-        private string firmaNazevField;
-        
-        private string iCOField;
-        
-        private string popisField;
+        private string gENERATEZASOBAField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CisloDokladu {
+        public object Artikl_ID {
             get {
-                return this.cisloDokladuField;
+                return this.artikl_IDField;
             }
             set {
-                this.cisloDokladuField = value;
+                this.artikl_IDField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public System.DateTime DatumPlatby {
+        public object Sklad_ID {
             get {
-                return this.datumPlatbyField;
+                return this.sklad_IDField;
             }
             set {
-                this.datumPlatbyField = value;
+                this.sklad_IDField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool DatumPlatbySpecified {
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string GENERATEZASOBA {
             get {
-                return this.datumPlatbyFieldSpecified;
+                return this.gENERATEZASOBAField;
             }
             set {
-                this.datumPlatbyFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public System.DateTime DatumVystaveni {
-            get {
-                return this.datumVystaveniField;
-            }
-            set {
-                this.datumVystaveniField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool DatumVystaveniSpecified {
-            get {
-                return this.datumVystaveniFieldSpecified;
-            }
-            set {
-                this.datumVystaveniFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string DruhDokladu {
-            get {
-                return this.druhDokladuField;
-            }
-            set {
-                this.druhDokladuField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string FirmaNazev {
-            get {
-                return this.firmaNazevField;
-            }
-            set {
-                this.firmaNazevField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string ICO {
-            get {
-                return this.iCOField;
-            }
-            set {
-                this.iCOField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Popis {
-            get {
-                return this.popisField;
-            }
-            set {
-                this.popisField = value;
+                this.gENERATEZASOBAField = value;
             }
         }
     }
@@ -9753,7 +8584,107 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaKrizovyKurz {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyDPH {
+        
+        private string celkemField;
+        
+        private string celkemCMField;
+        
+        private string danField;
+        
+        private string danCMField;
+        
+        private string sazbaField;
+        
+        private string zakladField;
+        
+        private string zakladCMField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Celkem {
+            get {
+                return this.celkemField;
+            }
+            set {
+                this.celkemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string CelkemCM {
+            get {
+                return this.celkemCMField;
+            }
+            set {
+                this.celkemCMField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Dan {
+            get {
+                return this.danField;
+            }
+            set {
+                this.danField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string DanCM {
+            get {
+                return this.danCMField;
+            }
+            set {
+                this.danCMField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Sazba {
+            get {
+                return this.sazbaField;
+            }
+            set {
+                this.sazbaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Zaklad {
+            get {
+                return this.zakladField;
+            }
+            set {
+                this.zakladField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string ZakladCM {
+            get {
+                return this.zakladCMField;
+            }
+            set {
+                this.zakladCMField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyKrizovyKurz {
         
         private string kurzField;
         
@@ -9788,142 +8719,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaPrecenovaciKurz {
-        
-        private string kurzField;
-        
-        private string mnozstviField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Kurz {
-            get {
-                return this.kurzField;
-            }
-            set {
-                this.kurzField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Mnozstvi {
-            get {
-                return this.mnozstviField;
-            }
-            set {
-                this.mnozstviField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaZdrojovyDokladInfo {
-        
-        private string cisloDokladuField;
-        
-        private System.DateTime datumVystaveniField;
-        
-        private bool datumVystaveniFieldSpecified;
-        
-        private string druhDokladuField;
-        
-        private string firmaNazevField;
-        
-        private string iCOField;
-        
-        private string popisField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CisloDokladu {
-            get {
-                return this.cisloDokladuField;
-            }
-            set {
-                this.cisloDokladuField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public System.DateTime DatumVystaveni {
-            get {
-                return this.datumVystaveniField;
-            }
-            set {
-                this.datumVystaveniField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool DatumVystaveniSpecified {
-            get {
-                return this.datumVystaveniFieldSpecified;
-            }
-            set {
-                this.datumVystaveniFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string DruhDokladu {
-            get {
-                return this.druhDokladuField;
-            }
-            set {
-                this.druhDokladuField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string FirmaNazev {
-            get {
-                return this.firmaNazevField;
-            }
-            set {
-                this.firmaNazevField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string ICO {
-            get {
-                return this.iCOField;
-            }
-            set {
-                this.iCOField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Popis {
-            get {
-                return this.popisField;
-            }
-            set {
-                this.popisField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaCilovyDoklad {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyAkcePolozky {
         
         private string objectNameField;
         
@@ -9931,8 +8727,8 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaCilovyDoklad() {
-            this.objectNameField = "Doklad";
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyAkcePolozky() {
+            this.objectNameField = "AkcePolozky";
             this.objectTypeField = "Object";
         }
         
@@ -9976,7 +8772,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaCinnost {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyCinnost {
         
         private string objectNameField;
         
@@ -9984,7 +8780,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaCinnost() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyCinnost() {
             this.objectNameField = "Cinnost";
             this.objectTypeField = "Object";
         }
@@ -10029,7 +8825,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaCleneniDPH {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyCleneniDPH {
         
         private string objectNameField;
         
@@ -10037,7 +8833,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaCleneniDPH() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyCleneniDPH() {
             this.objectNameField = "CleneniDPH";
             this.objectTypeField = "Object";
         }
@@ -10082,11 +8878,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaFirma {
-        
-        private group groupField;
-        
-        private S5DataPokladniDokladSeznamUhradUhradaFirmaPolozkaPokladnihoDokladu[] polozkyField;
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyDruhPolozky {
         
         private string objectNameField;
         
@@ -10094,158 +8886,8 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaFirma() {
-            this.objectNameField = "Firma";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public group Group {
-            get {
-                return this.groupField;
-            }
-            set {
-                this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladSeznamUhradUhradaFirmaPolozkaPokladnihoDokladu[] Polozky {
-            get {
-                return this.polozkyField;
-            }
-            set {
-                this.polozkyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaFirmaPolozkaPokladnihoDokladu {
-        
-        private string celkovaCenaField;
-        
-        private string celkovaCenaCMField;
-        
-        private string cisloPolozkyField;
-        
-        private string jednCenaField;
-        
-        private string jednCenaCMField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CelkovaCena {
-            get {
-                return this.celkovaCenaField;
-            }
-            set {
-                this.celkovaCenaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CelkovaCenaCM {
-            get {
-                return this.celkovaCenaCMField;
-            }
-            set {
-                this.celkovaCenaCMField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string CisloPolozky {
-            get {
-                return this.cisloPolozkyField;
-            }
-            set {
-                this.cisloPolozkyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string JednCena {
-            get {
-                return this.jednCenaField;
-            }
-            set {
-                this.jednCenaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string JednCenaCM {
-            get {
-                return this.jednCenaCMField;
-            }
-            set {
-                this.jednCenaCMField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaKomunikaceSPT {
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataPokladniDokladSeznamUhradUhradaKomunikaceSPT() {
-            this.objectNameField = "PlatebniTerminalLogKomunikace";
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyDruhPolozky() {
+            this.objectNameField = "DruhPolozky";
             this.objectTypeField = "Object";
         }
         
@@ -10289,11 +8931,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaPredkontace {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyPredkontace {
         
         private group groupField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaPredkontacePolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyPredkontacePolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -10301,7 +8943,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaPredkontace() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyPredkontace() {
             this.objectNameField = "Predkontace";
             this.objectTypeField = "Object";
         }
@@ -10320,7 +8962,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladSeznamUhradUhradaPredkontacePolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyPredkontacePolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -10369,7 +9011,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaPredkontacePolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyPredkontacePolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -10443,11 +9085,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaPredkontaceRozdil {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyPredkontaceRozdil {
         
         private group groupField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaPredkontaceRozdilPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyPredkontaceRozdilPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -10455,7 +9097,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaPredkontaceRozdil() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyPredkontaceRozdil() {
             this.objectNameField = "Predkontace";
             this.objectTypeField = "Object";
         }
@@ -10474,7 +9116,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladSeznamUhradUhradaPredkontaceRozdilPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyPredkontaceRozdilPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -10523,7 +9165,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaPredkontaceRozdilPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyPredkontaceRozdilPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -10597,11 +9239,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaPrimarniUcetZalohy {
-        
-        private group groupField;
-        
-        private S5DataPokladniDokladSeznamUhradUhradaPrimarniUcetZalohyPolozkaPokladnihoDokladu[] polozkyField;
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohySazbaDPH {
         
         private string objectNameField;
         
@@ -10609,157 +9247,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaPrimarniUcetZalohy() {
-            this.objectNameField = "Ucet";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public group Group {
-            get {
-                return this.groupField;
-            }
-            set {
-                this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladSeznamUhradUhradaPrimarniUcetZalohyPolozkaPokladnihoDokladu[] Polozky {
-            get {
-                return this.polozkyField;
-            }
-            set {
-                this.polozkyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaPrimarniUcetZalohyPolozkaPokladnihoDokladu {
-        
-        private string celkovaCenaField;
-        
-        private string celkovaCenaCMField;
-        
-        private string cisloPolozkyField;
-        
-        private string jednCenaField;
-        
-        private string jednCenaCMField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CelkovaCena {
-            get {
-                return this.celkovaCenaField;
-            }
-            set {
-                this.celkovaCenaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CelkovaCenaCM {
-            get {
-                return this.celkovaCenaCMField;
-            }
-            set {
-                this.celkovaCenaCMField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string CisloPolozky {
-            get {
-                return this.cisloPolozkyField;
-            }
-            set {
-                this.cisloPolozkyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string JednCena {
-            get {
-                return this.jednCenaField;
-            }
-            set {
-                this.jednCenaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string JednCenaCM {
-            get {
-                return this.jednCenaCMField;
-            }
-            set {
-                this.jednCenaCMField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaSazbaDPH {
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataPokladniDokladSeznamUhradUhradaSazbaDPH() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohySazbaDPH() {
             this.objectNameField = "SazbaDPH";
             this.objectTypeField = "Object";
         }
@@ -10804,7 +9292,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaStredisko {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyStredisko {
         
         private string objectNameField;
         
@@ -10812,7 +9300,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaStredisko() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyStredisko() {
             this.objectNameField = "Stredisko";
             this.objectTypeField = "Object";
         }
@@ -10857,11 +9345,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetDal {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetDal {
         
         private group groupField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetDalPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetDalPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -10869,7 +9357,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetDal() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetDal() {
             this.objectNameField = "Ucet";
             this.objectTypeField = "Object";
         }
@@ -10888,7 +9376,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetDalPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetDalPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -10937,7 +9425,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetDalPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetDalPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -11011,11 +9499,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetMD {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetMD {
         
         private group groupField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetMDPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetMDPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -11023,7 +9511,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetMD() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetMD() {
             this.objectNameField = "Ucet";
             this.objectTypeField = "Object";
         }
@@ -11042,7 +9530,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetMDPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetMDPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -11091,7 +9579,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetMDPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetMDPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -11165,9 +9653,9 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniPohyby {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniPohyby {
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniPohybyPohybKonta[] pohybKontaField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniPohybyPohybKonta[] pohybKontaField;
         
         private string objectNameField;
         
@@ -11175,14 +9663,14 @@ namespace S9_Seky {
         
         private string deleteItemsField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniPohyby() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniPohyby() {
             this.objectNameField = "PohybKonta";
             this.objectTypeField = "List";
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("PohybKonta", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniPohybyPohybKonta[] PohybKonta {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniPohybyPohybKonta[] PohybKonta {
             get {
                 return this.pohybKontaField;
             }
@@ -11231,7 +9719,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniPohybyPohybKonta {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniPohybyPohybKonta {
         
         private string objectNameField;
         
@@ -11239,7 +9727,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniPohybyPohybKonta() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniPohybyPohybKonta() {
             this.objectNameField = "PohybKonta";
             this.objectTypeField = "Object";
         }
@@ -11284,9 +9772,9 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisy {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisy {
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapis[] ucetniZapisField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapis[] ucetniZapisField;
         
         private string objectNameField;
         
@@ -11294,14 +9782,14 @@ namespace S9_Seky {
         
         private string deleteItemsField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisy() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisy() {
             this.objectNameField = "UcetniZapis";
             this.objectTypeField = "List";
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("UcetniZapis", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapis[] UcetniZapis {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapis[] UcetniZapis {
             get {
                 return this.ucetniZapisField;
             }
@@ -11350,7 +9838,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapis {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapis {
         
         private string autoRow_IDField;
         
@@ -11420,33 +9908,33 @@ namespace S9_Seky {
         
         private string zakazka_IDField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisCinnost cinnostField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisCinnost cinnostField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisDruhDokladu druhDokladuField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisDruhDokladu druhDokladuField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisFirma firmaField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisFirma firmaField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisMena menaField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisMena menaField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisObdobi obdobiField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisObdobi obdobiField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisPohybDal pohybDalField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisPohybDal pohybDalField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisPohybMD pohybMDField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisPohybMD pohybMDField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisPolozka polozkaField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisPolozka polozkaField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisPrvotniDoklad prvotniDokladField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisPrvotniDoklad prvotniDokladField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisRozuctovanoZ rozuctovanoZField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisRozuctovanoZ rozuctovanoZField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisStredisko strediskoField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisStredisko strediskoField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisUcetDal ucetDalField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisUcetDal ucetDalField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisUcetMD ucetMDField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisUcetMD ucetMDField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisZakazka zakazkaField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisZakazka zakazkaField;
         
         private string objectNameField;
         
@@ -11454,7 +9942,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapis() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapis() {
             this.objectNameField = "UcetniZapis";
             this.objectTypeField = "Object";
         }
@@ -11835,7 +10323,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisCinnost Cinnost {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisCinnost Cinnost {
             get {
                 return this.cinnostField;
             }
@@ -11846,7 +10334,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisDruhDokladu DruhDokladu {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisDruhDokladu DruhDokladu {
             get {
                 return this.druhDokladuField;
             }
@@ -11857,7 +10345,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisFirma Firma {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisFirma Firma {
             get {
                 return this.firmaField;
             }
@@ -11868,7 +10356,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisMena Mena {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisMena Mena {
             get {
                 return this.menaField;
             }
@@ -11879,7 +10367,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisObdobi Obdobi {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisObdobi Obdobi {
             get {
                 return this.obdobiField;
             }
@@ -11890,7 +10378,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisPohybDal PohybDal {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisPohybDal PohybDal {
             get {
                 return this.pohybDalField;
             }
@@ -11901,7 +10389,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisPohybMD PohybMD {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisPohybMD PohybMD {
             get {
                 return this.pohybMDField;
             }
@@ -11912,7 +10400,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisPolozka Polozka {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisPolozka Polozka {
             get {
                 return this.polozkaField;
             }
@@ -11923,7 +10411,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisPrvotniDoklad PrvotniDoklad {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisPrvotniDoklad PrvotniDoklad {
             get {
                 return this.prvotniDokladField;
             }
@@ -11934,7 +10422,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisRozuctovanoZ RozuctovanoZ {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisRozuctovanoZ RozuctovanoZ {
             get {
                 return this.rozuctovanoZField;
             }
@@ -11945,7 +10433,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisStredisko Stredisko {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisStredisko Stredisko {
             get {
                 return this.strediskoField;
             }
@@ -11956,7 +10444,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisUcetDal UcetDal {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisUcetDal UcetDal {
             get {
                 return this.ucetDalField;
             }
@@ -11967,7 +10455,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisUcetMD UcetMD {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisUcetMD UcetMD {
             get {
                 return this.ucetMDField;
             }
@@ -11978,7 +10466,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisZakazka Zakazka {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisZakazka Zakazka {
             get {
                 return this.zakazkaField;
             }
@@ -12027,7 +10515,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisCinnost {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisCinnost {
         
         private string objectNameField;
         
@@ -12035,7 +10523,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisCinnost() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisCinnost() {
             this.objectNameField = "Cinnost";
             this.objectTypeField = "Object";
         }
@@ -12080,7 +10568,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisDruhDokladu {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisDruhDokladu {
         
         private string objectNameField;
         
@@ -12088,7 +10576,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisDruhDokladu() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisDruhDokladu() {
             this.objectNameField = "DruhDokladu";
             this.objectTypeField = "Object";
         }
@@ -12133,11 +10621,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisFirma {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisFirma {
         
         private group groupField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisFirmaPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisFirmaPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -12145,7 +10633,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisFirma() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisFirma() {
             this.objectNameField = "Firma";
             this.objectTypeField = "Object";
         }
@@ -12164,7 +10652,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisFirmaPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisFirmaPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -12213,7 +10701,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisFirmaPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisFirmaPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -12287,7 +10775,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisMena {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisMena {
         
         private string objectNameField;
         
@@ -12295,7 +10783,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisMena() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisMena() {
             this.objectNameField = "Mena";
             this.objectTypeField = "Object";
         }
@@ -12340,7 +10828,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisObdobi {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisObdobi {
         
         private string objectNameField;
         
@@ -12348,7 +10836,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisObdobi() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisObdobi() {
             this.objectNameField = "Obdobi";
             this.objectTypeField = "Object";
         }
@@ -12393,7 +10881,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisPohybDal {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisPohybDal {
         
         private string objectNameField;
         
@@ -12401,7 +10889,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisPohybDal() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisPohybDal() {
             this.objectNameField = "PohybUctu";
             this.objectTypeField = "Object";
         }
@@ -12446,7 +10934,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisPohybMD {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisPohybMD {
         
         private string objectNameField;
         
@@ -12454,7 +10942,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisPohybMD() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisPohybMD() {
             this.objectNameField = "PohybUctu";
             this.objectTypeField = "Object";
         }
@@ -12499,7 +10987,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisPolozka {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisPolozka {
         
         private string objectNameField;
         
@@ -12507,7 +10995,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisPolozka() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisPolozka() {
             this.objectNameField = "PolozkaDokladu";
             this.objectTypeField = "Object";
         }
@@ -12552,7 +11040,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisPrvotniDoklad {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisPrvotniDoklad {
         
         private string objectNameField;
         
@@ -12560,7 +11048,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisPrvotniDoklad() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisPrvotniDoklad() {
             this.objectNameField = "Doklad";
             this.objectTypeField = "Object";
         }
@@ -12605,7 +11093,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisRozuctovanoZ {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisRozuctovanoZ {
         
         private string objectNameField;
         
@@ -12613,7 +11101,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisRozuctovanoZ() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisRozuctovanoZ() {
             this.objectNameField = "UcetniZapis";
             this.objectTypeField = "Object";
         }
@@ -12658,7 +11146,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisStredisko {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisStredisko {
         
         private string objectNameField;
         
@@ -12666,7 +11154,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisStredisko() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisStredisko() {
             this.objectNameField = "Stredisko";
             this.objectTypeField = "Object";
         }
@@ -12711,11 +11199,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisUcetDal {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisUcetDal {
         
         private group groupField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisUcetDalPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisUcetDalPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -12723,7 +11211,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisUcetDal() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisUcetDal() {
             this.objectNameField = "Ucet";
             this.objectTypeField = "Object";
         }
@@ -12742,7 +11230,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisUcetDalPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisUcetDalPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -12791,7 +11279,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisUcetDalPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisUcetDalPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -12865,11 +11353,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisUcetMD {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisUcetMD {
         
         private group groupField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisUcetMDPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisUcetMDPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -12877,7 +11365,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisUcetMD() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisUcetMD() {
             this.objectNameField = "Ucet";
             this.objectTypeField = "Object";
         }
@@ -12896,7 +11384,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisUcetMDPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisUcetMDPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -12945,7 +11433,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisUcetMDPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisUcetMDPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -13019,11 +11507,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisZakazka {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisZakazka {
         
         private group groupField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisZakazkaPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisZakazkaPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -13031,7 +11519,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisZakazka() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisZakazka() {
             this.objectNameField = "Zakazka";
             this.objectTypeField = "Object";
         }
@@ -13050,7 +11538,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisZakazkaPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisZakazkaPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -13099,7 +11587,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaUcetniZapisyUcetniZapisZakazkaPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyUcetniZapisyUcetniZapisZakazkaPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -13173,11 +11661,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaVzor {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyVzor {
         
         private group groupField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaVzorPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyVzorPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -13185,7 +11673,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaVzor() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyVzor() {
             this.objectNameField = "VzorUcetniPolozky";
             this.objectTypeField = "Object";
         }
@@ -13204,7 +11692,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladSeznamUhradUhradaVzorPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyVzorPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -13253,7 +11741,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaVzorPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyVzorPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -13327,11 +11815,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaZakazka {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyZakazka {
         
         private group groupField;
         
-        private S5DataPokladniDokladSeznamUhradUhradaZakazkaPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladOdpoctyZalohOdpocetZalohyZakazkaPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -13339,7 +11827,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaZakazka() {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyZakazka() {
             this.objectNameField = "Zakazka";
             this.objectTypeField = "Object";
         }
@@ -13358,7 +11846,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladSeznamUhradUhradaZakazkaPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyZakazkaPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -13407,7 +11895,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaZakazkaPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyZakazkaPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -13481,7 +11969,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladSeznamUhradUhradaZdrojovyDoklad {
+    public partial class S5DataInterniDokladOdpoctyZalohOdpocetZalohyZaloha {
         
         private string objectNameField;
         
@@ -13489,8 +11977,8 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladSeznamUhradUhradaZdrojovyDoklad() {
-            this.objectNameField = "Doklad";
+        public S5DataInterniDokladOdpoctyZalohOdpocetZalohyZaloha() {
+            this.objectNameField = "PolozkaZalohy";
             this.objectTypeField = "Object";
         }
         
@@ -13534,317 +12022,9 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladUcetDal {
+    public partial class S5DataInterniDokladSazbyDPHNaDoklade {
         
-        private group groupField;
-        
-        private S5DataPokladniDokladUcetDalPolozkaPokladnihoDokladu[] polozkyField;
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataPokladniDokladUcetDal() {
-            this.objectNameField = "Ucet";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public group Group {
-            get {
-                return this.groupField;
-            }
-            set {
-                this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladUcetDalPolozkaPokladnihoDokladu[] Polozky {
-            get {
-                return this.polozkyField;
-            }
-            set {
-                this.polozkyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladUcetDalPolozkaPokladnihoDokladu {
-        
-        private string celkovaCenaField;
-        
-        private string celkovaCenaCMField;
-        
-        private string cisloPolozkyField;
-        
-        private string jednCenaField;
-        
-        private string jednCenaCMField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CelkovaCena {
-            get {
-                return this.celkovaCenaField;
-            }
-            set {
-                this.celkovaCenaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CelkovaCenaCM {
-            get {
-                return this.celkovaCenaCMField;
-            }
-            set {
-                this.celkovaCenaCMField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string CisloPolozky {
-            get {
-                return this.cisloPolozkyField;
-            }
-            set {
-                this.cisloPolozkyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string JednCena {
-            get {
-                return this.jednCenaField;
-            }
-            set {
-                this.jednCenaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string JednCenaCM {
-            get {
-                return this.jednCenaCMField;
-            }
-            set {
-                this.jednCenaCMField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladUcetMD {
-        
-        private group groupField;
-        
-        private S5DataPokladniDokladUcetMDPolozkaPokladnihoDokladu[] polozkyField;
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataPokladniDokladUcetMD() {
-            this.objectNameField = "Ucet";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public group Group {
-            get {
-                return this.groupField;
-            }
-            set {
-                this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladUcetMDPolozkaPokladnihoDokladu[] Polozky {
-            get {
-                return this.polozkyField;
-            }
-            set {
-                this.polozkyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladUcetMDPolozkaPokladnihoDokladu {
-        
-        private string celkovaCenaField;
-        
-        private string celkovaCenaCMField;
-        
-        private string cisloPolozkyField;
-        
-        private string jednCenaField;
-        
-        private string jednCenaCMField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CelkovaCena {
-            get {
-                return this.celkovaCenaField;
-            }
-            set {
-                this.celkovaCenaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CelkovaCenaCM {
-            get {
-                return this.celkovaCenaCMField;
-            }
-            set {
-                this.celkovaCenaCMField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string CisloPolozky {
-            get {
-                return this.cisloPolozkyField;
-            }
-            set {
-                this.cisloPolozkyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string JednCena {
-            get {
-                return this.jednCenaField;
-            }
-            set {
-                this.jednCenaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string JednCenaCM {
-            get {
-                return this.jednCenaCMField;
-            }
-            set {
-                this.jednCenaCMField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladUcetniZapisy {
-        
-        private S5DataPokladniDokladUcetniZapisyUcetniZapis[] ucetniZapisField;
+        private S5DataInterniDokladSazbyDPHNaDokladeSazbaDPHNaDoklade[] sazbaDPHNaDokladeField;
         
         private string objectNameField;
         
@@ -13852,19 +12032,19 @@ namespace S9_Seky {
         
         private string deleteItemsField;
         
-        public S5DataPokladniDokladUcetniZapisy() {
-            this.objectNameField = "UcetniZapis";
+        public S5DataInterniDokladSazbyDPHNaDoklade() {
+            this.objectNameField = "SazbaDPHNaDoklade";
             this.objectTypeField = "List";
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("UcetniZapis", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladUcetniZapisyUcetniZapis[] UcetniZapis {
+        [System.Xml.Serialization.XmlElementAttribute("SazbaDPHNaDoklade", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public S5DataInterniDokladSazbyDPHNaDokladeSazbaDPHNaDoklade[] SazbaDPHNaDoklade {
             get {
-                return this.ucetniZapisField;
+                return this.sazbaDPHNaDokladeField;
             }
             set {
-                this.ucetniZapisField = value;
+                this.sazbaDPHNaDokladeField = value;
             }
         }
         
@@ -13908,7 +12088,21 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladUcetniZapisyUcetniZapis {
+    public partial class S5DataInterniDokladSazbyDPHNaDokladeSazbaDPHNaDoklade {
+        
+        private string aktivniField;
+        
+        private enum_DruhSazbyDPH druhSazbyField;
+        
+        private string pouzitaField;
+        
+        private string rozpisDPH_IDField;
+        
+        private string sazbaDPH_IDField;
+        
+        private string vybranaNaHlavicceField;
+        
+        private S5DataInterniDokladSazbyDPHNaDokladeSazbaDPHNaDokladeSazbaDPH sazbaDPHField;
         
         private string objectNameField;
         
@@ -13916,8 +12110,138 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladUcetniZapisyUcetniZapis() {
-            this.objectNameField = "UcetniZapis";
+        public S5DataInterniDokladSazbyDPHNaDokladeSazbaDPHNaDoklade() {
+            this.objectNameField = "SazbaDPHNaDoklade";
+            this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Aktivni {
+            get {
+                return this.aktivniField;
+            }
+            set {
+                this.aktivniField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public enum_DruhSazbyDPH DruhSazby {
+            get {
+                return this.druhSazbyField;
+            }
+            set {
+                this.druhSazbyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Pouzita {
+            get {
+                return this.pouzitaField;
+            }
+            set {
+                this.pouzitaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string RozpisDPH_ID {
+            get {
+                return this.rozpisDPH_IDField;
+            }
+            set {
+                this.rozpisDPH_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string SazbaDPH_ID {
+            get {
+                return this.sazbaDPH_IDField;
+            }
+            set {
+                this.sazbaDPH_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string VybranaNaHlavicce {
+            get {
+                return this.vybranaNaHlavicceField;
+            }
+            set {
+                this.vybranaNaHlavicceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public S5DataInterniDokladSazbyDPHNaDokladeSazbaDPHNaDokladeSazbaDPH SazbaDPH {
+            get {
+                return this.sazbaDPHField;
+            }
+            set {
+                this.sazbaDPHField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ObjectName {
+            get {
+                return this.objectNameField;
+            }
+            set {
+                this.objectNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ObjectType {
+            get {
+                return this.objectTypeField;
+            }
+            set {
+                this.objectTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class S5DataInterniDokladSazbyDPHNaDokladeSazbaDPHNaDokladeSazbaDPH {
+        
+        private string objectNameField;
+        
+        private string objectTypeField;
+        
+        private string idField;
+        
+        public S5DataInterniDokladSazbyDPHNaDokladeSazbaDPHNaDokladeSazbaDPH() {
+            this.objectNameField = "SazbaDPH";
             this.objectTypeField = "Object";
         }
         
@@ -13961,9 +12285,9 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohy {
+    public partial class S5DataInterniDokladZalohy {
         
-        private S5DataPokladniDokladZalohyPolozkaZalohy[] polozkaZalohyField;
+        private S5DataInterniDokladZalohyPolozkaZalohy[] polozkaZalohyField;
         
         private string objectNameField;
         
@@ -13971,14 +12295,14 @@ namespace S9_Seky {
         
         private string deleteItemsField;
         
-        public S5DataPokladniDokladZalohy() {
+        public S5DataInterniDokladZalohy() {
             this.objectNameField = "PolozkaZalohy";
             this.objectTypeField = "List";
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("PolozkaZalohy", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohy[] PolozkaZalohy {
+        public S5DataInterniDokladZalohyPolozkaZalohy[] PolozkaZalohy {
             get {
                 return this.polozkaZalohyField;
             }
@@ -14027,7 +12351,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohy {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohy {
         
         private string celkovaCenaField;
         
@@ -14067,7 +12391,7 @@ namespace S9_Seky {
         
         private string nazevField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyObsahPolozky obsahPolozkyField;
+        private S5DataInterniDokladZalohyPolozkaZalohyObsahPolozky obsahPolozkyField;
         
         private string parentDoklad_IDField;
         
@@ -14117,17 +12441,17 @@ namespace S9_Seky {
         
         private string zdrojovaPolozkaKopirovani_IDField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyDPH dPHField;
+        private S5DataInterniDokladZalohyPolozkaZalohyDPH dPHField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyVazebniDoklad vazebniDokladField;
+        private S5DataInterniDokladZalohyPolozkaZalohyVazebniDoklad vazebniDokladField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyPredkontace predkontaceField;
+        private S5DataInterniDokladZalohyPolozkaZalohyPredkontace predkontaceField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisy ucetniZapisyField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisy ucetniZapisyField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUhrada uhradaField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUhrada uhradaField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyVzor vzorField;
+        private S5DataInterniDokladZalohyPolozkaZalohyVzor vzorField;
         
         private string objectNameField;
         
@@ -14135,7 +12459,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohy() {
+        public S5DataInterniDokladZalohyPolozkaZalohy() {
             this.objectNameField = "PolozkaZalohy";
             this.objectTypeField = "Object";
         }
@@ -14351,7 +12675,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyObsahPolozky ObsahPolozky {
+        public S5DataInterniDokladZalohyPolozkaZalohyObsahPolozky ObsahPolozky {
             get {
                 return this.obsahPolozkyField;
             }
@@ -14626,7 +12950,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyDPH DPH {
+        public S5DataInterniDokladZalohyPolozkaZalohyDPH DPH {
             get {
                 return this.dPHField;
             }
@@ -14637,7 +12961,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyVazebniDoklad VazebniDoklad {
+        public S5DataInterniDokladZalohyPolozkaZalohyVazebniDoklad VazebniDoklad {
             get {
                 return this.vazebniDokladField;
             }
@@ -14648,7 +12972,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyPredkontace Predkontace {
+        public S5DataInterniDokladZalohyPolozkaZalohyPredkontace Predkontace {
             get {
                 return this.predkontaceField;
             }
@@ -14659,7 +12983,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisy UcetniZapisy {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisy UcetniZapisy {
             get {
                 return this.ucetniZapisyField;
             }
@@ -14670,7 +12994,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUhrada Uhrada {
+        public S5DataInterniDokladZalohyPolozkaZalohyUhrada Uhrada {
             get {
                 return this.uhradaField;
             }
@@ -14681,7 +13005,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyVzor Vzor {
+        public S5DataInterniDokladZalohyPolozkaZalohyVzor Vzor {
             get {
                 return this.vzorField;
             }
@@ -14730,7 +13054,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyObsahPolozky {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyObsahPolozky {
         
         private object artikl_IDField;
         
@@ -14778,7 +13102,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyDPH {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyDPH {
         
         private string celkemField;
         
@@ -14878,13 +13202,13 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyVazebniDoklad {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyVazebniDoklad {
         
         private string firmaNazevField;
         
         private string nazevField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyVazebniDokladFirma firmaField;
+        private S5DataInterniDokladZalohyPolozkaZalohyVazebniDokladFirma firmaField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -14910,7 +13234,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyVazebniDokladFirma Firma {
+        public S5DataInterniDokladZalohyPolozkaZalohyVazebniDokladFirma Firma {
             get {
                 return this.firmaField;
             }
@@ -14926,11 +13250,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyVazebniDokladFirma {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyVazebniDokladFirma {
         
         private group groupField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyVazebniDokladFirmaPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladZalohyPolozkaZalohyVazebniDokladFirmaPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -14938,7 +13262,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyVazebniDokladFirma() {
+        public S5DataInterniDokladZalohyPolozkaZalohyVazebniDokladFirma() {
             this.objectNameField = "Firma";
             this.objectTypeField = "Object";
         }
@@ -14957,7 +13281,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyVazebniDokladFirmaPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladZalohyPolozkaZalohyVazebniDokladFirmaPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -15006,7 +13330,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyVazebniDokladFirmaPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyVazebniDokladFirmaPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -15080,11 +13404,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyPredkontace {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyPredkontace {
         
         private group groupField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyPredkontacePolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladZalohyPolozkaZalohyPredkontacePolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -15092,7 +13416,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyPredkontace() {
+        public S5DataInterniDokladZalohyPolozkaZalohyPredkontace() {
             this.objectNameField = "Predkontace";
             this.objectTypeField = "Object";
         }
@@ -15111,7 +13435,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyPredkontacePolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladZalohyPolozkaZalohyPredkontacePolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -15160,7 +13484,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyPredkontacePolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyPredkontacePolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -15234,9 +13558,9 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisy {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisy {
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapis[] ucetniZapisField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapis[] ucetniZapisField;
         
         private string objectNameField;
         
@@ -15244,14 +13568,14 @@ namespace S9_Seky {
         
         private string deleteItemsField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisy() {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisy() {
             this.objectNameField = "UcetniZapis";
             this.objectTypeField = "List";
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("UcetniZapis", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapis[] UcetniZapis {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapis[] UcetniZapis {
             get {
                 return this.ucetniZapisField;
             }
@@ -15300,7 +13624,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapis {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapis {
         
         private string autoRow_IDField;
         
@@ -15370,33 +13694,33 @@ namespace S9_Seky {
         
         private string zakazka_IDField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisCinnost cinnostField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisCinnost cinnostField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisDruhDokladu druhDokladuField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisDruhDokladu druhDokladuField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisFirma firmaField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisFirma firmaField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisMena menaField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisMena menaField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisObdobi obdobiField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisObdobi obdobiField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPohybDal pohybDalField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPohybDal pohybDalField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPohybMD pohybMDField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPohybMD pohybMDField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPolozka polozkaField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPolozka polozkaField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPrvotniDoklad prvotniDokladField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPrvotniDoklad prvotniDokladField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisRozuctovanoZ rozuctovanoZField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisRozuctovanoZ rozuctovanoZField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisStredisko strediskoField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisStredisko strediskoField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetDal ucetDalField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetDal ucetDalField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetMD ucetMDField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetMD ucetMDField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisZakazka zakazkaField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisZakazka zakazkaField;
         
         private string objectNameField;
         
@@ -15404,7 +13728,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapis() {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapis() {
             this.objectNameField = "UcetniZapis";
             this.objectTypeField = "Object";
         }
@@ -15785,7 +14109,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisCinnost Cinnost {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisCinnost Cinnost {
             get {
                 return this.cinnostField;
             }
@@ -15796,7 +14120,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisDruhDokladu DruhDokladu {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisDruhDokladu DruhDokladu {
             get {
                 return this.druhDokladuField;
             }
@@ -15807,7 +14131,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisFirma Firma {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisFirma Firma {
             get {
                 return this.firmaField;
             }
@@ -15818,7 +14142,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisMena Mena {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisMena Mena {
             get {
                 return this.menaField;
             }
@@ -15829,7 +14153,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisObdobi Obdobi {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisObdobi Obdobi {
             get {
                 return this.obdobiField;
             }
@@ -15840,7 +14164,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPohybDal PohybDal {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPohybDal PohybDal {
             get {
                 return this.pohybDalField;
             }
@@ -15851,7 +14175,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPohybMD PohybMD {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPohybMD PohybMD {
             get {
                 return this.pohybMDField;
             }
@@ -15862,7 +14186,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPolozka Polozka {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPolozka Polozka {
             get {
                 return this.polozkaField;
             }
@@ -15873,7 +14197,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPrvotniDoklad PrvotniDoklad {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPrvotniDoklad PrvotniDoklad {
             get {
                 return this.prvotniDokladField;
             }
@@ -15884,7 +14208,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisRozuctovanoZ RozuctovanoZ {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisRozuctovanoZ RozuctovanoZ {
             get {
                 return this.rozuctovanoZField;
             }
@@ -15895,7 +14219,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisStredisko Stredisko {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisStredisko Stredisko {
             get {
                 return this.strediskoField;
             }
@@ -15906,7 +14230,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetDal UcetDal {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetDal UcetDal {
             get {
                 return this.ucetDalField;
             }
@@ -15917,7 +14241,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetMD UcetMD {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetMD UcetMD {
             get {
                 return this.ucetMDField;
             }
@@ -15928,7 +14252,7 @@ namespace S9_Seky {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisZakazka Zakazka {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisZakazka Zakazka {
             get {
                 return this.zakazkaField;
             }
@@ -15977,7 +14301,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisCinnost {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisCinnost {
         
         private string objectNameField;
         
@@ -15985,7 +14309,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisCinnost() {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisCinnost() {
             this.objectNameField = "Cinnost";
             this.objectTypeField = "Object";
         }
@@ -16030,7 +14354,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisDruhDokladu {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisDruhDokladu {
         
         private string objectNameField;
         
@@ -16038,7 +14362,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisDruhDokladu() {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisDruhDokladu() {
             this.objectNameField = "DruhDokladu";
             this.objectTypeField = "Object";
         }
@@ -16083,11 +14407,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisFirma {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisFirma {
         
         private group groupField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisFirmaPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisFirmaPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -16095,7 +14419,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisFirma() {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisFirma() {
             this.objectNameField = "Firma";
             this.objectTypeField = "Object";
         }
@@ -16114,7 +14438,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisFirmaPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisFirmaPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -16163,7 +14487,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisFirmaPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisFirmaPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -16237,7 +14561,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisMena {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisMena {
         
         private string objectNameField;
         
@@ -16245,7 +14569,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisMena() {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisMena() {
             this.objectNameField = "Mena";
             this.objectTypeField = "Object";
         }
@@ -16290,7 +14614,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisObdobi {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisObdobi {
         
         private string objectNameField;
         
@@ -16298,7 +14622,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisObdobi() {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisObdobi() {
             this.objectNameField = "Obdobi";
             this.objectTypeField = "Object";
         }
@@ -16343,7 +14667,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPohybDal {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPohybDal {
         
         private string objectNameField;
         
@@ -16351,7 +14675,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPohybDal() {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPohybDal() {
             this.objectNameField = "PohybUctu";
             this.objectTypeField = "Object";
         }
@@ -16396,7 +14720,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPohybMD {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPohybMD {
         
         private string objectNameField;
         
@@ -16404,7 +14728,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPohybMD() {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPohybMD() {
             this.objectNameField = "PohybUctu";
             this.objectTypeField = "Object";
         }
@@ -16449,7 +14773,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPolozka {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPolozka {
         
         private string objectNameField;
         
@@ -16457,7 +14781,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPolozka() {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPolozka() {
             this.objectNameField = "PolozkaDokladu";
             this.objectTypeField = "Object";
         }
@@ -16502,7 +14826,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPrvotniDoklad {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPrvotniDoklad {
         
         private string objectNameField;
         
@@ -16510,7 +14834,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPrvotniDoklad() {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisPrvotniDoklad() {
             this.objectNameField = "Doklad";
             this.objectTypeField = "Object";
         }
@@ -16555,7 +14879,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisRozuctovanoZ {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisRozuctovanoZ {
         
         private string objectNameField;
         
@@ -16563,7 +14887,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisRozuctovanoZ() {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisRozuctovanoZ() {
             this.objectNameField = "UcetniZapis";
             this.objectTypeField = "Object";
         }
@@ -16608,7 +14932,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisStredisko {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisStredisko {
         
         private string objectNameField;
         
@@ -16616,7 +14940,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisStredisko() {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisStredisko() {
             this.objectNameField = "Stredisko";
             this.objectTypeField = "Object";
         }
@@ -16661,11 +14985,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetDal {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetDal {
         
         private group groupField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetDalPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetDalPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -16673,7 +14997,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetDal() {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetDal() {
             this.objectNameField = "Ucet";
             this.objectTypeField = "Object";
         }
@@ -16692,7 +15016,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetDalPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetDalPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -16741,7 +15065,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetDalPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetDalPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -16815,11 +15139,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetMD {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetMD {
         
         private group groupField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetMDPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetMDPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -16827,7 +15151,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetMD() {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetMD() {
             this.objectNameField = "Ucet";
             this.objectTypeField = "Object";
         }
@@ -16846,7 +15170,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetMDPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetMDPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -16895,7 +15219,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetMDPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisUcetMDPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -16969,11 +15293,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisZakazka {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisZakazka {
         
         private group groupField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisZakazkaPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisZakazkaPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -16981,7 +15305,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisZakazka() {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisZakazka() {
             this.objectNameField = "Zakazka";
             this.objectTypeField = "Object";
         }
@@ -17000,7 +15324,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisZakazkaPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisZakazkaPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -17049,7 +15373,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisZakazkaPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUcetniZapisyUcetniZapisZakazkaPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         
@@ -17123,7 +15447,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyUhrada {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyUhrada {
         
         private string objectNameField;
         
@@ -17131,7 +15455,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyUhrada() {
+        public S5DataInterniDokladZalohyPolozkaZalohyUhrada() {
             this.objectNameField = "Uhrada";
             this.objectTypeField = "Object";
         }
@@ -17176,11 +15500,11 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyVzor {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyVzor {
         
         private group groupField;
         
-        private S5DataPokladniDokladZalohyPolozkaZalohyVzorPolozkaPokladnihoDokladu[] polozkyField;
+        private S5DataInterniDokladZalohyPolozkaZalohyVzorPolozkaPokladnihoDokladu[] polozkyField;
         
         private string objectNameField;
         
@@ -17188,7 +15512,7 @@ namespace S9_Seky {
         
         private string idField;
         
-        public S5DataPokladniDokladZalohyPolozkaZalohyVzor() {
+        public S5DataInterniDokladZalohyPolozkaZalohyVzor() {
             this.objectNameField = "VzorUcetniPolozky";
             this.objectTypeField = "Object";
         }
@@ -17207,7 +15531,7 @@ namespace S9_Seky {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("PolozkaPokladnihoDokladu", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public S5DataPokladniDokladZalohyPolozkaZalohyVzorPolozkaPokladnihoDokladu[] Polozky {
+        public S5DataInterniDokladZalohyPolozkaZalohyVzorPolozkaPokladnihoDokladu[] Polozky {
             get {
                 return this.polozkyField;
             }
@@ -17256,7 +15580,7 @@ namespace S9_Seky {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataPokladniDokladZalohyPolozkaZalohyVzorPolozkaPokladnihoDokladu {
+    public partial class S5DataInterniDokladZalohyPolozkaZalohyVzorPolozkaPokladnihoDokladu {
         
         private string celkovaCenaField;
         

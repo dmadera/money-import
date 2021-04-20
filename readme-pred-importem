@@ -122,6 +122,9 @@ Pokladní doklady - skupiny
         Číselná řada: OST_POKD, Typ ceny: Pouze základ, Sazba DPH: Nulová, 
         Členění DPH: _Ř000 U, Předkontace: OST, Primární účet MD: 911500
 
+Interní doklady - skupiny:
+    Kód: SEKY, Název: Šeky, Číselná řada: OST_SEK
+
 -- nevíme jak nastavit --
 
 Nepeněžní platidla

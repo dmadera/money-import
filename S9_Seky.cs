@@ -9,7 +9,7 @@ using MainProgram;
 namespace SDataObjs {
     class S9_Seky : S0_Generic<S5Data> {
 
-        private List<S5DataPokladniDoklad> _seky = new List<S5DataPokladniDoklad>();
+        private List<S5DataInterniDoklad> _seky = new List<S5DataInterniDoklad>();
 
         public S9_Seky(string dir, Encoding enc) {
             convertSeky(new SkladDataFile(dir, SFile.SEKY, enc));        
@@ -17,7 +17,7 @@ namespace SDataObjs {
 
         public override S5Data GetS5Data() {
             return new S5Data() {
-                PokladniDokladList = _seky.ToArray()
+                InterniDokladList = _seky.ToArray()
             };
         }
 
@@ -26,13 +26,13 @@ namespace SDataObjs {
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
                 string cisloOdberatele = S3_Adresar.GetOdbID(d["CisloOdberatele"].GetNum());
-                var sek = new S5DataPokladniDoklad() {
+                var sek = new S5DataInterniDoklad() {
                     VariabilniSymbol = d["CisloSeku"].GetNum(),
                     DatumVystaveni = d["DatVystaveni"].GetDate(),
                     DatumVystaveniSpecified = true,
                     ParovaciSymbol = d["Druh"].GetAlfaNum().ToUpper() + d["CisloVydejky"].GetNum(),
                     Firma_ID = S0_IDs.GetFirmaID(cisloOdberatele),
-                    Adresa = new S5DataPokladniDokladAdresa() {
+                    Adresa = new S5DataInterniDokladAdresa() {
                         KontaktniOsobaNazev = d["Prebirajici"].GetText()
                     },
                     Vystavil = d["Obsluha"].GetText(),
@@ -42,8 +42,8 @@ namespace SDataObjs {
                     TypDokladu = new enum_TypDokladu() { Value = enum_TypDokladu_value.Item1 }
                 };
 
-                sek.Polozky = new S5DataPokladniDokladPolozkaPokladnihoDokladu[] {
-                    new S5DataPokladniDokladPolozkaPokladnihoDokladu() {
+                sek.Polozky = new S5DataInterniDokladPolozkaPokladnihoDokladu[] {
+                    new S5DataInterniDokladPolozkaPokladnihoDokladu() {
                         CelkovaCena = d["Castka"].GetDecimal(),
                         CelkovaCenaCM =  d["Castka"].GetDecimal(),
                         CisloPolozky = "1"
