@@ -155,7 +155,6 @@
         <Tel2Typ Value="0" />
         <WWW Value="0" />
         <PrevzitObchodniUdaje Value="0" />
-        <ADSek_UserData Value="0" />
         <Adresy Value="0">
           <ObchodniAdresa Value="0">
             <Ulice Value="0" />
@@ -481,7 +480,7 @@
           <RegistrPlatcuDPH Value="0" />
           <UnikatniCisloKonzultace Value="0" />
         </HistorieOvereniFirmyVRegistru>
-        <Cinnost_UserData Value="0" />
+        <HlavniCinnost_UserData Value="0" />
         <ISIRChyba Value="0" />
         <ICO Value="0" />
         <ICDPH Value="0" />
@@ -634,9 +633,10 @@
           <PrevzitObchodniUdaje Value="0" />
           <Firma Value="0" />
         </NadrazenaFirma>
+        <NahradniPlneni_UserData Value="0" />
         <ObchNazev Value="0" />
         <DatovaSchrankaNazev Value="0" />
-        <NahradniPlneni_UserData Value="0" />
+        <NazevPomocny_UserData Value="0" />
         <ObchodniPodminky Value="0">
           <SeznamCeniku Value="0">
             <Cenik_ID Value="0" />
@@ -1037,6 +1037,7 @@
         <StavOvereniISIR Value="0" />
         <StavPlatceDPHComputed Value="0" />
         <StavPlatceDPHVracenyWS_Stav Value="0" />
+        <Sek_UserData Value="0" />
         <Tel1Cislo Value="0" />
         <Tel2Cislo Value="0" />
         <Tel3Cislo Value="0" />
@@ -1291,7 +1292,6 @@
         <Tel2Typ Value="0" />
         <WWW Value="0" />
         <PrevzitObchodniUdaje Value="0" />
-        <ADSek_UserData Value="0" />
         <Adresy Value="0">
           <ObchodniAdresa Value="0">
             <Ulice Value="0" />
@@ -1617,7 +1617,7 @@
           <RegistrPlatcuDPH Value="0" />
           <UnikatniCisloKonzultace Value="0" />
         </HistorieOvereniFirmyVRegistru>
-        <Cinnost_UserData Value="0" />
+        <HlavniCinnost_UserData Value="0" />
         <ISIRChyba Value="0" />
         <ICO Value="0" />
         <ICDPH Value="0" />
@@ -1770,9 +1770,10 @@
           <PrevzitObchodniUdaje Value="0" />
           <Firma Value="0" />
         </NadrazenaFirma>
+        <NahradniPlneni_UserData Value="0" />
         <ObchNazev Value="0" />
         <DatovaSchrankaNazev Value="0" />
-        <NahradniPlneni_UserData Value="0" />
+        <NazevPomocny_UserData Value="0" />
         <ObchodniPodminky Value="0">
           <SeznamCeniku Value="0">
             <Cenik_ID Value="0" />
@@ -2157,6 +2158,7 @@
         <StavOvereniISIR Value="0" />
         <StavPlatceDPHComputed Value="0" />
         <StavPlatceDPHVracenyWS_Stav Value="0" />
+        <Sek_UserData Value="0" />
         <Tel1Cislo Value="0" />
         <Tel2Cislo Value="0" />
         <Tel3Cislo Value="0" />
@@ -2334,15 +2336,15 @@
     <MojeFirmaKontaktyEmail Value="0" />
     <EvidovatNahradniPlneni Value="0" />
     <EETEvidovatTrzbu Value="1" />
-    <AdresaPrijemceFaktury Value="0">
-      <Stat Value="0" />
+    <AdresaPrijemceFaktury Value="1">
+      <Stat Value="1" />
       <KontaktniOsobaNazev Value="0" />
-      <PSC Value="0" />
+      <PSC Value="1" />
       <KontaktniOsoba Value="0" />
       <Firma Value="0" />
-      <Misto Value="0" />
-      <Nazev Value="0" />
-      <Ulice Value="0" />
+      <Misto Value="1" />
+      <Nazev Value="1" />
+      <Ulice Value="1" />
       <AdresaStat Value="0" />
     </AdresaPrijemceFaktury>
     <Faze Value="1" />
@@ -2686,7 +2688,6 @@
           <Tel2Typ Value="0" />
           <WWW Value="0" />
           <PrevzitObchodniUdaje Value="0" />
-          <ADSek_UserData Value="0" />
           <Adresy Value="0">
             <ObchodniAdresa Value="0">
               <Ulice Value="0" />
@@ -2818,7 +2819,7 @@
             <RegistrPlatcuDPH Value="0" />
             <UnikatniCisloKonzultace Value="0" />
           </HistorieOvereniFirmyVRegistru>
-          <Cinnost_UserData Value="0" />
+          <HlavniCinnost_UserData Value="0" />
           <ISIRChyba Value="0" />
           <ICO Value="0" />
           <ICDPH Value="0" />
@@ -2956,9 +2957,10 @@
             <PrevzitObchodniUdaje Value="0" />
             <Firma Value="0" />
           </NadrazenaFirma>
+          <NahradniPlneni_UserData Value="0" />
           <ObchNazev Value="0" />
           <DatovaSchrankaNazev Value="0" />
-          <NahradniPlneni_UserData Value="0" />
+          <NazevPomocny_UserData Value="0" />
           <ObchodniPodminky Value="0">
             <SeznamCeniku Value="0">
               <Cenik_ID Value="0" />
@@ -3200,6 +3202,7 @@
           <StavOvereniISIR Value="0" />
           <StavPlatceDPHComputed Value="0" />
           <StavPlatceDPHVracenyWS_Stav Value="0" />
+          <Sek_UserData Value="0" />
           <Tel1Cislo Value="0" />
           <Tel2Cislo Value="0" />
           <Tel3Cislo Value="0" />
@@ -3906,7 +3909,7 @@
           <Katalog Value="0" />
           <Kategorie Value="0" />
           <KategorieEEZ Value="0" />
-          <Kategorie_UserData Value="0" />
+          <KategorieRetezec_UserData Value="0" />
           <Kod Value="1" />
           <Identifikace Value="0">
             <DruhIdentifikace_ID Value="0" />

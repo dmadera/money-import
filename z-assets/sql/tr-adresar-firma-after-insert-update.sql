@@ -25,11 +25,11 @@ BEGIN
 		WHERE AdrKlic.Kod = '-SEK'
 	) AS FirAdrKlic ON FirAdrKlic.Parent_ID = Firma.ID
 	LEFT JOIN (
-		SELECT Firma_ID, Cinnost.Kod AS Kod, MIN(FirCinnost.Poradi) AS Poradi
+		SELECT FirCinnost.Parent_ID, Cinnost.Kod AS Kod, MIN(FirCinnost.Poradi) AS Poradi
 		FROM Adresar_FirmaCinnost AS FirCinnost
 		INNER JOIN Ciselniky_Cinnost AS Cinnost ON Cinnost.ID = FirCinnost.Cinnost_ID
-		GROUP BY Firma_ID, Cinnost.Kod
-	) AS FirCinnost ON FirCinnost.Firma_ID = Firma.ID
+		GROUP BY FirCinnost.Parent_ID, Cinnost.Kod
+	) AS FirCinnost ON FirCinnost.Parent_ID = Firma.ID
 
 	SET NOCOUNT OFF;
 END

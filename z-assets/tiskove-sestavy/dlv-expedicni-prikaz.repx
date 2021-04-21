@@ -142,7 +142,7 @@ namespace XtraReportSerialization {
         private DevExpress.XtraReports.UI.CalculatedField DopravaPlatba;
         private DevExpress.XtraReports.UI.CalculatedField SlevaNaDokladu;
         private DevExpress.XtraReports.UI.CalculatedField SlevaInterni;
-        private DevExpress.XtraReports.UI.CalculatedField AdresaPSCMesto;
+        private DevExpress.XtraReports.UI.CalculatedField FakturacniAdresaPSCMesto;
         private DevExpress.XtraReports.UI.CalculatedField DodaciAdresaPSCMesto;
         private DevExpress.XtraReports.UI.CalculatedField ObchodniAdresaPSCMesto;
         private DevExpress.XtraReports.UI.CalculatedField Priznak;
@@ -278,7 +278,7 @@ namespace XtraReportSerialization {
             this.DopravaPlatba = new DevExpress.XtraReports.UI.CalculatedField();
             this.SlevaNaDokladu = new DevExpress.XtraReports.UI.CalculatedField();
             this.SlevaInterni = new DevExpress.XtraReports.UI.CalculatedField();
-            this.AdresaPSCMesto = new DevExpress.XtraReports.UI.CalculatedField();
+            this.FakturacniAdresaPSCMesto = new DevExpress.XtraReports.UI.CalculatedField();
             this.DodaciAdresaPSCMesto = new DevExpress.XtraReports.UI.CalculatedField();
             this.ObchodniAdresaPSCMesto = new DevExpress.XtraReports.UI.CalculatedField();
             this.Priznak = new DevExpress.XtraReports.UI.CalculatedField();
@@ -1109,7 +1109,7 @@ namespace XtraReportSerialization {
             // 
             this.label48.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.label48.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.AdresaNazev")});
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.FakturacniAdresaNazev")});
             this.label48.Dpi = 254F;
             this.label48.Font = new System.Drawing.Font("Roboto Light", 10F);
             this.label48.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -1129,7 +1129,7 @@ namespace XtraReportSerialization {
             // 
             this.label47.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.label47.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.AdresaUlice")});
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.FakturacniAdresaUlice")});
             this.label47.Dpi = 254F;
             this.label47.Font = new System.Drawing.Font("Roboto Light", 10F);
             this.label47.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -1169,7 +1169,7 @@ namespace XtraReportSerialization {
             // 
             this.label50.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.label50.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.AdresaPSCMesto")});
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "SkladovyDoklad_DodaciListVydany.FakturacniAdresaPSCMesto")});
             this.label50.Dpi = 254F;
             this.label50.Font = new System.Drawing.Font("Roboto Light", 10F);
             this.label50.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -2270,11 +2270,11 @@ namespace XtraReportSerialization {
             this.SlevaInterni.Expression = "Iif([SlevaNaDokladu] != [Sleva] && [Sleva] != 0, [Sleva], null)";
             this.SlevaInterni.Name = "SlevaInterni";
             // 
-            // AdresaPSCMesto
+            // FakturacniAdresaPSCMesto
             // 
-            this.AdresaPSCMesto.DataMember = "SkladovyDoklad_DodaciListVydany";
-            this.AdresaPSCMesto.Expression = "[AdresaPSC] + \' \' + [AdresaMisto]";
-            this.AdresaPSCMesto.Name = "AdresaPSCMesto";
+            this.FakturacniAdresaPSCMesto.DataMember = "SkladovyDoklad_DodaciListVydany";
+            this.FakturacniAdresaPSCMesto.Expression = "[FakturacniAdresaPSC] + \' \' + [FakturacniAdresaMisto]";
+            this.FakturacniAdresaPSCMesto.Name = "FakturacniAdresaPSCMesto";
             // 
             // DodaciAdresaPSCMesto
             // 
@@ -2309,7 +2309,7 @@ namespace XtraReportSerialization {
                         this.DopravaPlatba,
                         this.SlevaNaDokladu,
                         this.SlevaInterni,
-                        this.AdresaPSCMesto,
+                        this.FakturacniAdresaPSCMesto,
                         this.DodaciAdresaPSCMesto,
                         this.ObchodniAdresaPSCMesto,
                         this.Priznak});

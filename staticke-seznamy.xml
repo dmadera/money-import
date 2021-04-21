@@ -251,8 +251,8 @@
     <ZpusobPlatby>
       <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
       <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
-      <Kod>B</Kod>
-      <Nazev>Bankovním převodem</Nazev>
+      <Kod>P</Kod>
+      <Nazev>Převodem</Nazev>
       <Poznamka />
     </ZpusobPlatby>
     <ZpusobPlatby>
@@ -273,7 +273,7 @@
       <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
       <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
       <Kod>K</Kod>
-      <Nazev>Platební kartou</Nazev>
+      <Nazev>Kartou</Nazev>
       <Poznamka />
     </ZpusobPlatby>
     <ZpusobPlatby>
@@ -281,13 +281,6 @@
       <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
       <Kod>R</Kod>
       <Nazev>Na rozvozu</Nazev>
-      <Poznamka />
-    </ZpusobPlatby>
-    <ZpusobPlatby>
-      <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
-      <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
-      <Kod>N</Kod>
-      <Nazev>Neuhrazeno</Nazev>
       <Poznamka />
     </ZpusobPlatby>
   </ZpusobPlatbyList>
@@ -298,7 +291,7 @@
       <Poznamka>Na dokladu se budou zobrazovat ceny položek s DPH.</Poznamka>
     </AdresniKlic>
     <AdresniKlic>
-      <Kod>DLbezCEN</Kod> 
+      <Kod>-DLCENY</Kod> 
       <Nazev>DL bez cen</Nazev> 
       <Poznamka>Na DL nebude uvedená cena položek ani celková.</Poznamka>
     </AdresniKlic>

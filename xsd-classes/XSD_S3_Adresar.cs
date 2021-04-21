@@ -84,6 +84,8 @@ namespace S3_Adresar {
         
         private string dICField;
         
+        private string doprava_UserDataField;
+        
         private string ekoKomKlientField;
         
         private string emailSpojeni_IDField;
@@ -103,6 +105,8 @@ namespace S3_Adresar {
         private string gpsLatField;
         
         private string gpsLongField;
+        
+        private string hlavniCinnost_UserDataField;
         
         private string hlavniOsoba_IDField;
         
@@ -150,13 +154,19 @@ namespace S3_Adresar {
         
         private string nadrazenaFirma_IDField;
         
+        private string nahradniPlneni_UserDataField;
+        
         private string nazevField;
+        
+        private string nazevPomocny_UserDataField;
         
         private string nekontrolovatLimitRPDPField;
         
         private string obchPsc_IDField;
         
         private string obchStat_IDField;
+        
+        private string platba_UserDataField;
         
         private string platceDPHField;
         
@@ -191,6 +201,8 @@ namespace S3_Adresar {
         private string reklamacePocetDniProVyrizeniField;
         
         private string rocniLimitNahradnihoPlneniField;
+        
+        private string sek_UserDataField;
         
         private string servisPocetDniProVyrizeniField;
         
@@ -518,6 +530,17 @@ namespace S3_Adresar {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Doprava_UserData {
+            get {
+                return this.doprava_UserDataField;
+            }
+            set {
+                this.doprava_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string EkoKomKlient {
             get {
                 return this.ekoKomKlientField;
@@ -623,6 +646,17 @@ namespace S3_Adresar {
             }
             set {
                 this.gpsLongField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string HlavniCinnost_UserData {
+            get {
+                return this.hlavniCinnost_UserDataField;
+            }
+            set {
+                this.hlavniCinnost_UserDataField = value;
             }
         }
         
@@ -881,12 +915,34 @@ namespace S3_Adresar {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string NahradniPlneni_UserData {
+            get {
+                return this.nahradniPlneni_UserDataField;
+            }
+            set {
+                this.nahradniPlneni_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string Nazev {
             get {
                 return this.nazevField;
             }
             set {
                 this.nazevField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string NazevPomocny_UserData {
+            get {
+                return this.nazevPomocny_UserDataField;
+            }
+            set {
+                this.nazevPomocny_UserDataField = value;
             }
         }
         
@@ -920,6 +976,17 @@ namespace S3_Adresar {
             }
             set {
                 this.obchStat_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Platba_UserData {
+            get {
+                return this.platba_UserDataField;
+            }
+            set {
+                this.platba_UserDataField = value;
             }
         }
         
@@ -1107,6 +1174,17 @@ namespace S3_Adresar {
             }
             set {
                 this.rocniLimitNahradnihoPlneniField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Sek_UserData {
+            get {
+                return this.sek_UserDataField;
+            }
+            set {
+                this.sek_UserDataField = value;
             }
         }
         
@@ -4969,7 +5047,7 @@ namespace S3_Adresar {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
         public string Poradi {
             get {
                 return this.poradiField;

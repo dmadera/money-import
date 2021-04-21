@@ -9,7 +9,7 @@ Filtry
 
 Aktualizovat data podle triggrů. Provést update all na Katalog. 
 Nastavit číselnou řadu KATALOG ve skupině ART (Artikl) a Obaly.
-Promazat číselné řady.
+Promazat číselné řady (INV).
 Promazat Typy spojení (Skype, IM, GSM brána).
 Provést výpočet pořizovacích nákladů zásob - v menu skladové operace + synchronizace cen.
 Nastavit kontrolu minimálního zisku. 

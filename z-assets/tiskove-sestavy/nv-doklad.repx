@@ -101,7 +101,7 @@ namespace XtraReportSerialization {
         private DevExpress.XtraReports.UI.XRControlStyle Style1;
         private DevExpress.XtraReports.UI.CalculatedField KodBezPrefixu;
         private DevExpress.XtraReports.UI.CalculatedField ObchodniAdresaPSCMesto;
-        private DevExpress.XtraReports.UI.CalculatedField AdresaPSCMesto;
+        private DevExpress.XtraReports.UI.CalculatedField DodaciAdresaPSCMesto;
         private DevExpress.XtraReports.UI.CalculatedField Priznak;
         private DevExpress.XtraReports.UI.CalculatedField SlevaNaDoklade;
         private System.Resources.ResourceManager _resources;
@@ -205,7 +205,7 @@ namespace XtraReportSerialization {
             this.Style1 = new DevExpress.XtraReports.UI.XRControlStyle();
             this.KodBezPrefixu = new DevExpress.XtraReports.UI.CalculatedField();
             this.ObchodniAdresaPSCMesto = new DevExpress.XtraReports.UI.CalculatedField();
-            this.AdresaPSCMesto = new DevExpress.XtraReports.UI.CalculatedField();
+            this.DodaciAdresaPSCMesto = new DevExpress.XtraReports.UI.CalculatedField();
             this.Priznak = new DevExpress.XtraReports.UI.CalculatedField();
             this.SlevaNaDoklade = new DevExpress.XtraReports.UI.CalculatedField();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -478,7 +478,7 @@ namespace XtraReportSerialization {
             // 
             this.label50.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.label50.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "NabidkaVydana.AdresaPSCMesto")});
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "NabidkaVydana.DodaciAdresaPSCMesto")});
             this.label50.Dpi = 254F;
             this.label50.Font = new System.Drawing.Font("Roboto Light", 9F);
             this.label50.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -1577,11 +1577,11 @@ namespace XtraReportSerialization {
             this.ObchodniAdresaPSCMesto.Expression = "[PSCObchodniAdresy] + \' \' + [MistoObchodniAdresy]";
             this.ObchodniAdresaPSCMesto.Name = "ObchodniAdresaPSCMesto";
             // 
-            // AdresaPSCMesto
+            // DodaciAdresaPSCMesto
             // 
-            this.AdresaPSCMesto.DataMember = "NabidkaVydana";
-            this.AdresaPSCMesto.Expression = "[AdresaPSC] + \' \' + [AdresaMisto]";
-            this.AdresaPSCMesto.Name = "AdresaPSCMesto";
+            this.DodaciAdresaPSCMesto.DataMember = "NabidkaVydana";
+            this.DodaciAdresaPSCMesto.Expression = "[DodaciAdresaPSC] + \' \' + [DodaciAdresaMisto]";
+            this.DodaciAdresaPSCMesto.Name = "DodaciAdresaPSCMesto";
             // 
             // Priznak
             // 
@@ -1609,7 +1609,7 @@ namespace XtraReportSerialization {
             this.CalculatedFields.AddRange(new DevExpress.XtraReports.UI.CalculatedField[] {
                         this.KodBezPrefixu,
                         this.ObchodniAdresaPSCMesto,
-                        this.AdresaPSCMesto,
+                        this.DodaciAdresaPSCMesto,
                         this.Priznak,
                         this.SlevaNaDoklade});
             this.Dpi = 254F;

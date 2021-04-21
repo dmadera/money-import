@@ -38,8 +38,7 @@ namespace SDataObjs {
                     Vystavil = d["Obsluha"].GetText(),
                     Group = new group() {
                         Kod = "SEKY"
-                    },
-                    TypDokladu = new enum_TypDokladu() { Value = enum_TypDokladu_value.Item1 }
+                    }
                 };
 
                 sek.Polozky = new S5DataInterniDokladPolozkaPokladnihoDokladu[] {

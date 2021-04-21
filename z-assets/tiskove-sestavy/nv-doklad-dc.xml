@@ -591,6 +591,7 @@
         <NahradniPlneni_UserData Value="0" />
         <ObchNazev Value="0" />
         <DatovaSchrankaNazev Value="0" />
+        <NazevPomocny_UserData Value="0" />
         <ObchodniPodminky Value="0">
           <SeznamCeniku Value="0">
             <Cenik_ID Value="0" />
@@ -1708,6 +1709,7 @@
         <NahradniPlneni_UserData Value="0" />
         <ObchNazev Value="0" />
         <DatovaSchrankaNazev Value="0" />
+        <NazevPomocny_UserData Value="0" />
         <ObchodniPodminky Value="0">
           <SeznamCeniku Value="0">
             <Cenik_ID Value="0" />
@@ -2263,16 +2265,16 @@
     <ZaokrouhleniDruhSazbyDPH Value="0" />
     <KorekceEditovatDomaciMenuBezPrepoctu Value="0" />
     <MojeFirmaKontaktyEmail Value="0" />
-    <AdresaPrijemceFaktury Value="0">
+    <AdresaPrijemceFaktury Value="1">
       <AdresaStat Value="0" />
       <Firma Value="0" />
       <KontaktniOsoba Value="0" />
       <KontaktniOsobaNazev Value="0" />
-      <Misto Value="0" />
-      <Nazev Value="0" />
-      <PSC Value="0" />
-      <Stat Value="0" />
-      <Ulice Value="0" />
+      <Misto Value="1" />
+      <Nazev Value="1" />
+      <PSC Value="1" />
+      <Stat Value="1" />
+      <Ulice Value="1" />
     </AdresaPrijemceFaktury>
     <Faze Value="1" />
     <Firma_ID Value="0" />

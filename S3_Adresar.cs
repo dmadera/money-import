@@ -52,19 +52,14 @@ namespace SDataObjs {
                     grp = new group() { Kod = "PARTNER" };
                 }
 
-                var zpusobPlatbyKod = "H";
-                if (d["KupniSmlouva"].GetBoolean() == "True") zpusobPlatbyKod = "P";
-                if (d["SumFa"].GetBoolean() == "True") zpusobPlatbyKod = "P";
-
                 var firma = new S5DataFirma() {
                     Group = grp,
                     Kod = kod,
                     Nazev = SkladDataObj.GetNazev(d["NazevOdberatele"], d["NazevOdberatele2"]),
                     ICO = obj.GetIco(),
                     DIC = obj.GetDic(),
-                    Zprava = obj.GetF3Note(),
+                    Zprava = obj.GetF3Note().Replace("\n", "\n\n"),
                     PoznamkaInterni_UserData = obj.GetL2Note(),                    
-                    ZpusobPlatby_ID = S0_IDs.GetZpusobPlatbyID(zpusobPlatbyKod),
                     DatumPorizeni_UserData = d["DatumPorizeni"].GetDate(),
                     DatumPorizeni_UserDataSpecified = true
                 };
@@ -184,12 +179,14 @@ namespace SDataObjs {
                         DeleteItems = "1",
                         Osoba = new S5DataFirmaOsobySeznamOsobOsoba[] {
                             !d["Prebirajici"].IsEmpty() ? new S5DataFirmaOsobySeznamOsobOsoba() {
-                                Jmeno = d["Prebirajici"].GetText(),
+                                Nazev = d["Prebirajici"].GetText(),
+                                Prijmeni = d["Prebirajici"].GetText(),
                                 FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("PRE"),
                                 Kod = S7_Dopl.GetKodPrebirajici(kod)
                             } : null,
                             !d["Zastoupeny"].IsEmpty() && !zastoupenyJePrebirajici ? new S5DataFirmaOsobySeznamOsobOsoba() {
-                                Jmeno = d["Zastoupeny"].GetText(),
+                                Nazev = d["Zastoupeny"].GetText(),
+                                Prijmeni = d["Zastoupeny"].GetText(),
                                 FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("ZAS"),
                                 Kod = S7_Dopl.GetKodZastoupeny(kod)
                             } : null
@@ -299,12 +296,14 @@ namespace SDataObjs {
                     DeleteItems = "1",
                         Osoba = new S5DataFirmaOsobySeznamOsobOsoba[] {
                             !d["Zastoupeny"].IsEmpty() ? new S5DataFirmaOsobySeznamOsobOsoba() {
-                                Jmeno = d["Zastoupeny"].GetText(),
+                                Nazev = d["Zastoupeny"].GetText(),
+                                Prijmeni = d["Zastoupeny"].GetText(),
                                 FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("ZAS"),
                                 Kod = S7_Dopl.GetKodZastoupeny(kod)
                             } : null,
                             !d["ZastoupenyOZ"].IsEmpty() && !zastoupenyJeZastoupenyOZ ? new S5DataFirmaOsobySeznamOsobOsoba() {
-                                Jmeno = d["ZastoupenyOZ"].GetText(),
+                                Nazev = d["ZastoupenyOZ"].GetText(),
+                                Prijmeni = d["ZastoupenyOZ"].GetText(),
                                 FunkceOsoby_ID = S0_IDs.GetFunkceOsobyID("OZ"),
                                 Kod = S7_Dopl.GetKodZastoupenyOZ(kod)
                             } : null
