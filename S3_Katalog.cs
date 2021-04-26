@@ -183,25 +183,25 @@ namespace SDataObjs {
                 var priznakID = S0_IDs.GetProduktovyKlicID(priznak);
                 var webNezobrazovatExtra = d["Zobrazovat"].GetBooleanNegative();
 
-                if(priznak != "P" && priznakID != null) {
-                    artikl.ProduktoveKlice = priznakID != null ? new S5DataArtiklProduktoveKlice() {
-                        DeleteItems = "1",
-                        ArtiklProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlic[] {
-                            new S5DataArtiklProduktoveKliceArtiklProduktovyKlic() {                        
-                                ProduktovyKlic_ID = priznakID,
-                                ProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlicProduktovyKlic() {
-                                    ID = priznakID
-                                }
-                            },
-                            webNezobrazovatExtra == "True" ? new S5DataArtiklProduktoveKliceArtiklProduktovyKlic() {                        
-                                ProduktovyKlic_ID = S0_IDs.GetProduktovyKlicID("NZ"),
-                                ProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlicProduktovyKlic() {
-                                    ID = S0_IDs.GetProduktovyKlicID("NZ")
-                                }
-                            } : null,
-                        }
-                    } : null;
-                } else {
+                artikl.ProduktoveKlice = new S5DataArtiklProduktoveKlice() {
+                    DeleteItems = "1",
+                    ArtiklProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlic[] {
+                        priznakID != null ? new S5DataArtiklProduktoveKliceArtiklProduktovyKlic() {                        
+                            ProduktovyKlic_ID = priznakID,
+                            ProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlicProduktovyKlic() {
+                                ID = priznakID
+                            }
+                        } : null,
+                        webNezobrazovatExtra == "True" ? new S5DataArtiklProduktoveKliceArtiklProduktovyKlic() {                        
+                            ProduktovyKlic_ID = S0_IDs.GetProduktovyKlicID("NZ"),
+                            ProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlicProduktovyKlic() {
+                                ID = S0_IDs.GetProduktovyKlicID("NZ")
+                            }
+                        } : null,
+                    }
+                };
+                
+                if (priznak == "P") {
                     // zbozi uvedene v priloze c. 5 - odpad a srot od roku 2012 (HADR 10kg)
                     artikl.PreneseniDane = new S5DataArtiklPreneseniDane() {
                         Kod = "5",

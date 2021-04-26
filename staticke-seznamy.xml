@@ -276,15 +276,13 @@
       <Nazev>Kartou</Nazev>
       <Poznamka />
     </ZpusobPlatby>
-    <ZpusobPlatby>
-      <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
-      <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
-      <Kod>R</Kod>
-      <Nazev>Na rozvozu</Nazev>
-      <Poznamka />
-    </ZpusobPlatby>
   </ZpusobPlatbyList>
   <AdresniKlicList>
+    <AdresniKlic>
+      <Kod>INT</Kod> 
+      <Nazev>Internetový odběratel</Nazev> 
+      <Poznamka></Poznamka>
+    </AdresniKlic>
     <AdresniKlic>
       <Kod>sDPH</Kod> 
       <Nazev>Ceny s DPH</Nazev> 

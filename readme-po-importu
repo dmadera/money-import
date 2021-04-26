@@ -1,10 +1,10 @@
 Filtry
     Marže pod 10%	    PolozkaCeniku       Výše změny > -10
-    OZ všechny	        Firma               Produktový klíč OZ nebo OZN
-    OZ nové	            Firma               Produktový klíč OZN
-    DRAK	            Firma               Činnost DRAK
-    NP	                Firma               Evidovat náhradní plnění ANO
+    OZ všechny	        Firma               Adresní klíč OZ nebo OZN
+    OZ nové	            Firma               Adresní klíč OZN
+    Iternetoví odb      Firma               Adresní klíč INT
     S nárokem na šek    Faktura vydaná      Odběratel - Adresní klíč != -SEK & CelkemSDPH >= 5000 & Sleva = 0
+    K zaúčtování        Prodejky vydané     Způsob dopravy != --
     
 
 Aktualizovat data podle triggrů. Provést update all na Katalog. 

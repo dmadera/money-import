@@ -28,6 +28,23 @@ NAV
         Export do XML přednastaveným exportem -> transformace XLST -> převod do CSV -> převod do XLS (vše lze nastavením exportu, použití externího programu na CSV2XLS)
         Z XLS -> CSV -> transformace XLST -> Import XML do nabídek
 
+Prodejky
+    Způsob platby je ve výchozím stavu prázdný, musí obsluha doplnit.
+    
+    Na rozvozu: 
+        obsluha vybere způsob dopravy Rozvoz nebo Rozvoz dle dnů, způsob platby zůstane prázdný. Po obdržení peněz doplní způsob platby.
+
+    Uzávěrka:
+        Obsluha spočítá stav pokladny. Musí sedět se stavem pokladny v Seznamu pokladen. (součet ODBYT a OSTATNI)
+        Prodejky vyselektuje k zaúčtování dle filtru: K zaúčtování (způsob platby != --)
+        Ozačit všechny prodejky a provést "Zaúčtování prodejek" -> OK
+        Vytvořit výdejní pokladní doklad - ODVOD UCETNI s celkovou částkou, vytisknout. 
+        Pokladna ODBYT by měla být prázdná. 
+        Odvod donést UCETNI.  
+
+Faktury vydané
+    Dle střediska třídit - UCETNI.
+
 
 Ostatní
     Nefunkční nápověda - ve složce Solitea\Money S4\Help\Help_S4.chm pravým tlačítkem vlastnosti - odblokovat - OK

@@ -36,24 +36,14 @@ namespace SDataObjs {
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;
 
-                group grp = null;
                 string kodOdb = d["CisloOdberatele"].GetNum();
                 string kod = GetOdbID(kodOdb);
+                bool jeOstatni = d["NazevOdberatele"].GetText().StartsWith("\\");
 
                 if(kod == GetOdbID("00001")) continue;
-
-                if (d["NazevOdberatele"].GetText().StartsWith("\\")) {
-                    grp = new group() { Kod = "ZAMEST" };
-                } else if (d["NazevOdberatele"].GetText().StartsWith("||")) {
-                    continue;
-                } else if (int.Parse(kodOdb) > 7000) {
-                    grp = new group() { Kod = "INTERNET" };
-                } else {
-                    grp = new group() { Kod = "PARTNER" };
-                }
+                if (d["NazevOdberatele"].GetText().StartsWith("||")) continue;
 
                 var firma = new S5DataFirma() {
-                    Group = grp,
                     Kod = kod,
                     Nazev = SkladDataObj.GetNazev(d["NazevOdberatele"], d["NazevOdberatele2"]),
                     ICO = obj.GetIco(),
@@ -77,8 +67,8 @@ namespace SDataObjs {
                     PouzivatKredit = d["KupniSmlouva"].GetBooleanNegative()
                 };
                 firma.Sleva = new S5DataFirmaSleva() {
-                    Sleva = (firma.Group != null && firma.Group.Kod == "OST") ? "0" : d["RabatO"].GetDecimal(),
-                    VlastniSleva = (firma.Group != null && firma.Group.Kod == "OST") ? "False" : "True"
+                    Sleva = (firma.Group != null && jeOstatni) ? "0" : d["RabatO"].GetDecimal(),
+                    VlastniSleva = (firma.Group != null && jeOstatni) ? "False" : "True"
                 };
                 firma.SlevaUvadena_UserData = d["PRabatO"].GetDecimal();
                                 
@@ -90,7 +80,7 @@ namespace SDataObjs {
                 
                 var prirazka = !(d["RabatO"].GetFloat() < 0 && d["Prirazka"].GetBoolean() == "False");
 
-                if(firma.Group != null && firma.Group.Kod == "OST") {
+                if(jeOstatni) {
                     firma.ObchodniPodminky = new S5DataFirmaObchodniPodminky() {
                         ZpusobVyberuCeny = new enum_ZpusobVyberuCeny() {
                             Value = enum_ZpusobVyberuCeny_value.Item2 // zpusob prebirani ceny poradi
@@ -134,8 +124,6 @@ namespace SDataObjs {
                     };
                 }
                 
-    
-
                 firma.AdresniKlice = new S5DataFirmaAdresniKlice() {
                     DeleteItems = "1",
                     FirmaAdresniKlic = new S5DataFirmaAdresniKliceFirmaAdresniKlic[] {
@@ -157,8 +145,12 @@ namespace SDataObjs {
                         d["KodOdb"].GetAlfaNum().ToUpper() == "OZN" ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
                             AdresniKlic_ID = S0_IDs.GetAdresniKlicID("OZN")
                         } : null,
+                        int.Parse(kodOdb) > 7000 ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
+                            AdresniKlic_ID = S0_IDs.GetAdresniKlicID("INT")
+                        } : null
                     }
                 };
+
                 if(d["KodOdb"].GetAlfaNum().ToUpper().Contains("OZ")) {
                     firma.KodOdb_UserData = d["KodOdb"].GetAlfaNum().ToUpper();
                 } else {
@@ -274,8 +266,7 @@ namespace SDataObjs {
                     ICO = obj.GetIco(),
                     DIC = obj.GetDic(),
                     DatumPorizeni_UserData = d["DatumPorizeni"].GetDate(),
-                    DatumPorizeni_UserDataSpecified = true,
-                    Group = new group() { Kod = "PARTNER" }
+                    DatumPorizeni_UserDataSpecified = true
                 };
 
                 firma.Poznamka = (
@@ -289,7 +280,7 @@ namespace SDataObjs {
 
                 var zast = d["Zastoupeny"].GetTextNoDiacritics().ToLower();
                 var zastOZ = d["ZastoupenyOZ"].GetTextNoDiacritics().ToLower();
-                bool zastoupenyJeZastoupenyOZ = zast != string.Empty && (zast.Contains(zastOZ) || zastOZ.Contains(zast));
+                bool zastoupenyJeZastoupenyOZ = zast != "" && (zast.Contains(zastOZ) || zastOZ.Contains(zast));
 
                 firma.Osoby = new S5DataFirmaOsoby() {
                     SeznamOsob = new S5DataFirmaOsobySeznamOsob() {
