@@ -147,7 +147,7 @@ namespace SDataObjs {
                                         Kod = mernaJednotka,
                                         NedelitelneMnozstvi = d["MinFol"].GetBoolean() == "True" ? d["VFol"].GetNum() : null
                                     },
-                                    d["VFol"].GetNum() != "0" ? new S5DataArtiklJednotkySeznamJednotekArtiklJednotka() {
+                                    d["VFol"].GetNum() != "0" && d["VFol"].GetNum() != d["VKart"].GetNum() ? new S5DataArtiklJednotkySeznamJednotekArtiklJednotka() {
                                         Mnozstvi = "1",
                                         VychoziMnozstvi = d["VFol"].GetNum(),
                                         Jednotka_ID = S0_IDs.GetJednotkaID("fol"),
@@ -228,8 +228,7 @@ namespace SDataObjs {
                         ArtiklDodavatel = new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatel[] {
                                 new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatel() {
                                     DodavatelskeOznaceni = new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatelDodavatelskeOznaceni() {
-                                        Kod = d["DodCislo"].GetAlfaNum(),
-                                        Nazev = d["DodCislo"].GetText()
+                                        Kod = d["DodCislo"].GetAlfaNum()
                                     },
                                     PosledniCena = d["NakupCena"].GetDecimal(),
                                     Firma = new S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatelFirma() {

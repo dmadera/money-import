@@ -90,21 +90,17 @@ Doplnění informace o firmě jednotky
     tel, gsm, email, www, vybrat hlavní kontakt, bankovní spojení
 
 Firma - skupiny
-    Kód: ZAMEST, 
-        Název: Zaměstnanci, Převzít nastavení z nadřazené úrovně: false, Obchod/Způsob dopravy: Osobní odběr, 
-        Obchod/Způsob platby: Hotově, Použít kredit: ANO, Hodnota: 0,00, Ceníky: _NÁKUP, Způsob výběru ceny: Podle pořadí, Sleva pro doklad: NE 0,00
-    Kód: Nezařazené, Není určena k ukládání záznamů: ANO, Použít kredit: ANO, Hodnota: 0,00, Způsob dopravy: Osobní odběr, Způsob platby: Hotově, 
-         Způsob výpočtu ceny: Výběrem, Splatnost: ANO, 10 dní, Vlastní sleva: ANO, Sleva: 0,00, Ceníky: _AKCE, _LETAK, _SPECIAL, _PRODEJ
-    Kód: INTERNET
-        Název: Internetoví odběratelé, Převzít nastavení z nadřazené úrovně: TRUE
-    Kód: PARTNER
-        Název: Obchodní partneři, Převzít nastavení z nadřazené úrovně: TRUE
+    Kód: Nezařazené, Není určena k ukládání záznamů: ANO, Použít kredit: ANO, Hodnota: 0,00, Způsob dopravy: --, Způsob platby: --, 
+         Způsob výpočtu ceny: Podle pořadí, Splatnost: ANO, 10 dní, Vlastní sleva: ANO, Sleva: 0,00, Ceníky: _PRODEJ
+
+Dodací list vydaný
+    Kód: Nezařazené, Způsob platby: převodem
 
 Faktura vydaná
     Kód: Nezařazené, Způsob platby: převodem
 
 Prodejka vydaná
-    Kód: PRODEJKY, Název: Prodejky, způsob patby: prazdne
+    Kód: PRODEJKY, Název: Prodejky, způsob platby: --, způsob dopravy: Osobní převzetí
         Zaokr celkové částky: 1_MAT
         Zaokr dph: --
         Zaúčtování prodejek: 
@@ -126,7 +122,7 @@ Prodejka vydaná
             Čís řada PD: Pokladní doklady ODBYT (HO)
             Čís řada ID: Interní doklady (ID)
             Čís řada PH: Pohledávkové doklady (PH)
-    Kód: OSTATNI, Název: Ostatní, zpusob platby: hotově, způsob dopravy: Osobní převzetí
+    Kód: OSTATNI, Název: Ostatní, zpusob platby: --, způsob dopravy: Osobní převzetí
         Zaúčtování prodejek: 
             Zp zaúčtování pokl. dokl.: Bez položek
             Zp vytv dokladů: Jeden doklad
@@ -228,7 +224,14 @@ Předkontace
     Kód: _ODVOD_O, Název: OSTATNI Odvod z pokladny
 
 Automatické Akce
-    Zakázat dodací list bez dopravy
+    Zakázat dodací list bez dopravy, čísla objednávky odběratele
+    Zakázat dodací list bez odběratele - vazba na adresář
+    Zakázat prodejky bez vazby na odběratele
+    Zakázat prodejky nad 10 tis. do 270 tis. - bez názvu, adresy, města, psč
+    Zakázat prodejky bez dopravy
+    Zakázat faktura bez odběratele - vazba na adresář
+    Zakázat fakturu bez způsobu platby
+    
 
 Uživatelské role
     VEDENI
@@ -244,4 +247,3 @@ Uživatelské role
 
 
 -- změny nastavení od poslední zálohy čisté konfigurace
-

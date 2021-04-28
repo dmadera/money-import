@@ -16,6 +16,12 @@ BEGIN
 	INNER JOIN Ceniky_Cenik AS Cenik ON Cenik.ID = Cena.Cenik_ID
 	WHERE Cenik.ZdrojTypZdroje = 3 and Cena.VypocetZpusobVypoctu = 1
 
+	UPDATE Ceniky_PolozkaCeniku SET
+		NepodlehatSleveDokladu = IIF(Cenik.Kod = '_PRODEJ', 0, 1)
+	FROM Ceniky_PolozkaCeniku AS Cena
+	INNER JOIN inserted ON inserted.ID = Cena.ID
+	INNER JOIN Ceniky_Cenik AS Cenik ON Cenik.ID = Cena.Cenik_ID
+
 	UPDATE Artikly_Artikl SET
 		NakupniCena_UserData = StavCena.JednotkovaSkladovaCena,
 		Marze_UserData = IIF(StavCena.JednotkovaSkladovaCena = 0, 0, ROUND(100/StavCena.JednotkovaSkladovaCena*(StavCena.JednotkovaCenikovaCena-StavCena.JednotkovaSkladovaCena), 2))

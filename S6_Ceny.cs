@@ -56,6 +56,7 @@ namespace SDataObjs {
                 k.Sklad_ID = skladID;
                 k.ZmenaVProcentech = "True";
                 k.CanGetDataFromGroup = "False";
+                k.NepodlehatSleveDokladu = "False";
                 k.VychoziCena = new S5DataPolozkaCenikuVychoziCena() {
                     TypCeny = new enum_TypVychoziCeny() { Value = enum_TypVychoziCeny_value.Item2 },
                     Sklad = new S5DataPolozkaCenikuVychoziCenaSklad() {
@@ -81,6 +82,7 @@ namespace SDataObjs {
                 k.Sklad_ID = skladID;
                 k.ZmenaVProcentech = "True";
                 k.CanGetDataFromGroup = "False";
+                k.NepodlehatSleveDokladu = "True";
                 k.VychoziCena = new S5DataPolozkaCenikuVychoziCena() {
                     TypCeny = new enum_TypVychoziCeny() { Value = enum_TypVychoziCeny_value.Item2 },
                     Sklad = new S5DataPolozkaCenikuVychoziCenaSklad() {
@@ -117,9 +119,6 @@ namespace SDataObjs {
                 if(data["CisloSkup"].GetNum() != "0000") {
                     var firma = new S5DataFirma();
                     var firmaID = S0_IDs.GetFirmaID(S3_Adresar.GetOdbID(data["CisloOdberatele"].GetNum()));
-                    var akceCenikID = S0_IDs.GetCeniktID("_AKCE");
-                    var letakCenikID = S0_IDs.GetCeniktID("_LETAK");
-                    var specCenikID = S0_IDs.GetCeniktID("_SPECIAL");
                     var prodejCenikID = S0_IDs.GetCeniktID("_PRODEJ");
 
                     firma.ID = firmaID;
@@ -140,21 +139,6 @@ namespace SDataObjs {
                                 },
                                 new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
                                     Poradi = "2",
-                                    Firma_ID = firmaID,
-                                    Cenik_ID = akceCenikID
-                                },
-                                new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
-                                    Poradi = "3",
-                                    Firma_ID = firmaID,
-                                    Cenik_ID = letakCenikID
-                                },
-                                new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
-                                    Poradi = "4",
-                                    Firma_ID = firmaID,
-                                    Cenik_ID = specCenikID
-                                },
-                                new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
-                                    Poradi = "5",
                                     Firma_ID = firmaID,
                                     Cenik_ID = prodejCenikID
                                 },
@@ -181,6 +165,7 @@ namespace SDataObjs {
 
                 c.Sklad_ID = skladID;
                 c.Cena = d["SpecCena"].GetDecimal();
+                c.NepodlehatSleveDokladu = "True";
                 c.CanGetDataFromGroup = "False";
                 c.VychoziCena = new S5DataPolozkaCenikuVychoziCena() {
                     TypCeny = new enum_TypVychoziCeny() { Value = enum_TypVychoziCeny_value.Item0 },

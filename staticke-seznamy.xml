@@ -294,6 +294,11 @@
       <Poznamka>Na DL nebude uvedená cena položek ani celková.</Poznamka>
     </AdresniKlic>
     <AdresniKlic>
+      <Kod>-FAPOL</Kod> 
+      <Nazev>FA bez položek</Nazev> 
+      <Poznamka>Na FA nebudou uvedeny položky, ale pouze seznam dodacích listů.</Poznamka>
+    </AdresniKlic>
+    <AdresniKlic>
       <Kod>-SEK</Kod> 
       <Nazev>Nevystavovat šek</Nazev> 
       <Poznamka>Odběrateli nevystavovat šek. Má nejvyšší prioritu.</Poznamka>
