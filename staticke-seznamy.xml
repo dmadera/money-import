@@ -198,9 +198,14 @@
       <Poznamka />
     </ProduktovyKlic>
     <ProduktovyKlic>
-      <Kod>NZ</Kod>
-      <Nazev>Nezobrazovat v katalogu e-shopu</Nazev>
-      <Poznamka>Nezobrazuje položku ve standardním katalogu e-shopu, pouze v extra cenách.</Poznamka>
+      <Kod>@</Kod>
+      <Nazev>Skrýt z katalogu eshopu</Nazev>
+      <Poznamka>V extracenách bude položka zobrazena.</Poznamka>
+    </ProduktovyKlic>
+    <ProduktovyKlic>
+      <Kod>#</Kod>
+      <Nazev>Nezobrazovat v eshopu</Nazev>
+      <Poznamka>V extracenách nebude položka zobrazena.</Poznamka>
     </ProduktovyKlic>
   </ProduktovyKlicList>
   <TypSpojeniList>
@@ -375,14 +380,6 @@
       <Poznamka />
     </ZpusobDopravy>
   </ZpusobDopravyList>
-  <ElektronickyObchodList>
-    <ElektronickyObchod>
-      <Kod>EO_PEMA</Kod>
-      <Nazev>Eshop PEMA</Nazev>
-      <PouzePolozkySCenouVCeniku>True</PouzePolozkySCenouVCeniku>
-      <PrebiratStrukturu EnumValueName="Katalog">0</PrebiratStrukturu>
-    </ElektronickyObchod>
-  </ElektronickyObchodList>
   <StrediskoList>
     <Stredisko>
       <Kod>ESHOP</Kod>

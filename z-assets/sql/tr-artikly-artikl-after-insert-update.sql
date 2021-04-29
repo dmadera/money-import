@@ -86,6 +86,21 @@ BEGIN
 	) AS SQ
 	WHERE Parent_ID = SQ.ID AND ParentJednotka_ID IS NOT NULL
 
+	-- nastavi sazbu DPH
+	UPDATE Artikly_Artikl SET
+		SazbaDPH_UserData = CONCAT(STR(Sazba.Sazba, 2, 0), '%')
+	FROM Artikly_Artikl AS Art
+	INNER JOIN inserted ON inserted.ID = Art.ID
+	INNER JOIN (
+		SELECT ArtSazba.Parent_ID AS Parent_ID, MAX(ArtSazba.Zacatek) AS Zacatek
+		FROM Artikly_ArtiklDPH AS ArtSazba
+		INNER JOIN EconomicBase_SazbaDPH AS Sazba ON Sazba.DruhSazby = ArtSazba.SazbaVystup AND Sazba.PlatnostDo >= GETDATE()
+		WHERE ArtSazba.Zacatek <= GETDATE()
+		GROUP BY ArtSazba.Parent_ID
+	) AS ArtSazbaSub ON ArtSazbaSub.Parent_ID = Art.ID
+	INNER JOIN Artikly_ArtiklDPH AS ArtSazba ON ArtSazba.Parent_ID = ArtSazbaSub.Parent_ID AND ArtSazba.Zacatek = ArtSazbaSub.Zacatek
+	INNER JOIN EconomicBase_SazbaDPH AS Sazba ON Sazba.DruhSazby = ArtSazba.SazbaVystup AND Sazba.PlatnostDo >= GETDATE()
+	
 	-- kategorie - naplnit uzivatelsky sloupec kategorii
 	;WITH Tree (ID, Nazev, ParentObject_ID, Level, KompletniCesta, ListID) AS (
 		-- anchor:
@@ -101,7 +116,6 @@ BEGIN
 		FROM Tree 
 		INNER JOIN Artikly_KategorieArtiklu AS t ON t.ParentObject_ID = Tree.ID
 	)
-
 	UPDATE Artikly_Artikl SET
 		KategorieRetezec_UserData = SQ.Kategorie_UserData,
 		Kategorie = SQ.Kategorie
@@ -123,6 +137,6 @@ BEGIN
 		GROUP BY Art.ID
 	) AS SQ ON SQ.ID = Art.ID
 
-	OPTION (MAXRECURSION 5);
+	OPTION (MAXRECURSION 3);
 
 END

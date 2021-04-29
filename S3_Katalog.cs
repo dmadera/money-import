@@ -125,7 +125,9 @@ namespace SDataObjs {
                     ArtiklDPH = new S5DataArtiklSazbyDPHArtiklDPH[] {
                         new S5DataArtiklSazbyDPHArtiklDPH() {
                             SazbaVstup = sazbaDPH,
-                            SazbaVystup = sazbaDPH
+                            SazbaVystup = sazbaDPH,
+                            Zacatek = DateTime.Now.Date,
+                            ZacatekSpecified = true
                         }
                     }
                 };
@@ -181,7 +183,10 @@ namespace SDataObjs {
 
                 var priznak = d["Priznak"].GetNoSpaces().ToUpper();
                 var priznakID = S0_IDs.GetProduktovyKlicID(priznak);
+                var kodStr = d["KodZbozi"].GetNum();
+                var podkodStr = d["PodKodZbozi"].GetNum();
                 var webNezobrazovatExtra = d["Zobrazovat"].GetBooleanNegative();
+                var webNezobrazovat = kodStr == "" || kodStr == "0000" || podkodStr == "" || podkodStr == "0000" ? "True" :  "False";
 
                 artikl.ProduktoveKlice = new S5DataArtiklProduktoveKlice() {
                     DeleteItems = "1",
@@ -192,10 +197,16 @@ namespace SDataObjs {
                                 ID = priznakID
                             }
                         } : null,
-                        webNezobrazovatExtra == "True" ? new S5DataArtiklProduktoveKliceArtiklProduktovyKlic() {                        
-                            ProduktovyKlic_ID = S0_IDs.GetProduktovyKlicID("NZ"),
+                        webNezobrazovat == "True" ? new S5DataArtiklProduktoveKliceArtiklProduktovyKlic() {                        
+                            ProduktovyKlic_ID = S0_IDs.GetProduktovyKlicID("#"),
                             ProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlicProduktovyKlic() {
-                                ID = S0_IDs.GetProduktovyKlicID("NZ")
+                                ID = S0_IDs.GetProduktovyKlicID("#")
+                            }
+                        } : null,
+                        webNezobrazovatExtra == "True" ? new S5DataArtiklProduktoveKliceArtiklProduktovyKlic() {                        
+                            ProduktovyKlic_ID = S0_IDs.GetProduktovyKlicID("@"),
+                            ProduktovyKlic = new S5DataArtiklProduktoveKliceArtiklProduktovyKlicProduktovyKlic() {
+                                ID = S0_IDs.GetProduktovyKlicID("@")
                             }
                         } : null,
                     }
@@ -208,19 +219,7 @@ namespace SDataObjs {
                         PlatnostDo = new DateTime(9998, 12, 31)
                     };
                 }
-
-                var kodStr = d["KodZbozi"].GetNum();
-                var podkodStr = d["PodKodZbozi"].GetNum();
-                if(!(kodStr == "" || kodStr == "0000" || podkodStr == "" || podkodStr == "0000")) {
-                    artikl.ArtiklElektronickyObchod = new S5DataArtiklArtiklElektronickyObchod() {
-                        DeleteItems = "1",
-                        ArtiklElektronickyObchod = new S5DataArtiklArtiklElektronickyObchodArtiklElektronickyObchod[] {
-                            new S5DataArtiklArtiklElektronickyObchodArtiklElektronickyObchod() {
-                                Obchod_ID = eobchodID
-                            }
-                        }
-                    };
-                }
+                
 
                 artikl.Dodavatele = d["CisloDodavatele"].GetNum() != "00000" ? new S5DataArtiklDodavatele() {
                     SeznamDodavatelu = new S5DataArtiklDodavateleSeznamDodavatelu() {
