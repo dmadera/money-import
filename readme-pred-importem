@@ -37,7 +37,7 @@ Vytvoř uživatelské sloupce
 Vygeneruj triggery a procedury
 Import exportu a importu
 Import číselných řad
-    Smazat: INV
+    Smazat: INV, PD
 Import statických seznamů
 
 Sklad
@@ -53,7 +53,6 @@ Objednávka přijatá - skupiny
         Kontroly: 
             Přijatý doklad: Nepovolit
 Objednávka přijatá - obecné
-    Posouvat platnost na následující pracovní den
     Upozorňovat na nevyřízené položky: Stejné položky všech odběratelů
     Počítat zisk: true
     Povolit výchozí výpočet nákladů: Aktuální pořízovací cena zásoby
@@ -69,10 +68,14 @@ Nabídky vydané - obecné
 Artikl - skupiny
     Nastavit zobrazení včetně podřízených
     Kód: Nezařazené, Není určena pro ukládání záznamů: true, Číselná řada: zrušit vazbu (pro import)
-    Kód: KATALOG, Název: Katalog zboží, Druh položky katalogu: ZBO, Číselná řada: zrušit vazbu 
+    Kód: KATALOG, Název: Katalog zboží, Převzít nastavení z nadřazené úrovně: ANO
     Kód: SPECIAL, Název: Speciální zboží, Převzít nastavení z nadřazené úrovně: ANO
     Kód: ZRUSENO, Název: Zrušeno, Převzít nastavení z nadřazené úrovně: ANO
-    Kód: OBALY, Název: Obaly, Druh položky katalogu: OBA, Číselná řada: zrušit vazbu 
+    Kód: OBALY, Název: Obaly, Druh položky katalogu: OBA, Číselná řada: zrušit vazbu
+Artikly - Obecné
+    Kontroly: 
+        Kód: Nepovolit, Nepovolit
+        Název: Nepovoli, Upozornit
 
 Ceník
     Kód: _PRODEJ, Název: Prodejní
@@ -89,12 +92,22 @@ Doplnění informace o firmě jednotky
 Firma - skupiny
     Kód: Nezařazené, Není určena k ukládání záznamů: ANO, Použít kredit: ANO, Hodnota: 0,00, Způsob dopravy: --, Způsob platby: --, 
          Způsob výpočtu ceny: Podle pořadí, Splatnost: ANO, 10 dní, Vlastní sleva: ANO, Sleva: 0,00, Ceníky: _PRODEJ
+Firma - obecné
+    Kontroly: 
+        Nazev: Nepovolit, Nekontrolovat
+        Email: Nepovolit
+        Cenik: Nepovolit, 1
 
 Dodací list vydaný
-    Kód: Nezařazené, Způsob platby: převodem
+    Kód: Nezařazené, Způsob platby: převodem, Popis: !, Provádět kontrolu překročení limitu: ANO
+Dodací list vydaný - Obecní
+    Zisk: ano, jako u objednávek
+    Kontroly:
+        Doklad došlý: Nepovolit, Nekontrolovat
+        Variabilní symbol: Nekontrolovat, Upozornit
 
-Faktura vydaná
-    Kód: Nezařazené, Způsob platby: převodem
+Faktura vydaná - skupiny
+    Kód: Nezařazené, Způsob platby: převodem, Popis: !
         Obecné:
             Zaokrouhlení celkové částky: 1_MAT
             Sazba DPH pro zaokr.: Nulová
@@ -110,6 +123,13 @@ Faktura vydaná
             Skupina ceninnových pokl. dokladů: Nezařazeno
             Skupina interních dokladů: Úhrady kartou
             Skupina pohledávkových doklad: Úhrady kartou
+Faktura vydaná - Obecné
+    Zisk: ano, jako u objednávek
+    Kontroly: 
+        Variabilní symbol: Nepovolit, Nepovolit
+        Číslo objednávky: Nepovolit, Nekontrolovat
+        Způsob platby: Nepovolit
+    
 
 Prodejka vydaná
     Kód: PRODEJKY, Název: Prodejky, způsob platby: --, způsob dopravy: Osobní převzetí
@@ -134,7 +154,9 @@ Prodejka vydaná
             Čís řada PD: Pokladní doklady ODBYT (HO)
             Čís řada ID: Interní doklady (ID)
             Čís řada PH: Pohledávkové doklady (PH)
-    Kód: OSTATNI, Název: Ostatní, zpusob platby: --, způsob dopravy: Osobní převzetí
+    Kód: OSTATNI, Název: Ostatní, zpusob platby: --, způsob dopravy: Osobní převzetí, Popis: OSTATNI Prodejka vydaná
+        Zaokr celkové částky: 1_MAT
+        Zaokr dph: --
         Zaúčtování prodejek: 
             Zp zaúčtování pokl. dokl.: Bez položek
             Zp vytv dokladů: Jeden doklad
@@ -146,7 +168,7 @@ Prodejka vydaná
             Popis: OSTATNI Tržba za prodej ze skladu
             Hot. pokladna: _OSTATNI
             Členění DPH: _Ř000 U
-            Předkontace: _TRZBA (Tržba v hotovosti - zboží, cena celkem /604999)
+            Předkontace: __TRZBA (Tržba v hotovosti - zboží, cena celkem /604999)
             Meziúčet pro nepeněžní platidla: 395999
             Cíl skup. PD: _OSTATNI
             Cíl skup. ID: _PRODEJKY
@@ -168,14 +190,14 @@ Pokladna
 Pokladní doklady - skupiny
     Kód: UCETNI, Název: Pokladna UCETNI, Pokladní doklad UCETNI
         Příjem:
-            Číselná řada: POKD_PRIJ, Zaokr: 1_MAT, Předkontace zaokr: FV009, Sazba DPH pro zaokr: Nulová
-            Doklad: PP001, _Ř000 U
-            Úhrady: --, _Ř000 U
+            Číselná řada: POKD_PRIJ, Sazba DPH pro zaokr: Nulová
+            Doklad: _ODVOD_P, _Ř000 U
+            Úhrady: PP002, _Ř000 U
             Úhrady: ZALPRI, 19Ř01,02
         Výdej:
-            Číselná řada: POKD_PRIJ, Zaokr: 1_MAT, Předkontace zaokr: FP016, Sazba DPH pro zaokr: Nulová
-            Doklad: --, _Ř000 P
-            Úhrady: --, _Ř000 P
+            Číselná řada: POKD_PRIJ, Předkontace zaokr: FP016, Sazba DPH pro zaokr: Nulová
+            Doklad: PV001, _Ř000 P
+            Úhrady: PV005, _Ř000 P
             Úhrady: ZALVYD, 19Ř03,04
 
     Kód: ODBYT, Název: Pokladna ODBYT, Popis: Pokladní doklad ODBYT
@@ -203,7 +225,7 @@ Pokladní doklady - skupiny
             Úhrady: --, _Ř000 P
 
 Interní doklady - skupiny:
-    Kód: SEKY, Název: Šeky, Číselná řada: OST_SEK, Popis: Šek vydaný
+    Kód: SEKY, Název: OSTATNI Šeky, Číselná řada: _SEKY, Popis: OSTATNI Šeky
         Předkontace: __UHRADA,  Členění DPH: _Ř000 U, Primární účet MD: 215999
         Podrobnosti/Predkontace: zrušit vazby
 
@@ -223,6 +245,9 @@ Pohledávkové dokladu - skupiny:
         Členění DPH: _Ř000 U
         Provádět kontrolu překročení limitu: NE
         Předkontace: _KARTA (_Ř000 U, 378000/395000)
+        Primární účet: --
+        Použít dobu splatnosti: ANO
+        Doba splatnosti: 10
     Kód: _USEK, Název: OSTATNI Pohledávka na úhradu šekem
         Popis: OSTATNI Pohledávka na úhradu šekem
         Číselná řada: _POHL_DOKL
@@ -247,18 +272,18 @@ Nepeněžní platidla
     Účet: 211500, Název: Pokladna ODBYT, Druh účtu: Rozvahový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO
     Účet: 261500, Název: Převod ODBYT-UCETNI, Druh účtu: Rozvahový, Sledovat saldo: NE, Vnitropodnikový: ANO
     Účet: 261999, Název: OSTATNI Převod ODBYT-VEDENI, Druh účtu: Rozvahový, Sledovat saldo: NE, Vnitropodnikový: ANO
-    Účet: 211999, Název: OSTATNI Pokladna ODBYT, Druh účtu: Rozvahový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO
-    Účet: 215999, Název: OSTATNI Uhrazené šeky, Druh účtu: Rozvahový, Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO
+    Účet: 211999, Název: OSTATNI Pokladna ODBYT, Druh účtu: Rozvahový, Sledovat saldo: NE, Vnitropodnikový: ANO
+    Účet: 215999, Název: OSTATNI Uhrazené šeky, Druh účtu: Rozvahový, Sledovat saldo: NE, Vnitropodnikový: ANO
     Účet: 395999, Název: OSTATNI Vnitřní zúčtování, Druh účtu: Rozvahový, Sledovat saldo: NE, Vnitropodnikový: ANO
     Účet: 378999, Název: OSTATNI Pohledávky na úhradu šekem, Druh účtu: Rozvahový, Sledovat saldo: ANO, Vnitropodnikový: ANO
     Účet: 604999, Název: OSTATNI Tržby, Druh účtu: Výsledkový, Typ účtu: Výnosový,
         Ovlivňující daň z přijmů: NE, Vnitropodnikový: ANO
 
 Předkontace
-    Kód: _TRZBA, Název: OSTATNI Tržba
+    Kód: __TRZBA, Název: OSTATNI Tržba
         Členění DPH: _Ř000 U
         Cena Celkem, MD: --, D: 604999, Hlavní pol: ANO
-    Kód: _UHRADA, Název: OSTATNI Úhrada
+    Kód: __UHRADA, Název: OSTATNI Úhrada
         Členění DPH: _Ř000 U
         Cena Celkem, MD: --, D: 378999, Hlavní pol: ANO
     Kód: _KARTA, Název: Pohledávka - úhrada kartou
@@ -279,13 +304,11 @@ Předkontace
         Cena Celkem, MD: --, D: 261500, Hlavní pol: ANO
 
 Automatické Akce
-    Zakázat dodací list bez dopravy, čísla objednávky odběratele
-    Zakázat dodací list bez odběratele - vazba na adresář
+    Zakázat dodací list bez dopravy nebo bez odběratele - vazba na adresář
     Zakázat prodejky bez vazby na odběratele
     Zakázat prodejky nad 10 tis. do 270 tis. - bez názvu, adresy, města, psč
     Zakázat prodejky bez dopravy
     Zakázat faktura bez odběratele - vazba na adresář
-    Zakázat fakturu bez způsobu platby
     Zakázat fakturu bez položek
     Upozornit na upravený šek
     Upozornit na vytvořený šek
@@ -300,7 +323,3 @@ Uživatelské role
             skrýt způsob platby
         Dodací list
             skrýt způsob platby
-
-
-
--- změny nastavení od poslední zálohy čisté konfigurace

@@ -4,7 +4,8 @@ Filtry
     OZ nové	            Firma               Adresní klíč OZN
     Iternetoví odb      Firma               Adresní klíč INT
     S nárokem na šek    Faktura vydaná      Odběratel - Adresní klíč != -SEK & CelkemSDPH >= 5000 & Sleva = 0
-    K zaúčtování        Prodejky vydané     Způsob platby != --
+    S nárokem na šek    Prodejka vydaná     Odběratel - Adresní klíč != -SEK & CelkemSDPH >= 5000 & Sleva = 0
+    K zaúčtování        Prodejka vydané     Způsob platby != --
     
 
 Aktualizovat data podle triggrů. Provést update all na Katalog. 

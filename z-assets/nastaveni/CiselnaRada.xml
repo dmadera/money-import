@@ -7,7 +7,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>_PR</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -24,7 +24,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>RP</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -41,7 +41,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>PP</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -58,7 +58,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>IN</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>00</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -75,7 +75,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>_HO</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -92,7 +92,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>PR</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -109,7 +109,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>OP</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -126,7 +126,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>_ID</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -143,7 +143,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>PK</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -160,7 +160,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix />
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix />
           <Cislo>1</Cislo>
@@ -177,7 +177,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>BV</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -194,7 +194,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>NP</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -211,7 +211,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>_SK</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -228,7 +228,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>PI</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -245,7 +245,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>ID</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -262,7 +262,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>PV</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -279,7 +279,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>OS</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -296,7 +296,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>OV</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -313,7 +313,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>HO</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -330,7 +330,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>VZ</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -347,7 +347,7 @@
       <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>HV</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -364,7 +364,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>NV</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -381,7 +381,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>SD</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -398,7 +398,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>ZM</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix />
           <Cislo>1</Cislo>
@@ -415,7 +415,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>DP</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -432,7 +432,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>FP</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -449,7 +449,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>LM</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -466,10 +466,10 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>AD</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix />
-          <Cislo>1</Cislo>
+          <Cislo>2</Cislo>
           <PocetMist>5</PocetMist>
           <Zacatek>2021-01-01T00:00:00</Zacatek>
           <ZobrazitNuly>True</ZobrazitNuly>
@@ -483,7 +483,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>SP</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>724</Cislo>
@@ -500,7 +500,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>_PH</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -517,7 +517,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>ZP</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -534,7 +534,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>ED</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -551,7 +551,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>MA</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -568,7 +568,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>ZV</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -585,7 +585,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>OR</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -602,7 +602,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>RV</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -619,7 +619,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>PH</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -636,7 +636,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>VY</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix />
           <Cislo>1</Cislo>
@@ -653,7 +653,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>PU</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -670,7 +670,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>PT</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -687,7 +687,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>SR</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -704,7 +704,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>CP</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -721,7 +721,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>SV</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>5619</Cislo>
@@ -738,7 +738,7 @@
       <NevracetDoVolnychCisel>True</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>HP</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -755,7 +755,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>DV</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -772,7 +772,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>ZA</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -789,7 +789,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>AK</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
@@ -806,7 +806,7 @@
       <NevracetDoVolnychCisel>False</NevracetDoVolnychCisel>
       <Poznamka />
       <Prefix>FV</Prefix>
-      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List" DeleteItems="1">
+      <SeznamObdobi ObjectName="ObdobiCiselneRady" ObjectType="List">
         <ObdobiCiselneRady ObjectName="ObdobiCiselneRady" ObjectType="Object">
           <CiselnyPrefix>21</CiselnyPrefix>
           <Cislo>1</Cislo>
