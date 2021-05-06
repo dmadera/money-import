@@ -49,51 +49,17 @@ namespace SDataObjs {
                 var d = karta.Items;
                 var k = new S5DataPolozkaCeniku();
                 k.Cenik_ID = S0_IDs.GetCeniktID("_PRODEJ");
-                k.Kod = "PPPP" + d["CisloKarty"].GetNum();
+                k.Kod = "PROD" + d["CisloKarty"].GetNum();
                 k.Artikl_ID = S0_IDs.GetArtiklID(S3_Katalog.GetID(d["CisloKarty"].GetNum()));
                 if(k.Artikl_ID == null) continue;
 
                 k.Sklad_ID = skladID;
-                k.ZmenaVProcentech = "True";
                 k.CanGetDataFromGroup = "False";
                 k.NepodlehatSleveDokladu = "False";
                 k.VychoziCena = new S5DataPolozkaCenikuVychoziCena() {
-                    TypCeny = new enum_TypVychoziCeny() { Value = enum_TypVychoziCeny_value.Item2 },
-                    Sklad = new S5DataPolozkaCenikuVychoziCenaSklad() {
-                        ID = skladID
-                    }
+                    TypCeny = new enum_TypVychoziCeny() { Value = enum_TypVychoziCeny_value.Item0 }
                 };
-                k.Sklad_ID = skladID;
-                k.VypocetCeny = new S5DataPolozkaCenikuVypocetCeny() {
-                    VyseZmeny = d["Rabat"].GetDecimalNegative(),
-                    ZpusobVypoctu = new enum_ZpusobVypoctuCeny() { Value = enum_ZpusobVypoctuCeny_value.Item1 }
-                };
-                _ceny.Add(k);
-            }
-
-            foreach (var karta in karty.Data) {
-                var d = karta.Items;
-                var k = new S5DataPolozkaCeniku();
-                k.Cenik_ID = S0_IDs.GetCeniktID("_NAKUP");
-                k.Kod = "NNNN" + d["CisloKarty"].GetNum();
-                k.Artikl_ID = S0_IDs.GetArtiklID(S3_Katalog.GetID(d["CisloKarty"].GetNum()));
-                if(k.Artikl_ID == null) continue;
-                
-                k.Sklad_ID = skladID;
-                k.ZmenaVProcentech = "True";
-                k.CanGetDataFromGroup = "False";
-                k.NepodlehatSleveDokladu = "True";
-                k.VychoziCena = new S5DataPolozkaCenikuVychoziCena() {
-                    TypCeny = new enum_TypVychoziCeny() { Value = enum_TypVychoziCeny_value.Item2 },
-                    Sklad = new S5DataPolozkaCenikuVychoziCenaSklad() {
-                        ID = skladID
-                    }
-                };
-                k.Sklad_ID = skladID;
-                k.VypocetCeny = new S5DataPolozkaCenikuVypocetCeny() {
-                    VyseZmeny = "0",
-                    ZpusobVypoctu = new enum_ZpusobVypoctuCeny() { Value = enum_ZpusobVypoctuCeny_value.Item1 }
-                };
+                k.Cena = Math.Round(d["NakupCena"].GetFloat() + d["NakupCena"].GetFloat() / 100 * d["Rabat"].GetFloat(), 2).ToString().Replace(".", ",");
                 _ceny.Add(k);
             }
         }

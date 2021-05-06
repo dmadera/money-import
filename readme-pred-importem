@@ -323,3 +323,8 @@ Uživatelské role
             skrýt způsob platby
         Dodací list
             skrýt způsob platby
+
+
+--- poslední úpravy na S4_Agenda po záloze čistého
+změna triggerů
+nastaveni filtru s narokem na sek u prodejek -> skupin != Ostatni

@@ -73,14 +73,15 @@ namespace SDataObjs {
                 firma.SlevaUvadena_UserData = d["PRabatO"].GetDecimal();
                                 
                 var akceCenikID = S0_IDs.GetCeniktID("_AKCE");
-                var letakCenikID = S0_IDs.GetCeniktID("_LETAK");
-                var specCenikID = S0_IDs.GetCeniktID("_SPECIAL");
                 var prodejCenikID = S0_IDs.GetCeniktID("_PRODEJ");
-                var nakupCenikID = S0_IDs.GetCeniktID("_NAKUP");
                 
                 var prirazka = !(d["RabatO"].GetFloat() < 0 && d["Prirazka"].GetBoolean() == "False");
 
                 if(jeOstatni) {
+                    firma.Sleva = new S5DataFirmaSleva() {
+                        Sleva = "25,0",
+                        VlastniSleva = "True"
+                    };
                     firma.ObchodniPodminky = new S5DataFirmaObchodniPodminky() {
                         ZpusobVyberuCeny = new enum_ZpusobVyberuCeny() {
                             Value = enum_ZpusobVyberuCeny_value.Item2 // zpusob prebirani ceny poradi
@@ -90,7 +91,7 @@ namespace SDataObjs {
                             FirmaCenik = new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik[] {                                
                                 new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
                                     Poradi = "1",
-                                    Cenik_ID = nakupCenikID
+                                    Cenik_ID = prodejCenikID
                                 }
                             }
                         }
@@ -104,19 +105,11 @@ namespace SDataObjs {
                             DeleteItems = "1",
                             FirmaCenik = new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik[] {                                
                                 new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
-                                    Poradi = prirazka ? "1" : "2",
+                                    Poradi = "1",
                                     Cenik_ID = akceCenikID
                                 },
                                 new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
-                                    Poradi = prirazka ? "2" : "3",
-                                    Cenik_ID = letakCenikID
-                                },
-                                new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
-                                    Poradi = prirazka ? "3" : "4",
-                                    Cenik_ID = specCenikID
-                                },
-                                new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
-                                    Poradi = prirazka ? "4" : "1",
+                                    Poradi = "2",
                                     Cenik_ID = prodejCenikID
                                 },
                             }
