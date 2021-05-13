@@ -20,18 +20,18 @@ namespace SkladData {
         public string GetF3Note() {
             if (!_items.ContainsKey("Poznamka1") || !_items.ContainsKey("Poznamka2") || !_items.ContainsKey("Poznamka3"))
                 return null;
-            string output = String.Format("{0}\n{1}\n{2}",
+            string output = String.Format("{0}&#13;&#10;{1}&#13;&#10;{2}",
                 _items["Poznamka1"].GetText(), _items["Poznamka2"].GetText(), _items["Poznamka3"].GetText());
-            var r = new Regex(@"^\s*(\n|\r|\r\n)");
+            var r = new Regex(@"^\s*(&#13;&#10;)");
             return r.Replace(output, "");
         }
 
         public string GetL2Note() {
             if (!_items.ContainsKey("Poznamka4") || !_items.ContainsKey("Poznamka5"))
                 return null;
-            string output = String.Format("{0}\n{1}",
+            string output = String.Format("{0}&#13;&#10;{1}",
                 _items["Poznamka4"].GetText(), _items["Poznamka5"].GetText());
-            var r = new Regex(@"^\s*(\n|\r|\r\n)");
+            var r = new Regex(@"^\s*(&#13;&#10;)");
             return r.Replace(output, "");
         }
 

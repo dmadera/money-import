@@ -1,4 +1,13 @@
+ARES ičo 63154617, číslo popisné je v adrese 2x. 
+Při výběru ceny při přidání položky do dokladu nelze vybrat cenu CTRL+ENTER ani ENTER a kurzor by bylo fajn mít aktivní na seznamu a ne na poli "Kód položky", který stejně nelze editovat. 
+U výběru položek do dokladu se nelze pohybovat v seznamu CTRL+PgDown/PgUP, protože to přepíná záložky a ne zobrazí první nebo řádek seznamu. 
+
+Nejde při importu XML objektu Artikl nedělitelné množství.
+Nefunguje Import/Export položky ElektronickehoObchodu na Artiklu.
+
+-- Technická podpora 
 V nové verzi 1.12.1.6395 FIX1 zmizelo z nastavení evidovat náhradní plnění a limit.
+    -- licencí opraveno
 
 -- Volšan 15. 4. 2021
 Jak zaúčtovat platby kartou? Interní doklad, Pohledávka (261, 311) 
@@ -150,6 +159,3 @@ Firma
 Ostatn
     Jaké všechny možnosti má CSW automatic? - Lze udělat hlášku při ukládání dokladu popřípadě položky do dokladu? 
     
----
-Nejde při importu XML objektu Artikl nedělitelné množství.
-Nefunguje Import/Export položky ElektronickehoObchodu na Artiklu.

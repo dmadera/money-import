@@ -21,7 +21,7 @@ Průvodce nastavení programu
         Kontrolovat minimální zisk při prodeji: true
         Minimální procentuální zisk: 3,00
         Automatické přidání nové položky katalogu: Přidat automaticky
-        Zobrazit kartu ceníkové ceny: false
+        Zobrazit kartu ceníkové ceny: true
     Sklady
         Výchozí sklad agendy: Hlavní
         Automatické přidání nové položky katalogu do skladové zásoby: Přidat automaticky
@@ -42,11 +42,16 @@ Import statických seznamů
 
 Sklad
     Kód: HL, Název: Hlavní
-    Způsob oceňování: Vážený průměr
-    Výdej do mínusu: Upozornit
-    Pokles množství k dispozici: Nedělat nic
-    Typ zdroje přebírání: Katalog
-    Výchozí sklad agendy: ANO
+        Způsob oceňování: Vážený průměr
+        Výdej do mínusu: Upozornit
+        Pokles množství k dispozici: Nedělat nic
+        Typ zdroje přebírání: Katalog
+        Výchozí sklad agendy: ANO
+    Kód: AKCE, Název: Akční
+        Způsob oceňování: Vážený průměr
+        Výdej do mínusu: Nepovolit
+        Pokles množství k dispozici: Nedělat nic
+        Typ zdroje přebírání: Žádné
 
 Objednávka přijatá - skupiny
     Kód: Nezařazeno, Provádět konrolu překročení kreditu: ANO, Popis: !,
@@ -76,15 +81,16 @@ Artikly - Obecné
     Kontroly: 
         Kód: Nepovolit, Nepovolit
         Název: Nepovoli, Upozornit
+        Kontrolovat duplicitu v názvu délce: 40
 
 Ceník
     Kód: _PRODEJ, Název: Prodejní
-        Typ výchozí ceny: Skladová, Výchozí sklad: HL, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny -25%
+        Typ výchozí ceny: Není
         Typ zdroje přebírání: Katalog, Skupina katalogu: Nezařazené
         Nastavit jako výchozí: ANO
-    Kód: _NAKUP, Název: Nákupní
-        Typ výchozí ceny: Skladová, Výchozí sklad: HL, Zaokrouhlení: 0,01 Matematicky, Způsob změny ceny: +Sleva, -Marže, Výše změny 0
-        Typ zdroje přebírání: Katalog, Skupina katalogu: Nezařazené
+    Kód: _AKCE, Název: Akční
+        Typ výchozí ceny: Není
+        Typ zdroje přebírání: Sklad, Název skladu: AKCE
     
 Doplnění informace o firmě jednotky
     tel, gsm, email, www, vybrat hlavní kontakt, bankovní spojení
@@ -328,3 +334,7 @@ Uživatelské role
 --- poslední úpravy na S4_Agenda po záloze čistého
 změna triggerů
 nastaveni filtru s narokem na sek u prodejek -> skupin != Ostatni
+Firma skupina Nezařazeno - výchozí ceníky _AKCE, _PRODEJ
+automatická akce kontrola hlavní osoba u Firem
+automatická akce kontrola na prodejní ceník u Firem
+kontrolovat duplicitu nazvu katalog - 40 znaku

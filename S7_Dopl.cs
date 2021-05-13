@@ -128,6 +128,8 @@ namespace SDataObjs {
                                 Stat = new S5DataFirmaAdresyObchodniAdresaStat() { ID = statID }
                             }
                         };
+
+                        firma.Nazev = SkladDataObj.GetNazev(nadrazenaFirmaObj.Items["NazevOdberatele"], nadrazenaFirmaObj.Items["NazevOdberatele2"]);
                         
                         firma.NadrazenaFirma = new S5DataFirmaNadrazenaFirma() {
                             PrevzitObchodniPodminky = "True",
@@ -137,6 +139,15 @@ namespace SDataObjs {
                                 ID = nadrazenaFirmaID
                             }
                         };
+
+                        if(email1ID == null) {
+                            var emails = SkladDataObj.GetEmaily(nadrazenaFirmaObj.Items["Mail"]);
+                            firma.SeznamSpojeni.Spojeni[firma.SeznamSpojeni.Spojeni.Length] = new S5DataFirmaSeznamSpojeniSpojeni() {
+                                TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mail"),
+                                SpojeniCislo = emails.Item1,
+                                Kod_UserData = S7_Dopl.GetKodEmail1(kod),                               
+                            };
+                        }
                     }
                 }
 

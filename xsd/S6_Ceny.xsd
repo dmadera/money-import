@@ -160,6 +160,7 @@
                     <xs:element name="DatumPosty" type="dateTime_DateMin" minOccurs="0" />
                     <xs:element name="DatumUkonceniCinnosti" type="dateTime_DateMin" minOccurs="0" />
                     <xs:element name="DIC" type="emptiable_string_20" minOccurs="0" />
+                    <xs:element name="Doprava_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="EkoKomKlient" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="EmailSpojeni_ID" type="guid" />
                     <xs:element name="EvidovatNahradniPlneni" type="emptiable_bool" minOccurs="0" />
@@ -170,6 +171,7 @@
                     <xs:element name="GLN" type="emptiable_string_15" minOccurs="0" />
                     <xs:element name="GpsLat" type="emptiable_decimal_6" minOccurs="0" />
                     <xs:element name="GpsLong" type="emptiable_decimal_6" minOccurs="0" />
+                    <xs:element name="HlavniCinnost_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="HlavniOsoba_ID" type="guid" />
                     <xs:element name="HlavniUcet_ID" type="guid" />
                     <xs:element name="ICDPH" type="emptiable_string_20" minOccurs="0" />
@@ -185,15 +187,19 @@
                     <xs:element name="ISIRRelevanceVysledku" type="emptiable_integer" minOccurs="0" />
                     <xs:element name="Kod" type="emptiable_string_20" minOccurs="0" />
                     <xs:element name="KodDanovehoUradu" type="emptiable_string_4" minOccurs="0" />
+                    <xs:element name="KodOdb_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="Kraj_ID" type="guid" />
                     <xs:element name="Logo_ID" type="guid" />
                     <xs:element name="Mena_ID" type="guid" />
                     <xs:element name="MojeFirmabankovniSpojeni_ID" type="guid" />
                     <xs:element name="NadrazenaFirma_ID" type="emptiable_guid" minOccurs="0" />
+                    <xs:element name="NahradniPlneni_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="Nazev" type="emptiable_string_200" minOccurs="0" />
+                    <xs:element name="NazevPomocny_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="NekontrolovatLimitRPDP" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="ObchPsc_ID" type="guid" />
                     <xs:element name="ObchStat_ID" type="guid" />
+                    <xs:element name="Platba_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="PlatceDPH" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="PomerneUplatnovaniDPH" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="PosilatPostu" type="emptiable_bool" minOccurs="0" />
@@ -211,6 +217,7 @@
                     <xs:element name="Region_ID" type="guid" />
                     <xs:element name="ReklamacePocetDniProVyrizeni" type="emptiable_integer" minOccurs="0" />
                     <xs:element name="RocniLimitNahradnihoPlneni" type="emptiable_decimal_2" minOccurs="0" />
+                    <xs:element name="Sek_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="ServisPocetDniProVyrizeni" type="emptiable_integer" minOccurs="0" />
                     <xs:element name="SlevaUvadena_UserData" type="emptiable_decimal_2" minOccurs="0" />
                     <xs:element name="SpecifickySymbol" type="emptiable_string_50" minOccurs="0" />
@@ -1375,9 +1382,12 @@
                     <xs:element name="Cena" type="emptiable_decimal_4" minOccurs="0" />
                     <xs:element name="CenaDual" type="emptiable_decimal_4" minOccurs="0" />
                     <xs:element name="Cenik_ID" type="emptiable_guid" minOccurs="0" />
+                    <xs:element name="CisloDokladu_UserData" type="emptiable_string_unbounded" minOccurs="0" />
+                    <xs:element name="DatumZmenyZasoby_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="DruhSazby" type="enum_DruhSazbyDPH" minOccurs="0" />
                     <xs:element name="IDokladPriceListItemsExported" type="enum_StavExportuIDoklad" minOccurs="0" />
                     <xs:element name="Kod" type="string_60" />
+                    <xs:element name="Marze_UserData" type="emptiable_decimal_2" minOccurs="0" />
                     <xs:element name="MnozstevniSleva_ID" type="guid" />
                     <xs:element name="Nazev" type="emptiable_string_100" minOccurs="0" />
                     <xs:element name="NepodlehatSleveDokladu" type="emptiable_bool" minOccurs="0" />
@@ -1386,6 +1396,7 @@
                     <xs:element name="SazbaDPHVstupProExport_ID" type="guid" />
                     <xs:element name="SazbaDPHVystupProExport_ID" type="guid" />
                     <xs:element name="Sklad_ID" type="guid" />
+                    <xs:element name="SkladovaCena_UserData" type="emptiable_decimal_2" minOccurs="0" />
                     <xs:element name="Source_ID" type="emptiable_guid" minOccurs="0" />
                     <xs:element name="TypCeny" type="enum_TypCenyPolozkyCeniku" minOccurs="0" />
                     <xs:element name="VlastniDruhSazby" type="emptiable_bool" minOccurs="0" />

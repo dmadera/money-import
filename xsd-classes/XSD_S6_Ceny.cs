@@ -3183,6 +3183,8 @@ namespace S6_Ceny {
         
         private string dICField;
         
+        private string doprava_UserDataField;
+        
         private string ekoKomKlientField;
         
         private string emailSpojeni_IDField;
@@ -3202,6 +3204,8 @@ namespace S6_Ceny {
         private string gpsLatField;
         
         private string gpsLongField;
+        
+        private string hlavniCinnost_UserDataField;
         
         private string hlavniOsoba_IDField;
         
@@ -3237,6 +3241,8 @@ namespace S6_Ceny {
         
         private string kodDanovehoUraduField;
         
+        private string kodOdb_UserDataField;
+        
         private string kraj_IDField;
         
         private string logo_IDField;
@@ -3247,13 +3253,19 @@ namespace S6_Ceny {
         
         private string nadrazenaFirma_IDField;
         
+        private string nahradniPlneni_UserDataField;
+        
         private string nazevField;
+        
+        private string nazevPomocny_UserDataField;
         
         private string nekontrolovatLimitRPDPField;
         
         private string obchPsc_IDField;
         
         private string obchStat_IDField;
+        
+        private string platba_UserDataField;
         
         private string platceDPHField;
         
@@ -3288,6 +3300,8 @@ namespace S6_Ceny {
         private string reklamacePocetDniProVyrizeniField;
         
         private string rocniLimitNahradnihoPlneniField;
+        
+        private string sek_UserDataField;
         
         private string servisPocetDniProVyrizeniField;
         
@@ -3615,6 +3629,17 @@ namespace S6_Ceny {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Doprava_UserData {
+            get {
+                return this.doprava_UserDataField;
+            }
+            set {
+                this.doprava_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string EkoKomKlient {
             get {
                 return this.ekoKomKlientField;
@@ -3720,6 +3745,17 @@ namespace S6_Ceny {
             }
             set {
                 this.gpsLongField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string HlavniCinnost_UserData {
+            get {
+                return this.hlavniCinnost_UserDataField;
+            }
+            set {
+                this.hlavniCinnost_UserDataField = value;
             }
         }
         
@@ -3912,6 +3948,17 @@ namespace S6_Ceny {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string KodOdb_UserData {
+            get {
+                return this.kodOdb_UserDataField;
+            }
+            set {
+                this.kodOdb_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string Kraj_ID {
             get {
                 return this.kraj_IDField;
@@ -3967,12 +4014,34 @@ namespace S6_Ceny {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string NahradniPlneni_UserData {
+            get {
+                return this.nahradniPlneni_UserDataField;
+            }
+            set {
+                this.nahradniPlneni_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string Nazev {
             get {
                 return this.nazevField;
             }
             set {
                 this.nazevField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string NazevPomocny_UserData {
+            get {
+                return this.nazevPomocny_UserDataField;
+            }
+            set {
+                this.nazevPomocny_UserDataField = value;
             }
         }
         
@@ -4006,6 +4075,17 @@ namespace S6_Ceny {
             }
             set {
                 this.obchStat_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Platba_UserData {
+            get {
+                return this.platba_UserDataField;
+            }
+            set {
+                this.platba_UserDataField = value;
             }
         }
         
@@ -4193,6 +4273,17 @@ namespace S6_Ceny {
             }
             set {
                 this.rocniLimitNahradnihoPlneniField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Sek_UserData {
+            get {
+                return this.sek_UserDataField;
+            }
+            set {
+                this.sek_UserDataField = value;
             }
         }
         
@@ -14319,11 +14410,17 @@ namespace S6_Ceny {
         
         private string cenik_IDField;
         
+        private string cisloDokladu_UserDataField;
+        
+        private string datumZmenyZasoby_UserDataField;
+        
         private enum_DruhSazbyDPH druhSazbyField;
         
         private enum_StavExportuIDoklad iDokladPriceListItemsExportedField;
         
         private string kodField;
+        
+        private string marze_UserDataField;
         
         private string mnozstevniSleva_IDField;
         
@@ -14340,6 +14437,8 @@ namespace S6_Ceny {
         private string sazbaDPHVystupProExport_IDField;
         
         private string sklad_IDField;
+        
+        private string skladovaCena_UserDataField;
         
         private string source_IDField;
         
@@ -14477,6 +14576,28 @@ namespace S6_Ceny {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string CisloDokladu_UserData {
+            get {
+                return this.cisloDokladu_UserDataField;
+            }
+            set {
+                this.cisloDokladu_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string DatumZmenyZasoby_UserData {
+            get {
+                return this.datumZmenyZasoby_UserDataField;
+            }
+            set {
+                this.datumZmenyZasoby_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public enum_DruhSazbyDPH DruhSazby {
             get {
                 return this.druhSazbyField;
@@ -14505,6 +14626,17 @@ namespace S6_Ceny {
             }
             set {
                 this.kodField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Marze_UserData {
+            get {
+                return this.marze_UserDataField;
+            }
+            set {
+                this.marze_UserDataField = value;
             }
         }
         
@@ -14593,6 +14725,17 @@ namespace S6_Ceny {
             }
             set {
                 this.sklad_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string SkladovaCena_UserData {
+            get {
+                return this.skladovaCena_UserDataField;
+            }
+            set {
+                this.skladovaCena_UserDataField = value;
             }
         }
         

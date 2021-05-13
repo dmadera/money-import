@@ -5,7 +5,7 @@ using System.IO;
 namespace SDataObjs {
 
     public class XmlEnv {
-        public static string NewLine = "&#xD;&#xA;";
+        public static string NewLine = "&#13;&#10;";
     }
     abstract class S0_Generic<T> {
         public abstract T GetS5Data();
@@ -21,7 +21,7 @@ namespace SDataObjs {
             }
             
             string text = File.ReadAllText(output);
-            text = text.Replace("&amp;#xD;&amp;#xA;" , "&#xD;&#xA;");
+            text = text.Replace("&amp;#13;&amp;#10;" , "&#xD;&#xA;");
             File.WriteAllText(output, text);
         }
     }

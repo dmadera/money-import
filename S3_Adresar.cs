@@ -339,7 +339,29 @@ namespace SDataObjs {
                         Misto = d["Mesto"].GetText(),
                         Stat = new S5DataFirmaAdresyObchodniAdresaStat() { ID = statID }
                     }
-                };             
+                };
+
+                var akceCenikID = S0_IDs.GetCeniktID("_AKCE");
+                var prodejCenikID = S0_IDs.GetCeniktID("_PRODEJ");
+
+                firma.ObchodniPodminky = new S5DataFirmaObchodniPodminky() {
+                    ZpusobVyberuCeny = new enum_ZpusobVyberuCeny() {
+                        Value = enum_ZpusobVyberuCeny_value.Item3 // zpusob prebirani ceny vyberem
+                    },
+                    SeznamCeniku = new S5DataFirmaObchodniPodminkySeznamCeniku() {
+                        DeleteItems = "1",
+                        FirmaCenik = new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik[] {                                
+                            new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
+                                Poradi = "1",
+                                Cenik_ID = akceCenikID
+                            },
+                            new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
+                                Poradi = "2",
+                                Cenik_ID = prodejCenikID
+                            },
+                        }
+                    }
+                };
 
                 _firmy.Add(firma);
             }
