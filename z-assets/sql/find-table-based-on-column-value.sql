@@ -1,6 +1,6 @@
 DECLARE @sql AS varchar(max) = '';
 DECLARE @ColumnName AS varchar(100) = 'ID'
-DECLARE @ColumnValue AS varchar(100) = 'BA63C4EE-6331-45FE-B413-5F833BF36599'
+DECLARE @ColumnValue AS varchar(100) = 'A9BB3865-9292-4A80-82B3-56A8DB2054CA'
 DECLARE @ResultQuery AS varchar(max) =  'SELECT ''@TableName'' AS TableName ' + 
                                         '       ,@ColumnName ' +
                                         'FROM @TableName ' +

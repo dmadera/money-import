@@ -32,6 +32,9 @@ Průvodce nastavení programu
         Kontrola překročení kreditu: DL, ZFV, OP, NV - false
         Kontrola uplatnění záloh: false
         Kontrola vzájemného zápočtu: FV, FP, ZD, PD - Nekontrolovat
+    Ostatní
+        Adresář - Kontroly adres
+            Počet dnů platnosti ověření: 1
 
 Vytvoř uživatelské sloupce
 Vygeneruj triggery a procedury

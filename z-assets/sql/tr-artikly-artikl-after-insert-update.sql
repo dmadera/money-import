@@ -6,7 +6,14 @@ ON Artikly_Artikl
 AFTER INSERT, UPDATE
 AS
 BEGIN
-    SET NOCOUNT ON;
+
+	UPDATE Artikly_Artikl SET
+		NakupniCena_UserData = StavCena.JednotkovaSkladovaCena,
+		Marze_UserData = IIF(StavCena.JednotkovaSkladovaCena = 0, 0, ROUND(100/StavCena.JednotkovaSkladovaCena*(StavCena.JednotkovaCenikovaCena-StavCena.JednotkovaSkladovaCena), 2))
+	FROM Artikly_Artikl AS Artikl
+	INNER JOIN inserted ON inserted.ID = Artikl.ID
+	INNER JOIN CSW_BI_StavSkladuVCenach AS StavCena ON StavCena.Artikl_ID = Artikl.ID AND StavCena.Sklad_ID = (SELECT ID FROM Sklady_Sklad WHERE Kod = 'HL')
+
 	-- produktove klice - spoji jako retezec do UserData pole
 	UPDATE Artikly_Artikl SET 
 		Artikly_Artikl.Priznaky_UserData=SQ.Priznaky_UserData
@@ -68,7 +75,7 @@ BEGIN
 		WHERE ArtJed.ParentJednotka_ID IS NOT NULL AND Jed.KartonovaJednotka_UserData = 1
 		GROUP BY ArtJed.Parent_ID
 	) Bal ON Art.ID = Bal.Parent_ID
-
+	
 	-- jednotky - u dodavatele nastavi prodejni jednotku
 	UPDATE Artikly_ArtiklDodavatel SET
 		Jednotka_ID = ArtJed.Jednotka_ID,
