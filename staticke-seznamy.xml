@@ -2,23 +2,38 @@
 <S5Data>
   <DruhArtikluList>
     <DruhArtiklu>
+      <Kod>ZBO</Kod>
+      <Nazev>zboží</Nazev>
+      <Poznamka />
+    </DruhArtiklu>
+    <DruhArtiklu>
+      <Kod>OBA</Kod>
+      <Nazev>obal</Nazev>
+      <Poznamka />
+    </DruhArtiklu>
+    <DruhArtiklu>
+      <Kod>ZRU</Kod>
+      <Nazev>zrušené</Nazev>
+      <Poznamka />
+    </DruhArtiklu>
+    <DruhArtiklu>
       <Kod>MAT</Kod>
       <Nazev>materiál</Nazev>
       <Poznamka />
     </DruhArtiklu>
     <DruhArtiklu>
-      <Kod>OBA</Kod>
-      <Nazev>obaly</Nazev>
+      <Kod>POP</Kod>
+      <Nazev>poplatek</Nazev>
+      <Poznamka />
+    </DruhArtiklu>
+    <DruhArtiklu>
+      <Kod>SPE</Kod>
+      <Nazev>speciální</Nazev>
       <Poznamka />
     </DruhArtiklu>
     <DruhArtiklu>
       <Kod>POL</Kod>
       <Nazev>polotovar vlastní výroby</Nazev>
-      <Poznamka />
-    </DruhArtiklu>
-    <DruhArtiklu>
-      <Kod>POP</Kod>
-      <Nazev>poplatky</Nazev>
       <Poznamka />
     </DruhArtiklu>
     <DruhArtiklu>
@@ -31,16 +46,21 @@
       <Nazev>vlastní výrobek</Nazev>
       <Poznamka />
     </DruhArtiklu>
-    <DruhArtiklu>
-      <Kod>ZBO</Kod>
-      <Nazev>zboží</Nazev>
-      <Poznamka />
-    </DruhArtiklu>
   </DruhArtikluList>
   <FunkceOsobyList>
     <FunkceOsoby>
       <Code>OZ</Code>
       <Name>Obchodní zástupce</Name>
+      <Note />
+    </FunkceOsoby>
+    <FunkceOsoby>
+      <Code>ODB</Code>
+      <Name>Odbyt</Name>
+      <Note />
+    </FunkceOsoby>
+    <FunkceOsoby>
+      <Code>UCT</Code>
+      <Name>Účetní</Name>
       <Note />
     </FunkceOsoby>
     <FunkceOsoby>
@@ -210,45 +230,87 @@
   </ProduktovyKlicList>
   <TypSpojeniList>
     <TypSpojeni>
-      <DruhSpojeni EnumValueName="DatovaSchranka">4</DruhSpojeni>
-      <IsUser>False</IsUser>
-      <Kod>DS</Kod>
-      <Nazev>Datová schránka</Nazev>
-      <Poznamka />
-    </TypSpojeni>
-    <TypSpojeni>
       <DruhSpojeni EnumValueName="Email">2</DruhSpojeni>
-      <IsUser>False</IsUser>
-      <Kod>E-mail</Kod>
-      <Nazev>E-mail</Nazev>
+      <IsUser>True</IsUser>
+      <Kod>Email</Kod>
+      <Nazev>@</Nazev>
       <Poznamka />
     </TypSpojeni>
     <TypSpojeni>
       <DruhSpojeni EnumValueName="Email">2</DruhSpojeni>
       <IsUser>True</IsUser>
-      <Kod>E-mailFA</Kod>
-      <Nazev>E-mail pro fakturaci</Nazev>
+      <Kod>EmailPreb</Kod>
+      <Nazev>@ přebírající</Nazev>
+      <Poznamka />
+    </TypSpojeni>
+    <TypSpojeni>
+      <DruhSpojeni EnumValueName="Telefon">0</DruhSpojeni>
+      <IsUser>True</IsUser>
+      <Kod>Tel</Kod>
+      <Nazev>#</Nazev>
+      <Poznamka />
+    </TypSpojeni>
+    <TypSpojeni>
+      <DruhSpojeni EnumValueName="Email">2</DruhSpojeni>
+      <IsUser>False</IsUser>
+      <Kod>EmailVed</Kod>
+      <Nazev>@ vedení</Nazev>
+      <Poznamka />
+    </TypSpojeni>
+    <TypSpojeni>
+      <DruhSpojeni EnumValueName="Telefon">0</DruhSpojeni>
+      <IsUser>False</IsUser>
+      <Kod>TelObj</Kod>
+      <Nazev># objednávky</Nazev>
+      <Poznamka />
+    </TypSpojeni>
+    <TypSpojeni>
+      <DruhSpojeni EnumValueName="Telefon">0</DruhSpojeni>
+      <IsUser>True</IsUser>
+      <Kod>TelOz</Kod>
+      <Nazev># oz</Nazev>
       <Poznamka />
     </TypSpojeni>
     <TypSpojeni>
       <DruhSpojeni EnumValueName="Email">2</DruhSpojeni>
       <IsUser>True</IsUser>
-      <Kod>E-mailNP</Kod>
-      <Nazev>E-mail pro evidenci náhradního plnění</Nazev>
+      <Kod>EmailOz</Kod>
+      <Nazev>@ oz</Nazev>
+      <Poznamka />
+    </TypSpojeni>
+    <TypSpojeni>
+      <DruhSpojeni EnumValueName="Email">2</DruhSpojeni>
+      <IsUser>True</IsUser>
+      <Kod>EmailFa</Kod>
+      <Nazev>@ fakturační</Nazev>
+      <Poznamka />
+    </TypSpojeni>
+    <TypSpojeni>
+      <DruhSpojeni EnumValueName="Telefon">0</DruhSpojeni>
+      <IsUser>True</IsUser>
+      <Kod>TelVed</Kod>
+      <Nazev># vedení</Nazev>
+      <Poznamka />
+    </TypSpojeni>
+    <TypSpojeni>
+      <DruhSpojeni EnumValueName="Email">2</DruhSpojeni>
+      <IsUser>True</IsUser>
+      <Kod>EmailObj</Kod>
+      <Nazev>@ objednávky</Nazev>
+      <Poznamka />
+    </TypSpojeni>
+    <TypSpojeni>
+      <DruhSpojeni EnumValueName="Email">2</DruhSpojeni>
+      <IsUser>True</IsUser>
+      <Kod>EmailNp</Kod>
+      <Nazev>@ náhradní plnění</Nazev>
       <Poznamka>E-mail exportovaný do evidence náhradního plnění.</Poznamka>
     </TypSpojeni>
     <TypSpojeni>
       <DruhSpojeni EnumValueName="Telefon">0</DruhSpojeni>
       <IsUser>False</IsUser>
-      <Kod>Tel</Kod>
-      <Nazev>Telefon</Nazev>
-      <Poznamka />
-    </TypSpojeni>
-    <TypSpojeni>
-      <DruhSpojeni EnumValueName="WWW">3</DruhSpojeni>
-      <IsUser>False</IsUser>
-      <Kod>WWW</Kod>
-      <Nazev>WWW</Nazev>
+      <Kod>TelPreb</Kod>
+      <Nazev># přebírající</Nazev>
       <Poznamka />
     </TypSpojeni>
   </TypSpojeniList>
@@ -309,11 +371,6 @@
       <Poznamka>Odběrateli nevystavovat šek. Má nejvyšší prioritu.</Poznamka>
     </AdresniKlic>
     <AdresniKlic>
-      <Kod>ODESFA</Kod> 
-      <Nazev>Odesílat FA emailem</Nazev> 
-      <Poznamka>Parametr zda odesílat zákazníkovi FA emailem.</Poznamka>
-    </AdresniKlic>
-    <AdresniKlic>
       <Kod>OZ</Kod> 
       <Nazev>Obchodní zástupce</Nazev> 
       <Poznamka>Odběratel pod obchodním zástupcem.</Poznamka>
@@ -322,6 +379,16 @@
       <Kod>OZN</Kod> 
       <Nazev>Obchodní zástupce NOVÝ</Nazev> 
       <Poznamka>Nový odběratel pod obchodním zástupcem.</Poznamka>
+    </AdresniKlic>
+    <AdresniKlic>
+      <Kod>-LETAK</Kod> 
+      <Nazev>Nezasílat letáky</Nazev> 
+      <Poznamka>Nepřeje si zasílat obchodní sdělení.</Poznamka>
+    </AdresniKlic>
+    <AdresniKlic>
+      <Kod>OST</Kod> 
+      <Nazev>Ostatní odběratel</Nazev> 
+      <Poznamka>Ostatní odběratel ze skladu.</Poznamka>
     </AdresniKlic>
   </AdresniKlicList>
   <CinnostList>

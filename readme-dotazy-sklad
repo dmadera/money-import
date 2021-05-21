@@ -22,3 +22,6 @@ Jaké třídění zboží na dokladech?
 Číselná řada - ostatní prodejky ID, POHLD? ostatní ANO
 Číselná řada - prodejky ID, POHLD kartou, FV - odbyt? NE
 
+
+--
+Nelze udělat kontrolu na povoleno na FA, jestli má zadaný email.

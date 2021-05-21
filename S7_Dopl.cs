@@ -13,10 +13,12 @@ namespace SDataObjs {
         private List<S5DataArtikl> _artikly = new List<S5DataArtikl>();
 
         private SkladDataFile kodSumFile;
+        private SkladDataFile kodOdbFile;
         private SkladDataFile odbFile;
 
         public S7_Dopl(string dir, Encoding enc) {
             kodSumFile = new SkladDataFile(dir, SFile.KODSUMFA, enc);
+            kodOdbFile = new SkladDataFile(dir, SFile.KODODB, enc);
             odbFile = new SkladDataFile(dir, SFile.ODB, enc);
             convertOdb(odbFile);
             convertDod(new SkladDataFile(dir, SFile.DOD, enc));
@@ -49,50 +51,17 @@ namespace SDataObjs {
                 string kod = S3_Adresar.GetOdbID(d["CisloOdberatele"].GetNum());
                 if(kod == S3_Adresar.GetOdbID("00001")) continue;
                 
-                string kodSumFa = d["KodSumFa"].GetText();
+                string kodSumFa = d["KodSumFa"].GetAlfaNum();
+                string kodOdb = d["KodOdb"].GetAlfaNum();
 
-                var firma = new S5DataFirma() { };
+                var firma = new S5DataFirma() {};
                 firma.ID = S0_IDs.GetFirmaID(kod);
 
                 if(firma.ID == null) continue;
 
-                string prebirajiciID = S0_IDs.GetOsobaID(GetKodPrebirajici(kod));
-                string zastoupenyID = S0_IDs.GetOsobaID(GetKodZastoupeny(kod));
                 string tel1ID = S0_IDs.GetSpojeniID(GetKodTelefon(kod));
                 string tel1copyID = S0_IDs.GetSpojeniID(GetKodTelefonCopy(kod));
                 string email1ID = S0_IDs.GetSpojeniID(GetKodEmail1(kod));
-
-                firma.Osoby = new S5DataFirmaOsoby() {
-                    HlavniOsoba = prebirajiciID == null ? null : new S5DataFirmaOsobyHlavniOsoba() {
-                        ID = prebirajiciID
-                    },
-                    SeznamOsob = new S5DataFirmaOsobySeznamOsob() {
-                        Osoba = new S5DataFirmaOsobySeznamOsobOsoba[] {
-                            prebirajiciID == null ? null : new S5DataFirmaOsobySeznamOsobOsoba() {
-                                ID = prebirajiciID,
-                                TelefonSpojeni1_ID = tel1ID
-                            },
-                            zastoupenyID == null ? null : new S5DataFirmaOsobySeznamOsobOsoba() {
-                                ID = prebirajiciID,
-                                TelefonSpojeni1_ID = tel1copyID,
-                                EmailSpojeni_ID = email1ID
-                            }
-                        }
-                    }
-                };
-
-                firma.SeznamSpojeni = new S5DataFirmaSeznamSpojeni() {
-                    Spojeni = new S5DataFirmaSeznamSpojeniSpojeni[] {
-                        tel1ID == null ? null : new S5DataFirmaSeznamSpojeniSpojeni() {
-                            ID = tel1ID,
-                            Osoba_ID = prebirajiciID
-                        },
-                        email1ID == null ? null : new S5DataFirmaSeznamSpojeniSpojeni() {
-                            ID = email1ID,
-                            Osoba_ID = prebirajiciID
-                        }
-                    }
-                };
 
                 if (kodSumFa == "dr") {
                     firma.Cinnosti = new S5DataFirmaCinnosti() {
@@ -113,9 +82,17 @@ namespace SDataObjs {
                         };
                     }
                 
-                    var kodOdb = S3_Adresar.GetOdbID(findKodOdbKodSum(kodSumFa));
-                    var nadrazenaFirmaObj = findOdbByKod(kodOdb);
-                    var nadrazenaFirmaID = S0_IDs.GetFirmaID(kodOdb);
+                    var cisloOdbKodSumFa = S3_Adresar.GetOdbID(findKodOdbKodSum(kodSumFa));
+                    var nadrazenaFirmaObj = findOdbByKod(cisloOdbKodSumFa);
+                    var nadrazenaFirmaID = S0_IDs.GetFirmaID(cisloOdbKodSumFa);
+                    bool isKodSumFa = true;
+
+                    if(nadrazenaFirmaID == null) {
+                        var cisloOdbKodOdb = S3_Adresar.GetOdbID(findKodOdbKodOdb(kodOdb));
+                        nadrazenaFirmaObj = findOdbByKod(cisloOdbKodOdb);
+                        nadrazenaFirmaID = S0_IDs.GetFirmaID(cisloOdbKodOdb);
+                        isKodSumFa = false;
+                    }
 
                     if (firma.ID != nadrazenaFirmaID && nadrazenaFirmaID != null) {
                         firma.Adresy = new S5DataFirmaAdresy() {
@@ -132,7 +109,7 @@ namespace SDataObjs {
                         firma.Nazev = SkladDataObj.GetNazev(nadrazenaFirmaObj.Items["NazevOdberatele"], nadrazenaFirmaObj.Items["NazevOdberatele2"]);
                         
                         firma.NadrazenaFirma = new S5DataFirmaNadrazenaFirma() {
-                            PrevzitObchodniPodminky = "True",
+                            PrevzitObchodniPodminky = isKodSumFa ? "True" : "False",
                             PrevzitObchodniUdaje = "True",
                             PrevzitBankovniSpojeni = "True",
                             Firma = new S5DataFirmaNadrazenaFirmaFirma() {
@@ -143,9 +120,10 @@ namespace SDataObjs {
                         if(email1ID == null) {
                             var emails = SkladDataObj.GetEmaily(nadrazenaFirmaObj.Items["Mail"]);
                             firma.SeznamSpojeni.Spojeni[firma.SeznamSpojeni.Spojeni.Length] = new S5DataFirmaSeznamSpojeniSpojeni() {
-                                TypSpojeni_ID = S0_IDs.GetTypSpojeniID("E-mail"),
+                                TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Email"),
                                 SpojeniCislo = emails.Item1,
-                                Kod_UserData = S7_Dopl.GetKodEmail1(kod),                               
+                                Kod_UserData = S7_Dopl.GetKodEmail1(kod),
+                                Popis = "z nadřazené firmy"
                             };
                         }
                     }
@@ -170,66 +148,16 @@ namespace SDataObjs {
             return found.Items["CisloOdberatele"].GetText();
         }
 
-        private void convertDod(SkladDataFile file) {
-            foreach (SkladDataObj obj in file.Data) {
-                var d = obj.Items;
-                string kod = S3_Adresar.GetDodID(d["CisloDodavatele"].GetNum());
-                var firma = new S5DataFirma() { };
-                firma.ID = S0_IDs.GetFirmaID(kod);
-
-                if(firma.ID == null) continue;
-
-                string zastoupenyID = S0_IDs.GetOsobaID(GetKodZastoupeny(kod));
-                string zastoupenyOZID = S0_IDs.GetOsobaID(GetKodZastoupenyOZ(kod));
-                string tel1ID = S0_IDs.GetSpojeniID(GetKodTelefon(kod));
-                string tel2ID = S0_IDs.GetSpojeniID(GetKodTelefonFA(kod));
-                string email1ID = S0_IDs.GetSpojeniID(GetKodEmail1(kod));
-                string email2ID = S0_IDs.GetSpojeniID(GetKodEmailFA1(kod));
-
-                firma.Osoby = new S5DataFirmaOsoby() {
-                    HlavniOsoba = zastoupenyID == null ? null : new S5DataFirmaOsobyHlavniOsoba() {
-                        ID = zastoupenyID
-                    },
-                    SeznamOsob = new S5DataFirmaOsobySeznamOsob() {
-                        Osoba = new S5DataFirmaOsobySeznamOsobOsoba[] {
-                            zastoupenyID == null ? null : new S5DataFirmaOsobySeznamOsobOsoba() {
-                                ID = zastoupenyID,
-                                TelefonSpojeni1_ID = tel1ID,
-                                EmailSpojeni_ID = email1ID
-                            },
-                            zastoupenyOZID == null ? null : new S5DataFirmaOsobySeznamOsobOsoba() {
-                                ID = zastoupenyOZID,
-                                TelefonSpojeni1_ID = tel2ID,
-                                EmailSpojeni_ID = email2ID
-                            }
-                        }
-                    }
-                };
-
-                firma.SeznamSpojeni = new S5DataFirmaSeznamSpojeni() {
-                    Spojeni = new S5DataFirmaSeznamSpojeniSpojeni[] {
-                        tel1ID == null ? null : new S5DataFirmaSeznamSpojeniSpojeni() {
-                            ID = tel1ID,
-                            Osoba_ID = zastoupenyID
-                        },
-                        email1ID == null ? null : new S5DataFirmaSeznamSpojeniSpojeni() {
-                            ID = email1ID,
-                            Osoba_ID = zastoupenyID
-                        },
-                        tel2ID == null ? null : new S5DataFirmaSeznamSpojeniSpojeni() {
-                            ID = tel2ID,
-                            Osoba_ID = zastoupenyOZID
-                        },
-                        email2ID == null ? null : new S5DataFirmaSeznamSpojeniSpojeni() {
-                            ID = email2ID,
-                            Osoba_ID = zastoupenyOZID
-                        }
-                    }
-                };
-
-                _firmy.Add(firma);
-            }
+        private string findKodOdbKodOdb(string kodOdb) {
+            var found = kodOdbFile.Data.Find(delegate (SkladDataObj obj) {
+                return obj.Items["KodOdb"].GetText() == kodOdb;
+            });
+            if (found == null) return null;
+            return found.Items["CisloOdberatele"].GetText();
         }
+
+        private void convertDod(SkladDataFile file) {}
+
         private void convertKarty(SkladDataFile file) {
             foreach (SkladDataObj obj in file.Data) {
                 var d = obj.Items;

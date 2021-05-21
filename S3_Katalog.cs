@@ -86,22 +86,20 @@ namespace SDataObjs {
                     PLU = d["NazevZbozi2"].GetText()
                 };
 
-                var groupKod = "KATALOG";
                 var druhZboziKod = "ZBO";
                 var regexLom = new Regex(@"^\\[a-zA-Z0-9]+\\");
                 var regexObal = new Regex(@"^\|[a-zA-Z0-9]");
                 var regexZrus = new Regex(@"^\|\|[0-9]");
-                if(regexLom.IsMatch(nazevZbozi)) {
-                    groupKod = "SPECIAL";
+                if(regexLom.IsMatch(nazevZbozi)) { // specialni do vyberovek
+                    druhZboziKod = "SPE";
                     artikl.Zkratka12 = regexLom.Match(nazevZbozi).Value.Replace(@"\", "").ToUpper();
                     nazevZbozi = regexLom.Replace(nazevZbozi, "").FirstCharToUpper();
-                } else if(regexObal.IsMatch(nazevZbozi)) {
-                    groupKod = "OBALY";
+                } else if(regexObal.IsMatch(nazevZbozi)) { // obaly, palety
                     druhZboziKod = "OBA";
                     nazevZbozi = nazevZbozi.Replace("|", "").Trim().FirstCharToUpper();
                     artikl.NepodlehatSleveDokladu = "True";
-                } else if(regexZrus.IsMatch(nazevZbozi)) {
-                    groupKod = "ZRUSENO";
+                } else if(regexZrus.IsMatch(nazevZbozi)) { // zrusene zbozi
+                    druhZboziKod = "ZRU";
                     nazevZbozi = nazevZbozi.Replace("|", "").Trim().FirstCharToUpper();
                     int aktualniRok = DateTime.Now.Year;
                     var rokOdstranStr = "20" + nazevZbozi.Substring(0, 2);
@@ -110,7 +108,6 @@ namespace SDataObjs {
                 }
 
                 artikl.Nazev = nazevZbozi;
-                artikl.Group = new group() { Kod = groupKod };
                 artikl.DruhArtiklu_ID = S0_IDs.GetDruhZboziID(druhZboziKod);
 
                 var sazbaDPH = new enum_DruhSazbyDPH() {};

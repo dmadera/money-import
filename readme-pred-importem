@@ -29,7 +29,7 @@ Průvodce nastavení programu
         Metoda vedení skladů: Metoda B     
     Obchod
         Vystaveni dokladu: Nekontrolovat - DL, OP, NV; Upozornit - FV
-        Kontrola překročení kreditu: DL, ZFV, OP, NV - false
+        Kontrola překročení kreditu: ZFV, OP, NV - false, jinak true
         Kontrola uplatnění záloh: false
         Kontrola vzájemného zápočtu: FV, FP, ZD, PD - Nekontrolovat
     Ostatní
@@ -61,7 +61,7 @@ Objednávka přijatá - skupiny
         Kontroly: 
             Přijatý doklad: Nepovolit
 Objednávka přijatá - obecné
-    Upozorňovat na nevyřízené položky: Stejné položky všech odběratelů
+    Upozorňovat na nevyřízené položky: ne
     Počítat zisk: true
     Povolit výchozí výpočet nákladů: Aktuální pořízovací cena zásoby
     Zakázat uživateli změnu typu výpočtu: true
@@ -74,12 +74,9 @@ Nabídky vydané - obecné
     Zakázat uživateli změnu typu výpočtu: true
 
 Artikl - skupiny
-    Nastavit zobrazení včetně podřízených
-    Kód: Nezařazené, Není určena pro ukládání záznamů: true, Číselná řada: zrušit vazbu (pro import)
-    Kód: KATALOG, Název: Katalog zboží, Převzít nastavení z nadřazené úrovně: ANO
-    Kód: SPECIAL, Název: Speciální zboží, Převzít nastavení z nadřazené úrovně: ANO
-    Kód: ZRUSENO, Název: Zrušeno, Převzít nastavení z nadřazené úrovně: ANO
-    Kód: OBALY, Název: Obaly, Druh položky katalogu: OBA, Číselná řada: zrušit vazbu
+    Kód: Nezařazené, Číselná řada: zrušit vazbu (pro import)
+    Zkratka 20: <empty>
+    Zkratka 12: <empty>
 Artikly - Obecné
     Kontroly: 
         Kód: Nepovolit, Nepovolit
@@ -100,7 +97,7 @@ Doplnění informace o firmě jednotky
 
 Firma - skupiny
     Kód: Nezařazené, Není určena k ukládání záznamů: ANO, Použít kredit: ANO, Hodnota: 0,00, Způsob dopravy: --, Způsob platby: --, 
-         Způsob výpočtu ceny: Podle pořadí, Splatnost: ANO, 10 dní, Vlastní sleva: ANO, Sleva: 0,00, Ceníky: _PRODEJ
+         Způsob výpočtu ceny: Podle pořadí, Splatnost: ANO, 10 dní, Vlastní sleva: ANO, Sleva: 0,00, Ceníky: _AKCE, _PRODEJ
 Firma - obecné
     Kontroly: 
         Nazev: Nepovolit, Nekontrolovat
@@ -322,6 +319,20 @@ Automatické Akce
     Upozornit na upravený šek
     Upozornit na vytvořený šek
 
+Filtry
+    Katalog
+        Marže pod 10%
+        Bez speciálního
+        Bez obalů
+        Dostupné na skladě
+    Marže pod 10%	    Katalog       Výše změny > -10
+    OZ všechny	        Firma               Adresní klíč OZ nebo OZN
+    OZ nové	            Firma               Adresní klíč OZN
+    Iternetoví odb      Firma               Adresní klíč INT
+    S nárokem na šek    Faktura vydaná      Odběratel - Adresní klíč != -SEK & CelkemSDPH >= 5000 & Sleva = 0
+    S nárokem na šek    Prodejka vydaná     Odběratel - Adresní klíč != -SEK & CelkemSDPH >= 5000 & Sleva = 0
+    K zaúčtování        Prodejka vydané     Způsob platby != --
+
 Uživatelské role
     VEDENI
 
@@ -335,9 +346,5 @@ Uživatelské role
 
 
 --- poslední úpravy na S4_Agenda po záloze čistého
-změna triggerů
-nastaveni filtru s narokem na sek u prodejek -> skupin != Ostatni
-Firma skupina Nezařazeno - výchozí ceníky _AKCE, _PRODEJ
-automatická akce kontrola hlavní osoba u Firem
-automatická akce kontrola na prodejní ceník u Firem
-kontrolovat duplicitu nazvu katalog - 40 znaku
+opravit osobu u AD00001 na přebírající a kod AD00001PRE
+typy spojeni

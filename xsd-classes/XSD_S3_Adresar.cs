@@ -144,6 +144,8 @@ namespace S3_Adresar {
         
         private string kodOdb_UserDataField;
         
+        private string kodSumFa_UserDataField;
+        
         private string kraj_IDField;
         
         private string logo_IDField;
@@ -855,6 +857,17 @@ namespace S3_Adresar {
             }
             set {
                 this.kodOdb_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string KodSumFa_UserData {
+            get {
+                return this.kodSumFa_UserDataField;
+            }
+            set {
+                this.kodSumFa_UserDataField = value;
             }
         }
         

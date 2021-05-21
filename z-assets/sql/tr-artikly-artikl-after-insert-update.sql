@@ -6,14 +6,6 @@ ON Artikly_Artikl
 AFTER INSERT, UPDATE
 AS
 BEGIN
-
-	UPDATE Artikly_Artikl SET
-		NakupniCena_UserData = StavCena.JednotkovaSkladovaCena,
-		Marze_UserData = IIF(StavCena.JednotkovaSkladovaCena = 0, 0, ROUND(100/StavCena.JednotkovaSkladovaCena*(StavCena.JednotkovaCenikovaCena-StavCena.JednotkovaSkladovaCena), 2))
-	FROM Artikly_Artikl AS Artikl
-	INNER JOIN inserted ON inserted.ID = Artikl.ID
-	INNER JOIN CSW_BI_StavSkladuVCenach AS StavCena ON StavCena.Artikl_ID = Artikl.ID AND StavCena.Sklad_ID = (SELECT ID FROM Sklady_Sklad WHERE Kod = 'HL')
-
 	-- produktove klice - spoji jako retezec do UserData pole
 	UPDATE Artikly_Artikl SET 
 		Artikly_Artikl.Priznaky_UserData=SQ.Priznaky_UserData
@@ -145,5 +137,17 @@ BEGIN
 	) AS SQ ON SQ.ID = Art.ID
 
 	OPTION (MAXRECURSION 3);
+
+	ALTER TABLE Sklady_Zasoba DISABLE TRIGGER TR_Sklady_Zasoba_AfterInsertUpdate
+
+	UPDATE Sklady_Zasoba SET
+		BaleniMnozstvi_UserData = Artikl.BaleniMnozstvi_UserData,
+		BaleniJednotky_UserData = Artikl.BaleniJednotky_UserData,
+		Priznaky_UserData = Artikl.Priznaky_UserData
+	FROM Sklady_Zasoba AS Zasoba
+	INNER JOIN inserted ON inserted.ID = Zasoba.ID
+	INNER JOIN Artikly_Artikl AS Artikl ON Artikl.ID = Zasoba.Artikl_ID
+
+	ALTER TABLE Sklady_Zasoba ENABLE TRIGGER TR_Sklady_Zasoba_AfterInsertUpdate	
 
 END

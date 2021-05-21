@@ -6,36 +6,37 @@ ON Ceniky_PolozkaCeniku
 AFTER INSERT, UPDATE
 AS
 BEGIN
-    
+	DECLARE @VychoziCenik_ID AS UNIQUEIDENTIFIER
+	SET @VychoziCenik_ID = (SELECT TOP 1 Agenda.VychoziCenik_ID FROM System_AgendaDetail AS Agenda)
+
 	UPDATE Ceniky_PolozkaCeniku SET
 		SkladovaCena_UserData = StavCena.JednotkovaSkladovaCena,
-		Marze_UserData = IIF(StavCena.JednotkovaSkladovaCena = 0, 0, ROUND(100/StavCena.JednotkovaSkladovaCena*(Cena.Cena-StavCena.JednotkovaSkladovaCena), 2))
+		Marze_UserData = IIF(StavCena.JednotkovaSkladovaCena = 0, 0, ROUND(100/StavCena.JednotkovaSkladovaCena*(Cena.Cena-StavCena.JednotkovaSkladovaCena), 2)),
+		Cena = ROUND(Cena.Cena, 2),
+		NepodlehatSleveDokladu = IIF(Cena.Cenik_ID = @VychoziCenik_ID, 0, 1)
 	FROM Ceniky_PolozkaCeniku AS Cena 
 	INNER JOIN inserted ON inserted.ID = Cena.ID
 	INNER JOIN CSW_BI_StavSkladuVCenach AS StavCena ON StavCena.Artikl_ID = Cena.Artikl_ID AND StavCena.Sklad_ID = Cena.Sklad_ID
 
-	UPDATE Ceniky_PolozkaCeniku SET
-		NepodlehatSleveDokladu = IIF(Cenik.Kod = '_PRODEJ', 0, 1)
-	FROM Ceniky_PolozkaCeniku AS Cena
-	INNER JOIN inserted ON inserted.ID = Cena.ID
-	INNER JOIN Ceniky_Cenik AS Cenik ON Cenik.ID = Cena.Cenik_ID
+	ALTER TABLE Artikly_Artikl DISABLE TRIGGER TR_Artikly_Artikl_AfterInsertUpdate
 
-	UPDATE Ceniky_PolozkaCeniku SET 
-		ID = Cena.ID,
-		CisloDokladu_UserData = ISNULL(SUB.CisloDokladu, ''),
-		DatumZmenyZasoby_UserData = IIF(SUB.Datum IS NULL, '', FORMAT(SUB.Datum, 'yyyy.MM.dd HH:mm:ss'))
-	FROM Ceniky_PolozkaCeniku AS Cena
-	INNER JOIN inserted ON inserted.ID = Cena.ID
-	INNER JOIN Sklady_Zasoba AS Zasoba ON Zasoba.Artikl_ID = Cena.Artikl_ID AND Zasoba.Sklad_ID = Cena.Sklad_ID
-	LEFT JOIN (
-		SELECT 
-			MAX(Pohyb.CisloDokladu) AS CisloDokladu,
-			ISNULL(MAX(Pohyb.Modify_Date), MAX(Pohyb.Create_Date)) AS Datum,
-			ObPol.Zasoba_ID AS Zasoba_ID
-		FROM S5_Sklady_SkladovaPolozka AS Pohyb
-		INNER JOIN Obchod_ObsahPolozkySArtiklem AS ObPol ON ObPol.ID = Pohyb.ObsahPolozky_ID
-		WHERE Pohyb.DruhPohybu = 0
-		GROUP BY Zasoba_ID
-	) AS SUB ON SUB.Zasoba_ID = Zasoba.ID
-	
+	UPDATE Artikly_Artikl SET	
+		Marze_UserData = Cena.Marze_UserData,
+		NakupniCena_UserData = Cena.SkladovaCena_UserData
+	FROM Artikly_Artikl AS Artikl
+	INNER JOIN inserted AS Cena ON Cena.Artikl_ID = Artikl.ID 
+	WHERE Cena.Cenik_ID = @VychoziCenik_ID
+
+	ALTER TABLE Artikly_Artikl ENABLE TRIGGER TR_Artikly_Artikl_AfterInsertUpdate
+
+	ALTER TABLE Sklady_Zasoba DISABLE TRIGGER TR_Sklady_Zasoba_AfterInsertUpdate
+
+	UPDATE Sklady_Zasoba SET
+		Marze_UserData = Cena.Marze_UserData,
+		NakupniCena_UserData = Cena.SkladovaCena_UserData
+	FROM Sklady_Zasoba AS Zasoba
+	INNER JOIN Artikly_Artikl AS Artikl ON Artikl.ID = Zasoba.Artikl_ID
+	INNER JOIN inserted AS Cena ON Cena.Artikl_ID = Artikl.ID
+
+	ALTER TABLE Sklady_Zasoba ENABLE TRIGGER TR_Sklady_Zasoba_AfterInsertUpdate	
 END
