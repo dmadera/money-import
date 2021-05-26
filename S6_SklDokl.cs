@@ -71,7 +71,7 @@ namespace SDataObjs {
                 var doc = new S5DataSkladovyDoklad();
                 doc.Nazev = GetNazev(data["CisloVydejky"].GetNum(), headers.Soubor); 
                 doc.ParovaciSymbol = GetID(data["CisloVydejky"].GetNum(), headers.Soubor);
-                doc.DatumSkladovehoPohybu = doc.DatumZauctovani = doc.DatumSchvaleni = doc.DatumVystaveni = data["DatumVydeje"].GetDate();
+                doc.DatumSkladovehoPohybu = doc.DatumZauctovani = doc.DatumSchvaleni = doc.DatumVystaveni = data["DatumVydeje"].GetDate().AddHours(2);
                 doc.DatumSkladovehoPohybuSpecified = doc.DatumZauctovaniSpecified = doc.DatumSchvaleniSpecified = doc.DatumVystaveniSpecified = true;
                 doc.Poznamka = data["Upozorneni"].GetText() + XmlEnv.NewLine + XmlEnv.NewLine + header.ToString();
                 doc.Polozky = new S5DataSkladovyDokladPolozky();
@@ -80,7 +80,7 @@ namespace SDataObjs {
                 doc.Firma_ID = doc.FakturacniAdresaFirma_ID = doc.PrijemceFaktury_ID = firmaID;
                 
                 doc.TypDokladu = vydejka;
-                if(header.GetCelkemFloat() < 0) doc.TypDokladu = prijemka;
+                if(header.GetCelkemFloat() < 0) doc.Poznamka += XmlEnv.NewLine + "<DO_MINUSU>";
                 
                 _doklady.Add(doc);
             }
@@ -117,13 +117,16 @@ namespace SDataObjs {
                 pol.CisloPolozky = (++cisloPolozky).ToString();
                 
                 pol.Vratka = "False";
-                pol.Mnozstvi = data["Vydano"].GetNum();
-                if (typDokladu.Value == vydejka.Value && pol.Mnozstvi.StartsWith("-")) pol.Vratka = "True";
-                if (typDokladu.Value == prijemka.Value && !pol.Mnozstvi.StartsWith("-")) pol.Vratka = "True";
-                pol.Mnozstvi = pol.Mnozstvi.Replace("-", "");
+                pol.Mnozstvi = data["Vydano"].GetNum().Replace("-", "");
+                pol.JednCena = data["ProdCena"].GetDecimal().Replace("-","");
+                if(data["Vydano"].GetNum().StartsWith("-")) {
+                    pol.Vratka = "True";
+                    if(skladovyDoklad.Poznamka.Contains("<DO_MINUSU>")) {
+                        pol.JednCena = "0";
+                    }
+                }
 
                 pol.Nazev = data["NazevZbozi"].GetText();
-                pol.JednCena = data["ProdCena"].GetDecimal().Replace("-","");
                 pol.TypCeny = new enum_TypCeny() { Value = enum_TypCeny_value.Item0 };
                 pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };
                 pol.SazbaDPH_ID = S0_IDs.GetSazbaDPHID(data["SazbaD"].GetNum());
@@ -132,7 +135,7 @@ namespace SDataObjs {
                     Artikl_ID = artiklID,
                     Sklad_ID = skladID
                 };
-                // na zaklade Zakazka_ID se budou filtrovat faktury (vynechaji ty s cislem zakazky)
+                // na zaklade Zakazka_ID se budou filtrovat faktury (vynechaji se ty s cislem zakazky)
                 pol.Zakazka_ID = data.ContainsKey("CisloZakazky") && data["CisloZakazky"].GetNum() != "00000" ? "True" : null;
                 polozky.Add(pol);
             }
@@ -169,9 +172,11 @@ namespace SDataObjs {
 
                 var pol = new S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu();
                 pol.CisloPolozky = (++cisloPolozky).ToString();
-                pol.Mnozstvi = data["PocetInv"].GetNum();
-                if (pol.Mnozstvi.StartsWith("-")) {
-                    pol.Mnozstvi = pol.Mnozstvi.Replace("-","");
+                
+                pol.Vratka = "False";
+                pol.Mnozstvi = data["Pocet"].GetNum().Replace("-", "");
+                pol.JednCena = data["NakupCena"].GetDecimal().Replace("-","");
+                if(data["Pocet"].GetNum().StartsWith("-")) {
                     pol.Vratka = "True";
                 }
 
@@ -181,6 +186,8 @@ namespace SDataObjs {
                     Artikl_ID = artiklID,
                     Sklad_ID = skladID
                 };
+                pol.JednotkovaPorizovaciCena = pol.JednCena;
+                pol.JednCenaCM = pol.JednCena;
                 pol.Vyrizeno = "True";
                 polozky.Add(pol);
             }
@@ -193,6 +200,8 @@ namespace SDataObjs {
 
             // narovnani inventury, kde bylo k mnozstvi 0 prictena 1
             // aby byla evidence o porizovacich cenach v money
+            // "Inventura zasob" pokud je polozka 0, pricte 1 (prijemka)
+            // "Invetura zásob - narovnání" pokud je polozka 0, vyda 1 (vydejka)
             doc = new S5DataSkladovyDoklad();
             doc.Adresa = new S5DataSkladovyDokladAdresa() {
                 Nazev = "Invetura zásob - narovnání"
@@ -217,8 +226,9 @@ namespace SDataObjs {
 
                 var pol = new S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladu();
                 pol.CisloPolozky = (++cisloPolozky).ToString();
-                pol.Mnozstvi = data["PocetInv"].GetNum().Replace("-","");
-                
+                pol.Mnozstvi = data["Pocet"].GetNum().Replace("-","");
+                pol.JednCena = data["NakupCena"].GetDecimal().Replace("-","");
+                                
                 if(pol.Mnozstvi == "0") pol.Mnozstvi = "1";
                 else continue;
 
@@ -246,14 +256,14 @@ namespace SDataObjs {
                 var doc = new S5DataSkladovyDoklad();
                 doc.Nazev = GetNazev(data["CisloPrijemky"].GetNum(), headers.Soubor);
                 doc.ParovaciSymbol = GetID(data["CisloPrijemky"].GetNum(), headers.Soubor);
-                doc.DatumSkladovehoPohybu = doc.DatumZauctovani = doc.DatumSchvaleni = doc.DatumVystaveni = data["DatumVydeje"].GetDate();
+                doc.DatumSkladovehoPohybu = doc.DatumZauctovani = doc.DatumSchvaleni = doc.DatumVystaveni = data["DatumVydeje"].GetDate().AddHours(0);
                 doc.DatumSkladovehoPohybuSpecified = doc.DatumZauctovaniSpecified = doc.DatumSchvaleniSpecified = doc.DatumVystaveniSpecified = true;
                 doc.Poznamka = data["Upozorneni"].GetText() + XmlEnv.NewLine + XmlEnv.NewLine + header.ToString();
                 string firmaID = S0_IDs.GetFirmaID(S3_Adresar.GetDodID(header.Items["CisloDodavatele"].GetNum()));
                 doc.Firma_ID = doc.FakturacniAdresaFirma_ID = doc.PrijemceFaktury_ID = firmaID;
                 
                 doc.TypDokladu = prijemka;
-                if(header.GetCelkemFloat() < 0) doc.TypDokladu = vydejka;
+                if(header.GetCelkemFloat() < 0) doc.Poznamka += XmlEnv.NewLine + "<DO_MINUSU>";
                 
                 doc.Polozky = new S5DataSkladovyDokladPolozky();
                 _doklady.Add(doc);
@@ -291,14 +301,18 @@ namespace SDataObjs {
                 pol.CisloPolozky = (++cisloPolozky).ToString();
 
                 pol.Vratka = "False";
-                pol.Mnozstvi = data["Prijato"].GetNum();
-                if (typDokladu.Value == prijemka.Value && pol.Mnozstvi.StartsWith("-")) pol.Vratka = "True";
-                if (typDokladu.Value == vydejka.Value && !pol.Mnozstvi.StartsWith("-")) pol.Vratka = "True";
-                pol.Mnozstvi = pol.Mnozstvi.Replace("-", "");
-
-                pol.Nazev = data["NazevZbozi"].GetText();
+                pol.Mnozstvi = data["Prijato"].GetNum().Replace("-", "");
                 pol.JednCena = data["NakupCena"].GetDecimal().Replace("-","");
+                if(data["Prijato"].GetNum().StartsWith("-")) {
+                    pol.Vratka = "True";
+                    if(skladovyDoklad.Poznamka.Contains("<DO_MINUSU>")) {
+                        pol.JednCena = "0";
+                    }
+                }
+                
+                pol.Nazev = data["NazevZbozi"].GetText();
                 pol.JednotkovaPorizovaciCena = pol.JednCena;
+                pol.JednCenaCM = pol.JednCena;
                 pol.TypCeny = new enum_TypCeny() { Value = enum_TypCeny_value.Item0 };
                 pol.SazbaDPH_ID = S0_IDs.GetSazbaDPHID(data["SazbaD"].GetNum());
                 pol.TypObsahu = new enum_TypObsahuPolozky() { Value = enum_TypObsahuPolozky_value.Item1 };

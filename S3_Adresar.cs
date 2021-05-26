@@ -74,8 +74,8 @@ namespace SDataObjs {
                 };
                 firma.SlevaUvadena_UserData = d["PRabatO"].GetDecimal();
                                 
-                var akceCenikID = S0_IDs.GetCeniktID("_AKCE");
-                var prodejCenikID = S0_IDs.GetCeniktID("_PRODEJ");
+                var akceCenikID = S0_IDs.GetCenikID("_AKCE");
+                var prodejCenikID = S0_IDs.GetCenikID("_PRODEJ");
                 
                 var prirazka = !(d["RabatO"].GetFloat() < 0 && d["Prirazka"].GetBoolean() == "False");
 
@@ -162,9 +162,9 @@ namespace SDataObjs {
                             Kod_UserData = S7_Dopl.GetKodTelefon(kod),
                             Popis = d["Prebirajici"].GetText()
                         } : null,
-                        tels.Item1 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                        tels.Item2 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("TelObj"),
-                            SpojeniCislo = tels.Item1,
+                            SpojeniCislo = tels.Item2,
                             Kod_UserData = S7_Dopl.GetKodTelefon(kod),
                             Popis = d["Zastoupeny"].GetText()
                         } : null,
@@ -173,11 +173,6 @@ namespace SDataObjs {
                             SpojeniCislo = emails.Item1,
                             Kod_UserData = S7_Dopl.GetKodEmail1(kod),
                             Popis = d["Zastoupeny"].GetText()
-                        } : null,
-                        tels.Item2 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
-                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Tel"),
-                            SpojeniCislo = tels.Item2,
-                            Kod_UserData = S7_Dopl.GetKodTelefonFA(kod)
                         } : null,
                         emails.Item2 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Email"),
@@ -296,8 +291,8 @@ namespace SDataObjs {
                     }
                 };
 
-                var akceCenikID = S0_IDs.GetCeniktID("_AKCE");
-                var prodejCenikID = S0_IDs.GetCeniktID("_PRODEJ");
+                var akceCenikID = S0_IDs.GetCenikID("_AKCE");
+                var prodejCenikID = S0_IDs.GetCenikID("_PRODEJ");
 
                 firma.ObchodniPodminky = new S5DataFirmaObchodniPodminky() {
                     ZpusobVyberuCeny = new enum_ZpusobVyberuCeny() {

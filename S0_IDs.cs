@@ -212,7 +212,7 @@ namespace SDataObjs {
 
             return null;
         }
-        public static string GetCeniktID(string kod) {
+        public static string GetCenikID(string kod) {
             if (_data == null) throw new Exception("First call Deserialize method.");
 
             foreach (S5DataCenik cenik in _data.CenikList) {
@@ -253,6 +253,22 @@ namespace SDataObjs {
         }
 
         public static string GetArtiklDodavatelID(string artiklID, string FirmaID) {
+            if (_data == null) throw new Exception("First call Deserialize method.");
+
+            foreach (S5DataArtikl artikl in _data.ArtiklList) {
+                if (artikl.ID == artiklID && artikl.Dodavatele.SeznamDodavatelu.ArtiklDodavatel != null) {
+                    foreach (S5DataArtiklDodavateleSeznamDodavateluArtiklDodavatel dodavatel in artikl.Dodavatele.SeznamDodavatelu.ArtiklDodavatel) {
+                        if (dodavatel.Firma_ID== FirmaID) {
+                            return dodavatel.ID;
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public static string GetCiselnaRadaID(string artiklID, string FirmaID) {
             if (_data == null) throw new Exception("First call Deserialize method.");
 
             foreach (S5DataArtikl artikl in _data.ArtiklList) {

@@ -119,11 +119,15 @@ namespace SDataObjs {
 
                         if(email1ID == null) {
                             var emails = SkladDataObj.GetEmaily(nadrazenaFirmaObj.Items["Mail"]);
-                            firma.SeznamSpojeni.Spojeni[firma.SeznamSpojeni.Spojeni.Length] = new S5DataFirmaSeznamSpojeniSpojeni() {
-                                TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Email"),
-                                SpojeniCislo = emails.Item1,
-                                Kod_UserData = S7_Dopl.GetKodEmail1(kod),
-                                Popis = "z nadřazené firmy"
+                            if(firma.SeznamSpojeni == null) firma.SeznamSpojeni = new S5DataFirmaSeznamSpojeni() {
+                                Spojeni = new S5DataFirmaSeznamSpojeniSpojeni[] {
+                                    new S5DataFirmaSeznamSpojeniSpojeni() {
+                                        TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Email"),
+                                        SpojeniCislo = emails.Item1,
+                                        Kod_UserData = S7_Dopl.GetKodEmail1(kod),
+                                        Popis = "z nadřazené firmy"
+                                    }
+                                }
                             };
                         }
                     }

@@ -48,7 +48,7 @@ namespace SDataObjs {
             foreach (var karta in karty.Data) {
                 var d = karta.Items;
                 var k = new S5DataPolozkaCeniku();
-                k.Cenik_ID = S0_IDs.GetCeniktID("_PRODEJ");
+                k.Cenik_ID = S0_IDs.GetCenikID("_PRODEJ");
                 k.Kod = "PROD" + d["CisloKarty"].GetNum();
                 k.Artikl_ID = S0_IDs.GetArtiklID(S3_Katalog.GetID(d["CisloKarty"].GetNum()));
                 if(k.Artikl_ID == null) continue;
@@ -85,7 +85,7 @@ namespace SDataObjs {
                 if(data["CisloSkup"].GetNum() != "0000") {
                     var firma = new S5DataFirma();
                     var firmaID = S0_IDs.GetFirmaID(S3_Adresar.GetOdbID(data["CisloOdberatele"].GetNum()));
-                    var prodejCenikID = S0_IDs.GetCeniktID("_PRODEJ");
+                    var prodejCenikID = S0_IDs.GetCenikID("_PRODEJ");
 
                     firma.ID = firmaID;
                     firma.ObchodniPodminky = new S5DataFirmaObchodniPodminky() {

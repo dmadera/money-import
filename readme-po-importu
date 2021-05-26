@@ -1,20 +1,9 @@
-Filtry
-    Marže pod 10%	    Katalog       Výše změny > -10
-    OZ všechny	        Firma               Adresní klíč OZ nebo OZN
-    OZ nové	            Firma               Adresní klíč OZN
-    Iternetoví odb      Firma               Adresní klíč INT
-    S nárokem na šek    Faktura vydaná      Odběratel - Adresní klíč != -SEK & CelkemSDPH >= 5000 & Sleva = 0
-    S nárokem na šek    Prodejka vydaná     Odběratel - Adresní klíč != -SEK & CelkemSDPH >= 5000 & Sleva = 0
-    K zaúčtování        Prodejka vydané     Způsob platby != --
-    
-
 Smazat všechny triggery a načíst znovu. Provést update dotčených tabulek - Zbozi, Ceniky, Adresar apod. 
-Nastavit číselnou řadu KATALOG ve skupině ART (Artikl) a Obaly.
+Nastavit číselnou řadu KATALOG ve skupině ART (Artikl) a Obaly. Akutalizovat v DB katalog CiselnaRada_ID (pro kopírování položek)
 Promazat číselné řady (INV).
 Promazat Typy spojení (Skype, IM, GSM brána).
 Provést výpočet pořizovacích nákladů zásob - v menu skladové operace + synchronizace cen.
 Nastavit kontrolu minimálního zisku. 
-Skrýt nepotřebné jednotky pro agendu - aplikovat filtr pouze na jednotky logistické.
 Omezit editaci a přidávání šeku pouze na Manažera
 Přenést u odběratelů z Pohody, kteří využívají náhradní plnění, emaily pro export do NP. Evidovat se budou u odběratelů. 
 Přenést u dodavatelů z Pohody bankovní účty do Money.

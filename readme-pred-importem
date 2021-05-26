@@ -6,6 +6,7 @@ Průvodce nastavení programu
         Záložky detailu: nahoře
     Ovládání a chování aplikace: 
         U nového záznamu nabízet výběr skupiny: true
+        Pamatovat si s posledním aktivním filtrem: true 
         Pamatovat si v seznamu sloupec
         Sumovat položky dokladu až po..: true
     Nastavení agendy
@@ -80,8 +81,6 @@ Artikl - skupiny
 Artikly - Obecné
     Kontroly: 
         Kód: Nepovolit, Nepovolit
-        Název: Nepovoli, Upozornit
-        Kontrolovat duplicitu v názvu délce: 40
 
 Ceník
     Kód: _PRODEJ, Název: Prodejní
@@ -321,17 +320,19 @@ Automatické Akce
 
 Filtry
     Katalog
-        Marže pod 10%
+        Marže pod 10%       Výše změny > -10
         Bez speciálního
         Bez obalů
         Dostupné na skladě
-    Marže pod 10%	    Katalog       Výše změny > -10
-    OZ všechny	        Firma               Adresní klíč OZ nebo OZN
-    OZ nové	            Firma               Adresní klíč OZN
-    Iternetoví odb      Firma               Adresní klíč INT
-    S nárokem na šek    Faktura vydaná      Odběratel - Adresní klíč != -SEK & CelkemSDPH >= 5000 & Sleva = 0
-    S nárokem na šek    Prodejka vydaná     Odběratel - Adresní klíč != -SEK & CelkemSDPH >= 5000 & Sleva = 0
-    K zaúčtování        Prodejka vydané     Způsob platby != --
+    Firma
+        OZ všechny          Adresní klíč OZ nebo OZN
+        OZ nové             Adresní klíč OZN
+        Internetoví         Adresní klíč INT
+    Faktura vydaná
+        S nárokem na šek    Odběratel - Adresní klíč != -SEK & CelkemSDPH >= 5000 & Sleva = 0
+    Prodejka vydaná
+        S nárokem na šek    Odběratel - Adresní klíč != -SEK & CelkemSDPH >= 5000 & Sleva = 0
+        K zaúčtování        Způsob platby != --
 
 Uživatelské role
     VEDENI
@@ -346,5 +347,3 @@ Uživatelské role
 
 
 --- poslední úpravy na S4_Agenda po záloze čistého
-opravit osobu u AD00001 na přebírající a kod AD00001PRE
-typy spojeni
