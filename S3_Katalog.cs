@@ -82,7 +82,7 @@ namespace SDataObjs {
                 var artikl = new S5DataArtikl() {
                     Kod = GetID(d["CisloKarty"].GetNum()),
                     PosledniCena = d["NakupCena"].GetDecimal(),
-                    SkladovaPozice_UserData = d["Pozice"].GetAlfaNum().ToUpper(), 
+                    Zkratka20 = d["Pozice"].GetAlfaNum().ToUpper(), 
                     PLU = d["NazevZbozi2"].GetText()
                 };
 

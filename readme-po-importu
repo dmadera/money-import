@@ -1,10 +1,6 @@
 Smazat všechny triggery a načíst znovu. Provést update dotčených tabulek - Zbozi, Ceniky, Adresar apod. 
-Nastavit číselnou řadu KATALOG ve skupině ART (Artikl) a Obaly. Akutalizovat v DB katalog CiselnaRada_ID (pro kopírování položek)
-Promazat číselné řady (INV).
-Promazat Typy spojení (Skype, IM, GSM brána).
+Nastavit číselnou řadu KATALOG ve skupině ART (Artikl). Akutalizovat v DB katalog CiselnaRada_ID (pro kopírování položek)
 Provést výpočet pořizovacích nákladů zásob - v menu skladové operace + synchronizace cen.
-Nastavit kontrolu minimálního zisku. 
-Omezit editaci a přidávání šeku pouze na Manažera
 Přenést u odběratelů z Pohody, kteří využívají náhradní plnění, emaily pro export do NP. Evidovat se budou u odběratelů. 
 Přenést u dodavatelů z Pohody bankovní účty do Money.
 Nastavit u odběratelů správnou prioritu ceníku - ti, kteří mají ve skladu Prirazka = N, zrusit ceníky akce a sleva. 

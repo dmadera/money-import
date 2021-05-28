@@ -339,8 +339,15 @@
     <ZpusobPlatby>
       <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
       <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
-      <Kod>K</Kod>
-      <Nazev>Kartou</Nazev>
+      <Kod>ZK</Kod>
+      <Nazev>Zaplaceno hotově</Nazev>
+      <Poznamka />
+    </ZpusobPlatby>
+    <ZpusobPlatby>
+      <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
+      <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
+      <Kod>ZK</Kod>
+      <Nazev>Zaplaceno kartou</Nazev>
       <Poznamka />
     </ZpusobPlatby>
   </ZpusobPlatbyList>

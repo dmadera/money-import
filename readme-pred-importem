@@ -30,7 +30,7 @@ Průvodce nastavení programu
         Metoda vedení skladů: Metoda B     
     Obchod
         Vystaveni dokladu: Nekontrolovat - DL, OP, NV; Upozornit - FV
-        Kontrola překročení kreditu: ZFV, OP, NV - false, jinak true
+        Kontrola překročení kreditu: FV, ZFV = true, jinak false
         Kontrola uplatnění záloh: false
         Kontrola vzájemného zápočtu: FV, FP, ZD, PD - Nekontrolovat
     Ostatní
@@ -74,19 +74,24 @@ Nabídky vydané - obecné
     Povolit výchozí výpočet nákladů: Aktuální pořízovací cena zásoby
     Zakázat uživateli změnu typu výpočtu: true
 
-Artikl - skupiny
+Katalog - skupiny
     Kód: Nezařazené, Číselná řada: zrušit vazbu (pro import)
     Zkratka 20: <empty>
     Zkratka 12: <empty>
-Artikly - Obecné
+Katalog - Obecné
     Kontroly: 
         Kód: Nepovolit, Nepovolit
+        MJ: Nepovolit
+        Druh polozky katalogu: Nepovolit
 
 Ceník
     Kód: _PRODEJ, Název: Prodejní
         Typ výchozí ceny: Není
         Typ zdroje přebírání: Katalog, Skupina katalogu: Nezařazené
         Nastavit jako výchozí: ANO
+    Kód: _NAKUP, Název: Nákupní
+        Typ výchozí ceny: Není
+        Typ zdroje přebírání: Katalog, Skupina katalogu: Nezařazené 
     Kód: _AKCE, Název: Akční
         Typ výchozí ceny: Není
         Typ zdroje přebírání: Sklad, Název skladu: AKCE
@@ -335,10 +340,13 @@ Filtry
         K zaúčtování        Způsob platby != --
 
 Uživatelské role
+    Nastavit kontrolu minimálního zisku. 
+    Omezit editaci a přidávání šeku pouze na Martina.
+    blokace vymazání prodejky
     VEDENI
 
     OBCHOD
-
+        nepovolit smazani prodejky
     VSICHNI
         Firma
             skrýt způsob platby
@@ -347,3 +355,8 @@ Uživatelské role
 
 
 --- poslední úpravy na S4_Agenda po záloze čistého
+smazat SkladovaPozice_UserData u Katalogu
+evidovat nahradni plneni
+naplnit primarni ucty v seznamu pokladen
+nastavit zauctovani prodejek vychozi
+vytvorit koncept seky

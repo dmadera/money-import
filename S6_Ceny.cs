@@ -62,6 +62,24 @@ namespace SDataObjs {
                 k.Cena = Math.Round(d["NakupCena"].GetFloat() + d["NakupCena"].GetFloat() / 100 * d["Rabat"].GetFloat(), 2).ToString().Replace(".", ",");
                 _ceny.Add(k);
             }
+
+            foreach (var karta in karty.Data) {
+                var d = karta.Items;
+                var k = new S5DataPolozkaCeniku();
+                k.Cenik_ID = S0_IDs.GetCenikID("_NAKUP");
+                k.Kod = "NAKUP" + d["CisloKarty"].GetNum();
+                k.Artikl_ID = S0_IDs.GetArtiklID(S3_Katalog.GetID(d["CisloKarty"].GetNum()));
+                if(k.Artikl_ID == null) continue;
+
+                k.Sklad_ID = skladID;
+                k.CanGetDataFromGroup = "False";
+                k.NepodlehatSleveDokladu = "False";
+                k.VychoziCena = new S5DataPolozkaCenikuVychoziCena() {
+                    TypCeny = new enum_TypVychoziCeny() { Value = enum_TypVychoziCeny_value.Item0 }
+                };
+                k.Cena = Math.Round(d["NakupCena"].GetFloat(), 2).ToString().Replace(".", ",");
+                _ceny.Add(k);
+            }
         }
 
         private void convertCeniky(SkladDataFile skupiny) {

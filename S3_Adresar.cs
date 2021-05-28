@@ -76,13 +76,14 @@ namespace SDataObjs {
                                 
                 var akceCenikID = S0_IDs.GetCenikID("_AKCE");
                 var prodejCenikID = S0_IDs.GetCenikID("_PRODEJ");
+                var nakupCenikID = S0_IDs.GetCenikID("_NAKUP");
                 
                 var prirazka = !(d["RabatO"].GetFloat() < 0 && d["Prirazka"].GetBoolean() == "False");
 
                 if(jeOstatni) {
                     firma.Sleva = new S5DataFirmaSleva() {
-                        Sleva = "20,0",
-                        VlastniSleva = "True"
+                        Sleva = "0",
+                        VlastniSleva = "False"
                     };
                     firma.ObchodniPodminky = new S5DataFirmaObchodniPodminky() {
                         ZpusobVyberuCeny = new enum_ZpusobVyberuCeny() {
@@ -93,7 +94,7 @@ namespace SDataObjs {
                             FirmaCenik = new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik[] {                                
                                 new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
                                     Poradi = "1",
-                                    Cenik_ID = prodejCenikID
+                                    Cenik_ID = nakupCenikID
                                 }
                             }
                         }
