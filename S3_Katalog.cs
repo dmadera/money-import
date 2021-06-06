@@ -82,7 +82,7 @@ namespace SDataObjs {
                 var artikl = new S5DataArtikl() {
                     Kod = GetID(d["CisloKarty"].GetNum()),
                     PosledniCena = d["NakupCena"].GetDecimal(),
-                    Zkratka20 = d["Pozice"].GetAlfaNum().ToUpper(), 
+                    Zkratka12 = d["Pozice"].GetAlfaNum().ToUpper(), 
                     PLU = d["NazevZbozi2"].GetText()
                 };
 
@@ -92,7 +92,7 @@ namespace SDataObjs {
                 var regexZrus = new Regex(@"^\|\|[0-9]");
                 if(regexLom.IsMatch(nazevZbozi)) { // specialni do vyberovek
                     druhZboziKod = "SPE";
-                    artikl.Zkratka12 = regexLom.Match(nazevZbozi).Value.Replace(@"\", "").ToUpper();
+                    artikl.Zkratka20 = regexLom.Match(nazevZbozi).Value.Replace(@"\", "").ToUpper();
                     nazevZbozi = regexLom.Replace(nazevZbozi, "").FirstCharToUpper();
                 } else if(regexObal.IsMatch(nazevZbozi)) { // obaly, palety
                     druhZboziKod = "OBA";

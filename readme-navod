@@ -2,8 +2,8 @@ Katalog
     Název - název produktu pro sklad. MAX 40 znaků.
     Katalog - název produktu pro e-shop, pokud se liší, MAX 60 znaků.
     PLU - interní popis produktu, MAX 60 znaků.
-    Zkratka 12 znaků - importem obsah z názvu mezi lomítkem.
-    Zkratka 20 znaků - skladová pozice.
+    Zkratka 12 znaků - skladová pozice
+    Zkratka 20 znaků - martin popis speciální zboží
     
 Firmy
     Drak se eviduje skrze činnosti pod kódem DRAK. Činnosti se propisují z Firmy do dokladů.

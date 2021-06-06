@@ -4,7 +4,7 @@
     <OutputType>Exe</OutputType>
     <!-- <TargetFramework>netcoreapp3.1</TargetFramework> -->
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>moneys4_import</RootNamespace>
+    <RootNamespace>money_import</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

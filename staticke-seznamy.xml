@@ -339,15 +339,15 @@
     <ZpusobPlatby>
       <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
       <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
-      <Kod>ZK</Kod>
-      <Nazev>Zaplaceno hotově</Nazev>
+      <Kod>K</Kod>
+      <Nazev>Kartou</Nazev>
       <Poznamka />
     </ZpusobPlatby>
     <ZpusobPlatby>
       <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
       <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
-      <Kod>ZK</Kod>
-      <Nazev>Zaplaceno kartou</Nazev>
+      <Kod>R</Kod>
+      <Nazev>Na rozvozu</Nazev>
       <Poznamka />
     </ZpusobPlatby>
   </ZpusobPlatbyList>

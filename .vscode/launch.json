@@ -13,7 +13,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/bin/Debug/net5.0/moneys4-import.dll",
+            "program": "${workspaceFolder}/bin/Debug/net5.0/money-import.dll",
             //"args": ["${workspaceFolder}/z-assets/input", "${workspaceFolder}/z-assets/output"],
             "args": ["${workspaceFolder}/z-assets/input/complete", "${workspaceFolder}/z-assets/output"],
             "cwd": "${workspaceFolder}",
