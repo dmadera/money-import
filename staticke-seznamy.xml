@@ -313,6 +313,12 @@
       <Nazev># přebírající</Nazev>
       <Poznamka />
     </TypSpojeni>
+    <TypSpojeni>
+      <DruhSpojeni EnumValueName="WWW">3</DruhSpojeni>
+      <Kod>web</Kod>
+      <Nazev>web</Nazev>
+      <Poznamka />
+    </TypSpojeni>
   </TypSpojeniList>
   <ZpusobPlatbyList>
     <ZpusobPlatby>
@@ -341,13 +347,6 @@
       <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
       <Kod>K</Kod>
       <Nazev>Kartou</Nazev>
-      <Poznamka />
-    </ZpusobPlatby>
-    <ZpusobPlatby>
-      <EETEvidovatTrzbu>False</EETEvidovatTrzbu>
-      <EkasaEvidovatTrzbu>False</EkasaEvidovatTrzbu>
-      <Kod>R</Kod>
-      <Nazev>Na rozvozu</Nazev>
       <Poznamka />
     </ZpusobPlatby>
   </ZpusobPlatbyList>

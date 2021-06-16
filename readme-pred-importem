@@ -117,7 +117,7 @@ Dodací list vydaný - Obecní
         Variabilní symbol: Nekontrolovat, Upozornit
 
 Faktura vydaná - skupiny
-    Kód: Nezařazené, Způsob platby: převodem, Popis: !
+    Kód: Nezařazené, Způsob platby: převodem, Popis: Faktura vydaná
         Obecné:
             Zaokrouhlení celkové částky: 1_MAT
             Sazba DPH pro zaokr.: Nulová
@@ -127,7 +127,7 @@ Faktura vydaná - skupiny
         Úhrady: 
             Vytvořit pokl. dokl. při platbě: Hotově
             Zobrazit karty vytv. pokl. dokladů: NE
-            Vytvořit int. a pohl. doklad při platbě: kartou
+            Vytvořit int. a pohl. doklad při platbě: Kartou
             Zobrazit karty vytv. int. a pohl dokladů: NE
             Skupina pokladních dokladů: Pokladna ODBYT
             Skupina ceninnových pokl. dokladů: Nezařazeno
@@ -143,6 +143,7 @@ Faktura vydaná - Obecné
 
 Prodejka vydaná
     Kód: PRODEJKY, Název: Prodejky, způsob platby: --, způsob dopravy: Osobní převzetí
+        Popis: !
         Zaokr celkové částky: 1_MAT
         Zaokr dph: --
         Zaúčtování prodejek: 
@@ -153,7 +154,7 @@ Prodejka vydaná
             Zp. PD: Jeden doklad
             Zp. PD cenin: Jeden doklad
             Zp. PH: Jeden doklad
-            Popis: Tržba za prodej ze skladu
+            Popis: Tržba z prodejek
             Hot. pokladna: ODBYT (Pokladna ODBYT)
             Členění DPH: 19Ř01,02
             Předkontace: PP003 (Tržba v hotovosti - zboží, základ /604000, dph sniz /343, dph zakl /343)
@@ -164,7 +165,8 @@ Prodejka vydaná
             Čís řada PD: Pokladní doklady ODBYT (HO)
             Čís řada ID: Interní doklady (ID)
             Čís řada PH: Pohledávkové doklady (PH)
-    Kód: OSTATNI, Název: Ostatní, zpusob platby: --, způsob dopravy: Osobní převzetí, Popis: OSTATNI Prodejka vydaná
+    Kód: OSTATNI, Název: Ostatní, zpusob platby: --, způsob dopravy: Osobní převzetí
+        Popis: !
         Zaokr celkové částky: 1_MAT
         Zaokr dph: --
         Zaúčtování prodejek: 
@@ -174,8 +176,8 @@ Prodejka vydaná
             Účtovat nepeněžní platidla: ANO
             Zp. PD: Jeden doklad
             Zp. PD cenin: Jeden doklad
-            Zp. PH: Jeden doklad
-            Popis: OSTATNI Tržba za prodej ze skladu
+            Zp. PH: Jednotlivě
+            Popis: OSTATNI Tržba z prodejek
             Hot. pokladna: _OSTATNI
             Členění DPH: _Ř000 U
             Předkontace: __TRZBA (Tržba v hotovosti - zboží, cena celkem /604999)
@@ -210,7 +212,7 @@ Pokladní doklady - skupiny
             Úhrady: PV005, _Ř000 P
             Úhrady: ZALVYD, 19Ř03,04
 
-    Kód: ODBYT, Název: Pokladna ODBYT, Popis: Pokladní doklad ODBYT
+    Kód: ODBYT, Název: Pokladna ODBYT, Popis: Odvod hotovosti
         Příjem:
             Číselná řada: POKD_ODBYT, Zaokr: 1_MAT, Předkontace zaokr: FV009, Sazba DPH pro zaokr: Nulová
             Doklad: PP003, _Ř000 U
@@ -222,7 +224,7 @@ Pokladní doklady - skupiny
             Úhrady: --, _Ř000 P
             Úhrady: --, --
         
-    Kód: OSTATNI, Název: OSTATNI Pokladna, Popis: OSTATNI Pokladní doklad
+    Kód: OSTATNI, Název: OSTATNI Pokladna, Popis: OSTATNI Odvod hotovosti
         Příjem:
             Číselná řada: OST_POKD_O
             Doklad: __TRZBA, _Ř000 U
@@ -245,6 +247,11 @@ Interní doklady - skupiny:
             VŠE Předkontace: --, Členění DPH: _Ř000 U 2x, _Ř000 P 2x
         
     Kód: UKARTA, Název: Úhrady kartou, Popis: Int. doklad na úhradu kartou, Číselná řada: INT_DOKL
+        Obecné:
+            Členění DPH: _Ř000 U
+            Předkontace: ZA001
+            Předkontace zaokrouhlení: ZA001
+            Primární účet MD: 395000
         Podrobnosti: Nechat výchozí
             INT042, ZALPRI, INT043, ZALVYD, _Ř000 U, _Ř000 U, _Ř000 P, _Ř000 P
     
@@ -263,6 +270,10 @@ Pohledávkové dokladu - skupiny:
         Číselná řada: _POHL_DOKL
         Členění DPH: _Ř000 U
         Provádět kontrolu překročení limitu: NE
+Pohledávkové doklady - Obecné:
+    Kontroly:
+        Variabilní symbol: Nekontrolovat, Nekontrolovat
+
 
 Nepeněžní platidla
     Kod: KARTA, Nazev: Platební karta
@@ -270,12 +281,14 @@ Nepeněžní platidla
     Primární účet pohledávek: 378000
     Zobrazovat na kartě Platby: NE, Pořadí: 1
     Vystavitel: B-Payment s.r.o.
+    Skupina pohl. dokladů: UKARTA
 
     Kod: SEK, Nazev: Šek
     Typ platidla: Pohledávka
     Primární účet pohledávek: 378999
     Zobrazovat na kartě Platby: NE, Pořadí: 2
     Vystavitel: PEMA VELKOOBCHOD s.r.o.
+    Skupina pohl. dokladů: _USEK
 
 Účtový rozvrh
     Účet: 211100, Název: Pokladna UCETNI, nechat nastavení dle výchozího

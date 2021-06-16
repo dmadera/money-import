@@ -189,6 +189,12 @@ namespace SDataObjs {
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("EmailFa"),
                             SpojeniCislo = emailsFA.Item2,
                             Kod_UserData = S7_Dopl.GetKodEmailFA2(kod)
+                        } : null,
+                        tels.Item1 == null && tels.Item2 == null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Tel"),
+                            SpojeniCislo = "",
+                            Kod_UserData = S7_Dopl.GetKodTelefon(kod),
+                            Popis = "<Neznamy>"
                         } : null
                     }
                 };
@@ -230,7 +236,11 @@ namespace SDataObjs {
                     ICO = obj.GetIco(),
                     DIC = obj.GetDic(),
                     DatumPorizeni_UserData = d["DatumPorizeni"].GetDate(),
-                    DatumPorizeni_UserDataSpecified = true
+                    DatumPorizeni_UserDataSpecified = true,
+                    Sleva = new S5DataFirmaSleva() {
+                        Sleva = "0",
+                        VlastniSleva = "False"
+                    }
                 };
 
                 firma.Poznamka = (
@@ -278,6 +288,12 @@ namespace SDataObjs {
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Email"),
                             SpojeniCislo = emailsOZ.Item2,
                             Kod_UserData = S7_Dopl.GetKodEmailFA2(kod)
+                        } : null,
+                        tels.Item1 == null && tels.Item2 == null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Tel"),
+                            SpojeniCislo = "",
+                            Kod_UserData = S7_Dopl.GetKodTelefon(kod),
+                            Popis = "<Neznamy>"
                         } : null
                     }
                 };

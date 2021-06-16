@@ -2,6 +2,11 @@ Vytvořit zaúčtování prodejek:
     VYCHOZI, Výchozí
     Přebrat nastavení ze skupiny: ANO
     Ukládat doklady průběžně: nebo
+Vytvořit koncept šeku:
+    Popis: NEMAZAT koncept šeku
+    Číslo dokladu: _SK000000
+
+
 Smazat všechny triggery a načíst znovu. Provést update dotčených tabulek - Zbozi, Ceniky, Adresar apod. 
 Nastavit číselnou řadu KATALOG ve skupině ART (Artikl). Akutalizovat v DB katalog CiselnaRada_ID (pro kopírování položek)
 Přenést u odběratelů z Pohody, kteří využívají náhradní plnění, emaily pro export do NP. Evidovat se budou u odběratelů. 

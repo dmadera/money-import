@@ -50,6 +50,8 @@ Faktury vydané
 
 Ostatní
     Nefunkční nápověda - ve složce Solitea\Money S4\Help\Help_S4.chm pravým tlačítkem vlastnosti - odblokovat - OK
+    Mazání uživatelských sloupců
+        - pokud nefunguje mazání, smazat v systemove db v tabulkach MetaData_Properties (na základě Object_ID) a System_UserData
 
 System
     přístupová práva
