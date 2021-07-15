@@ -4,6 +4,10 @@ Katalog
     PLU - interní popis produktu, MAX 60 znaků.
     Zkratka 12 znaků - skladová pozice
     Zkratka 20 znaků - martin popis speciální zboží
+
+Ceny
+    akční ceník zůstane na doprodej nebo něco
+    pro akcni zbozi nakoupene v akci bude specialni katalogova karta
     
 Firmy
     Drak se eviduje skrze činnosti pod kódem DRAK. Činnosti se propisují z Firmy do dokladů.
@@ -23,6 +27,8 @@ DLV
     Výběr firmy provádět přes seznam firem. Zkontrolovat, zda jsou uvedené správně kontaktní osoby - telefon, email. Popřípadě opravit.
     V případě rychlé změny přebírajícího bez uložení - osoba zrušit vazbu a přepsat.  
     Popis je poznámka pro skladníky na expedičním listu. 
+
+    Dobropis - "Vratka" na DLV, do párovacího symbolu dát původní DLV.
 
 NAV
     2 typy - standardní a výběrovky

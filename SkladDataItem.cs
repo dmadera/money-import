@@ -75,7 +75,8 @@ namespace SkladData {
             return float.Parse(v);
         }
 
-        public static bool IsValidEmail(string address) => address != null && new EmailAddressAttribute().IsValid(address);
+        // public static bool IsValidEmail(string address) => address != null && new EmailAddressAttribute().IsValid(address);
+        public static bool IsValidEmail(string address) => address != null && address != "";
 
     }
 }

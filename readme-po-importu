@@ -7,7 +7,7 @@ Vytvořit koncept šeku:
     Číslo dokladu: _SK000000
 
 
-Smazat všechny triggery a načíst znovu. Provést update dotčených tabulek - Zbozi, Ceniky, Adresar apod. 
+Smazat všechny triggery a načíst znovu. Provést update dotčených tabulek - Zbozi, Ceniky, Adresar apod. Provést d-agenda update dat. 
 Nastavit číselnou řadu KATALOG ve skupině ART (Artikl). Akutalizovat v DB katalog CiselnaRada_ID (pro kopírování položek)
 Přenést u odběratelů z Pohody, kteří využívají náhradní plnění, emaily pro export do NP. Evidovat se budou u odběratelů. 
 Přenést u dodavatelů z Pohody bankovní účty do Money.

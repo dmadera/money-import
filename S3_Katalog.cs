@@ -216,6 +216,10 @@ namespace SDataObjs {
                         PlatnostDo = new DateTime(9998, 12, 31)
                     };
                 }
+
+                if(priznak == "A") {
+                    artikl.NepodlehatSleveDokladu = "True";
+                }
                 
 
                 artikl.Dodavatele = d["CisloDodavatele"].GetNum() != "00000" ? new S5DataArtiklDodavatele() {

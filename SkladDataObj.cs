@@ -122,7 +122,7 @@ namespace SkladData {
             var split = input.Replace(",", ";").Split(";");
             string e1, e2;
             e1 = SkladDataItem.IsValidEmail(split[0]) ? split[0] : null;
-            e2 = split.Length == 2 && SkladDataItem.IsValidEmail(split[1]) ? split[1] : null;
+            e2 = split.Length == 2 && SkladDataItem.IsValidEmail(split[1])? split[1] : null;
             return new Tuple<string, string>(e1, e2);
         }
 
@@ -136,6 +136,19 @@ namespace SkladData {
                 }
             }
             return output;
+        }
+
+        public static bool jePodobne(string a, string b) {
+            Regex rgx = new Regex("[^a-zA-Z0-9]");
+            a = rgx.Replace(a, "");
+            b = rgx.Replace(b, "");
+            a = a.ToLower().Trim();
+            b = b.ToLower().Trim();
+
+            if(a.Contains(b)) return true;
+            if(b.Contains(a)) return true;
+
+            return false;
         }
     }
 }

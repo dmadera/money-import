@@ -28,8 +28,10 @@ namespace SDataObjs {
         public static string GetKodPrebirajici(string kodFirmy) { return kodFirmy + "PRE"; }
         public static string GetKodZastoupeny(string kodFirmy) { return kodFirmy + "ZAS"; }
         public static string GetKodZastoupenyOZ(string kodFirmy) { return kodFirmy + "ZOZ"; }
-        public static string GetKodTelefon(string kodFirmy) { return kodFirmy + "TEL"; }
-        public static string GetKodTelefonCopy(string kodFirmy) { return kodFirmy + "TEC"; }
+        public static string GetKodTelefon0(string kodFirmy) { return kodFirmy + "TL0"; }
+        public static string GetKodTelefon1(string kodFirmy) { return kodFirmy + "TL1"; }
+        public static string GetKodTelefon2(string kodFirmy) { return kodFirmy + "TL2"; }
+        public static string GetKodTelefon3(string kodFirmy) { return kodFirmy + "TL3"; }
         public static string GetKodTelefonFA(string kodFirmy) { return kodFirmy + "TFA"; }
         public static string GetKodEmail1(string kodFirmy) { return kodFirmy + "EM1"; }
         public static string GetKodEmail2(string kodFirmy) { return kodFirmy + "EM2"; }
@@ -59,8 +61,8 @@ namespace SDataObjs {
 
                 if(firma.ID == null) continue;
 
-                string tel1ID = S0_IDs.GetSpojeniID(GetKodTelefon(kod));
-                string tel1copyID = S0_IDs.GetSpojeniID(GetKodTelefonCopy(kod));
+                string tel1ID = S0_IDs.GetSpojeniID(GetKodTelefon0(kod));
+                string tel1copyID = S0_IDs.GetSpojeniID(GetKodTelefon1(kod));
                 string email1ID = S0_IDs.GetSpojeniID(GetKodEmail1(kod));
 
                 if (kodSumFa == "dr") {
