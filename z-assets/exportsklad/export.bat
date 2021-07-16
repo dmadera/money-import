@@ -3,6 +3,9 @@ set dir=%~dp0
 set dir=%dir:~0,-1%
 
 cd %dir%
+del /S /Q /F input\*
+xcopy /C /I \\server\Sklad\data\*.000 input\
+del /S /Q /F output\*
 
 (
 cd %dir%

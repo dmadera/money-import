@@ -55,15 +55,6 @@ namespace MainProgram {
                 return 1;
             }
 
-            var fileSeznamy = Path.Combine(outputDir, "S0_Seznamy.xml");
-            var fileSeznamyExists = File.Exists(fileSeznamy);
-            Console.WriteLine("Generuji soubor {0}", Path.GetFileName(fileSeznamy));
-            File.Copy("staticke-seznamy.xml", fileSeznamy, true);
-    
-            if(!fileSeznamyExists) {
-                return 0;
-            }
-
             var fileIDs = Path.Combine(outputDir, "S0_IDs.xml");
             if (!File.Exists(fileIDs)) {
                 Console.WriteLine("Proveďte export S_ID z programu Money. Chybí soubor: " + fileIDs);

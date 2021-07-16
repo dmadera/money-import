@@ -352,23 +352,15 @@ Filtry
         S nárokem na šek    Odběratel - Adresní klíč != -SEK & CelkemSDPH >= 5000 & Sleva = 0
         K zaúčtování        Způsob platby != --
 
-Uživatelské role
+Nastaveni práv
     Nastavit kontrolu minimálního zisku. 
     Omezit editaci a přidávání šeku pouze na Martina.
     blokace vymazání prodejky
-    VEDENI
-
-    OBCHOD
-        nepovolit smazani prodejky
-    VSICHNI
-        Firma
-            skrýt způsob platby
-        Dodací list
-            skrýt způsob platby
-
-
+    blokace korekce faktur, prodejek
+    zakázat tvorbu skladovych dokladu pro ostatni uzivatele
+    nepovolit smazani prodejky
+    firma - skrýt způsob platby
+    dlv - skrýt způsob platby
+    
 --- poslední úpravy na S4_Agenda po záloze čistého
-šablona emailu
-automaticke akce na nabidky
-produktove klice doplnit zkratku pro tisk stitku
-automaticke akce - filtry nefunguji pri platbe kartou
+
