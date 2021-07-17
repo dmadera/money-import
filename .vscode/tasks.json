@@ -6,6 +6,7 @@
             "command": "${workspaceFolder}/xsd/generate-cs",
             "type": "shell",
             "args": [],
+            "problemMatcher": []
         },
         {
             "label": "build",

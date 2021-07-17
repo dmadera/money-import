@@ -59,7 +59,8 @@ Ostatní
     Mazání uživatelských sloupců
         - pokud nefunguje mazání, smazat v systemove db v tabulkach MetaData_Properties (na základě Object_ID) a System_UserData
 
-System
+
+System DB
     přístupová práva
     uživatelské sloupce
     nastavení sloupců

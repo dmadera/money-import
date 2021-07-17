@@ -47,6 +47,7 @@ namespace SDataObjs {
                     ID = kategorieID,
                     Kod = kategorie,
                     Nazev = d["NazevKodu"].GetText(),
+                    Poradi_UserData = d["Poradi"].GetAlfaNum()
                 };
                 _kategorie.Add(cat);
             }
@@ -66,6 +67,7 @@ namespace SDataObjs {
                     ID = podkategorieID,
                     Kod = podkategorie,
                     Nazev = d["NazevPOdKodu"].GetText(),
+                    Poradi_UserData = d["PodPoradi"].GetAlfaNum(),
                     ParentObject_ID = _kategorie.Find((a) => { return a.Kod == d["KodZbozi"].GetNum(); }).ID
                 };
                 _kategorie.Add(cat);
@@ -123,8 +125,7 @@ namespace SDataObjs {
                         new S5DataArtiklSazbyDPHArtiklDPH() {
                             SazbaVstup = sazbaDPH,
                             SazbaVystup = sazbaDPH,
-                            Zacatek = DateTime.Now.Date,
-                            ZacatekSpecified = true
+                            Zacatek = DateTime.Now.Date
                         }
                     }
                 };
