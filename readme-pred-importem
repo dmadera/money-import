@@ -353,6 +353,7 @@ Filtry
         K zaúčtování        Způsob platby != --
 
 Nastaveni práv
+    omezit pro ostatni krom martina v internich dokladech (skupina seky) input na polozku puvodni doklad
     Nastavit kontrolu minimálního zisku. 
     Omezit editaci a přidávání šeku pouze na Martina.
     blokace vymazání prodejky
@@ -363,4 +364,5 @@ Nastaveni práv
     dlv - skrýt způsob platby
     
 --- poslední úpravy na S4_Agenda po záloze čistého
+
 

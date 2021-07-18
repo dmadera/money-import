@@ -1,9 +1,11 @@
 Katalog
     Název - název produktu pro sklad. MAX 40 znaků.
     Katalog - název produktu pro e-shop, pokud se liší, MAX 60 znaků.
-    PLU - interní popis produktu, MAX 60 znaků.
+    PLU - Priznaky
     Zkratka 12 znaků - skladová pozice
-    Zkratka 20 znaků - martin popis speciální zboží
+    Zkratka 20 znaků - interni popis zbozi
+    TiskPoznamka - poznamka pro sklad do expedicnich prikazu a naskladnovacich
+    InterniOznaceni - hodnota pred lomítkem ze stareho skladu
 
 Ceny
     akční ceník zůstane na doprodej nebo něco
@@ -58,7 +60,13 @@ Ostatní
     Nefunkční nápověda - ve složce Solitea\Money S4\Help\Help_S4.chm pravým tlačítkem vlastnosti - odblokovat - OK
     Mazání uživatelských sloupců
         - pokud nefunguje mazání, smazat v systemove db v tabulkach MetaData_Properties (na základě Object_ID) a System_UserData
+    Přepočet pořizovacích cen 
+        - nekontrolovat výdej do mínusu
+        - disable all triggers
 
+Agenda
+    přebírání dokladů
+    průvodce nastvení programu
 
 System DB
     přístupová práva

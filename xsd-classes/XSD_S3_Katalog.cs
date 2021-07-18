@@ -106,6 +106,8 @@ namespace S3_Katalog {
         
         private string hmostnost_IDField;
         
+        private string interniOznaceni_UserDataField;
+        
         private string intrastatNeslucovatField;
         
         private string katalogField;
@@ -181,6 +183,8 @@ namespace S3_Katalog {
         private string povinnyNasobekField;
         
         private string poznamkaField;
+        
+        private string poznamkaTisk_UserDataField;
         
         private string preneseniDane_IDField;
         
@@ -660,6 +664,17 @@ namespace S3_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string InterniOznaceni_UserData {
+            get {
+                return this.interniOznaceni_UserDataField;
+            }
+            set {
+                this.interniOznaceni_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string IntrastatNeslucovat {
             get {
                 return this.intrastatNeslucovatField;
@@ -1073,6 +1088,17 @@ namespace S3_Katalog {
             }
             set {
                 this.poznamkaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string PoznamkaTisk_UserData {
+            get {
+                return this.poznamkaTisk_UserDataField;
+            }
+            set {
+                this.poznamkaTisk_UserDataField = value;
             }
         }
         

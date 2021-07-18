@@ -85,7 +85,7 @@ namespace SDataObjs {
                     Kod = GetID(d["CisloKarty"].GetNum()),
                     PosledniCena = d["NakupCena"].GetDecimal(),
                     Zkratka12 = d["Pozice"].GetAlfaNum().ToUpper(), 
-                    PLU = d["NazevZbozi2"].GetText()
+                    Zkratka20 = d["NazevZbozi2"].GetText()
                 };
 
                 var druhZboziKod = "ZBO";
@@ -94,7 +94,7 @@ namespace SDataObjs {
                 var regexZrus = new Regex(@"^\|\|[0-9]");
                 if(regexLom.IsMatch(nazevZbozi)) { // specialni do vyberovek
                     druhZboziKod = "SPE";
-                    artikl.Zkratka20 = regexLom.Match(nazevZbozi).Value.Replace(@"\", "").ToUpper();
+                    artikl.InterniOznaceni_UserData = regexLom.Match(nazevZbozi).Value.Replace(@"\", "").ToUpper();
                     nazevZbozi = regexLom.Replace(nazevZbozi, "").FirstCharToUpper();
                 } else if(regexObal.IsMatch(nazevZbozi)) { // obaly, palety
                     druhZboziKod = "OBA";
@@ -216,12 +216,7 @@ namespace SDataObjs {
                         Kod = "5",
                         PlatnostDo = new DateTime(9998, 12, 31)
                     };
-                }
-
-                if(priznak == "A") {
-                    artikl.NepodlehatSleveDokladu = "True";
-                }
-                
+                }                
 
                 artikl.Dodavatele = d["CisloDodavatele"].GetNum() != "00000" ? new S5DataArtiklDodavatele() {
                     SeznamDodavatelu = new S5DataArtiklDodavateleSeznamDodavatelu() {

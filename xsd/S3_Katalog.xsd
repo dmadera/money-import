@@ -32,6 +32,7 @@
                     <xs:element name="HlavniDodavatel_ID" type="emptiable_guid" minOccurs="0" />
                     <xs:element name="HlavniJednotka_ID" type="emptiable_guid" minOccurs="0" />
                     <xs:element name="Hmostnost_ID" type="guid" />
+                    <xs:element name="InterniOznaceni_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="IntrastatNeslucovat" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="Katalog" type="emptiable_string_60" minOccurs="0" />
                     <xs:element name="KatalogCislo" type="emptiable_integer" minOccurs="0" />
@@ -69,6 +70,7 @@
                     <xs:element name="PovahaTransakcePrijeti_ID" type="guid" />
                     <xs:element name="PovinnyNasobek" type="emptiable_decimal_4" minOccurs="0" />
                     <xs:element name="Poznamka" type="emptiable_string_unbounded" minOccurs="0" />
+                    <xs:element name="PoznamkaTisk_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="PreneseniDane_ID" type="emptiable_guid" minOccurs="0" />
                     <xs:element name="PreneseniDaneKN" type="emptiable_string_50" minOccurs="0" />
                     <xs:element name="PreneseniDaneMnozstvi" type="emptiable_decimal_4" minOccurs="0" />

@@ -104,6 +104,8 @@ namespace SDataObjs {
                     var firma = new S5DataFirma();
                     var firmaID = S0_IDs.GetFirmaID(S3_Adresar.GetOdbID(data["CisloOdberatele"].GetNum()));
                     var prodejCenikID = S0_IDs.GetCenikID("_PRODEJ");
+                    var nakupCenikID = S0_IDs.GetCenikID("_NAKUP");
+                    var akceCenikID = S0_IDs.GetCenikID("_AKCE");
 
                     firma.ID = firmaID;
                     firma.ObchodniPodminky = new S5DataFirmaObchodniPodminky() {
@@ -121,8 +123,13 @@ namespace SDataObjs {
                                         Kod = kodSkupKodCenik.GetValueOrDefault(data["CisloSkup"].GetNum())
                                     }
                                 },
-                                new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
+                                data["RabatO"].GetFloat() >= 0  ? new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
                                     Poradi = "2",
+                                    Firma_ID = firmaID,
+                                    Cenik_ID = akceCenikID
+                                } : null, 
+                                new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
+                                    Poradi = "3",
                                     Firma_ID = firmaID,
                                     Cenik_ID = prodejCenikID
                                 },
