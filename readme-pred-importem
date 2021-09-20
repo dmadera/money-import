@@ -160,7 +160,7 @@ Prodejka vydaná
             Předkontace: PP003 (Tržba v hotovosti - zboží, základ /604000, dph sniz /343, dph zakl /343)
             Meziúčet pro nepeněžní platidla: 395000
             Cíl skup. PD: ODBYT (Pokladna ODBYT)
-            Cíl skup. ID: UKARTA
+            Cíl skup. ID: PRODEJKY
             Cíl skup. PH: UKARTA
             Čís řada PD: Pokladní doklady ODBYT (HO)
             Čís řada ID: Interní doklady (ID)
@@ -246,7 +246,7 @@ Interní doklady - skupiny:
         Prodrobnosti: 
             VŠE Předkontace: --, Členění DPH: _Ř000 U 2x, _Ř000 P 2x
         
-    Kód: UKARTA, Název: Úhrady kartou, Popis: Int. doklad na úhradu kartou, Číselná řada: INT_DOKL
+    Kód: PRODEJKY, Název: Prodejky, Popis: ID Tržby prodejek, Číselná řada: INT_DOKL
         Obecné:
             Členění DPH: _Ř000 U
             Předkontace: ZA001

@@ -55,6 +55,23 @@ Prodejky
 Faktury vydané
     Dle střediska třídit - UCETNI.
 
+Číselné řady  
+    PEMA
+        autoincrement odberatelewww na eshopu je 12485
+        eshop nove registrace: 12485 - 19999
+        odberatele stari: 00002 - 12483
+        dodavatele stari: 20001 - 21121 
+        autoincrement ciselne rady ADRESAR v Money je 22000
+        zbozi stare: 0001 - 6047
+        autoincrement ciselne rady KATALOG v Money je 6048
+    LIPA
+        autoincrement odberatelewww na eshopu je 12103
+        eshop nove registrace: 12103 - 19999
+        odberatele stari: 00004 - 12102 + 22102 - 22109
+        dodavatele stari: 20001 - 21609 
+        autoincrement ciselne rady ADRESAR v Money je 22110
+        zbozi stare: 0001 - 6208
+        autoincrement ciselne rady KATALOG v Money je 6209
 
 Ostatní
     Nefunkční nápověda - ve složce Solitea\Money S4\Help\Help_S4.chm pravým tlačítkem vlastnosti - odblokovat - OK

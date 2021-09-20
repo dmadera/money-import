@@ -1,15 +1,21 @@
 Vytvořit zaúčtování prodejek:
     VYCHOZI, Výchozí
     Přebrat nastavení ze skupiny: ANO
-    Ukládat doklady průběžně: nebo
-Vytvořit koncept šeku:
-    Popis: NEMAZAT koncept šeku
-    Číslo dokladu: _SK000000
+    Ukládat doklady průběžně: NE
+
+Přepočet pořizovacích cen - nekontrolovat výdej do mínusu, bez triggeru!
+Nastavit číselnou řadu KATALOG v seznamu Artikl.
+Nastavit číselnou řadu ADRESAR v seznamu Firma.
+Nahrát triggery, proc, views apod.
+Provést update dotčených tabulek - Zbozi, Ceniky, Adresar apod. 
+Provést d-agenda update dat.
+Provést reset štíků a budoucích cen. 
+
+Nastavit u odběratelů správnou prioritu ceníku - diamo apod.
+Nastavit aktualizaci dat na produkční e-shop.
+Založit plánovač cron na aktualizaci dat na e-shop.
+Vypnout starou aktualizaci dat na eshop.  
 
 
-Přepočet pořizovacích cen - nekontrolovat výdej do mínusu, bez triggeru!!!
-Smazat všechny triggery a načíst znovu. Provést update dotčených tabulek - Zbozi, Ceniky, Adresar apod. Provést d-agenda update dat. 
-Nastavit číselnou řadu KATALOG ve skupině ART (Artikl). Akutalizovat v DB katalog CiselnaRada_ID (pro kopírování položek)
-Přenést u odběratelů z Pohody, kteří využívají náhradní plnění, emaily pro export do NP. Evidovat se budou u odběratelů. 
-Přenést u dodavatelů z Pohody bankovní účty do Money.
-Nastavit u odběratelů správnou prioritu ceníku - ti, kteří mají ve skladu Prirazka = N, zrusit ceníky akce a sleva. 
+
+
