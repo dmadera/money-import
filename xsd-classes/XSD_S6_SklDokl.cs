@@ -2965,6 +2965,108 @@ namespace S6_SklDokl {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class enum_VyvozBezICDPH {
+        
+        private enum_VyvozBezICDPHEnumValueName enumValueNameField;
+        
+        private bool enumValueNameFieldSpecified;
+        
+        private enum_VyvozBezICDPH_value valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public enum_VyvozBezICDPHEnumValueName EnumValueName {
+            get {
+                return this.enumValueNameField;
+            }
+            set {
+                this.enumValueNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EnumValueNameSpecified {
+            get {
+                return this.enumValueNameFieldSpecified;
+            }
+            set {
+                this.enumValueNameFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public enum_VyvozBezICDPH_value Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum enum_VyvozBezICDPHEnumValueName {
+        
+        /// <remarks/>
+        Prazdne,
+        
+        /// <remarks/>
+        Spotrebitel,
+        
+        /// <remarks/>
+        BezPrideleneho,
+        
+        /// <remarks/>
+        NeznamyDruhyOdberatel,
+        
+        /// <remarks/>
+        InyDovod,
+        
+        /// <remarks/>
+        IneICDPH,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    public enum enum_VyvozBezICDPH_value {
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("0")]
+        Item0,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("1")]
+        Item1,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("2")]
+        Item2,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("3")]
+        Item3,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("4")]
+        Item4,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("5")]
+        Item5,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class enum_RozpoustetNakladyDle {
         
         private enum_RozpoustetNakladyDleEnumValueName enumValueNameField;
@@ -4955,9 +5057,13 @@ namespace S6_SklDokl {
         
         private string dopravniNakladyField;
         
+        private string ineICDPHField;
+        
         private string ovlivnujeIntrastatField;
         
         private enum_RozpoustetNakladyDle rozpousteniNakladuField;
+        
+        private enum_VyvozBezICDPH vyvozBezICDPHField;
         
         private S5DataSkladovyDokladIntrastatDokladDodaciPodminky dodaciPodminkyField;
         
@@ -5030,6 +5136,17 @@ namespace S6_SklDokl {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string IneICDPH {
+            get {
+                return this.ineICDPHField;
+            }
+            set {
+                this.ineICDPHField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string OvlivnujeIntrastat {
             get {
                 return this.ovlivnujeIntrastatField;
@@ -5047,6 +5164,17 @@ namespace S6_SklDokl {
             }
             set {
                 this.rozpousteniNakladuField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public enum_VyvozBezICDPH VyvozBezICDPH {
+            get {
+                return this.vyvozBezICDPHField;
+            }
+            set {
+                this.vyvozBezICDPHField = value;
             }
         }
         
@@ -7156,6 +7284,8 @@ namespace S6_SklDokl {
         
         private string kombinovanaNomenklatura_IDField;
         
+        private string kombinovanaNomenklaturaKodField;
+        
         private string korekceCelkemField;
         
         private string korekceCelkemCMField;
@@ -7187,6 +7317,8 @@ namespace S6_SklDokl {
         private string polozkyZakladField;
         
         private string polozkyZakladCMField;
+        
+        private string preneseniDaneMnozstviMJField;
         
         private string preneseniDanovePovinnosti_IDField;
         
@@ -7246,6 +7378,17 @@ namespace S6_SklDokl {
             }
             set {
                 this.kombinovanaNomenklatura_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string KombinovanaNomenklaturaKod {
+            get {
+                return this.kombinovanaNomenklaturaKodField;
+            }
+            set {
+                this.kombinovanaNomenklaturaKodField = value;
             }
         }
         
@@ -7422,6 +7565,17 @@ namespace S6_SklDokl {
             }
             set {
                 this.polozkyZakladCMField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string PreneseniDaneMnozstviMJ {
+            get {
+                return this.preneseniDaneMnozstviMJField;
+            }
+            set {
+                this.preneseniDaneMnozstviMJField = value;
             }
         }
         
@@ -8841,8 +8995,6 @@ namespace S6_SklDokl {
         
         private S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuAkcePolozky akcePolozkyField;
         
-        private S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuCinnost cinnostField;
-        
         private S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuDruhPohybu druhPohybuField;
         
         private S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuDruhPolozky druhPolozkyField;
@@ -8862,8 +9014,6 @@ namespace S6_SklDokl {
         private S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuUcetniZapisy ucetniZapisyField;
         
         private S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuVzor vzorField;
-        
-        private S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuZakazka zakazkaField;
         
         private string objectNameField;
         
@@ -9560,17 +9710,6 @@ namespace S6_SklDokl {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuCinnost Cinnost {
-            get {
-                return this.cinnostField;
-            }
-            set {
-                this.cinnostField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuDruhPohybu DruhPohybu {
             get {
                 return this.druhPohybuField;
@@ -9676,17 +9815,6 @@ namespace S6_SklDokl {
             }
             set {
                 this.vzorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuZakazka Zakazka {
-            get {
-                return this.zakazkaField;
-            }
-            set {
-                this.zakazkaField = value;
             }
         }
         
@@ -11617,59 +11745,6 @@ namespace S6_SklDokl {
         
         public S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuAkcePolozky() {
             this.objectNameField = "ObchodniAkcePolozky";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuCinnost {
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuCinnost() {
-            this.objectNameField = "Cinnost";
             this.objectTypeField = "Object";
         }
         
@@ -13791,72 +13866,6 @@ namespace S6_SklDokl {
         
         public S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuVzor() {
             this.objectNameField = "VzorUcetniPolozky";
-            this.objectTypeField = "Object";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public group Group {
-            get {
-                return this.groupField;
-            }
-            set {
-                this.groupField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectName {
-            get {
-                return this.objectNameField;
-            }
-            set {
-                this.objectNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ObjectType {
-            get {
-                return this.objectTypeField;
-            }
-            set {
-                this.objectTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public partial class S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuZakazka {
-        
-        private group groupField;
-        
-        private string objectNameField;
-        
-        private string objectTypeField;
-        
-        private string idField;
-        
-        public S5DataSkladovyDokladPolozkyPolozkaSkladovehoDokladuZakazka() {
-            this.objectNameField = "Zakazka";
             this.objectTypeField = "Object";
         }
         

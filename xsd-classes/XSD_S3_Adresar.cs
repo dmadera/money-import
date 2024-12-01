@@ -84,8 +84,6 @@ namespace S3_Adresar {
         
         private string dICField;
         
-        private string doprava_UserDataField;
-        
         private string ekoKomKlientField;
         
         private string emailSpojeni_IDField;
@@ -148,6 +146,14 @@ namespace S3_Adresar {
         
         private string kraj_IDField;
         
+        private string kreditFa_UserDataField;
+        
+        private string limitObratu_UserDataField;
+        
+        private System.DateTime limitOd_UserDataField;
+        
+        private bool limitOd_UserDataFieldSpecified;
+        
         private string logo_IDField;
         
         private string mena_IDField;
@@ -168,7 +174,7 @@ namespace S3_Adresar {
         
         private string obchStat_IDField;
         
-        private string platba_UserDataField;
+        private string obratSezona_UserDataField;
         
         private string platceDPHField;
         
@@ -184,6 +190,8 @@ namespace S3_Adresar {
         
         private string poznamkaInterni_UserDataField;
         
+        private string poznamkaRozvoz_UserDataField;
+        
         private string prenestNazevField;
         
         private string primarniUcetPohledavky_IDField;
@@ -193,6 +201,8 @@ namespace S3_Adresar {
         private string primarniUcetPrijataZaloha_IDField;
         
         private string primarniUcetZavazky_IDField;
+        
+        private string provozovna_UserDataField;
         
         private string provPsc_IDField;
         
@@ -255,6 +265,8 @@ namespace S3_Adresar {
         private S5DataFirmaObchodniPodminky obchodniPodminkyField;
         
         private S5DataFirmaOsoby osobyField;
+        
+        private S5DataFirmaParametryProdejny parametryProdejnyField;
         
         private S5DataFirmaPohledavky pohledavkyField;
         
@@ -527,17 +539,6 @@ namespace S3_Adresar {
             }
             set {
                 this.dICField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Doprava_UserData {
-            get {
-                return this.doprava_UserDataField;
-            }
-            set {
-                this.doprava_UserDataField = value;
             }
         }
         
@@ -884,6 +885,50 @@ namespace S3_Adresar {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string KreditFa_UserData {
+            get {
+                return this.kreditFa_UserDataField;
+            }
+            set {
+                this.kreditFa_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string LimitObratu_UserData {
+            get {
+                return this.limitObratu_UserDataField;
+            }
+            set {
+                this.limitObratu_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public System.DateTime LimitOd_UserData {
+            get {
+                return this.limitOd_UserDataField;
+            }
+            set {
+                this.limitOd_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool LimitOd_UserDataSpecified {
+            get {
+                return this.limitOd_UserDataFieldSpecified;
+            }
+            set {
+                this.limitOd_UserDataFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string Logo_ID {
             get {
                 return this.logo_IDField;
@@ -994,12 +1039,12 @@ namespace S3_Adresar {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Platba_UserData {
+        public string ObratSezona_UserData {
             get {
-                return this.platba_UserDataField;
+                return this.obratSezona_UserDataField;
             }
             set {
-                this.platba_UserDataField = value;
+                this.obratSezona_UserDataField = value;
             }
         }
         
@@ -1082,6 +1127,17 @@ namespace S3_Adresar {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string PoznamkaRozvoz_UserData {
+            get {
+                return this.poznamkaRozvoz_UserDataField;
+            }
+            set {
+                this.poznamkaRozvoz_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string PrenestNazev {
             get {
                 return this.prenestNazevField;
@@ -1132,6 +1188,17 @@ namespace S3_Adresar {
             }
             set {
                 this.primarniUcetZavazky_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Provozovna_UserData {
+            get {
+                return this.provozovna_UserDataField;
+            }
+            set {
+                this.provozovna_UserDataField = value;
             }
         }
         
@@ -1473,6 +1540,17 @@ namespace S3_Adresar {
             }
             set {
                 this.osobyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public S5DataFirmaParametryProdejny ParametryProdejny {
+            get {
+                return this.parametryProdejnyField;
+            }
+            set {
+                this.parametryProdejnyField = value;
             }
         }
         
@@ -7896,6 +7974,28 @@ namespace S3_Adresar {
             }
             set {
                 this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class S5DataFirmaParametryProdejny {
+        
+        private string prodejNaDLZakazanField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string ProdejNaDLZakazan {
+            get {
+                return this.prodejNaDLZakazanField;
+            }
+            set {
+                this.prodejNaDLZakazanField = value;
             }
         }
     }

@@ -3,14 +3,14 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <!-- <TargetFramework>netcoreapp3.1</TargetFramework> -->
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>money_import</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-      <None Update="staticke-seznamy.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
+    <None Update="staticke-seznamy.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

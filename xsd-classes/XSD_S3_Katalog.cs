@@ -68,7 +68,11 @@ namespace S3_Katalog {
         
         private string baleniJednotky_UserDataField;
         
+        private string baleniJednotkyKart_UserDataField;
+        
         private string baleniMnozstvi_UserDataField;
+        
+        private string baleniMnozstviKart_UserDataField;
         
         private string carovyKodField;
         
@@ -130,15 +134,11 @@ namespace S3_Katalog {
         
         private string krajUrceni_IDField;
         
-        private string marze_UserDataField;
-        
         private string minimalniObjednavkaField;
         
         private string mnozstviVDoplnkoveField;
         
         private string nadrazenyArtikl_IDField;
-        
-        private string nakupniCena_UserDataField;
         
         private string nakupniJednotka_IDField;
         
@@ -186,6 +186,8 @@ namespace S3_Katalog {
         
         private string poznamkaTisk_UserDataField;
         
+        private string predposledniCenaField;
+        
         private string preneseniDane_IDField;
         
         private string preneseniDaneKNField;
@@ -212,8 +214,6 @@ namespace S3_Katalog {
         
         private string pripojitParametryKVarianteField;
         
-        private string priznaky_UserDataField;
-        
         private string procento_UserDataField;
         
         private string prodejniJednotka_IDField;
@@ -232,9 +232,9 @@ namespace S3_Katalog {
         
         private string rETELAField;
         
-        private string sirka_IDField;
+        private string sazbaDPH_UserDataField;
         
-        private string skladovaPozice_UserDataField;
+        private string sirka_IDField;
         
         private string sKP_IDField;
         
@@ -265,18 +265,6 @@ namespace S3_Katalog {
         private string statPuvodu_IDField;
         
         private string statUrceni_IDField;
-        
-        private string stitekBaleni_UserDataField;
-        
-        private string stitekBaleniJed_UserDataField;
-        
-        private string stitekCena_UserDataField;
-        
-        private string stitekMnozstvi_UserDataField;
-        
-        private string stitekNazev_UserDataField;
-        
-        private string stitekSazba_UserDataField;
         
         private string stitekTisk_UserDataField;
         
@@ -455,12 +443,34 @@ namespace S3_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string BaleniJednotkyKart_UserData {
+            get {
+                return this.baleniJednotkyKart_UserDataField;
+            }
+            set {
+                this.baleniJednotkyKart_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string BaleniMnozstvi_UserData {
             get {
                 return this.baleniMnozstvi_UserDataField;
             }
             set {
                 this.baleniMnozstvi_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string BaleniMnozstviKart_UserData {
+            get {
+                return this.baleniMnozstviKart_UserDataField;
+            }
+            set {
+                this.baleniMnozstviKart_UserDataField = value;
             }
         }
         
@@ -796,17 +806,6 @@ namespace S3_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Marze_UserData {
-            get {
-                return this.marze_UserDataField;
-            }
-            set {
-                this.marze_UserDataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string MinimalniObjednavka {
             get {
                 return this.minimalniObjednavkaField;
@@ -835,17 +834,6 @@ namespace S3_Katalog {
             }
             set {
                 this.nadrazenyArtikl_IDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string NakupniCena_UserData {
-            get {
-                return this.nakupniCena_UserDataField;
-            }
-            set {
-                this.nakupniCena_UserDataField = value;
             }
         }
         
@@ -1104,6 +1092,17 @@ namespace S3_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string PredposledniCena {
+            get {
+                return this.predposledniCenaField;
+            }
+            set {
+                this.predposledniCenaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string PreneseniDane_ID {
             get {
                 return this.preneseniDane_IDField;
@@ -1247,17 +1246,6 @@ namespace S3_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Priznaky_UserData {
-            get {
-                return this.priznaky_UserDataField;
-            }
-            set {
-                this.priznaky_UserDataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string Procento_UserData {
             get {
                 return this.procento_UserDataField;
@@ -1357,23 +1345,23 @@ namespace S3_Katalog {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string SazbaDPH_UserData {
+            get {
+                return this.sazbaDPH_UserDataField;
+            }
+            set {
+                this.sazbaDPH_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string Sirka_ID {
             get {
                 return this.sirka_IDField;
             }
             set {
                 this.sirka_IDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string SkladovaPozice_UserData {
-            get {
-                return this.skladovaPozice_UserDataField;
-            }
-            set {
-                this.skladovaPozice_UserDataField = value;
             }
         }
         
@@ -1539,72 +1527,6 @@ namespace S3_Katalog {
             }
             set {
                 this.statUrceni_IDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string StitekBaleni_UserData {
-            get {
-                return this.stitekBaleni_UserDataField;
-            }
-            set {
-                this.stitekBaleni_UserDataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string StitekBaleniJed_UserData {
-            get {
-                return this.stitekBaleniJed_UserDataField;
-            }
-            set {
-                this.stitekBaleniJed_UserDataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string StitekCena_UserData {
-            get {
-                return this.stitekCena_UserDataField;
-            }
-            set {
-                this.stitekCena_UserDataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string StitekMnozstvi_UserData {
-            get {
-                return this.stitekMnozstvi_UserDataField;
-            }
-            set {
-                this.stitekMnozstvi_UserDataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string StitekNazev_UserData {
-            get {
-                return this.stitekNazev_UserDataField;
-            }
-            set {
-                this.stitekNazev_UserDataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string StitekSazba_UserData {
-            get {
-                return this.stitekSazba_UserDataField;
-            }
-            set {
-                this.stitekSazba_UserDataField = value;
             }
         }
         

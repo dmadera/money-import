@@ -30,7 +30,7 @@ DATA='<!--ADDED BY SCRIPT-->
 
 ESCAPED=`echo "${DATA}" | sed -r ':a;N;$!ba;s|\n|\\\|g' | sed 's|/|\\\/|g'`
 
-sed -i "s/^\s*<xs:element name=\"Group\" type=\"group\" minOccurs=\"0\" \\/>/${ESCAPED}/g" xsd/S9_Seky.xsd ;
+# sed -i "s/^\s*<xs:element name=\"Group\" type=\"group\" minOccurs=\"0\" \\/>/${ESCAPED}/g" xsd/S9_Seky.xsd ;
 
 DATA='<!--ADDED BY SCRIPT-->
     <xs:element name="ObsahPolozky" minOccurs="0">

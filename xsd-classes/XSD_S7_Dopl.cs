@@ -66,6 +66,14 @@ namespace S7_Dopl {
         
         private string baleniField;
         
+        private string baleniJednotky_UserDataField;
+        
+        private string baleniJednotkyKart_UserDataField;
+        
+        private string baleniMnozstvi_UserDataField;
+        
+        private string baleniMnozstviKart_UserDataField;
+        
         private string carovyKodField;
         
         private string carovyKodCisloField;
@@ -102,6 +110,8 @@ namespace S7_Dopl {
         
         private string hmostnost_IDField;
         
+        private string interniOznaceni_UserDataField;
+        
         private string intrastatNeslucovatField;
         
         private string katalogField;
@@ -111,6 +121,8 @@ namespace S7_Dopl {
         private string kategorieField;
         
         private string kategorieEEZ_IDField;
+        
+        private string kategorieRetezec_UserDataField;
         
         private string kodField;
         
@@ -172,6 +184,10 @@ namespace S7_Dopl {
         
         private string poznamkaField;
         
+        private string poznamkaTisk_UserDataField;
+        
+        private string predposledniCenaField;
+        
         private string preneseniDane_IDField;
         
         private string preneseniDaneKNField;
@@ -198,11 +214,9 @@ namespace S7_Dopl {
         
         private string pripojitParametryKVarianteField;
         
-        private string priznaky_UserDataField;
+        private string procento_UserDataField;
         
         private string prodejniJednotka_IDField;
-        
-        private string prodJednotkaMnozstvi_UserDataField;
         
         private string puvodemMajetekField;
         
@@ -218,9 +232,9 @@ namespace S7_Dopl {
         
         private string rETELAField;
         
-        private string sirka_IDField;
+        private string sazbaDPH_UserDataField;
         
-        private string skladovaPozice_UserDataField;
+        private string sirka_IDField;
         
         private string sKP_IDField;
         
@@ -251,6 +265,8 @@ namespace S7_Dopl {
         private string statPuvodu_IDField;
         
         private string statUrceni_IDField;
+        
+        private string stitekTisk_UserDataField;
         
         private enum_TypArtiklu typArtikluField;
         
@@ -411,6 +427,50 @@ namespace S7_Dopl {
             }
             set {
                 this.baleniField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string BaleniJednotky_UserData {
+            get {
+                return this.baleniJednotky_UserDataField;
+            }
+            set {
+                this.baleniJednotky_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string BaleniJednotkyKart_UserData {
+            get {
+                return this.baleniJednotkyKart_UserDataField;
+            }
+            set {
+                this.baleniJednotkyKart_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string BaleniMnozstvi_UserData {
+            get {
+                return this.baleniMnozstvi_UserDataField;
+            }
+            set {
+                this.baleniMnozstvi_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string BaleniMnozstviKart_UserData {
+            get {
+                return this.baleniMnozstviKart_UserDataField;
+            }
+            set {
+                this.baleniMnozstviKart_UserDataField = value;
             }
         }
         
@@ -614,6 +674,17 @@ namespace S7_Dopl {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string InterniOznaceni_UserData {
+            get {
+                return this.interniOznaceni_UserDataField;
+            }
+            set {
+                this.interniOznaceni_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string IntrastatNeslucovat {
             get {
                 return this.intrastatNeslucovatField;
@@ -664,6 +735,17 @@ namespace S7_Dopl {
             }
             set {
                 this.kategorieEEZ_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string KategorieRetezec_UserData {
+            get {
+                return this.kategorieRetezec_UserDataField;
+            }
+            set {
+                this.kategorieRetezec_UserDataField = value;
             }
         }
         
@@ -999,6 +1081,28 @@ namespace S7_Dopl {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string PoznamkaTisk_UserData {
+            get {
+                return this.poznamkaTisk_UserDataField;
+            }
+            set {
+                this.poznamkaTisk_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string PredposledniCena {
+            get {
+                return this.predposledniCenaField;
+            }
+            set {
+                this.predposledniCenaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string PreneseniDane_ID {
             get {
                 return this.preneseniDane_IDField;
@@ -1142,12 +1246,12 @@ namespace S7_Dopl {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Priznaky_UserData {
+        public string Procento_UserData {
             get {
-                return this.priznaky_UserDataField;
+                return this.procento_UserDataField;
             }
             set {
-                this.priznaky_UserDataField = value;
+                this.procento_UserDataField = value;
             }
         }
         
@@ -1159,17 +1263,6 @@ namespace S7_Dopl {
             }
             set {
                 this.prodejniJednotka_IDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string ProdJednotkaMnozstvi_UserData {
-            get {
-                return this.prodJednotkaMnozstvi_UserDataField;
-            }
-            set {
-                this.prodJednotkaMnozstvi_UserDataField = value;
             }
         }
         
@@ -1252,23 +1345,23 @@ namespace S7_Dopl {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string SazbaDPH_UserData {
+            get {
+                return this.sazbaDPH_UserDataField;
+            }
+            set {
+                this.sazbaDPH_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string Sirka_ID {
             get {
                 return this.sirka_IDField;
             }
             set {
                 this.sirka_IDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string SkladovaPozice_UserData {
-            get {
-                return this.skladovaPozice_UserDataField;
-            }
-            set {
-                this.skladovaPozice_UserDataField = value;
             }
         }
         
@@ -1434,6 +1527,17 @@ namespace S7_Dopl {
             }
             set {
                 this.statUrceni_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string StitekTisk_UserData {
+            get {
+                return this.stitekTisk_UserDataField;
+            }
+            set {
+                this.stitekTisk_UserDataField = value;
             }
         }
         
@@ -14685,6 +14789,8 @@ namespace S7_Dopl {
         
         private string gpsLongField;
         
+        private string hlavniCinnost_UserDataField;
+        
         private string hlavniOsoba_IDField;
         
         private string hlavniUcet_IDField;
@@ -14719,7 +14825,19 @@ namespace S7_Dopl {
         
         private string kodDanovehoUraduField;
         
+        private string kodOdb_UserDataField;
+        
+        private string kodSumFa_UserDataField;
+        
         private string kraj_IDField;
+        
+        private string kreditFa_UserDataField;
+        
+        private string limitObratu_UserDataField;
+        
+        private System.DateTime limitOd_UserDataField;
+        
+        private bool limitOd_UserDataFieldSpecified;
         
         private string logo_IDField;
         
@@ -14729,13 +14847,19 @@ namespace S7_Dopl {
         
         private string nadrazenaFirma_IDField;
         
+        private string nahradniPlneni_UserDataField;
+        
         private string nazevField;
+        
+        private string nazevPomocny_UserDataField;
         
         private string nekontrolovatLimitRPDPField;
         
         private string obchPsc_IDField;
         
         private string obchStat_IDField;
+        
+        private string obratSezona_UserDataField;
         
         private string platceDPHField;
         
@@ -14751,6 +14875,8 @@ namespace S7_Dopl {
         
         private string poznamkaInterni_UserDataField;
         
+        private string poznamkaRozvoz_UserDataField;
+        
         private string prenestNazevField;
         
         private string primarniUcetPohledavky_IDField;
@@ -14761,6 +14887,8 @@ namespace S7_Dopl {
         
         private string primarniUcetZavazky_IDField;
         
+        private string provozovna_UserDataField;
+        
         private string provPsc_IDField;
         
         private string provStat_IDField;
@@ -14770,6 +14898,8 @@ namespace S7_Dopl {
         private string reklamacePocetDniProVyrizeniField;
         
         private string rocniLimitNahradnihoPlneniField;
+        
+        private string sek_UserDataField;
         
         private string servisPocetDniProVyrizeniField;
         
@@ -14820,6 +14950,8 @@ namespace S7_Dopl {
         private S5DataFirmaObchodniPodminky obchodniPodminkyField;
         
         private S5DataFirmaOsoby osobyField;
+        
+        private S5DataFirmaParametryProdejny parametryProdejnyField;
         
         private S5DataFirmaPohledavky pohledavkyField;
         
@@ -15207,6 +15339,17 @@ namespace S7_Dopl {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string HlavniCinnost_UserData {
+            get {
+                return this.hlavniCinnost_UserDataField;
+            }
+            set {
+                this.hlavniCinnost_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string HlavniOsoba_ID {
             get {
                 return this.hlavniOsoba_IDField;
@@ -15394,12 +15537,78 @@ namespace S7_Dopl {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string KodOdb_UserData {
+            get {
+                return this.kodOdb_UserDataField;
+            }
+            set {
+                this.kodOdb_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string KodSumFa_UserData {
+            get {
+                return this.kodSumFa_UserDataField;
+            }
+            set {
+                this.kodSumFa_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string Kraj_ID {
             get {
                 return this.kraj_IDField;
             }
             set {
                 this.kraj_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string KreditFa_UserData {
+            get {
+                return this.kreditFa_UserDataField;
+            }
+            set {
+                this.kreditFa_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string LimitObratu_UserData {
+            get {
+                return this.limitObratu_UserDataField;
+            }
+            set {
+                this.limitObratu_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public System.DateTime LimitOd_UserData {
+            get {
+                return this.limitOd_UserDataField;
+            }
+            set {
+                this.limitOd_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool LimitOd_UserDataSpecified {
+            get {
+                return this.limitOd_UserDataFieldSpecified;
+            }
+            set {
+                this.limitOd_UserDataFieldSpecified = value;
             }
         }
         
@@ -15449,12 +15658,34 @@ namespace S7_Dopl {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string NahradniPlneni_UserData {
+            get {
+                return this.nahradniPlneni_UserDataField;
+            }
+            set {
+                this.nahradniPlneni_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string Nazev {
             get {
                 return this.nazevField;
             }
             set {
                 this.nazevField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string NazevPomocny_UserData {
+            get {
+                return this.nazevPomocny_UserDataField;
+            }
+            set {
+                this.nazevPomocny_UserDataField = value;
             }
         }
         
@@ -15488,6 +15719,17 @@ namespace S7_Dopl {
             }
             set {
                 this.obchStat_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string ObratSezona_UserData {
+            get {
+                return this.obratSezona_UserDataField;
+            }
+            set {
+                this.obratSezona_UserDataField = value;
             }
         }
         
@@ -15570,6 +15812,17 @@ namespace S7_Dopl {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string PoznamkaRozvoz_UserData {
+            get {
+                return this.poznamkaRozvoz_UserDataField;
+            }
+            set {
+                this.poznamkaRozvoz_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string PrenestNazev {
             get {
                 return this.prenestNazevField;
@@ -15625,6 +15878,17 @@ namespace S7_Dopl {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Provozovna_UserData {
+            get {
+                return this.provozovna_UserDataField;
+            }
+            set {
+                this.provozovna_UserDataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string ProvPsc_ID {
             get {
                 return this.provPsc_IDField;
@@ -15675,6 +15939,17 @@ namespace S7_Dopl {
             }
             set {
                 this.rocniLimitNahradnihoPlneniField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Sek_UserData {
+            get {
+                return this.sek_UserDataField;
+            }
+            set {
+                this.sek_UserDataField = value;
             }
         }
         
@@ -15950,6 +16225,17 @@ namespace S7_Dopl {
             }
             set {
                 this.osobyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public S5DataFirmaParametryProdejny ParametryProdejny {
+            get {
+                return this.parametryProdejnyField;
+            }
+            set {
+                this.parametryProdejnyField = value;
             }
         }
         
@@ -18193,6 +18479,8 @@ namespace S7_Dopl {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataFirmaKontaktyDatovaSchrankaSpojeni {
         
+        private string kod_UserDataField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -18202,6 +18490,17 @@ namespace S7_Dopl {
         public S5DataFirmaKontaktyDatovaSchrankaSpojeni() {
             this.objectNameField = "Spojeni";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod_UserData {
+            get {
+                return this.kod_UserDataField;
+            }
+            set {
+                this.kod_UserDataField = value;
+            }
         }
         
         /// <remarks/>
@@ -18246,6 +18545,8 @@ namespace S7_Dopl {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataFirmaKontaktyEmailSpojeni {
         
+        private string kod_UserDataField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -18255,6 +18556,17 @@ namespace S7_Dopl {
         public S5DataFirmaKontaktyEmailSpojeni() {
             this.objectNameField = "Spojeni";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod_UserData {
+            get {
+                return this.kod_UserDataField;
+            }
+            set {
+                this.kod_UserDataField = value;
+            }
         }
         
         /// <remarks/>
@@ -18299,6 +18611,8 @@ namespace S7_Dopl {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataFirmaKontaktyFaxSpojeni {
         
+        private string kod_UserDataField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -18308,6 +18622,17 @@ namespace S7_Dopl {
         public S5DataFirmaKontaktyFaxSpojeni() {
             this.objectNameField = "Spojeni";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod_UserData {
+            get {
+                return this.kod_UserDataField;
+            }
+            set {
+                this.kod_UserDataField = value;
+            }
         }
         
         /// <remarks/>
@@ -18352,6 +18677,8 @@ namespace S7_Dopl {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataFirmaKontaktyTelefonSpojeni1 {
         
+        private string kod_UserDataField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -18361,6 +18688,17 @@ namespace S7_Dopl {
         public S5DataFirmaKontaktyTelefonSpojeni1() {
             this.objectNameField = "Spojeni";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod_UserData {
+            get {
+                return this.kod_UserDataField;
+            }
+            set {
+                this.kod_UserDataField = value;
+            }
         }
         
         /// <remarks/>
@@ -18405,6 +18743,8 @@ namespace S7_Dopl {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataFirmaKontaktyTelefonSpojeni2 {
         
+        private string kod_UserDataField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -18414,6 +18754,17 @@ namespace S7_Dopl {
         public S5DataFirmaKontaktyTelefonSpojeni2() {
             this.objectNameField = "Spojeni";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod_UserData {
+            get {
+                return this.kod_UserDataField;
+            }
+            set {
+                this.kod_UserDataField = value;
+            }
         }
         
         /// <remarks/>
@@ -18458,6 +18809,8 @@ namespace S7_Dopl {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataFirmaKontaktyTelefonSpojeni3 {
         
+        private string kod_UserDataField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -18467,6 +18820,17 @@ namespace S7_Dopl {
         public S5DataFirmaKontaktyTelefonSpojeni3() {
             this.objectNameField = "Spojeni";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod_UserData {
+            get {
+                return this.kod_UserDataField;
+            }
+            set {
+                this.kod_UserDataField = value;
+            }
         }
         
         /// <remarks/>
@@ -18511,6 +18875,8 @@ namespace S7_Dopl {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataFirmaKontaktyTelefonSpojeni4 {
         
+        private string kod_UserDataField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -18520,6 +18886,17 @@ namespace S7_Dopl {
         public S5DataFirmaKontaktyTelefonSpojeni4() {
             this.objectNameField = "Spojeni";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod_UserData {
+            get {
+                return this.kod_UserDataField;
+            }
+            set {
+                this.kod_UserDataField = value;
+            }
         }
         
         /// <remarks/>
@@ -18564,6 +18941,8 @@ namespace S7_Dopl {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataFirmaKontaktyWWWSpojeni {
         
+        private string kod_UserDataField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -18573,6 +18952,17 @@ namespace S7_Dopl {
         public S5DataFirmaKontaktyWWWSpojeni() {
             this.objectNameField = "Spojeni";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod_UserData {
+            get {
+                return this.kod_UserDataField;
+            }
+            set {
+                this.kod_UserDataField = value;
+            }
         }
         
         /// <remarks/>
@@ -20912,6 +21302,8 @@ namespace S7_Dopl {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataFirmaOsobySeznamOsobOsobaKontaktyEmailSpojeni {
         
+        private string kod_UserDataField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -20921,6 +21313,17 @@ namespace S7_Dopl {
         public S5DataFirmaOsobySeznamOsobOsobaKontaktyEmailSpojeni() {
             this.objectNameField = "Spojeni";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod_UserData {
+            get {
+                return this.kod_UserDataField;
+            }
+            set {
+                this.kod_UserDataField = value;
+            }
         }
         
         /// <remarks/>
@@ -20965,6 +21368,8 @@ namespace S7_Dopl {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataFirmaOsobySeznamOsobOsobaKontaktyFaxSpojeni {
         
+        private string kod_UserDataField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -20974,6 +21379,17 @@ namespace S7_Dopl {
         public S5DataFirmaOsobySeznamOsobOsobaKontaktyFaxSpojeni() {
             this.objectNameField = "Spojeni";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod_UserData {
+            get {
+                return this.kod_UserDataField;
+            }
+            set {
+                this.kod_UserDataField = value;
+            }
         }
         
         /// <remarks/>
@@ -21018,6 +21434,8 @@ namespace S7_Dopl {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataFirmaOsobySeznamOsobOsobaKontaktyTelefonSpojeni1 {
         
+        private string kod_UserDataField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -21027,6 +21445,17 @@ namespace S7_Dopl {
         public S5DataFirmaOsobySeznamOsobOsobaKontaktyTelefonSpojeni1() {
             this.objectNameField = "Spojeni";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod_UserData {
+            get {
+                return this.kod_UserDataField;
+            }
+            set {
+                this.kod_UserDataField = value;
+            }
         }
         
         /// <remarks/>
@@ -21071,6 +21500,8 @@ namespace S7_Dopl {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataFirmaOsobySeznamOsobOsobaKontaktyTelefonSpojeni2 {
         
+        private string kod_UserDataField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -21080,6 +21511,17 @@ namespace S7_Dopl {
         public S5DataFirmaOsobySeznamOsobOsobaKontaktyTelefonSpojeni2() {
             this.objectNameField = "Spojeni";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod_UserData {
+            get {
+                return this.kod_UserDataField;
+            }
+            set {
+                this.kod_UserDataField = value;
+            }
         }
         
         /// <remarks/>
@@ -21124,6 +21566,8 @@ namespace S7_Dopl {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataFirmaOsobySeznamOsobOsobaKontaktyTelefonSpojeni3 {
         
+        private string kod_UserDataField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -21133,6 +21577,17 @@ namespace S7_Dopl {
         public S5DataFirmaOsobySeznamOsobOsobaKontaktyTelefonSpojeni3() {
             this.objectNameField = "Spojeni";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod_UserData {
+            get {
+                return this.kod_UserDataField;
+            }
+            set {
+                this.kod_UserDataField = value;
+            }
         }
         
         /// <remarks/>
@@ -21177,6 +21632,8 @@ namespace S7_Dopl {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class S5DataFirmaOsobySeznamOsobOsobaKontaktyTelefonSpojeni4 {
         
+        private string kod_UserDataField;
+        
         private string objectNameField;
         
         private string objectTypeField;
@@ -21186,6 +21643,17 @@ namespace S7_Dopl {
         public S5DataFirmaOsobySeznamOsobOsobaKontaktyTelefonSpojeni4() {
             this.objectNameField = "Spojeni";
             this.objectTypeField = "Object";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Kod_UserData {
+            get {
+                return this.kod_UserDataField;
+            }
+            set {
+                this.kod_UserDataField = value;
+            }
         }
         
         /// <remarks/>
@@ -21693,6 +22161,28 @@ namespace S7_Dopl {
             }
             set {
                 this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "0.0.0.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class S5DataFirmaParametryProdejny {
+        
+        private string prodejNaDLZakazanField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string ProdejNaDLZakazan {
+            get {
+                return this.prodejNaDLZakazanField;
+            }
+            set {
+                this.prodejNaDLZakazanField = value;
             }
         }
     }

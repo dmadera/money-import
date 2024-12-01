@@ -13,7 +13,9 @@
                     <xs:element name="Attachment_ID" type="guid" />
                     <xs:element name="Baleni" type="emptiable_string_50" minOccurs="0" />
                     <xs:element name="BaleniJednotky_UserData" type="emptiable_string_unbounded" minOccurs="0" />
+                    <xs:element name="BaleniJednotkyKart_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="BaleniMnozstvi_UserData" type="emptiable_string_unbounded" minOccurs="0" />
+                    <xs:element name="BaleniMnozstviKart_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="CarovyKod" type="emptiable_string_60" minOccurs="0" />
                     <xs:element name="CarovyKodCislo" type="emptiable_integer" minOccurs="0" />
                     <xs:element name="CarovyKodTyp" type="enum_TypCarovehoKodu" minOccurs="0" />
@@ -44,11 +46,9 @@
                     <xs:element name="KombinovanaNomenklatura_ID" type="guid" />
                     <xs:element name="KrajPuvodu_ID" type="guid" />
                     <xs:element name="KrajUrceni_ID" type="guid" />
-                    <xs:element name="Marze_UserData" type="emptiable_decimal_2" minOccurs="0" />
                     <xs:element name="MinimalniObjednavka" type="emptiable_decimal_4" minOccurs="0" />
                     <xs:element name="MnozstviVDoplnkove" type="emptiable_decimal_4" minOccurs="0" />
                     <xs:element name="NadrazenyArtikl_ID" type="emptiable_guid" minOccurs="0" />
-                    <xs:element name="NakupniCena_UserData" type="emptiable_decimal_2" minOccurs="0" />
                     <xs:element name="NakupniJednotka_ID" type="emptiable_guid" minOccurs="0" />
                     <xs:element name="Nazev" type="emptiable_string_100" minOccurs="0" />
                     <xs:element name="NepodlehaDPH" type="emptiable_bool" minOccurs="0" />
@@ -71,6 +71,7 @@
                     <xs:element name="PovinnyNasobek" type="emptiable_decimal_4" minOccurs="0" />
                     <xs:element name="Poznamka" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="PoznamkaTisk_UserData" type="emptiable_string_unbounded" minOccurs="0" />
+                    <xs:element name="PredposledniCena" type="emptiable_decimal_4" minOccurs="0" />
                     <xs:element name="PreneseniDane_ID" type="emptiable_guid" minOccurs="0" />
                     <xs:element name="PreneseniDaneKN" type="emptiable_string_50" minOccurs="0" />
                     <xs:element name="PreneseniDaneMnozstvi" type="emptiable_decimal_4" minOccurs="0" />
@@ -84,7 +85,6 @@
                     <xs:element name="PripojitParametryKObchJmenu" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="PripojitParametryKPopisu" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="PripojitParametryKVariante" type="emptiable_bool" minOccurs="0" />
-                    <xs:element name="Priznaky_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="Procento_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="ProdejniJednotka_ID" type="emptiable_guid" minOccurs="0" />
                     <xs:element name="PuvodemMajetek" type="emptiable_bool" minOccurs="0" />
@@ -94,8 +94,8 @@
                     <xs:element name="RadaKod_ID" type="guid" />
                     <xs:element name="RadaPLU_ID" type="guid" />
                     <xs:element name="RETELA" type="emptiable_bool" minOccurs="0" />
+                    <xs:element name="SazbaDPH_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="Sirka_ID" type="guid" />
-                    <xs:element name="SkladovaPozice_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="SKP_ID" type="guid" />
                     <xs:element name="SmazatOstatniCinnosti" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="SmazatOstatniDodavatele" type="emptiable_bool" minOccurs="0" />
@@ -111,12 +111,6 @@
                     <xs:element name="StatOdeslani_ID" type="guid" />
                     <xs:element name="StatPuvodu_ID" type="guid" />
                     <xs:element name="StatUrceni_ID" type="guid" />
-                    <xs:element name="StitekBaleni_UserData" type="emptiable_string_unbounded" minOccurs="0" />
-                    <xs:element name="StitekBaleniJed_UserData" type="emptiable_string_unbounded" minOccurs="0" />
-                    <xs:element name="StitekCena_UserData" type="emptiable_decimal_2" minOccurs="0" />
-                    <xs:element name="StitekMnozstvi_UserData" type="emptiable_integer" minOccurs="0" />
-                    <xs:element name="StitekNazev_UserData" type="emptiable_string_unbounded" minOccurs="0" />
-                    <xs:element name="StitekSazba_UserData" type="emptiable_decimal_2" minOccurs="0" />
                     <xs:element name="StitekTisk_UserData" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="TypArtiklu" type="enum_TypArtiklu" minOccurs="0" />
                     <xs:element name="TypEvidence" type="enum_TypEvidenceArtiklu" minOccurs="0" />

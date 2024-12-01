@@ -22,7 +22,6 @@
                     <xs:element name="DatumPosty" type="dateTime_DateMin" minOccurs="0" />
                     <xs:element name="DatumUkonceniCinnosti" type="dateTime_DateMin" minOccurs="0" />
                     <xs:element name="DIC" type="emptiable_string_20" minOccurs="0" />
-                    <xs:element name="Doprava_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="EkoKomKlient" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="EmailSpojeni_ID" type="emptiable_guid" minOccurs="0" />
                     <xs:element name="EvidovatNahradniPlneni" type="emptiable_bool" minOccurs="0" />
@@ -52,6 +51,9 @@
                     <xs:element name="KodOdb_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="KodSumFa_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="Kraj_ID" type="guid" />
+                    <xs:element name="KreditFa_UserData" type="emptiable_string_unbounded" minOccurs="0" />
+                    <xs:element name="LimitObratu_UserData" type="emptiable_decimal_2" minOccurs="0" />
+                    <xs:element name="LimitOd_UserData" type="dateTime_DateMin" minOccurs="0" />
                     <xs:element name="Logo_ID" type="guid" />
                     <xs:element name="Mena_ID" type="guid" />
                     <xs:element name="MojeFirmabankovniSpojeni_ID" type="guid" />
@@ -62,7 +64,7 @@
                     <xs:element name="NekontrolovatLimitRPDP" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="ObchPsc_ID" type="guid" />
                     <xs:element name="ObchStat_ID" type="guid" />
-                    <xs:element name="Platba_UserData" type="emptiable_string_unbounded" minOccurs="0" />
+                    <xs:element name="ObratSezona_UserData" type="emptiable_integer" minOccurs="0" />
                     <xs:element name="PlatceDPH" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="PomerneUplatnovaniDPH" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="PosilatPostu" type="emptiable_bool" minOccurs="0" />
@@ -70,11 +72,13 @@
                     <xs:element name="PosledniStavZHistorieRegistru_ID" type="guid" />
                     <xs:element name="Poznamka" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="PoznamkaInterni_UserData" type="emptiable_string_unbounded" minOccurs="0" />
+                    <xs:element name="PoznamkaRozvoz_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="PrenestNazev" type="emptiable_bool" minOccurs="0" />
                     <xs:element name="PrimarniUcetPohledavky_ID" type="guid" />
                     <xs:element name="PrimarniUcetPoskytnutaZaloha_ID" type="guid" />
                     <xs:element name="PrimarniUcetPrijataZaloha_ID" type="guid" />
                     <xs:element name="PrimarniUcetZavazky_ID" type="guid" />
+                    <xs:element name="Provozovna_UserData" type="emptiable_string_unbounded" minOccurs="0" />
                     <xs:element name="ProvPsc_ID" type="guid" />
                     <xs:element name="ProvStat_ID" type="guid" />
                     <xs:element name="Region_ID" type="guid" />
@@ -784,6 +788,13 @@
                         </xs:all>
                       </xs:complexType>
                     </xs:element>
+                    <xs:element name="ParametryProdejny" minOccurs="0">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="ProdejNaDLZakazan" type="emptiable_bool" minOccurs="0" />
+                        </xs:all>
+                      </xs:complexType>
+                    </xs:element>
                     <xs:element name="Pohledavky" minOccurs="0">
                       <xs:complexType>
                         <xs:all>
@@ -1197,7 +1208,7 @@
                                 <xs:element name="OsobaVychozi" type="emptiable_bool" minOccurs="0" />
                                 <xs:element name="Popis" type="emptiable_string_200" minOccurs="0" />
                                 <xs:element name="Poradi" type="emptiable_integer" minOccurs="0" />
-                                <xs:element name="SpojeniCislo" type="emptiable_string_50" minOccurs="0" />
+                                <xs:element name="SpojeniCislo" type="emptiable_string_100" minOccurs="0" />
                                 <xs:element name="SpojeniKlapka" type="emptiable_string_50" minOccurs="0" />
                                 <xs:element name="SpojeniMistniPredvolba" type="emptiable_string_50" minOccurs="0" />
                                 <xs:element name="Stat_ID" type="guid" />
