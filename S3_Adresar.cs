@@ -68,7 +68,8 @@ namespace SDataObjs
                     DatumPorizeni_UserData = d["DatumPorizeni"].GetDate(),
                     DatumPorizeni_UserDataSpecified = true,
                     KodOdb_UserData = d["KodOdb"].GetAlfaNum(),
-                    KodSumFa_UserData = d["KodSumFa"].GetAlfaNum()
+                    KodSumFa_UserData = d["KodSumFa"].GetAlfaNum(),
+                    CiselnaRada_ID = ""
                 };
 
                 firma.Pohledavky = new S5DataFirmaPohledavky()
@@ -310,7 +311,8 @@ namespace SDataObjs
                     {
                         Sleva = "0",
                         VlastniSleva = "False"
-                    }
+                    },
+                    CiselnaRada_ID = ""
                 };
 
                 firma.Poznamka = (

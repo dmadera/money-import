@@ -101,7 +101,8 @@ namespace SDataObjs
                     Kod = GetID(d["CisloKarty"].GetNum()),
                     PosledniCena = d["NakupCena"].GetDecimal(),
                     Zkratka12 = d["Pozice"].GetAlfaNum().ToUpper(),
-                    Zkratka20 = d["NazevZbozi2"].GetText()
+                    Zkratka20 = d["NazevZbozi2"].GetText(),
+                    RadaKod_ID = ""
                 };
 
                 var druhZboziKod = "ZBO";

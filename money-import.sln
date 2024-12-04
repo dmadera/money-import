@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "money-import", "money-import.csproj", "{5FEEA12F-65D8-4933-B770-88E113E1E4E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FEEA12F-65D8-4933-B770-88E113E1E4E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FEEA12F-65D8-4933-B770-88E113E1E4E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FEEA12F-65D8-4933-B770-88E113E1E4E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FEEA12F-65D8-4933-B770-88E113E1E4E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6C52215-877C-46B1-8775-3CC49C20A5AA}
+	EndGlobalSection
+EndGlobal
