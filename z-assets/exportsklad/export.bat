@@ -8,7 +8,7 @@ del /S /Q /F output\*
 
 net use X: \\192.168.15.50\Sklad exportsklad /user:exportsklad
 xcopy X:\data\*.000 input\ /Y /Z
-xcopy X:\stare\Sklad23\KARTY.000 input\KARTY20.000 /Y /Z
+copy X:\stare\Sklad23\KARTY.000 input\KARTY20.000 /Y /Z
 net use X: /delete /Y
 
 (
