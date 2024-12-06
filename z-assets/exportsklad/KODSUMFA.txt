@@ -1,0 +1,3 @@
+.pl 16959
+KodSumFa;CisloOdberatele
+--DATA--

@@ -89,7 +89,6 @@ namespace SDataObjs
 
         private void convertKarty(SkladDataFile file)
         {
-            var eobchodID = S0_IDs.GetElektronickyObchodID("EO_PEMA");
 
             foreach (SkladDataObj obj in file.Data)
             {
@@ -270,17 +269,7 @@ namespace SDataObjs
                     }
                 } : null;
 
-                var kod = _kategorie.Find(k => { return k.Kod == d["KodZbozi"].GetNum(); });
-                var podkod = _kategorie.Find(k => { return k.Kod == (d["KodZbozi"].GetNum() + d["PodKodZbozi"].GetNum()); });
 
-                if (kod != null && podkod != null)
-                {
-                    artikl.Kategorie = string.Format(
-                        "{0}|{1}",
-                        kod.ID,
-                        podkod.ID
-                    );
-                }
 
                 _artikly.Add(artikl);
             }

@@ -219,6 +219,19 @@ namespace SDataObjs
                         }
                     }
                 } : null;
+
+                var kodID = S0_IDs.GetKategorieArtikluID(d["KodZbozi"].GetNum());
+                var podKodID = S0_IDs.GetKategorieArtikluID(d["KodZbozi"].GetNum() + d["PodKodZbozi"].GetNum());
+
+                if (kodID != null && podKodID != null)
+                {
+                    artikl.Kategorie = string.Format(
+                        "{0}|{1}",
+                        kodID,
+                        podKodID
+                    );
+                }
+
                 _artikly.Add(artikl);
             }
         }

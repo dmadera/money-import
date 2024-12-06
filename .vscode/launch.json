@@ -16,7 +16,7 @@
             "program": "${workspaceFolder}/bin/Debug/net8.0/money-import.dll",
             //"args": ["${workspaceFolder}/z-assets/input", "${workspaceFolder}/z-assets/output"],
             "args": [
-                "${workspaceFolder}/z-assets/input/complete/",
+                "${workspaceFolder}/z-assets/input",
                 "${workspaceFolder}/z-assets/output"
             ],
             "cwd": "${workspaceFolder}",
