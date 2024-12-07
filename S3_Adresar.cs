@@ -115,10 +115,12 @@ namespace SDataObjs
                             DeleteItems = "1",
                             FirmaCenik = new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik[] {
                                 new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
+                                    ID = Guid.NewGuid().ToString(),
                                     Poradi = "1",
                                     Cenik_ID = nakupCenikID
                                 },
                                 new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
+                                    ID = Guid.NewGuid().ToString(),
                                     Poradi = "2",
                                     Cenik_ID = prodejCenikID
                                 }
@@ -139,10 +141,12 @@ namespace SDataObjs
                             DeleteItems = "1",
                             FirmaCenik = new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik[] {
                                 d["RabatO"].GetFloat() >= 0 ? new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
+                                    ID = Guid.NewGuid().ToString(),
                                     Poradi = "1",
                                     Cenik_ID = akceCenikID
                                 } : null,
                                 new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
+                                    ID = Guid.NewGuid().ToString(),
                                     Poradi = "2",
                                     Cenik_ID = prodejCenikID
                                 },
@@ -156,27 +160,39 @@ namespace SDataObjs
                     DeleteItems = "1",
                     FirmaAdresniKlic = new S5DataFirmaAdresniKliceFirmaAdresniKlic[] {
                         d["SDani"].GetAlfaNum().ToUpper() == "A" ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
-                            AdresniKlic_ID = S0_IDs.GetAdresniKlicID("sDPH")
-                        } : null,
-                        d["SDani"].GetAlfaNum().ToUpper() == "X" ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
+                            ID = Guid.NewGuid().ToString(),
                             AdresniKlic_ID = S0_IDs.GetAdresniKlicID("DLsDPH")
                         } : null,
+                        d["SDani"].GetAlfaNum().ToUpper() == "X" ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
+                            ID = Guid.NewGuid().ToString(),
+                            AdresniKlic_ID = S0_IDs.GetAdresniKlicID("DLbezCEN")
+                        } : null,
                         d["DavatSek"].GetAlfaNum().ToUpper() == "N" ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
+                            ID = Guid.NewGuid().ToString(),
                             AdresniKlic_ID = S0_IDs.GetAdresniKlicID("-SEK")
                         } : null,
                         d["Odesilat"].GetAlfaNum().ToUpper() == "N" ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
+                            ID = Guid.NewGuid().ToString(),
                             AdresniKlic_ID = S0_IDs.GetAdresniKlicID("-LETAK")
                         } : null,
                         d["KodOdb"].GetAlfaNum().ToUpper() == "OZ" ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
+                            ID = Guid.NewGuid().ToString(),
                             AdresniKlic_ID = S0_IDs.GetAdresniKlicID("OZ")
                         } : null,
                         d["KodOdb"].GetAlfaNum().ToUpper() == "OZN" ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
+                            ID = Guid.NewGuid().ToString(),
                             AdresniKlic_ID = S0_IDs.GetAdresniKlicID("OZN")
                         } : null,
+                        d["KodOdb"].GetAlfaNum().ToUpper() == "OZDR" ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
+                            ID = Guid.NewGuid().ToString(),
+                            AdresniKlic_ID = S0_IDs.GetAdresniKlicID("OZDR")
+                        } : null,
                         int.Parse(kodOdb) > 7000 ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
+                            ID = Guid.NewGuid().ToString(),
                             AdresniKlic_ID = S0_IDs.GetAdresniKlicID("INT")
                         } : null,
                         jeOstatni ? new S5DataFirmaAdresniKliceFirmaAdresniKlic() {
+                            ID = Guid.NewGuid().ToString(),
                             AdresniKlic_ID = S0_IDs.GetAdresniKlicID("OST")
                         } : null,
                     }
@@ -220,38 +236,45 @@ namespace SDataObjs
                     DeleteItems = "1",
                     Spojeni = new S5DataFirmaSeznamSpojeniSpojeni[] {
                         tels.Item1 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            ID = Guid.NewGuid().ToString(),
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Tel"),
                             SpojeniCislo = tels.Item1,
                             Popis = d["Prebirajici"].GetText() + " | " + S7_Dopl.GetKodTelefon0(kod),
                             Osoba_ID = osoba_ID
                         } : null,
                         tels.Item2 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            ID = Guid.NewGuid().ToString(),
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Tel"),
                             SpojeniCislo = tels.Item2,
                             Popis = d["Prebirajici"].GetText() + " | " + S7_Dopl.GetKodTelefon1(kod),
                             Osoba_ID = osoba_ID
                         } : null,
                         emails.Item1 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            ID = Guid.NewGuid().ToString(),
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Email"),
                             SpojeniCislo = emails.Item1,
                             Popis = d["Prebirajici"].GetText() + " | " + S7_Dopl.GetKodEmail1(kod),
                             Osoba_ID = osoba_ID
                         } : null,
                         emails.Item2 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            ID = Guid.NewGuid().ToString(),
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Email"),
                             SpojeniCislo = emails.Item2,
                             Popis = S7_Dopl.GetKodEmail2(kod)
                         } : null,
                         !SkladDataObj.jePodobne(d["Zastoupeny"].GetText(), d["Prebirajici"].GetText()) ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            ID = Guid.NewGuid().ToString(),
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Tel"),
                             SpojeniCislo = "",
                             Popis = d["Zastoupeny"].GetText() + " | " + S7_Dopl.GetKodTelefon2(kod)
                         } : null,
                         emailsFA.Item1 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            ID = Guid.NewGuid().ToString(),
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("EmailFa"),
                             SpojeniCislo = emailsFA.Item1,
                         } : null,
                         emailsFA.Item2 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            ID = Guid.NewGuid().ToString(),
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("EmailFa"),
                             SpojeniCislo = emailsFA.Item2,
                         } : null
@@ -359,46 +382,54 @@ namespace SDataObjs
                     DeleteItems = "1",
                     Spojeni = new S5DataFirmaSeznamSpojeniSpojeni[] {
                         tels.Item1 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            ID = Guid.NewGuid().ToString(),
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Tel"),
                             SpojeniCislo = tels.Item1,
                             Popis = d["Zastoupeny"].GetText() + " | " + S7_Dopl.GetKodTelefon0(kod),
                             Osoba_ID = osoba_ID
                         } : null,
                         emails.Item1 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            ID = Guid.NewGuid().ToString(),
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Email"),
                             SpojeniCislo = emails.Item1,
                             Popis = d["Zastoupeny"].GetText() + " | " + S7_Dopl.GetKodTelefon0(kod),
                             Osoba_ID = osoba_ID
                         } : null,
                         tels.Item2 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            ID = Guid.NewGuid().ToString(),
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Tel"),
                             SpojeniCislo = tels.Item2,
                             Popis = d["Zastoupeny"].GetText() + " | " + S7_Dopl.GetKodTelefon0(kod),
                             Osoba_ID = osoba_ID
                         } : null,
                         telsOZ.Item1 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            ID = Guid.NewGuid().ToString(),
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("TelOz"),
                             SpojeniCislo = tels.Item1,
                             Popis = d["ZastoupenyOZ"].GetText() + " | " + S7_Dopl.GetKodTelefon0(kod),
                             Osoba_ID = osoba_ID1
                         } : null,
                         telsOZ.Item2 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            ID = Guid.NewGuid().ToString(),
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("TelOz"),
                             SpojeniCislo = telsOZ.Item2,
                             Popis = d["ZastoupenyOZ"].GetText() + " | " + S7_Dopl.GetKodTelefon3(kod),
                             Osoba_ID = osoba_ID1
                         } : null,
                         emailsOZ.Item1 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            ID = Guid.NewGuid().ToString(),
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Email"),
                             SpojeniCislo = emailsOZ.Item1,
                             Popis = d["ZastoupenyOZ"].GetText() + " | " + S7_Dopl.GetKodEmailFA1(kod),
                             Osoba_ID = osoba_ID1
                         } : null,
                         emails.Item2 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            ID = Guid.NewGuid().ToString(),
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Email"),
                             SpojeniCislo = emails.Item2
                         } : null,
                         emailsOZ.Item2 != null ? new S5DataFirmaSeznamSpojeniSpojeni() {
+                            ID = Guid.NewGuid().ToString(),
                             TypSpojeni_ID = S0_IDs.GetTypSpojeniID("Email"),
                             SpojeniCislo = emailsOZ.Item2
                         } : null
@@ -431,10 +462,12 @@ namespace SDataObjs
                         DeleteItems = "1",
                         FirmaCenik = new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik[] {
                             new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
+                                ID = Guid.NewGuid().ToString(),
                                 Poradi = "1",
                                 Cenik_ID = akceCenikID
                             },
                             new S5DataFirmaObchodniPodminkySeznamCenikuFirmaCenik() {
+                                ID = Guid.NewGuid().ToString(),
                                 Poradi = "2",
                                 Cenik_ID = prodejCenikID
                             },

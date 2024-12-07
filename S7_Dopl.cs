@@ -72,7 +72,7 @@ namespace SDataObjs
                 string tel1copyID = S0_IDs.GetSpojeniID(GetKodTelefon1(kod));
                 string email1ID = S0_IDs.GetSpojeniID(GetKodEmail1(kod));
 
-                if (kodSumFa == "dr")
+                if (kodSumFa == "NP")
                 {
                     firma.Cinnosti = new S5DataFirmaCinnosti()
                     {
