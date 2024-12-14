@@ -35,5 +35,8 @@ final verison S4_System is on PEMA MONEY
 12. Import S2_Adresar, S3_Katalog
 13. Export S0_IDs copy to z-assets/output/
 14. Run money-import
-15. Import S6_, S7_
-16. Run script update-data-po-importu.sql
+15. Import S6_SkDokl (just import and leave it be, it takes 3,5 hours, looks like it is stuck)
+16. Import S7_Dopl
+17. Download [lipa-zakaznici-np](https://script.google.com/macros/s/AKfycbzcf-Qh0M7-BBxEWZA-h_6MieuPhAMcukhr6XZV6EVq3C0eTDsQEXd7Gy4YhfhrpPth9A/exec)
+18. Import S2_Adresar
+19. Run script update-data-po-importu.sql
