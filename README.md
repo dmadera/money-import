@@ -27,7 +27,7 @@ final verison S4_System is on PEMA MONEY
 4. copy content of z-assets/input/complete-lipa to z-assets/import
 5. clear directory z-assets/output
 6. replicate System DB from PEMA to LIPA - script
-7. backup System DB from LIPA
+7. backup System DB on LIPA
 8. move System DB to VM-DEV backup/final_lipa
 9.  restore DBs from backup/final_lipa - script
 10. Export S0_IDs copy to z-assets/output/
@@ -35,8 +35,10 @@ final verison S4_System is on PEMA MONEY
 12. Import S2_Adresar, S3_Katalog
 13. Export S0_IDs copy to z-assets/output/
 14. Run money-import
-15. Import S6_SkDokl (just import and leave it be, it takes 3,5 hours, looks like it is stuck)
-16. Import S7_Dopl
-17. Download [lipa-zakaznici-np](https://script.google.com/macros/s/AKfycbzcf-Qh0M7-BBxEWZA-h_6MieuPhAMcukhr6XZV6EVq3C0eTDsQEXd7Gy4YhfhrpPth9A/exec)
-18. Import S2_Adresar
-19. Run script update-data-po-importu.sql
+15. Import S5_Ceny
+16. Import S6_SkDokl (just import and leave it be, it takes 3,5 hours, looks like it is stuck)
+17. Import S7_Dopl
+18. Download [lipa-zakaznici-np](https://script.google.com/macros/s/AKfycbzcf-Qh0M7-BBxEWZA-h_6MieuPhAMcukhr6XZV6EVq3C0eTDsQEXd7Gy4YhfhrpPth9A/exec)
+19. Import S2_Adresar
+20. Fix unbreakable amount. 
+21. Run script update-data-po-importu.sql
